@@ -1,0 +1,19 @@
+name: chess_labs
+description: Interactive learn-by-doing lab controllers with progressive hints, variation trees, engine opponent, and scoring.
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  chess_core:
+    path: ../chess_core
+  chess_engine:
+    path: ../chess_engine
+  chess_learning:
+    path: ../chess_learning
+
+dev_dependencies:
+  test: ^1.24.0
+  lints: ^3.0.0

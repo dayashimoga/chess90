@@ -1,0 +1,38 @@
+name: chess_app
+description: "ChessMaster - Production-grade, offline-first cross-platform chess mastery platform and video studio."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  chess_core:
+    path: ../../packages/chess_core
+  chess_engine:
+    path: ../../packages/chess_engine
+  chess_learning:
+    path: ../../packages/chess_learning
+  chess_curriculum:
+    path: ../../packages/chess_curriculum
+  chess_labs:
+    path: ../../packages/chess_labs
+  chess_content:
+    path: ../../packages/chess_content
+  chess_video:
+    path: ../../packages/chess_video
+  chess_storage:
+    path: ../../packages/chess_storage
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+dependency_overrides:
+  vector_math: 2.2.0
+
+flutter:
+  uses-material-design: true

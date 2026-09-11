@@ -1,0 +1,23 @@
+name: chess_content
+description: Curated public-domain master model games, automated PGN puzzle miner, and ECO opening explorer.
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  chess_core:
+    path: ../chess_core
+  chess_engine:
+    path: ../chess_engine
+  chess_learning:
+    path: ../chess_learning
+  chess_curriculum:
+    path: ../chess_curriculum
+  chess_video:
+    path: ../chess_video
+
+dev_dependencies:
+  test: ^1.24.0
+  lints: ^3.0.0

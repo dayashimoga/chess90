@@ -1,0 +1,13 @@
+name: chess_core
+description: Core legal chess rules, bitboard representation, move generator, FEN/PGN parser, Zobrist hashing, and clocks.
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies: {}
+
+dev_dependencies:
+  test: ^1.24.0
+  lints: ^3.0.0

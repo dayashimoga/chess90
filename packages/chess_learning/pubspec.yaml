@@ -1,0 +1,17 @@
+name: chess_learning
+description: 12-axis hierarchical skill graph, mastery gates, Leitner spaced repetition, and adaptive daily training scheduler.
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  chess_core:
+    path: ../chess_core
+  chess_engine:
+    path: ../chess_engine
+
+dev_dependencies:
+  test: ^1.24.0
+  lints: ^3.0.0

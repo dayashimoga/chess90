@@ -1,0 +1,17 @@
+name: chess_curriculum
+description: Complete 90-day GM-style chess curriculum database, exercises, exams, and Day 90 certification.
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  chess_core:
+    path: ../chess_core
+  chess_learning:
+    path: ../chess_learning
+
+dev_dependencies:
+  test: ^1.24.0
+  lints: ^3.0.0

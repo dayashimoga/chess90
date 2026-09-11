@@ -1,0 +1,28 @@
+name: chess_acceptance
+description: Acceptance test runner producing acceptance.json and acceptance.html.
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  chess_core:
+    path: ../packages/chess_core
+  chess_engine:
+    path: ../packages/chess_engine
+  chess_learning:
+    path: ../packages/chess_learning
+  chess_curriculum:
+    path: ../packages/chess_curriculum
+  chess_labs:
+    path: ../packages/chess_labs
+  chess_content:
+    path: ../packages/chess_content
+  chess_video:
+    path: ../packages/chess_video
+  chess_storage:
+    path: ../packages/chess_storage
+
+dev_dependencies:
+  test: ^1.24.0

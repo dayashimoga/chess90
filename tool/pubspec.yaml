@@ -1,0 +1,29 @@
+name: chess_tools
+description: Automated tooling, performance benchmarks, and security audits for ChessMaster.
+version: 1.2.0
+publish_to: none
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  chess_core:
+    path: ../packages/chess_core
+  chess_engine:
+    path: ../packages/chess_engine
+  chess_learning:
+    path: ../packages/chess_learning
+  chess_curriculum:
+    path: ../packages/chess_curriculum
+  chess_labs:
+    path: ../packages/chess_labs
+  chess_storage:
+    path: ../packages/chess_storage
+  chess_content:
+    path: ../packages/chess_content
+  chess_video:
+    path: ../packages/chess_video
+
+dev_dependencies:
+  test: ^1.24.0
+  lints: ^3.0.0

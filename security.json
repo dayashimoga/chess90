@@ -1,0 +1,64 @@
+{
+  "timestamp": "2026-09-11T02:59:43.805771Z",
+  "environment": {
+    "os": "linux",
+    "osVersion": "Linux 6.18.33.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun 18 21:54:43 UTC 2026",
+    "dartVersion": "3.13.3"
+  },
+  "summary": {
+    "totalAudits": 6,
+    "passed": 6,
+    "failed": 0,
+    "overallStatus": "PASSED"
+  },
+  "audits": [
+    {
+      "testId": "SEC-PATH-001",
+      "category": "Path Traversal & Boundary Safety",
+      "description": "Validate immunity against directory traversal and arbitrary file write exploits",
+      "passed": true,
+      "severity": "CRITICAL",
+      "details": "Verified 8 directory traversal attack vectors classified and isolated."
+    },
+    {
+      "testId": "SEC-SQLI-001",
+      "category": "SQL Injection Defense",
+      "description": "Validate that SQLite storage uses parameterized bindings and is immune to SQLi payloads",
+      "passed": true,
+      "severity": "CRITICAL",
+      "details": "Evaluated 6 destructive SQL injection payloads. Zero execution of injected SQL statements."
+    },
+    {
+      "testId": "SEC-FEN-001",
+      "category": "Memory & Buffer DoS Prevention",
+      "description": "Validate immunity of FEN parser against buffer overruns, malformed symbols, and Unicode injection",
+      "passed": true,
+      "severity": "HIGH",
+      "details": "7 / 7 hostile FEN patterns parsed safely or rejected without process abort."
+    },
+    {
+      "testId": "SEC-PGN-001",
+      "category": "AST Parser & Input Sanitization",
+      "description": "Validate that PGN parser handles deeply nested tokens, huge comments, and script header injection safely",
+      "passed": true,
+      "severity": "HIGH",
+      "details": "All hostile PGN inputs processed safely without stack overflow or engine crash."
+    },
+    {
+      "testId": "SEC-SUPPLY-001",
+      "category": "Software Supply Chain Integrity",
+      "description": "Verify all pubspec.yaml dependencies use pinned local paths, verified pub.dev, or immutable refs",
+      "passed": true,
+      "severity": "CRITICAL",
+      "details": "Audited 11 pubspec.yaml files. Zero insecure HTTP sources or unpinned git dependencies."
+    },
+    {
+      "testId": "SEC-REG-001",
+      "category": "Truth in Advertising & Regulatory Integrity",
+      "description": "Enforce non-negotiable rule: GM mastery program explicitly disclaims conferring official FIDE title and labels engines honestly",
+      "passed": true,
+      "severity": "CRITICAL",
+      "details": "Verified mandatory FIDE title disclaimer and transparent engine model labeling across curriculum and engine layers."
+    }
+  ]
+}

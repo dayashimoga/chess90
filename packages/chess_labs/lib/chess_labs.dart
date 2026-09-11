@@ -1,0 +1,19 @@
+library chess_labs;
+
+export 'src/lab_session.dart';
+export 'src/labs/tactical_lab.dart';
+export 'src/labs/candidate_selection_lab.dart';
+export 'src/labs/blind_calculation_lab.dart';
+export 'src/labs/endgame_win_defend_lab.dart';
+export 'src/labs/board_memory_lab.dart';
+export 'src/labs/visualization_lab.dart';
+export 'src/labs/find_the_plan_lab.dart';
+export 'src/labs/positional_evaluation_lab.dart';
+export 'src/labs/improve_worst_piece_lab.dart';
+export 'src/labs/pawn_break_discovery_lab.dart';
+export 'src/labs/pawn_structure_lab.dart';
+export 'src/labs/opening_plan_lab.dart';
+export 'src/labs/guess_the_move_lab.dart';
+export 'src/labs/defensive_resource_lab.dart';
+export 'src/labs/conversion_challenge_lab.dart';
+export 'src/labs/time_management_lab.dart';

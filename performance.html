@@ -1,0 +1,77 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<title>ChessMaster Performance Benchmark Report</title>
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0f172a; color: #f8fafc; padding: 32px; }
+.container { max-width: 1000px; margin: auto; }
+h1 { color: #38bdf8; margin-bottom: 4px; }
+.subtitle { color: #94a3b8; font-size: 14px; margin-bottom: 24px; }
+.card { background: #1e293b; border-radius: 8px; padding: 20px; margin-bottom: 24px; border: 1px solid #334155; }
+table { width: 100%; border-collapse: collapse; margin-top: 16px; background: #1e293b; border-radius: 8px; overflow: hidden; }
+th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid #334155; font-size: 14px; }
+th { background: #0f172a; color: #94a3b8; font-weight: 600; text-transform: uppercase; font-size: 12px; letter-spacing: 0.5px; }
+.badge-pass { background: #22c55e; color: #000; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 12px; }
+.badge-fail { background: #ef4444; color: #fff; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 12px; }
+</style></head><body><div class="container">
+<h1>ChessMaster Performance Benchmark Report</h1>
+<div class="subtitle">Generated: 2026-09-11T02:59:30.405455Z | Dart 3.13.3 | 14 CPUs</div>
+<div class="card">
+<h2>Status: <span class="badge-pass">ALL BUDGETS SATISFIED</span></h2>
+<p>Passed: 7 / 7 benchmarks</p>
+<table><tr><th>Benchmark</th><th>Category</th><th>Measured Value</th><th>Budget Threshold</th><th>Status</th><th>Notes</th></tr>
+<tr>
+<td><strong>Move Generation & Perft Depth 3</strong></td>
+<td>Chess Core</td>
+<td>798629.1784041771 nodes/sec</td>
+<td>&ge; 15000.0 nodes/sec</td>
+<td><span class="badge-pass">PASS</span></td>
+<td style="color: #94a3b8; font-size: 12px;">Completed 44510 nodes in 55ms across 5 iterations.</td>
+</tr>
+<tr>
+<td><strong>FEN Parsing & Validation</strong></td>
+<td>Chess Core</td>
+<td>87915.95234955383 fens/sec</td>
+<td>&ge; 10000.0 fens/sec</td>
+<td><span class="badge-pass">PASS</span></td>
+<td style="color: #94a3b8; font-size: 12px;">2000 FEN parses completed in 22ms.</td>
+</tr>
+<tr>
+<td><strong>PGN Parsing Throughput</strong></td>
+<td>Chess Core</td>
+<td>865.1267410675663 games/sec</td>
+<td>&ge; 500.0 games/sec</td>
+<td><span class="badge-pass">PASS</span></td>
+<td style="color: #94a3b8; font-size: 12px;">300 full 41-move games (24300 plies) parsed in 346ms.</td>
+</tr>
+<tr>
+<td><strong>Engine Search Depth 4 Latency</strong></td>
+<td>Chess Engine</td>
+<td>31.0 ms</td>
+<td>&le; 300.0 ms</td>
+<td><span class="badge-pass">PASS</span></td>
+<td style="color: #94a3b8; font-size: 12px;">Best move: b1c3, score: 54cp in 31ms.</td>
+</tr>
+<tr>
+<td><strong>SRS Scheduling Calculation</strong></td>
+<td>Chess Learning</td>
+<td>60360.9585320215 calculations/sec</td>
+<td>&ge; 10000.0 calculations/sec</td>
+<td><span class="badge-pass">PASS</span></td>
+<td style="color: #94a3b8; font-size: 12px;">1000 Leitner scheduling transitions calculated in 16ms. Retention: 75.0%.</td>
+</tr>
+<tr>
+<td><strong>Storage CRUD Operations</strong></td>
+<td>Chess Storage</td>
+<td>613496.9325153375 ops/sec</td>
+<td>&ge; 2000.0 ops/sec</td>
+<td><span class="badge-pass">PASS</span></td>
+<td style="color: #94a3b8; font-size: 12px;">500 serialized game records inserted & retrieved in 0ms.</td>
+</tr>
+<tr>
+<td><strong>Video Timeline Generation</strong></td>
+<td>Chess Video</td>
+<td>0.64 ms/timeline</td>
+<td>&le; 20.0 ms/timeline</td>
+<td><span class="badge-pass">PASS</span></td>
+<td style="color: #94a3b8; font-size: 12px;">50 20-move timelines generated with full evaluation sync.</td>
+</tr>
+</table></div></div></body></html>

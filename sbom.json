@@ -1,0 +1,95 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.5.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:6f7b98d1-729f-4db3-9827-0cf7b0e12345",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-09-11T08:14:00Z",
+    "tools": [
+      {
+        "vendor": "ChessMaster",
+        "name": "ChessMaster Production Auditor",
+        "version": "1.2.0"
+      }
+    ],
+    "component": {
+      "type": "application",
+      "name": "chessmaster",
+      "version": "1.2.0",
+      "description": "Production-grade offline-first cross-platform chess mastery platform",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "chess_core",
+      "version": "1.0.0",
+      "scope": "required",
+      "description": "Deterministic 64-square bitboard chess engine core, rule legality, FEN/PGN parser, Zobrist hashing"
+    },
+    {
+      "type": "library",
+      "name": "chess_engine",
+      "version": "1.0.0",
+      "scope": "required",
+      "description": "UCI Stockfish 19 bridge, embedded heuristic minimax engine, WDL probability calibration, 14 root cause classifiers"
+    },
+    {
+      "type": "library",
+      "name": "chess_learning",
+      "version": "1.0.0",
+      "scope": "required",
+      "description": "12-axis cognitive skill graph, Leitner adaptive spaced repetition, daily planner, mastery gates"
+    },
+    {
+      "type": "library",
+      "name": "chess_curriculum",
+      "version": "1.0.0",
+      "scope": "required",
+      "description": "90-day master curriculum, 13 weekly exams, certified Day 90 report with FIDE non-title disclaimer"
+    },
+    {
+      "type": "library",
+      "name": "chess_labs",
+      "version": "1.0.0",
+      "scope": "required",
+      "description": "16 interactive laboratory controllers with hint penalties, blunder traps, and anti-puzzle validation"
+    },
+    {
+      "type": "library",
+      "name": "chess_content",
+      "version": "1.0.0",
+      "scope": "required",
+      "description": "Curated public domain model games, automated PGN puzzle mining, ECO repertoire opening tree"
+    },
+    {
+      "type": "library",
+      "name": "chess_video",
+      "version": "1.0.0",
+      "scope": "required",
+      "description": "Deterministic FFmpeg video generation pipeline, timeline interpolation, H.264 MP4 and GIF exports"
+    },
+    {
+      "type": "library",
+      "name": "chess_storage",
+      "version": "1.0.0",
+      "scope": "required",
+      "description": "Atomic SQLite persistence, V1->V2 schema migration, reversible JSON backup export/import"
+    },
+    {
+      "type": "application",
+      "name": "chess_app",
+      "version": "1.2.0",
+      "scope": "required",
+      "description": "Flutter cross-platform client (Web, Desktop, Mobile), dual WCAG AA themes, accessible keyboard navigation"
+    }
+  ]
+}

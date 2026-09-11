@@ -1,0 +1,87 @@
+{
+  "timestamp": "2026-09-11T02:59:30.397604Z",
+  "environment": {
+    "os": "linux",
+    "osVersion": "Linux 6.18.33.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun 18 21:54:43 UTC 2026",
+    "dartVersion": "3.13.3",
+    "cpuCount": 14
+  },
+  "summary": {
+    "totalBenchmarks": 7,
+    "passed": 7,
+    "failed": 0,
+    "overallStatus": "PASSED"
+  },
+  "benchmarks": [
+    {
+      "name": "Move Generation & Perft Depth 3",
+      "category": "Chess Core",
+      "value": 798629.18,
+      "unit": "nodes/sec",
+      "budgetThreshold": 15000.0,
+      "higherIsBetter": true,
+      "passed": true,
+      "notes": "Completed 44510 nodes in 55ms across 5 iterations."
+    },
+    {
+      "name": "FEN Parsing & Validation",
+      "category": "Chess Core",
+      "value": 87915.95,
+      "unit": "fens/sec",
+      "budgetThreshold": 10000.0,
+      "higherIsBetter": true,
+      "passed": true,
+      "notes": "2000 FEN parses completed in 22ms."
+    },
+    {
+      "name": "PGN Parsing Throughput",
+      "category": "Chess Core",
+      "value": 865.13,
+      "unit": "games/sec",
+      "budgetThreshold": 500.0,
+      "higherIsBetter": true,
+      "passed": true,
+      "notes": "300 full 41-move games (24300 plies) parsed in 346ms."
+    },
+    {
+      "name": "Engine Search Depth 4 Latency",
+      "category": "Chess Engine",
+      "value": 31.0,
+      "unit": "ms",
+      "budgetThreshold": 300.0,
+      "higherIsBetter": false,
+      "passed": true,
+      "notes": "Best move: b1c3, score: 54cp in 31ms."
+    },
+    {
+      "name": "SRS Scheduling Calculation",
+      "category": "Chess Learning",
+      "value": 60360.96,
+      "unit": "calculations/sec",
+      "budgetThreshold": 10000.0,
+      "higherIsBetter": true,
+      "passed": true,
+      "notes": "1000 Leitner scheduling transitions calculated in 16ms. Retention: 75.0%."
+    },
+    {
+      "name": "Storage CRUD Operations",
+      "category": "Chess Storage",
+      "value": 613496.93,
+      "unit": "ops/sec",
+      "budgetThreshold": 2000.0,
+      "higherIsBetter": true,
+      "passed": true,
+      "notes": "500 serialized game records inserted & retrieved in 0ms."
+    },
+    {
+      "name": "Video Timeline Generation",
+      "category": "Chess Video",
+      "value": 0.64,
+      "unit": "ms/timeline",
+      "budgetThreshold": 20.0,
+      "higherIsBetter": false,
+      "passed": true,
+      "notes": "50 20-move timelines generated with full evaluation sync."
+    }
+  ]
+}

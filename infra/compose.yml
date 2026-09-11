@@ -1,0 +1,12 @@
+services:
+  chessmaster:
+    build:
+      context: ..
+      dockerfile: infra/Containerfile
+    container_name: chessmaster_platform
+    ports:
+      - "8080:8080"
+    volumes:
+      - ..:/workspace:z
+    working_dir: /workspace
+    command: ["bash", "scripts/up.sh", "8080"]

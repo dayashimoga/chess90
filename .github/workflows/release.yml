@@ -1,0 +1,80 @@
+name: Release Automation, Checksums & Cloudflare Pages Deployment
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build-and-release:
+    name: Build Multi-Platform Artifacts & Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Build Web Bundle
+        run: |
+          cd apps/chess_app
+          flutter build web --release
+
+      - name: Generate Checksums & Software Bill of Materials (SBOM)
+        run: |
+          # Compute SHA-256 Checksums
+          cd apps/chess_app/build/web
+          find . -type f -exec sha256sum {} + | sort -k 2 > ../../../SHA256SUMS
+          cd ../../..
+
+          # Generate SBOM Manifest
+          cat <<EOF > sbom.json
+          {
+            "bomFormat": "CycloneDX",
+            "specVersion": "1.5",
+            "serialNumber": "urn:uuid:$(uuidgen || echo '00000000-0000-0000-0000-000000000000')",
+            "version": 1,
+            "metadata": {
+              "component": {
+                "name": "chessmaster",
+                "version": "${GITHUB_REF#refs/tags/v}",
+                "type": "application"
+              }
+            }
+          }
+          EOF
+
+      - name: Package Web Distribution Archive
+        run: |
+          tar -czf chessmaster-web.tar.gz -C apps/chess_app/build/web .
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            chessmaster-web.tar.gz
+            SHA256SUMS
+            sbom.json
+            acceptance.json
+            acceptance.html
+            performance.json
+            performance.html
+            security.json
+            security.html
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: chessmaster
+          directory: apps/chess_app/build/web
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}

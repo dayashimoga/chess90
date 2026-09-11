@@ -1,0 +1,15 @@
+name: chess_engine
+description: UCI Stockfish adapter (native & web), embedded heuristic minimax engine, move quality classifier, and 11-category root cause diagnostics.
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  chess_core:
+    path: ../chess_core
+
+dev_dependencies:
+  test: ^1.24.0
+  lints: ^3.0.0

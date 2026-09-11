@@ -1,0 +1,110 @@
+name: CI / PR Quality Gate & Multi-Platform Matrix
+
+on:
+  pull_request:
+    branches: [main, master]
+  push:
+    branches: [main, master]
+
+jobs:
+  matrix-validate:
+    name: Validate (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Dart
+        uses: dart-lang/setup-dart@v1
+        with:
+          sdk: stable
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Monorepo Package Tests (POSIX)
+        if: runner.os != 'Windows'
+        run: bash scripts/test.sh
+
+      - name: Monorepo Package Tests (Windows)
+        if: runner.os == 'Windows'
+        run: powershell scripts/test.ps1
+
+  container-validate:
+    name: Podman / OCI Container Hermetic Validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Build and Validate via Podman Container
+        run: |
+          if command -v podman &> /dev/null; then
+            ENGINE="podman"
+          else
+            ENGINE="docker"
+          fi
+          echo "Using container engine: $ENGINE"
+          $ENGINE build -t chessmaster:ci -f infra/Containerfile .
+          $ENGINE run --rm chessmaster:ci bash scripts/test.sh
+
+  coverage-and-gates:
+    name: Coverage Gates, Performance & Security Audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Dart
+        uses: dart-lang/setup-dart@v1
+        with:
+          sdk: stable
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Install System Utilities (Stockfish & FFmpeg)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ffmpeg stockfish
+
+      - name: Collect Monorepo Coverage & Validate Fail-Under Gates
+        run: |
+          dart run tool/coverage_runner.dart
+
+      - name: Run Automated Performance Benchmarks
+        run: |
+          dart run tool/performance_runner.dart
+
+      - name: Run Deterministic Security Audit
+        run: |
+          dart run tool/security_runner.dart
+
+      - name: Run Full Acceptance Suite Certification
+        run: |
+          bash scripts/acceptance.sh --full
+
+      - name: Upload Verification & Quality Reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: chessmaster-quality-reports
+          path: |
+            acceptance.json
+            acceptance.html
+            coverage/coverage_summary.json
+            coverage/coverage.html
+            performance.json
+            performance.html
+            security.json
+            security.html

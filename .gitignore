@@ -1,0 +1,37 @@
+# Git ignore rules for ChessMaster monorepo
+.dart_tool/
+.packages
+build/
+.pub-cache/
+.pub/
+*.lock
+*.log
+.DS_Store
+Thumbs.db
+
+# Flutter / Dart
+.flutter-plugins
+.flutter-plugins-dependencies
+.metadata
+
+# Test and Coverage
+coverage/*
+!coverage/coverage_summary.json
+!coverage/coverage.html
+*.lcov
+test-results/
+
+# Acceptance Artifacts generated in test
+acceptance_tmp/
+dist/
+
+# Local databases
+*.db
+*.db-journal
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.suo
+*.user
