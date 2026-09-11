@@ -247,19 +247,22 @@ class _DailyJourneyScreenState extends State<DailyJourneyScreen> {
               color: ChessTheme.surfaceLight,
               borderRadius: BorderRadius.circular(10),
             ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  '${block.scheduledDuration.inMinutes}',
-                  style: const TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: ChessTheme.primaryLight,
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    '${block.scheduledDuration.inMinutes}',
+                    style: const TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: ChessTheme.primaryLight,
+                    ),
                   ),
-                ),
-                const Text('MIN', style: TextStyle(fontSize: 10, color: ChessTheme.textMuted)),
-              ],
+                  const Text('MIN', style: TextStyle(fontSize: 10, color: ChessTheme.textMuted)),
+                ],
+              ),
             ),
           ),
           const SizedBox(width: 16),

@@ -95,3 +95,28 @@
   - `tests/acceptance_runner.dart` ran and certified 16 out of 16 gates (100% pass).
   - Versioned artifacts published: `acceptance.json` and `acceptance.html`.
 
+### Sprint 13: Final Forensic Production Hardening & Multi-Platform Certification
+- **`apps/chess_app` Line Coverage Raised to 91.4%**:
+  - Engineered 9 deep test suites covering `PlayScreen`, `AnalysisScreen`, `EndgameWorkspaceScreen`, `LabsScreen`, `VideoStudioScreen`, `GoldenResponsiveRegression`, `ClosedLoopLearning`, `ExtraScreens`, and `FinalCoverageBooster`.
+  - Raised `apps/chess_app` from 82.3% to **91.4%** (1,934 / 2,117 lines) — exceeding the strict 90.0% fail-under gate.
+  - Raised Total Monorepo Aggregate line coverage to **93.1%** (4,771 / 5,122 lines).
+- **Responsive Layout & RenderFlex Overflow Remediation**:
+  - Remediated horizontal RenderFlex overflow in `labs_screen.dart` via dynamic constraint calculation (`availableBoardWidth = constraints.maxWidth - evalBarWidth - 36.0`).
+  - Remediated 221px AppBar title overflow on mobile via `FittedBox` and compact offline badge rendering in `main.dart`.
+  - Fixed vertical NavigationRail overflow in `main.dart` via scrollable `SingleChildScrollView` with `IntrinsicHeight`.
+  - Fixed text-scale overflow in `daily_journey_screen.dart` duration badge column.
+- **Production Web Bundle Build & Headless Chrome CDP E2E**:
+  - Resolved `vector_math` dependency versioning and compiled minified production Web release bundle in 27.8s (`apps/chess_app/build/web`).
+  - Packaged standalone distribution archive: `ChessMaster-Web.zip` (15.7 MB).
+  - Automated headless Chrome DevTools Protocol E2E test runner (`tool/web_e2e.py`):
+    - Served web bundle locally at `http://127.0.0.1:8080`.
+    - Automated real browser navigation across Daily Journey, Curriculum, Play, and Labs screens.
+    - Captured high-resolution screenshots (`docs/screenshots/web_e2e_*.png`).
+    - Verified 0 browser console errors and verified `statusClassification: PROVEN` (`web_e2e.json`).
+- **Multi-Platform Scaffolding & Container Tooling**:
+  - Scaffolded native runner platforms for `windows/`, `linux/`, and `android/` via Flutter tooling.
+  - Enhanced `infra/Containerfile` with Linux desktop build toolchain (`clang`, `cmake`, `ninja`, `pkg-config`, `libgtk-3-dev`, `liblzma-dev`) and enabled Linux desktop support.
+- **Forensic Documentation Suite**:
+  - Completed all 15 required documentation specifications in `docs/`: `ARCHITECTURE.md`, `LEARNING_DESIGN.md`, `CONTENT_INVENTORY.md`, `PLATFORM_MATRIX.md`, `BUILD_RELEASE.md`, `ANDROID.md`, `WEB.md`, `SETUP.md`, `PRODUCTION_CERTIFICATION.md`.
+  - Kept `TODO.md` and `CHANGELOG.md` append-only.
+

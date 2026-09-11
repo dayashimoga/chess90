@@ -113,31 +113,34 @@ class _MainShellState extends State<MainShell> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const Icon(Icons.shield, color: ChessTheme.primaryLight, size: 24),
-            const SizedBox(width: 10),
-            const Text(
-              'CHESSMASTER',
-              style: TextStyle(fontWeight: FontWeight.w900, letterSpacing: 1.5, fontSize: 16),
-            ),
-            if (!isMobile) ...[
-              const SizedBox(width: 16),
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-                decoration: BoxDecoration(
-                  color: ChessTheme.primary.withAlpha(30),
-                  borderRadius: BorderRadius.circular(4),
-                  border: Border.all(color: ChessTheme.primaryLight),
-                ),
-                child: Text(
-                  'DAY ${profile.currentDay} / 90',
-                  style: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: ChessTheme.primaryLight),
-                ),
+        title: FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Icon(Icons.shield, color: ChessTheme.primaryLight, size: 24),
+              const SizedBox(width: 8),
+              const Text(
+                'CHESSMASTER',
+                style: TextStyle(fontWeight: FontWeight.w900, letterSpacing: 1.2, fontSize: 15),
               ),
+              if (!isMobile) ...[
+                const SizedBox(width: 16),
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                  decoration: BoxDecoration(
+                    color: ChessTheme.primary.withAlpha(30),
+                    borderRadius: BorderRadius.circular(4),
+                    border: Border.all(color: ChessTheme.primaryLight),
+                  ),
+                  child: Text(
+                    'DAY ${profile.currentDay} / 90',
+                    style: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: ChessTheme.primaryLight),
+                  ),
+                ),
+              ],
             ],
-          ],
+          ),
         ),
         actions: [
           // Theme Toggle
@@ -148,17 +151,23 @@ class _MainShellState extends State<MainShell> {
           ),
 
           // Offline indicator
-          const Row(
-            children: [
-              Icon(Icons.wifi_off, size: 14, color: ChessTheme.textMuted),
-              SizedBox(width: 4),
-              Text(
-                'OFFLINE-FIRST CORE',
-                style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: ChessTheme.textMuted),
-              ),
-            ],
-          ),
-          const SizedBox(width: 16),
+          if (!isMobile)
+            const Row(
+              children: [
+                Icon(Icons.wifi_off, size: 14, color: ChessTheme.textMuted),
+                SizedBox(width: 4),
+                Text(
+                  'OFFLINE-FIRST CORE',
+                  style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: ChessTheme.textMuted),
+                ),
+              ],
+            )
+          else
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 4.0),
+              child: Icon(Icons.wifi_off, size: 16, color: ChessTheme.textMuted),
+            ),
+          const SizedBox(width: 8),
 
           // JSON Backup Export/Import
           IconButton(
@@ -193,67 +202,78 @@ class _MainShellState extends State<MainShell> {
           ? _buildCurrentScreen()
           : Row(
               children: [
-                NavigationRail(
-                  backgroundColor: Theme.of(context).colorScheme.surface,
-                  selectedIndex: _navIndexForScreen(_activeScreen),
-                  onDestinationSelected: (idx) {
-                    _navigateTo(_screenKeyForNavIndex(idx));
+                LayoutBuilder(
+                  builder: (context, constraints) {
+                    return SingleChildScrollView(
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(minHeight: constraints.maxHeight),
+                        child: IntrinsicHeight(
+                          child: NavigationRail(
+                            backgroundColor: Theme.of(context).colorScheme.surface,
+                            selectedIndex: _navIndexForScreen(_activeScreen),
+                            onDestinationSelected: (idx) {
+                              _navigateTo(_screenKeyForNavIndex(idx));
+                            },
+                            labelType: NavigationRailLabelType.all,
+                            selectedIconTheme: const IconThemeData(color: ChessTheme.primaryLight),
+                            selectedLabelTextStyle: const TextStyle(color: ChessTheme.primaryLight, fontSize: 11, fontWeight: FontWeight.bold),
+                            unselectedIconTheme: const IconThemeData(color: ChessTheme.textMuted),
+                            unselectedLabelTextStyle: const TextStyle(color: ChessTheme.textMuted, fontSize: 11),
+                            destinations: const [
+                              NavigationRailDestination(
+                                icon: Icon(Icons.today),
+                                label: Text('Daily Journey'),
+                              ),
+                              NavigationRailDestination(
+                                icon: Icon(Icons.menu_book),
+                                label: Text('Curriculum'),
+                              ),
+                              NavigationRailDestination(
+                                icon: Icon(Icons.science),
+                                label: Text('Labs'),
+                              ),
+                              NavigationRailDestination(
+                                icon: Icon(Icons.sports_esports),
+                                label: Text('Play / Tourney'),
+                              ),
+                              NavigationRailDestination(
+                                icon: Icon(Icons.analytics),
+                                label: Text('Analysis'),
+                              ),
+                              NavigationRailDestination(
+                                icon: Icon(Icons.explore),
+                                label: Text('Openings'),
+                              ),
+                              NavigationRailDestination(
+                                icon: Icon(Icons.shield_outlined),
+                                label: Text('Endgame'),
+                              ),
+                              NavigationRailDestination(
+                                icon: Icon(Icons.auto_stories),
+                                label: Text('Model Games'),
+                              ),
+                              NavigationRailDestination(
+                                icon: Icon(Icons.troubleshoot),
+                                label: Text('Weakness'),
+                              ),
+                              NavigationRailDestination(
+                                icon: Icon(Icons.video_library),
+                                label: Text('Video Studio'),
+                              ),
+                              NavigationRailDestination(
+                                icon: Icon(Icons.workspace_premium),
+                                label: Text('Mastery Report'),
+                              ),
+                              NavigationRailDestination(
+                                icon: Icon(Icons.settings),
+                                label: Text('Settings'),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    );
                   },
-                  labelType: NavigationRailLabelType.all,
-                  selectedIconTheme: const IconThemeData(color: ChessTheme.primaryLight),
-                  selectedLabelTextStyle: const TextStyle(color: ChessTheme.primaryLight, fontSize: 11, fontWeight: FontWeight.bold),
-                  unselectedIconTheme: const IconThemeData(color: ChessTheme.textMuted),
-                  unselectedLabelTextStyle: const TextStyle(color: ChessTheme.textMuted, fontSize: 11),
-                  destinations: const [
-                    NavigationRailDestination(
-                      icon: Icon(Icons.today),
-                      label: Text('Daily Journey'),
-                    ),
-                    NavigationRailDestination(
-                      icon: Icon(Icons.menu_book),
-                      label: Text('Curriculum'),
-                    ),
-                    NavigationRailDestination(
-                      icon: Icon(Icons.science),
-                      label: Text('Labs'),
-                    ),
-                    NavigationRailDestination(
-                      icon: Icon(Icons.sports_esports),
-                      label: Text('Play / Tourney'),
-                    ),
-                    NavigationRailDestination(
-                      icon: Icon(Icons.analytics),
-                      label: Text('Analysis'),
-                    ),
-                    NavigationRailDestination(
-                      icon: Icon(Icons.explore),
-                      label: Text('Openings'),
-                    ),
-                    NavigationRailDestination(
-                      icon: Icon(Icons.shield_outlined),
-                      label: Text('Endgame'),
-                    ),
-                    NavigationRailDestination(
-                      icon: Icon(Icons.auto_stories),
-                      label: Text('Model Games'),
-                    ),
-                    NavigationRailDestination(
-                      icon: Icon(Icons.troubleshoot),
-                      label: Text('Weakness'),
-                    ),
-                    NavigationRailDestination(
-                      icon: Icon(Icons.video_library),
-                      label: Text('Video Studio'),
-                    ),
-                    NavigationRailDestination(
-                      icon: Icon(Icons.workspace_premium),
-                      label: Text('Mastery Report'),
-                    ),
-                    NavigationRailDestination(
-                      icon: Icon(Icons.settings),
-                      label: Text('Settings'),
-                    ),
-                  ],
                 ),
                 const VerticalDivider(thickness: 1, width: 1),
                 Expanded(child: _buildCurrentScreen()),

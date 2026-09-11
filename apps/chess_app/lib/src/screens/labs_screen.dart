@@ -112,10 +112,13 @@ class _LabsScreenState extends State<LabsScreen> {
       body: LayoutBuilder(
         builder: (context, constraints) {
           final isCompact = constraints.maxWidth < 800;
+          final evalBarSpacing = isCompact ? 8.0 : 12.0;
+          final evalBarWidth = 28.0;
+          final availableBoardWidth = constraints.maxWidth - evalBarWidth - evalBarSpacing - 36.0;
           final boardSize = (isCompact
-                  ? constraints.maxWidth - 64
+                  ? availableBoardWidth
                   : (constraints.maxHeight - 220).clamp(280.0, 500.0))
-              .clamp(180.0, 500.0);
+              .clamp(160.0, 500.0);
 
           final instructionBanner = Container(
             width: double.infinity,
@@ -166,25 +169,28 @@ class _LabsScreenState extends State<LabsScreen> {
             ),
           );
 
-          final boardArea = Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(
-                height: boardSize,
-                child: const EvaluationBarWidget(isVertical: true),
-              ),
-              const SizedBox(width: 12),
-              SizedBox(
-                width: boardSize,
-                height: boardSize,
-                child: ChessBoardWidget(
-                  board: _session.currentBoard,
-                  isFlipped: currentEx.sideToPlay == PieceColor.black,
-                  onMovePlayed: _onMovePlayed,
-                  isInteractive: !_session.isCompleted,
+          final boardArea = FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                  height: boardSize,
+                  child: const EvaluationBarWidget(isVertical: true),
                 ),
-              ),
-            ],
+                SizedBox(width: evalBarSpacing),
+                SizedBox(
+                  width: boardSize,
+                  height: boardSize,
+                  child: ChessBoardWidget(
+                    board: _session.currentBoard,
+                    isFlipped: currentEx.sideToPlay == PieceColor.black,
+                    onMovePlayed: _onMovePlayed,
+                    isInteractive: !_session.isCompleted,
+                  ),
+                ),
+              ],
+            ),
           );
 
           final actionButtons = Wrap(

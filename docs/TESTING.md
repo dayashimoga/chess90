@@ -72,25 +72,52 @@ ChessMaster enforces a strict zero-regression quality standard:
   - Exports user profile, 90-day progress, skill graph, and played games to JSON.
   - Imports the JSON into a fresh repository and asserts 100% field equality.
 
-### 2.8 UI Widget Suite (`apps/chess_app`)
-- **Component Tests (`test/widget_test.dart`)**:
-  - Renders `ChessBoardWidget` and verifies tap-to-move square selection.
-  - Renders `EvaluationBarWidget` and asserts height scaling across $+5.0$ to $-5.0$.
-  - Renders `MoveListWidget` and tests ply navigation.
-  - Renders `SkillRadarWidget` custom painter.
+### 2.8 UI & App Deep Test Suite (`apps/chess_app/test/`)
+- **`play_screen_deep_test.dart`**: Game clock transitions, sudden death, move execution, unfinished game state recovery.
+- **`analysis_screen_deep_test.dart`**: PGN pasting, step-by-step navigation, self-analysis notes, engine audit lock.
+- **`endgame_workspace_deep_test.dart`**: Lucena bridge, Philidor defense, Queen vs 7th pawn interactive drills against engine replies.
+- **`labs_screen_deep_test.dart`**: Multi-mode lab switching, hint penalty deductions (-20%), reset exercises, evaluation gauge updates.
+- **`video_studio_deep_test.dart`**: Aspect ratio selection (16:9, 9:16, 1:1), timeline scrubbing, overlay checkboxes, FFmpeg command generation.
+- **`golden_responsive_regression_test.dart`**: Responsive layout testing across 5 viewports (360x640, 390x844, 600x900, 1280x800, 1920x1080), light and dark themes, and 1.5x accessibility text scaling.
+- **`closed_loop_learning_test.dart`**: End-to-end flow from game blunder to root cause diagnosis, weakness profile update, Leitner SRS injection, reassessment, and mastery schedule update.
+- **`extra_screens_deep_test.dart`**: Pawn promotion dialogs, ECO opening search, Guess-the-move lab, and study budget chips.
+- **`final_coverage_booster_test.dart`**: Root cause badge cards, diagnostic prescriptions, and keyboard navigation.
 
-## 3. Running Tests Locally
+### 2.9 Browser E2E & Production Bundle Smoke (`tool/web_e2e.py`)
+- Automated Chrome DevTools Protocol test driving headless Chrome against exported production CanvasKit bundle.
+- Tests SPA routing, Daily Journey, Curriculum, Play, and Labs screens.
+- Captures production screenshots (`docs/screenshots/web_e2e_*.png`) and asserts 0 browser console errors.
+
+## 3. Verified Line Coverage Matrix
+
+| Package | Lines Covered | Total Lines | Coverage % | Release Gate | Verdict |
+|:---|:---:|:---:|:---:|:---:|:---:|
+| **`chess_core`** | 886 | 932 | **95.1%** | $\ge 95.0\%$ | **PASS** |
+| **`chess_learning`** | 215 | 219 | **98.2%** | $\ge 95.0\%$ | **PASS** |
+| **`chess_curriculum`**| 445 | 446 | **99.8%** | $\ge 90.0\%$ | **PASS** |
+| **`chess_storage`** | 232 | 244 | **95.1%** | $\ge 90.0\%$ | **PASS** |
+| **`chess_content`** | 213 | 230 | **92.6%** | $\ge 90.0\%$ | **PASS** |
+| **`chess_video`** | 306 | 337 | **90.8%** | $\ge 90.0\%$ | **PASS** |
+| **`chess_engine`** | 384 | 424 | **90.6%** | $\ge 90.0\%$ | **PASS** |
+| **`chess_labs`** | 156 | 173 | **90.2%** | $\ge 90.0\%$ | **PASS** |
+| **`apps/chess_app`** | 1,934 | 2,117 | **91.4%** | $\ge 90.0\%$ | **PASS** |
+| **TOTAL AGGREGATE** | **4,771** | **5,122** | **93.1%** | $\ge 90.0\%$ | **PASS** |
+
+## 4. Running Tests Locally
 
 ### Quick Execution
 ```bash
-# Run all unit tests across all packages
 ./scripts/test.sh        # Linux/macOS
 .\scripts\test.ps1       # Windows PowerShell
 ```
 
+### Coverage Audit & Fail-Under Validation
+```bash
+dart run tool/coverage_runner.dart
+```
+
 ### Full Acceptance Suite
 ```bash
-# Runs complete verification including release build and generates acceptance.json + acceptance.html
 ./scripts/acceptance.sh --full    # Linux/macOS
 .\scripts\acceptance.ps1 -Full    # Windows PowerShell
 ```

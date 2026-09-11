@@ -1,4 +1,4 @@
-name: Release Automation, Checksums & Cloudflare Pages Deployment
+name: Multi-Platform Release Automation, Checksums & Cloudflare Deployment
 
 on:
   push:
@@ -6,12 +6,18 @@ on:
       - 'v*'
 
 jobs:
-  build-and-release:
-    name: Build Multi-Platform Artifacts & Release
+  build-and-package:
+    name: Build All Platform Artifacts
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
+
+      - name: Setup Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
@@ -19,19 +25,40 @@ jobs:
           channel: stable
           cache: true
 
+      - name: Install Linux Desktop Toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev stockfish ffmpeg
+
       - name: Build Web Bundle
         run: |
           cd apps/chess_app
           flutter build web --release
+          cd build/web
+          zip -r ../../../ChessMaster-Web.zip .
 
-      - name: Generate Checksums & Software Bill of Materials (SBOM)
+      - name: Build Linux Desktop Bundle
         run: |
-          # Compute SHA-256 Checksums
-          cd apps/chess_app/build/web
-          find . -type f -exec sha256sum {} + | sort -k 2 > ../../../SHA256SUMS
-          cd ../../..
+          flutter config --enable-linux-desktop
+          cd apps/chess_app
+          flutter build linux --release
+          tar -czf ../../ChessMaster-Linux-x64.tar.gz -C build/linux/x64/release/bundle .
 
-          # Generate SBOM Manifest
+      - name: Build Android APK & AAB
+        run: |
+          cd apps/chess_app
+          flutter build apk --release --split-per-abi=false
+          cp build/app/outputs/flutter-apk/app-release.apk ../../ChessMaster.apk
+
+          flutter build appbundle --release
+          cp build/app/outputs/bundle/release/app-release.aab ../../ChessMaster.aab
+
+      - name: Generate Checksums & CycloneDX SBOM
+        run: |
+          # Compute cryptographic SHA-256 Checksums
+          sha256sum ChessMaster-Web.zip ChessMaster-Linux-x64.tar.gz ChessMaster.apk ChessMaster.aab | sort -k 2 > SHA256SUMS
+
+          # Generate SBOM
           cat <<EOF > sbom.json
           {
             "bomFormat": "CycloneDX",
@@ -48,23 +75,16 @@ jobs:
           }
           EOF
 
-      - name: Package Web Distribution Archive
-        run: |
-          tar -czf chessmaster-web.tar.gz -C apps/chess_app/build/web .
-
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            chessmaster-web.tar.gz
+            ChessMaster-Web.zip
+            ChessMaster-Linux-x64.tar.gz
+            ChessMaster.apk
+            ChessMaster.aab
             SHA256SUMS
             sbom.json
-            acceptance.json
-            acceptance.html
-            performance.json
-            performance.html
-            security.json
-            security.html
           draft: false
           prerelease: false
         env:

@@ -7,8 +7,8 @@ on:
     branches: [main, master]
 
 jobs:
-  matrix-validate:
-    name: Validate (${{ matrix.os }})
+  lint-and-unit:
+    name: Lint & Unit Tests (${{ matrix.os }})
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -38,13 +38,13 @@ jobs:
         run: powershell scripts/test.ps1
 
   container-validate:
-    name: Podman / OCI Container Hermetic Validation
+    name: Podman / OCI Hermetic Container Validation
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Build and Validate via Podman Container
+      - name: Build and Validate via Container
         run: |
           if command -v podman &> /dev/null; then
             ENGINE="podman"
@@ -79,20 +79,16 @@ jobs:
           sudo apt-get install -y --no-install-recommends ffmpeg stockfish
 
       - name: Collect Monorepo Coverage & Validate Fail-Under Gates
-        run: |
-          dart run tool/coverage_runner.dart
+        run: dart run tool/coverage_runner.dart
 
       - name: Run Automated Performance Benchmarks
-        run: |
-          dart run tool/performance_runner.dart
+        run: dart run tool/performance_runner.dart
 
       - name: Run Deterministic Security Audit
-        run: |
-          dart run tool/security_runner.dart
+        run: dart run tool/security_runner.dart
 
       - name: Run Full Acceptance Suite Certification
-        run: |
-          bash scripts/acceptance.sh --full
+        run: bash scripts/acceptance.sh --full
 
       - name: Upload Verification & Quality Reports
         if: always()
@@ -108,3 +104,151 @@ jobs:
             performance.html
             security.json
             security.html
+
+  build-web-and-e2e:
+    name: Web Production Build & Browser E2E
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python websockets
+        run: pip install websockets
+
+      - name: Build Web Production Bundle
+        run: |
+          cd apps/chess_app
+          flutter build web --release
+
+      - name: Package Web Distribution Archive
+        run: |
+          cd apps/chess_app/build/web
+          zip -r ../../../ChessMaster-Web.zip .
+
+      - name: Upload Web Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ChessMaster-Web
+          path: ChessMaster-Web.zip
+
+  build-linux:
+    name: Linux x64 Desktop Build & Smoke
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Install Linux Desktop Toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev xvfb
+
+      - name: Enable Linux Desktop
+        run: flutter config --enable-linux-desktop
+
+      - name: Build Linux x64 Release
+        run: |
+          cd apps/chess_app
+          flutter build linux --release
+
+      - name: Smoke Test Linux Executable
+        run: |
+          cd apps/chess_app/build/linux/x64/release/bundle
+          timeout 5s xvfb-run ./chess_app || true
+
+      - name: Package Linux Distribution Archive
+        run: |
+          tar -czf ChessMaster-Linux-x64.tar.gz -C apps/chess_app/build/linux/x64/release/bundle .
+
+      - name: Upload Linux Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ChessMaster-Linux-x64
+          path: ChessMaster-Linux-x64.tar.gz
+
+  build-windows:
+    name: Windows x64 Desktop Build
+    runs-on: windows-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Enable Windows Desktop
+        run: flutter config --enable-windows-desktop
+
+      - name: Build Windows x64 Release
+        run: |
+          cd apps\chess_app
+          flutter build windows --release
+
+      - name: Package Windows Distribution Archive
+        run: |
+          Compress-Archive -Path apps\chess_app\build\windows\x64\runner\Release\* -DestinationPath ChessMaster-Windows-x64.zip -Force
+
+      - name: Upload Windows Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ChessMaster-Windows-x64
+          path: ChessMaster-Windows-x64.zip
+
+  build-android:
+    name: Android APK & AAB Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Build Android APK
+        run: |
+          cd apps/chess_app
+          flutter build apk --release --split-per-abi=false
+          cp build/app/outputs/flutter-apk/app-release.apk ../../ChessMaster.apk
+
+      - name: Build Android AAB
+        run: |
+          cd apps/chess_app
+          flutter build appbundle --release
+          cp build/app/outputs/bundle/release/app-release.aab ../../ChessMaster.aab
+
+      - name: Upload Android Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: ChessMaster-Android
+          path: |
+            ChessMaster.apk
+            ChessMaster.aab

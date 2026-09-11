@@ -38,3 +38,20 @@ This document assists developers and agents in navigating the core abstractions 
 - Converts `PgnGame` into discrete `VideoFrame` sequence.
 - Interpolates piece moving coordinates across frames for smooth 30/60 FPS animation.
 - Computes evaluation bar heights, arrow overlays, and pause durations at critical moments.
+
+### 7. `CurriculumCatalog` (`packages/chess_curriculum/lib/src/curriculum_catalog.dart`)
+- Repository containing complete definitions for Day 1 through Day 90.
+- Indexes 10 progression phases, 13 weekly milestone exams, and explicit prerequisite trees.
+- Validates that Day 90 delivers the capstone mastery report with the required FIDE title non-promise notice.
+
+### 8. `LabController` & Hierarchy (`packages/chess_labs/lib/src/`)
+- Base stateful controller for 16 specialized lab engines (`TacticalLab`, `CandidateSelectionLab`, etc.).
+- Manages move legality, hint deduction logic (-20% score penalty per hint), automated engine reply moves, and genuine no-tactic declarations.
+
+### 9. `StorageRepository` (`packages/chess_storage/lib/src/storage_repository.dart`)
+- Local-first persistence layer with V1->V2 schema migration and atomic file replacement.
+- Exposes full roundtrip JSON backup export and import for user data portability.
+
+### 10. Presentation Architecture (`apps/chess_app/lib/src/`)
+- Responsive shell adapting between compact phone NavigationBar and expanded desktop NavigationRail.
+- High-performance `ChessBoardWidget` supporting touch/drag interactions, legal move dots, SVG/Unicode glyphs, and screen-reader accessibility Semantics.

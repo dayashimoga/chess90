@@ -18,6 +18,8 @@ Thumbs.db
 coverage/*
 !coverage/coverage_summary.json
 !coverage/coverage.html
+packages/*/coverage/
+apps/*/coverage/
 *.lcov
 test-results/
 

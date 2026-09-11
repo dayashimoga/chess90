@@ -117,5 +117,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   - Full Acceptance Suite: 16 / 16 gates **PROVEN** (100% pass), updating `acceptance.json` and `acceptance.html`.
   - Production Web build compiled successfully to `apps/chess_app/build/web`.
   - Generated release checksums `SHA256SUMS` and CycloneDX SBOM `sbom.json`.
+- **Final Forensic Hardening & E2E Validation Pass**:
+  - Raised `apps/chess_app` line coverage to **91.4%** (1,934 / 2,117 lines), lifting aggregate monorepo coverage to **93.1%** (4,771 / 5,122 lines).
+  - Implemented 9 new test suites in `apps/chess_app/test/` exercising clock transitions, PGN analysis, endgame workspace, interactive labs, video studio, and closed-loop learning.
+  - Remediated horizontal RenderFlex overflow in `labs_screen.dart`, mobile AppBar overflow in `main.dart`, and NavigationRail scroll clipping.
+  - Implemented automated Chrome DevTools Protocol browser E2E test runner (`tool/web_e2e.py`): verified live CanvasKit web bundle at `http://127.0.0.1:8080`, captured production screenshots in `docs/screenshots/`, and confirmed 0 console errors (`web_e2e.json`).
+  - Packaged production distribution archive `ChessMaster-Web.zip` (15.7 MB).
+  - Scaffolded native multi-platform runners for Windows, Linux, and Android.
+  - Added Linux desktop toolchain (`clang`, `cmake`, `ninja`, `libgtk-3-dev`) to `infra/Containerfile` for disposable container release builds.
+  - Published comprehensive 15-file documentation suite in `docs/` with explicit FIDE non-title educational disclaimers.
 
 

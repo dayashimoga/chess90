@@ -39,3 +39,23 @@
 
 ### Issue: "Corrupted local storage state"
 - **Resolution**: You can reset to a clean state by running `./scripts/clean.sh` or selecting **"Reset Local Database"** in Settings. Always export a JSON backup first.
+
+---
+
+## 4. Container & Tooling Issues
+
+### Issue: "podman: command not found" or "docker daemon not running"
+- **Cause**: Container engine is not installed or the daemon process is halted.
+- **Resolution**: Install [Podman](https://podman.io/) or Docker Desktop. `scripts/run_container.ps1` and `scripts/run_container.sh` automatically detect whichever engine is available.
+
+### Issue: "Network Disabled / Complete Offline Mode"
+- **Cause**: Device has no internet connection or network interface is down.
+- **Resolution**: Expected behavior. ChessMaster operates 100% offline. All move validation, FEN/PGN parsing, 90-day lessons, 16 labs, Leitner spaced repetition, and heuristic engine evaluation require zero network packets.
+
+---
+
+## 5. UI, Viewport & Display Troubleshooting
+
+### Issue: "Text clipped or overlapping on extreme text scaling (>1.5x)"
+- **Cause**: High OS text scaling settings on small-screen phones.
+- **Resolution**: All core screens incorporate responsive `FittedBox` scaling, horizontal sliders, and scrollable single-child views. If controls are obscured, rotate device to landscape or adjust font scale in application settings.

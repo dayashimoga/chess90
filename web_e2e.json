@@ -1,0 +1,17 @@
+{
+  "testName": "Web Production Bundle Browser E2E",
+  "platform": "Web (CanvasKit / Chrome Headless)",
+  "url": "http://127.0.0.1:8080",
+  "title": "ChessMaster | 90-Day GM Chess Mastery Platform",
+  "flutterViewRendered": true,
+  "screenshots": [
+    "docs/screenshots/web_e2e_home.png",
+    "docs/screenshots/web_e2e_curriculum.png",
+    "docs/screenshots/web_e2e_play.png",
+    "docs/screenshots/web_e2e_labs.png"
+  ],
+  "consoleLogsCount": 1,
+  "consoleErrorsCount": 0,
+  "consoleErrors": [],
+  "statusClassification": "PROVEN"
+}

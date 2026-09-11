@@ -30,11 +30,16 @@ No reading-only lectures or passive video watching are permitted; every concept 
 - Take weekly exams on days **7, 14, 21, 28, 35, 42, 49, 56, 63, 70, 77, 84, 90**.
 
 ### 3.3 Interactive Labs
-Practice specific cognitive skills in specialized sandboxes:
+Practice specific cognitive skills in 16 specialized sandboxes:
 - **Tactical Lab**: Find forcing shots, solve combinations, or declare *"No Tactic Exists"* in anti-puzzles.
-- **Candidate Selection Lab**: Identify the top 3 legal candidate moves before calculating deeper lines.
-- **Blindfold / Calculation Lab**: Calculate sequences mentally from a starting position, then verify the final board state.
-- **Endgame Win / Defend Lab**: Play out theoretical and practical endgames (Lucena, Philidor, pawn races) against an active engine opponent.
+- **Candidate Selection Lab**: Identify top candidate moves before calculating deeper lines using the Kotov method.
+- **Blind Calculation Lab**: Calculate sequences mentally from a starting position, verifying terminal position without interim visual updates.
+- **Endgame Win / Defend Lab**: Master Lucena, Philidor, and Queen vs 7th pawn against an active engine opponent.
+- **Board Memory & Visualization Labs**: Rapid coordinate literacy and unseen diagonal calculation.
+- **Find the Plan & Positional Evaluation Labs**: Strategic planning in closed positions and static evaluation scoring.
+- **Improve Worst Piece & Pawn Break Labs**: Finding inactive pieces and calculating central tension breakthrough timing.
+- **Pawn Structure & Opening Plan Labs**: Carlsbad, IQP, Maróczy structure recognition and opening-to-middlegame transitions.
+- **Guess-The-Move, Defensive Resourcefulness, Conversion & Time Management Labs**: Simulating historic GM games, finding swindles, clean conversion, and blitz decision making under clock stress.
 - *Hint Penalty*: Each progressive hint deducts 20% from your lab score; wrong moves deduct 25%.
 
 ### 3.4 Play & Serious Tournament Mode

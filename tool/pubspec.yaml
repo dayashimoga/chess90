@@ -23,6 +23,7 @@ dependencies:
     path: ../packages/chess_content
   chess_video:
     path: ../packages/chess_video
+  image: ^4.9.2
 
 dev_dependencies:
   test: ^1.24.0

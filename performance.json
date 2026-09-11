@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-11T02:59:30.397604Z",
+  "timestamp": "2026-09-11T03:57:39.647420Z",
   "environment": {
     "os": "linux",
     "osVersion": "Linux 6.18.33.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun 18 21:54:43 UTC 2026",
@@ -7,8 +7,8 @@
     "cpuCount": 14
   },
   "summary": {
-    "totalBenchmarks": 7,
-    "passed": 7,
+    "totalBenchmarks": 16,
+    "passed": 16,
     "failed": 0,
     "overallStatus": "PASSED"
   },
@@ -16,72 +16,162 @@
     {
       "name": "Move Generation & Perft Depth 3",
       "category": "Chess Core",
-      "value": 798629.18,
+      "value": 995571.26,
       "unit": "nodes/sec",
       "budgetThreshold": 15000.0,
       "higherIsBetter": true,
       "passed": true,
-      "notes": "Completed 44510 nodes in 55ms across 5 iterations."
+      "notes": "Completed 44510 nodes in 44ms across 5 iterations."
     },
     {
       "name": "FEN Parsing & Validation",
       "category": "Chess Core",
-      "value": 87915.95,
+      "value": 95794.62,
       "unit": "fens/sec",
       "budgetThreshold": 10000.0,
       "higherIsBetter": true,
       "passed": true,
-      "notes": "2000 FEN parses completed in 22ms."
+      "notes": "2000 FEN parses completed in 20ms."
     },
     {
       "name": "PGN Parsing Throughput",
       "category": "Chess Core",
-      "value": 865.13,
+      "value": 945.39,
       "unit": "games/sec",
       "budgetThreshold": 500.0,
       "higherIsBetter": true,
       "passed": true,
-      "notes": "300 full 41-move games (24300 plies) parsed in 346ms."
+      "notes": "300 full 41-move games (24300 plies) parsed in 317ms."
     },
     {
       "name": "Engine Search Depth 4 Latency",
       "category": "Chess Engine",
-      "value": 31.0,
+      "value": 29.0,
       "unit": "ms",
       "budgetThreshold": 300.0,
       "higherIsBetter": false,
       "passed": true,
-      "notes": "Best move: b1c3, score: 54cp in 31ms."
+      "notes": "Best move: b1c3, score: 54cp in 29ms."
     },
     {
       "name": "SRS Scheduling Calculation",
       "category": "Chess Learning",
-      "value": 60360.96,
+      "value": 70896.85,
       "unit": "calculations/sec",
       "budgetThreshold": 10000.0,
       "higherIsBetter": true,
       "passed": true,
-      "notes": "1000 Leitner scheduling transitions calculated in 16ms. Retention: 75.0%."
+      "notes": "1000 Leitner scheduling transitions calculated in 14ms. Retention: 75.0%."
     },
     {
       "name": "Storage CRUD Operations",
       "category": "Chess Storage",
-      "value": 613496.93,
+      "value": 474383.3,
       "unit": "ops/sec",
       "budgetThreshold": 2000.0,
       "higherIsBetter": true,
       "passed": true,
-      "notes": "500 serialized game records inserted & retrieved in 0ms."
+      "notes": "500 serialized game records inserted & retrieved in 1ms."
     },
     {
       "name": "Video Timeline Generation",
       "category": "Chess Video",
-      "value": 0.64,
+      "value": 1.04,
       "unit": "ms/timeline",
       "budgetThreshold": 20.0,
       "higherIsBetter": false,
       "passed": true,
       "notes": "50 20-move timelines generated with full evaluation sync."
+    },
+    {
+      "name": "Cold Start Initialization Latency",
+      "category": "UX Performance",
+      "value": 0.85,
+      "unit": "ms",
+      "budgetThreshold": 50.0,
+      "higherIsBetter": false,
+      "passed": true,
+      "notes": "Subsystem initialization, profile load, and 90-day catalog index averaged 0.85ms."
+    },
+    {
+      "name": "First Board Paint & Layout Latency",
+      "category": "UX Performance",
+      "value": 0.03,
+      "unit": "ms",
+      "budgetThreshold": 10.0,
+      "higherIsBetter": false,
+      "passed": true,
+      "notes": "64-square geometry, piece coordinate matrix, and legal move targets generated in 0.03ms."
+    },
+    {
+      "name": "Screen Navigation Route Latency",
+      "category": "UX Performance",
+      "value": 0.0,
+      "unit": "ms/nav",
+      "budgetThreshold": 1.0,
+      "higherIsBetter": false,
+      "passed": true,
+      "notes": "Route parsing & parameter resolution averaged 4.9µs per transition."
+    },
+    {
+      "name": "Puzzle Load & FEN Verification Latency",
+      "category": "UX Performance",
+      "value": 0.03,
+      "unit": "ms/puzzle",
+      "budgetThreshold": 5.0,
+      "higherIsBetter": false,
+      "passed": true,
+      "notes": "Puzzle setup, FEN validation, and move tree validation averaged 0.026ms."
+    },
+    {
+      "name": "Engine First-Result Latency (d2)",
+      "category": "Chess Engine",
+      "value": 0.4,
+      "unit": "ms",
+      "budgetThreshold": 15.0,
+      "higherIsBetter": false,
+      "passed": true,
+      "notes": "Engine returned instant evaluation within 0.40ms."
+    },
+    {
+      "name": "ECO Opening Search Latency",
+      "category": "Chess Content",
+      "value": 0.01,
+      "unit": "ms/query",
+      "budgetThreshold": 5.0,
+      "higherIsBetter": false,
+      "passed": true,
+      "notes": "Trie sequence matching across openings averaged 0.010ms."
+    },
+    {
+      "name": "Video Preview Frame Timeline Latency",
+      "category": "Chess Video",
+      "value": 0.2,
+      "unit": "ms/render",
+      "budgetThreshold": 15.0,
+      "higherIsBetter": false,
+      "passed": true,
+      "notes": "Timeline keyframe interpolation computed in 0.20ms."
+    },
+    {
+      "name": "Process Resident Memory Footprint (RSS)",
+      "category": "System Performance",
+      "value": 284.82,
+      "unit": "MB",
+      "budgetThreshold": 350.0,
+      "higherIsBetter": false,
+      "passed": true,
+      "notes": "Current RSS: 284.8 MB (Budget: <=350 MB)."
+    },
+    {
+      "name": "Frame Time P95 (60fps Budget: 16.6ms)",
+      "category": "UX Performance",
+      "value": 0.0,
+      "unit": "ms",
+      "budgetThreshold": 5.0,
+      "higherIsBetter": false,
+      "passed": true,
+      "notes": "P50: 0.00ms, P95: 0.00ms, P99: 0.00ms, Jank (>16.6ms): 0/1000 (0.00%)."
     }
   ]
 }

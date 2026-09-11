@@ -13,65 +13,137 @@ th { background: #0f172a; color: #94a3b8; font-weight: 600; text-transform: uppe
 .badge-fail { background: #ef4444; color: #fff; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 12px; }
 </style></head><body><div class="container">
 <h1>ChessMaster Performance Benchmark Report</h1>
-<div class="subtitle">Generated: 2026-09-11T02:59:30.405455Z | Dart 3.13.3 | 14 CPUs</div>
+<div class="subtitle">Generated: 2026-09-11T03:57:39.654672Z | Dart 3.13.3 | 14 CPUs</div>
 <div class="card">
 <h2>Status: <span class="badge-pass">ALL BUDGETS SATISFIED</span></h2>
-<p>Passed: 7 / 7 benchmarks</p>
+<p>Passed: 16 / 16 benchmarks</p>
 <table><tr><th>Benchmark</th><th>Category</th><th>Measured Value</th><th>Budget Threshold</th><th>Status</th><th>Notes</th></tr>
 <tr>
 <td><strong>Move Generation & Perft Depth 3</strong></td>
 <td>Chess Core</td>
-<td>798629.1784041771 nodes/sec</td>
+<td>995571.2624138857 nodes/sec</td>
 <td>&ge; 15000.0 nodes/sec</td>
 <td><span class="badge-pass">PASS</span></td>
-<td style="color: #94a3b8; font-size: 12px;">Completed 44510 nodes in 55ms across 5 iterations.</td>
+<td style="color: #94a3b8; font-size: 12px;">Completed 44510 nodes in 44ms across 5 iterations.</td>
 </tr>
 <tr>
 <td><strong>FEN Parsing & Validation</strong></td>
 <td>Chess Core</td>
-<td>87915.95234955383 fens/sec</td>
+<td>95794.61634256154 fens/sec</td>
 <td>&ge; 10000.0 fens/sec</td>
 <td><span class="badge-pass">PASS</span></td>
-<td style="color: #94a3b8; font-size: 12px;">2000 FEN parses completed in 22ms.</td>
+<td style="color: #94a3b8; font-size: 12px;">2000 FEN parses completed in 20ms.</td>
 </tr>
 <tr>
 <td><strong>PGN Parsing Throughput</strong></td>
 <td>Chess Core</td>
-<td>865.1267410675663 games/sec</td>
+<td>945.3940402359704 games/sec</td>
 <td>&ge; 500.0 games/sec</td>
 <td><span class="badge-pass">PASS</span></td>
-<td style="color: #94a3b8; font-size: 12px;">300 full 41-move games (24300 plies) parsed in 346ms.</td>
+<td style="color: #94a3b8; font-size: 12px;">300 full 41-move games (24300 plies) parsed in 317ms.</td>
 </tr>
 <tr>
 <td><strong>Engine Search Depth 4 Latency</strong></td>
 <td>Chess Engine</td>
-<td>31.0 ms</td>
+<td>29.0 ms</td>
 <td>&le; 300.0 ms</td>
 <td><span class="badge-pass">PASS</span></td>
-<td style="color: #94a3b8; font-size: 12px;">Best move: b1c3, score: 54cp in 31ms.</td>
+<td style="color: #94a3b8; font-size: 12px;">Best move: b1c3, score: 54cp in 29ms.</td>
 </tr>
 <tr>
 <td><strong>SRS Scheduling Calculation</strong></td>
 <td>Chess Learning</td>
-<td>60360.9585320215 calculations/sec</td>
+<td>70896.84509039349 calculations/sec</td>
 <td>&ge; 10000.0 calculations/sec</td>
 <td><span class="badge-pass">PASS</span></td>
-<td style="color: #94a3b8; font-size: 12px;">1000 Leitner scheduling transitions calculated in 16ms. Retention: 75.0%.</td>
+<td style="color: #94a3b8; font-size: 12px;">1000 Leitner scheduling transitions calculated in 14ms. Retention: 75.0%.</td>
 </tr>
 <tr>
 <td><strong>Storage CRUD Operations</strong></td>
 <td>Chess Storage</td>
-<td>613496.9325153375 ops/sec</td>
+<td>474383.3017077799 ops/sec</td>
 <td>&ge; 2000.0 ops/sec</td>
 <td><span class="badge-pass">PASS</span></td>
-<td style="color: #94a3b8; font-size: 12px;">500 serialized game records inserted & retrieved in 0ms.</td>
+<td style="color: #94a3b8; font-size: 12px;">500 serialized game records inserted & retrieved in 1ms.</td>
 </tr>
 <tr>
 <td><strong>Video Timeline Generation</strong></td>
 <td>Chess Video</td>
-<td>0.64 ms/timeline</td>
+<td>1.04 ms/timeline</td>
 <td>&le; 20.0 ms/timeline</td>
 <td><span class="badge-pass">PASS</span></td>
 <td style="color: #94a3b8; font-size: 12px;">50 20-move timelines generated with full evaluation sync.</td>
+</tr>
+<tr>
+<td><strong>Cold Start Initialization Latency</strong></td>
+<td>UX Performance</td>
+<td>0.85 ms</td>
+<td>&le; 50.0 ms</td>
+<td><span class="badge-pass">PASS</span></td>
+<td style="color: #94a3b8; font-size: 12px;">Subsystem initialization, profile load, and 90-day catalog index averaged 0.85ms.</td>
+</tr>
+<tr>
+<td><strong>First Board Paint & Layout Latency</strong></td>
+<td>UX Performance</td>
+<td>0.03 ms</td>
+<td>&le; 10.0 ms</td>
+<td><span class="badge-pass">PASS</span></td>
+<td style="color: #94a3b8; font-size: 12px;">64-square geometry, piece coordinate matrix, and legal move targets generated in 0.03ms.</td>
+</tr>
+<tr>
+<td><strong>Screen Navigation Route Latency</strong></td>
+<td>UX Performance</td>
+<td>0.004893799999999999 ms/nav</td>
+<td>&le; 1.0 ms/nav</td>
+<td><span class="badge-pass">PASS</span></td>
+<td style="color: #94a3b8; font-size: 12px;">Route parsing & parameter resolution averaged 4.9µs per transition.</td>
+</tr>
+<tr>
+<td><strong>Puzzle Load & FEN Verification Latency</strong></td>
+<td>UX Performance</td>
+<td>0.02625 ms/puzzle</td>
+<td>&le; 5.0 ms/puzzle</td>
+<td><span class="badge-pass">PASS</span></td>
+<td style="color: #94a3b8; font-size: 12px;">Puzzle setup, FEN validation, and move tree validation averaged 0.026ms.</td>
+</tr>
+<tr>
+<td><strong>Engine First-Result Latency (d2)</strong></td>
+<td>Chess Engine</td>
+<td>0.4 ms</td>
+<td>&le; 15.0 ms</td>
+<td><span class="badge-pass">PASS</span></td>
+<td style="color: #94a3b8; font-size: 12px;">Engine returned instant evaluation within 0.40ms.</td>
+</tr>
+<tr>
+<td><strong>ECO Opening Search Latency</strong></td>
+<td>Chess Content</td>
+<td>0.01 ms/query</td>
+<td>&le; 5.0 ms/query</td>
+<td><span class="badge-pass">PASS</span></td>
+<td style="color: #94a3b8; font-size: 12px;">Trie sequence matching across openings averaged 0.010ms.</td>
+</tr>
+<tr>
+<td><strong>Video Preview Frame Timeline Latency</strong></td>
+<td>Chess Video</td>
+<td>0.2 ms/render</td>
+<td>&le; 15.0 ms/render</td>
+<td><span class="badge-pass">PASS</span></td>
+<td style="color: #94a3b8; font-size: 12px;">Timeline keyframe interpolation computed in 0.20ms.</td>
+</tr>
+<tr>
+<td><strong>Process Resident Memory Footprint (RSS)</strong></td>
+<td>System Performance</td>
+<td>284.8203125 MB</td>
+<td>&le; 350.0 MB</td>
+<td><span class="badge-pass">PASS</span></td>
+<td style="color: #94a3b8; font-size: 12px;">Current RSS: 284.8 MB (Budget: <=350 MB).</td>
+</tr>
+<tr>
+<td><strong>Frame Time P95 (60fps Budget: 16.6ms)</strong></td>
+<td>UX Performance</td>
+<td>0.0 ms</td>
+<td>&le; 5.0 ms</td>
+<td><span class="badge-pass">PASS</span></td>
+<td style="color: #94a3b8; font-size: 12px;">P50: 0.00ms, P95: 0.00ms, P99: 0.00ms, Jank (>16.6ms): 0/1000 (0.00%).</td>
 </tr>
 </table></div></div></body></html>
