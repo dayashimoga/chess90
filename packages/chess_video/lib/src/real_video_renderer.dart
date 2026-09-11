@@ -39,15 +39,47 @@ class RealVideoRenderer {
     if (envPath != null && File(envPath).existsSync()) return envPath;
 
     if (Platform.isWindows) {
-      const wingetCandidate = r'C:\Users\dayan\AppData\Local\Microsoft\WinGet\Packages\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\ffmpeg-9.0.1-full_build\bin\ffmpeg.exe';
-      if (File(wingetCandidate).existsSync()) return wingetCandidate;
+      final localAppData = Platform.environment['LOCALAPPDATA'];
+      if (localAppData != null) {
+        try {
+          final wingetPackages = Directory('$localAppData\\Microsoft\\WinGet\\Packages');
+          if (wingetPackages.existsSync()) {
+            final ffmpegDirs = wingetPackages
+                .listSync()
+                .whereType<Directory>()
+                .where((d) => d.path.toLowerCase().contains('ffmpeg'));
+            for (final d in ffmpegDirs) {
+              final exeCandidates = d
+                  .listSync(recursive: true)
+                  .whereType<File>()
+                  .where((f) => f.path.toLowerCase().endsWith('ffmpeg.exe'));
+              for (final exe in exeCandidates) {
+                return exe.path;
+              }
+            }
+          }
+        } catch (_) {}
+      }
+
+      const standardWindowsPaths = [
+        r'C:\ProgramData\chocolatey\bin\ffmpeg.exe',
+        r'C:\tools\ffmpeg\bin\ffmpeg.exe',
+        r'C:\Program Files\ffmpeg\bin\ffmpeg.exe',
+        r'C:\ffmpeg\bin\ffmpeg.exe',
+      ];
+      for (final p in standardWindowsPaths) {
+        if (File(p).existsSync()) return p;
+      }
     }
 
     try {
       final check = Process.runSync(Platform.isWindows ? 'where.exe' : 'which', ['ffmpeg']);
       if (check.exitCode == 0) {
-        final firstLine = check.stdout.toString().split('\r\n').first.trim();
-        if (File(firstLine).existsSync()) return firstLine;
+        final lines = check.stdout.toString().split(RegExp(r'[\r\n]+'));
+        for (final line in lines) {
+          final trimmed = line.trim();
+          if (trimmed.isNotEmpty && File(trimmed).existsSync()) return trimmed;
+        }
       }
     } catch (_) {}
 
@@ -60,15 +92,47 @@ class RealVideoRenderer {
     if (envPath != null && File(envPath).existsSync()) return envPath;
 
     if (Platform.isWindows) {
-      const wingetCandidate = r'C:\Users\dayan\AppData\Local\Microsoft\WinGet\Packages\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\ffmpeg-9.0.1-full_build\bin\ffprobe.exe';
-      if (File(wingetCandidate).existsSync()) return wingetCandidate;
+      final localAppData = Platform.environment['LOCALAPPDATA'];
+      if (localAppData != null) {
+        try {
+          final wingetPackages = Directory('$localAppData\\Microsoft\\WinGet\\Packages');
+          if (wingetPackages.existsSync()) {
+            final ffmpegDirs = wingetPackages
+                .listSync()
+                .whereType<Directory>()
+                .where((d) => d.path.toLowerCase().contains('ffmpeg'));
+            for (final d in ffmpegDirs) {
+              final exeCandidates = d
+                  .listSync(recursive: true)
+                  .whereType<File>()
+                  .where((f) => f.path.toLowerCase().endsWith('ffprobe.exe'));
+              for (final exe in exeCandidates) {
+                return exe.path;
+              }
+            }
+          }
+        } catch (_) {}
+      }
+
+      const standardWindowsPaths = [
+        r'C:\ProgramData\chocolatey\bin\ffprobe.exe',
+        r'C:\tools\ffmpeg\bin\ffprobe.exe',
+        r'C:\Program Files\ffmpeg\bin\ffprobe.exe',
+        r'C:\ffmpeg\bin\ffprobe.exe',
+      ];
+      for (final p in standardWindowsPaths) {
+        if (File(p).existsSync()) return p;
+      }
     }
 
     try {
       final check = Process.runSync(Platform.isWindows ? 'where.exe' : 'which', ['ffprobe']);
       if (check.exitCode == 0) {
-        final firstLine = check.stdout.toString().split('\r\n').first.trim();
-        if (File(firstLine).existsSync()) return firstLine;
+        final lines = check.stdout.toString().split(RegExp(r'[\r\n]+'));
+        for (final line in lines) {
+          final trimmed = line.trim();
+          if (trimmed.isNotEmpty && File(trimmed).existsSync()) return trimmed;
+        }
       }
     } catch (_) {}
 

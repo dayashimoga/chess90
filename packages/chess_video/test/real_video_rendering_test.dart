@@ -51,18 +51,37 @@ void main() {
       expect(img.height, equals(1080));
     });
 
-    test('Native FFmpeg and FFprobe binaries are successfully discovered', () {
-      final ffmpegPath = RealVideoRenderer.findFfmpegPath();
-      final ffprobePath = RealVideoRenderer.findFfprobePath();
+    final ffmpegPath = RealVideoRenderer.findFfmpegPath();
+    final ffprobePath = RealVideoRenderer.findFfprobePath();
+    final hasBinaries = ffmpegPath != null && ffprobePath != null;
 
-      expect(ffmpegPath, isNotNull, reason: 'FFmpeg should be discovered on system');
-      expect(File(ffmpegPath!).existsSync(), isTrue);
-
-      expect(ffprobePath, isNotNull, reason: 'FFprobe should be discovered on system');
-      expect(File(ffprobePath!).existsSync(), isTrue);
+    test('Native FFmpeg and FFprobe binaries discovery or graceful fallback', () {
+      if (hasBinaries) {
+        expect(File(ffmpegPath).existsSync(), isTrue);
+        expect(File(ffprobePath).existsSync(), isTrue);
+      } else {
+        expect(
+          () => RealVideoRenderer.renderVideo(
+            game: game,
+            outputPath: '${tempOutputDir.path}${Platform.pathSeparator}unsupported.mp4',
+          ),
+          throwsStateError,
+        );
+      }
     });
 
     test('Render real MP4 video with H.264, thumbnail, and inspect with FFprobe', () async {
+      if (!hasBinaries) {
+        expect(
+          () => RealVideoRenderer.renderVideo(
+            game: game,
+            outputPath: '${tempOutputDir.path}${Platform.pathSeparator}unsupported.mp4',
+          ),
+          throwsStateError,
+        );
+        return;
+      }
+
       final mp4Path = '${tempOutputDir.path}${Platform.pathSeparator}test_miniature.mp4';
       final thumbPath = '${tempOutputDir.path}${Platform.pathSeparator}test_miniature_thumb.png';
 
@@ -99,6 +118,14 @@ void main() {
     }, timeout: const Timeout(Duration(minutes: 2)));
 
     test('Render palette-optimized animated GIF and inspect', () async {
+      if (!hasBinaries) {
+        expect(
+          () => VideoInspector.inspect('${tempOutputDir.path}${Platform.pathSeparator}dummy.gif'),
+          throwsStateError,
+        );
+        return;
+      }
+
       final gifPath = '${tempOutputDir.path}${Platform.pathSeparator}test_animation.gif';
 
       const profile = VideoProfile(

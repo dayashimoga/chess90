@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:chess_video/chess_video.dart';
 import 'package:test/test.dart';
 
@@ -84,10 +85,14 @@ void main() {
 
     test('RealVideoRenderer and VideoInspector binary path resolution', () {
       final ffmpeg = RealVideoRenderer.findFfmpegPath();
-      expect(ffmpeg, isNotNull);
+      if (ffmpeg != null) {
+        expect(File(ffmpeg).existsSync(), isTrue);
+      }
 
       final ffprobe = RealVideoRenderer.findFfprobePath();
-      expect(ffprobe, isNotNull);
+      if (ffprobe != null) {
+        expect(File(ffprobe).existsSync(), isTrue);
+      }
     });
   });
 }

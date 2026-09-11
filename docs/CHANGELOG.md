@@ -128,3 +128,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   - Published comprehensive 15-file documentation suite in `docs/` with explicit FIDE non-title educational disclaimers.
   - Fixed Android build commands in CI workflows (`.github/workflows/pr.yml`, `.github/workflows/release.yml`) and `docs/BUILD_RELEASE.md` by removing invalid `=false` value from `--split-per-abi` boolean flag.
   - Updated Android application label in `AndroidManifest.xml` from `chess_app` to `ChessMaster`.
+  - Resolved Windows CI test failures in `packages/chess_video`: eliminated hardcoded user path in `RealVideoRenderer`, introduced dynamic WinGet and Chocolatey binary resolution, added FFmpeg installation on Windows runner in GitHub Actions, and updated tests to gracefully assert offline/unavailable failure modes.

@@ -33,6 +33,10 @@ jobs:
         if: runner.os != 'Windows'
         run: bash scripts/test.sh
 
+      - name: Install System Utilities on Windows (FFmpeg)
+        if: runner.os == 'Windows'
+        run: choco install ffmpeg --no-progress
+
       - name: Monorepo Package Tests (Windows)
         if: runner.os == 'Windows'
         run: powershell scripts/test.ps1
