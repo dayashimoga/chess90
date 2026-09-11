@@ -33,9 +33,9 @@ class VideoRenderResult {
 
 /// Production video rendering engine that renders real MP4 / GIF / WebM using native FFmpeg.
 class RealVideoRenderer {
-  /// Resolves the absolute path to the native FFmpeg executable.
-  static String? findFfmpegPath() {
-    final envPath = Platform.environment['FFMPEG_PATH'];
+  /// Resolves the absolute path to a native binary (ffmpeg or ffprobe).
+  static String? _findBinary(String binaryName, String envVar) {
+    final envPath = Platform.environment[envVar];
     if (envPath != null && File(envPath).existsSync()) return envPath;
 
     if (Platform.isWindows) {
@@ -44,16 +44,16 @@ class RealVideoRenderer {
         try {
           final wingetPackages = Directory('$localAppData\\Microsoft\\WinGet\\Packages');
           if (wingetPackages.existsSync()) {
-            final ffmpegDirs = wingetPackages
+            final dirs = wingetPackages
                 .listSync()
                 .whereType<Directory>()
                 .where((d) => d.path.toLowerCase().contains('ffmpeg'));
-            for (final d in ffmpegDirs) {
-              final exeCandidates = d
+            for (final d in dirs) {
+              final candidates = d
                   .listSync(recursive: true)
                   .whereType<File>()
-                  .where((f) => f.path.toLowerCase().endsWith('ffmpeg.exe'));
-              for (final exe in exeCandidates) {
+                  .where((f) => f.path.toLowerCase().endsWith('$binaryName.exe'));
+              for (final exe in candidates) {
                 return exe.path;
               }
             }
@@ -61,11 +61,11 @@ class RealVideoRenderer {
         } catch (_) {}
       }
 
-      const standardWindowsPaths = [
-        r'C:\ProgramData\chocolatey\bin\ffmpeg.exe',
-        r'C:\tools\ffmpeg\bin\ffmpeg.exe',
-        r'C:\Program Files\ffmpeg\bin\ffmpeg.exe',
-        r'C:\ffmpeg\bin\ffmpeg.exe',
+      final standardWindowsPaths = [
+        'C:\\ProgramData\\chocolatey\\bin\\$binaryName.exe',
+        'C:\\tools\\ffmpeg\\bin\\$binaryName.exe',
+        'C:\\Program Files\\ffmpeg\\bin\\$binaryName.exe',
+        'C:\\ffmpeg\\bin\\$binaryName.exe',
       ];
       for (final p in standardWindowsPaths) {
         if (File(p).existsSync()) return p;
@@ -73,7 +73,7 @@ class RealVideoRenderer {
     }
 
     try {
-      final check = Process.runSync(Platform.isWindows ? 'where.exe' : 'which', ['ffmpeg']);
+      final check = Process.runSync(Platform.isWindows ? 'where.exe' : 'which', [binaryName]);
       if (check.exitCode == 0) {
         final lines = check.stdout.toString().split(RegExp(r'[\r\n]+'));
         for (final line in lines) {
@@ -85,59 +85,12 @@ class RealVideoRenderer {
 
     return null;
   }
+
+  /// Resolves the absolute path to the native FFmpeg executable.
+  static String? findFfmpegPath() => _findBinary('ffmpeg', 'FFMPEG_PATH');
 
   /// Resolves the absolute path to the native FFprobe executable.
-  static String? findFfprobePath() {
-    final envPath = Platform.environment['FFPROBE_PATH'];
-    if (envPath != null && File(envPath).existsSync()) return envPath;
-
-    if (Platform.isWindows) {
-      final localAppData = Platform.environment['LOCALAPPDATA'];
-      if (localAppData != null) {
-        try {
-          final wingetPackages = Directory('$localAppData\\Microsoft\\WinGet\\Packages');
-          if (wingetPackages.existsSync()) {
-            final ffmpegDirs = wingetPackages
-                .listSync()
-                .whereType<Directory>()
-                .where((d) => d.path.toLowerCase().contains('ffmpeg'));
-            for (final d in ffmpegDirs) {
-              final exeCandidates = d
-                  .listSync(recursive: true)
-                  .whereType<File>()
-                  .where((f) => f.path.toLowerCase().endsWith('ffprobe.exe'));
-              for (final exe in exeCandidates) {
-                return exe.path;
-              }
-            }
-          }
-        } catch (_) {}
-      }
-
-      const standardWindowsPaths = [
-        r'C:\ProgramData\chocolatey\bin\ffprobe.exe',
-        r'C:\tools\ffmpeg\bin\ffprobe.exe',
-        r'C:\Program Files\ffmpeg\bin\ffprobe.exe',
-        r'C:\ffmpeg\bin\ffprobe.exe',
-      ];
-      for (final p in standardWindowsPaths) {
-        if (File(p).existsSync()) return p;
-      }
-    }
-
-    try {
-      final check = Process.runSync(Platform.isWindows ? 'where.exe' : 'which', ['ffprobe']);
-      if (check.exitCode == 0) {
-        final lines = check.stdout.toString().split(RegExp(r'[\r\n]+'));
-        for (final line in lines) {
-          final trimmed = line.trim();
-          if (trimmed.isNotEmpty && File(trimmed).existsSync()) return trimmed;
-        }
-      }
-    } catch (_) {}
-
-    return null;
-  }
+  static String? findFfprobePath() => _findBinary('ffprobe', 'FFPROBE_PATH');
 
   /// Renders a full playable MP4, GIF, or WebM video from a PGN game.
   static Future<VideoRenderResult> renderVideo({

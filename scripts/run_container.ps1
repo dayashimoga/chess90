@@ -1,7 +1,7 @@
 # ChessMaster Podman / OCI Container Automation Script
 [CmdletBinding()]
 param (
-    [ValidateSet("build", "test", "coverage", "performance", "security", "acceptance", "shell", "serve")]
+    [ValidateSet("build", "test", "coverage", "performance", "security", "acceptance", "content-validate", "simulation-validate", "certify", "shell", "serve")]
     [string]$Action = "test",
     [string]$Port = "8080"
 )
@@ -72,6 +72,21 @@ switch ($Action) {
     "acceptance" {
         Write-Host "[Container] Running full acceptance certification in container..." -ForegroundColor Cyan
         & $containerEngine run --rm -v "${rootDir}:/workspace:z" -w /workspace $imageTag bash scripts/acceptance.sh --full
+    }
+
+    "content-validate" {
+        Write-Host "[Container] Running 90-day content depth & legal move validator in container..." -ForegroundColor Cyan
+        & $containerEngine run --rm -v "${rootDir}:/workspace:z" -w /workspace $imageTag bash -c "cd tool && dart pub get && dart run content_validator.dart"
+    }
+
+    "simulation-validate" {
+        Write-Host "[Container] Running 90-day deterministic simulation runner in container..." -ForegroundColor Cyan
+        & $containerEngine run --rm -v "${rootDir}:/workspace:z" -w /workspace $imageTag bash -c "cd tool && dart pub get && dart run simulation_runner.dart"
+    }
+
+    "certify" {
+        Write-Host "[Container] Running end-to-end certification gate in container..." -ForegroundColor Cyan
+        & $containerEngine run --rm -v "${rootDir}:/workspace:z" -w /workspace $imageTag bash -c "bash scripts/test.sh && cd tool && dart pub get && dart run content_validator.dart && dart run simulation_runner.dart && dart run coverage_runner.dart && dart run performance_runner.dart && dart run security_runner.dart"
     }
 
     "shell" {

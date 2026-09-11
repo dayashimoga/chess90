@@ -34,6 +34,23 @@ class CurriculumCatalog {
     final phase = CurriculumPhase.forDay(day);
     final isExam = const [7, 14, 21, 28, 35, 42, 49, 56, 63, 70, 77, 84, 90].contains(day);
     final details = _dayDefinitions[day]!;
+    final exercises = (details['exercises'] as List<CurriculumExercise>);
+
+    final workedExamples = (details['workedExamples'] as List<dynamic>?)?.cast<String>() ??
+        _defaultWorkedExamples(day, details);
+    final referencedPuzzles = (details['referencedPuzzles'] as List<dynamic>?)?.cast<String>() ??
+        exercises.map((e) => e.id).toList();
+    final gameStudy = details['gameStudy'] as String? ?? _defaultGameStudy(day);
+    final practiceTask = details['practiceTask'] as String? ?? _defaultPracticeTask(day, isExam);
+    final assessment = details['assessment'] as String? ??
+        (isExam
+            ? 'Milestone Exam: Complete test positions with >= 85% accuracy and zero hints permitted.'
+            : 'Daily Mastery Check: Solve interactive exercises with >= 80% accuracy.');
+    final remediation = details['remediation'] as String? ??
+        _defaultRemediation(day, details['axis'] as SkillAxis);
+    final srsReview = (details['srsReview'] as List<dynamic>?)?.cast<String>() ??
+        _defaultSrsReview(day, details['theme'] as String);
+    final estimatedMinutes = details['estimatedMinutes'] as int? ?? (isExam ? 90 : 60);
 
     return CurriculumDay(
       dayNumber: day,
@@ -42,14 +59,65 @@ class CurriculumCatalog {
       theme: details['theme'] as String,
       learningObjectives: (details['objectives'] as List<dynamic>).cast<String>(),
       theoryMarkdown: details['theory'] as String,
-      exercises: (details['exercises'] as List<CurriculumExercise>),
+      exercises: exercises,
       isWeeklyExam: isExam,
       examPassThreshold: isExam ? 0.85 : 0.80,
       primarySkillAxis: details['axis'] as SkillAxis,
       referencedLabId: details['lab'] as String,
       difficultyRating: details['difficulty'] as int,
       prerequisites: (details['prerequisites'] as List<dynamic>).cast<int>(),
+      topic: details['topic'] as String? ?? details['title'] as String,
+      workedExamples: workedExamples,
+      referencedPuzzles: referencedPuzzles,
+      gameStudy: gameStudy,
+      practiceTask: practiceTask,
+      assessment: assessment,
+      masteryThreshold: isExam ? 0.85 : 0.80,
+      remediation: remediation,
+      srsReview: srsReview,
+      estimatedMinutes: estimatedMinutes,
     );
+  }
+
+  static List<String> _defaultWorkedExamples(int day, Map<String, dynamic> details) {
+    final theme = details['theme'] as String;
+    return [
+      'Master Model 1: Classic execution of $theme demonstrating calculation tree pruning.',
+      'Master Model 2: Defense under pressure and counter-strikes arising from $theme.'
+    ];
+  }
+
+  static String _defaultGameStudy(int day) {
+    if (day <= 9) return 'Paul Morphy vs Duke of Brunswick (1858) — Rapid Development & Central Dominance';
+    if (day <= 18) return 'Adolf Anderssen vs Lionel Kieseritzky (1851) — Dynamic Sacrifices & The Immortal Game';
+    if (day <= 27) return 'Garry Kasparov vs Veselin Topalov (1999) — Deep Calculation & Attack Horizon';
+    if (day <= 36) return 'Akiba Rubinstein vs Gersz Rotlewi (1907) — Rubinstein\'s Immortal & Piece Coordination';
+    if (day <= 45) return 'Jose Raul Capablanca vs Savielly Tartakower (1924) — Textbook Rook & Pawn Endgame Technique';
+    if (day <= 54) return 'Bobby Fischer vs Donald Byrne (1956) — Game of the Century & Queen Sacrifice';
+    if (day <= 63) return 'Mikhail Tal vs Bent Larsen (1965) — Intuitive Piece Sacrifice & Attack Under Stress';
+    if (day <= 72) return 'Anatoly Karpov vs Garry Kasparov (1985) — Knight Outpost Dominance & Structural Clamping';
+    if (day <= 81) return 'Magnus Carlsen vs Fabiano Caruana (2018) — Squeezing Practical Endgames & Opposition';
+    return 'Mikhail Botvinnik vs Vasily Smyslov (1954) — Complete Strategic Integration & Championship Discipline';
+  }
+
+  static String _defaultPracticeTask(int day, bool isExam) {
+    if (isExam) {
+      return 'Tournament Simulation: Play a 15+10 time-control rated sparring match against the Heuristic Engine capped at master depth, followed by full blunder post-mortem self-analysis.';
+    }
+    return 'Interactive Sparring Assignment: Complete 3 engine sparring rounds from the critical position, maintaining zero unforced blunders (<=50cp loss per move).';
+  }
+
+  static String _defaultRemediation(int day, SkillAxis axis) {
+    final priorDay = day > 1 ? day - 1 : 1;
+    return 'Mandatory Remediation: Review Day $priorDay foundations, complete 10 targeted Leitner flashcards focused on ${axis.name}, and repeat the interactive exercises with zero hint usage until reaching >=85%.';
+  }
+
+  static List<String> _defaultSrsReview(int day, String theme) {
+    return [
+      '$theme: Critical Pattern Flashcard',
+      'Candidate Move Pruning Checklist',
+      'Anti-Blunder Verification Trigger'
+    ];
   }
 
   static final Map<int, Map<String, dynamic>> _dayDefinitions = {

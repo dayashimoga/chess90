@@ -58,6 +58,18 @@ case "$ACTION" in
         echo "[Container] Running full acceptance certification in container..."
         $CONTAINER_ENGINE run --rm -v "$ROOT_DIR:/workspace:z" -w /workspace "$IMAGE_TAG" bash scripts/acceptance.sh --full
         ;;
+    content-validate)
+        echo "[Container] Running 90-day content depth & legal move validator in container..."
+        $CONTAINER_ENGINE run --rm -v "$ROOT_DIR:/workspace:z" -w /workspace "$IMAGE_TAG" bash -c "cd tool && dart pub get && dart run content_validator.dart"
+        ;;
+    simulation-validate)
+        echo "[Container] Running 90-day deterministic simulation runner in container..."
+        $CONTAINER_ENGINE run --rm -v "$ROOT_DIR:/workspace:z" -w /workspace "$IMAGE_TAG" bash -c "cd tool && dart pub get && dart run simulation_runner.dart"
+        ;;
+    certify)
+        echo "[Container] Running end-to-end certification gate in container..."
+        $CONTAINER_ENGINE run --rm -v "$ROOT_DIR:/workspace:z" -w /workspace "$IMAGE_TAG" bash -c "bash scripts/test.sh && cd tool && dart pub get && dart run content_validator.dart && dart run simulation_runner.dart && dart run coverage_runner.dart && dart run performance_runner.dart && dart run security_runner.dart"
+        ;;
     shell)
         echo "[Container] Launching interactive shell..."
         $CONTAINER_ENGINE run -it --rm -v "$ROOT_DIR:/workspace:z" -w /workspace "$IMAGE_TAG" bash

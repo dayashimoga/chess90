@@ -1,0 +1,70 @@
+{
+  "version": "1.3.0",
+  "timestamp": "2026-09-11T15:28:56.530821Z",
+  "status": "PASSED",
+  "simulations": {
+    "personaA_Dedicated": {
+      "completedDays": 90,
+      "baselineRadar": {
+        "tactics": 0.31000000000000005,
+        "calculation": 0.31000000000000005,
+        "visualization": 0.31000000000000005,
+        "strategy": 0.31000000000000005,
+        "pawnStructures": 0.31000000000000005,
+        "endgames": 0.31000000000000005,
+        "openings": 0.31000000000000005,
+        "attack": 0.31000000000000005,
+        "defense": 0.31000000000000005,
+        "conversion": 0.31000000000000005,
+        "timeManagement": 0.31000000000000005,
+        "tournamentPlay": 0.31000000000000005
+      },
+      "day90Radar": {
+        "tactics": 1.0,
+        "calculation": 0.4890000000000002,
+        "visualization": 0.31000000000000005,
+        "strategy": 0.43530000000000013,
+        "pawnStructures": 0.31000000000000005,
+        "endgames": 0.43530000000000013,
+        "openings": 0.3726500000000001,
+        "attack": 0.3726500000000001,
+        "defense": 0.31000000000000005,
+        "conversion": 0.3726500000000001,
+        "timeManagement": 0.31000000000000005,
+        "tournamentPlay": 1.0
+      },
+      "overallMastery": 16.666666666666664,
+      "srsItemsCount": 0,
+      "postRoadmap": [
+        "Focus 1: Deep Dive on Clock Management (Current Score: 31.0%)",
+        "Focus 2: Maintain 30-day spaced repetition queue (0 active items)",
+        "Focus 3: Tournament simulation against 2200+ Elo engine"
+      ]
+    },
+    "personaB_Remediation": {
+      "testDay": 12,
+      "initialScore": 0.5,
+      "threshold": 0.8,
+      "advancementBlocked": true,
+      "remediationProtocol": "Mandatory Remediation: Review Day 11 foundations, complete 10 targeted Leitner flashcards focused on tactics, and repeat the interactive exercises with zero hint usage until reaching >=85%."
+    }
+  },
+  "globalChecks": {
+    "totalDays": 90,
+    "prerequisitesValid": true,
+    "difficultyProgressionMonotonic": true,
+    "phaseAverages": {
+      "Phase 1": 1200.0,
+      "Phase 2": 1301.7692307692307,
+      "Phase 3": 1497.5,
+      "Phase 4": 1700.5,
+      "Phase 5": 1903.5,
+      "Phase 6": 2055.714285714286,
+      "Phase 7": 2157.285714285714,
+      "Phase 8": 2258.714285714286,
+      "Phase 9": 2360.285714285714,
+      "Phase 10": 2454.5
+    },
+    "fideTitleDisclaimerPresent": true
+  }
+}

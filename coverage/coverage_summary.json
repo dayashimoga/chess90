@@ -1,9 +1,9 @@
 {
-  "timestamp": "2026-09-11T03:42:15.832754",
+  "timestamp": "2026-09-11T15:29:38.557330",
   "aggregate": {
-    "linesFound": 5122,
-    "linesHit": 4771,
-    "percentage": 93.1472081218274
+    "linesFound": 5190,
+    "linesHit": 4838,
+    "percentage": 93.21772639691714
   },
   "packages": {
     "chess_core": {
@@ -128,13 +128,13 @@
       }
     },
     "chess_curriculum": {
-      "linesFound": 446,
-      "linesHit": 445,
-      "percentage": 99.77578475336323,
+      "linesFound": 501,
+      "linesHit": 500,
+      "percentage": 99.8003992015968,
       "files": {
         "package:chess_curriculum/src/models/curriculum_day.dart": {
-          "linesFound": 35,
-          "linesHit": 35,
+          "linesFound": 55,
+          "linesHit": 55,
           "percentage": 100.0
         },
         "package:chess_curriculum/src/models/curriculum_exercise.dart": {
@@ -143,9 +143,9 @@
           "percentage": 100.0
         },
         "package:chess_curriculum/src/data/curriculum_catalog.dart": {
-          "linesFound": 387,
-          "linesHit": 386,
-          "percentage": 99.74160206718346
+          "linesFound": 422,
+          "linesHit": 421,
+          "percentage": 99.76303317535546
         }
       }
     },
@@ -274,9 +274,9 @@
       }
     },
     "chess_video": {
-      "linesFound": 337,
-      "linesHit": 306,
-      "percentage": 90.80118694362018,
+      "linesFound": 350,
+      "linesHit": 318,
+      "percentage": 90.85714285714286,
       "files": {
         "package:chess_video/src/models/video_profile.dart": {
           "linesFound": 5,
@@ -290,8 +290,8 @@
         },
         "package:chess_video/src/video_timeline_generator.dart": {
           "linesFound": 84,
-          "linesHit": 69,
-          "percentage": 82.14285714285714
+          "linesHit": 84,
+          "percentage": 100.0
         },
         "package:chess_video/src/ffmpeg_command_builder.dart": {
           "linesFound": 13,
@@ -304,9 +304,9 @@
           "percentage": 99.21259842519686
         },
         "package:chess_video/src/real_video_renderer.dart": {
-          "linesFound": 60,
-          "linesHit": 50,
-          "percentage": 83.33333333333334
+          "linesFound": 73,
+          "linesHit": 47,
+          "percentage": 64.38356164383562
         },
         "package:chess_video/src/video_inspector.dart": {
           "linesFound": 45,

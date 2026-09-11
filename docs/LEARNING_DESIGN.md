@@ -67,6 +67,23 @@ When a learner makes an inaccuracy, mistake, or blunder in serious play or labs:
 5. **Daily Journey Injection**: The next daily training session automatically incorporates a targeted review drill tailored to that weakness.
 6. **Reassessment & Mastery Verification**: Once the learner demonstrates repeated accuracy and passes 7-day/30-day retention gates, the skill node transitions to `mastered`.
 
+### 4.1 Adaptive Learner Personas & Material Differentiation
+
+ChessMaster tests and validates four distinct learner personas who receive materially different daily training schedules:
+
+1. **Persona 1: The Beginner (~1000–1200 Elo)**
+   - *Profile*: Low scores across board vision, basic coordinates, and simple tactical motifs.
+   - *Plan Differentiation*: Schedules fundamental tactical pattern recognition, coordinate exercises, and basic two-ply candidate selection drills.
+2. **Persona 2: The Intermediate Club Player (~1400–1600 Elo)**
+   - *Profile*: Strong tactical intuition, but weak in theoretical endgames (Lucena, Philidor) and pawn structure dynamics (Carlsbad, IQP).
+   - *Plan Differentiation*: Reallocates time budgets from basic tactics to deep endgame conversion challenges and pawn structure transformation labs.
+3. **Persona 3: The Advanced Player (~1900–2100 Elo)**
+   - *Profile*: High theoretical mastery, but suffers catastrophic tactical blunders under severe time pressure (<30 seconds).
+   - *Plan Differentiation*: Schedules high-intensity time pressure blitz labs, critical moment detection, and candidate pruning drills.
+4. **Persona 4: The Asymmetric-Weakness Player (~1600–1800 Elo)**
+   - *Profile*: Lethal king attack (>90% accuracy) combined with brittle, passive defensive tenacity (<30% accuracy).
+   - *Plan Differentiation*: Injects intensive defensive resourcefulness labs, fortress construction, and perpetual check swindle drills.
+
 ---
 
 ## 5. Educational Integrity & Non-Promise Statement

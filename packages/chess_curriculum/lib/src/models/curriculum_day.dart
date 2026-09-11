@@ -44,6 +44,18 @@ class CurriculumDay {
   final int difficultyRating;
   final List<int> prerequisites;
 
+  // Expanded pedagogical dimensions
+  final String topic;
+  final List<String> workedExamples;
+  final List<String> referencedPuzzles;
+  final String gameStudy;
+  final String practiceTask;
+  final String assessment;
+  final double masteryThreshold;
+  final String remediation;
+  final List<String> srsReview;
+  final int estimatedMinutes;
+
   const CurriculumDay({
     required this.dayNumber,
     required this.title,
@@ -58,7 +70,26 @@ class CurriculumDay {
     this.referencedLabId = 'tactical_lab',
     this.difficultyRating = 1500,
     this.prerequisites = const [],
-  });
+    String? topic,
+    List<String>? workedExamples,
+    List<String>? referencedPuzzles,
+    String? gameStudy,
+    String? practiceTask,
+    String? assessment,
+    double? masteryThreshold,
+    String? remediation,
+    List<String>? srsReview,
+    int? estimatedMinutes,
+  })  : topic = topic ?? title,
+        workedExamples = workedExamples ?? const [],
+        referencedPuzzles = referencedPuzzles ?? const [],
+        gameStudy = gameStudy ?? 'Annotated Master Game Study',
+        practiceTask = practiceTask ?? 'Interactive Engine Sparring Session',
+        assessment = assessment ?? (isWeeklyExam ? 'Weekly Milestone Comprehensive Exam' : 'Daily Mastery Evaluation'),
+        masteryThreshold = masteryThreshold ?? (isWeeklyExam ? 0.85 : 0.80),
+        remediation = remediation ?? 'Review core tactical motifs and complete 5 targeted SRS flashcard drills.',
+        srsReview = srsReview ?? const ['Tactical Pattern Flashcards', 'Candidate Selection Review'],
+        estimatedMinutes = estimatedMinutes ?? (isWeeklyExam ? 90 : 60);
 
   Map<String, dynamic> toJson() => {
         'dayNumber': dayNumber,
@@ -74,9 +105,20 @@ class CurriculumDay {
         'referencedLabId': referencedLabId,
         'difficultyRating': difficultyRating,
         'prerequisites': prerequisites,
+        'topic': topic,
+        'workedExamples': workedExamples,
+        'referencedPuzzles': referencedPuzzles,
+        'gameStudy': gameStudy,
+        'practiceTask': practiceTask,
+        'assessment': assessment,
+        'masteryThreshold': masteryThreshold,
+        'remediation': remediation,
+        'srsReview': srsReview,
+        'estimatedMinutes': estimatedMinutes,
       };
 
   factory CurriculumDay.fromJson(Map<String, dynamic> json) {
+    final isExam = json['isWeeklyExam'] as bool? ?? false;
     return CurriculumDay(
       dayNumber: json['dayNumber'] as int,
       title: json['title'] as String,
@@ -87,12 +129,22 @@ class CurriculumDay {
       exercises: (json['exercises'] as List<dynamic>)
           .map((e) => CurriculumExercise.fromJson(e as Map<String, dynamic>))
           .toList(),
-      isWeeklyExam: json['isWeeklyExam'] as bool? ?? false,
+      isWeeklyExam: isExam,
       examPassThreshold: (json['examPassThreshold'] as num?)?.toDouble() ?? 0.85,
       primarySkillAxis: SkillAxis.values.firstWhere((a) => a.name == json['primarySkillAxis']),
       referencedLabId: json['referencedLabId'] as String? ?? 'tactical_lab',
       difficultyRating: json['difficultyRating'] as int? ?? 1500,
       prerequisites: (json['prerequisites'] as List<dynamic>?)?.cast<int>() ?? const [],
+      topic: json['topic'] as String?,
+      workedExamples: (json['workedExamples'] as List<dynamic>?)?.cast<String>(),
+      referencedPuzzles: (json['referencedPuzzles'] as List<dynamic>?)?.cast<String>(),
+      gameStudy: json['gameStudy'] as String?,
+      practiceTask: json['practiceTask'] as String?,
+      assessment: json['assessment'] as String?,
+      masteryThreshold: (json['masteryThreshold'] as num?)?.toDouble(),
+      remediation: json['remediation'] as String?,
+      srsReview: (json['srsReview'] as List<dynamic>?)?.cast<String>(),
+      estimatedMinutes: json['estimatedMinutes'] as int?,
     );
   }
 }

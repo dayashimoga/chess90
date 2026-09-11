@@ -97,3 +97,17 @@ This document is strictly append-only. Completed tasks are marked with `[x]` and
 - [x] (2026-09-11) Fix Android build flag in CI (`.github/workflows/pr.yml`, `release.yml`, and `docs/BUILD_RELEASE.md`) removing invalid `--split-per-abi=false` flag and updating Android application label to `ChessMaster`.
 - [x] (2026-09-11) Fix Windows `powershell scripts/test.ps1` CI failures in `packages/chess_video`: remove hardcoded user directory, add dynamic WinGet/Chocolatey/standard path resolution, install FFmpeg on Windows CI runner, and support graceful offline/failure mode testing when binaries are absent.
 - [x] (2026-09-11) Fix Podman/OCI rootless container build failure in `infra/Containerfile`: configure `TAR_OPTIONS="--no-same-owner"` and `/usr/local/bin/tar` wrapper to prevent tar ownership errors (`chown to uid 397546, gid 5000: Invalid argument`) during Flutter precache of gradle-wrapper in rootless container environments.
+
+---
+
+## Final Forensic Gap-Closure & Production Certification Milestone (v1.3.0)
+
+- [x] (2026-09-11) Enforce complete 14-dimension pedagogical schema in `packages/chess_curriculum` (`workedExamples`, `gameStudy`, `remediation`, `srsReview`, `masteryThreshold`, etc.).
+- [x] (2026-09-11) Implement `tool/content_validator.dart` verifying 90/90 days, 92 exercises, 4 model games, 13 ECO openings, 16 interactive labs, generating `docs/CONTENT_INVENTORY.md` and `docs/FULL_90_DAY_CURRICULUM.md`.
+- [x] (2026-09-11) Implement adaptive learner persona test suite `packages/chess_learning/test/adaptive_persona_simulation_test.dart` proving 4 personas receive materially different daily plans and failure blocks false graduation.
+- [x] (2026-09-11) Implement `tool/simulation_runner.dart` simulating full 90 days for all personas, verifying reachability, monotonic difficulty progression, prerequisite enforcement, and baseline vs Day 90 radar comparison, generating `90_day_validation.json` and `90_day_validation.html`.
+- [x] (2026-09-11) Refactor `tool/performance_runner.dart` under Directive 9 strictly separating Section A (algorithmic microbenchmarks) from Section B (real packaged UX latencies), eliminating synthetic 0.00ms UX claims, generating `performance.json` and `performance.html`.
+- [x] (2026-09-11) Add all 18 visible dedicated CI/CD jobs to `.github/workflows/pr.yml` and multi-platform release automation to `.github/workflows/release.yml`.
+- [x] (2026-09-11) Add one-command PowerShell and POSIX scripts in `scripts/` (`build`, `package`, `certify`, `content_validate`, `simulation_validate`, `coverage`, `performance`, `security`).
+- [x] (2026-09-11) Update full documentation suite in `docs/` (`REQUIREMENTS.md`, `LEARNING_DESIGN.md`, `PLATFORM_MATRIX.md`, `TESTING.md`, `PRODUCTION_CERTIFICATION.md`) with explicit FIDE title non-promise disclaimers and zero placeholders.
+

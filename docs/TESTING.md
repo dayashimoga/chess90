@@ -94,14 +94,14 @@ ChessMaster enforces a strict zero-regression quality standard:
 |:---|:---:|:---:|:---:|:---:|:---:|
 | **`chess_core`** | 886 | 932 | **95.1%** | $\ge 95.0\%$ | **PASS** |
 | **`chess_learning`** | 215 | 219 | **98.2%** | $\ge 95.0\%$ | **PASS** |
-| **`chess_curriculum`**| 445 | 446 | **99.8%** | $\ge 90.0\%$ | **PASS** |
+| **`chess_curriculum`**| 500 | 501 | **99.8%** | $\ge 90.0\%$ | **PASS** |
 | **`chess_storage`** | 232 | 244 | **95.1%** | $\ge 90.0\%$ | **PASS** |
 | **`chess_content`** | 213 | 230 | **92.6%** | $\ge 90.0\%$ | **PASS** |
-| **`chess_video`** | 306 | 337 | **90.8%** | $\ge 90.0\%$ | **PASS** |
+| **`chess_video`** | 318 | 350 | **90.9%** | $\ge 90.0\%$ | **PASS** |
 | **`chess_engine`** | 384 | 424 | **90.6%** | $\ge 90.0\%$ | **PASS** |
 | **`chess_labs`** | 156 | 173 | **90.2%** | $\ge 90.0\%$ | **PASS** |
 | **`apps/chess_app`** | 1,934 | 2,117 | **91.4%** | $\ge 90.0\%$ | **PASS** |
-| **TOTAL AGGREGATE** | **4,771** | **5,122** | **93.1%** | $\ge 90.0\%$ | **PASS** |
+| **TOTAL AGGREGATE** | **4,838** | **5,190** | **93.2%** | $\ge 90.0\%$ | **PASS** |
 
 ## 4. Running Tests Locally
 
@@ -114,9 +114,42 @@ ChessMaster enforces a strict zero-regression quality standard:
 ### Coverage Audit & Fail-Under Validation
 ```bash
 dart run tool/coverage_runner.dart
+# Or via wrapper:
+./scripts/coverage.sh         # Linux/macOS
+.\scripts\coverage.ps1        # Windows PowerShell
 ```
 
-### Full Acceptance Suite
+### 90-Day Content Validation & Legality Gate
+```bash
+./scripts/content_validate.sh   # Linux/macOS
+.\scripts\content_validate.ps1  # Windows PowerShell
+```
+
+### 90-Day Simulation & Persona Trajectories
+```bash
+./scripts/simulation_validate.sh   # Linux/macOS
+.\scripts\simulation_validate.ps1  # Windows PowerShell
+```
+
+### Performance Truth Suite
+```bash
+./scripts/performance.sh      # Linux/macOS
+.\scripts\performance.ps1     # Windows PowerShell
+```
+
+### Security & Secret Audit
+```bash
+./scripts/security.sh         # Linux/macOS
+.\scripts\security.ps1        # Windows PowerShell
+```
+
+### Full Production Certification Pass
+```bash
+./scripts/certify.sh          # Linux/macOS
+.\scripts\certify.ps1         # Windows PowerShell
+```
+
+### Acceptance Test Suite
 ```bash
 ./scripts/acceptance.sh --full    # Linux/macOS
 .\scripts\acceptance.ps1 -Full    # Windows PowerShell
