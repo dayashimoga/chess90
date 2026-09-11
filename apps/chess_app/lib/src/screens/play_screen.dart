@@ -35,7 +35,7 @@ class _PlayScreenState extends State<PlayScreen> {
 
   bool _isTournamentMode = false;
   bool _playVsEngine = true;
-  PieceColor _playerColor = PieceColor.white;
+  final PieceColor _playerColor = PieceColor.white;
   final List<PgnMoveNode> _moves = [];
   final Map<int, String> _thoughtNotes = {};
   bool _isGameOver = false;
@@ -217,7 +217,7 @@ class _PlayScreenState extends State<PlayScreen> {
           if (_pendingUnfinishedGame != null)
             Container(
               width: double.infinity,
-              color: Colors.amber.withOpacity(0.15),
+              color: Colors.amber.withValues(alpha: 0.15),
               padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
               child: Row(
                 children: [
@@ -339,8 +339,8 @@ class _PlayScreenState extends State<PlayScreen> {
                           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                           decoration: BoxDecoration(
                             color: _engine.isFallback
-                                ? Colors.amber.withOpacity(0.12)
-                                : const Color(0xFF10B981).withOpacity(0.12),
+                                ? Colors.amber.withValues(alpha: 0.12)
+                                : const Color(0xFF10B981).withValues(alpha: 0.12),
                             borderRadius: BorderRadius.circular(6),
                             border: Border.all(
                               color: _engine.isFallback ? Colors.amber : const Color(0xFF10B981),

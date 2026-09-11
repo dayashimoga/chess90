@@ -33,7 +33,7 @@ void main() {
       expect(exRestored.sideToPlay, exercise.sideToPlay);
       expect(exRestored.solutionSan, exercise.solutionSan);
 
-      final day = CurriculumDay(
+      const day = CurriculumDay(
         dayNumber: 1,
         title: 'Day 1: Diagnostic',
         phase: CurriculumPhase.phase1Diagnostic,

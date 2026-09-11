@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:chess_core/chess_core.dart';
-import 'package:chess_engine/chess_engine.dart';
 
 /// Represents the status of a user's action in an interactive lab.
 enum LabStepResult {

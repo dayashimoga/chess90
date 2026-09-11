@@ -18,14 +18,7 @@ class SettingsStorageScreen extends StatefulWidget {
 }
 
 class _SettingsStorageScreenState extends State<SettingsStorageScreen> {
-  late UserProfile _profile;
   String _statusMessage = '';
-
-  @override
-  void initState() {
-    super.initState();
-    _profile = widget.repository.getProfile();
-  }
 
   void _exportBackup() {
     final jsonStr = widget.repository.exportFullBackupJson();
@@ -101,7 +94,6 @@ class _SettingsStorageScreenState extends State<SettingsStorageScreen> {
                 widget.repository.importFullBackupJson(controller.text.trim());
                 Navigator.of(ctx).pop();
                 setState(() {
-                  _profile = widget.repository.getProfile();
                   _statusMessage = 'Backup imported successfully!';
                 });
               } catch (e) {
@@ -122,7 +114,6 @@ class _SettingsStorageScreenState extends State<SettingsStorageScreen> {
     final gamesCount = widget.repository.getGames().length;
     final reviewCount = widget.repository.getReviewItems().length;
     final nodesCount = widget.repository.getSkillNodes().length;
-    final unfinished = widget.repository.getUnfinishedGame();
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -257,12 +248,12 @@ class _SettingsStorageScreenState extends State<SettingsStorageScreen> {
                     ),
                   ),
                   const Divider(height: 1),
-                  ListTile(
+                  const ListTile(
                     contentPadding: EdgeInsets.zero,
-                    leading: const Icon(Icons.cloud_off, color: ChessTheme.primaryLight),
-                    title: const Text('Offline Mode Status', style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600)),
-                    subtitle: const Text('All core curriculum, Stockfish engine, and database functionality are 100% offline capable.', style: TextStyle(fontSize: 11, color: ChessTheme.textMuted)),
-                    trailing: const Chip(
+                    leading: Icon(Icons.cloud_off, color: ChessTheme.primaryLight),
+                    title: Text('Offline Mode Status', style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600)),
+                    subtitle: Text('All core curriculum, Stockfish engine, and database functionality are 100% offline capable.', style: TextStyle(fontSize: 11, color: ChessTheme.textMuted)),
+                    trailing: Chip(
                       label: Text('OFFLINE VERIFIED', style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: ChessTheme.primaryLight)),
                       backgroundColor: Colors.transparent,
                       side: BorderSide(color: ChessTheme.primaryLight),

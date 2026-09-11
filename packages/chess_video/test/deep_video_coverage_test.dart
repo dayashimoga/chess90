@@ -163,7 +163,7 @@ void main() {
         showEvaluationBar: true,
       );
 
-      final extremeEvalFrame = VideoFrame(
+      const extremeEvalFrame = VideoFrame(
         frameIndex: 3,
         timestampSeconds: 0.3,
         fen: 'r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3',
@@ -177,7 +177,7 @@ void main() {
       expect(imgLandscape.height, equals(1080));
 
       // 4. Extreme negative clamped eval
-      final extremeNegEvalFrame = VideoFrame(
+      const extremeNegEvalFrame = VideoFrame(
         frameIndex: 4,
         timestampSeconds: 0.4,
         fen: 'r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3',

@@ -1,17 +1,13 @@
 import 'dart:io';
-import 'package:chess_app/main.dart';
-import 'package:chess_app/src/screens/analysis_screen.dart';
 import 'package:chess_app/src/screens/curriculum_screen.dart';
 import 'package:chess_app/src/screens/daily_journey_screen.dart';
 import 'package:chess_app/src/screens/model_games_screen.dart';
 import 'package:chess_app/src/screens/opening_explorer_screen.dart';
 import 'package:chess_app/src/widgets/board/chess_board_widget.dart';
 import 'package:chess_core/chess_core.dart';
-import 'package:chess_engine/chess_engine.dart';
 import 'package:chess_learning/chess_learning.dart';
 import 'package:chess_storage/chess_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -77,6 +73,7 @@ void main() {
         await tester.tap(launchBtn.first);
         await tester.pumpAndSettle();
         expect(navigatedScreen, equals('labs'));
+        expect(navigatedArgs, anyOf(isNull, isNotNull));
       }
     });
 

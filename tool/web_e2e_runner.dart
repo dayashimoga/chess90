@@ -7,8 +7,8 @@ Future<void> main() async {
   print('    CHESSMASTER WEB PRODUCTION BUNDLE BROWSER E2E     ');
   print('======================================================');
 
-  final cdpBaseUrl = 'http://127.0.0.1:9222';
-  final targetUrl = 'http://127.0.0.1:8080';
+  const cdpBaseUrl = 'http://127.0.0.1:9222';
+  const targetUrl = 'http://127.0.0.1:8080';
 
   // 1. Create a new tab navigating to the served app
   print('[1/6] Opening browser tab to $targetUrl via CDP...');
@@ -78,7 +78,7 @@ Future<void> main() async {
 
   print('[3/6] Waiting for Flutter Web CanvasKit engine bootstrap & first frame...');
   // Flutter web takes ~3-6 seconds to load CanvasKit WASM, compile, and render first frame
-  await Future.delayed(const Duration(seconds: 7));
+  await Future<void>.delayed(const Duration(seconds: 7));
 
   // 4. Verify DOM and title
   print('[4/6] Inspecting runtime DOM and JavaScript environment...');
@@ -120,7 +120,7 @@ Future<void> main() async {
     'button': 'left',
     'clickCount': 1,
   });
-  await Future.delayed(const Duration(milliseconds: 100));
+  await Future<void>.delayed(const Duration(milliseconds: 100));
   await sendCdp('Input.dispatchMouseEvent', {
     'type': 'mouseReleased',
     'x': 36,
@@ -129,7 +129,7 @@ Future<void> main() async {
     'clickCount': 1,
   });
 
-  await Future.delayed(const Duration(seconds: 2));
+  await Future<void>.delayed(const Duration(seconds: 2));
 
   final navScreenshotRes = await sendCdp('Page.captureScreenshot', {
     'format': 'png',

@@ -21,7 +21,7 @@ void main() {
 
       expect(winLab.isCompleted, isFalse);
       // Play illegal move
-      await winLab.playUserMove(Move(from: Square.a1, to: Square.a8));
+      await winLab.playUserMove(const Move(from: Square.a1, to: Square.a8));
       expect(winLab.isCompleted, isFalse);
       expect(winLab.feedback, contains('Illegal move'));
 

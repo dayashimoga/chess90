@@ -49,7 +49,7 @@ void main() {
       // White King on e1, White Pawn on e5, Black Pawn on f5, Black Rook on f8
       // Black plays f7-f5. White takes e5xf6 e.p.
       final board = Board.fromFen('5r2/8/8/4Pp2/8/8/8/4K3 w - f6 0 1');
-      final epMove = Move(
+      const epMove = Move(
         from: Square.e5,
         to: Square.f6,
         isCapture: true,
@@ -120,10 +120,10 @@ void main() {
 
     test('Threefold Repetition Detection', () {
       final board = Board.initial();
-      final move1 = const Move(from: Square.g1, to: Square.f3);
-      final move2 = const Move(from: Square.g8, to: Square.f6);
-      final move3 = const Move(from: Square.f3, to: Square.g1);
-      final move4 = const Move(from: Square.f6, to: Square.g8);
+      const move1 = Move(from: Square.g1, to: Square.f3);
+      const move2 = Move(from: Square.g8, to: Square.f6);
+      const move3 = Move(from: Square.f3, to: Square.g1);
+      const move4 = Move(from: Square.f6, to: Square.g8);
 
       // Repetition 1: initial position (count = 1)
       expect(board.currentPositionOccurrences, equals(1));

@@ -28,7 +28,6 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
 
   List<VideoFrame> _generatedTimeline = [];
   int _currentFrameIndex = 0;
-  bool _isGenerating = false;
   String _generatedCommand = '';
 
   @override
@@ -43,10 +42,6 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
   }
 
   void _generateTimeline() {
-    setState(() {
-      _isGenerating = true;
-    });
-
     final profile = VideoProfile(
       aspectRatio: _aspectRatio,
       moveSpeedSeconds: _moveSpeed,
@@ -67,7 +62,6 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
 
     setState(() {
       _currentFrameIndex = 0;
-      _isGenerating = false;
     });
   }
 
@@ -116,7 +110,7 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
                       const Text('Export Aspect Ratio & Profile', style: TextStyle(fontSize: 12, color: ChessTheme.textSecondary)),
                       const SizedBox(height: 6),
                       DropdownButtonFormField<VideoAspectRatio>(
-                        value: _aspectRatio,
+                        initialValue: _aspectRatio,
                         isExpanded: true,
                         dropdownColor: ChessTheme.surfaceLight,
                         decoration: InputDecoration(
@@ -180,21 +174,21 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
                         contentPadding: EdgeInsets.zero,
                         title: const Text('Evaluation Bar', style: TextStyle(fontSize: 13, color: ChessTheme.textPrimary)),
                         value: _showEvalBar,
-                        activeColor: ChessTheme.primary,
+                        activeThumbColor: ChessTheme.primary,
                         onChanged: (val) => setState(() => _showEvalBar = val),
                       ),
                       SwitchListTile(
                         contentPadding: EdgeInsets.zero,
                         title: const Text('Move & Critical Arrows', style: TextStyle(fontSize: 13, color: ChessTheme.textPrimary)),
                         value: _showArrows,
-                        activeColor: ChessTheme.primary,
+                        activeThumbColor: ChessTheme.primary,
                         onChanged: (val) => setState(() => _showArrows = val),
                       ),
                       SwitchListTile(
                         contentPadding: EdgeInsets.zero,
                         title: const Text('Educational Subtitles', style: TextStyle(fontSize: 13, color: ChessTheme.textPrimary)),
                         value: _showSubtitles,
-                        activeColor: ChessTheme.primary,
+                        activeThumbColor: ChessTheme.primary,
                         onChanged: (val) => setState(() => _showSubtitles = val),
                       ),
 

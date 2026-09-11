@@ -1,6 +1,5 @@
 import 'package:chess_core/chess_core.dart';
 import 'package:chess_engine/chess_engine.dart';
-import '../lab_session.dart';
 
 /// Interactive endgame lab where the user must win or defend against an active chess engine.
 class EndgameWinDefendLab {

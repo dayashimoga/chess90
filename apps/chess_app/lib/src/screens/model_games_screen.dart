@@ -184,7 +184,7 @@ class _ModelGamesScreenState extends State<ModelGamesScreen> {
                         ),
                         Switch(
                           value: _isGuessTheMoveActive,
-                          activeColor: ChessTheme.primary,
+                          activeThumbColor: ChessTheme.primary,
                           onChanged: (val) {
                             setState(() {
                               _isGuessTheMoveActive = val;

@@ -127,7 +127,7 @@ class CurriculumCatalog {
       'axis': SkillAxis.tactics,
       'lab': 'tactical_lab',
       'difficulty': 1200,
-      'prerequisites': [],
+      'prerequisites': <int>[],
       'objectives': [
         'Understand core grandmaster principles of Complete Diagnostic: Coordinates, Board Vision, Tactics & Skill Radar.',
         'Execute interactive exercises with >=85% accuracy and zero unforced blunders.',

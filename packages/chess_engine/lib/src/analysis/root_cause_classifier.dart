@@ -243,7 +243,7 @@ class RootCauseDiagnosis {
       };
 
   @override
-  String toString() => '[${primaryDomain.name.toUpperCase()}/${subCause}] ${category.title} (-${centipawnLoss}cp): $explanation';
+  String toString() => '[${primaryDomain.name.toUpperCase()}/$subCause] ${category.title} (-${centipawnLoss}cp): $explanation';
 }
 
 /// Diagnostic engine that analyzes erroneous moves and identifies the underlying cognitive root-cause.

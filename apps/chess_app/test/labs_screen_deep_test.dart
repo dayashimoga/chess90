@@ -33,7 +33,7 @@ void main() {
           home: Scaffold(
             body: LabsScreen(
               repository: repo,
-              initialArgs: {'dayNumber': 1},
+              initialArgs: const {'dayNumber': 1},
             ),
           ),
         ),

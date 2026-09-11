@@ -34,13 +34,13 @@ void main() {
 
     test('FrameRasterizer generates valid high-resolution image bytes', () {
       const profile = VideoProfile(aspectRatio: VideoAspectRatio.youtube16x9);
-      final frame = VideoFrame(
+      const frame = VideoFrame(
         frameIndex: 0,
         timestampSeconds: 0.0,
         fen: 'r1bqk2r/pppp1ppp/2n5/4p3/1bB1n3/2N2Q2/PPPP1PPP/R1B1K1NR w KQkq - 0 6',
         moveNotation: '6. Qxf7#',
         subtitleText: 'Anderssen vs Kieseritzky',
-        arrows: const [
+        arrows: [
           VideoArrow(fromSquare: 'f3', toSquare: 'f7', colorHex: '#22C55E'),
         ],
         evaluationCentipawns: 9999,

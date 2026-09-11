@@ -109,7 +109,7 @@ void main() {
             body: ChessBoardWidget(
               board: board,
               isFlipped: false,
-              highlightedSquares: [Square.e4, Square.e5],
+              highlightedSquares: const [Square.e4, Square.e5],
               onMovePlayed: (m) => playedMove = m,
             ),
           ),

@@ -5,7 +5,7 @@ import 'package:test/test.dart';
 void main() {
   group('Model Games Database Tests', () {
     test('Curated games database has valid PGNs', () {
-      final games = ModelGamesDatabase.curatedGames;
+      const games = ModelGamesDatabase.curatedGames;
       expect(games.length, greaterThanOrEqualTo(4));
 
       for (final game in games) {

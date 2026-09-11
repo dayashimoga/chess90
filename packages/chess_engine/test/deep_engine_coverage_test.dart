@@ -271,7 +271,7 @@ void main() {
     });
 
     test('14 Hierarchical Root Causes and Diagnosis Prescription', () {
-      final diag = RootCauseDiagnosis(
+      const diag = RootCauseDiagnosis(
         category: RootCauseCategory.tacticsMotif,
         primaryDomain: CognitiveDomain.tactics,
         subCause: 'pin-tactics',

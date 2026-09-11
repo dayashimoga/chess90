@@ -20,7 +20,6 @@ class WeaknessAnalyticsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final skillNodes = repository.getSkillNodes();
-    final profile = repository.getProfile();
     final reviewItems = repository.getReviewItems();
 
     // Map skill nodes to radar values

@@ -53,7 +53,7 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
                           Border(bottom: BorderSide(color: ChessTheme.border)),
                     ),
                     child: DropdownButtonFormField<CurriculumPhase?>(
-                      value: _selectedPhase,
+                      initialValue: _selectedPhase,
                       isExpanded: true,
                       dropdownColor: ChessTheme.surfaceLight,
                       decoration: InputDecoration(
@@ -362,7 +362,7 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
                             Container(
                               width: 36,
                               height: 36,
-                              decoration: BoxDecoration(
+                              decoration: const BoxDecoration(
                                 color: ChessTheme.surfaceLight,
                                 shape: BoxShape.circle,
                               ),

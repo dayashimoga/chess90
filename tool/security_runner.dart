@@ -169,7 +169,10 @@ Future<void> main(List<String> args) async {
         // If parsed without throw, ensure it returns a non-null board that doesn't corrupt memory
         expectNotNull(board);
         safelyRejected++;
-      } catch (_) {
+      } catch (e) {
+        if (e is Error && e is! ArgumentError && e is! RangeError) {
+          zeroCrashes = false;
+        }
         safelyRejected++; // Safely caught FormatException or ArgumentError
       }
     }
@@ -190,7 +193,7 @@ Future<void> main(List<String> args) async {
   {
     final maliciousPgns = [
       // Deeply nested parentheses/braces attack
-      '1. e4 (' * 1000 + '1... e5' + ')' * 1000,
+      '${"1. e4 (" * 1000}1... e5${")" * 1000}',
       // HTML / Script tag injection in PGN headers
       '[Event "<script>alert(document.cookie)</script>"]\n[Site "<h1>Exploit</h1>"]\n1. e4 e5 1-0',
       // Null byte injection in move text
@@ -208,7 +211,9 @@ Future<void> main(List<String> args) async {
           // Plain text preservation is expected; verified not executed as code
         }
       } catch (e) {
-        // Controlled parser rejection is acceptable
+        if (e is Error && e is! FormatException && e is! ArgumentError) {
+          safePgn = false;
+        }
       }
     }
 
@@ -320,7 +325,7 @@ Future<void> main(List<String> args) async {
   for (final a in audits) {
     if (!a.passed) allPassed = false;
     final mark = a.passed ? '✓ PASS' : '✗ FAIL';
-    print('  ${a.testId.padRight(14)} [${a.severity.padRight(8)}]: ${a.description.padRight(55)} [${mark}]');
+    print('  ${a.testId.padRight(14)} [${a.severity.padRight(8)}]: ${a.description.padRight(55)} [$mark]');
   }
   print('------------------------------------------------------');
   print('  OVERALL SECURITY STATUS: ${allPassed ? "ALL AUDITS PASSED - ZERO VULNERABILITIES" : "VULNERABILITIES DETECTED"}');

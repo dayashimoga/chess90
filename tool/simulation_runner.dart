@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:chess_core/chess_core.dart';
 import 'package:chess_curriculum/chess_curriculum.dart';
-import 'package:chess_engine/chess_engine.dart';
 import 'package:chess_learning/chess_learning.dart';
 
 void main(List<String> args) async {
@@ -250,9 +249,9 @@ String _generateSimulationHtml(
       <div class="axis-box">
         <strong>${axis.title}</strong>
         <div>Day 1 Baseline: ${base.toStringAsFixed(1)}%</div>
-        <div class="bar"><div class="fill-base" style="width: ${base}%;"></div></div>
+        <div class="bar"><div class="fill-base" style="width: $base%;"></div></div>
         <div style="margin-top: 6px;">Day 90 Certified: ${fin.toStringAsFixed(1)}%</div>
-        <div class="bar"><div class="fill-final" style="width: ${fin}%;"></div></div>
+        <div class="bar"><div class="fill-final" style="width: $fin%;"></div></div>
       </div>''');
   }
 

@@ -220,16 +220,22 @@ class Board {
     if (old != null) {
       _currentZobrist ^= Zobrist.pieceKey(old, square);
       if (old.type == PieceType.king) {
-        if (old.color == PieceColor.white) _whiteKingSquare = null;
-        else _blackKingSquare = null;
+        if (old.color == PieceColor.white) {
+          _whiteKingSquare = null;
+        } else {
+          _blackKingSquare = null;
+        }
       }
     }
     _squares[square.index] = piece;
     if (piece != null) {
       _currentZobrist ^= Zobrist.pieceKey(piece, square);
       if (piece.type == PieceType.king) {
-        if (piece.color == PieceColor.white) _whiteKingSquare = square;
-        else _blackKingSquare = square;
+        if (piece.color == PieceColor.white) {
+          _whiteKingSquare = square;
+        } else {
+          _blackKingSquare = square;
+        }
       }
     }
   }

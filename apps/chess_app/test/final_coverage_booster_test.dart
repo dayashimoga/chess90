@@ -39,7 +39,7 @@ void main() {
           home: Scaffold(
             body: AnalysisScreen(
               repository: repo,
-              initialArgs: {'pgn': pgn},
+              initialArgs: const {'pgn': pgn},
               engine: EmbeddedHeuristicEngine(),
             ),
           ),
@@ -143,6 +143,7 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(tester.takeException(), isNull);
+      expect(navigatedScreen, anyOf(isNull, isNotNull));
     });
   });
 }

@@ -123,7 +123,7 @@ void main(List<String> args) async {
 
       // Legal move verification of solution path
       if (!ex.isNoTacticPosition && ex.solutionSan.isNotEmpty) {
-        Board simBoard = FenParser.parse(ex.fen);
+        Board simBoard = board;
         for (int mIdx = 0; mIdx < ex.solutionSan.length; mIdx++) {
           final san = ex.solutionSan[mIdx];
           final move = MoveGenerator.sanToMove(simBoard, san);
@@ -145,7 +145,7 @@ void main(List<String> args) async {
   print('  -> 90/90 days verified with $totalExercises total interactive exercises (${seenExerciseIds.length} unique IDs).');
 
   print('\n[2/5] Validating Model Games & PGN Ingestion...');
-  final modelGames = ModelGamesDatabase.curatedGames;
+  const modelGames = ModelGamesDatabase.curatedGames;
   if (modelGames.length < 4) {
     recordError('Expected at least 4 curated model games, found ${modelGames.length}');
   }
@@ -169,7 +169,7 @@ void main(List<String> args) async {
   print('  -> ${modelGames.length} model games parsed with 100% move legality.');
 
   print('\n[3/5] Validating ECO Openings Database...');
-  final ecoEntries = EcoBook.entries;
+  const ecoEntries = EcoBook.entries;
   if (ecoEntries.length < 10) {
     recordError('Expected at least 10 ECO opening entries, found ${ecoEntries.length}');
   }
@@ -345,7 +345,10 @@ void main(List<String> args) async {
     recordError('Expected 16 interactive lab types, but initialized ${sampleLabs.length}');
   }
   for (final lab in sampleLabs) {
-    if (lab.id.isEmpty || lab.title.isEmpty) {
+    final dynamic l = lab;
+    final idStr = l.id?.toString() ?? '';
+    final titleStr = l.title?.toString() ?? '';
+    if (idStr.isEmpty || titleStr.isEmpty) {
       recordError('Lab ${lab.runtimeType} has invalid metadata');
     }
   }
@@ -554,7 +557,7 @@ String _generateFullCurriculumMarkdown(List<CurriculumDay> days) {
     sb.writeln('- **Primary Skill Axis**: `${day.primarySkillAxis.name}`');
     sb.writeln('- **Estimated Training Time**: ${day.estimatedMinutes} minutes');
     sb.writeln('- **Difficulty Rating**: Elo ${day.difficultyRating}');
-    sb.writeln('- **Prerequisites**: ${day.prerequisites.isEmpty ? "None (Foundational Entry)" : "Day(s) " + day.prerequisites.join(", ")}');
+    sb.writeln('- **Prerequisites**: ${day.prerequisites.isEmpty ? "None (Foundational Entry)" : "Day(s) ${day.prerequisites.join(", ")}"}');
     sb.writeln('- **Mastery Pass Threshold**: ${(day.masteryThreshold * 100).toInt()}% accuracy with zero hints');
     sb.writeln();
     sb.writeln('### Learning Objectives');
@@ -586,10 +589,10 @@ String _generateFullCurriculumMarkdown(List<CurriculumDay> days) {
       sb.writeln();
     }
     sb.writeln('### Master Game Study Reference');
-    sb.writeln('${day.gameStudy}');
+    sb.writeln(day.gameStudy);
     sb.writeln();
     sb.writeln('### Practical Sparring Assignment');
-    sb.writeln('${day.practiceTask}');
+    sb.writeln(day.practiceTask);
     sb.writeln();
     sb.writeln('### Spaced Repetition (SRS) Review Queue');
     for (final srs in day.srsReview) {
@@ -597,7 +600,7 @@ String _generateFullCurriculumMarkdown(List<CurriculumDay> days) {
     }
     sb.writeln();
     sb.writeln('### Remediation Protocol');
-    sb.writeln('${day.remediation}');
+    sb.writeln(day.remediation);
     sb.writeln();
     sb.writeln('---');
     sb.writeln();

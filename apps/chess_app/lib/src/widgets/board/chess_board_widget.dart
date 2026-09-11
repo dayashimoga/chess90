@@ -54,7 +54,7 @@ class _ChessBoardWidgetState extends State<ChessBoardWidget> {
           _promptPromotion(matchingMove.from, square);
         } else {
           final san = MoveGenerator.moveToSan(widget.board, matchingMove);
-          SemanticsService.announce('Move played: $san', TextDirection.ltr);
+          SemanticsService.sendAnnouncement(View.of(context), 'Move played: $san', TextDirection.ltr);
           widget.onMovePlayed?.call(matchingMove);
         }
         setState(() {

@@ -46,7 +46,7 @@ class _RadarPainter extends CustomPainter {
   void paint(Canvas canvas, Size size) {
     final center = Offset(size.width / 2, size.height / 2);
     final radius = (size.width / 2) * 0.75;
-    final axes = SkillAxis.values;
+    const axes = SkillAxis.values;
     final count = axes.length;
     final angleStep = (2 * pi) / count;
 

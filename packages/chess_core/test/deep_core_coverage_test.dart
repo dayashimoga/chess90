@@ -67,7 +67,7 @@ void main() {
     });
 
     test('Move flags, UCI serialization, equality and parsing', () {
-      final m1 = Move(
+      const m1 = Move(
         from: Square.e2,
         to: Square.e4,
         flag: MoveFlag.pawnDoublePush,
@@ -87,7 +87,7 @@ void main() {
       expect(promo.uci, 'e7e8q');
       expect(promo.isPromotion, isTrue);
 
-      final castle = Move(
+      const castle = Move(
         from: Square.e1,
         to: Square.g1,
         flag: MoveFlag.castleKingside,

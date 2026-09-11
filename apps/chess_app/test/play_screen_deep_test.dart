@@ -1,7 +1,6 @@
 import 'dart:io';
 import 'package:chess_app/src/screens/play_screen.dart';
 import 'package:chess_app/src/widgets/board/chess_board_widget.dart';
-import 'package:chess_core/chess_core.dart';
 import 'package:chess_engine/chess_engine.dart';
 import 'package:chess_storage/chess_storage.dart';
 import 'package:flutter/material.dart';
@@ -74,7 +73,7 @@ void main() {
             body: PlayScreen(
               repository: repo,
               onNavigate: (_, {args}) {},
-              initialArgs: {'isTournament': true},
+              initialArgs: const {'isTournament': true},
               engine: EmbeddedHeuristicEngine(),
             ),
           ),

@@ -490,17 +490,45 @@ class MoveGenerator {
       if (p.type == PieceType.king) continue;
 
       if (p.color == PieceColor.white) {
-        if (p.type == PieceType.pawn) whitePawns++;
-        else if (p.type == PieceType.rook) whiteRooks++;
-        else if (p.type == PieceType.queen) whiteQueens++;
-        else if (p.type == PieceType.knight) whiteKnights.add(Square(i));
-        else if (p.type == PieceType.bishop) whiteBishops.add(Square(i));
+        switch (p.type) {
+          case PieceType.pawn:
+            whitePawns++;
+            break;
+          case PieceType.rook:
+            whiteRooks++;
+            break;
+          case PieceType.queen:
+            whiteQueens++;
+            break;
+          case PieceType.knight:
+            whiteKnights.add(Square(i));
+            break;
+          case PieceType.bishop:
+            whiteBishops.add(Square(i));
+            break;
+          default:
+            break;
+        }
       } else {
-        if (p.type == PieceType.pawn) blackPawns++;
-        else if (p.type == PieceType.rook) blackRooks++;
-        else if (p.type == PieceType.queen) blackQueens++;
-        else if (p.type == PieceType.knight) blackKnights.add(Square(i));
-        else if (p.type == PieceType.bishop) blackBishops.add(Square(i));
+        switch (p.type) {
+          case PieceType.pawn:
+            blackPawns++;
+            break;
+          case PieceType.rook:
+            blackRooks++;
+            break;
+          case PieceType.queen:
+            blackQueens++;
+            break;
+          case PieceType.knight:
+            blackKnights.add(Square(i));
+            break;
+          case PieceType.bishop:
+            blackBishops.add(Square(i));
+            break;
+          default:
+            break;
+        }
       }
     }
 
@@ -512,17 +540,25 @@ class MoveGenerator {
     final totalBlackMinors = blackKnights.length + blackBishops.length;
 
     // K vs K
-    if (totalWhiteMinors == 0 && totalBlackMinors == 0) return true;
+    if (totalWhiteMinors == 0 && totalBlackMinors == 0) {
+      return true;
+    }
 
     // K+minor vs K
-    if (totalWhiteMinors == 1 && totalBlackMinors == 0) return true;
-    if (totalWhiteMinors == 0 && totalBlackMinors == 1) return true;
+    if (totalWhiteMinors == 1 && totalBlackMinors == 0) {
+      return true;
+    }
+    if (totalWhiteMinors == 0 && totalBlackMinors == 1) {
+      return true;
+    }
 
     // K+B vs K+B (same color square bishops)
     if (whiteBishops.length == 1 && blackBishops.length == 1 && whiteKnights.isEmpty && blackKnights.isEmpty) {
       final wLight = whiteBishops.first.isLightSquare;
       final bLight = blackBishops.first.isLightSquare;
-      if (wLight == bLight) return true;
+      if (wLight == bLight) {
+        return true;
+      }
     }
 
     return false;

@@ -1,6 +1,5 @@
 import 'package:chess_core/chess_core.dart';
 import 'package:chess_curriculum/chess_curriculum.dart';
-import 'package:chess_engine/chess_engine.dart';
 import 'package:chess_labs/chess_labs.dart';
 import 'package:chess_storage/chess_storage.dart';
 import 'package:flutter/material.dart';
@@ -81,7 +80,7 @@ class _LabsScreenState extends State<LabsScreen> {
     final prevBoard = _session.currentBoard.clone();
     final san = MoveGenerator.moveToSan(prevBoard, move);
 
-    final res = _session.playMove(move);
+    _session.playMove(move);
 
     _playedMoveNodes.add(PgnMoveNode(
       ply: _playedMoveNodes.length + 1,
@@ -113,7 +112,7 @@ class _LabsScreenState extends State<LabsScreen> {
         builder: (context, constraints) {
           final isCompact = constraints.maxWidth < 800;
           final evalBarSpacing = isCompact ? 8.0 : 12.0;
-          final evalBarWidth = 28.0;
+          const evalBarWidth = 28.0;
           final availableBoardWidth = constraints.maxWidth - evalBarWidth - evalBarSpacing - 36.0;
           final boardSize = (isCompact
                   ? availableBoardWidth

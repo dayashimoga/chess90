@@ -1,7 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:chess_core/chess_core.dart';
 import 'package:chess_storage/chess_storage.dart';
 import 'package:chess_app/main.dart';
 import 'package:chess_app/src/screens/daily_journey_screen.dart';

@@ -13,7 +13,7 @@ class NativeStockfishEngine implements ChessEngine {
   Process? _process;
   final _controller = StreamController<EngineEvaluation>.broadcast();
   final EmbeddedHeuristicEngine _fallbackEngine = EmbeddedHeuristicEngine();
-  StreamSubscription? _stdoutSub;
+  StreamSubscription<String>? _stdoutSub;
   bool _useFallback = false;
   String _discoveredEngineName = 'Stockfish';
   Completer<void>? _readyCompleter;
@@ -55,7 +55,7 @@ class NativeStockfishEngine implements ChessEngine {
       try {
         final process = await Process.start(path, []);
         _process = process;
-        _process!.stdin.done.catchError((_) {});
+        unawaited(_process!.stdin.done.catchError((_) {}));
 
         _stdoutSub = _process!.stdout
             .transform(utf8.decoder)
