@@ -126,5 +126,5 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   - Scaffolded native multi-platform runners for Windows, Linux, and Android.
   - Added Linux desktop toolchain (`clang`, `cmake`, `ninja`, `libgtk-3-dev`) to `infra/Containerfile` for disposable container release builds.
   - Published comprehensive 15-file documentation suite in `docs/` with explicit FIDE non-title educational disclaimers.
-
-
+  - Fixed Android build commands in CI workflows (`.github/workflows/pr.yml`, `.github/workflows/release.yml`) and `docs/BUILD_RELEASE.md` by removing invalid `=false` value from `--split-per-abi` boolean flag.
+  - Updated Android application label in `AndroidManifest.xml` from `chess_app` to `ChessMaster`.

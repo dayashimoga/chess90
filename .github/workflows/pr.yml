@@ -236,7 +236,7 @@ jobs:
       - name: Build Android APK
         run: |
           cd apps/chess_app
-          flutter build apk --release --split-per-abi=false
+          flutter build apk --release
           cp build/app/outputs/flutter-apk/app-release.apk ../../ChessMaster.apk
 
       - name: Build Android AAB

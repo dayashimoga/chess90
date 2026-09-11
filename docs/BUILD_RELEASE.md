@@ -101,7 +101,7 @@ Compress-Archive -Path build\windows\x64\runner\Release\* -DestinationPath ..\..
 ### 4.4 Android APK & App Bundle
 ```bash
 cd apps/chess_app
-flutter build apk --release --split-per-abi=false
+flutter build apk --release
 cp build/app/outputs/flutter-apk/app-release.apk ../../ChessMaster.apk
 
 flutter build appbundle --release

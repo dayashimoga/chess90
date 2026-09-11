@@ -94,5 +94,4 @@ This document is strictly append-only. Completed tasks are marked with `[x]` and
 - [x] (2026-09-11) Install Linux desktop build toolchain (`clang`, `cmake`, `ninja`, `libgtk-3-dev`) in `infra/Containerfile`.
 - [x] (2026-09-11) Complete comprehensive 15-document suite in `docs/` adhering to strict forensic guidelines.
 - [x] (2026-09-11) Verify 16/16 Acceptance Gates certified PROVEN with 100% test pass rate and 0 P0/P1 defects remaining.
-
-
+- [x] (2026-09-11) Fix Android build flag in CI (`.github/workflows/pr.yml`, `release.yml`, and `docs/BUILD_RELEASE.md`) removing invalid `--split-per-abi=false` flag and updating Android application label to `ChessMaster`.

@@ -47,7 +47,7 @@ jobs:
       - name: Build Android APK & AAB
         run: |
           cd apps/chess_app
-          flutter build apk --release --split-per-abi=false
+          flutter build apk --release
           cp build/app/outputs/flutter-apk/app-release.apk ../../ChessMaster.apk
 
           flutter build appbundle --release
