@@ -36,10 +36,10 @@ class MoveListWidget extends StatelessWidget {
                 width: 32,
                 child: Text(
                   '${whiteNode.moveNumber}.',
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.bold,
-                    color: ChessTheme.textMuted,
+                    color: context.txtMut,
                   ),
                 ),
               ),
@@ -52,7 +52,7 @@ class MoveListWidget extends StatelessWidget {
                   child: Container(
                     padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 6),
                     decoration: BoxDecoration(
-                      color: isWhiteActive ? ChessTheme.surfaceLight : Colors.transparent,
+                      color: isWhiteActive ? (context.isDark ? ChessTheme.surfaceLight : const Color(0xFFE2E8F0)) : Colors.transparent,
                       borderRadius: BorderRadius.circular(4),
                       border: isWhiteActive ? Border.all(color: ChessTheme.primary, width: 1) : null,
                     ),
@@ -61,7 +61,7 @@ class MoveListWidget extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 13,
                         fontWeight: isWhiteActive ? FontWeight.bold : FontWeight.normal,
-                        color: isWhiteActive ? ChessTheme.primaryLight : ChessTheme.textPrimary,
+                        color: isWhiteActive ? ChessTheme.primaryLight : context.txt,
                       ),
                     ),
                   ),
@@ -80,7 +80,7 @@ class MoveListWidget extends StatelessWidget {
                         child: Container(
                           padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 6),
                           decoration: BoxDecoration(
-                            color: isBlackActive ? ChessTheme.surfaceLight : Colors.transparent,
+                            color: isBlackActive ? (context.isDark ? ChessTheme.surfaceLight : const Color(0xFFE2E8F0)) : Colors.transparent,
                             borderRadius: BorderRadius.circular(4),
                             border: isBlackActive ? Border.all(color: ChessTheme.primary, width: 1) : null,
                           ),
@@ -89,7 +89,7 @@ class MoveListWidget extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 13,
                               fontWeight: isBlackActive ? FontWeight.bold : FontWeight.normal,
-                              color: isBlackActive ? ChessTheme.primaryLight : ChessTheme.textPrimary,
+                              color: isBlackActive ? ChessTheme.primaryLight : context.txt,
                             ),
                           ),
                         ),
@@ -103,25 +103,25 @@ class MoveListWidget extends StatelessWidget {
 
     return Container(
       decoration: BoxDecoration(
-        color: ChessTheme.surface,
+        color: context.surf,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: ChessTheme.border, width: 1),
+        border: Border.all(color: context.brd, width: 1),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-            decoration: const BoxDecoration(
-              border: Border(bottom: BorderSide(color: ChessTheme.border)),
+            decoration: BoxDecoration(
+              border: Border(bottom: BorderSide(color: context.brd)),
             ),
-            child: const Row(
+            child: Row(
               children: [
-                Icon(Icons.list_alt, size: 16, color: ChessTheme.textSecondary),
-                SizedBox(width: 8),
+                Icon(Icons.list_alt, size: 16, color: context.txtSec),
+                const SizedBox(width: 8),
                 Text(
                   'Move Notation Tree',
-                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: ChessTheme.textSecondary),
+                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: context.txtSec),
                 ),
               ],
             ),
@@ -131,10 +131,10 @@ class MoveListWidget extends StatelessWidget {
               padding: const EdgeInsets.all(6),
               children: turnRows.isEmpty
                   ? [
-                      const Center(
+                      Center(
                         child: Padding(
-                          padding: EdgeInsets.all(16.0),
-                          child: Text('No moves yet', style: TextStyle(color: ChessTheme.textMuted)),
+                          padding: const EdgeInsets.all(16.0),
+                          child: Text('No moves yet', style: TextStyle(color: context.txtMut)),
                         ),
                       )
                     ]

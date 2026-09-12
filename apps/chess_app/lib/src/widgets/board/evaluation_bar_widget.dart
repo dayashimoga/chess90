@@ -36,7 +36,7 @@ class EvaluationBarWidget extends StatelessWidget {
       decoration: BoxDecoration(
         color: const Color(0xFF1E293B), // Dark for black advantage
         borderRadius: BorderRadius.circular(6),
-        border: Border.all(color: ChessTheme.border, width: 1),
+        border: Border.all(color: context.brd, width: 1),
       ),
       child: Stack(
         children: [

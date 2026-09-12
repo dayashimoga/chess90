@@ -34,6 +34,53 @@ class ChessTheme {
   static const Color qualityBlunder = Color(0xFFEF4444);
   static const Color qualityMissedWin = Color(0xFFEC4899);
 
+  // Light Theme Colors
+  static const Color backgroundLight = Color(0xFFF1F5F9); // Crisp soft slate
+  static const Color surfaceLightCard = Color(0xFFFFFFFF); // Pure white card
+  static const Color surfaceLightAccent = Color(0xFFF8FAFC); // Subtle surface tint
+  static const Color surfaceLightInput = Color(0xFFE2E8F0); // Subtle input fill
+  static const Color borderLightGray = Color(0xFFCBD5E1); // Clean slate border
+  static const Color textPrimaryDark = Color(0xFF0F172A); // Deep slate black
+  static const Color textSecondaryDark = Color(0xFF475569); // Slate secondary
+  static const Color textMutedDark = Color(0xFF94A3B8); // Muted slate
+
+  // Context-aware dynamic helpers
+  static bool isDarkMode(BuildContext context) =>
+      Theme.of(context).brightness == Brightness.dark;
+
+  static Color backgroundOf(BuildContext context) =>
+      isDarkMode(context) ? background : backgroundLight;
+
+  static Color surfaceOf(BuildContext context) =>
+      isDarkMode(context) ? surface : surfaceLightCard;
+
+  static Color surfaceLightOf(BuildContext context) =>
+      isDarkMode(context) ? surfaceLight : surfaceLightAccent;
+
+  static Color borderOf(BuildContext context) =>
+      isDarkMode(context) ? border : borderLightGray;
+
+  static Color textPrimaryOf(BuildContext context) =>
+      isDarkMode(context) ? textPrimary : textPrimaryDark;
+
+  static Color textSecondaryOf(BuildContext context) =>
+      isDarkMode(context) ? textSecondary : textSecondaryDark;
+
+  static Color textMutedOf(BuildContext context) =>
+      isDarkMode(context) ? textMuted : textMutedDark;
+
+  static LinearGradient cardGradientOf(BuildContext context) => isDarkMode(context)
+      ? const LinearGradient(
+          colors: [Color(0xFF1E293B), Color(0xFF0F172A)],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        )
+      : const LinearGradient(
+          colors: [Color(0xFFFFFFFF), Color(0xFFF8FAFC)],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        );
+
   static ThemeData get darkTheme {
     return ThemeData(
       useMaterial3: true,
@@ -57,6 +104,15 @@ class ChessTheme {
         color: border,
         thickness: 1,
       ),
+      dialogTheme: const DialogThemeData(
+        backgroundColor: surface,
+        titleTextStyle: TextStyle(color: textPrimary, fontSize: 18, fontWeight: FontWeight.bold),
+        contentTextStyle: TextStyle(color: textSecondary, fontSize: 14),
+      ),
+      popupMenuTheme: const PopupMenuThemeData(
+        color: surface,
+        textStyle: TextStyle(color: textPrimary),
+      ),
       textTheme: const TextTheme(
         headlineLarge: TextStyle(color: textPrimary, fontWeight: FontWeight.bold, letterSpacing: -0.5),
         headlineMedium: TextStyle(color: textPrimary, fontWeight: FontWeight.bold, letterSpacing: -0.3),
@@ -71,16 +127,10 @@ class ChessTheme {
         elevation: 0,
         centerTitle: false,
         titleTextStyle: TextStyle(color: textPrimary, fontSize: 18, fontWeight: FontWeight.bold),
+        iconTheme: IconThemeData(color: textPrimary),
       ),
     );
   }
-
-  // Light Theme Colors
-  static const Color backgroundLight = Color(0xFFF8FAFC);
-  static const Color surfaceLightCard = Color(0xFFFFFFFF);
-  static const Color borderLightGray = Color(0xFFE2E8F0);
-  static const Color textPrimaryDark = Color(0xFF0F172A);
-  static const Color textSecondaryDark = Color(0xFF475569);
 
   static ThemeData get lightTheme {
     return ThemeData(
@@ -105,6 +155,15 @@ class ChessTheme {
         color: borderLightGray,
         thickness: 1,
       ),
+      dialogTheme: const DialogThemeData(
+        backgroundColor: surfaceLightCard,
+        titleTextStyle: TextStyle(color: textPrimaryDark, fontSize: 18, fontWeight: FontWeight.bold),
+        contentTextStyle: TextStyle(color: textSecondaryDark, fontSize: 14),
+      ),
+      popupMenuTheme: const PopupMenuThemeData(
+        color: surfaceLightCard,
+        textStyle: TextStyle(color: textPrimaryDark),
+      ),
       textTheme: const TextTheme(
         headlineLarge: TextStyle(color: textPrimaryDark, fontWeight: FontWeight.bold, letterSpacing: -0.5),
         headlineMedium: TextStyle(color: textPrimaryDark, fontWeight: FontWeight.bold, letterSpacing: -0.3),
@@ -123,4 +182,17 @@ class ChessTheme {
       ),
     );
   }
+}
+
+/// BuildContext extension for dynamic, theme-adaptive styling.
+extension ChessThemeContext on BuildContext {
+  bool get isDark => ChessTheme.isDarkMode(this);
+  Color get bg => ChessTheme.backgroundOf(this);
+  Color get surf => ChessTheme.surfaceOf(this);
+  Color get surfLight => ChessTheme.surfaceLightOf(this);
+  Color get brd => ChessTheme.borderOf(this);
+  Color get txt => ChessTheme.textPrimaryOf(this);
+  Color get txtSec => ChessTheme.textSecondaryOf(this);
+  Color get txtMut => ChessTheme.textMutedOf(this);
+  LinearGradient get cardGradient => ChessTheme.cardGradientOf(this);
 }

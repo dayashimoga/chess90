@@ -25,6 +25,8 @@ class SkillRadarWidget extends StatelessWidget {
             painter: _RadarPainter(
               currentScores: currentScores,
               baselineScores: baselineScores,
+              gridColor: context.brd,
+              labelColor: context.txtSec,
             ),
           ),
         );
@@ -36,10 +38,14 @@ class SkillRadarWidget extends StatelessWidget {
 class _RadarPainter extends CustomPainter {
   final Map<SkillAxis, double> currentScores;
   final Map<SkillAxis, double>? baselineScores;
+  final Color gridColor;
+  final Color labelColor;
 
   _RadarPainter({
     required this.currentScores,
     this.baselineScores,
+    this.gridColor = ChessTheme.border,
+    this.labelColor = ChessTheme.textSecondary,
   });
 
   @override
@@ -51,7 +57,7 @@ class _RadarPainter extends CustomPainter {
     final angleStep = (2 * pi) / count;
 
     final gridPaint = Paint()
-      ..color = ChessTheme.border
+      ..color = gridColor
       ..style = PaintingStyle.stroke
       ..strokeWidth = 1;
 
@@ -96,8 +102,8 @@ class _RadarPainter extends CustomPainter {
 
       textPainter.text = TextSpan(
         text: axes[i].name.toUpperCase(),
-        style: const TextStyle(
-          color: ChessTheme.textSecondary,
+        style: TextStyle(
+          color: labelColor,
           fontSize: 8,
           fontWeight: FontWeight.bold,
         ),

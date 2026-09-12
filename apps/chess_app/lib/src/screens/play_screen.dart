@@ -211,7 +211,7 @@ class _PlayScreenState extends State<PlayScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ChessTheme.background,
+      backgroundColor: context.bg,
       body: Column(
         children: [
           if (_pendingUnfinishedGame != null)
@@ -254,6 +254,7 @@ class _PlayScreenState extends State<PlayScreen> {
                       children: [
                         // Opponent Clock Bar
                         _buildClockBar(
+                          context,
                           name: _playVsEngine ? 'Engine (${_engine.engineName})' : 'Black Player',
                     timeString: _clock.blackDisplayString,
                     isActive: _clock.activeColor == PieceColor.black,
@@ -281,6 +282,7 @@ class _PlayScreenState extends State<PlayScreen> {
 
                   // Player Clock Bar
                   _buildClockBar(
+                    context,
                     name: 'Player (You)',
                     timeString: _clock.whiteDisplayString,
                     isActive: _clock.activeColor == PieceColor.white,
@@ -300,9 +302,9 @@ class _PlayScreenState extends State<PlayScreen> {
                     padding: const EdgeInsets.all(16),
                     margin: const EdgeInsets.only(bottom: 16),
                     decoration: BoxDecoration(
-                      color: ChessTheme.surface,
+                      color: context.surf,
                       borderRadius: BorderRadius.circular(10),
-                      border: Border.all(color: ChessTheme.border),
+                      border: Border.all(color: context.brd),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -373,7 +375,7 @@ class _PlayScreenState extends State<PlayScreen> {
                         const SizedBox(height: 8),
                         Text(
                           _gameStatusMessage,
-                          style: const TextStyle(fontSize: 14, color: ChessTheme.textSecondary),
+                          style: TextStyle(fontSize: 14, color: context.txtSec),
                         ),
                         if (_isGameOver) ...[
                           const SizedBox(height: 12),
@@ -414,15 +416,15 @@ class _PlayScreenState extends State<PlayScreen> {
 );
   }
 
-  Widget _buildClockBar({required String name, required String timeString, required bool isActive}) {
+  Widget _buildClockBar(BuildContext context, {required String name, required String timeString, required bool isActive}) {
     return Container(
       width: 480,
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
       decoration: BoxDecoration(
-        color: isActive ? ChessTheme.surfaceLight : ChessTheme.surface,
+        color: isActive ? context.surfLight : context.surf,
         borderRadius: BorderRadius.circular(8),
         border: Border.all(
-          color: isActive ? ChessTheme.primary : ChessTheme.border,
+          color: isActive ? ChessTheme.primary : context.brd,
           width: isActive ? 1.5 : 1,
         ),
       ),
@@ -432,7 +434,7 @@ class _PlayScreenState extends State<PlayScreen> {
           Expanded(
             child: Row(
               children: [
-                Icon(Icons.person, size: 18, color: isActive ? ChessTheme.primaryLight : ChessTheme.textMuted),
+                Icon(Icons.person, size: 18, color: isActive ? ChessTheme.primaryLight : context.txtMut),
                 const SizedBox(width: 8),
                 Expanded(
                   child: Text(
@@ -440,7 +442,7 @@ class _PlayScreenState extends State<PlayScreen> {
                     style: TextStyle(
                       fontSize: 13,
                       fontWeight: isActive ? FontWeight.bold : FontWeight.normal,
-                      color: ChessTheme.textPrimary,
+                      color: context.txt,
                     ),
                     overflow: TextOverflow.ellipsis,
                   ),
@@ -452,7 +454,7 @@ class _PlayScreenState extends State<PlayScreen> {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
             decoration: BoxDecoration(
-              color: Colors.black45,
+              color: context.isDark ? Colors.black45 : const Color(0xFF0F172A),
               borderRadius: BorderRadius.circular(6),
             ),
             child: Text(
@@ -461,7 +463,7 @@ class _PlayScreenState extends State<PlayScreen> {
                 fontFamily: 'monospace',
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
-                color: isActive ? ChessTheme.primaryLight : ChessTheme.textSecondary,
+                color: isActive ? ChessTheme.primaryLight : const Color(0xFFCBD5E1),
               ),
             ),
           ),

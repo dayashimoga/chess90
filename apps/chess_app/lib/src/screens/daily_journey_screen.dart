@@ -56,7 +56,7 @@ class _DailyJourneyScreenState extends State<DailyJourneyScreen> {
     final dueItemsCount = widget.repository.getReviewItems().where((i) => i.isDue).length;
 
     return Scaffold(
-      backgroundColor: ChessTheme.background,
+      backgroundColor: context.bg,
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(24.0),
         child: Column(
@@ -66,13 +66,9 @@ class _DailyJourneyScreenState extends State<DailyJourneyScreen> {
             Container(
               padding: const EdgeInsets.all(24),
               decoration: BoxDecoration(
-                gradient: const LinearGradient(
-                  colors: [Color(0xFF1E293B), Color(0xFF0F172A)],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ),
+                gradient: context.cardGradient,
                 borderRadius: BorderRadius.circular(16),
-                border: Border.all(color: ChessTheme.border),
+                border: Border.all(color: context.brd),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -101,23 +97,23 @@ class _DailyJourneyScreenState extends State<DailyJourneyScreen> {
                       ),
                       Text(
                         'Day ${_profile.currentDay} of 90 (${(completionPct * 100).toStringAsFixed(1)}%)',
-                        style: const TextStyle(color: ChessTheme.textSecondary, fontWeight: FontWeight.w600),
+                        style: TextStyle(color: context.txtSec, fontWeight: FontWeight.w600),
                       ),
                     ],
                   ),
                   const SizedBox(height: 12),
                   Text(
                     dayData.title,
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
-                      color: ChessTheme.textPrimary,
+                      color: context.txt,
                     ),
                   ),
                   const SizedBox(height: 6),
                   Text(
                     dayData.theme,
-                    style: const TextStyle(fontSize: 14, color: ChessTheme.textSecondary),
+                    style: TextStyle(fontSize: 14, color: context.txtSec),
                   ),
                   const SizedBox(height: 16),
                   ClipRRect(
@@ -125,7 +121,7 @@ class _DailyJourneyScreenState extends State<DailyJourneyScreen> {
                     child: LinearProgressIndicator(
                       value: completionPct,
                       minHeight: 8,
-                      backgroundColor: ChessTheme.surfaceLight,
+                      backgroundColor: context.surfLight,
                       valueColor: const AlwaysStoppedAnimation<Color>(ChessTheme.primary),
                     ),
                   ),
@@ -142,17 +138,17 @@ class _DailyJourneyScreenState extends State<DailyJourneyScreen> {
               spacing: 12,
               runSpacing: 12,
               children: [
-                const Text(
+                Text(
                   'Daily Adaptive Plan',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: ChessTheme.textPrimary),
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: context.txt),
                 ),
                 Wrap(
                   spacing: 8,
                   runSpacing: 8,
                   children: [
-                    _budgetChip('15m Express', 15),
-                    _budgetChip('60m Standard', 60),
-                    _budgetChip('8h Intensive GM', 480),
+                    _budgetChip(context, '15m Express', 15),
+                    _budgetChip(context, '60m Standard', 60),
+                    _budgetChip(context, '8h Intensive GM', 480),
                   ],
                 ),
               ],
@@ -177,7 +173,7 @@ class _DailyJourneyScreenState extends State<DailyJourneyScreen> {
                     Expanded(
                       child: Text(
                         '$dueItemsCount spaced repetition retention items are due for review today.',
-                        style: const TextStyle(color: ChessTheme.textPrimary, fontSize: 13),
+                        style: TextStyle(color: context.txt, fontSize: 13),
                       ),
                     ),
                     ElevatedButton(
@@ -201,7 +197,7 @@ class _DailyJourneyScreenState extends State<DailyJourneyScreen> {
               separatorBuilder: (_, __) => const SizedBox(height: 12),
               itemBuilder: (context, index) {
                 final block = _dailyPlan.blocks[index];
-                return _buildTrainingBlockCard(block);
+                return _buildTrainingBlockCard(context, block);
               },
             ),
           ],
@@ -210,30 +206,30 @@ class _DailyJourneyScreenState extends State<DailyJourneyScreen> {
     );
   }
 
-  Widget _budgetChip(String label, int minutes) {
+  Widget _budgetChip(BuildContext context, String label, int minutes) {
     final isSelected = _selectedBudgetMinutes == minutes;
     return ChoiceChip(
       label: Text(label),
       selected: isSelected,
       onSelected: (_) => _onBudgetChanged(minutes),
       selectedColor: ChessTheme.primary,
-      backgroundColor: ChessTheme.surface,
+      backgroundColor: context.surf,
       labelStyle: TextStyle(
-        color: isSelected ? Colors.black : ChessTheme.textSecondary,
+        color: isSelected ? Colors.black : context.txtSec,
         fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
         fontSize: 12,
       ),
     );
   }
 
-  Widget _buildTrainingBlockCard(TrainingBlock block) {
+  Widget _buildTrainingBlockCard(BuildContext context, TrainingBlock block) {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: ChessTheme.surface,
+        color: context.surf,
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: block.isMandatory ? ChessTheme.primary.withAlpha(80) : ChessTheme.border,
+          color: block.isMandatory ? ChessTheme.primary.withAlpha(80) : context.brd,
           width: 1,
         ),
       ),
@@ -244,7 +240,7 @@ class _DailyJourneyScreenState extends State<DailyJourneyScreen> {
             width: 64,
             height: 64,
             decoration: BoxDecoration(
-              color: ChessTheme.surfaceLight,
+              color: context.surfLight,
               borderRadius: BorderRadius.circular(10),
             ),
             child: FittedBox(
@@ -260,7 +256,7 @@ class _DailyJourneyScreenState extends State<DailyJourneyScreen> {
                       color: ChessTheme.primaryLight,
                     ),
                   ),
-                  const Text('MIN', style: TextStyle(fontSize: 10, color: ChessTheme.textMuted)),
+                  Text('MIN', style: TextStyle(fontSize: 10, color: context.txtMut)),
                 ],
               ),
             ),
@@ -279,10 +275,10 @@ class _DailyJourneyScreenState extends State<DailyJourneyScreen> {
                   children: [
                     Text(
                       block.title,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
-                        color: ChessTheme.textPrimary,
+                        color: context.txt,
                       ),
                     ),
                     if (block.isMandatory)
@@ -302,7 +298,7 @@ class _DailyJourneyScreenState extends State<DailyJourneyScreen> {
                 const SizedBox(height: 4),
                 Text(
                   block.objective,
-                  style: const TextStyle(fontSize: 12, color: ChessTheme.textSecondary),
+                  style: TextStyle(fontSize: 12, color: context.txtSec),
                 ),
               ],
             ),
@@ -311,7 +307,7 @@ class _DailyJourneyScreenState extends State<DailyJourneyScreen> {
           // Launch action button
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              backgroundColor: ChessTheme.surfaceLight,
+              backgroundColor: context.surfLight,
               foregroundColor: ChessTheme.primaryLight,
               side: const BorderSide(color: ChessTheme.primary),
               shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),

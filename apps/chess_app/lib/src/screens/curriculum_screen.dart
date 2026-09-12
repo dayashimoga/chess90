@@ -32,40 +32,40 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
     final currentDayData = CurriculumCatalog.getDay(_selectedDay);
 
     return Scaffold(
-      backgroundColor: ChessTheme.background,
+      backgroundColor: context.bg,
       body: Row(
         children: [
           // Left Sidebar: 90-Day Timeline Navigator
           SizedBox(
             width: 380,
             child: Container(
-              decoration: const BoxDecoration(
-                color: ChessTheme.surface,
-                border: Border(right: BorderSide(color: ChessTheme.border)),
+              decoration: BoxDecoration(
+                color: context.surf,
+                border: Border(right: BorderSide(color: context.brd)),
               ),
               child: Column(
                 children: [
                   // Phase Selector Dropdown
                   Container(
                     padding: const EdgeInsets.all(16),
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       border:
-                          Border(bottom: BorderSide(color: ChessTheme.border)),
+                          Border(bottom: BorderSide(color: context.brd)),
                     ),
                     child: DropdownButtonFormField<CurriculumPhase?>(
                       initialValue: _selectedPhase,
                       isExpanded: true,
-                      dropdownColor: ChessTheme.surfaceLight,
+                      dropdownColor: context.surfLight,
                       decoration: InputDecoration(
                         labelText: 'Filter by Curriculum Phase',
-                        labelStyle: const TextStyle(
-                            color: ChessTheme.textSecondary, fontSize: 12),
+                        labelStyle: TextStyle(
+                            color: context.txtSec, fontSize: 12),
                         contentPadding: const EdgeInsets.symmetric(
                             horizontal: 12, vertical: 8),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
                           borderSide:
-                              const BorderSide(color: ChessTheme.border),
+                              BorderSide(color: context.brd),
                         ),
                       ),
                       items: [
@@ -110,7 +110,7 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
                           color: Colors.transparent,
                           child: ListTile(
                             selected: isSelected,
-                            selectedTileColor: ChessTheme.surfaceLight,
+                            selectedTileColor: context.surfLight,
                             onTap: () {
                               setState(() {
                                 _selectedDay = day.dayNumber;
@@ -119,10 +119,10 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
                             leading: CircleAvatar(
                               radius: 16,
                               backgroundColor: day.isWeeklyExam
-                                  ? ChessTheme.accentGold.withAlpha(40)
+                                   ? ChessTheme.accentGold.withAlpha(40)
                                   : (isSelected
                                       ? ChessTheme.primary
-                                      : ChessTheme.surfaceLight),
+                                      : context.surfLight),
                               child: Text(
                                 '${day.dayNumber}',
                                 style: TextStyle(
@@ -132,7 +132,7 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
                                       ? ChessTheme.accentGold
                                       : (isSelected
                                           ? Colors.black
-                                          : ChessTheme.textPrimary),
+                                          : context.txt),
                                 ),
                               ),
                             ),
@@ -143,15 +143,15 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
                                 fontWeight: isSelected
                                     ? FontWeight.bold
                                     : FontWeight.normal,
-                                color: ChessTheme.textPrimary,
+                                color: context.txt,
                               ),
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                             ),
                             subtitle: Text(
                               day.theme,
-                              style: const TextStyle(
-                                  fontSize: 11, color: ChessTheme.textMuted),
+                              style: TextStyle(
+                                  fontSize: 11, color: context.txtMut),
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                             ),
@@ -217,10 +217,10 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
                             const SizedBox(height: 4),
                             Text(
                               currentDayData.title,
-                              style: const TextStyle(
+                              style: TextStyle(
                                   fontSize: 26,
                                   fontWeight: FontWeight.bold,
-                                  color: ChessTheme.textPrimary),
+                                  color: context.txt),
                             ),
                           ],
                         ),
@@ -252,24 +252,24 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
                   Container(
                     padding: const EdgeInsets.all(20),
                     decoration: BoxDecoration(
-                      color: ChessTheme.surface,
+                      color: context.surf,
                       borderRadius: BorderRadius.circular(12),
-                      border: Border.all(color: ChessTheme.border),
+                      border: Border.all(color: context.brd),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Row(
+                        Row(
                           children: [
-                            Icon(Icons.check_circle_outline,
+                            const Icon(Icons.check_circle_outline,
                                 color: ChessTheme.primary, size: 20),
-                            SizedBox(width: 8),
+                            const SizedBox(width: 8),
                             Text(
                               'Core Learning Objectives',
                               style: TextStyle(
                                   fontSize: 16,
                                   fontWeight: FontWeight.bold,
-                                  color: ChessTheme.textPrimary),
+                                  color: context.txt),
                             ),
                           ],
                         ),
@@ -288,8 +288,8 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
                                               fontSize: 16)),
                                       Expanded(
                                         child: Text(obj,
-                                            style: const TextStyle(
-                                                color: ChessTheme.textSecondary,
+                                            style: TextStyle(
+                                                color: context.txtSec,
                                                 fontSize: 14)),
                                       ),
                                     ],
@@ -305,27 +305,27 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
                   Container(
                     padding: const EdgeInsets.all(24),
                     decoration: BoxDecoration(
-                      color: ChessTheme.surface,
+                      color: context.surf,
                       borderRadius: BorderRadius.circular(12),
-                      border: Border.all(color: ChessTheme.border),
+                      border: Border.all(color: context.brd),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Text(
+                        Text(
                           'Educational Material & Grandmaster Principles',
                           style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,
-                              color: ChessTheme.textPrimary),
+                              color: context.txt),
                         ),
                         const SizedBox(height: 16),
                         Text(
                           currentDayData.theoryMarkdown,
-                          style: const TextStyle(
+                          style: TextStyle(
                               fontSize: 14,
                               height: 1.6,
-                              color: ChessTheme.textSecondary),
+                              color: context.txtSec),
                         ),
                       ],
                     ),
@@ -334,12 +334,12 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
                   const SizedBox(height: 24),
 
                   // Interactive Exercises in this Day
-                  const Text(
+                  Text(
                     'Interactive Lab Exercises',
                     style: TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
-                        color: ChessTheme.textPrimary),
+                        color: context.txt),
                   ),
                   const SizedBox(height: 12),
 
@@ -353,17 +353,17 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
                       return Container(
                         padding: const EdgeInsets.all(16),
                         decoration: BoxDecoration(
-                          color: ChessTheme.surface,
+                          color: context.surf,
                           borderRadius: BorderRadius.circular(10),
-                          border: Border.all(color: ChessTheme.border),
+                          border: Border.all(color: context.brd),
                         ),
                         child: Row(
                           children: [
                             Container(
                               width: 36,
                               height: 36,
-                              decoration: const BoxDecoration(
-                                color: ChessTheme.surfaceLight,
+                              decoration: BoxDecoration(
+                                color: context.surfLight,
                                 shape: BoxShape.circle,
                               ),
                               child: Center(
@@ -382,24 +382,24 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
                                 children: [
                                   Text(
                                     ex.instruction,
-                                    style: const TextStyle(
+                                    style: TextStyle(
                                         fontWeight: FontWeight.bold,
-                                        color: ChessTheme.textPrimary),
+                                        color: context.txt),
                                   ),
                                   const SizedBox(height: 4),
                                   Text(
                                     'Motif: ${ex.motif} • Side: ${ex.sideToPlay.name.toUpperCase()}',
-                                    style: const TextStyle(
+                                    style: TextStyle(
                                         fontSize: 12,
-                                        color: ChessTheme.textMuted),
+                                        color: context.txtMut),
                                   ),
                                 ],
                               ),
                             ),
                             ElevatedButton(
                               style: ElevatedButton.styleFrom(
-                                backgroundColor: ChessTheme.surfaceLight,
-                                foregroundColor: ChessTheme.primaryLight,
+                                backgroundColor: context.surfLight,
+                                foregroundColor: ChessTheme.primary,
                               ),
                               onPressed: () {
                                 widget.onNavigate('labs', args: {

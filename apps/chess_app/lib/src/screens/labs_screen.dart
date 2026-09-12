@@ -107,7 +107,7 @@ class _LabsScreenState extends State<LabsScreen> {
     final currentEx = _exercises[_currentExerciseIndex];
 
     return Scaffold(
-      backgroundColor: ChessTheme.background,
+      backgroundColor: context.bg,
       body: LayoutBuilder(
         builder: (context, constraints) {
           final isCompact = constraints.maxWidth < 800;
@@ -124,9 +124,9 @@ class _LabsScreenState extends State<LabsScreen> {
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
             margin: const EdgeInsets.only(bottom: 16),
             decoration: BoxDecoration(
-              color: ChessTheme.surface,
+              color: context.surf,
               borderRadius: BorderRadius.circular(10),
-              border: Border.all(color: ChessTheme.border),
+              border: Border.all(color: context.brd),
             ),
             child: Row(
               children: [
@@ -136,7 +136,7 @@ class _LabsScreenState extends State<LabsScreen> {
                       : Icons.help_outline,
                   color: _session.isCompleted
                       ? (_session.isSuccess ? ChessTheme.primary : ChessTheme.qualityBlunder)
-                      : ChessTheme.textSecondary,
+                      : context.txtSec,
                 ),
                 const SizedBox(width: 12),
                 Expanded(
@@ -145,14 +145,14 @@ class _LabsScreenState extends State<LabsScreen> {
                     style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w600,
-                      color: _session.isSuccess ? ChessTheme.primaryLight : ChessTheme.textPrimary,
+                      color: _session.isSuccess ? ChessTheme.primaryLight : context.txt,
                     ),
                   ),
                 ),
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                   decoration: BoxDecoration(
-                    color: ChessTheme.surfaceLight,
+                    color: context.surfLight,
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Text(
@@ -201,7 +201,7 @@ class _LabsScreenState extends State<LabsScreen> {
                 icon: const Icon(Icons.lightbulb_outline, size: 16),
                 label: Text('Hint (${_session.hintsRevealed}/${currentEx.hints.length})'),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: ChessTheme.surface,
+                  backgroundColor: context.surf,
                   foregroundColor: ChessTheme.accentGold,
                   side: const BorderSide(color: ChessTheme.accentGold),
                 ),
@@ -213,7 +213,7 @@ class _LabsScreenState extends State<LabsScreen> {
                 icon: const Icon(Icons.shield_outlined, size: 16),
                 label: const Text('Declare "No Tactic"'),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: ChessTheme.surface,
+                  backgroundColor: context.surf,
                   foregroundColor: ChessTheme.secondary,
                   side: const BorderSide(color: ChessTheme.secondary),
                 ),
@@ -225,8 +225,8 @@ class _LabsScreenState extends State<LabsScreen> {
                 icon: const Icon(Icons.refresh, size: 16),
                 label: const Text('Reset'),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: ChessTheme.surfaceLight,
-                  foregroundColor: ChessTheme.textPrimary,
+                  backgroundColor: context.surfLight,
+                  foregroundColor: context.txt,
                 ),
                 onPressed: () => _session.reset(),
               ),
@@ -246,9 +246,9 @@ class _LabsScreenState extends State<LabsScreen> {
           final metaPanel = Container(
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: ChessTheme.surface,
+              color: context.surf,
               borderRadius: BorderRadius.circular(10),
-              border: Border.all(color: ChessTheme.border),
+              border: Border.all(color: context.brd),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -261,12 +261,12 @@ class _LabsScreenState extends State<LabsScreen> {
                 const SizedBox(height: 4),
                 Text(
                   currentEx.instruction,
-                  style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: ChessTheme.textPrimary),
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: context.txt),
                 ),
                 const SizedBox(height: 6),
                 Text(
                   'Tactical Motif: ${currentEx.motif}',
-                  style: const TextStyle(fontSize: 12, color: ChessTheme.textSecondary),
+                  style: TextStyle(fontSize: 12, color: context.txtSec),
                 ),
               ],
             ),

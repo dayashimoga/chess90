@@ -122,8 +122,8 @@ class _ChessBoardWidgetState extends State<ChessBoardWidget> {
       barrierDismissible: false,
       builder: (ctx) {
         return AlertDialog(
-          backgroundColor: ChessTheme.surface,
-          title: const Text('Promote Pawn', style: TextStyle(color: ChessTheme.textPrimary)),
+          backgroundColor: ctx.surf,
+          title: Text('Promote Pawn', style: TextStyle(color: ctx.txt)),
           content: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: options.map((type) {
@@ -179,10 +179,10 @@ class _ChessBoardWidgetState extends State<ChessBoardWidget> {
               height: boardSize,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
-                border: Border.all(color: ChessTheme.border, width: 2),
+                border: Border.all(color: context.brd, width: 2),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withAlpha(80),
+                    color: Colors.black.withAlpha(context.isDark ? 80 : 25),
                     blurRadius: 16,
                     offset: const Offset(0, 4),
                   ),

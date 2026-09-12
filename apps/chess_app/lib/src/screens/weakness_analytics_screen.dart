@@ -29,6 +29,7 @@ class WeaknessAnalyticsScreen extends StatelessWidget {
     }
 
     return Scaffold(
+      backgroundColor: context.bg,
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(24.0),
         child: Column(
@@ -53,17 +54,17 @@ class WeaknessAnalyticsScreen extends StatelessWidget {
                       child: const Icon(Icons.troubleshoot, color: ChessTheme.qualityBlunder, size: 22),
                     ),
                     const SizedBox(width: 12),
-                    const Column(
+                    Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Text(
                           'WEAKNESS & COGNITIVE ROOT-CAUSE ANALYTICS',
-                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, letterSpacing: 0.5),
+                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, letterSpacing: 0.5, color: context.txt),
                         ),
                         Text(
                           '14-Axis diagnostic decomposition and retraining',
-                          style: TextStyle(fontSize: 12, color: ChessTheme.textSecondary),
+                          style: TextStyle(fontSize: 12, color: context.txtSec),
                         ),
                       ],
                     ),
@@ -72,9 +73,9 @@ class WeaknessAnalyticsScreen extends StatelessWidget {
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                   decoration: BoxDecoration(
-                    color: ChessTheme.surface,
+                    color: context.surf,
                     borderRadius: BorderRadius.circular(20),
-                    border: Border.all(color: ChessTheme.border),
+                    border: Border.all(color: context.brd),
                   ),
                   child: Text(
                     'ACTIVE QUEUE: ${reviewItems.length} DRILLS',
@@ -93,18 +94,18 @@ class WeaknessAnalyticsScreen extends StatelessWidget {
                 if (isCompact) {
                   return Column(
                     children: [
-                      _buildRadarCard(radarValues),
+                      _buildRadarCard(context, radarValues),
                       const SizedBox(height: 16),
-                      _buildCognitiveDomainsCard(),
+                      _buildCognitiveDomainsCard(context),
                     ],
                   );
                 }
                 return Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Expanded(flex: 5, child: _buildRadarCard(radarValues)),
+                    Expanded(flex: 5, child: _buildRadarCard(context, radarValues)),
                     const SizedBox(width: 20),
-                    Expanded(flex: 6, child: _buildCognitiveDomainsCard()),
+                    Expanded(flex: 6, child: _buildCognitiveDomainsCard(context)),
                   ],
                 );
               },
@@ -113,14 +114,14 @@ class WeaknessAnalyticsScreen extends StatelessWidget {
             const SizedBox(height: 24),
 
             // 14 Root Causes Breakdown
-            const Text(
+            Text(
               '14 HIERARCHICAL ROOT-CAUSE BREAKDOWN',
-              style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, letterSpacing: 1.0),
+              style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, letterSpacing: 1.0, color: context.txt),
             ),
             const SizedBox(height: 4),
-            const Text(
+            Text(
               'Cognitive categorization of calculation errors, strategic misjudgments, and psychological time slips.',
-              style: TextStyle(fontSize: 12, color: ChessTheme.textSecondary),
+              style: TextStyle(fontSize: 12, color: context.txtSec),
             ),
             const SizedBox(height: 16),
             _buildRootCauseGrid(context),
@@ -130,21 +131,21 @@ class WeaknessAnalyticsScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildRadarCard(Map<SkillAxis, double> radarValues) {
+  Widget _buildRadarCard(BuildContext context, Map<SkillAxis, double> radarValues) {
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: ChessTheme.surface,
+        color: context.surf,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: ChessTheme.border),
+        border: Border.all(color: context.brd),
       ),
       child: Column(
         children: [
-          const Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text('12-Axis Skill Radar', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
-              Text('Real Stored Metrics', style: TextStyle(fontSize: 11, color: ChessTheme.textMuted)),
+              Text('12-Axis Skill Radar', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: context.txt)),
+              Text('Real Stored Metrics', style: TextStyle(fontSize: 11, color: context.txtMut)),
             ],
           ),
           const SizedBox(height: 16),
@@ -157,7 +158,7 @@ class WeaknessAnalyticsScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildCognitiveDomainsCard() {
+  Widget _buildCognitiveDomainsCard(BuildContext context) {
     final domains = [
       {'domain': 'Calculation & Candidate Search', 'desc': 'Candidate generation, visualization, horizon depth, and blunder checks.', 'icon': Icons.psychology, 'color': ChessTheme.secondary},
       {'domain': 'Tactical Vision & Defense', 'desc': 'Tactical motifs, forcing opponent replies, and tenacious defensive resources.', 'icon': Icons.bolt, 'color': ChessTheme.accentGold},
@@ -169,14 +170,14 @@ class WeaknessAnalyticsScreen extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: ChessTheme.surface,
+        color: context.surf,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: ChessTheme.border),
+        border: Border.all(color: context.brd),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text('Cognitive Diagnostic Domains', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14)),
+          Text('Cognitive Diagnostic Domains', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: context.txt)),
           const SizedBox(height: 12),
           ...domains.map((d) {
             return Padding(
@@ -197,8 +198,8 @@ class WeaknessAnalyticsScreen extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(d['domain'] as String, style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 12)),
-                        Text(d['desc'] as String, style: const TextStyle(fontSize: 11, color: ChessTheme.textMuted)),
+                        Text(d['domain'] as String, style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12, color: context.txt)),
+                        Text(d['desc'] as String, style: TextStyle(fontSize: 11, color: context.txtMut)),
                       ],
                     ),
                   ),
@@ -244,9 +245,9 @@ class WeaknessAnalyticsScreen extends StatelessWidget {
         return Container(
           padding: const EdgeInsets.all(14),
           decoration: BoxDecoration(
-            color: ChessTheme.surface,
+            color: context.surf,
             borderRadius: BorderRadius.circular(12),
-            border: Border.all(color: ChessTheme.border),
+            border: Border.all(color: context.brd),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -257,7 +258,7 @@ class WeaknessAnalyticsScreen extends StatelessWidget {
                   Expanded(
                     child: Text(
                       cat.title,
-                      style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
+                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: context.txt),
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
@@ -278,7 +279,7 @@ class WeaknessAnalyticsScreen extends StatelessWidget {
               Expanded(
                 child: Text(
                   cat.description,
-                  style: const TextStyle(fontSize: 11, color: ChessTheme.textSecondary),
+                  style: TextStyle(fontSize: 11, color: context.txtSec),
                   overflow: TextOverflow.ellipsis,
                   maxLines: 2,
                 ),
@@ -289,7 +290,7 @@ class WeaknessAnalyticsScreen extends StatelessWidget {
                 children: [
                   Text(
                     'Lab: ${cat.prescribedLabType}',
-                    style: const TextStyle(fontSize: 10, color: ChessTheme.textMuted),
+                    style: TextStyle(fontSize: 10, color: context.txtMut),
                   ),
                   InkWell(
                     onTap: () => onNavigate?.call('labs', args: {'labType': cat.prescribedLabType}),

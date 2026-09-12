@@ -233,17 +233,17 @@ class _EndgameWorkspaceScreenState extends State<EndgameWorkspaceScreen> {
               child: const Icon(Icons.shield, color: ChessTheme.accentGold, size: 20),
             ),
             const SizedBox(width: 12),
-            const Column(
+            Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
                   'ENDGAME WORKSPACE',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, letterSpacing: 0.5),
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, letterSpacing: 0.5, color: context.txt),
                 ),
                 Text(
                   'Theoretical accuracy and technique mastery',
-                  style: TextStyle(fontSize: 12, color: ChessTheme.textSecondary),
+                  style: TextStyle(fontSize: 12, color: context.txtSec),
                 ),
               ],
             ),
@@ -253,8 +253,8 @@ class _EndgameWorkspaceScreenState extends State<EndgameWorkspaceScreen> {
           icon: const Icon(Icons.replay, size: 16),
           label: const Text('Reset Position'),
           style: ElevatedButton.styleFrom(
-            backgroundColor: ChessTheme.surfaceLight,
-            foregroundColor: ChessTheme.textPrimary,
+            backgroundColor: context.surfLight,
+            foregroundColor: context.txt,
           ),
           onPressed: () => _loadPosition(_activePosition),
         ),
@@ -266,9 +266,9 @@ class _EndgameWorkspaceScreenState extends State<EndgameWorkspaceScreen> {
     return Container(
       padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
-        color: _isSuccess ? ChessTheme.primary.withAlpha(20) : ChessTheme.surface,
+        color: _isSuccess ? ChessTheme.primary.withAlpha(20) : context.surf,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: _isSuccess ? ChessTheme.primaryLight : ChessTheme.border),
+        border: Border.all(color: _isSuccess ? ChessTheme.primaryLight : context.brd),
       ),
       child: Row(
         children: [
@@ -284,7 +284,7 @@ class _EndgameWorkspaceScreenState extends State<EndgameWorkspaceScreen> {
               style: TextStyle(
                 fontSize: 13,
                 fontWeight: FontWeight.w600,
-                color: _isSuccess ? ChessTheme.primaryLight : ChessTheme.textPrimary,
+                color: _isSuccess ? ChessTheme.primaryLight : context.txt,
               ),
             ),
           ),
@@ -297,9 +297,9 @@ class _EndgameWorkspaceScreenState extends State<EndgameWorkspaceScreen> {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: ChessTheme.surface,
+        color: context.surf,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: ChessTheme.border),
+        border: Border.all(color: context.brd),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -318,29 +318,29 @@ class _EndgameWorkspaceScreenState extends State<EndgameWorkspaceScreen> {
                   style: const TextStyle(fontWeight: FontWeight.bold, color: ChessTheme.accentGold, fontSize: 11),
                 ),
               ),
-              const Text('Master Practice Mode', style: TextStyle(fontSize: 11, color: ChessTheme.textMuted)),
+              Text('Master Practice Mode', style: TextStyle(fontSize: 11, color: context.txtMut)),
             ],
           ),
           const SizedBox(height: 10),
           Text(
             _activePosition.title,
-            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: ChessTheme.textPrimary),
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: context.txt),
           ),
           const SizedBox(height: 8),
-          Text(_activePosition.objective, style: const TextStyle(fontSize: 13, color: ChessTheme.textSecondary)),
+          Text(_activePosition.objective, style: TextStyle(fontSize: 13, color: context.txtSec)),
           const SizedBox(height: 12),
           Container(
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
-              color: ChessTheme.surfaceLight,
+              color: context.surfLight,
               borderRadius: BorderRadius.circular(8),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text('Key GM Principles:', style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: ChessTheme.textPrimary)),
+                Text('Key GM Principles:', style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: context.txt)),
                 const SizedBox(height: 4),
-                Text(_activePosition.keyPrinciples, style: const TextStyle(fontSize: 12, color: ChessTheme.textSecondary)),
+                Text(_activePosition.keyPrinciples, style: TextStyle(fontSize: 12, color: context.txtSec)),
               ],
             ),
           ),
@@ -352,9 +352,9 @@ class _EndgameWorkspaceScreenState extends State<EndgameWorkspaceScreen> {
   Widget _buildCuratedList(List<EndgamePositionModel> positions, {double? height}) {
     final listWidget = Container(
       decoration: BoxDecoration(
-        color: ChessTheme.surface,
+        color: context.surf,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: ChessTheme.border),
+        border: Border.all(color: context.brd),
       ),
       child: ListView.separated(
         itemCount: positions.length,
@@ -368,9 +368,9 @@ class _EndgameWorkspaceScreenState extends State<EndgameWorkspaceScreen> {
               dense: true,
               selected: isSelected,
               selectedTileColor: ChessTheme.accentGold.withAlpha(20),
-              title: Text(pos.title, style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w600)),
-              subtitle: Text(pos.category, style: const TextStyle(fontSize: 11, color: ChessTheme.textMuted)),
-              trailing: const Icon(Icons.arrow_forward_ios, size: 14, color: ChessTheme.textMuted),
+              title: Text(pos.title, style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: context.txt)),
+              subtitle: Text(pos.category, style: TextStyle(fontSize: 11, color: context.txtMut)),
+              trailing: Icon(Icons.arrow_forward_ios, size: 14, color: context.txtMut),
               onTap: () => _loadPosition(pos),
             ),
           );

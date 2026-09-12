@@ -71,7 +71,7 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
     final board = currentFrame != null ? Board.fromFen(currentFrame.fen) : Board.initial();
 
     return Scaffold(
-      backgroundColor: ChessTheme.background,
+      backgroundColor: context.bg,
       body: Padding(
         padding: const EdgeInsets.all(24.0),
         child: Row(
@@ -80,10 +80,10 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
             SizedBox(
               width: 360,
               child: Material(
-                color: ChessTheme.surface,
+                color: context.surf,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
-                  side: const BorderSide(color: ChessTheme.border),
+                  side: BorderSide(color: context.brd),
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(20),
@@ -91,14 +91,14 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Row(
+                      Row(
                         children: [
-                          Icon(Icons.movie_creation, color: ChessTheme.primaryLight, size: 20),
-                          SizedBox(width: 8),
+                          const Icon(Icons.movie_creation, color: ChessTheme.primaryLight, size: 20),
+                          const SizedBox(width: 8),
                           Expanded(
                             child: Text(
                               'Video Studio Config',
-                              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: ChessTheme.textPrimary),
+                              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: context.txt),
                               overflow: TextOverflow.ellipsis,
                             ),
                           ),
@@ -107,12 +107,12 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
                       const SizedBox(height: 16),
 
                       // Format selector
-                      const Text('Export Aspect Ratio & Profile', style: TextStyle(fontSize: 12, color: ChessTheme.textSecondary)),
+                      Text('Export Aspect Ratio & Profile', style: TextStyle(fontSize: 12, color: context.txtSec)),
                       const SizedBox(height: 6),
                       DropdownButtonFormField<VideoAspectRatio>(
                         initialValue: _aspectRatio,
                         isExpanded: true,
-                        dropdownColor: ChessTheme.surfaceLight,
+                        dropdownColor: context.surfLight,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
                           contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
@@ -137,7 +137,7 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
 
                       // Move speed slider
                       Text('Move Animation Speed (${_moveSpeed.toStringAsFixed(2)}s)',
-                          style: const TextStyle(fontSize: 12, color: ChessTheme.textSecondary)),
+                          style: TextStyle(fontSize: 12, color: context.txtSec)),
                       Slider(
                         value: _moveSpeed,
                         min: 0.15,
@@ -153,7 +153,7 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
 
                       // Critical moment pause
                       Text('Critical Moment Pause (${_criticalPause.toStringAsFixed(1)}s)',
-                          style: const TextStyle(fontSize: 12, color: ChessTheme.textSecondary)),
+                          style: TextStyle(fontSize: 12, color: context.txtSec)),
                       Slider(
                         value: _criticalPause,
                         min: 1.0,
@@ -172,21 +172,21 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
                       // Feature Toggles
                       SwitchListTile(
                         contentPadding: EdgeInsets.zero,
-                        title: const Text('Evaluation Bar', style: TextStyle(fontSize: 13, color: ChessTheme.textPrimary)),
+                        title: Text('Evaluation Bar', style: TextStyle(fontSize: 13, color: context.txt)),
                         value: _showEvalBar,
                         activeThumbColor: ChessTheme.primary,
                         onChanged: (val) => setState(() => _showEvalBar = val),
                       ),
                       SwitchListTile(
                         contentPadding: EdgeInsets.zero,
-                        title: const Text('Move & Critical Arrows', style: TextStyle(fontSize: 13, color: ChessTheme.textPrimary)),
+                        title: Text('Move & Critical Arrows', style: TextStyle(fontSize: 13, color: context.txt)),
                         value: _showArrows,
                         activeThumbColor: ChessTheme.primary,
                         onChanged: (val) => setState(() => _showArrows = val),
                       ),
                       SwitchListTile(
                         contentPadding: EdgeInsets.zero,
-                        title: const Text('Educational Subtitles', style: TextStyle(fontSize: 13, color: ChessTheme.textPrimary)),
+                        title: Text('Educational Subtitles', style: TextStyle(fontSize: 13, color: context.txt)),
                         value: _showSubtitles,
                         activeThumbColor: ChessTheme.primary,
                         onChanged: (val) => setState(() => _showSubtitles = val),
@@ -195,14 +195,14 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
                       const SizedBox(height: 16),
 
                       // FFmpeg Command Line Copy Box
-                      const Text('Deterministic FFmpeg Command', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: ChessTheme.textPrimary)),
+                      Text('Deterministic FFmpeg Command', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: context.txt)),
                       const SizedBox(height: 6),
                       Container(
                         padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                          color: Colors.black45,
+                          color: context.isDark ? Colors.black45 : const Color(0xFF1E293B),
                           borderRadius: BorderRadius.circular(6),
-                          border: Border.all(color: ChessTheme.border),
+                          border: Border.all(color: context.brd),
                         ),
                         child: SelectableText(
                           _generatedCommand,
@@ -214,8 +214,8 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
                         icon: const Icon(Icons.copy, size: 14),
                         label: const Text('Copy FFmpeg Command'),
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: ChessTheme.surfaceLight,
-                          foregroundColor: ChessTheme.textPrimary,
+                          backgroundColor: context.surfLight,
+                          foregroundColor: context.txt,
                           minimumSize: const Size(double.infinity, 36),
                         ),
                         onPressed: () {
@@ -243,16 +243,16 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
                     padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                     margin: const EdgeInsets.only(bottom: 16),
                     decoration: BoxDecoration(
-                      color: ChessTheme.surface,
+                      color: context.surf,
                       borderRadius: BorderRadius.circular(10),
-                      border: Border.all(color: ChessTheme.border),
+                      border: Border.all(color: context.brd),
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
                           'Frame ${_currentFrameIndex + 1} of ${_generatedTimeline.length} • ${currentFrame?.timestampSeconds.toStringAsFixed(2)}s',
-                          style: const TextStyle(fontWeight: FontWeight.bold, color: ChessTheme.textPrimary),
+                          style: TextStyle(fontWeight: FontWeight.bold, color: context.txt),
                         ),
                         if (currentFrame?.subtitleText != null && currentFrame!.subtitleText!.isNotEmpty)
                           Expanded(

@@ -31,7 +31,7 @@ class CertificationScreen extends StatelessWidget {
     );
 
     return Scaffold(
-      backgroundColor: ChessTheme.background,
+      backgroundColor: context.bg,
       body: SingleChildScrollView(
         padding: EdgeInsets.all(MediaQuery.of(context).size.width < 600 ? 16 : 32),
         child: Column(
@@ -41,16 +41,22 @@ class CertificationScreen extends StatelessWidget {
               width: double.infinity,
               padding: EdgeInsets.all(MediaQuery.of(context).size.width < 600 ? 16 : 36),
               decoration: BoxDecoration(
-                gradient: const LinearGradient(
-                  colors: [Color(0xFF1E293B), Color(0xFF0F172A)],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ),
+                gradient: context.isDark
+                    ? const LinearGradient(
+                        colors: [Color(0xFF1E293B), Color(0xFF0F172A)],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      )
+                    : const LinearGradient(
+                        colors: [Color(0xFFFFFFFF), Color(0xFFFFFBEB)],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
                 borderRadius: BorderRadius.circular(16),
                 border: Border.all(color: ChessTheme.accentGold, width: 2),
                 boxShadow: [
                   BoxShadow(
-                    color: ChessTheme.accentGold.withAlpha(30),
+                    color: ChessTheme.accentGold.withAlpha(context.isDark ? 30 : 20),
                     blurRadius: 24,
                     spreadRadius: 2,
                   ),
@@ -70,20 +76,20 @@ class CertificationScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 8),
-                  const Text(
+                  Text(
                     'CHESSMASTER 90-DAY MASTERY ASSESSMENT & COMPLETION REPORT',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
-                      color: ChessTheme.textPrimary,
+                      color: context.txt,
                     ),
                   ),
                   const SizedBox(height: 16),
                   Text(
                     'This certifies that ${profile.username} has completed the rigorous 90-Day ChessMaster Training Program, internalizing grandmaster calculation trees, root-cause blunder diagnostics, theoretical endgames, and tournament discipline.',
                     textAlign: TextAlign.center,
-                    style: const TextStyle(fontSize: 14, height: 1.6, color: ChessTheme.textSecondary),
+                    style: TextStyle(fontSize: 14, height: 1.6, color: context.txtSec),
                   ),
                   const SizedBox(height: 24),
 
@@ -91,19 +97,23 @@ class CertificationScreen extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.all(14),
                     decoration: BoxDecoration(
-                      color: Colors.black54,
+                      color: context.isDark ? Colors.black54 : const Color(0xFFFEF3C7),
                       borderRadius: BorderRadius.circular(8),
                       border: Border.all(color: ChessTheme.accentGold.withAlpha(80)),
                     ),
-                    child: const Row(
+                    child: Row(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Icon(Icons.gavel_outlined, size: 18, color: ChessTheme.accentGold),
-                        SizedBox(width: 10),
+                        const Icon(Icons.gavel_outlined, size: 18, color: ChessTheme.accentGold),
+                        const SizedBox(width: 10),
                         Flexible(
                           child: Text(
                             'Official Disclaimer: Certifies analytical & calculation mastery within the 90-day program. This report does NOT confer an official FIDE title (GM, IM, FM, CM) or official FIDE rating, which require over-the-board tournament play in FIDE-sanctioned events.',
-                            style: TextStyle(fontSize: 12, height: 1.4, color: ChessTheme.textSecondary),
+                            style: TextStyle(
+                              fontSize: 12,
+                              height: 1.4,
+                              color: context.isDark ? ChessTheme.textSecondary : const Color(0xFF92400E),
+                            ),
                           ),
                         ),
                       ],
@@ -124,9 +134,9 @@ class CertificationScreen extends StatelessWidget {
                   height: 440,
                   padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
-                    color: ChessTheme.surface,
+                    color: context.surf,
                     borderRadius: BorderRadius.circular(16),
-                    border: Border.all(color: ChessTheme.border),
+                    border: Border.all(color: context.brd),
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -137,16 +147,16 @@ class CertificationScreen extends StatelessWidget {
                         spacing: 12,
                         runSpacing: 8,
                         children: [
-                          const Text(
+                          Text(
                             'Day 1 vs Day 90 Mastery Radar',
-                            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: ChessTheme.textPrimary),
+                            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: context.txt),
                           ),
                           Wrap(
                             spacing: 12,
                             runSpacing: 4,
                             children: [
-                              _legendItem('Day 1 Baseline (35%)', ChessTheme.accentGold),
-                              _legendItem('Day 90 Certified (${overallMasteryPct.toStringAsFixed(0)}%)', ChessTheme.primaryLight),
+                              _legendItem(context, 'Day 1 Baseline (35%)', ChessTheme.accentGold),
+                              _legendItem(context, 'Day 90 Certified (${overallMasteryPct.toStringAsFixed(0)}%)', ChessTheme.primaryLight),
                             ],
                           ),
                         ],
@@ -165,27 +175,30 @@ class CertificationScreen extends StatelessWidget {
                 final roadmapCard = Container(
                   padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
-                    color: ChessTheme.surface,
+                    color: context.surf,
                     borderRadius: BorderRadius.circular(16),
-                    border: Border.all(color: ChessTheme.border),
+                    border: Border.all(color: context.brd),
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
+                      Text(
                         'Next 90-Day Advanced Master Roadmap',
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: ChessTheme.textPrimary),
+                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: context.txt),
                       ),
                       const SizedBox(height: 16),
                       _roadmapStep(
+                        context,
                         'Days 91–120: Classical Opening Deepening',
                         'Master subordinate critical sidelines and rare transpositions across your core systems.',
                       ),
                       _roadmapStep(
+                        context,
                         'Days 121–150: Dvoretsky-Level Endgame Technique',
                         'Complex queen-and-pawn and opposite-colored bishop multi-piece transitions.',
                       ),
                       _roadmapStep(
+                        context,
                         'Days 151–180: Real-World Tournament Campaign',
                         'Register for in-person FIDE / national rated tournaments with rigorous self-annotation.',
                       ),
@@ -219,7 +232,7 @@ class CertificationScreen extends StatelessWidget {
     );
   }
 
-  Widget _legendItem(String label, Color color) {
+  Widget _legendItem(BuildContext context, String label, Color color) {
     return Row(
       children: [
         Container(
@@ -228,12 +241,12 @@ class CertificationScreen extends StatelessWidget {
           decoration: BoxDecoration(color: color, shape: BoxShape.circle),
         ),
         const SizedBox(width: 6),
-        Text(label, style: const TextStyle(fontSize: 11, color: ChessTheme.textSecondary)),
+        Text(label, style: TextStyle(fontSize: 11, color: context.txtSec)),
       ],
     );
   }
 
-  Widget _roadmapStep(String title, String desc) {
+  Widget _roadmapStep(BuildContext context, String title, String desc) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Row(
@@ -245,9 +258,9 @@ class CertificationScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(title, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: ChessTheme.textPrimary)),
+                Text(title, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: context.txt)),
                 const SizedBox(height: 2),
-                Text(desc, style: const TextStyle(fontSize: 12, color: ChessTheme.textSecondary)),
+                Text(desc, style: TextStyle(fontSize: 12, color: context.txtSec)),
               ],
             ),
           ),

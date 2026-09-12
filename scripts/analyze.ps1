@@ -28,9 +28,15 @@ foreach ($dir in $PACKAGES) {
   Write-Host ">>> Analyzing $dir..." -ForegroundColor Yellow
   if (Test-Path $dir) {
     Push-Location $dir
-    dart pub get --offline | Out-Null
-    if ($LASTEXITCODE -ne 0) { dart pub get | Out-Null }
-    dart analyze .
+    $isFlutter = (Test-Path "pubspec.yaml") -and (Select-String -Path "pubspec.yaml" -Pattern "sdk:\s*flutter" -Quiet)
+    if ($isFlutter) {
+      flutter pub get | Out-Null
+      flutter analyze .
+    } else {
+      dart pub get --offline | Out-Null
+      if ($LASTEXITCODE -ne 0) { dart pub get | Out-Null }
+      dart analyze .
+    }
     if ($LASTEXITCODE -ne 0) {
       Write-Host "❌ $dir had analysis issues!" -ForegroundColor Red
       $HAS_ERRORS = $true

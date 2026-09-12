@@ -29,8 +29,13 @@ for dir in "${PACKAGES[@]}"; do
   if [ -d "$dir" ]; then
     (
       cd "$dir"
-      dart pub get --offline > /dev/null 2>&1 || dart pub get > /dev/null 2>&1 || true
-      dart analyze .
+      if [ -f "pubspec.yaml" ] && grep -q "sdk: flutter" "pubspec.yaml"; then
+        flutter pub get > /dev/null 2>&1 || true
+        flutter analyze .
+      else
+        dart pub get --offline > /dev/null 2>&1 || dart pub get > /dev/null 2>&1 || true
+        dart analyze .
+      fi
     ) || {
       echo "❌ $dir had analysis issues!"
       EXIT_CODE=1

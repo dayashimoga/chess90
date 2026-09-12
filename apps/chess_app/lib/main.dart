@@ -152,20 +152,20 @@ class _MainShellState extends State<MainShell> {
 
           // Offline indicator
           if (!isMobile)
-            const Row(
+            Row(
               children: [
-                Icon(Icons.wifi_off, size: 14, color: ChessTheme.textMuted),
-                SizedBox(width: 4),
+                Icon(Icons.wifi_off, size: 14, color: context.txtMut),
+                const SizedBox(width: 4),
                 Text(
                   'OFFLINE-FIRST CORE',
-                  style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: ChessTheme.textMuted),
+                  style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: context.txtMut),
                 ),
               ],
             )
           else
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 4.0),
-              child: Icon(Icons.wifi_off, size: 16, color: ChessTheme.textMuted),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 4.0),
+              child: Icon(Icons.wifi_off, size: 16, color: context.txtMut),
             ),
           const SizedBox(width: 8),
 
@@ -178,8 +178,8 @@ class _MainShellState extends State<MainShell> {
               showDialog(
                 context: context,
                 builder: (ctx) => AlertDialog(
-                  backgroundColor: ChessTheme.surface,
-                  title: const Text('Offline JSON Backup', style: TextStyle(color: ChessTheme.textPrimary)),
+                  backgroundColor: ctx.surf,
+                  title: Text('Offline JSON Backup', style: TextStyle(color: ctx.txt)),
                   content: SizedBox(
                     width: 500,
                     height: 300,
@@ -217,8 +217,8 @@ class _MainShellState extends State<MainShell> {
                             labelType: NavigationRailLabelType.all,
                             selectedIconTheme: const IconThemeData(color: ChessTheme.primaryLight),
                             selectedLabelTextStyle: const TextStyle(color: ChessTheme.primaryLight, fontSize: 11, fontWeight: FontWeight.bold),
-                            unselectedIconTheme: const IconThemeData(color: ChessTheme.textMuted),
-                            unselectedLabelTextStyle: const TextStyle(color: ChessTheme.textMuted, fontSize: 11),
+                            unselectedIconTheme: IconThemeData(color: context.txtMut),
+                            unselectedLabelTextStyle: TextStyle(color: context.txtMut, fontSize: 11),
                             destinations: const [
                               NavigationRailDestination(
                                 icon: Icon(Icons.today),
@@ -275,7 +275,7 @@ class _MainShellState extends State<MainShell> {
                     );
                   },
                 ),
-                const VerticalDivider(thickness: 1, width: 1),
+                VerticalDivider(thickness: 1, width: 1, color: context.brd),
                 Expanded(child: _buildCurrentScreen()),
               ],
             ),

@@ -164,17 +164,17 @@ class _OpeningExplorerScreenState extends State<OpeningExplorerScreen> {
               child: const Icon(Icons.explore, color: ChessTheme.primaryLight, size: 20),
             ),
             const SizedBox(width: 12),
-            const Column(
+            Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
                   'OPENING EXPLORER',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, letterSpacing: 0.5),
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, letterSpacing: 0.5, color: context.txt),
                 ),
                 Text(
                   'Master canonical lines and pawn formations',
-                  style: TextStyle(fontSize: 12, color: ChessTheme.textSecondary),
+                  style: TextStyle(fontSize: 12, color: context.txtSec),
                 ),
               ],
             ),
@@ -184,8 +184,8 @@ class _OpeningExplorerScreenState extends State<OpeningExplorerScreen> {
           icon: const Icon(Icons.refresh, size: 16),
           label: const Text('Reset Board'),
           style: ElevatedButton.styleFrom(
-            backgroundColor: ChessTheme.surfaceLight,
-            foregroundColor: ChessTheme.textPrimary,
+            backgroundColor: context.surfLight,
+            foregroundColor: context.txt,
           ),
           onPressed: _resetBoard,
         ),
@@ -197,17 +197,17 @@ class _OpeningExplorerScreenState extends State<OpeningExplorerScreen> {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
       decoration: BoxDecoration(
-        color: ChessTheme.surface,
+        color: context.surf,
         borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: ChessTheme.border),
+        border: Border.all(color: context.brd),
       ),
       child: Row(
         children: [
-          const Text('Moves: ', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12, color: ChessTheme.textMuted)),
+          Text('Moves: ', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12, color: context.txtMut)),
           Expanded(
             child: Text(
               _playedMoves.isEmpty ? 'Play moves on the board or select an opening below' : _playedMoves.join(' '),
-              style: const TextStyle(fontSize: 13, fontFamily: 'monospace', color: ChessTheme.textPrimary),
+              style: TextStyle(fontSize: 13, fontFamily: 'monospace', color: context.txt),
               overflow: TextOverflow.ellipsis,
             ),
           ),
@@ -220,9 +220,9 @@ class _OpeningExplorerScreenState extends State<OpeningExplorerScreen> {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: ChessTheme.surface,
+        color: context.surf,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: ChessTheme.border),
+        border: Border.all(color: context.brd),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -241,23 +241,23 @@ class _OpeningExplorerScreenState extends State<OpeningExplorerScreen> {
                   style: const TextStyle(fontWeight: FontWeight.bold, color: ChessTheme.secondary, fontSize: 12),
                 ),
               ),
-              const Text(
+              Text(
                 'Classical Master Repertoire',
-                style: TextStyle(fontSize: 11, color: ChessTheme.textMuted),
+                style: TextStyle(fontSize: 11, color: context.txtMut),
               ),
             ],
           ),
           const SizedBox(height: 10),
           Text(
             _currentEco?.name ?? 'Standard Starting Position',
-            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: ChessTheme.textPrimary),
+            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: context.txt),
           ),
           const SizedBox(height: 6),
           Text(
             _currentEco != null
                 ? 'Standard sequence: ${_currentEco!.movesSan.join(" ")}'
                 : 'Move pieces to identify the ECO opening and study strategic pawn structures.',
-            style: const TextStyle(fontSize: 13, color: ChessTheme.textSecondary),
+            style: TextStyle(fontSize: 13, color: context.txtSec),
           ),
         ],
       ),
@@ -267,9 +267,9 @@ class _OpeningExplorerScreenState extends State<OpeningExplorerScreen> {
   Widget _buildOpeningList(List<EcoEntry> openings, {double? height}) {
     final listWidget = Container(
       decoration: BoxDecoration(
-        color: ChessTheme.surface,
+        color: context.surf,
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: ChessTheme.border),
+        border: Border.all(color: context.brd),
       ),
       child: Column(
         children: [
@@ -278,10 +278,10 @@ class _OpeningExplorerScreenState extends State<OpeningExplorerScreen> {
             child: TextField(
               decoration: InputDecoration(
                 hintText: 'Search openings by name or code (e.g. Sicilian, C41)...',
-                hintStyle: const TextStyle(fontSize: 12, color: ChessTheme.textMuted),
-                prefixIcon: const Icon(Icons.search, size: 18, color: ChessTheme.textMuted),
+                hintStyle: TextStyle(fontSize: 12, color: context.txtMut),
+                prefixIcon: Icon(Icons.search, size: 18, color: context.txtMut),
                 filled: true,
-                fillColor: ChessTheme.surfaceLight,
+                fillColor: context.surfLight,
                 contentPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 12),
                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(8), borderSide: BorderSide.none),
               ),
@@ -305,7 +305,7 @@ class _OpeningExplorerScreenState extends State<OpeningExplorerScreen> {
                     leading: Container(
                       padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                       decoration: BoxDecoration(
-                        color: ChessTheme.surfaceLight,
+                        color: context.surfLight,
                         borderRadius: BorderRadius.circular(4),
                       ),
                       child: Text(
@@ -313,12 +313,12 @@ class _OpeningExplorerScreenState extends State<OpeningExplorerScreen> {
                         style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 11, color: ChessTheme.primaryLight),
                       ),
                     ),
-                    title: Text(entry.name, style: const TextStyle(fontSize: 13, fontWeight: FontWeight.w600)),
+                    title: Text(entry.name, style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: context.txt)),
                     subtitle: Text(
                       entry.movesSan.join(' '),
-                      style: const TextStyle(fontSize: 11, color: ChessTheme.textMuted, fontFamily: 'monospace'),
+                      style: TextStyle(fontSize: 11, color: context.txtMut, fontFamily: 'monospace'),
                     ),
-                    trailing: const Icon(Icons.chevron_right, size: 16, color: ChessTheme.textMuted),
+                    trailing: Icon(Icons.chevron_right, size: 16, color: context.txtMut),
                     onTap: () => _selectEco(entry),
                   ),
                 );

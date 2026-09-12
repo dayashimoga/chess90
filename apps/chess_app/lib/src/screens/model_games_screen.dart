@@ -83,7 +83,7 @@ class _ModelGamesScreenState extends State<ModelGamesScreen> {
     if (_selectedGame == null) return const SizedBox();
 
     return Scaffold(
-      backgroundColor: ChessTheme.background,
+      backgroundColor: context.bg,
       body: Padding(
         padding: const EdgeInsets.all(24.0),
         child: Row(
@@ -93,24 +93,24 @@ class _ModelGamesScreenState extends State<ModelGamesScreen> {
               width: 320,
               child: Container(
                 decoration: BoxDecoration(
-                  color: ChessTheme.surface,
+                  color: context.surf,
                   borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: ChessTheme.border),
+                  border: Border.all(color: context.brd),
                 ),
                 child: Column(
                   children: [
                     Container(
                       padding: const EdgeInsets.all(16),
-                      decoration: const BoxDecoration(
-                        border: Border(bottom: BorderSide(color: ChessTheme.border)),
+                      decoration: BoxDecoration(
+                        border: Border(bottom: BorderSide(color: context.brd)),
                       ),
-                      child: const Row(
+                      child: Row(
                         children: [
-                          Icon(Icons.auto_stories, color: ChessTheme.primaryLight, size: 18),
-                          SizedBox(width: 8),
+                          const Icon(Icons.auto_stories, color: ChessTheme.primaryLight, size: 18),
+                          const SizedBox(width: 8),
                           Text(
                             'Master Model Games',
-                            style: TextStyle(fontWeight: FontWeight.bold, color: ChessTheme.textPrimary),
+                            style: TextStyle(fontWeight: FontWeight.bold, color: context.txt),
                           ),
                         ],
                       ),
@@ -127,19 +127,19 @@ class _ModelGamesScreenState extends State<ModelGamesScreen> {
                             color: Colors.transparent,
                             child: ListTile(
                               selected: isSelected,
-                              selectedTileColor: ChessTheme.surfaceLight,
+                              selectedTileColor: context.surfLight,
                               onTap: () => _selectGame(game),
                               title: Text(
                                 '${game.whitePlayer} vs ${game.blackPlayer}',
                                 style: TextStyle(
                                   fontSize: 13,
                                   fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
-                                  color: ChessTheme.textPrimary,
+                                  color: context.txt,
                                 ),
                               ),
                               subtitle: Text(
                                 '${game.year} • ${game.eco} ${game.openingName}',
-                                style: const TextStyle(fontSize: 11, color: ChessTheme.textMuted),
+                                style: TextStyle(fontSize: 11, color: context.txtMut),
                               ),
                             ),
                           );
@@ -164,22 +164,22 @@ class _ModelGamesScreenState extends State<ModelGamesScreen> {
                     padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
                     margin: const EdgeInsets.only(bottom: 12),
                     decoration: BoxDecoration(
-                      color: _isGuessTheMoveActive ? ChessTheme.surfaceLight : ChessTheme.surface,
+                      color: _isGuessTheMoveActive ? context.surfLight : context.surf,
                       borderRadius: BorderRadius.circular(8),
-                      border: Border.all(color: _isGuessTheMoveActive ? ChessTheme.primary : ChessTheme.border),
+                      border: Border.all(color: _isGuessTheMoveActive ? ChessTheme.primary : context.brd),
                     ),
                     child: Row(
                       children: [
                         Icon(
                           _isGuessTheMoveActive ? Icons.psychology : Icons.info_outline,
-                          color: _isGuessTheMoveActive ? ChessTheme.primaryLight : ChessTheme.textSecondary,
+                          color: _isGuessTheMoveActive ? ChessTheme.primaryLight : context.txtSec,
                           size: 20,
                         ),
                         const SizedBox(width: 12),
                         Expanded(
                           child: Text(
                             _isGuessTheMoveActive ? _guessFeedback : _selectedGame!.educationalSummary,
-                            style: const TextStyle(fontSize: 13, color: ChessTheme.textPrimary),
+                            style: TextStyle(fontSize: 13, color: context.txt),
                           ),
                         ),
                         Switch(
@@ -228,7 +228,7 @@ class _ModelGamesScreenState extends State<ModelGamesScreen> {
                         padding: const EdgeInsets.symmetric(horizontal: 16),
                         child: Text(
                           'Ply $_currentPly / ${_boardHistory.length - 1}',
-                          style: const TextStyle(fontWeight: FontWeight.bold, color: ChessTheme.textPrimary),
+                          style: TextStyle(fontWeight: FontWeight.bold, color: context.txt),
                         ),
                       ),
                       IconButton(

@@ -166,7 +166,7 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
     final currentDiagnosis = _diagnoses[_currentPly];
 
     return Scaffold(
-      backgroundColor: ChessTheme.background,
+      backgroundColor: context.bg,
       body: Padding(
         padding: const EdgeInsets.all(24.0),
         child: Row(
@@ -218,7 +218,7 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
                         padding: const EdgeInsets.symmetric(horizontal: 12),
                         child: Text(
                           'Ply $_currentPly of ${_boardHistory.length - 1}',
-                          style: const TextStyle(fontWeight: FontWeight.bold, color: ChessTheme.textPrimary),
+                          style: TextStyle(fontWeight: FontWeight.bold, color: context.txt),
                         ),
                       ),
                       IconButton(
@@ -301,27 +301,27 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
                     Container(
                       padding: const EdgeInsets.all(16),
                       decoration: BoxDecoration(
-                        color: ChessTheme.surface,
+                        color: context.surf,
                         borderRadius: BorderRadius.circular(12),
-                        border: Border.all(color: ChessTheme.border),
+                        border: Border.all(color: context.brd),
                       ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Row(
+                          Row(
                             children: [
-                              Icon(Icons.edit_note, color: ChessTheme.primary, size: 20),
-                              SizedBox(width: 8),
+                              const Icon(Icons.edit_note, color: ChessTheme.primary, size: 20),
+                              const SizedBox(width: 8),
                               Text(
                                 'Step 1: Human Self-Analysis',
-                                style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: ChessTheme.textPrimary),
+                                style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: context.txt),
                               ),
                             ],
                           ),
                           const SizedBox(height: 8),
-                          const Text(
+                          Text(
                             'Record your original thoughts, candidate moves, and plan for this position before revealing engine truth:',
-                            style: TextStyle(fontSize: 12, color: ChessTheme.textSecondary),
+                            style: TextStyle(fontSize: 12, color: context.txtSec),
                           ),
                           const SizedBox(height: 10),
                           TextField(
@@ -330,9 +330,9 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
                             onChanged: (_) => _saveSelfAnalysisNote(),
                             decoration: InputDecoration(
                               hintText: 'e.g. "I considered 12...Be6 and 12...c6. I chose c6 to stop Nd5..."',
-                              hintStyle: const TextStyle(color: ChessTheme.textMuted, fontSize: 12),
+                              hintStyle: TextStyle(color: context.txtMut, fontSize: 12),
                               filled: true,
-                              fillColor: ChessTheme.surfaceLight,
+                              fillColor: context.surfLight,
                               border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
                             ),
                           ),
@@ -361,7 +361,7 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
                       Container(
                         padding: const EdgeInsets.all(16),
                         decoration: BoxDecoration(
-                          color: ChessTheme.surface,
+                          color: context.surf,
                           borderRadius: BorderRadius.circular(12),
                           border: Border.all(
                             color: currentDiagnosis.quality.isNegative ? ChessTheme.qualityBlunder : ChessTheme.primary,
@@ -397,7 +397,7 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
                                     const SizedBox(width: 8),
                                     Text(
                                       '-${currentDiagnosis.centipawnLoss} cp',
-                                      style: const TextStyle(fontSize: 12, color: ChessTheme.textMuted),
+                                      style: TextStyle(fontSize: 12, color: context.txtMut),
                                     ),
                                   ],
                                 ),
@@ -411,18 +411,18 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
                             const SizedBox(height: 12),
                             Text(
                               'Root Cause: ${currentDiagnosis.category.title}',
-                              style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: ChessTheme.textPrimary),
+                              style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: context.txt),
                             ),
                             const SizedBox(height: 4),
                             Text(
                               currentDiagnosis.explanation,
-                              style: const TextStyle(fontSize: 13, color: ChessTheme.textSecondary),
+                              style: TextStyle(fontSize: 13, color: context.txtSec),
                             ),
                             const SizedBox(height: 12),
                             Container(
                               padding: const EdgeInsets.all(10),
                               decoration: BoxDecoration(
-                                color: ChessTheme.surfaceLight,
+                                color: context.surfLight,
                                 borderRadius: BorderRadius.circular(8),
                               ),
                               child: Row(
@@ -432,7 +432,7 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
                                   Expanded(
                                     child: Text(
                                       'Prescribed Retraining: Day ${currentDiagnosis.prescribedCurriculumDay} • ${currentDiagnosis.prescribedLab}',
-                                      style: const TextStyle(fontSize: 11, color: ChessTheme.textPrimary, fontWeight: FontWeight.w600),
+                                      style: TextStyle(fontSize: 11, color: context.txt, fontWeight: FontWeight.w600),
                                     ),
                                   ),
                                 ],
