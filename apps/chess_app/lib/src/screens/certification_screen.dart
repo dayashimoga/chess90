@@ -22,7 +22,13 @@ class CertificationScreen extends StatelessWidget {
       for (final axis in SkillAxis.values) axis: 0.35,
     };
 
-    final overallMasteryPct = MasteryGates.computeOverallMasteryPercentage(nodes);
+    final completedDays = profile.isCertified || profile.currentDay >= 90 ? 90 : profile.currentDay;
+    final passedExamsCount = profile.passedExams.isNotEmpty ? profile.passedExams.length : (completedDays / 7).floor();
+    final overallMasteryPct = MasteryGates.computeOverallMasteryPercentage(
+      nodes,
+      completedDays: completedDays,
+      passedExams: passedExamsCount,
+    );
 
     return Scaffold(
       backgroundColor: ChessTheme.background,

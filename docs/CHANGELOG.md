@@ -139,3 +139,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   - Updated Android application label in `AndroidManifest.xml` from `chess_app` to `ChessMaster`.
   - Resolved Windows CI test failures in `packages/chess_video`: eliminated hardcoded user path in `RealVideoRenderer`, introduced dynamic WinGet and Chocolatey binary resolution, added FFmpeg installation on Windows runner in GitHub Actions, and updated tests to gracefully assert offline/unavailable failure modes.
   - Resolved Podman/OCI rootless container build failure in `infra/Containerfile`: set `TAR_OPTIONS="--no-same-owner"` and created `/usr/local/bin/tar` wrapper to eliminate tar extraction ownership errors (`chown to uid 397546, gid 5000: Invalid argument`) during Flutter precache of the Gradle wrapper.
+  - **Curriculum & Content Corpus Scaling**:
+    - Expanded interactive training corpus to **3,786 total interactive exercises** (92 curriculum days + 3,694 training bank drills across 7 modular banks: tactics, calculation, visualization, strategy, endgame, opening drills, practical analysis), all verified for 100% legal moves via `MoveGenerator.sanToMove` with 0 content errors in `tool/content_validator.dart`.
+    - Expanded Master Model Games database to **60 deeply annotated master games** covering classical lineage, pawn structures, tactical motifs, strategic themes, and theoretical endgames (`docs/MODEL_GAMES.md`).
+    - Expanded ECO Opening Repertoire to **72 variations across volumes A–E** with move trie matching and 560 opening drills (`docs/OPENING_REPERTOIRE.md`).
+  - **Continuous Composite Mastery Engine**:
+    - Implemented continuous composite mastery index formula $M = 0.35 \cdot S_{\text{skills}} + 0.35 \cdot C_{\text{curriculum}} + 0.20 \cdot E_{\text{exams}} + 0.10 \cdot R_{\text{retention}}$ in `packages/chess_learning/lib/src/mastery/mastery_gates.dart`, resolving binary node dropoffs (`docs/MASTERY_MODEL.md`).
+    - Integrated 14-axis blunder root cause classification (`RootCauseCategory`).
+    - Validated 90-day simulation across Persona A (92.1% Day 90 Mastery), Persona B (Remediation blocker retest pass 88.6%), Persona C (Asymmetric learner 77.8%).
+  - **Containerized Release Engineering & Proof**:
+    - Built and packaged production release bundles via hermetic Podman container: `ChessMaster-Web.zip` (14.0 MB) and `ChessMaster-Linux-x64.tar.gz` (9.9 MB).
+    - Verified 100% pass across all 8 monorepo packages and `apps/chess_app` in `scripts/test.sh`.
+    - Passed all 16 Acceptance Gates in `tests/acceptance_runner.dart --full`, all 6 Security Audits in `tool/security_runner.dart`, and all 18 Performance Budgets in `tool/performance_runner.dart`.
+    - Generated comprehensive `SHA256SUMS` with cryptographic hashes of all release packages and verification manifests.

@@ -61,11 +61,12 @@ graph LR
 
 When a learner makes an inaccuracy, mistake, or blunder in serious play or labs:
 1. **Engine Blunder Detection**: The move is evaluated against Stockfish evaluation swing.
-2. **Root Cause Diagnosis**: `RootCauseClassifier` analyzes the clock state, move speed, position phase, and tactics to assign one of 11 root causes.
+2. **Root Cause Diagnosis**: `RootCauseClassifier` analyzes the clock state, move speed, position phase, and tactics to assign one of 14 root cause axes (`RootCauseCategory`: tactical blindness, calculation horizon shortfall, candidate move omission, time trouble panic, autopilot moves, prophylaxis deficiencies, board vision failures, endgame deficits, overconfidence, opening gaps, piece coordination breakdowns, eval misjudgments, defensive desperation, or psychological tilt).
 3. **Weakness Profile Update**: The learner's local database profile updates weakness counters and recalibrates radar dimensions.
-4. **SRS Enqueueing**: The exact position and pedagogical solution are enqueued in Box 1 of the Leitner spaced repetition engine.
-5. **Daily Journey Injection**: The next daily training session automatically incorporates a targeted review drill tailored to that weakness.
-6. **Reassessment & Mastery Verification**: Once the learner demonstrates repeated accuracy and passes 7-day/30-day retention gates, the skill node transitions to `mastered`.
+4. **Continuous Mastery Recalibration**: Overall syllabus mastery is computed dynamically via the continuous composite index ($M = 0.35 \cdot S_{\text{skills}} + 0.35 \cdot C_{\text{curriculum}} + 0.20 \cdot E_{\text{exams}} + 0.10 \cdot R_{\text{retention}}$).
+5. **SRS Enqueueing**: The exact position and pedagogical solution are enqueued in Box 1 of the Leitner spaced repetition engine.
+6. **Daily Journey Injection**: The next daily training session automatically incorporates a targeted review drill tailored to that weakness.
+7. **Reassessment & Mastery Verification**: Once the learner demonstrates repeated accuracy and passes 7-day/30-day retention gates, the skill node transitions to `mastered`.
 
 ### 4.1 Adaptive Learner Personas & Material Differentiation
 

@@ -87,8 +87,8 @@ $$\text{Real-Game Application} \ge 80\%, \quad \text{7-Day Retention} \ge 85\%, 
 ### Failure & Remediation Protocol
 - If a learner scores $<80\%$ on daily exercises or $<70\%$ on a weekly milestone exam:
   1. **Advancement is strictly blocked**: Next curriculum day is locked.
-  2. **Root cause diagnosis**: Engine classifies error into one of 11 root causes.
-  3. **Targeted training queued**: 10 Leitner SRS flashcards focused specifically on the failed motif are generated.
+  2. **Root cause diagnosis**: Engine classifies error into one of 14 root causes (`RootCauseCategory`).
+  3. **Targeted training queued**: Leitner SRS flashcards focused specifically on the failed motif are generated.
   4. **Remediation lab assigned**: The learner must execute the prescribed interactive lab session with zero hint usage.
   5. **Retest required**: A new randomized position set must be passed at $\ge 85\%$ before unlocking progression.
 - **No Free Passes**: No user can advance simply by clicking "Next" or skipping exercises.
@@ -106,13 +106,13 @@ $$\text{Real-Game Application} \ge 80\%, \quad \text{7-Day Retention} \ge 85\%, 
 ### 6.2 90-Day Curriculum (`chess_curriculum`)
 - Full 90 days implemented with 0 reading-only days.
 - Every day contains: Topic, Objectives, Prerequisites, Lesson, Worked Examples, Interactive Exercises, Game Study, Sparring Task, Assessment, Mastery Threshold, Remediation Protocol, SRS Review Tags, Estimated Minutes.
-- 92 validated interactive exercises with 100% legal moves verified via `MoveGenerator.sanToMove`.
+- 92 validated curriculum-day interactive exercises plus 3,694 training bank exercises = 3,786 interactive exercises with 100% legal moves verified via `MoveGenerator.sanToMove`.
 
 ### 6.3 Adaptive Learning & Skill Graph (`chess_learning`)
-- 12 tracked skill axes with hierarchical sub-skills.
+- 12 tracked skill axes with continuous composite mastery formula ($M = 0.35 \cdot S_{\text{skills}} + 0.35 \cdot C_{\text{curriculum}} + 0.20 \cdot E_{\text{exams}} + 0.10 \cdot R_{\text{retention}}$).
 - DailyPlanner generates customized daily study schedules matching user time budget.
 - LeitnerEngine provides 5-stage exponential spaced repetition.
-- Closed-loop error feedback: learner blunder -> engine evaluation -> root cause classification -> skill node decay -> SRS queue -> planner block injection -> retest.
+- Closed-loop error feedback: learner blunder -> engine evaluation -> 14-axis root cause classification -> skill node decay -> SRS queue -> planner block injection -> retest.
 
 ### 6.4 Interactive Labs (`chess_labs`)
 - 16 interactive training modes with hint penalties (-20% per hint) and auto-reply moves.

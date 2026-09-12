@@ -1,17 +1,17 @@
 {
   "platform": "ChessMaster",
-  "timestamp": "2026-09-11T15:28:11.674177",
+  "timestamp": "2026-09-12T03:21:56.780035",
   "allPassed": true,
   "totalTests": 16,
   "passedTests": 16,
-  "totalDurationMs": 441,
+  "totalDurationMs": 493,
   "results": [
     {
       "testName": "1. Perft Correctness (d1-d4) & Core Rules",
       "category": "Core Chess",
       "passed": true,
       "details": "Perft d1=20, d2=400, d3=8902 verified. 50/75-move rules, stalemate, checkmate, and threefold repetition validated.",
-      "durationMs": 48,
+      "durationMs": 50,
       "statusClassification": "PROVEN"
     },
     {
@@ -19,7 +19,7 @@
       "category": "Core Chess",
       "passed": true,
       "details": "Full PGN roundtrip fidelity and strict FEN validation/malicious rejection verified.",
-      "durationMs": 6,
+      "durationMs": 7,
       "statusClassification": "PROVEN"
     },
     {
@@ -27,7 +27,7 @@
       "category": "Engine",
       "passed": true,
       "details": "Engine initialized: Stockfish 17.1 (isFallback: false). UCI pipes, MultiPV, and mate evaluation validated.",
-      "durationMs": 190,
+      "durationMs": 238,
       "statusClassification": "PROVEN"
     },
     {
@@ -59,7 +59,7 @@
       "category": "Labs",
       "passed": true,
       "details": "All 16 lab controllers, hint scoring penalties, auto-reply, and genuine no-tactic declaration verified.",
-      "durationMs": 2,
+      "durationMs": 3,
       "statusClassification": "PROVEN"
     },
     {
@@ -67,7 +67,7 @@
       "category": "Content",
       "passed": true,
       "details": "Curated model games database, batch pipeline, ECO classification, and automated PGN puzzle miner validated.",
-      "durationMs": 94,
+      "durationMs": 90,
       "statusClassification": "PROVEN"
     },
     {
@@ -75,7 +75,7 @@
       "category": "Video",
       "passed": true,
       "details": "Timeline generator (30/60fps), FFmpeg H.264/GIF builder verified. Host binaries: Discovered.",
-      "durationMs": 41,
+      "durationMs": 19,
       "statusClassification": "PROVEN"
     },
     {
@@ -83,7 +83,7 @@
       "category": "Storage",
       "passed": true,
       "details": "Offline LocalDatabase, Schema V1->V2 migrations, atomic write/rename, and full backup roundtrip verified.",
-      "durationMs": 15,
+      "durationMs": 13,
       "statusClassification": "PROVEN"
     },
     {
@@ -91,7 +91,7 @@
       "category": "Learning Loop",
       "passed": true,
       "details": "Complete loop validated: Game -> Self-Analysis -> Engine Audit -> Root Cause (missedTacticOpponentForcingMove) -> SRS Retraining.",
-      "durationMs": 7,
+      "durationMs": 5,
       "statusClassification": "PROVEN"
     },
     {
@@ -114,8 +114,8 @@
       "testName": "14. Cloudflare Pages Web Build Readiness",
       "category": "Deployment",
       "passed": true,
-      "details": "Cloudflare Pages configuration ready (_headers, _routes.json, WASM pipeline).",
-      "durationMs": 1,
+      "details": "Production web build present: index.html, _headers (COOP/COEP), _routes.json ready for Cloudflare Pages.",
+      "durationMs": 8,
       "statusClassification": "PROVEN"
     },
     {
@@ -123,14 +123,14 @@
       "category": "Quality Assurance",
       "passed": true,
       "details": "Aggregate: 93.2% (>90%), chess_core: 95.1% (>=95%), chess_learning: 98.2% (>=95%).",
-      "durationMs": 8,
+      "durationMs": 32,
       "statusClassification": "PROVEN"
     },
     {
       "testName": "16. Documentation Forensic Consistency",
       "category": "Documentation",
       "passed": true,
-      "details": "45 documentation files validated: zero placeholders, zero \"coming soon\", explicit FIDE non-title disclaimer.",
+      "details": "48 documentation files validated: zero placeholders, zero \"coming soon\", explicit FIDE non-title disclaimer.",
       "durationMs": 3,
       "statusClassification": "PROVEN"
     }

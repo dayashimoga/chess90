@@ -1,6 +1,6 @@
 {
   "version": "1.3.0",
-  "timestamp": "2026-09-11T15:29:41.248232Z",
+  "timestamp": "2026-09-12T03:13:41.913985Z",
   "methodology": "Strict separation of algorithmic microbenchmarks from real packaged UX latencies (Directive 9).",
   "environment": {
     "os": "linux",
@@ -21,62 +21,62 @@
       "name": "Move Generation & Perft Depth 3",
       "section": "Section A: Microbenchmark",
       "category": "Chess Core",
-      "value": 809007.96,
+      "value": 530809.87,
       "unit": "nodes/sec",
       "budgetThreshold": 15000.0,
       "higherIsBetter": true,
       "passed": true,
-      "notes": "Executed 44510 perft nodes across 5 iterations in 55ms."
+      "notes": "Executed 44510 perft nodes across 5 iterations in 83ms."
     },
     {
       "name": "FEN Parsing & Validation Throughput",
       "section": "Section A: Microbenchmark",
       "category": "Chess Core",
-      "value": 89074.96,
+      "value": 60313.63,
       "unit": "fens/sec",
       "budgetThreshold": 10000.0,
       "higherIsBetter": true,
       "passed": true,
-      "notes": "2000 FEN parses completed in 22ms."
+      "notes": "2000 FEN parses completed in 33ms."
     },
     {
       "name": "PGN Parsing Throughput",
       "section": "Section A: Microbenchmark",
       "category": "Chess Core",
-      "value": 833.4,
+      "value": 693.59,
       "unit": "games/sec",
       "budgetThreshold": 500.0,
       "higherIsBetter": true,
       "passed": true,
-      "notes": "300 full 41-move games (24300 plies) parsed in 359ms."
+      "notes": "300 full 41-move games (24300 plies) parsed in 432ms."
     },
     {
       "name": "Heuristic Minimax Search Depth 4",
       "section": "Section A: Microbenchmark",
       "category": "Chess Engine",
-      "value": 30.0,
+      "value": 37.0,
       "unit": "ms",
       "budgetThreshold": 300.0,
       "higherIsBetter": false,
       "passed": true,
-      "notes": "Best move: b1c3, score: 54cp in 30ms."
+      "notes": "Best move: b1c3, score: 54cp in 37ms."
     },
     {
       "name": "SRS Scheduling Calculation Throughput",
       "section": "Section A: Microbenchmark",
       "category": "Chess Learning",
-      "value": 64779.43,
+      "value": 56192.4,
       "unit": "calculations/sec",
       "budgetThreshold": 10000.0,
       "higherIsBetter": true,
       "passed": true,
-      "notes": "1000 Leitner scheduling updates completed in 15ms."
+      "notes": "1000 Leitner scheduling updates completed in 17ms."
     },
     {
       "name": "Storage CRUD Throughput",
       "section": "Section A: Microbenchmark",
       "category": "Chess Storage",
-      "value": 381679.39,
+      "value": 386996.9,
       "unit": "ops/sec",
       "budgetThreshold": 2000.0,
       "higherIsBetter": true,
@@ -87,34 +87,34 @@
       "name": "Video Timeline Interpolation Latency",
       "section": "Section A: Microbenchmark",
       "category": "Chess Video",
-      "value": 0.68,
+      "value": 0.84,
       "unit": "ms/timeline",
       "budgetThreshold": 20.0,
       "higherIsBetter": false,
       "passed": true,
-      "notes": "50 20-move timelines generated with full evaluation sync."
+      "notes": "Frame sequence calculation & smooth move coordinate interpolation."
     },
     {
       "name": "ECO Opening Trie Search Latency",
-      "section": "Section A: Microbenchmark",
-      "category": "Chess Content",
-      "value": 0.0,
+      "section": "Section A: Microbenchmarks",
+      "category": "ECO Database",
+      "value": 0.02,
       "unit": "ms/query",
       "budgetThreshold": 1.0,
       "higherIsBetter": false,
       "passed": true,
-      "notes": "Trie sequence matching across openings averaged 0.005ms."
+      "notes": "Exact match prefix lookup across 13 annotated ECO families."
     },
     {
       "name": "Process Resident Memory Footprint (RSS)",
-      "section": "Section A: Microbenchmark",
-      "category": "System Performance",
-      "value": 287.79,
+      "section": "Section A: Microbenchmarks",
+      "category": "Memory Footprint",
+      "value": 307.1,
       "unit": "MB",
       "budgetThreshold": 350.0,
       "higherIsBetter": false,
       "passed": true,
-      "notes": "Current RSS: 287.8 MB (Budget: <=350 MB)."
+      "notes": "Memory allocated to all loaded boards, Leitner items, and cached FENs."
     },
     {
       "name": "Cold Start (Process Spawn -> First Frame)",

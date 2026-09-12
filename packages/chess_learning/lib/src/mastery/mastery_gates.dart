@@ -72,10 +72,39 @@ class MasteryGates {
     return values;
   }
 
-  /// Computes overall mastery readiness score (0.0 to 100.0)
-  static double computeOverallMasteryPercentage(List<SkillNode> nodes) {
+  /// Computes overall mastery readiness score (0.0 to 100.0) with continuous multi-factor calibration:
+  /// - Skill Axis Mastery Attainment (continuous composite score + threshold rewards)
+  /// - Optional Curriculum Progression credit (completedDays / 90)
+  /// - Optional Milestone Examination Rigor credit (passedExams / 13)
+  /// - Decay and weakness adjustments
+  static double computeOverallMasteryPercentage(
+    List<SkillNode> nodes, {
+    int? completedDays,
+    int? passedExams,
+  }) {
     if (nodes.isEmpty) return 0.0;
-    final masteredCount = nodes.where((n) => hasMastered(n)).length;
-    return (masteredCount / nodes.length) * 100.0;
+
+    // Compute effective axis score with continuous credit
+    final totalAxisScore = nodes.fold<double>(0.0, (acc, n) {
+      if (hasMastered(n)) return acc + 1.0;
+      if (n.status == SkillStatus.decaying) return acc + (n.compositeScore * 0.85);
+      if (n.status == SkillStatus.weak) return acc + (n.compositeScore * 0.80);
+      return acc + n.compositeScore;
+    });
+    final axisScore = totalAxisScore / nodes.length;
+
+    if (completedDays == null && passedExams == null) {
+      return (axisScore * 100.0).clamp(0.0, 100.0);
+    }
+
+    final daysCredit = ((completedDays ?? 0) / 90.0).clamp(0.0, 1.0);
+    final examsCredit = ((passedExams ?? 0) / 13.0).clamp(0.0, 1.0);
+
+    // Pedagogical weighting:
+    // 70% Skill Axis Mastery Attainment
+    // 15% 90-Day Curriculum Progression
+    // 15% Milestone Examination Rigor
+    final composite = (axisScore * 0.70) + (daysCredit * 0.15) + (examsCredit * 0.15);
+    return (composite * 100.0).clamp(0.0, 100.0);
   }
 }

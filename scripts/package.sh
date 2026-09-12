@@ -7,8 +7,11 @@ echo "Packaging ChessMaster Release Artifacts..."
 
 # 1. Package Web
 if [ -d "$ROOT_DIR/apps/chess_app/build/web" ]; then
-    echo "Packaging ChessMaster-Web.zip..."
-    (cd "$ROOT_DIR/apps/chess_app/build/web" && zip -rq "$ROOT_DIR/ChessMaster-Web.zip" .)
+    if command -v zip >/dev/null 2>&1; then
+        (cd "$ROOT_DIR/apps/chess_app/build/web" && zip -rq "$ROOT_DIR/ChessMaster-Web.zip" .)
+    else
+        python3 -c "import shutil; shutil.make_archive('$ROOT_DIR/ChessMaster-Web', 'zip', '$ROOT_DIR/apps/chess_app/build/web')"
+    fi
 fi
 
 # 2. Package Linux

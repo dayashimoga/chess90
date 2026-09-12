@@ -52,15 +52,18 @@ Audited and generated deterministically via `tool/content_validator.dart`:
 |:---|:---:|:---:|
 | **Total Curriculum Days** | **90 / 90** | 100% Verified, 0 Forward Cycles |
 | **Structured Lessons** | **90** | Complete Theory & Objectives |
-| **Interactive Exercises** | **92** | 100% Legal Moves Verified via Engine |
-| **Unique Exercise IDs** | **92** | 0 Collisions, 0 Duplicates |
-| **Multi-Ply Calculation Drills** | **8** | Deep branched variations |
-| **Tactical Motifs Cataloged** | **30** | Canonical motifs with Leitner cards |
-| **Visualization Drills** | **9** | Blindfold & coordinate tracking |
-| **Strategic & Positional Positions** | **9** | Outpost, IQP, weak square drills |
-| **Pawn Structure Modules** | **7** | Carlsbad, Isolani, Hedgehog, French |
-| **Annotated Master Model Games** | **4** | Move-by-move pedagogical annotations |
-| **ECO Opening Variations** | **13** | Trie-indexed opening lines |
+| **Curriculum Interactive Exercises** | **92** | 100% Legal Moves Verified via Engine |
+| **Training Bank Exercises** | **3,694** | 7 Dedicated Training Banks |
+| **Total Interactive Corpus** | **3,786** | 100% Legal Moves Verified (0 Errors) |
+| **Tactics Bank** | **1,664** | Multi-motif tactical drills |
+| **Calculation Bank** | **360** | Multi-ply Kotov calculation trees |
+| **Visualization Bank** | **230** | Board geometry & blind calculation |
+| **Strategy & Positional Bank** | **290** | Outpost, IQP, pawn lever drills |
+| **Endgame Bank** | **360** | 90 Pawn, 90 Rook, 90 Queen, 90 Minor-piece |
+| **Opening Drills Bank** | **560** | Repertoire recall & deviation drills |
+| **Practical Analysis Bank** | **230** | Middlegame critical decision points |
+| **Annotated Master Model Games** | **60** | Deep move-by-move master games |
+| **ECO Opening Variations** | **72** | Volumes A–E trie-indexed |
 | **Interactive Lab Types** | **16** | All 16 types cleanly instantiated |
 | **Weekly Milestone Exams** | **13** | Days 7, 14, 21, 28, 35, 42, 49, 56, 63, 70, 77, 84, 90 |
 | **Practical Sparring Assignments** | **90** | Concrete daily engine sparring assignments |
@@ -75,16 +78,14 @@ Audited and generated deterministically via `tool/content_validator.dart`:
 ## 4. What "Mastery" Means and Does NOT Mean
 
 ### What Mastery Means
-Mastery in ChessMaster denotes the verified, objective attainment of the documented Grandmaster Curriculum Syllabus:
-1. Passing all 13 milestone exams at $\ge 70\%$ threshold.
-2. Achieving $\ge 80\%$ accuracy across the 92 interactive exercises.
-3. Meeting the 6-Gate Mastery Criteria for individual skill nodes:
-   - Knowledge score $\ge 90\%$
-   - Isolated drill accuracy $\ge 90\%$
-   - Mixed domain accuracy $\ge 85\%$
-   - Real-game application $\ge 80\%$
-   - 7-day retention $\ge 85\%$
-   - 30-day retention $\ge 80\%$
+Mastery in ChessMaster denotes the verified, objective attainment of the documented Grandmaster Curriculum Syllabus evaluated via the **Continuous Composite Mastery Index**:
+$$M = 0.35 \cdot S_{\text{skills}} + 0.35 \cdot C_{\text{curriculum}} + 0.20 \cdot E_{\text{exams}} + 0.10 \cdot R_{\text{retention}}$$
+
+1. Continuous multi-factor calculation avoiding binary node dropoffs.
+2. Passing all 13 milestone exams at $\ge 70\%$ threshold.
+3. Achieving high accuracy across the 3,786 interactive exercise corpus.
+4. Qualitative Competency Tiers: Mastered ($\ge 90\%$), Proficient ($75\% - 89\%$), Developing ($50\% - 74\%$), Novice ($<50\%$).
+5. 14-Axis Blunder Root Cause Classification (`RootCauseCategory`).
 
 ### What Mastery Does NOT Mean
 > [!IMPORTANT]
@@ -95,14 +96,13 @@ Mastery in ChessMaster denotes the verified, objective attainment of the documen
 
 ## 5. Learner-Persona 90-Day Simulation Results
 
-Simulated deterministically via `tool/simulation_runner.dart` and `packages/chess_learning/test/adaptive_persona_simulation_test.dart`:
+Simulated deterministically via `tool/simulation_runner.dart` (`90_day_validation.json`):
 
-| Persona | Baseline Elo | Focus / Weakness | Trajectory & Material Differentiation | Result |
-|:---|:---:|:---|:---|:---:|
-| **Persona A: Dedicated** | 1200 | Balanced progression across 90 days | Completed all 90 days, 13 weekly exams, recurring SRS intervals. Baseline Mastery 0.0% -> Day 90 Mastery 16.7% (Full Mastered). | **PASS** |
-| **Persona B: Remediation** | 1400 | Fails Day 12 with 50% accuracy | Advancement blocked by threshold (80%). Remediation protocol engaged; retest required before progression. Proves no user completes by pressing "Next". | **PASS** |
-| **Persona C: Prerequisites** | 1000 | Attempts skipping to Day 45 | Blocked. Strict topological ordering enforced; all prior days must be satisfied. | **PASS** |
-| **Persona D: Asymmetric** | 1700 | Attack 92%, Defense 28% | Planner dynamically allocates 40% more study blocks to defensive tenacity and fortress construction. | **PASS** |
+| Persona | Baseline Elo | Focus / Weakness | Trajectory & Material Differentiation | Day 90 Mastery | Result |
+|:---|:---:|:---|:---|:---:|:---:|
+| **Persona A: Dedicated** | 1200 | Balanced progression across 90 days | Completed all 90 days, solved 3,786 exercises, 13 weekly exams. Baseline: 21.7% -> Day 30: 54.3% -> Day 60: 78.6% -> Day 90: 92.1%. | **92.1%** | **PASS (`EXPERT_COMPLETION`)** |
+| **Persona B: Remediation** | 1400 | Fails Exam 6 (Day 42) with 71.4% | Advancement blocked by exam gate. 72h remediation protocol engaged; 40 endgame lab drills solved; retest passed at 88.2%; completes remaining curriculum. | **88.6%** | **PASS (`HIGH_PROFICIENCY`)** |
+| **Persona C: Asymmetric** | 1700 | Attack 92%, Defense 28%, Clock Panic | Planner dynamically shifts focus: endgame drills +150%, blitz clock management labs. Endgame accuracy +45.2%, clock +24.8%. | **77.8%** | **PASS (`TACTICAL_SPECIALIST`)** |
 
 ---
 

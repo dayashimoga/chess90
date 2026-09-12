@@ -1,6 +1,6 @@
 {
   "version": "1.3.0",
-  "timestamp": "2026-09-11T15:28:56.530821Z",
+  "timestamp": "2026-09-12T03:13:08.111499Z",
   "status": "PASSED",
   "simulations": {
     "personaA_Dedicated": {
@@ -21,22 +21,37 @@
       },
       "day90Radar": {
         "tactics": 1.0,
-        "calculation": 0.4890000000000002,
-        "visualization": 0.31000000000000005,
-        "strategy": 0.43530000000000013,
-        "pawnStructures": 0.31000000000000005,
-        "endgames": 0.43530000000000013,
-        "openings": 0.3726500000000001,
-        "attack": 0.3726500000000001,
-        "defense": 0.31000000000000005,
-        "conversion": 0.3726500000000001,
-        "timeManagement": 0.31000000000000005,
+        "calculation": 0.9380000000000004,
+        "visualization": 0.7822000000000005,
+        "strategy": 0.9105000000000004,
+        "pawnStructures": 0.7822000000000005,
+        "endgames": 0.8923000000000003,
+        "openings": 0.8564500000000005,
+        "attack": 0.8708500000000003,
+        "defense": 0.7952500000000005,
+        "conversion": 0.8636500000000005,
+        "timeManagement": 0.8039500000000005,
         "tournamentPlay": 1.0
       },
-      "overallMastery": 16.666666666666664,
+      "skillDeltas": {
+        "tactics": 0.69,
+        "calculation": 0.6280000000000003,
+        "visualization": 0.4722000000000004,
+        "strategy": 0.6005000000000004,
+        "pawnStructures": 0.4722000000000004,
+        "endgames": 0.5823000000000003,
+        "openings": 0.5464500000000004,
+        "attack": 0.5608500000000003,
+        "defense": 0.4852500000000004,
+        "conversion": 0.5536500000000004,
+        "timeManagement": 0.49395000000000044,
+        "tournamentPlay": 0.69
+      },
+      "baselineOverallMastery": 21.700000000000003,
+      "overallMastery": 92.10662500000002,
       "srsItemsCount": 0,
       "postRoadmap": [
-        "Focus 1: Deep Dive on Clock Management (Current Score: 31.0%)",
+        "Focus 1: Deep Dive on Pawn Structures (Current Score: 78.2%)",
         "Focus 2: Maintain 30-day spaced repetition queue (0 active items)",
         "Focus 3: Tournament simulation against 2200+ Elo engine"
       ]
@@ -46,7 +61,61 @@
       "initialScore": 0.5,
       "threshold": 0.8,
       "advancementBlocked": true,
-      "remediationProtocol": "Mandatory Remediation: Review Day 11 foundations, complete 10 targeted Leitner flashcards focused on tactics, and repeat the interactive exercises with zero hint usage until reaching >=85%."
+      "remediationEngaged": true,
+      "remediationProtocol": "Mandatory Remediation: Review Day 11 foundations, complete 10 targeted Leitner flashcards focused on tactics, and repeat the interactive exercises with zero hint usage until reaching >=85%.",
+      "retestScore": 0.9,
+      "retestPassed": true
+    },
+    "personaC_Asymmetric": {
+      "completedDays": 90,
+      "baselineRadar": {
+        "tactics": 0.58825,
+        "calculation": 0.3620000000000001,
+        "visualization": 0.3620000000000001,
+        "strategy": 0.3620000000000001,
+        "pawnStructures": 0.3620000000000001,
+        "endgames": 0.18100000000000005,
+        "openings": 0.3620000000000001,
+        "attack": 0.3620000000000001,
+        "defense": 0.3620000000000001,
+        "conversion": 0.3620000000000001,
+        "timeManagement": 0.13574999999999998,
+        "tournamentPlay": 0.3620000000000001
+      },
+      "day90Radar": {
+        "tactics": 1.0,
+        "calculation": 0.8573500000000003,
+        "visualization": 0.6095000000000004,
+        "strategy": 0.8053100000000002,
+        "pawnStructures": 0.6095000000000004,
+        "endgames": 0.6334600000000004,
+        "openings": 0.7119800000000002,
+        "attack": 0.7074050000000002,
+        "defense": 0.6095000000000004,
+        "conversion": 0.7028300000000002,
+        "timeManagement": 0.38325000000000026,
+        "tournamentPlay": 1.0
+      },
+      "skillDeltas": {
+        "tactics": 0.41174999999999995,
+        "calculation": 0.4953500000000002,
+        "visualization": 0.24750000000000028,
+        "strategy": 0.4433100000000001,
+        "pawnStructures": 0.24750000000000028,
+        "endgames": 0.4524600000000003,
+        "openings": 0.34998000000000007,
+        "attack": 0.3454050000000001,
+        "defense": 0.24750000000000028,
+        "conversion": 0.3408300000000001,
+        "timeManagement": 0.24750000000000028,
+        "tournamentPlay": 0.6379999999999999
+      },
+      "baselineOverallMastery": 23.914625,
+      "overallMastery": 77.76178750000001,
+      "weaknessesResolved": [
+        "Endgame Technique",
+        "Clock Management"
+      ]
     }
   },
   "globalChecks": {

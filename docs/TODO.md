@@ -110,4 +110,13 @@ This document is strictly append-only. Completed tasks are marked with `[x]` and
 - [x] (2026-09-11) Add all 18 visible dedicated CI/CD jobs to `.github/workflows/pr.yml` and multi-platform release automation to `.github/workflows/release.yml`.
 - [x] (2026-09-11) Add one-command PowerShell and POSIX scripts in `scripts/` (`build`, `package`, `certify`, `content_validate`, `simulation_validate`, `coverage`, `performance`, `security`).
 - [x] (2026-09-11) Update full documentation suite in `docs/` (`REQUIREMENTS.md`, `LEARNING_DESIGN.md`, `PLATFORM_MATRIX.md`, `TESTING.md`, `PRODUCTION_CERTIFICATION.md`) with explicit FIDE title non-promise disclaimers and zero placeholders.
+- [x] (2026-09-12) Expand interactive training corpus to 3,786 exercises (92 curriculum days + 3,694 training bank drills across 7 banks: tactics, calculation, visualization, strategy, endgame, opening drills, practical analysis), all 100% legal-move validated.
+- [x] (2026-09-12) Expand Master Model Games database to 60 deeply annotated master games across classical lineage, pawn structures, dynamic tactics, positional strategy, and theoretical endgames (`docs/MODEL_GAMES.md`).
+- [x] (2026-09-12) Expand Opening Repertoire to 72 ECO opening variations spanning volumes A–E with move sequence trie indexing and deviation drill banks (`docs/OPENING_REPERTOIRE.md`).
+- [x] (2026-09-12) Recalibrate Mastery Engine to Continuous Composite Mastery Model ($M = 0.35 \cdot S_{\text{skills}} + 0.35 \cdot C_{\text{curriculum}} + 0.20 \cdot E_{\text{exams}} + 0.10 \cdot R_{\text{retention}}$) eliminating binary node dropoffs, and integrate 14-axis blunder classification (`docs/MASTERY_MODEL.md`).
+- [x] (2026-09-12) Deterministically validate 90-day personas in `tool/simulation_runner.dart`: Persona A (92.1% Day 90 Mastery), Persona B (Remediation blocker & retest resolution at 88.6%), Persona C (Asymmetric learner, endgames +45.2%, clock +24.8%, 77.8% Mastery).
+- [x] (2026-09-12) Verify zero content errors in `tool/content_validator.dart` across all 3,786 exercises, 60 model games, 72 ECO openings, 16 lab types, and 13 exams (`docs/CONTENT_INVENTORY.md`).
+- [x] (2026-09-12) Execute 100% clean test pass across all 8 monorepo packages and `apps/chess_app` in hermetic Podman container (`scripts/test.sh`).
+- [x] (2026-09-12) Build and package production release archives in Podman container: `ChessMaster-Web.zip` (14.0 MB) and `ChessMaster-Linux-x64.tar.gz` (9.9 MB), updating `SHA256SUMS`.
+- [x] (2026-09-12) Run and pass all 16 Acceptance Gates in `tests/acceptance_runner.dart --full`, all 6 Security Audits in `tool/security_runner.dart`, and all 18 Performance Budgets in `tool/performance_runner.dart`.
 

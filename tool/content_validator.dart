@@ -99,55 +99,77 @@ void main(List<String> args) async {
       }
     }
 
-    // Validate exercises
+    // Validate day exercises
     for (final ex in day.exercises) {
+      _validateSingleExercise(
+        ex: ex,
+        source: 'Day ${day.dayNumber}',
+        seenExerciseIds: seenExerciseIds,
+        tacticalMotifs: tacticalMotifs,
+        recordError: recordError,
+        onMultiPly: () => totalMultiPlyExercises++,
+      );
       totalExercises++;
-      if (seenExerciseIds.contains(ex.id)) {
-        recordError('Duplicate exercise ID: "${ex.id}" on Day ${day.dayNumber}');
-      }
-      seenExerciseIds.add(ex.id);
-
-      tacticalMotifs.add(ex.motif);
-      if (ex.solutionSan.length > 1) {
-        totalMultiPlyExercises++;
-      }
-
-      // FEN syntax & board validity
-      Board board;
-      try {
-        board = FenParser.parse(ex.fen);
-      } catch (e) {
-        recordError('Day ${day.dayNumber} Exercise ${ex.id}: Malformed FEN "${ex.fen}": $e');
-        continue;
-      }
-
-      // Legal move verification of solution path
-      if (!ex.isNoTacticPosition && ex.solutionSan.isNotEmpty) {
-        Board simBoard = board;
-        for (int mIdx = 0; mIdx < ex.solutionSan.length; mIdx++) {
-          final san = ex.solutionSan[mIdx];
-          final move = MoveGenerator.sanToMove(simBoard, san);
-          if (move == null) {
-            recordError('Day ${day.dayNumber} Exercise ${ex.id}: Illegal move "$san" at ply $mIdx in FEN: ${simBoard.toFen()}');
-            break;
-          }
-          final legalMoves = MoveGenerator.generateLegalMoves(simBoard);
-          if (!legalMoves.contains(move)) {
-            recordError('Day ${day.dayNumber} Exercise ${ex.id}: Move "$san" is not in legal move list');
-            break;
-          }
-          simBoard.makeMove(move);
-        }
-      }
     }
   }
 
-  print('  -> 90/90 days verified with $totalExercises total interactive exercises (${seenExerciseIds.length} unique IDs).');
+  print('\n[1b/5] Validating Specialized Training Banks (Tactics, Calculation, Visualization, Strategy, Endgames, Openings, Practical)...');
+  final banksToValidate = <(String, List<CurriculumExercise>)>[
+    ('TacticsBank', TacticsBank.all),
+    ('CalculationBank', CalculationBank.all),
+    ('VisualizationBank', VisualizationBank.all),
+    ('StrategyBank', StrategyBank.all),
+    ('EndgameBank', EndgameBank.all),
+    ('OpeningDrillsBank', OpeningDrillsBank.all),
+    ('PracticalAnalysisBank', PracticalAnalysisBank.all),
+  ];
+
+  for (final bank in banksToValidate) {
+    final bankName = bank.$1;
+    final bankExercises = bank.$2;
+    for (final ex in bankExercises) {
+      _validateSingleExercise(
+        ex: ex,
+        source: bankName,
+        seenExerciseIds: seenExerciseIds,
+        tacticalMotifs: tacticalMotifs,
+        recordError: recordError,
+        onMultiPly: () => totalMultiPlyExercises++,
+      );
+      totalExercises++;
+
+      // Classify into metric counters
+      final motifLower = ex.motif.toLowerCase();
+      if (bankName == 'EndgameBank' || motifLower.contains('endgame')) {
+        if (motifLower.contains('rook')) {
+          endgamePositionsByCategory['Rook Endgames'] = (endgamePositionsByCategory['Rook Endgames'] ?? 0) + 1;
+        } else if (motifLower.contains('queen')) {
+          endgamePositionsByCategory['Queen Endgames'] = (endgamePositionsByCategory['Queen Endgames'] ?? 0) + 1;
+        } else if (motifLower.contains('minor') || motifLower.contains('bishop') || motifLower.contains('knight')) {
+          endgamePositionsByCategory['Minor Piece Endgames'] = (endgamePositionsByCategory['Minor Piece Endgames'] ?? 0) + 1;
+        } else {
+          endgamePositionsByCategory['Pawn Endgames'] = (endgamePositionsByCategory['Pawn Endgames'] ?? 0) + 1;
+        }
+      } else if (bankName == 'CalculationBank' || motifLower.contains('calculation') || motifLower.contains('horizon')) {
+        totalCalculationPositions++;
+      } else if (bankName == 'VisualizationBank' || motifLower.contains('visualization') || motifLower.contains('memory')) {
+        totalVisualizationDrills++;
+      } else if (bankName == 'StrategyBank' || motifLower.contains('carlsbad') || motifLower.contains('iqp') || motifLower.contains('pawn')) {
+        totalStrategicPositions++;
+        if (motifLower.contains('pawn') || motifLower.contains('carlsbad') || motifLower.contains('iqp')) {
+          totalPawnStructurePositions++;
+        }
+      }
+    }
+    print('  -> $bankName: ${bankExercises.length} verified exercises.');
+  }
+
+  print('  -> 90/90 days and 7 training banks verified with $totalExercises total interactive exercises (${seenExerciseIds.length} unique IDs).');
 
   print('\n[2/5] Validating Model Games & PGN Ingestion...');
   const modelGames = ModelGamesDatabase.curatedGames;
-  if (modelGames.length < 4) {
-    recordError('Expected at least 4 curated model games, found ${modelGames.length}');
+  if (modelGames.length < 50) {
+    recordError('Expected at least 50 curated model games, found ${modelGames.length}');
   }
   for (final game in modelGames) {
     final pgnGame = game.toPgnGame();
@@ -170,8 +192,8 @@ void main(List<String> args) async {
 
   print('\n[3/5] Validating ECO Openings Database...');
   const ecoEntries = EcoBook.entries;
-  if (ecoEntries.length < 10) {
-    recordError('Expected at least 10 ECO opening entries, found ${ecoEntries.length}');
+  if (ecoEntries.length < 50) {
+    recordError('Expected at least 50 ECO opening entries, found ${ecoEntries.length}');
   }
   for (final entry in ecoEntries) {
     if (entry.code.isEmpty || entry.name.isEmpty || entry.movesSan.isEmpty) {
@@ -608,3 +630,51 @@ String _generateFullCurriculumMarkdown(List<CurriculumDay> days) {
 
   return sb.toString();
 }
+
+void _validateSingleExercise({
+  required CurriculumExercise ex,
+  required String source,
+  required Set<String> seenExerciseIds,
+  required Set<String> tacticalMotifs,
+  required void Function(String) recordError,
+  required void Function() onMultiPly,
+}) {
+  if (seenExerciseIds.contains(ex.id)) {
+    recordError('Duplicate exercise ID: "${ex.id}" in $source');
+  }
+  seenExerciseIds.add(ex.id);
+
+  tacticalMotifs.add(ex.motif);
+  if (ex.solutionSan.length > 1) {
+    onMultiPly();
+  }
+
+  // FEN syntax & board validity
+  Board board;
+  try {
+    board = FenParser.parse(ex.fen);
+  } catch (e) {
+    recordError('$source Exercise ${ex.id}: Malformed FEN "${ex.fen}": $e');
+    return;
+  }
+
+  // Legal move verification of solution path
+  if (!ex.isNoTacticPosition && ex.solutionSan.isNotEmpty) {
+    Board simBoard = board;
+    for (int mIdx = 0; mIdx < ex.solutionSan.length; mIdx++) {
+      final san = ex.solutionSan[mIdx];
+      final move = MoveGenerator.sanToMove(simBoard, san);
+      if (move == null) {
+        recordError('$source Exercise ${ex.id}: Illegal move "$san" at ply $mIdx in FEN: ${simBoard.toFen()}');
+        break;
+      }
+      final legalMoves = MoveGenerator.generateLegalMoves(simBoard);
+      if (!legalMoves.contains(move)) {
+        recordError('$source Exercise ${ex.id}: Move "$san" is not in legal move list');
+        break;
+      }
+      simBoard.makeMove(move);
+    }
+  }
+}
+

@@ -57,12 +57,12 @@ graph TD
 ### 3.2 `packages/chess_engine` (UCI & In-Memory Fallback)
 - **`NativeStockfishEngine`**: Manages headless Stockfish process via bi-directional standard I/O pipes using UCI protocol (`isready`, `ucinewgame`, `position`, `go depth`, `stop`).
 - **`EmbeddedHeuristicEngine`**: Pure Dart alpha-beta minimax engine with piece-square tables, pawn structure evaluation, king safety heuristics, and iterative deepening.
-- **`RootCauseClassifier`**: 11-category cognitive diagnosis engine attributing blunders to tactical blindspots, calculation fatigue, impulsive play, time pressure, or endgame gaps.
+- **`RootCauseClassifier`**: 14-axis cognitive diagnosis engine (`RootCauseCategory`) attributing blunders to tactical blindness, calculation horizon shortfall, candidate move omission, time trouble panic, autopilot moves, prophylaxis deficiencies, board vision failures, endgame deficits, overconfidence, opening gaps, piece coordination breakdowns, eval misjudgments, defensive desperation, or psychological tilt.
 
 ### 3.3 `packages/chess_learning` (SRS & Skill Graph)
 - **12-Axis Skill Graph**: Evaluates Tactics, Positional Play, Endgames, Opening Prep, Calculation, Defense, Time Management, Conversion, Pawn Structure, Board Memory, Psychology, and Prophylaxis.
-- **6-Gate Mastery Criteria**: A skill node is marked `mastered` only when passing knowledge score ($\ge 0.90$), isolated accuracy ($\ge 0.90$), mixed accuracy ($\ge 0.85$), game application ($\ge 0.80$), 7-day retention ($\ge 0.85$), and 30-day retention ($\ge 0.80$).
-- **Leitner Engine**: 5-box spaced repetition scheduling for blunder drills and curriculum review items.
+- **Continuous Composite Mastery Index**: Overall mastery is computed via continuous weighted formula: $M = 0.35 \cdot S_{\text{skills}} + 0.35 \cdot C_{\text{curriculum}} + 0.20 \cdot E_{\text{exams}} + 0.10 \cdot R_{\text{retention}}$, avoiding binary threshold truncation.
+- **Leitner Engine**: 5-box spaced repetition scheduling with continuous feedback from blunder classification into immediate remediation queues.
 
 ### 3.4 `packages/chess_curriculum` (90-Day GM Curriculum)
 - **Curriculum Catalog**: 90 fully authored instructional days organized into 10 structured phases.
@@ -73,9 +73,10 @@ graph TD
 - **Stateful Controllers**: 16 specialized lab controllers handling hints (-20% score deduction), instant automated engine replies, and no-tactic declarations.
 
 ### 3.6 `packages/chess_content` (Curated Data & Mining)
-- **Model Games Database**: Curated public-domain games spanning Morphy, Capablanca, Fischer, Kasparov, and Carlsen.
+- **Interactive Training Banks**: 3,786 validated interactive exercises across 7 dedicated training banks (Tactics, Calculation, Visualization, Strategy, Endgames, Opening Drills, Practical Analysis).
+- **Model Games Database**: 60 deeply annotated master model games spanning classical, positional, tactical, and theoretical endgame masterpieces.
+- **ECO Book**: 72 ECO opening classifications with move sequence trie indexing covering volumes A through E.
 - **Puzzle Miner**: Automated PGN blunder extractor mining tactical puzzles from recorded games using centipawn evaluation swings.
-- **ECO Book**: 100+ ECO opening classifications with move sequence trie indexing.
 
 ### 3.7 `packages/chess_video` (Video Studio & Timeline)
 - **Timeline Generator**: Generates frame-accurate 30/60fps video timelines from PGN games with smooth move interpolation.
