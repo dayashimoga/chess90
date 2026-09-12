@@ -9,6 +9,9 @@ analyzer:
     missing_required_param: error
     missing_return: error
     todo: ignore
+  exclude:
+    - 'packages/chess_content/lib/src/training_banks/**'
+    - 'lib/src/training_banks/**'
 
 linter:
   rules:

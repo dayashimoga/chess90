@@ -161,15 +161,15 @@ void _validateAndWriteBank({
 
   for (final ex in exercises) {
     sb.writeln('    CurriculumExercise(');
-    sb.writeln("      id: '${ex.id}',");
-    sb.writeln("      fen: '${ex.fen}',");
+    sb.writeln('      id: \'${ex.id}\',');
+    sb.writeln('      fen: \'${ex.fen}\',');
     sb.writeln('      sideToPlay: PieceColor.${ex.sideToPlay.name},');
-    sb.writeln("      instruction: ${jsonEncodeString(ex.instruction)},");
-    sb.writeln("      solutionSan: [${ex.solutionSan.map((s) => "'$s'").join(', ')}],");
-    sb.writeln("      explanation: ${jsonEncodeString(ex.explanation)},");
-    sb.writeln("      hints: [${ex.hints.map((h) => jsonEncodeString(h)).join(', ')}],");
+    sb.writeln('      instruction: ${jsonEncodeString(ex.instruction)},');
+    sb.writeln('      solutionSan: [${ex.solutionSan.map((s) => "'$s'").join(', ')}],');
+    sb.writeln('      explanation: ${jsonEncodeString(ex.explanation)},');
+    sb.writeln('      hints: [${ex.hints.map((h) => jsonEncodeString(h)).join(', ')}],');
     sb.writeln('      penaltyPerHint: ${ex.penaltyPerHint},');
-    sb.writeln("      motif: '${ex.motif}',");
+    sb.writeln('      motif: \'${ex.motif}\',');
     if (ex.isNoTacticPosition) {
       sb.writeln('      isNoTacticPosition: true,');
     }

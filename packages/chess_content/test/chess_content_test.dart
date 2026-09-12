@@ -51,5 +51,31 @@ void main() {
       expect(puzzles.first.solutionSan.isNotEmpty, isTrue);
       await engine.dispose();
     });
+
+    test('All 7 training banks have valid non-empty exercise collections', () {
+      expect(TacticsBank.all.length, equals(1664));
+      expect(CalculationBank.all.length, equals(360));
+      expect(VisualizationBank.all.length, equals(230));
+      expect(StrategyBank.all.length, equals(290));
+      expect(EndgameBank.all.length, equals(360));
+      expect(OpeningDrillsBank.all.length, equals(560));
+      expect(PracticalAnalysisBank.all.length, equals(230));
+
+      final allBanks = [
+        ...TacticsBank.all,
+        ...CalculationBank.all,
+        ...VisualizationBank.all,
+        ...StrategyBank.all,
+        ...EndgameBank.all,
+        ...OpeningDrillsBank.all,
+        ...PracticalAnalysisBank.all,
+      ];
+      expect(allBanks.length, equals(3694));
+      for (final ex in allBanks.take(50)) {
+        expect(ex.id.isNotEmpty, isTrue);
+        expect(ex.fen.isNotEmpty, isTrue);
+        expect(ex.solutionSan.isNotEmpty, isTrue);
+      }
+    });
   });
 }

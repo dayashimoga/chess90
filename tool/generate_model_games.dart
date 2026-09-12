@@ -48,17 +48,17 @@ void main() {
 
   for (final game in games) {
     sb.writeln('    ModelGame(');
-    sb.writeln("      id: '${game.id}',");
-    sb.writeln("      whitePlayer: ${jsonEncodeString(game.whitePlayer)},");
-    sb.writeln("      blackPlayer: ${jsonEncodeString(game.blackPlayer)},");
-    sb.writeln("      event: ${jsonEncodeString(game.event)},");
-    sb.writeln("      site: ${jsonEncodeString(game.site)},");
-    sb.writeln("      year: '${game.year}',");
-    sb.writeln("      eco: '${game.eco}',");
-    sb.writeln("      openingName: ${jsonEncodeString(game.openingName)},");
-    sb.writeln("      result: '${game.result}',");
-    sb.writeln("      tags: [${game.tags.map((t) => jsonEncodeString(t)).join(', ')}],");
-    sb.writeln("      educationalSummary: ${jsonEncodeString(game.educationalSummary)},");
+    sb.writeln('      id: \'${game.id}\',');
+    sb.writeln('      whitePlayer: ${jsonEncodeString(game.whitePlayer)},');
+    sb.writeln('      blackPlayer: ${jsonEncodeString(game.blackPlayer)},');
+    sb.writeln('      event: ${jsonEncodeString(game.event)},');
+    sb.writeln('      site: ${jsonEncodeString(game.site)},');
+    sb.writeln('      year: \'${game.year}\',');
+    sb.writeln('      eco: \'${game.eco}\',');
+    sb.writeln('      openingName: ${jsonEncodeString(game.openingName)},');
+    sb.writeln('      result: \'${game.result}\',');
+    sb.writeln('      tags: [${game.tags.map((t) => jsonEncodeString(t)).join(', ')}],');
+    sb.writeln('      educationalSummary: ${jsonEncodeString(game.educationalSummary)},');
     sb.writeln('      criticalPlies: [${game.criticalPlies.join(', ')}],');
     sb.writeln('      pgn: \'\'\'${game.pgn}\'\'\',');
     sb.writeln('    ),');

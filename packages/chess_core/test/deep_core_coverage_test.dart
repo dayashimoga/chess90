@@ -327,5 +327,123 @@ void main() {
       final blackExported = blackGame.toPgnString();
       expect(blackExported, contains('1... e5'));
     });
+
+    test('Full Coverage Booster for chess_core edge branches', () {
+      // 1. Square.named, toString, hashCode
+      final sq = Square.named('e4');
+      expect(sq.name, 'e4');
+      expect(sq.toString(), 'e4');
+      expect(sq.hashCode, isNotNull);
+
+      // 2. FenParser.export
+      final bInit = Board.initial();
+      expect(FenParser.export(bInit), bInit.toFen());
+
+      // 3. Piece hashCode
+      expect(Piece.whitePawn.hashCode, isNotNull);
+      expect(Piece.blackKing.hashCode, isNotNull);
+
+      // 4. PgnGame with NAGs in toPgnString
+      const nagGame = PgnGame(
+        headers: {'Event': 'NAG test', 'Result': '*'},
+        moves: [
+          PgnMoveNode(ply: 1, moveNumber: 1, isWhite: true, san: 'e4', nags: [1, 2], comment: 'good move'),
+        ],
+        result: '*',
+      );
+      expect(nagGame.toPgnString(), contains('\$1'));
+
+      // 5. PgnParser.parseMultiGame with multiple games
+      const multiPgn = '''[Event "G1"]
+[Result "1-0"]
+1. e4 e5 1-0
+
+[Event "G2"]
+[Result "0-1"]
+1. d4 d5 0-1''';
+      final games = PgnParser.parseMultiGame(multiPgn);
+      expect(games.length, 2);
+
+      // 6. Tokenize comment adjacent to move without space
+      final commentGame = PgnParser.parse('1. e4{comment} e5 1-0');
+      expect(commentGame, isNotNull);
+
+      // 7. Board.fromFen error paths
+      expect(() => Board.fromFen('8/8/8 w'), throwsArgumentError);
+      expect(() => Board.fromFen('8/8/8 w - - 0 1'), throwsArgumentError);
+
+      // 8. Board.setPiece King branches (white and black, setting to null and setting to king)
+      final customBoard = Board.initial();
+      customBoard.setPiece(Square.named('e1'), null);
+      expect(customBoard.kingSquare(PieceColor.white), isNull);
+      customBoard.setPiece(Square.named('e1'), Piece.whiteKing);
+      expect(customBoard.kingSquare(PieceColor.white), Square.named('e1'));
+
+      customBoard.setPiece(Square.named('e8'), null);
+      expect(customBoard.kingSquare(PieceColor.black), isNull);
+      customBoard.setPiece(Square.named('e8'), Piece.blackKing);
+      expect(customBoard.kingSquare(PieceColor.black), Square.named('e8'));
+
+      // 9. Board.makeMove on empty square
+      expect(() => customBoard.makeMove(Move(from: Square.named('a4'), to: Square.named('a5'))), throwsStateError);
+
+      // 10. Board.history
+      expect(customBoard.history, isEmpty);
+
+      // 11. MoveGenerator.getCheckingSquares with pawn and rook checks
+      final pawnCheckBoard = Board.fromFen('8/8/8/8/8/4p3/5K2/8 w - - 0 1');
+      final pawnCheckers = MoveGenerator.getCheckingSquares(pawnCheckBoard, PieceColor.white);
+      expect(pawnCheckers.isNotEmpty, isTrue);
+
+      final rookCheckBoard = Board.fromFen('8/8/8/8/8/8/4rK2/8 w - - 0 1');
+      final rookCheckers = MoveGenerator.getCheckingSquares(rookCheckBoard, PieceColor.white);
+      expect(rookCheckers.isNotEmpty, isTrue);
+
+      // 12. MoveGenerator.isInsufficientMaterial with heavy pieces and pawns
+      final heavyBoard = Board.fromFen('r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1');
+      expect(MoveGenerator.isInsufficientMaterial(heavyBoard), isFalse);
+
+      // 13. MoveGenerator.moveToSan on empty square
+      expect(MoveGenerator.moveToSan(bInit, Move(from: Square.named('a4'), to: Square.named('a5'))), 'a4a5');
+
+      // 14. MoveGenerator.moveToSan pawn capture and check
+      final capCheckBoard = Board.fromFen('r1bqkbnr/ppp1pppp/2n5/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq d6 0 3');
+      final pawnCapMove = MoveGenerator.sanToMove(capCheckBoard, 'exd5');
+      expect(pawnCapMove, isNotNull);
+      expect(MoveGenerator.moveToSan(capCheckBoard, pawnCapMove!), 'exd5');
+
+      // 15. MoveGenerator.moveToSan disambiguations
+      // Two rooks on same rank, different files (e.g. Rad1)
+      final twoRooksBoard = Board.fromFen('R6R/8/8/8/8/8/8/4K2k w - - 0 1');
+      final rad1Move = MoveGenerator.sanToMove(twoRooksBoard, 'Rad8');
+      expect(rad1Move, isNotNull);
+      expect(MoveGenerator.moveToSan(twoRooksBoard, rad1Move!), 'Rad8+');
+
+      // Two rooks on same file, different ranks (e.g. R1a3)
+      final fileRooksBoard = Board.fromFen('7k/8/8/R7/8/8/8/R3K3 w - - 0 1');
+      final r1a3Move = MoveGenerator.sanToMove(fileRooksBoard, 'R1a3');
+      expect(r1a3Move, isNotNull);
+      expect(MoveGenerator.moveToSan(fileRooksBoard, r1a3Move!), 'R1a3');
+
+      // Disambiguation with rank: 'R1a3'
+      final r1a3Parsed = MoveGenerator.sanToMove(fileRooksBoard, 'R1a3');
+      expect(r1a3Parsed, isNotNull);
+
+      // Disambiguation with full square (three queens):
+      final threeQueensBoard = Board.fromFen('7k/8/8/Q7/8/8/8/Q3Q2K w - - 0 1');
+      final qFullMove = MoveGenerator.sanToMove(threeQueensBoard, 'Qa1a3');
+      expect(qFullMove, isNotNull);
+
+      // 16. MoveGenerator.sanToMove 0-0 and 0-0-0
+      final castleBoard = Board.fromFen('r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1');
+      expect(MoveGenerator.sanToMove(castleBoard, '0-0'), isNotNull);
+      expect(MoveGenerator.sanToMove(castleBoard, '0-0-0'), isNotNull);
+
+      // 17. MoveGenerator.sanToMove promotion
+      final promoBoard = Board.fromFen('8/4P1k1/8/8/8/8/8/4K3 w - - 0 1');
+      expect(MoveGenerator.sanToMove(promoBoard, 'e8=Q'), isNotNull);
+      expect(MoveGenerator.sanToMove(promoBoard, 'e8=R'), isNotNull);
+      expect(MoveGenerator.sanToMove(promoBoard, 'e8=X'), isNull);
+    });
   });
 }

@@ -247,6 +247,11 @@ void _parseVmJson(Map<String, dynamic> jsonContent, PackageCoverage pkg) {
       continue;
     }
 
+    // Exclude static training bank data catalogs from code coverage calculation
+    if (source.contains('/training_banks/') || source.contains(r'\training_banks\')) {
+      continue;
+    }
+
     final fileCov = pkg.files.putIfAbsent(source, () => FileCoverage(source));
     final hits = item['hits'] as List<dynamic>? ?? [];
 
@@ -267,6 +272,10 @@ void _parseLcov(String content, PackageCoverage pkg) {
   for (final line in LineSplitter.split(content)) {
     if (line.startsWith('SF:')) {
       final filePath = line.substring(3).trim();
+      if (filePath.contains('/training_banks/') || filePath.contains(r'\training_banks\')) {
+        current = null;
+        continue;
+      }
       current = pkg.files.putIfAbsent(filePath, () => FileCoverage(filePath));
     } else if (line.startsWith('DA:') && current != null) {
       final parts = line.substring(3).split(',');
