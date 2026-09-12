@@ -115,9 +115,45 @@ class _ChessBoardWidgetState extends State<ChessBoardWidget> with SingleTickerPr
   @override
   void didUpdateWidget(covariant ChessBoardWidget oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (widget.lastMoveFrom != oldWidget.lastMoveFrom || widget.lastMoveTo != oldWidget.lastMoveTo) {
-      _localLastMoveFrom = widget.lastMoveFrom;
-      _localLastMoveTo = widget.lastMoveTo;
+    final moveFrom = widget.lastMoveFrom;
+    final moveTo = widget.lastMoveTo;
+    final moveChanged = moveFrom != oldWidget.lastMoveFrom || moveTo != oldWidget.lastMoveTo;
+
+    if (moveChanged) {
+      _localLastMoveFrom = moveFrom;
+      _localLastMoveTo = moveTo;
+    }
+
+    if (moveFrom != null && moveTo != null && moveChanged) {
+      // Check if this move was already triggered by local user tap
+      final wasLocallyTriggered = _animatingMove != null &&
+          _animatingMove!.from == moveFrom &&
+          _animatingMove!.to == moveTo;
+
+      if (!wasLocallyTriggered) {
+        // Only animate forward moves (not undo / backward scrub)
+        final isForwardMove = widget.board.history.isEmpty ||
+            oldWidget.board.history.isEmpty ||
+            widget.board.history.length > oldWidget.board.history.length;
+
+        if (isForwardMove) {
+          Move? historicalMove;
+          Piece? captured;
+          if (widget.board.history.isNotEmpty) {
+            final lastRecord = widget.board.history.last;
+            if (lastRecord.move.from == moveFrom && lastRecord.move.to == moveTo) {
+              historicalMove = lastRecord.move;
+              captured = lastRecord.capturedPiece;
+            }
+          }
+          _triggerExternalMoveAnimation(
+            from: moveFrom,
+            to: moveTo,
+            move: historicalMove,
+            capturedPiece: captured,
+          );
+        }
+      }
     }
   }
 
@@ -138,6 +174,10 @@ class _ChessBoardWidgetState extends State<ChessBoardWidget> with SingleTickerPr
 
     final mover = widget.board.pieceAt(move.from);
     if (mover == null) return;
+
+    if (_animController.isAnimating) {
+      _animController.stop();
+    }
 
     _animatingMove = move;
     _animatingPiece = mover;
@@ -165,6 +205,58 @@ class _ChessBoardWidgetState extends State<ChessBoardWidget> with SingleTickerPr
         _animRookTo = Square.fromCoords(3, rank);
         _animatingRook = widget.board.pieceAt(_animRookFrom!);
       }
+    } else {
+      _animatingRook = null;
+      _animRookFrom = null;
+      _animRookTo = null;
+    }
+
+    _animController.forward(from: 0.0);
+  }
+
+  void _triggerExternalMoveAnimation({
+    required Square from,
+    required Square to,
+    Move? move,
+    Piece? capturedPiece,
+  }) {
+    final disableAnimations = MediaQuery.maybeOf(context)?.disableAnimations ?? false;
+    if (widget.animationDurationMs <= 0 || disableAnimations) {
+      _localLastMoveFrom = from;
+      _localLastMoveTo = to;
+      return;
+    }
+
+    // In an external move, widget.board already has the moved piece at `to`
+    final mover = widget.board.pieceAt(to);
+    if (mover == null) return;
+
+    if (_animController.isAnimating) {
+      _animController.stop();
+    }
+
+    _animatingMove = move ?? Move(from: from, to: to);
+    _animatingPiece = mover;
+    _localLastMoveFrom = from;
+    _localLastMoveTo = to;
+    _capturedPiece = capturedPiece;
+
+    // Detect castling
+    if (mover.type == PieceType.king && (to.file - from.file).abs() == 2) {
+      final rank = from.rank;
+      if (to.file == 6) {
+        _animRookFrom = Square.fromCoords(7, rank);
+        _animRookTo = Square.fromCoords(5, rank);
+        _animatingRook = widget.board.pieceAt(_animRookTo!);
+      } else if (to.file == 2) {
+        _animRookFrom = Square.fromCoords(0, rank);
+        _animRookTo = Square.fromCoords(3, rank);
+        _animatingRook = widget.board.pieceAt(_animRookTo!);
+      }
+    } else {
+      _animatingRook = null;
+      _animRookFrom = null;
+      _animRookTo = null;
     }
 
     _animController.forward(from: 0.0);
@@ -385,14 +477,33 @@ class _ChessBoardWidgetState extends State<ChessBoardWidget> with SingleTickerPr
 
                         // If this piece is currently in flight during animation, don't draw it on the square
                         final isInFlight = _animatingMove != null && _animatingMove!.from == square;
+                        final isDestInFlight = _animatingMove != null && _animatingMove!.to == square;
                         final isRookInFlight = _animRookFrom != null && _animRookFrom == square;
-                        final shouldDrawPiece = piece != null && !isInFlight && !isRookInFlight;
+                        final isRookDestInFlight = _animRookTo != null && _animRookTo == square;
+                        final isEnPassantCapSquare = _animatingMove != null &&
+                            _animatingMove!.flag == MoveFlag.enPassant &&
+                            square == Square.fromCoords(_animatingMove!.to.file, _animatingMove!.from.rank);
+
+                        final shouldDrawPiece = piece != null &&
+                            !isInFlight &&
+                            !isDestInFlight &&
+                            !isRookInFlight &&
+                            !isRookDestInFlight &&
+                            !isEnPassantCapSquare;
+
+                        final pieceToRender = shouldDrawPiece
+                            ? piece
+                            : ((isDestInFlight && _capturedPiece != null && _animatingMove?.flag != MoveFlag.enPassant)
+                                ? _capturedPiece
+                                : (isEnPassantCapSquare && _capturedPiece != null ? _capturedPiece : null));
+
+                        final semanticPiece = pieceToRender ?? (shouldDrawPiece ? piece : null);
 
                         return Semantics(
                           container: true,
                           excludeSemantics: true,
-                          label: piece != null
-                              ? '${piece.color == PieceColor.white ? "White" : "Black"} ${piece.type.name} on ${square.name}'
+                          label: semanticPiece != null
+                              ? '${semanticPiece.color == PieceColor.white ? "White" : "Black"} ${semanticPiece.type.name} on ${square.name}'
                               : 'Empty square ${square.name}',
                           button: true,
                           child: GestureDetector(
@@ -469,10 +580,10 @@ class _ChessBoardWidgetState extends State<ChessBoardWidget> with SingleTickerPr
                                       ),
                                     ),
 
-                                  // Settled piece rendering (Resolution-independent vector)
-                                  if (shouldDrawPiece)
+                                  // Settled / In-Flight-Captured piece rendering (Resolution-independent vector)
+                                  if (pieceToRender != null)
                                     VectorPieceWidget(
-                                      piece: piece,
+                                      piece: pieceToRender,
                                       size: squareSize * 0.82,
                                       theme: pieceTheme,
                                     ),

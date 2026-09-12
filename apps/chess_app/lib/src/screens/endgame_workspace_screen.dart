@@ -105,7 +105,7 @@ class _EndgameWorkspaceScreenState extends State<EndgameWorkspaceScreen> {
 
   void _onMovePlayed(Move move) async {
     final san = MoveGenerator.moveToSan(_board, move);
-    _board.makeMove(move);
+    _board = _board.clone()..makeMove(move);
     _playedMoves.add(san);
     _lastMoveFrom = move.from;
     _lastMoveTo = move.to;
@@ -137,8 +137,10 @@ class _EndgameWorkspaceScreenState extends State<EndgameWorkspaceScreen> {
 
     if (eval.bestMove != null && mounted) {
       final replySan = MoveGenerator.moveToSan(_board, eval.bestMove!);
-      _board.makeMove(eval.bestMove!);
+      _board = _board.clone()..makeMove(eval.bestMove!);
       _playedMoves.add(replySan);
+      _lastMoveFrom = eval.bestMove!.from;
+      _lastMoveTo = eval.bestMove!.to;
 
       setState(() {
         _statusFeedback = 'Opponent replied $replySan. Find the next precise continuation!';

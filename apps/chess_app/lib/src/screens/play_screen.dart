@@ -143,7 +143,7 @@ class _PlayScreenState extends State<PlayScreen> {
     final prevBoard = _board.clone();
     final san = MoveGenerator.moveToSan(prevBoard, move);
 
-    _board.makeMove(move);
+    _board = _board.clone()..makeMove(move);
     _clock.onMovePlayed();
 
     _moves.add(PgnMoveNode(

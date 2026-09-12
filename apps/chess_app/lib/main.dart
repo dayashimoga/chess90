@@ -450,6 +450,7 @@ class _MainShellState extends State<MainShell> {
         );
       case 'video':
         return VideoStudioScreen(
+          repository: _repository,
           initialArgs: _navigationArgs,
         );
       case 'cert':

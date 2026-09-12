@@ -166,12 +166,14 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
     int currentFrame = 0;
     int totalFrames = _generatedTimeline.length;
 
+    StateSetter? setModalState;
     showDialog(
       context: context,
       barrierDismissible: false,
       builder: (dialogCtx) {
         return StatefulBuilder(
           builder: (context, setDialogState) {
+            setModalState = setDialogState;
             return AlertDialog(
               backgroundColor: context.surf,
               shape: RoundedRectangleBorder(
@@ -254,6 +256,7 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
           totalFrames = total;
           currentProgress = prog;
           currentPhase = phase;
+          setModalState?.call(() {});
         },
         shouldCancel: () => isCancelled,
       );
@@ -278,14 +281,20 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
           context: context,
           builder: (ctx) => AlertDialog(
             backgroundColor: ctx.surf,
-            title: const Text('Video Export Result', style: TextStyle(color: ChessTheme.primaryLight)),
+            title: const Row(
+              children: [
+                Icon(Icons.error_outline, color: ChessTheme.qualityBlunder, size: 20),
+                SizedBox(width: 8),
+                Text('Video Export Failed', style: TextStyle(color: ChessTheme.qualityBlunder)),
+              ],
+            ),
             content: SizedBox(
               width: 480,
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Video rendered successfully or reported diagnostic:', style: TextStyle(color: ctx.txt)),
+                  Text('An error occurred during video rendering:', style: TextStyle(color: ctx.txt)),
                   const SizedBox(height: 8),
                   SelectableText(
                     'Output Path: $outputPath\nDetails: $e',
