@@ -17,6 +17,7 @@ fi
 # 2. Package Linux
 if [ -d "$ROOT_DIR/apps/chess_app/build/linux/x64/release/bundle" ]; then
     echo "Packaging ChessMaster-Linux-x64.tar.gz..."
+    ln -sf ChessMaster "$ROOT_DIR/apps/chess_app/build/linux/x64/release/bundle/chess_app" || true
     tar -czf "$ROOT_DIR/ChessMaster-Linux-x64.tar.gz" -C "$ROOT_DIR/apps/chess_app/build/linux/x64/release/bundle" .
 fi
 

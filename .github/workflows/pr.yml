@@ -404,6 +404,8 @@ jobs:
 
       - name: Package Linux Archive
         run: |
+          # Provide chess_app compatibility symlink alongside ChessMaster
+          ln -sf ChessMaster apps/chess_app/build/linux/x64/release/bundle/chess_app || true
           tar -czf ChessMaster-Linux-x64.tar.gz -C apps/chess_app/build/linux/x64/release/bundle .
 
       - name: Upload Linux Artifact
@@ -426,9 +428,17 @@ jobs:
       - name: Install Xvfb & Test Executable Launch
         run: |
           sudo apt-get update && sudo apt-get install -y xvfb libgtk-3-0
-          mkdir linux-app && tar -xzf ChessMaster-Linux-x64.tar.gz -C linux-app
-          test -f linux-app/chess_app || { echo "Binary chess_app missing"; exit 1; }
-          timeout 5s xvfb-run ./linux-app/chess_app || true
+          mkdir -p linux-app && tar -xzf ChessMaster-Linux-x64.tar.gz -C linux-app
+          BIN=""
+          if [ -f "linux-app/ChessMaster" ]; then
+            BIN="linux-app/ChessMaster"
+          elif [ -f "linux-app/chess_app" ]; then
+            BIN="linux-app/chess_app"
+          fi
+          test -n "$BIN" || { echo "Binary ChessMaster or chess_app missing in linux-app. Directory listing:"; ls -la linux-app; exit 1; }
+          chmod +x "$BIN"
+          echo "Verifying Linux binary startup for $BIN under headless Xvfb..."
+          timeout 5s xvfb-run "$BIN" || true
 
   # 13. Build Android APK & AAB
   build-android-apk-aab:

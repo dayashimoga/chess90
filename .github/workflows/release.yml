@@ -84,6 +84,7 @@ jobs:
           flutter config --enable-linux-desktop
           cd apps/chess_app
           flutter build linux --release
+          ln -sf ChessMaster build/linux/x64/release/bundle/chess_app || true
           tar -czf ../../ChessMaster-Linux-x64.tar.gz -C build/linux/x64/release/bundle .
 
       - name: Build Android APK & AAB

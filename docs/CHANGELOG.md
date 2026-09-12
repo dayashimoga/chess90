@@ -166,4 +166,5 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - **Seamless Theme Toggle**: Integrated theme mode persistence via `StorageRepository` with reactive light/dark theme toggles across settings and application shell.
 - **Standalone Windows Executable**: Updated `packaging/windows/package_windows.ps1` with native C# compiler (`csc.exe`) fallback to generate a true single-file `ChessMaster-Portable.exe` with embedded payload.
 - **Authoritative Release Manifest**: Generated `release_manifest.json`, `release_manifest.html`, and `docs/RELEASE_MANIFEST.md` with SHA-256 hashes and CI commands for all multi-platform artifacts.
+- **Linux CI Smoke Build Hardening**: Fixed binary name mismatch in `.github/workflows/pr.yml` linux-smoke test where step asserted `chess_app` while CMake target is named `ChessMaster`. Added dual-binary compatibility symlink in `pr.yml`, `release.yml`, and `scripts/package.sh` so both `ChessMaster` and legacy `chess_app` binary paths are supported under headless Xvfb.
 

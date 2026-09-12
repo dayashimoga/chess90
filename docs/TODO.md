@@ -136,5 +136,6 @@ This document is strictly append-only. Completed tasks are marked with `[x]` and
 - [x] (2026-09-12) **Windows Standalone Executable**: Updated `packaging/windows/package_windows.ps1` with native C# compiler (`csc.exe`) fallback to compile a standalone, true single-file `ChessMaster-Portable.exe` with embedded payload.
 - [x] (2026-09-12) **Authoritative Release Manifest**: Generated `release_manifest.json`, `release_manifest.html`, and `docs/RELEASE_MANIFEST.md` with SHA-256 hashes and CI commands for all multi-platform artifacts.
 - [x] (2026-09-12) **Zero Static Analysis Issues & 100% Test Pass**: Verified 0 issues across all 9 packages and tools in `scripts/analyze.sh` and 100% test pass rate in `scripts/test.sh`.
+- [x] (2026-09-12) **Linux CI Smoke Build Hardening**: Fixed binary name mismatch in `.github/workflows/pr.yml` linux-smoke test; resolved `Binary chess_app missing` failure by supporting both `ChessMaster` and `chess_app` paths with symlink in archive packaging and dynamic detection in headless Xvfb launch step.
 
 
