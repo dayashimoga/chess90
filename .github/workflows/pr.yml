@@ -257,21 +257,44 @@ jobs:
           channel: stable
           cache: true
 
+      - name: Install Inno Setup
+        run: choco install innosetup --no-progress
+
       - name: Enable Windows Desktop & Build
         run: |
           flutter config --enable-windows-desktop
           cd apps\chess_app
           flutter build windows --release
 
-      - name: Package Windows Archive
+      - name: Package Windows Artifacts (Portable Exe, Installer, & Folder)
         run: |
-          Compress-Archive -Path apps\chess_app\build\windows\x64\runner\Release\* -DestinationPath ChessMaster-Windows-x64.zip -Force
+          powershell packaging\windows\package_windows.ps1
 
-      - name: Upload Windows Artifact
+      - name: Upload Windows Portable Folder (Direct - No Nested Zip)
+        uses: actions/upload-artifact@v4
+        with:
+          name: ChessMaster-Windows-Portable
+          path: dist\windows\ChessMaster
+
+      - name: Upload Windows Single-File Portable Executable
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ChessMaster-Portable-Exe
+          path: dist\ChessMaster-Portable.exe
+
+      - name: Upload Windows Installer
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ChessMaster-Setup-Exe
+          path: dist\ChessMaster-Setup.exe
+
+      - name: Upload Windows Distribution Zip
         uses: actions/upload-artifact@v4
         with:
           name: ChessMaster-Windows-x64
-          path: ChessMaster-Windows-x64.zip
+          path: dist\windows\ChessMaster
 
   # 10. Windows Smoke
   windows-smoke:
@@ -279,19 +302,24 @@ jobs:
     runs-on: windows-latest
     needs: [build-windows]
     steps:
-      - name: Download Windows Artifact
+      - name: Download Windows Portable Folder
         uses: actions/download-artifact@v4
         with:
-          name: ChessMaster-Windows-x64
-          path: win-dist
+          name: ChessMaster-Windows-Portable
+          path: win-app
 
       - name: Verify Executable Existence & Structure
         run: |
-          Expand-Archive -Path win-dist\ChessMaster-Windows-x64.zip -DestinationPath win-app -Force
-          if (-not (Test-Path "win-app\chess_app.exe")) {
-            throw "Executable chess_app.exe not found in packaged release zip!"
+          if (-not (Test-Path "win-app\ChessMaster.exe")) {
+            throw "Executable ChessMaster.exe not found in packaged release!"
           }
-          Write-Host "Windows executable validated successfully."
+          if (-not (Test-Path "win-app\flutter_windows.dll")) {
+            throw "flutter_windows.dll not found in packaged release!"
+          }
+          if (-not (Test-Path "win-app\data")) {
+            throw "data directory not found in packaged release!"
+          }
+          Write-Host "Windows executable and dependencies validated successfully."
 
   # 11. Build Linux
   build-linux:

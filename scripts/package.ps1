@@ -16,10 +16,9 @@ if (Test-Path $webDist) {
 # 2. Package Windows
 $winDist = Join-Path $rootDir "apps\chess_app\build\windows\x64\runner\Release"
 if (Test-Path $winDist) {
-    Write-Host "Packaging ChessMaster-Windows-x64.zip..." -ForegroundColor Yellow
-    $winZip = Join-Path $rootDir "ChessMaster-Windows-x64.zip"
-    if (Test-Path $winZip) { Remove-Item $winZip -Force }
-    Compress-Archive -Path "$winDist\*" -DestinationPath $winZip -Force
+    Write-Host "Packaging Windows Artifacts (Portable & Installer)..." -ForegroundColor Yellow
+    $winPackScript = Join-Path $rootDir "packaging\windows\package_windows.ps1"
+    & $winPackScript -SourceDir $winDist -OutputDir (Join-Path $rootDir "dist")
 }
 
 # 3. Copy Android artifacts if present
@@ -37,6 +36,8 @@ Write-Host "Generating SHA256SUMS..." -ForegroundColor Yellow
 $artifacts = @(
     "ChessMaster-Web.zip",
     "ChessMaster-Windows-x64.zip",
+    "ChessMaster-Portable.exe",
+    "ChessMaster-Setup.exe",
     "ChessMaster-Linux-x64.tar.gz",
     "ChessMaster.apk",
     "ChessMaster.aab"

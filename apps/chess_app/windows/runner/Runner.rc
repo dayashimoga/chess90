@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.chessmaster" "\0"
-            VALUE "FileDescription", "chess_app" "\0"
+            VALUE "CompanyName", "ChessMaster" "\0"
+            VALUE "FileDescription", "ChessMaster - 90-Day Chess Mastery Platform" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "chess_app" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2026 com.chessmaster. All rights reserved." "\0"
-            VALUE "OriginalFilename", "chess_app.exe" "\0"
-            VALUE "ProductName", "chess_app" "\0"
+            VALUE "InternalName", "ChessMaster" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2026 ChessMaster Contributors. All rights reserved." "\0"
+            VALUE "OriginalFilename", "ChessMaster.exe" "\0"
+            VALUE "ProductName", "ChessMaster - 90-Day Chess Mastery Platform" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

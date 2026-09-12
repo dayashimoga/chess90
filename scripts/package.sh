@@ -31,5 +31,5 @@ fi
 # 4. Generate SHA256SUMS
 echo "Generating SHA256SUMS..."
 cd "$ROOT_DIR"
-sha256sum $(ls ChessMaster-Web.zip ChessMaster-Linux-x64.tar.gz ChessMaster-Windows-x64.zip ChessMaster.apk ChessMaster.aab 2>/dev/null) > SHA256SUMS || true
+sha256sum $(ls ChessMaster-Web.zip ChessMaster-Linux-x64.tar.gz ChessMaster-Windows-x64.zip ChessMaster-Portable.exe ChessMaster-Setup.exe ChessMaster.apk ChessMaster.aab 2>/dev/null) > SHA256SUMS || true
 echo "Packaging complete."

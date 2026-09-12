@@ -17,8 +17,8 @@ Upon release, five canonical distribution packages are generated alongside foren
 | Target Platform | Package Filename | Compression | Contents |
 |:---|:---|:---:|:---|
 | **Web Production Bundle** | `ChessMaster-Web.zip` | ZIP | Minified CanvasKit web application, service worker, `_headers`, `_routes.json` |
-| **Windows Desktop x64** | `ChessMaster-Windows-x64.zip` | ZIP | Standalone `chess_app.exe`, Flutter engine DLLs, data assets, and Stockfish |
-| **Linux Desktop x64** | `ChessMaster-Linux-x64.tar.gz` | TAR.GZ | Native GTK3 ELF executable `chess_app`, bundle assets, and Stockfish binary |
+| **Windows Desktop x64** | `ChessMaster-Windows-x64.zip`<br>`ChessMaster-Portable.exe`<br>`ChessMaster-Setup.exe` | ZIP / EXE | Standalone `ChessMaster.exe`, single-file portable SFX `ChessMaster-Portable.exe`, Inno Setup installer `ChessMaster-Setup.exe`, Flutter engine DLLs, and data assets |
+| **Linux Desktop x64** | `ChessMaster-Linux-x64.tar.gz` | TAR.GZ | Native GTK3 ELF executable `ChessMaster`, bundle assets, and Stockfish binary |
 | **Android Sideload APK** | `ChessMaster.apk` | Signed APK | Universal release APK for ARM64 and x86_64 devices |
 | **Android Play Store AAB**| `ChessMaster.aab` | Signed AAB | Android App Bundle optimized for dynamic delivery via Google Play |
 

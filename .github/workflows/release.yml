@@ -19,21 +19,27 @@ jobs:
           channel: stable
           cache: true
 
+      - name: Install Inno Setup
+        run: choco install innosetup --no-progress
+
       - name: Build Windows Release
         run: |
           flutter config --enable-windows-desktop
           cd apps\chess_app
           flutter build windows --release
 
-      - name: Package Windows Zip
+      - name: Package Windows Artifacts (Portable Exe, Setup, & Zip)
         run: |
-          Compress-Archive -Path apps\chess_app\build\windows\x64\runner\Release\* -DestinationPath ChessMaster-Windows-x64.zip -Force
+          powershell packaging\windows\package_windows.ps1
 
       - name: Upload Windows Artifact
         uses: actions/upload-artifact@v4
         with:
           name: release-windows
-          path: ChessMaster-Windows-x64.zip
+          path: |
+            dist/ChessMaster-Windows-x64.zip
+            dist/ChessMaster-Portable.exe
+            dist/ChessMaster-Setup.exe
 
   build-and-release:
     name: Build All Platforms & Publish Release
@@ -91,7 +97,7 @@ jobs:
 
       - name: Generate Checksums & CycloneDX SBOM
         run: |
-          sha256sum ChessMaster-Web.zip ChessMaster-Windows-x64.zip ChessMaster-Linux-x64.tar.gz ChessMaster.apk ChessMaster.aab | sort -k 2 > SHA256SUMS
+          sha256sum $(ls ChessMaster-Web.zip ChessMaster-Windows-x64.zip ChessMaster-Portable.exe ChessMaster-Setup.exe ChessMaster-Linux-x64.tar.gz ChessMaster.apk ChessMaster.aab 2>/dev/null) | sort -k 2 > SHA256SUMS
 
           cat <<EOF > sbom.json
           {
@@ -115,6 +121,8 @@ jobs:
           files: |
             ChessMaster-Web.zip
             ChessMaster-Windows-x64.zip
+            ChessMaster-Portable.exe
+            ChessMaster-Setup.exe
             ChessMaster-Linux-x64.tar.gz
             ChessMaster.apk
             ChessMaster.aab
