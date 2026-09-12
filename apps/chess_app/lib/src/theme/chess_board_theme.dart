@@ -77,4 +77,18 @@ class ChessBoardTheme {
     legalMoveCaptureRingColor: Color(0xDD00FF00),
     boardBorderColor: Color(0xFF000000),
   );
+
+  static ChessBoardTheme fromName(String name) {
+    switch (name) {
+      case 'classicWood':
+        return classicWood;
+      case 'slateBlue':
+        return slateBlue;
+      case 'highContrast':
+        return highContrast;
+      case 'tournamentGreen':
+      default:
+        return tournamentGreen;
+    }
+  }
 }

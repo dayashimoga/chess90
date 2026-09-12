@@ -41,6 +41,10 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
   bool _showArrows = true;
   bool _showSubtitles = true;
   bool _isBoardFlipped = false;
+  String _selectedBoardTheme = 'tournamentGreen';
+  String _selectedPieceTheme = 'standard';
+  bool _showCoordinates = true;
+  bool _showLastMoveHighlight = true;
 
   List<VideoFrame> _generatedTimeline = [];
   int _currentFrameIndex = 0;
@@ -91,6 +95,14 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
       showEvaluationBar: _showEvalBar,
       showArrows: _showArrows,
       showSubtitles: _showSubtitles,
+      showCoordinates: _showCoordinates,
+      showLastMoveHighlight: _showLastMoveHighlight,
+      isBoardFlipped: _isBoardFlipped,
+      boardThemeName: _selectedBoardTheme,
+      pieceThemeName: _selectedPieceTheme,
+      eventTitle: _gameTitle,
+      whitePlayerName: _game.headers['White'] ?? 'White',
+      blackPlayerName: _game.headers['Black'] ?? 'Black',
     );
 
     final generator = VideoTimelineGenerator(profile: profile);
@@ -223,6 +235,14 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
         showEvaluationBar: _showEvalBar,
         showArrows: _showArrows,
         showSubtitles: _showSubtitles,
+        showCoordinates: _showCoordinates,
+        showLastMoveHighlight: _showLastMoveHighlight,
+        isBoardFlipped: _isBoardFlipped,
+        boardThemeName: _selectedBoardTheme,
+        pieceThemeName: _selectedPieceTheme,
+        eventTitle: _gameTitle,
+        whitePlayerName: _game.headers['White'] ?? 'White',
+        blackPlayerName: _game.headers['Black'] ?? 'Black',
       );
 
       final result = await RealVideoRenderer.renderVideo(
@@ -546,7 +566,85 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
 
               const Divider(height: 20),
 
-              // Overlays
+              // Visual Themes
+              Text('BOARD THEME', style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: context.txtMut)),
+              const SizedBox(height: 6),
+              DropdownButtonFormField<String>(
+                initialValue: _selectedBoardTheme,
+                isExpanded: true,
+                decoration: InputDecoration(
+                  contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                  filled: true,
+                  fillColor: context.surfLight,
+                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(8), borderSide: BorderSide(color: context.brd)),
+                ),
+                dropdownColor: context.surf,
+                items: const [
+                  DropdownMenuItem(value: 'tournamentGreen', child: Text('Tournament Green (Standard)')),
+                  DropdownMenuItem(value: 'classicWood', child: Text('Classic Warm Walnut')),
+                  DropdownMenuItem(value: 'slateBlue', child: Text('Slate Blue (Modern)')),
+                  DropdownMenuItem(value: 'highContrast', child: Text('High Contrast (Accessible)')),
+                ],
+                onChanged: (val) {
+                  if (val != null) {
+                    setState(() => _selectedBoardTheme = val);
+                    _generateTimeline();
+                  }
+                },
+              ),
+
+              const SizedBox(height: 12),
+              Text('PIECE THEME', style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: context.txtMut)),
+              const SizedBox(height: 6),
+              DropdownButtonFormField<String>(
+                initialValue: _selectedPieceTheme,
+                isExpanded: true,
+                decoration: InputDecoration(
+                  contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                  filled: true,
+                  fillColor: context.surfLight,
+                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(8), borderSide: BorderSide(color: context.brd)),
+                ),
+                dropdownColor: context.surf,
+                items: const [
+                  DropdownMenuItem(value: 'standard', child: Text('Staunton Vector (Crisp)')),
+                  DropdownMenuItem(value: 'highContrast', child: Text('High Contrast (Black & White)')),
+                  DropdownMenuItem(value: 'classicWood', child: Text('Classic Wood / Ivory')),
+                  DropdownMenuItem(value: 'minimalNotation', child: Text('Minimal Notation (Letter Discs)')),
+                ],
+                onChanged: (val) {
+                  if (val != null) {
+                    setState(() => _selectedPieceTheme = val);
+                    _generateTimeline();
+                  }
+                },
+              ),
+
+              const Divider(height: 20),
+
+              // Overlays & Coordinates
+              SwitchListTile(
+                dense: true,
+                contentPadding: EdgeInsets.zero,
+                title: Text('Show Coordinates', style: TextStyle(fontSize: 12, color: context.txt)),
+                value: _showCoordinates,
+                activeThumbColor: ChessTheme.primary,
+                onChanged: (val) {
+                  setState(() => _showCoordinates = val);
+                  _generateTimeline();
+                },
+              ),
+              SwitchListTile(
+                dense: true,
+                contentPadding: EdgeInsets.zero,
+                title: Text('Highlight Last Move', style: TextStyle(fontSize: 12, color: context.txt)),
+                value: _showLastMoveHighlight,
+                activeThumbColor: ChessTheme.primary,
+                onChanged: (val) {
+                  setState(() => _showLastMoveHighlight = val);
+                  _generateTimeline();
+                },
+              ),
               SwitchListTile(
                 dense: true,
                 contentPadding: EdgeInsets.zero,
@@ -716,8 +814,9 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
                             board: board,
                             isFlipped: _isBoardFlipped,
                             isInteractive: false,
-                            boardTheme: ChessBoardTheme.tournamentGreen,
-                            pieceTheme: PieceTheme.standard,
+                            boardTheme: ChessBoardTheme.fromName(_selectedBoardTheme),
+                            pieceTheme: PieceTheme.fromName(_selectedPieceTheme),
+                            showCoordinates: _showCoordinates,
                           ),
                         ),
                       ],

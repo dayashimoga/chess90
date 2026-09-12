@@ -184,47 +184,6 @@ class _SettingsStorageScreenState extends State<SettingsStorageScreen> {
               ],
             ),
 
-            // Visual Aesthetics & Theme Preferences Card
-            Container(
-              padding: const EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                color: context.surf,
-                borderRadius: BorderRadius.circular(16),
-                border: Border.all(color: context.brd),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('Visual Aesthetics & Theme Preferences', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: context.txt)),
-                  const SizedBox(height: 4),
-                  Text('Toggle dark/light mode across the application seamlessly and configure presentation preferences.', style: TextStyle(fontSize: 12, color: context.txtSec)),
-                  const SizedBox(height: 16),
-                  Row(
-                    children: [
-                      Icon(context.isDark ? Icons.dark_mode : Icons.light_mode, color: ChessTheme.accentGold, size: 24),
-                      const SizedBox(width: 12),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(context.isDark ? 'Dark Theme (Active)' : 'Light Theme (Active)', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: context.txt)),
-                            Text(context.isDark ? 'Sleek luxury dark palette with emerald accents' : 'Crisp high-contrast slate light palette with amber accents', style: TextStyle(fontSize: 11, color: context.txtMut)),
-                          ],
-                        ),
-                      ),
-                      Switch(
-                        value: context.isDark,
-                        activeThumbColor: ChessTheme.primaryLight,
-                        onChanged: (val) {
-                          widget.onToggleTheme?.call();
-                        },
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-
             const SizedBox(height: 24),
 
             // Storage & Backup Controls Card
@@ -307,6 +266,291 @@ class _SettingsStorageScreenState extends State<SettingsStorageScreen> {
                 ],
               ),
             ),
+
+            const SizedBox(height: 24),
+
+            // Visual Aesthetics & Theme Preferences Card
+            Container(
+              padding: const EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                color: context.surf,
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(color: context.brd),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Visual Aesthetics & Presentation System', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: context.txt)),
+                  const SizedBox(height: 4),
+                  Text('Unified board, piece styles, sizing policies, and animation speeds applied across all modules and Video Studio.', style: TextStyle(fontSize: 12, color: context.txtSec)),
+                  const SizedBox(height: 16),
+
+                  // Dark / Light Mode Toggle
+                  Row(
+                    children: [
+                      Icon(context.isDark ? Icons.dark_mode : Icons.light_mode, color: ChessTheme.accentGold, size: 24),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(context.isDark ? 'Dark Theme (Active)' : 'Light Theme (Active)', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: context.txt)),
+                            Text(context.isDark ? 'Sleek luxury dark palette with emerald accents' : 'Crisp high-contrast slate light palette with amber accents', style: TextStyle(fontSize: 11, color: context.txtMut)),
+                          ],
+                        ),
+                      ),
+                      Switch(
+                        value: context.isDark,
+                        activeThumbColor: ChessTheme.primaryLight,
+                        onChanged: (val) {
+                          final profile = widget.repository.getProfile();
+                          profile.isDarkMode = val;
+                          widget.repository.saveProfile(profile);
+                          widget.onToggleTheme?.call();
+                          setState(() {});
+                        },
+                      ),
+                    ],
+                  ),
+                  const Divider(height: 28),
+
+                  // Board Theme & Piece Theme Selectors
+                  Builder(
+                    builder: (context) {
+                      final profile = widget.repository.getProfile();
+                      return Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+                            children: [
+                              // Board Theme
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('Board Theme', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: context.txtSec)),
+                                    const SizedBox(height: 6),
+                                    DropdownButtonFormField<String>(
+                                      initialValue: profile.boardThemeName,
+                                      isExpanded: true,
+                                      dropdownColor: context.surfLight,
+                                      decoration: InputDecoration(
+                                        fillColor: context.bg,
+                                        filled: true,
+                                        contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                                        border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+                                      ),
+                                      items: const [
+                                        DropdownMenuItem(value: 'tournamentGreen', child: Text('Tournament Green')),
+                                        DropdownMenuItem(value: 'classicWood', child: Text('Classic Wood')),
+                                        DropdownMenuItem(value: 'slateBlue', child: Text('Slate Blue')),
+                                        DropdownMenuItem(value: 'highContrast', child: Text('High Contrast')),
+                                      ],
+                                      onChanged: (val) {
+                                        if (val != null) {
+                                          profile.boardThemeName = val;
+                                          widget.repository.saveProfile(profile);
+                                          setState(() {});
+                                        }
+                                      },
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              const SizedBox(width: 16),
+                              // Piece Theme
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('Piece Theme', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: context.txtSec)),
+                                    const SizedBox(height: 6),
+                                    DropdownButtonFormField<String>(
+                                      initialValue: profile.pieceThemeName,
+                                      isExpanded: true,
+                                      dropdownColor: context.surfLight,
+                                      decoration: InputDecoration(
+                                        fillColor: context.bg,
+                                        filled: true,
+                                        contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                                        border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+                                      ),
+                                      items: const [
+                                        DropdownMenuItem(value: 'standard', child: Text('Standard Staunton Vector')),
+                                        DropdownMenuItem(value: 'highContrast', child: Text('High Contrast Master')),
+                                        DropdownMenuItem(value: 'classicWood', child: Text('Classic Wood Engraved')),
+                                        DropdownMenuItem(value: 'minimalNotation', child: Text('Minimal Notation')),
+                                      ],
+                                      onChanged: (val) {
+                                        if (val != null) {
+                                          profile.pieceThemeName = val;
+                                          widget.repository.saveProfile(profile);
+                                          setState(() {});
+                                        }
+                                      },
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 16),
+
+                          Row(
+                            children: [
+                              // Board Sizing Policy
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('Board Sizing Policy', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: context.txtSec)),
+                                    const SizedBox(height: 6),
+                                    DropdownButtonFormField<String>(
+                                      initialValue: profile.boardSizeMode,
+                                      isExpanded: true,
+                                      dropdownColor: context.surfLight,
+                                      decoration: InputDecoration(
+                                        fillColor: context.bg,
+                                        filled: true,
+                                        contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                                        border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+                                      ),
+                                      items: const [
+                                        DropdownMenuItem(value: 'auto', child: Text('Auto Responsive (Optimal Viewport)')),
+                                        DropdownMenuItem(value: 'small', child: Text('Small (Compact 320px)')),
+                                        DropdownMenuItem(value: 'medium', child: Text('Medium (Balanced 420px)')),
+                                        DropdownMenuItem(value: 'large', child: Text('Large (Spacious 540px)')),
+                                        DropdownMenuItem(value: 'extraLarge', child: Text('Extra Large (Max Focus 640px)')),
+                                      ],
+                                      onChanged: (val) {
+                                        if (val != null) {
+                                          profile.boardSizeMode = val;
+                                          widget.repository.saveProfile(profile);
+                                          setState(() {});
+                                        }
+                                      },
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              const SizedBox(width: 16),
+                              // Animation Speed
+                              Expanded(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('Move Animation Speed', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: context.txtSec)),
+                                    const SizedBox(height: 6),
+                                    DropdownButtonFormField<String>(
+                                      initialValue: profile.animationSpeed,
+                                      isExpanded: true,
+                                      dropdownColor: context.surfLight,
+                                      decoration: InputDecoration(
+                                        fillColor: context.bg,
+                                        filled: true,
+                                        contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                                        border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+                                      ),
+                                      items: const [
+                                        DropdownMenuItem(value: 'off', child: Text('Off (Instant Teleport)')),
+                                        DropdownMenuItem(value: 'fast', child: Text('Fast (150ms Precision)')),
+                                        DropdownMenuItem(value: 'normal', child: Text('Normal (280ms Standard)')),
+                                        DropdownMenuItem(value: 'learning', child: Text('Learning (450ms + Arrow Trajectory)')),
+                                      ],
+                                      onChanged: (val) {
+                                        if (val != null) {
+                                          profile.animationSpeed = val;
+                                          widget.repository.saveProfile(profile);
+                                          setState(() {});
+                                        }
+                                      },
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 20),
+
+                          // Display Switches
+                          Wrap(
+                            spacing: 24,
+                            runSpacing: 12,
+                            children: [
+                              Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Switch(
+                                    value: profile.showCoordinates,
+                                    activeThumbColor: ChessTheme.primaryLight,
+                                    onChanged: (val) {
+                                      profile.showCoordinates = val;
+                                      widget.repository.saveProfile(profile);
+                                      setState(() {});
+                                    },
+                                  ),
+                                  const SizedBox(width: 6),
+                                  Text('Algebraic Coordinates', style: TextStyle(fontSize: 12, color: context.txt)),
+                                ],
+                              ),
+                              Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Switch(
+                                    value: profile.showMoveHighlights,
+                                    activeThumbColor: ChessTheme.primaryLight,
+                                    onChanged: (val) {
+                                      profile.showMoveHighlights = val;
+                                      widget.repository.saveProfile(profile);
+                                      setState(() {});
+                                    },
+                                  ),
+                                  const SizedBox(width: 6),
+                                  Text('Last Move Highlights', style: TextStyle(fontSize: 12, color: context.txt)),
+                                ],
+                              ),
+                              Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Switch(
+                                    value: profile.showLegalMoveHints,
+                                    activeThumbColor: ChessTheme.primaryLight,
+                                    onChanged: (val) {
+                                      profile.showLegalMoveHints = val;
+                                      widget.repository.saveProfile(profile);
+                                      setState(() {});
+                                    },
+                                  ),
+                                  const SizedBox(width: 6),
+                                  Text('Legal Move Dots / Target Rings', style: TextStyle(fontSize: 12, color: context.txt)),
+                                ],
+                              ),
+                              Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Switch(
+                                    value: profile.showMovementArrows,
+                                    activeThumbColor: ChessTheme.primaryLight,
+                                    onChanged: (val) {
+                                      profile.showMovementArrows = val;
+                                      widget.repository.saveProfile(profile);
+                                      setState(() {});
+                                    },
+                                  ),
+                                  const SizedBox(width: 6),
+                                  Text('Tactical & Threat Arrows', style: TextStyle(fontSize: 12, color: context.txt)),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ],
+                      );
+                    },
+                  ),
+                ],
+              ),
+            ),
+
           ],
         ),
       ),

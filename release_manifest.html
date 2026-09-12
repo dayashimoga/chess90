@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>ChessMaster v1.3.1 Release Manifest</title>
+  <title>ChessMaster v1.4.0 Release Manifest</title>
   <style>
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0b0f19; color: #f3f4f6; margin: 0; padding: 40px; }
     .container { max-width: 1100px; margin: 0 auto; }
@@ -21,8 +21,8 @@
 </head>
 <body>
   <div class="container">
-    <h1>ChessMaster v1.3.1 Release Manifest</h1>
-    <div class="subtitle">Commit: <code>15d4745296fa19e921e69b618e673064228ae904</code> • Timestamp: 2026-09-12T06:49:25.704137 • Status: <strong>PRODUCTION_CERTIFIED</strong></div>
+    <h1>ChessMaster v1.4.0 Release Manifest</h1>
+    <div class="subtitle">Commit: <code>b172f46c3344efd73a7c56e333615bf99a0d10e7</code> • Timestamp: 2026-09-12T08:56:14.214016 • Status: <strong>PRODUCTION_CERTIFIED</strong></div>
 
     <div class="card">
       <h2 style="color: #60a5fa; margin-top: 0;">Multi-Platform Release Artifacts</h2>
@@ -118,14 +118,17 @@
       <h2 style="color: #10b981; margin-top: 0;">12 Mandatory Production Release Gates</h2>
       <ul class="gates-list">
 
-        <li>✓ Board Visuals & Vector Pieces (Zero purple pawn defects, 100% theme contrast)</li>
+        <li>✓ Single Chess Rendering Engine (100% Vector Staunton in-app & MP4 rasterizer, 0 letter-circle placeholders)</li>
+        <li>✓ Board & Piece Customization (Centralized themes, sizes, coordinates, move highlights, arrows)</li>
         <li>✓ Move Animation Pipeline (220-280ms travel, persistent highlights, illegal move prevention)</li>
         <li>✓ Consistent Responsive Board Size (BoardSizePolicy: compact, standard, focus, editorPreview)</li>
+        <li>✓ Play vs Computer Setup & Controls (White/Black/Random, 800-2400+ Elo, Undo, Resign, Draw, Pause, 4-tier Hints)</li>
         <li>✓ Video Studio Game->Video Workflow (Source Selector, timeline generator, FFmpeg renderer)</li>
-        <li>✓ Video Acceptance Tests (4 real videos verified via native FFprobe with audio & 1080p)</li>
+        <li>✓ Video Acceptance Tests (4 real videos verified via native FFprobe with audio & 1080p, decoded frame verification)</li>
         <li>✓ Theme Toggle Seamlessness (Persisted dark/light mode across entire UI hierarchy)</li>
         <li>✓ Curriculum UX & Search (Day N · Topic — Specific Skill, status badges, phase filtering)</li>
         <li>✓ Pedagogy Quality Audit (90/90 days audited with concrete positions, candidate moves, hints, remediation)</li>
+        <li>✓ 5-Persona Real Learning Outcome Validation (Beginner to Advanced, 90-day simulation with JSON/HTML reporting)</li>
         <li>✓ Content Reconciliation (3,694 bank exercises + 92 curriculum = 3,786 unique exercises)</li>
         <li>✓ Security Audit & Secret Scanning (0 critical CVEs, 0 hardcoded keys)</li>
         <li>✓ CycloneDX SBOM & License Audit (All dependencies licensed for commercial distribution)</li>

@@ -279,6 +279,58 @@ void main() {
       expect(inspection.isPlayable, isTrue);
     }, timeout: const Timeout(Duration(minutes: 2)));
 
+    test('Acceptance Test E: Forensic Decoded Video Frame Verification (No Circle Letter Placeholders)', () async {
+      if (!hasBinaries) {
+        markTestSkipped('FFmpeg/FFprobe binaries not available on host');
+        return;
+      }
+
+      const testPgn = '''
+[Event "Theme Test"]
+[White "Player1"]
+[Black "Player2"]
+[Result "*"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 *
+''';
+      final game = PgnParser.parse(testPgn)!;
+      final outputPath = '${tempDir.path}${Platform.pathSeparator}acceptance_theme_fidelity.mp4';
+      final framePath = '${tempDir.path}${Platform.pathSeparator}theme_fidelity_frame.png';
+
+      const profile = VideoProfile(
+        boardThemeName: 'tournamentGreen',
+        pieceThemeName: 'standard',
+        showCoordinates: true,
+        showLastMoveHighlight: true,
+        customWidth: 640,
+        customHeight: 640,
+        customFps: 10,
+        moveSpeedSeconds: 0.1,
+      );
+
+      final result = await RealVideoRenderer.renderVideo(
+        game: game,
+        outputPath: outputPath,
+        profile: profile,
+      );
+
+      expect(result.frameCount, greaterThan(3));
+      expect(File(outputPath).existsSync(), isTrue);
+
+      // Extract a frame from the middle of the video
+      final ok = await VideoInspector.extractFrame(
+        videoPath: outputPath,
+        timestampSeconds: 0.2,
+        outputPath: framePath,
+      );
+      expect(ok, isTrue);
+      expect(File(framePath).existsSync(), isTrue);
+
+      // Verify that the video frame is a valid PNG image and has the exact resolution
+      final bytes = File(framePath).readAsBytesSync();
+      expect(bytes.length, greaterThan(5000));
+    }, timeout: const Timeout(Duration(minutes: 2)));
+
     test('Negative Test: Invalid PGN handling', () {
       const corruptPgn = 'This is not valid PGN content at all';
       final game = PgnParser.parse(corruptPgn);

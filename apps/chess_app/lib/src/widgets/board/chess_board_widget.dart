@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:chess_core/chess_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -6,6 +7,19 @@ import '../../theme/chess_board_theme.dart';
 import '../../theme/chess_theme.dart';
 import '../../theme/piece_theme.dart';
 import 'vector_piece_widget.dart';
+
+/// Graphical movement arrow displayed on the chessboard.
+class BoardArrow {
+  final Square from;
+  final Square to;
+  final Color color;
+
+  const BoardArrow({
+    required this.from,
+    required this.to,
+    this.color = const Color(0xCC22C55E),
+  });
+}
 
 /// Interactive 64-square chessboard with vector piece rendering, smooth move animation,
 /// legal move dots, check highlighting, persistent last-move overlays, and promotion handling.
@@ -20,6 +34,13 @@ class ChessBoardWidget extends StatefulWidget {
   final Square? lastMoveFrom;
   final Square? lastMoveTo;
   final int animationDurationMs;
+  final bool showCoordinates;
+  final bool showMoveHighlights;
+  final bool showLegalMoveHints;
+  final bool showQuickCustomizer;
+  final VoidCallback? onQuickCustomizerPressed;
+  final Square? checkSquare;
+  final List<BoardArrow> arrows;
 
   const ChessBoardWidget({
     super.key,
@@ -33,6 +54,13 @@ class ChessBoardWidget extends StatefulWidget {
     this.lastMoveFrom,
     this.lastMoveTo,
     this.animationDurationMs = 250,
+    this.showCoordinates = true,
+    this.showMoveHighlights = true,
+    this.showLegalMoveHints = true,
+    this.showQuickCustomizer = false,
+    this.onQuickCustomizerPressed,
+    this.checkSquare,
+    this.arrows = const [],
   });
 
   @override
@@ -375,11 +403,11 @@ class _ChessBoardWidgetState extends State<ChessBoardWidget> with SingleTickerPr
                                 alignment: Alignment.center,
                                 children: [
                                   // Last move source overlay
-                                  if (isLastFrom)
+                                  if (widget.showMoveHighlights && isLastFrom)
                                     Container(color: boardTheme.lastMoveSourceOverlay),
 
                                   // Last move destination overlay
-                                  if (isLastTo)
+                                  if (widget.showMoveHighlights && isLastTo)
                                     Container(color: boardTheme.lastMoveDestinationOverlay),
 
                                   // Selected square overlay
@@ -414,7 +442,7 @@ class _ChessBoardWidgetState extends State<ChessBoardWidget> with SingleTickerPr
                                     ),
 
                                   // Coordinate labels (rank on edge file, file on edge rank)
-                                  if (file == (widget.isFlipped ? 7 : 0))
+                                  if (widget.showCoordinates && file == (widget.isFlipped ? 7 : 0))
                                     Positioned(
                                       top: 2,
                                       left: 2,
@@ -427,7 +455,7 @@ class _ChessBoardWidgetState extends State<ChessBoardWidget> with SingleTickerPr
                                         ),
                                       ),
                                     ),
-                                  if (rank == (widget.isFlipped ? 7 : 0))
+                                  if (widget.showCoordinates && rank == (widget.isFlipped ? 7 : 0))
                                     Positioned(
                                       bottom: 2,
                                       right: 2,
@@ -450,7 +478,7 @@ class _ChessBoardWidgetState extends State<ChessBoardWidget> with SingleTickerPr
                                     ),
 
                                   // Legal move target dot / capture ring
-                                  if (isLegalTarget)
+                                  if (widget.showLegalMoveHints && isLegalTarget)
                                     Container(
                                       width: piece == null ? squareSize * 0.28 : squareSize * 0.85,
                                       height: piece == null ? squareSize * 0.28 : squareSize * 0.85,
@@ -522,6 +550,39 @@ class _ChessBoardWidgetState extends State<ChessBoardWidget> with SingleTickerPr
                           );
                         },
                       ),
+
+                    // Movement Arrows Overlay
+                    if (widget.arrows.isNotEmpty)
+                      Positioned.fill(
+                        child: IgnorePointer(
+                          child: CustomPaint(
+                            painter: _ArrowPainter(
+                              arrows: widget.arrows,
+                              isFlipped: widget.isFlipped,
+                              squareSize: squareSize,
+                            ),
+                          ),
+                        ),
+                      ),
+
+                    // Quick customizer shortcut button
+                    if (widget.showQuickCustomizer && widget.onQuickCustomizerPressed != null)
+                      Positioned(
+                        top: 6,
+                        right: 6,
+                        child: Material(
+                          color: Colors.black.withAlpha(140),
+                          shape: const CircleBorder(),
+                          child: IconButton(
+                            icon: const Icon(Icons.palette, size: 16, color: Colors.white),
+                            tooltip: 'Customize Board',
+                            splashRadius: 18,
+                            padding: const EdgeInsets.all(4),
+                            constraints: const BoxConstraints(minWidth: 28, minHeight: 28),
+                            onPressed: widget.onQuickCustomizerPressed,
+                          ),
+                        ),
+                      ),
                   ],
                 ),
               ),
@@ -531,4 +592,55 @@ class _ChessBoardWidgetState extends State<ChessBoardWidget> with SingleTickerPr
       },
     );
   }
+}
+
+/// Custom painter for tactical and movement arrows on the chessboard.
+class _ArrowPainter extends CustomPainter {
+  final List<BoardArrow> arrows;
+  final bool isFlipped;
+  final double squareSize;
+
+  _ArrowPainter({required this.arrows, required this.isFlipped, required this.squareSize});
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    for (final arrow in arrows) {
+      final fromCol = isFlipped ? 7 - arrow.from.file : arrow.from.file;
+      final fromRow = isFlipped ? arrow.from.rank : 7 - arrow.from.rank;
+      final toCol = isFlipped ? 7 - arrow.to.file : arrow.to.file;
+      final toRow = isFlipped ? arrow.to.rank : 7 - arrow.to.rank;
+
+      final start = Offset((fromCol + 0.5) * squareSize, (fromRow + 0.5) * squareSize);
+      final end = Offset((toCol + 0.5) * squareSize, (toRow + 0.5) * squareSize);
+
+      final paint = Paint()
+        ..color = arrow.color
+        ..strokeWidth = max(3.0, squareSize * 0.08)
+        ..strokeCap = StrokeCap.round
+        ..style = PaintingStyle.stroke;
+
+      canvas.drawLine(start, end, paint);
+
+      final angle = atan2(end.dy - start.dy, end.dx - start.dx);
+      final arrowSize = max(8.0, squareSize * 0.16);
+
+      final p1 = Offset(end.dx - arrowSize * cos(angle - pi / 6), end.dy - arrowSize * sin(angle - pi / 6));
+      final p2 = Offset(end.dx - arrowSize * cos(angle + pi / 6), end.dy - arrowSize * sin(angle + pi / 6));
+
+      final headPath = Path()
+        ..moveTo(end.dx, end.dy)
+        ..lineTo(p1.dx, p1.dy)
+        ..lineTo(p2.dx, p2.dy)
+        ..close();
+
+      final fillPaint = Paint()
+        ..color = arrow.color
+        ..style = PaintingStyle.fill;
+
+      canvas.drawPath(headPath, fillPaint);
+    }
+  }
+
+  @override
+  bool shouldRepaint(covariant _ArrowPainter oldDelegate) => true;
 }

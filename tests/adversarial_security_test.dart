@@ -2,8 +2,6 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:chess_content/chess_content.dart';
 import 'package:chess_core/chess_core.dart';
-import 'package:chess_engine/chess_engine.dart';
-import 'package:chess_learning/chess_learning.dart';
 import 'package:chess_storage/chess_storage.dart';
 import 'package:chess_video/chess_video.dart';
 import 'package:test/test.dart';
@@ -108,9 +106,9 @@ void main() {
         final futureSchemaJson = jsonEncode({
           'schemaVersion': 99999,
           'timestamp': DateTime.now().toIso8601String(),
-          'profile': {'username': 'test'},
-          'skillNodes': [],
-          'data': {},
+          'profile': <String, dynamic>{'username': 'test'},
+          'skillNodes': <dynamic>[],
+          'data': <String, dynamic>{},
         });
         expect(
           () => db.importFullBackupJson(futureSchemaJson),
@@ -121,7 +119,7 @@ void main() {
         final missingTablesJson = jsonEncode({
           'schemaVersion': 2,
           'timestamp': DateTime.now().toIso8601String(),
-          'games': [], // missing profile and skillNodes
+          'games': <dynamic>[], // missing profile and skillNodes
         });
         expect(
           () => db.importFullBackupJson(missingTablesJson),
@@ -139,7 +137,7 @@ void main() {
 
     test('Video renderer invokes FFmpeg safely without unsanitized shell concatenation', () {
       // Verify RealVideoRenderer uses explicit arguments list and validates boundaries
-      final profile = VideoProfile(
+      const profile = VideoProfile(
         customWidth: 120,
         customHeight: 120,
         customFps: 5,
@@ -152,7 +150,7 @@ void main() {
     });
 
     test('Content provenance rejects empty or unauthorized attribution', () {
-      final valid = ContentProvenance(
+      const valid = ContentProvenance(
         source: 'Chessbase PGN Archive',
         license: 'Public Domain / CC0',
         attribution: 'Compiled by ChessMaster Archival Project',

@@ -53,4 +53,16 @@ class PieceTheme {
     blackStrokeColor: Color(0xFFE8DCC8),
     blackStrokeWidth: 1.6,
   );
+
+  static PieceTheme fromName(String name) {
+    switch (name) {
+      case 'highContrast':
+        return highContrast;
+      case 'classicWood':
+        return classicWood;
+      case 'standard':
+      default:
+        return standard;
+    }
+  }
 }

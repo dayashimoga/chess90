@@ -49,6 +49,14 @@ class VideoProfile {
   final bool showPlayerCards;
   final bool showSubtitles;
   final bool showArrows;
+  final bool showCoordinates;
+  final bool showLastMoveHighlight;
+  final bool isBoardFlipped;
+  final String boardThemeName;
+  final String pieceThemeName;
+  final String? eventTitle;
+  final String? whitePlayerName;
+  final String? blackPlayerName;
   final double moveSpeedSeconds;
   final double criticalMomentPauseSeconds;
   final int? customWidth;
@@ -63,6 +71,14 @@ class VideoProfile {
     this.showPlayerCards = true,
     this.showSubtitles = true,
     this.showArrows = true,
+    this.showCoordinates = true,
+    this.showLastMoveHighlight = true,
+    this.isBoardFlipped = false,
+    this.boardThemeName = 'tournamentGreen',
+    this.pieceThemeName = 'standard',
+    this.eventTitle,
+    this.whitePlayerName,
+    this.blackPlayerName,
     this.moveSpeedSeconds = 0.35,
     this.criticalMomentPauseSeconds = 2.0,
     this.customWidth,

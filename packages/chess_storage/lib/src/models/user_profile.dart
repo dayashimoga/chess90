@@ -7,6 +7,15 @@ class UserProfile {
   List<int> passedExams; // list of passed exam days (e.g. [7, 14, 21])
   bool isCertified;
   bool isDarkMode;
+  String boardThemeName;
+  String pieceThemeName;
+  String boardSizeMode; // 'auto', 'small', 'medium', 'large', 'extraLarge'
+  bool showCoordinates;
+  bool showMoveHighlights;
+  bool showLegalMoveHints;
+  bool showMovementArrows;
+  String animationSpeed; // 'off', 'fast', 'normal', 'learning'
+  bool soundEnabled;
   DateTime createdDate;
   DateTime lastActiveDate;
 
@@ -18,6 +27,15 @@ class UserProfile {
     this.passedExams = const [],
     this.isCertified = false,
     this.isDarkMode = true,
+    this.boardThemeName = 'tournamentGreen',
+    this.pieceThemeName = 'standard',
+    this.boardSizeMode = 'auto',
+    this.showCoordinates = true,
+    this.showMoveHighlights = true,
+    this.showLegalMoveHints = true,
+    this.showMovementArrows = true,
+    this.animationSpeed = 'normal',
+    this.soundEnabled = true,
     DateTime? createdDate,
     DateTime? lastActiveDate,
   })  : createdDate = createdDate ?? DateTime.now(),
@@ -36,6 +54,15 @@ class UserProfile {
         'passedExams': passedExams,
         'isCertified': isCertified,
         'isDarkMode': isDarkMode,
+        'boardThemeName': boardThemeName,
+        'pieceThemeName': pieceThemeName,
+        'boardSizeMode': boardSizeMode,
+        'showCoordinates': showCoordinates,
+        'showMoveHighlights': showMoveHighlights,
+        'showLegalMoveHints': showLegalMoveHints,
+        'showMovementArrows': showMovementArrows,
+        'animationSpeed': animationSpeed,
+        'soundEnabled': soundEnabled,
         'createdDate': createdDate.toIso8601String(),
         'lastActiveDate': lastActiveDate.toIso8601String(),
       };
@@ -49,6 +76,15 @@ class UserProfile {
       passedExams: (json['passedExams'] as List<dynamic>?)?.cast<int>() ?? [],
       isCertified: json['isCertified'] as bool? ?? false,
       isDarkMode: json['isDarkMode'] as bool? ?? true,
+      boardThemeName: json['boardThemeName'] as String? ?? 'tournamentGreen',
+      pieceThemeName: json['pieceThemeName'] as String? ?? 'standard',
+      boardSizeMode: json['boardSizeMode'] as String? ?? 'auto',
+      showCoordinates: json['showCoordinates'] as bool? ?? true,
+      showMoveHighlights: json['showMoveHighlights'] as bool? ?? true,
+      showLegalMoveHints: json['showLegalMoveHints'] as bool? ?? true,
+      showMovementArrows: json['showMovementArrows'] as bool? ?? true,
+      animationSpeed: json['animationSpeed'] as String? ?? 'normal',
+      soundEnabled: json['soundEnabled'] as bool? ?? true,
       createdDate: DateTime.tryParse(json['createdDate'] as String? ?? '') ?? DateTime.now(),
       lastActiveDate: DateTime.tryParse(json['lastActiveDate'] as String? ?? '') ?? DateTime.now(),
     );

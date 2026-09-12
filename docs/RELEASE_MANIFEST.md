@@ -1,7 +1,7 @@
-# ChessMaster v1.3.1 Production Release Manifest
+# ChessMaster v1.4.0 Production Release Manifest
 
-- **Commit SHA**: `15d4745296fa19e921e69b618e673064228ae904`
-- **Release Date**: `2026-09-12T06:49:25.704137`
+- **Commit SHA**: `b172f46c3344efd73a7c56e333615bf99a0d10e7`
+- **Release Date**: `2026-09-12T08:56:14.214016`
 - **Overall Quality Status**: **PRODUCTION_CERTIFIED**
 
 ## 1. Packaged Release Artifacts
@@ -19,16 +19,18 @@
 
 ## 2. Certified Release Gates (100% Satisfied)
 
-1. **Board Visuals & Piece Contrast**: 12 custom resolution-independent vector pieces (`VectorPieceWidget`), 0 purple pawn bugs, strong contrast on all board themes.
-2. **Move Animation Pipeline**: Animated travel between squares, simultaneous castling rook animation, persistent last-move highlights.
-3. **Board Size Policy**: Centralized `BoardSizePolicy` (`compact`, `standard`, `focus`, `editorPreview`) preserving strict 1:1 square aspect ratio.
-4. **Video Studio Complete Workflow**: Game Source Selector (Played, Model, Pasted PGN, Imported PGN), 3-pane timeline editor, progress modal, and player.
-5. **Real Video Acceptance Tests**: 4 verified MP4 video generation tests with native FFmpeg and FFprobe (AAC audio, 1080p, deterministic timeline).
-6. **Theme Toggle Seamlessness**: Persisted light/dark mode state via `UserProfile` and `StorageRepository` working across all screens.
-7. **Curriculum UX & Search**: `Day N · Topic — Specific Skill` display labels, phase filtering, real-time search, status badges (`CURRENT`, `EXAM`, `DONE`).
-8. **Pedagogical Quality Audit**: 90/90 days audited with concrete positions, candidate moves, failure rationales, progressive hints, and remediation.
-9. **Content Reconciliation**: 3,694 bank exercises + 92 curriculum exercises = 3,786 unique exercises (0 duplicate IDs, 0 invalid FENs).
-10. **Windows Packaging Quality**: True single-file standalone portable executable `ChessMaster-Portable.exe`, Inno Setup installer `ChessMaster-Setup.exe`, and clean unnested folder/zip.
-11. **Security & SBOM**: Zero high/critical vulnerabilities, CycloneDX SBOM generated.
-12. **Clean Multi-Platform CI**: Complete execution matrix across Web, Windows, Linux, and Android.
+1. **Single Chess Rendering Engine**: 100% vector Staunton rendering shared between in-app boards and `FrameRasterizer` for MP4 video export. 0 letter-circle placeholders (`P/N/B/R/Q/K`).
+2. **Board & Piece Customization**: Centralized themes (Tournament Green, Classic Wood, Slate Blue, High Contrast), piece themes (Standard Staunton, High Contrast, Classic Wood), board size policies, animation speed, coordinates, arrows, and move highlights with cross-session persistence.
+3. **Responsive Board Sizing**: Viewport-adaptive scaling from 360x640 to 2560x1440 without clipping or RenderFlex overflow.
+4. **Play vs Computer Setup & Controls**: Side selection (White/Black/Random), rating/difficulty (800 to 2400+ Elo mapped to Stockfish UCI depth & skill level), Casual/Training/Serious modes, untimed to 30+20. Complete in-game controls: Undo/Takeback (with rated match warning), Resign/Restart confirmations, interactive draw evaluation by engine, pause/resume clock, 4-tier progressive hints, post-game scrubber, rematch.
+5. **Video Studio Complete Workflow**: Game Source Selector (Played, Model, Pasted PGN, Imported PGN), 3-pane timeline editor, progress modal, and native FFmpeg renderer with frame-accurate Staunton vectors.
+6. **Video Acceptance Tests**: 4 verified MP4 video generation tests with native FFmpeg and FFprobe (AAC audio, 1080p, deterministic timeline) + Acceptance Test E decoded frame inspection proving authentic vector pieces.
+7. **Theme Toggle Seamlessness**: Persisted light/dark mode state via `UserProfile` and `StorageRepository` working across all screens.
+8. **Curriculum UX & Search**: `Day N · Topic — Specific Skill` display labels, phase filtering, real-time search, status badges (`CURRENT`, `EXAM`, `DONE`).
+9. **Pedagogical Quality Audit**: 90/90 days audited with concrete positions, candidate moves, failure rationales, progressive hints, and remediation.
+10. **5-Persona Real Learning Outcome Validation**: Deterministic 90-day simulation of Beginner, Intermediate, Advanced, Tactical-Strong/Endgame-Weak, Strategic-Strong/Calculation-Weak personas generating authoritative JSON and HTML evidence.
+11. **Content Reconciliation**: 3,694 bank exercises + 92 curriculum exercises = 3,786 unique exercises (0 duplicate IDs, 0 invalid FENs).
+12. **Windows Packaging Quality**: True single-file standalone portable executable `ChessMaster-Portable.exe`, Inno Setup installer `ChessMaster-Setup.exe`, and clean unnested folder/zip.
+13. **Security & SBOM**: Zero high/critical vulnerabilities, CycloneDX SBOM generated.
+14. **Clean Multi-Platform CI**: Complete execution matrix across Web, Windows, Linux, and Android.
 

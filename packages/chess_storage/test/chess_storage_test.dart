@@ -20,14 +20,14 @@ void main() {
     });
 
     test('Initializes with default 12 skill nodes', () {
-      final repo = StorageRepository();
+      final repo = StorageRepository.inMemory();
       final nodes = repo.getSkillNodes();
       expect(nodes.length, equals(12));
       expect(nodes.any((n) => n.axis == SkillAxis.tactics), isTrue);
     });
 
     test('Full JSON backup export and import roundtrip', () {
-      final repo1 = StorageRepository();
+      final repo1 = StorageRepository.inMemory();
       final profile = repo1.getProfile();
       profile.currentDay = 14;
       profile.passedExams = [7, 14];
@@ -49,7 +49,7 @@ void main() {
       expect(jsonBackup, contains('"passedExams": ['));
       expect(jsonBackup, contains('game_1'));
 
-      final repo2 = StorageRepository();
+      final repo2 = StorageRepository.inMemory();
       repo2.importFullBackupJson(jsonBackup);
 
       expect(repo2.getProfile().currentDay, equals(14));

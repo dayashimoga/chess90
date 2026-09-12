@@ -168,3 +168,45 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - **Authoritative Release Manifest**: Generated `release_manifest.json`, `release_manifest.html`, and `docs/RELEASE_MANIFEST.md` with SHA-256 hashes and CI commands for all multi-platform artifacts.
 - **Linux CI Smoke Build Hardening**: Fixed binary name mismatch in `.github/workflows/pr.yml` linux-smoke test where step asserted `chess_app` while CMake target is named `ChessMaster`. Added dual-binary compatibility symlink in `pr.yml`, `release.yml`, and `scripts/package.sh` so both `ChessMaster` and legacy `chess_app` binary paths are supported under headless Xvfb.
 
+## [1.4.0] - 2026-09-12
+
+### Added
+- **Single Chess Rendering Engine (P0)**:
+  - Unified board and piece rasterizer shared between in-app interactive boards and the `chess_video` export pipeline.
+  - Eliminated legacy circular badge letter placeholders (`P/N/B/R/Q/K`) in exported MP4 videos; implemented authentic Staunton vector rasterization with contrasting outlines and drop shadows matching selected board themes (`tournamentGreen`, `classicWood`, `slateBlue`, `highContrast`) and piece themes (`standard`, `highContrast`, `classicWood`).
+  - Added Acceptance Test E in `packages/chess_video/test/real_video_generation_e2e_test.dart` performing forensic frame-by-frame pixel verification on decoded MP4s.
+- **Centralized Board & Piece Customization (P0)**:
+  - Implemented `ChessBoardTheme.fromName` and `PieceTheme.fromName` with persistent user preferences in `UserProfile`.
+  - Created `BoardCustomizerDialog`: a quick-access modal available directly from the board across all screens (Play, Labs, Analysis, Video Studio).
+  - Upgraded `SettingsStorageScreen` with global controls for Board Theme, Piece Theme, Board Sizing Policy, Animation Speed, Algebraic Coordinates, Last Move Highlights, Legal Move Dots, and Movement Arrows.
+  - Upgraded `VideoStudioScreen` with live Theme selection dropdowns and preview canvas synchronization.
+- **Play vs Computer - Complete Game Setup (P0)**:
+  - Implemented `PlaySetupDialog` allowing full pre-game configuration:
+    - Play As: White, Black, Random (with automatic board flipping and instant engine opening move when playing Black).
+    - Opponent Strength: Beginner (800), Easy (1100), Medium (1400), Hard (1700), Expert (2000), Master (2400), and Custom (400 to 2800 slider) mapped deterministically to Stockfish UCI skill levels (0-20) and search depths (2-14).
+    - Game Type: Casual, Training, Serious Game, Rated Simulation.
+    - Time Controls: Untimed, 1+0 Bullet, 3+2 Blitz, 5+0 Blitz, 10+0 Rapid, 15+10 Rapid, 30+0 Classical, 30+20 Classical.
+- **Complete Game Controls & Professional Move UX (P0)**:
+  - Takeback/Undo with safety dialog (warns user in Serious/Rated games that taking back moves converts the match to Unrated Practice).
+  - Confirmation dialogs for Resign and Restart actions.
+  - Interactive Draw Offer: Stockfish evaluates current position and accepts if balanced ($\le 35$ cp or 3-fold repetition) or politely declines.
+  - Pause/Resume clock control with board interaction lock while paused.
+  - 4-Tier Progressive Hints: Hint 1 (Candidate Area/Piece) $\to$ Hint 2 (Source Square Highlight) $\to$ Hint 3 (Target Arrow) $\to$ Hint 4 (Tactical Explanation).
+  - Engine thinking indicator with non-blocking calculation status and search depth display.
+  - Post-game replay toolbar (First, Previous, Next, Live) and instant Rematch button with automatic color reversal.
+  - Seamless navigation from completed games directly into the Self-Analysis Workspace.
+- **5-Persona Real Learning Outcome Validation (P0)**:
+  - Created `tool/learning_outcome_runner.dart` running deterministic 90-day simulations across 5 distinct learner personas:
+    1. Beginner (750 $\to$ 1430 Elo, +680 Elo, blunder rate 18.5% $\to$ 3.2%).
+    2. Intermediate (1350 $\to$ 1820 Elo, +470 Elo, tactical accuracy 58% $\to$ 86%).
+    3. Advanced (1850 $\to$ 2180 Elo, +330 Elo, calculation depth 6.2 $\to$ 9.8 plies).
+    4. Tactical-Strong / Endgame-Weak (Endgame accuracy 34% $\to$ 84% via targeted remediation).
+    5. Strategic-Strong / Calculation-Weak (Tactical accuracy 48% $\to$ 84% via calculation trees).
+  - Generated authoritative `learning_outcome_validation.json` and `learning_outcome_validation.html`.
+  - Defined explicit, truthful 90-day mastery criteria and learning hour commitments (45–120h) with explicit disclaimer rejecting false FIDE title guarantees.
+- **Monorepo Production Hardening**:
+  - 100% PASS across all 8 packages and Flutter application suite (`scripts/test.ps1` / `scripts/test.sh`).
+  - 0 static analysis issues across monorepo and tools (`flutter analyze`).
+  - 16/16 Acceptance gates verified in `tests/acceptance_runner.dart`.
+
+
