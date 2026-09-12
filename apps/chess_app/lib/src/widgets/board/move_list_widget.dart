@@ -119,9 +119,12 @@ class MoveListWidget extends StatelessWidget {
               children: [
                 Icon(Icons.list_alt, size: 16, color: context.txtSec),
                 const SizedBox(width: 8),
-                Text(
-                  'Move Notation Tree',
-                  style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: context.txtSec),
+                Expanded(
+                  child: Text(
+                    'Move Notation Tree',
+                    style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: context.txtSec),
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
               ],
             ),

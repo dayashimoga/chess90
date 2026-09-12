@@ -3,6 +3,7 @@ import 'package:chess_engine/chess_engine.dart';
 import 'package:chess_learning/chess_learning.dart';
 import 'package:chess_storage/chess_storage.dart';
 import 'package:flutter/material.dart';
+import '../theme/board_size_policy.dart';
 import '../theme/chess_theme.dart';
 import '../widgets/board/chess_board_widget.dart';
 import '../widgets/board/evaluation_bar_widget.dart';
@@ -177,26 +178,41 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
               child: Column(
                 children: [
                   Expanded(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          height: 480,
-                          child: EvaluationBarWidget(
-                            evaluation: currentEval,
-                            isVertical: true,
-                          ),
-                        ),
-                        const SizedBox(width: 16),
-                        SizedBox(
-                          width: 480,
-                          height: 480,
-                          child: ChessBoardWidget(
-                            board: _board,
-                            isInteractive: false,
-                          ),
-                        ),
-                      ],
+                    child: Center(
+                      child: LayoutBuilder(
+                        builder: (context, constraints) {
+                          final boardSize = BoardSizePolicy.calculateBoardSize(
+                            constraints: constraints,
+                            mode: BoardSizeMode.standard,
+                            hasEvaluationBar: true,
+                            evalBarWidth: 48.0,
+                          );
+                          return Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              SizedBox(
+                                width: 32,
+                                height: boardSize,
+                                child: EvaluationBarWidget(
+                                  evaluation: currentEval,
+                                  isVertical: true,
+                                ),
+                              ),
+                              const SizedBox(width: 16),
+                              SizedBox(
+                                width: boardSize,
+                                height: boardSize,
+                                child: ChessBoardWidget(
+                                  board: _board,
+                                  isInteractive: false,
+                                  lastMoveFrom: _currentPly > 0 && _game.moves.isNotEmpty ? _game.moves[_currentPly - 1].move?.from : null,
+                                  lastMoveTo: _currentPly > 0 && _game.moves.isNotEmpty ? _game.moves[_currentPly - 1].move?.to : null,
+                                ),
+                              ),
+                            ],
+                          );
+                        },
+                      ),
                     ),
                   ),
 

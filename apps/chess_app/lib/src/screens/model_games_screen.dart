@@ -1,6 +1,7 @@
 import 'package:chess_content/chess_content.dart';
 import 'package:chess_core/chess_core.dart';
 import 'package:flutter/material.dart';
+import '../theme/board_size_policy.dart';
 import '../theme/chess_theme.dart';
 import '../widgets/board/chess_board_widget.dart';
 import '../widgets/board/move_list_widget.dart';
@@ -198,14 +199,22 @@ class _ModelGamesScreenState extends State<ModelGamesScreen> {
 
                   Expanded(
                     child: Center(
-                      child: SizedBox(
-                        width: 480,
-                        height: 480,
-                        child: ChessBoardWidget(
-                          board: _board,
-                          isInteractive: _isGuessTheMoveActive,
-                          onMovePlayed: _isGuessTheMoveActive ? _onUserGuess : null,
-                        ),
+                      child: LayoutBuilder(
+                        builder: (context, constraints) {
+                          final boardSize = BoardSizePolicy.calculateBoardSize(
+                            constraints: constraints,
+                            mode: BoardSizeMode.standard,
+                          );
+                          return SizedBox(
+                            width: boardSize,
+                            height: boardSize,
+                            child: ChessBoardWidget(
+                              board: _board,
+                              isInteractive: _isGuessTheMoveActive,
+                              onMovePlayed: _isGuessTheMoveActive ? _onUserGuess : null,
+                            ),
+                          );
+                        },
                       ),
                     ),
                   ),

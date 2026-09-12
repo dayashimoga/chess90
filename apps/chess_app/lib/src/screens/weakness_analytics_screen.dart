@@ -288,10 +288,14 @@ class WeaknessAnalyticsScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    'Lab: ${cat.prescribedLabType}',
-                    style: TextStyle(fontSize: 10, color: context.txtMut),
+                  Expanded(
+                    child: Text(
+                      'Lab: ${cat.prescribedLabType}',
+                      style: TextStyle(fontSize: 10, color: context.txtMut),
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
+                  const SizedBox(width: 8),
                   InkWell(
                     onTap: () => onNavigate?.call('labs', args: {'labType': cat.prescribedLabType}),
                     child: const Row(

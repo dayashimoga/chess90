@@ -99,14 +99,107 @@ if ($7zExe -and $sfxModule) {
 
     if (Test-Path $portableExe) {
         $sizeMb = [math]::Round((Get-Item $portableExe).Length / 1MB, 2)
-        Write-Host "  -> Successfully built ChessMaster-Portable.exe ($sizeMb MB)" -ForegroundColor Green
-        # Copy into portable bundle as well
+        Write-Host "  -> Successfully built ChessMaster-Portable.exe via 7-Zip SFX ($sizeMb MB)" -ForegroundColor Green
         Copy-Item $portableExe (Join-Path $stagingDir "ChessMaster-Portable.exe") -Force
-        # Copy to root
         Copy-Item $portableExe (Join-Path $rootDir "ChessMaster-Portable.exe") -Force
     }
 } else {
-    Write-Host "  [NOTICE] 7-Zip SFX module not detected; skipping single-file SFX generation." -ForegroundColor Gray
+    Write-Host "  7-Zip SFX module not detected. Using native Windows C# compiler to generate standalone ChessMaster-Portable.exe..." -ForegroundColor Gray
+    $cscExe = "C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe"
+    if (Test-Path $cscExe) {
+        $tempPayloadZip = Join-Path $OutputDir "payload.zip"
+        if (Test-Path $tempPayloadZip) { Remove-Item $tempPayloadZip -Force }
+
+        Add-Type -AssemblyName System.IO.Compression.FileSystem
+        [System.IO.Compression.ZipFile]::CreateFromDirectory($stagingDir, $tempPayloadZip, [System.IO.Compression.CompressionLevel]::Optimal, $false)
+
+        $launcherCs = @"
+using System;
+using System.Diagnostics;
+using System.IO;
+using System.IO.Compression;
+using System.Reflection;
+
+namespace ChessMaster
+{
+    class Program
+    {
+        [STAThread]
+        static int Main(string[] args)
+        {
+            try
+            {
+                string localAppData = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+                string targetDir = Path.Combine(localAppData, "ChessMaster", "portable");
+                string exePath = Path.Combine(targetDir, "ChessMaster.exe");
+
+                Assembly currentAssembly = Assembly.GetExecutingAssembly();
+                DateTime exeWriteTime = File.GetLastWriteTime(currentAssembly.Location);
+                string stampFile = Path.Combine(targetDir, ".stamp");
+
+                bool needsExtract = !File.Exists(exePath) || !File.Exists(stampFile) ||
+                    File.ReadAllText(stampFile) != exeWriteTime.Ticks.ToString();
+
+                if (needsExtract)
+                {
+                    if (Directory.Exists(targetDir))
+                    {
+                        try { Directory.Delete(targetDir, true); } catch { }
+                    }
+                    Directory.CreateDirectory(targetDir);
+
+                    using (Stream stream = currentAssembly.GetManifestResourceStream("payload.zip"))
+                    {
+                        if (stream == null) return 1;
+                        using (ZipArchive archive = new ZipArchive(stream, ZipArchiveMode.Read))
+                        {
+                            archive.ExtractToDirectory(targetDir);
+                        }
+                    }
+                    try { File.WriteAllText(stampFile, exeWriteTime.Ticks.ToString()); } catch { }
+                }
+
+                if (!File.Exists(exePath))
+                {
+                    string fallback = Path.Combine(targetDir, "chess_app.exe");
+                    if (File.Exists(fallback)) exePath = fallback;
+                }
+
+                ProcessStartInfo psi = new ProcessStartInfo(exePath);
+                psi.WorkingDirectory = targetDir;
+                psi.Arguments = string.Join(" ", args);
+                psi.UseShellExecute = false;
+
+                Process p = Process.Start(psi);
+                p.WaitForExit();
+                return p.ExitCode;
+            }
+            catch
+            {
+                return 1;
+            }
+        }
+    }
+}
+"@
+        $csFile = Join-Path $OutputDir "PortableLauncher.cs"
+        [System.IO.File]::WriteAllText($csFile, $launcherCs)
+        $portableExe = Join-Path $OutputDir "ChessMaster-Portable.exe"
+
+        & $cscExe /nologo /target:winexe /platform:x64 /optimize+ "/out:$portableExe" "/resource:$tempPayloadZip,payload.zip" /r:System.IO.Compression.dll /r:System.IO.Compression.FileSystem.dll "$csFile" | Out-Null
+
+        Remove-Item $csFile -Force -ErrorAction SilentlyContinue
+        Remove-Item $tempPayloadZip -Force -ErrorAction SilentlyContinue
+
+        if (Test-Path $portableExe) {
+            $sizeMb = [math]::Round((Get-Item $portableExe).Length / 1MB, 2)
+            Write-Host "  -> Successfully compiled standalone ChessMaster-Portable.exe ($sizeMb MB)" -ForegroundColor Green
+            Copy-Item $portableExe (Join-Path $stagingDir "ChessMaster-Portable.exe") -Force
+            Copy-Item $portableExe (Join-Path $rootDir "ChessMaster-Portable.exe") -Force
+        }
+    } else {
+        Write-Host "  [WARNING] Neither 7z SFX nor csc.exe available to build single-file portable executable." -ForegroundColor Yellow
+    }
 }
 
 # 3. Compile Inno Setup Installer (if ISCC is available)

@@ -91,6 +91,8 @@ class CurriculumDay {
         srsReview = srsReview ?? const ['Tactical Pattern Flashcards', 'Candidate Selection Review'],
         estimatedMinutes = estimatedMinutes ?? (isWeeklyExam ? 90 : 60);
 
+  String get displayLabel => 'Day $dayNumber · $topic — $theme';
+
   Map<String, dynamic> toJson() => {
         'dayNumber': dayNumber,
         'title': title,

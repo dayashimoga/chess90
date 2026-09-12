@@ -100,11 +100,16 @@ class RealVideoRenderer {
     Map<int, int> evaluationsByPly = const {},
     List<int> criticalPlies = const [],
     String? thumbnailPath,
+    String? audioPath,
+    void Function(int currentFrame, int totalFrames, double progress, String phase)? onProgress,
+    bool Function()? shouldCancel,
   }) async {
     final ffmpegPath = findFfmpegPath();
     if (ffmpegPath == null) {
       throw StateError('FFmpeg binary not found on host system.');
     }
+
+    onProgress?.call(0, 1, 0.02, 'Generating timeline...');
 
     // 1. Generate frame timeline
     final generator = VideoTimelineGenerator(profile: profile);
@@ -118,6 +123,10 @@ class RealVideoRenderer {
       throw StateError('Timeline generator produced zero frames for game.');
     }
 
+    if (shouldCancel?.call() == true) {
+      throw StateError('Video rendering cancelled by user.');
+    }
+
     // 2. Create isolated temporary directory for frames
     final tempDir = Directory.systemTemp.createTempSync('chess_video_render_');
 
@@ -126,6 +135,10 @@ class RealVideoRenderer {
 
       // 3. Rasterize each frame
       for (int i = 0; i < timeline.length; i++) {
+        if (shouldCancel?.call() == true) {
+          throw StateError('Video rendering cancelled by user.');
+        }
+
         final frame = timeline[i];
         final image = FrameRasterizer.rasterize(frame, profile);
         final frameFile = File('${tempDir.path}${Platform.pathSeparator}frame_${i.toString().padLeft(6, '0')}.png');
@@ -138,7 +151,16 @@ class RealVideoRenderer {
           thumbFile.parent.createSync(recursive: true);
           await thumbFile.writeAsBytes(pngBytes, flush: true);
         }
+
+        final progress = (i + 1) / (timeline.length * 1.15);
+        onProgress?.call(i + 1, timeline.length, progress, 'Rasterizing frame ${i + 1} of ${timeline.length}');
       }
+
+      if (shouldCancel?.call() == true) {
+        throw StateError('Video rendering cancelled by user.');
+      }
+
+      onProgress?.call(timeline.length, timeline.length, 0.90, 'Encoding with FFmpeg...');
 
       // 4. Ensure output parent directory exists
       final outFile = File(outputPath);
@@ -149,6 +171,7 @@ class RealVideoRenderer {
         framesPattern: framesPattern,
         outputPath: outputPath,
         profile: profile,
+        audioPath: audioPath,
       );
 
       final result = await Process.run(ffmpegPath, ffmpegArgs);

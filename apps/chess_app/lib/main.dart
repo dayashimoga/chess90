@@ -38,16 +38,23 @@ class ChessMasterApp extends StatefulWidget {
 
 class _ChessMasterAppState extends State<ChessMasterApp> {
   late ThemeMode _themeMode;
+  late final StorageRepository _repo;
 
   @override
   void initState() {
     super.initState();
-    _themeMode = widget.initialThemeMode;
+    _repo = widget.repository ?? StorageRepository();
+    final profile = _repo.getProfile();
+    _themeMode = profile.isDarkMode ? ThemeMode.dark : ThemeMode.light;
   }
 
   void _toggleTheme() {
     setState(() {
-      _themeMode = _themeMode == ThemeMode.dark ? ThemeMode.light : ThemeMode.dark;
+      final newIsDark = _themeMode != ThemeMode.dark;
+      _themeMode = newIsDark ? ThemeMode.dark : ThemeMode.light;
+      final profile = _repo.getProfile();
+      profile.isDarkMode = newIsDark;
+      _repo.saveProfile(profile);
     });
   }
 

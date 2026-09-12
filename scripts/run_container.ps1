@@ -51,42 +51,52 @@ switch ($Action) {
 
     "test" {
         Write-Host "[Container] Running monorepo tests in isolated container..." -ForegroundColor Cyan
-        & $containerEngine run --rm -v "${rootDir}:/workspace:z" -w /workspace $imageTag bash scripts/test.sh
+        & $containerEngine run --rm -v chess_pub_cache:/root/.pub-cache -v "${rootDir}:/workspace:z" -w /workspace $imageTag bash scripts/test.sh
     }
 
     "coverage" {
         Write-Host "[Container] Running coverage collection & gates in container..." -ForegroundColor Cyan
-        & $containerEngine run --rm -v "${rootDir}:/workspace:z" -w /workspace $imageTag bash -c "cd tool && dart pub get && dart run coverage_runner.dart"
+        & $containerEngine run --rm -v chess_pub_cache:/root/.pub-cache -v "${rootDir}:/workspace:z" -w /workspace $imageTag bash -c "cd tool && dart pub get && dart run coverage_runner.dart"
     }
 
     "performance" {
         Write-Host "[Container] Running performance benchmarks in container..." -ForegroundColor Cyan
-        & $containerEngine run --rm -v "${rootDir}:/workspace:z" -w /workspace $imageTag bash -c "cd tool && dart pub get && dart run performance_runner.dart"
+        & $containerEngine run --rm -v chess_pub_cache:/root/.pub-cache -v "${rootDir}:/workspace:z" -w /workspace $imageTag bash -c "cd tool && dart pub get && dart run performance_runner.dart"
     }
 
     "security" {
         Write-Host "[Container] Running security audit in container..." -ForegroundColor Cyan
-        & $containerEngine run --rm -v "${rootDir}:/workspace:z" -w /workspace $imageTag bash -c "cd tool && dart pub get && dart run security_runner.dart"
+        & $containerEngine run --rm -v chess_pub_cache:/root/.pub-cache -v "${rootDir}:/workspace:z" -w /workspace $imageTag bash -c "cd tool && dart pub get && dart run security_runner.dart"
     }
 
     "acceptance" {
         Write-Host "[Container] Running full acceptance certification in container..." -ForegroundColor Cyan
-        & $containerEngine run --rm -v "${rootDir}:/workspace:z" -w /workspace $imageTag bash scripts/acceptance.sh --full
+        & $containerEngine run --rm -v chess_pub_cache:/root/.pub-cache -v "${rootDir}:/workspace:z" -w /workspace $imageTag bash scripts/acceptance.sh --full
     }
 
     "content-validate" {
         Write-Host "[Container] Running 90-day content depth & legal move validator in container..." -ForegroundColor Cyan
-        & $containerEngine run --rm -v "${rootDir}:/workspace:z" -w /workspace $imageTag bash -c "cd tool && dart pub get && dart run content_validator.dart"
+        & $containerEngine run --rm -v chess_pub_cache:/root/.pub-cache -v "${rootDir}:/workspace:z" -w /workspace $imageTag bash -c "cd tool && dart pub get && dart run content_validator.dart"
+    }
+
+    "pedagogy-validate" {
+        Write-Host "[Container] Running 90-day pedagogical quality auditor in container..." -ForegroundColor Cyan
+        & $containerEngine run --rm -v chess_pub_cache:/root/.pub-cache -v "${rootDir}:/workspace:z" -w /workspace $imageTag bash -c "cd tool && dart pub get && dart run pedagogy_auditor.dart"
     }
 
     "simulation-validate" {
         Write-Host "[Container] Running 90-day deterministic simulation runner in container..." -ForegroundColor Cyan
-        & $containerEngine run --rm -v "${rootDir}:/workspace:z" -w /workspace $imageTag bash -c "cd tool && dart pub get && dart run simulation_runner.dart"
+        & $containerEngine run --rm -v chess_pub_cache:/root/.pub-cache -v "${rootDir}:/workspace:z" -w /workspace $imageTag bash -c "cd tool && dart pub get && dart run simulation_runner.dart"
+    }
+
+    "release-manifest" {
+        Write-Host "[Container] Generating multi-platform release manifest in container..." -ForegroundColor Cyan
+        & $containerEngine run --rm -v chess_pub_cache:/root/.pub-cache -v "${rootDir}:/workspace:z" -w /workspace $imageTag bash -c "cd tool && dart pub get && dart run release_manifest_generator.dart"
     }
 
     "certify" {
         Write-Host "[Container] Running end-to-end certification gate in container..." -ForegroundColor Cyan
-        & $containerEngine run --rm -v "${rootDir}:/workspace:z" -w /workspace $imageTag bash -c "bash scripts/test.sh && cd tool && dart pub get && dart run content_validator.dart && dart run simulation_runner.dart && dart run coverage_runner.dart && dart run performance_runner.dart && dart run security_runner.dart"
+        & $containerEngine run --rm -v chess_pub_cache:/root/.pub-cache -v "${rootDir}:/workspace:z" -w /workspace $imageTag bash -c "bash scripts/test.sh && cd tool && dart pub get && dart run content_validator.dart && dart run pedagogy_auditor.dart && dart run simulation_runner.dart && dart run coverage_runner.dart && dart run performance_runner.dart && dart run security_runner.dart && dart run release_manifest_generator.dart"
     }
 
     "shell" {

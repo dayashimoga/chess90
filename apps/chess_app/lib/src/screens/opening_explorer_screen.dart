@@ -1,6 +1,7 @@
 import 'package:chess_content/chess_content.dart';
 import 'package:chess_core/chess_core.dart';
 import 'package:flutter/material.dart';
+import '../theme/board_size_policy.dart';
 import '../theme/chess_theme.dart';
 import '../widgets/board/chess_board_widget.dart';
 
@@ -19,6 +20,8 @@ class _OpeningExplorerScreenState extends State<OpeningExplorerScreen> {
   final List<String> _playedMoves = [];
   EcoEntry? _currentEco;
   String _searchQuery = '';
+  Square? _lastMoveFrom;
+  Square? _lastMoveTo;
 
   @override
   void initState() {
@@ -31,6 +34,8 @@ class _OpeningExplorerScreenState extends State<OpeningExplorerScreen> {
       _board = Board.initial();
       _playedMoves.clear();
       _currentEco = null;
+      _lastMoveFrom = null;
+      _lastMoveTo = null;
     });
   }
 
@@ -39,6 +44,8 @@ class _OpeningExplorerScreenState extends State<OpeningExplorerScreen> {
     setState(() {
       _board.makeMove(move);
       _playedMoves.add(san);
+      _lastMoveFrom = move.from;
+      _lastMoveTo = move.to;
       _currentEco = EcoBook.matchByMoves(_playedMoves);
     });
   }
@@ -46,17 +53,23 @@ class _OpeningExplorerScreenState extends State<OpeningExplorerScreen> {
   void _selectEco(EcoEntry entry) {
     final b = Board.initial();
     final moves = <String>[];
+    Square? lastFrom;
+    Square? lastTo;
     for (final san in entry.movesSan) {
       final m = MoveGenerator.sanToMove(b, san);
       if (m != null) {
         b.makeMove(m);
         moves.add(san);
+        lastFrom = m.from;
+        lastTo = m.to;
       }
     }
     setState(() {
       _board = b;
       _playedMoves.clear();
       _playedMoves.addAll(moves);
+      _lastMoveFrom = lastFrom;
+      _lastMoveTo = lastTo;
       _currentEco = entry;
     });
   }
@@ -80,13 +93,22 @@ class _OpeningExplorerScreenState extends State<OpeningExplorerScreen> {
                 children: [
                   _buildHeader(),
                   const SizedBox(height: 16),
-                  SizedBox(
-                    height: 380,
-                    child: ChessBoardWidget(
-                      board: _board,
-                      onMovePlayed: _onMovePlayed,
-                    ),
-                  ),
+                  Builder(builder: (ctx) {
+                    final boardSize = BoardSizePolicy.calculateBoardSize(
+                      constraints: constraints,
+                      mode: BoardSizeMode.compact,
+                    );
+                    return SizedBox(
+                      width: boardSize,
+                      height: boardSize,
+                      child: ChessBoardWidget(
+                        board: _board,
+                        onMovePlayed: _onMovePlayed,
+                        lastMoveFrom: _lastMoveFrom,
+                        lastMoveTo: _lastMoveTo,
+                      ),
+                    );
+                  }),
                   const SizedBox(height: 16),
                   _buildOpeningDetails(),
                   const SizedBox(height: 16),
@@ -113,6 +135,8 @@ class _OpeningExplorerScreenState extends State<OpeningExplorerScreen> {
                           child: ChessBoardWidget(
                             board: _board,
                             onMovePlayed: _onMovePlayed,
+                            lastMoveFrom: _lastMoveFrom,
+                            lastMoveTo: _lastMoveTo,
                           ),
                         ),
                       ),

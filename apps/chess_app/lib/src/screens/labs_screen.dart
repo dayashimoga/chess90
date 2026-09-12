@@ -3,6 +3,7 @@ import 'package:chess_curriculum/chess_curriculum.dart';
 import 'package:chess_labs/chess_labs.dart';
 import 'package:chess_storage/chess_storage.dart';
 import 'package:flutter/material.dart';
+import '../theme/board_size_policy.dart';
 import '../theme/chess_theme.dart';
 import '../widgets/board/chess_board_widget.dart';
 import '../widgets/board/evaluation_bar_widget.dart';
@@ -113,11 +114,13 @@ class _LabsScreenState extends State<LabsScreen> {
           final isCompact = constraints.maxWidth < 800;
           final evalBarSpacing = isCompact ? 8.0 : 12.0;
           const evalBarWidth = 28.0;
-          final availableBoardWidth = constraints.maxWidth - evalBarWidth - evalBarSpacing - 36.0;
-          final boardSize = (isCompact
-                  ? availableBoardWidth
-                  : (constraints.maxHeight - 220).clamp(280.0, 500.0))
-              .clamp(160.0, 500.0);
+          final boardSize = BoardSizePolicy.calculateBoardSize(
+            constraints: constraints,
+            mode: isCompact ? BoardSizeMode.compact : BoardSizeMode.standard,
+            hasEvaluationBar: true,
+            evalBarWidth: evalBarWidth + evalBarSpacing,
+            verticalPadding: 220.0,
+          );
 
           final instructionBanner = Container(
             width: double.infinity,

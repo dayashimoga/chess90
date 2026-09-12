@@ -152,3 +152,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
     - Verified 100% pass across all 8 monorepo packages and `apps/chess_app` in `scripts/test.sh`.
     - Passed all 16 Acceptance Gates in `tests/acceptance_runner.dart --full`, all 6 Security Audits in `tool/security_runner.dart`, and all 18 Performance Budgets in `tool/performance_runner.dart`.
     - Generated comprehensive `SHA256SUMS` with cryptographic hashes of all release packages and verification manifests.
+
+## [1.3.1] - 2026-09-12
+
+### Added
+- **Unified Board Visuals (P0)**: Resolution-independent vector rendering (`VectorPieceWidget`) for all 12 pieces across standard, high-contrast, and classic wood themes. Non-destructive layer overlays for selection, checks, hints, and legal move indicators. Eliminates Black pawns appearing grey/purple from OS font fallback.
+- **Move Travel & Animation Pipeline (P0)**: Shared smooth piece translation pipeline (220–280ms) for opponent and engine moves, persistent last-move highlights, synchronized dual-piece castling and en-passant travel.
+- **Centralized Board Size Policy (P0)**: Responsive `BoardSizePolicy` (`compact`, `standard`, `focus`, `editorPreview`) calculating exact 1:1 aspect ratio square bounds without clipping or overflow.
+- **Video Studio Full Game -> Video Pipeline (P0)**: Game Source Selector dialog supporting Played Games, Model Games, Paste PGN with live syntax validation, and PGN file import. 3-pane layout, timeline scrubber, and progressive native FFmpeg MP4 export with progress modal, cancellation, and metadata verification.
+- **Real Video Acceptance Testing**: 4 native FFmpeg acceptance tests (Model game, Played game with AAC audio, Pasted PGN, Imported PGN) + error handling tests passing with 100% verification in `packages/chess_video/test/real_video_generation_e2e_test.dart`.
+- **Pedagogical Quality Audit Tool**: Automated `tool/pedagogy_auditor.dart` generating `docs/PEDAGOGY_AUDIT.md` and `docs/pedagogy_audit.json` with 90/90 pass evidence against 11 strict pedagogical criteria.
+- **Authoritative Content Reconciliation**: Verified exactly 3,694 bank exercises + 92 curriculum exercises - 0 duplicates = 3,786 unique exercises with zero invalid FEN/PGN.
+- **Seamless Theme Toggle**: Integrated theme mode persistence via `StorageRepository` with reactive light/dark theme toggles across settings and application shell.
+- **Standalone Windows Executable**: Updated `packaging/windows/package_windows.ps1` with native C# compiler (`csc.exe`) fallback to generate a true single-file `ChessMaster-Portable.exe` with embedded payload.
+- **Authoritative Release Manifest**: Generated `release_manifest.json`, `release_manifest.html`, and `docs/RELEASE_MANIFEST.md` with SHA-256 hashes and CI commands for all multi-platform artifacts.
+

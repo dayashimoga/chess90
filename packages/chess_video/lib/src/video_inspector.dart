@@ -13,6 +13,8 @@ class VideoInspection {
   final int frameCount;
   final int bitRate;
   final bool isPlayable;
+  final bool hasAudio;
+  final String? audioCodec;
 
   const VideoInspection({
     required this.filePath,
@@ -24,6 +26,8 @@ class VideoInspection {
     required this.frameCount,
     required this.bitRate,
     required this.isPlayable,
+    this.hasAudio = false,
+    this.audioCodec,
   });
 
   Map<String, dynamic> toJson() => {
@@ -36,11 +40,40 @@ class VideoInspection {
         'frameCount': frameCount,
         'bitRate': bitRate,
         'isPlayable': isPlayable,
+        'hasAudio': hasAudio,
+        'audioCodec': audioCodec,
       };
 }
 
 /// Forensic video inspector using FFprobe and FFmpeg null-mux decoding.
 class VideoInspector {
+  /// Extracts a single frame at [timestampSeconds] to [outputPath] and verifies it.
+  static Future<bool> extractFrame({
+    required String videoPath,
+    required double timestampSeconds,
+    required String outputPath,
+  }) async {
+    final ffmpegPath = RealVideoRenderer.findFfmpegPath();
+    if (ffmpegPath == null) return false;
+
+    final outFile = File(outputPath);
+    outFile.parent.createSync(recursive: true);
+
+    final result = await Process.run(ffmpegPath, [
+      '-y',
+      '-ss',
+      timestampSeconds.toStringAsFixed(2),
+      '-i',
+      videoPath,
+      '-vframes',
+      '1',
+      '-q:v',
+      '2',
+      outputPath,
+    ]);
+    return result.exitCode == 0 && outFile.existsSync() && outFile.lengthSync() > 0;
+  }
+
   /// Inspects a video file and verifies its encoding, streams, and decode integrity.
   static Future<VideoInspection> inspect(String filePath) async {
     final ffprobePath = RealVideoRenderer.findFfprobePath();
@@ -74,6 +107,11 @@ class VideoInspector {
       (s) => s['codec_type'] == 'video',
       orElse: () => streams.isNotEmpty ? streams.first : <String, dynamic>{},
     ) as Map<String, dynamic>;
+
+    final audioStream = streams.firstWhere(
+      (s) => s['codec_type'] == 'audio',
+      orElse: () => null,
+    ) as Map<String, dynamic>?;
 
     final format = (jsonMap['format'] as Map<String, dynamic>?) ?? {};
 
@@ -122,6 +160,8 @@ class VideoInspector {
       frameCount: frameCount,
       bitRate: bitRate,
       isPlayable: playable,
+      hasAudio: audioStream != null,
+      audioCodec: audioStream?['codec_name'] as String?,
     );
   }
 }

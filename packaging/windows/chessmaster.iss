@@ -1,6 +1,6 @@
 ; Inno Setup Script for ChessMaster 90-Day Mastery Platform
 #define MyAppName "ChessMaster"
-#define MyAppVersion "1.3.0"
+#define MyAppVersion "1.3.1"
 #define MyAppPublisher "ChessMaster Contributors"
 #define MyAppURL "https://github.com/dayashimoga/chess90"
 #define MyAppExeName "ChessMaster.exe"

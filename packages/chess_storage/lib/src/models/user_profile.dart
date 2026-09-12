@@ -6,6 +6,7 @@ class UserProfile {
   int dailyTimeBudgetMinutes;
   List<int> passedExams; // list of passed exam days (e.g. [7, 14, 21])
   bool isCertified;
+  bool isDarkMode;
   DateTime createdDate;
   DateTime lastActiveDate;
 
@@ -16,6 +17,7 @@ class UserProfile {
     this.dailyTimeBudgetMinutes = 480, // Default intensive 8h
     this.passedExams = const [],
     this.isCertified = false,
+    this.isDarkMode = true,
     DateTime? createdDate,
     DateTime? lastActiveDate,
   })  : createdDate = createdDate ?? DateTime.now(),
@@ -33,6 +35,7 @@ class UserProfile {
         'dailyTimeBudgetMinutes': dailyTimeBudgetMinutes,
         'passedExams': passedExams,
         'isCertified': isCertified,
+        'isDarkMode': isDarkMode,
         'createdDate': createdDate.toIso8601String(),
         'lastActiveDate': lastActiveDate.toIso8601String(),
       };
@@ -45,6 +48,7 @@ class UserProfile {
       dailyTimeBudgetMinutes: json['dailyTimeBudgetMinutes'] as int? ?? 480,
       passedExams: (json['passedExams'] as List<dynamic>?)?.cast<int>() ?? [],
       isCertified: json['isCertified'] as bool? ?? false,
+      isDarkMode: json['isDarkMode'] as bool? ?? true,
       createdDate: DateTime.tryParse(json['createdDate'] as String? ?? '') ?? DateTime.now(),
       lastActiveDate: DateTime.tryParse(json['lastActiveDate'] as String? ?? '') ?? DateTime.now(),
     );

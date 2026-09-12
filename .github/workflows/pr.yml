@@ -155,6 +155,62 @@ jobs:
             docs/CONTENT_INVENTORY.md
             docs/FULL_90_DAY_CURRICULUM.md
 
+  # 5b. Pedagogy Quality Validation (90/90 Days)
+  pedagogy-validation:
+    name: pedagogy-validation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Dart
+        uses: dart-lang/setup-dart@v1
+        with:
+          sdk: stable
+
+      - name: Audit 90-Day Curriculum Pedagogical Quality
+        run: |
+          cd tool
+          dart pub get
+          dart run pedagogy_auditor.dart
+
+      - name: Upload Pedagogy Audit Artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: chessmaster-pedagogy-audit
+          path: |
+            docs/pedagogy_audit.json
+            docs/PEDAGOGY_AUDIT.md
+
+  # 5c. Video Studio E2E Real Generation
+  video-e2e:
+    name: video-e2e
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Dart
+        uses: dart-lang/setup-dart@v1
+        with:
+          sdk: stable
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Install FFmpeg
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: Run Real Video Generation E2E Acceptance Tests
+        run: |
+          cd packages/chess_video
+          dart pub get
+          dart test test/real_video_generation_e2e_test.dart
+
   # 6. 90-Day Simulation Runner
   simulation-90-day:
     name: 90-day-simulation
@@ -519,7 +575,36 @@ jobs:
             performance.json
             performance.html
 
-  # 18. Final Certification Gate
+  # 18. Release Manifest Generation
+  release-manifest:
+    name: release-manifest
+    runs-on: ubuntu-latest
+    needs: [build-web, build-linux, build-android-apk-aab]
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Dart
+        uses: dart-lang/setup-dart@v1
+        with:
+          sdk: stable
+
+      - name: Generate Release Manifest & Hashes
+        run: |
+          cd tool
+          dart pub get
+          dart run release_manifest_generator.dart
+
+      - name: Upload Release Manifest Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: chessmaster-release-manifest
+          path: |
+            release_manifest.json
+            release_manifest.html
+            docs/RELEASE_MANIFEST.md
+
+  # 19. Final Certification Gate
   final-certification:
     name: final-certification
     runs-on: ubuntu-latest
@@ -529,6 +614,8 @@ jobs:
       - coverage
       - widget-and-golden
       - content-validation
+      - pedagogy-validation
+      - video-e2e
       - simulation-90-day
       - build-web
       - web-e2e
@@ -541,17 +628,20 @@ jobs:
       - security
       - sbom-and-license
       - performance
+      - release-manifest
     steps:
       - name: Validate All Gate Artifacts
         run: |
           echo "======================================================"
-          echo "  ALL 17 MANDATORY CI/CD GATES OBJECTIVELY SATISFIED   "
+          echo "  ALL 20 MANDATORY CI/CD GATES OBJECTIVELY SATISFIED   "
           echo "======================================================"
           echo "✓ lint/static"
           echo "✓ unit/integration"
           echo "✓ coverage"
           echo "✓ widget/golden"
           echo "✓ content-validation"
+          echo "✓ pedagogy-validation"
+          echo "✓ video-e2e"
           echo "✓ 90-day-simulation"
           echo "✓ build-web"
           echo "✓ web-e2e"
@@ -564,4 +654,5 @@ jobs:
           echo "✓ security"
           echo "✓ SBOM/license"
           echo "✓ performance"
+          echo "✓ release-manifest"
           echo "CERTIFICATION: RELEASE ARTIFACTS VERIFIED AND READY."

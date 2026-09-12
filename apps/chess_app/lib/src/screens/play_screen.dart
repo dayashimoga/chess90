@@ -3,6 +3,7 @@ import 'package:chess_core/chess_core.dart';
 import 'package:chess_engine/chess_engine.dart';
 import 'package:chess_storage/chess_storage.dart';
 import 'package:flutter/material.dart';
+import '../theme/board_size_policy.dart';
 import '../theme/chess_theme.dart';
 import '../widgets/board/chess_board_widget.dart';
 import '../widgets/board/move_list_widget.dart';
@@ -237,7 +238,7 @@ class _PlayScreenState extends State<PlayScreen> {
                   const SizedBox(width: 8),
                   TextButton(
                     onPressed: _discardUnfinishedGame,
-                    child: const Text('Discard', style: TextStyle(color: Colors.white70)),
+                    child: Text('Discard', style: TextStyle(color: context.txtSec)),
                   ),
                 ],
               ),
@@ -265,15 +266,25 @@ class _PlayScreenState extends State<PlayScreen> {
                   // Chess Board
                   Expanded(
                     child: Center(
-                      child: SizedBox(
-                        width: 480,
-                        height: 480,
-                        child: ChessBoardWidget(
-                          board: _board,
-                          isFlipped: _playerColor == PieceColor.black,
-                          onMovePlayed: _onMovePlayed,
-                          isInteractive: !_isGameOver && (_playVsEngine ? _board.activeColor == _playerColor : true),
-                        ),
+                      child: LayoutBuilder(
+                        builder: (context, constraints) {
+                          final boardSize = BoardSizePolicy.calculateBoardSize(
+                            constraints: constraints,
+                            mode: _isTournamentMode ? BoardSizeMode.focus : BoardSizeMode.standard,
+                          );
+                          return SizedBox(
+                            width: boardSize,
+                            height: boardSize,
+                            child: ChessBoardWidget(
+                              board: _board,
+                              isFlipped: _playerColor == PieceColor.black,
+                              onMovePlayed: _onMovePlayed,
+                              isInteractive: !_isGameOver && (_playVsEngine ? _board.activeColor == _playerColor : true),
+                              lastMoveFrom: _moves.isNotEmpty ? _moves.last.move?.from : null,
+                              lastMoveTo: _moves.isNotEmpty ? _moves.last.move?.to : null,
+                            ),
+                          );
+                        },
                       ),
                     ),
                   ),
@@ -454,8 +465,9 @@ class _PlayScreenState extends State<PlayScreen> {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
             decoration: BoxDecoration(
-              color: context.isDark ? Colors.black45 : const Color(0xFF0F172A),
+              color: context.isDark ? Colors.black45 : context.surfLight,
               borderRadius: BorderRadius.circular(6),
+              border: Border.all(color: context.brd),
             ),
             child: Text(
               timeString,
@@ -463,7 +475,7 @@ class _PlayScreenState extends State<PlayScreen> {
                 fontFamily: 'monospace',
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
-                color: isActive ? ChessTheme.primaryLight : const Color(0xFFCBD5E1),
+                color: isActive ? ChessTheme.primaryLight : context.txt,
               ),
             ),
           ),

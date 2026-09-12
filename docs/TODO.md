@@ -120,3 +120,21 @@ This document is strictly append-only. Completed tasks are marked with `[x]` and
 - [x] (2026-09-12) Build and package production release archives in Podman container: `ChessMaster-Web.zip` (14.0 MB) and `ChessMaster-Linux-x64.tar.gz` (9.9 MB), updating `SHA256SUMS`.
 - [x] (2026-09-12) Run and pass all 16 Acceptance Gates in `tests/acceptance_runner.dart --full`, all 6 Security Audits in `tool/security_runner.dart`, and all 18 Performance Budgets in `tool/performance_runner.dart`.
 
+---
+
+## Final Production Hardening & Complete Feature Pass (v1.3.1)
+
+- [x] (2026-09-12) **Board Visuals (P0)**: Unified `PieceTheme`/`ChessBoardTheme` and resolution-independent vector rendering (`VectorPieceWidget`) for all 12 pieces across standard, high-contrast, and classic wood themes. Fixed Black pawns appearing grey/purple due to OS font fallback.
+- [x] (2026-09-12) **Move Travel Pipeline (P0)**: Implemented shared smooth move animation pipeline (220–280ms) for opponent and engine moves with persistent last-move highlights, synchronized dual-piece castling and en-passant travel.
+- [x] (2026-09-12) **Board Size Policy (P0)**: Centralized `BoardSizePolicy` (`compact`, `standard`, `focus`, `editorPreview`) ensuring 1:1 aspect ratio square bounds without clipping or overflow.
+- [x] (2026-09-12) **Video Studio Complete Workflow (P0)**: Implemented Game Source Selector modal (Played, Model, Paste PGN with live syntax validation, Import PGN file), 3-pane responsive layout, scrubber, and progressive native FFmpeg MP4 export with progress modal, cancellation, and metadata verification.
+- [x] (2026-09-12) **Video Acceptance Tests (P0)**: Generated and verified 4 real native FFmpeg MP4 videos (Model game, Played game with AAC audio muxing, Pasted PGN, Imported PGN file) + error handling tests passing 100% in `packages/chess_video/test/real_video_generation_e2e_test.dart`.
+- [x] (2026-09-12) **Pedagogical Quality Audit (P0)**: Automated `tool/pedagogy_auditor.dart` generating `docs/PEDAGOGY_AUDIT.md` and `docs/pedagogy_audit.json` proving 90/90 days meet all 11 strict pedagogical criteria with 0 generic template-only text.
+- [x] (2026-09-12) **Curriculum Presentation UX**: Display label format `Day N · Topic — Specific Skill`, phase filter, real-time search, and status badges (`CURRENT`, `EXAM`, `PASSED`).
+- [x] (2026-09-12) **Content Consistency (P0)**: Reconciled 3,786 vs 3,694 exercise discrepancy: 3,694 bank exercises + 92 curriculum exercises = 3,786 unique exercises. Verified via `apps/chess_app/test/content_reconciliation_test.dart` and `tool/content_validator.dart`.
+- [x] (2026-09-12) **Seamless Theme Toggle**: Integrated theme mode persistence via `StorageRepository` with reactive light/dark theme switches across settings and application shell.
+- [x] (2026-09-12) **Windows Standalone Executable**: Updated `packaging/windows/package_windows.ps1` with native C# compiler (`csc.exe`) fallback to compile a standalone, true single-file `ChessMaster-Portable.exe` with embedded payload.
+- [x] (2026-09-12) **Authoritative Release Manifest**: Generated `release_manifest.json`, `release_manifest.html`, and `docs/RELEASE_MANIFEST.md` with SHA-256 hashes and CI commands for all multi-platform artifacts.
+- [x] (2026-09-12) **Zero Static Analysis Issues & 100% Test Pass**: Verified 0 issues across all 9 packages and tools in `scripts/analyze.sh` and 100% test pass rate in `scripts/test.sh`.
+
+

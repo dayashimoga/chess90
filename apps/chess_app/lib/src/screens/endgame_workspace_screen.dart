@@ -1,6 +1,7 @@
 import 'package:chess_core/chess_core.dart';
 import 'package:chess_engine/chess_engine.dart';
 import 'package:flutter/material.dart';
+import '../theme/board_size_policy.dart';
 import '../theme/chess_theme.dart';
 import '../widgets/board/chess_board_widget.dart';
 
@@ -75,6 +76,8 @@ class _EndgameWorkspaceScreenState extends State<EndgameWorkspaceScreen> {
   late EndgamePositionModel _activePosition;
   late Board _board;
   final List<String> _playedMoves = [];
+  Square? _lastMoveFrom;
+  Square? _lastMoveTo;
   bool _isSuccess = false;
   String _statusFeedback = '';
   late final ChessEngine _engine;
@@ -93,6 +96,8 @@ class _EndgameWorkspaceScreenState extends State<EndgameWorkspaceScreen> {
       _activePosition = pos;
       _board = Board.fromFen(pos.fen);
       _playedMoves.clear();
+      _lastMoveFrom = null;
+      _lastMoveTo = null;
       _isSuccess = false;
       _statusFeedback = pos.objective;
     });
@@ -102,6 +107,8 @@ class _EndgameWorkspaceScreenState extends State<EndgameWorkspaceScreen> {
     final san = MoveGenerator.moveToSan(_board, move);
     _board.makeMove(move);
     _playedMoves.add(san);
+    _lastMoveFrom = move.from;
+    _lastMoveTo = move.to;
 
     setState(() {
       _statusFeedback = 'Played $san. Analyzing response...';
@@ -153,13 +160,22 @@ class _EndgameWorkspaceScreenState extends State<EndgameWorkspaceScreen> {
                 children: [
                   _buildHeader(),
                   const SizedBox(height: 16),
-                  SizedBox(
-                    height: 380,
-                    child: ChessBoardWidget(
-                      board: _board,
-                      onMovePlayed: _onMovePlayed,
-                    ),
-                  ),
+                  Builder(builder: (ctx) {
+                    final boardSize = BoardSizePolicy.calculateBoardSize(
+                      constraints: constraints,
+                      mode: BoardSizeMode.compact,
+                    );
+                    return SizedBox(
+                      width: boardSize,
+                      height: boardSize,
+                      child: ChessBoardWidget(
+                        board: _board,
+                        onMovePlayed: _onMovePlayed,
+                        lastMoveFrom: _lastMoveFrom,
+                        lastMoveTo: _lastMoveTo,
+                      ),
+                    );
+                  }),
                   const SizedBox(height: 16),
                   _buildPositionDetails(),
                   const SizedBox(height: 16),
@@ -185,6 +201,8 @@ class _EndgameWorkspaceScreenState extends State<EndgameWorkspaceScreen> {
                           child: ChessBoardWidget(
                             board: _board,
                             onMovePlayed: _onMovePlayed,
+                            lastMoveFrom: _lastMoveFrom,
+                            lastMoveTo: _lastMoveTo,
                           ),
                         ),
                       ),

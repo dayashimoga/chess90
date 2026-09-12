@@ -184,6 +184,47 @@ class _SettingsStorageScreenState extends State<SettingsStorageScreen> {
               ],
             ),
 
+            // Visual Aesthetics & Theme Preferences Card
+            Container(
+              padding: const EdgeInsets.all(20),
+              decoration: BoxDecoration(
+                color: context.surf,
+                borderRadius: BorderRadius.circular(16),
+                border: Border.all(color: context.brd),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Visual Aesthetics & Theme Preferences', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: context.txt)),
+                  const SizedBox(height: 4),
+                  Text('Toggle dark/light mode across the application seamlessly and configure presentation preferences.', style: TextStyle(fontSize: 12, color: context.txtSec)),
+                  const SizedBox(height: 16),
+                  Row(
+                    children: [
+                      Icon(context.isDark ? Icons.dark_mode : Icons.light_mode, color: ChessTheme.accentGold, size: 24),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(context.isDark ? 'Dark Theme (Active)' : 'Light Theme (Active)', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: context.txt)),
+                            Text(context.isDark ? 'Sleek luxury dark palette with emerald accents' : 'Crisp high-contrast slate light palette with amber accents', style: TextStyle(fontSize: 11, color: context.txtMut)),
+                          ],
+                        ),
+                      ),
+                      Switch(
+                        value: context.isDark,
+                        activeThumbColor: ChessTheme.primaryLight,
+                        onChanged: (val) {
+                          widget.onToggleTheme?.call();
+                        },
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+
             const SizedBox(height: 24),
 
             // Storage & Backup Controls Card

@@ -1,6 +1,7 @@
 import 'package:chess_app/main.dart';
 import 'package:chess_app/src/widgets/board/chess_board_widget.dart';
 import 'package:chess_app/src/widgets/board/evaluation_bar_widget.dart';
+import 'package:chess_app/src/widgets/board/vector_piece_widget.dart';
 import 'package:chess_core/chess_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -39,10 +40,8 @@ void main() {
       ),
     );
 
-    // Initial white king symbol: '♔'
-    expect(find.text('♔'), findsOneWidget);
-    // Initial black king symbol: '♚'
-    expect(find.text('♚'), findsOneWidget);
+    // 32 vector pieces rendered at starting position
+    expect(find.byType(VectorPieceWidget), findsNWidgets(32));
   });
 
   testWidgets('EvaluationBarWidget renders neutral evaluation', (WidgetTester tester) async {

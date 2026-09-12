@@ -6,6 +6,8 @@ class VideoFrame {
   final int frameIndex;
   final double timestampSeconds;
   final String fen;
+  final int ply;
+  final bool isCriticalMoment;
   final Piece? movingPiece;
   final Square? movingFrom;
   final Square? movingTo;
@@ -22,6 +24,8 @@ class VideoFrame {
     required this.frameIndex,
     required this.timestampSeconds,
     required this.fen,
+    this.ply = 0,
+    this.isCriticalMoment = false,
     this.movingPiece,
     this.movingFrom,
     this.movingTo,
@@ -34,6 +38,9 @@ class VideoFrame {
     this.whiteClock,
     this.blackClock,
   });
+
+  String? get subtitle => subtitleText;
+  int? get evaluation => evaluationCentipawns;
 
   bool get isPieceInMotion =>
       movingPiece != null && movingFrom != null && movingTo != null && interpolationFraction < 1.0;
