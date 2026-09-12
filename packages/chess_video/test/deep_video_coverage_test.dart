@@ -258,5 +258,40 @@ void main() {
       final highlightFrames = highlightGen.generateTimeline(game);
       expect(highlightFrames.isNotEmpty, isTrue);
     });
+
+    test('FrameRasterizer across all board and piece themes and piece kinds', () {
+      final themes = [
+        ('classicWood', 'classicWood'),
+        ('slateBlue', 'highContrast'),
+        ('highContrast', 'standard'),
+        ('tournamentGreen', 'classicWood'),
+        ('unknownBoard', 'unknownPiece'),
+      ];
+
+      for (final themePair in themes) {
+        final profile = VideoProfile(
+          boardThemeName: themePair.$1,
+          pieceThemeName: themePair.$2,
+          showEvaluationBar: true,
+          showLastMoveHighlight: true,
+        );
+
+        final frame = VideoFrame(
+          frameIndex: 1,
+          timestampSeconds: 0.5,
+          fen: 'r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1',
+          movingPiece: const Piece(PieceType.rook, PieceColor.white),
+          movingFrom: Square.fromName('a1'),
+          movingTo: Square.fromName('d1'),
+          interpolationFraction: 0.5,
+          evaluationCentipawns: 120,
+          highlightedSquares: [Square.fromName('a1')!, Square.fromName('d1')!],
+          moveNotation: 'Rad1',
+        );
+
+        final img = FrameRasterizer.rasterize(frame, profile);
+        expect(img.width, equals(1920));
+      }
+    });
   });
 }

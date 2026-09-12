@@ -62,6 +62,12 @@ Future<void> main(List<String> args) async {
   for (final pkg in packages) {
     print('\n[Coverage] Running tests for ${pkg.name} in ${pkg.dir}...');
     final pkgFullDir = Directory(Platform.isWindows ? '$rootDir\\${pkg.dir.replaceAll('/', '\\')}' : '$rootDir/${pkg.dir}');
+    final pkgCoverageDir = Directory(Platform.isWindows ? '${pkgFullDir.path}\\coverage' : '${pkgFullDir.path}/coverage');
+    if (pkgCoverageDir.existsSync()) {
+      try {
+        pkgCoverageDir.deleteSync(recursive: true);
+      } catch (_) {}
+    }
 
     ProcessResult res;
     if (pkg.isFlutter) {

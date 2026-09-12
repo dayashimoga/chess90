@@ -155,6 +155,7 @@ class _GameSourceSelectorDialogState extends State<GameSourceSelectorDialog> wit
                                 'Played ${game.playedDate.toLocal().toString().split('.')[0]}',
                                 style: TextStyle(fontSize: 11, color: context.txtSec),
                               ),
+                              onTap: () => Navigator.of(context).pop(game.pgn),
                               trailing: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: ChessTheme.primary,
@@ -187,6 +188,7 @@ class _GameSourceSelectorDialogState extends State<GameSourceSelectorDialog> wit
                           '${game.event} · ECO ${game.eco} · ${game.openingName} (${game.result})',
                           style: TextStyle(fontSize: 11, color: context.txtSec),
                         ),
+                        onTap: () => Navigator.of(context).pop(game.pgn),
                         trailing: ElevatedButton(
                           style: ElevatedButton.styleFrom(
                             backgroundColor: context.surfLight,

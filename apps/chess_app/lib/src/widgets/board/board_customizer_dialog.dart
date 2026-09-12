@@ -90,7 +90,9 @@ class _BoardCustomizerDialogState extends State<BoardCustomizerDialog> {
                   children: [
                     const Icon(Icons.palette, color: ChessTheme.primary, size: 22),
                     const SizedBox(width: 8),
-                    Text('Board & Piece Customization', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: context.txt)),
+                    Expanded(
+                      child: Text('Board & Piece Customization', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: context.txt)),
+                    ),
                   ],
                 ),
                 const SizedBox(height: 16),
