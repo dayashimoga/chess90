@@ -1,6 +1,6 @@
 {
   "version": "1.3.0",
-  "timestamp": "2026-09-12T08:44:54.949074Z",
+  "timestamp": "2026-09-13T05:09:36.882717Z",
   "status": "PASSED",
   "simulations": {
     "personaA_Dedicated": {
@@ -62,7 +62,7 @@
       "threshold": 0.8,
       "advancementBlocked": true,
       "remediationEngaged": true,
-      "remediationProtocol": "Mandatory Remediation: Review Day 11 foundations, complete 10 targeted Leitner flashcards focused on tactics, and repeat exercises until reaching >=85%.",
+      "remediationProtocol": "Mandatory Remediation Protocol: Review Day 11 foundations, drill 10 targeted flashcards on tactics, and repeat exercises until achieving >= 85%.",
       "retestScore": 0.9,
       "retestPassed": true
     },

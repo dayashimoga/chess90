@@ -1,8 +1,8 @@
 {
   "platformName": "ChessMaster 90-Day GM Mastery Platform",
   "version": "1.4.0",
-  "commitSha": "b172f46c3344efd73a7c56e333615bf99a0d10e7",
-  "buildTimestamp": "2026-09-12T08:56:14.214016",
+  "commitSha": "09b397b6d8dbfc7f32de84306f94e47f52c7c96f",
+  "buildTimestamp": "2026-09-13T05:10:00.256491",
   "overallStatus": "PRODUCTION_CERTIFIED",
   "certifiedGates": [
     "Single Chess Rendering Engine (100% Vector Staunton in-app & MP4 rasterizer, 0 letter-circle placeholders)",
@@ -29,9 +29,9 @@
       "buildCommand": "flutter build web --release && zip -r ChessMaster-Web.zip .",
       "ciJob": "build-web",
       "e2eJob": "web-e2e",
-      "sizeBytes": 14051365,
-      "sizeMb": "13.40",
-      "sha256": "cb2828e4e097b90805e4be61ed755ebdda5920f6369a94cf4d2b039d214b7342",
+      "sizeBytes": 14197046,
+      "sizeMb": "13.54",
+      "sha256": "d061fbb3904c99744ee48550b3e144d55c4a0a81fad35ae65b719b617c6e009a",
       "runtimeResult": "HTTP 200 OK, CanvasKit rendering, Offline PWA ServiceWorker functional",
       "evidence": "Headless Python HTTP server + curl smoke check passing",
       "status": "PROVEN"
@@ -85,9 +85,9 @@
       "buildCommand": "flutter build linux --release && tar -czf ChessMaster-Linux-x64.tar.gz -C bundle .",
       "ciJob": "build-linux",
       "e2eJob": "linux-smoke",
-      "sizeBytes": 9912255,
+      "sizeBytes": 9906651,
       "sizeMb": "9.45",
-      "sha256": "d0bf284c9005e1553e6ef0c04abc0d7a7a6f327449f9806615ff9047e4d50d87",
+      "sha256": "c9184fb880e984697872126b061fb134574bc060f4cd99721ea75ceba77f1830",
       "runtimeResult": "GTK3 native binary with POSIX Stockfish and native FFmpeg/FFprobe",
       "evidence": "Xvfb virtual display headless execution verifying binary startup",
       "status": "PROVEN"

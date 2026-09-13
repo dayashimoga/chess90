@@ -1,14 +1,14 @@
 # ChessMaster v1.4.0 Production Release Manifest
 
-- **Commit SHA**: `b172f46c3344efd73a7c56e333615bf99a0d10e7`
-- **Release Date**: `2026-09-12T08:56:14.214016`
+- **Commit SHA**: `09b397b6d8dbfc7f32de84306f94e47f52c7c96f`
+- **Release Date**: `2026-09-13T05:10:00.256491`
 - **Overall Quality Status**: **PRODUCTION_CERTIFIED**
 
 ## 1. Packaged Release Artifacts
 
 | Artifact Name | Target Platform | Size | CI Job | Runtime Evidence | Status |
 |---|---|---|---|---|---|
-| **`ChessMaster-Web.zip`** | Web (Chrome, Firefox, Safari, Edge) | 13.40 MB | `build-web` | Headless Python HTTP server + curl smoke check passing | **PROVEN** |
+| **`ChessMaster-Web.zip`** | Web (Chrome, Firefox, Safari, Edge) | 13.54 MB | `build-web` | Headless Python HTTP server + curl smoke check passing | **PROVEN** |
 | **`ChessMaster-Windows-x64.zip`** | Windows 10/11 x64 | N/A MB | `build-windows` | Unnested zip containing ChessMaster.exe, flutter_windows.dll, data/ folder, Launch-ChessMaster.bat | **PROVEN** |
 | **`ChessMaster-Portable.exe`** | Windows 10/11 x64 (Single-File Standalone) | N/A MB | `build-windows` | Standalone executable launching ChessMaster.exe without manual archive extraction | **PROVEN** |
 | **`ChessMaster-Setup.exe`** | Windows 10/11 x64 (Inno Setup Installer) | N/A MB | `build-windows` | Inno Setup 6 compiled modern installer with uninstall support | **PROVEN** |
