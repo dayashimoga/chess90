@@ -51,10 +51,17 @@ void main() {
       await tester.tap(hintBtn);
       await tester.pumpAndSettle();
 
-      // Declare "No Tactic"
+      // Contextual "No Tactic" (only present on genuine no-tactic exercises)
       final noTacBtn = find.text('Declare "No Tactic"');
-      expect(noTacBtn, findsOneWidget);
-      await tester.tap(noTacBtn);
+      if (noTacBtn.evaluate().isNotEmpty) {
+        await tester.tap(noTacBtn);
+        await tester.pumpAndSettle();
+      }
+
+      // Learning Controls: Show Move & Show Line
+      final showMoveBtn = find.text('Show Move');
+      expect(showMoveBtn, findsOneWidget);
+      await tester.tap(showMoveBtn);
       await tester.pumpAndSettle();
 
       // Reset Exercise

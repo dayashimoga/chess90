@@ -2,6 +2,7 @@ import 'package:chess_curriculum/chess_curriculum.dart';
 import 'package:chess_storage/chess_storage.dart';
 import 'package:flutter/material.dart';
 import '../theme/chess_theme.dart';
+import '../widgets/curriculum/reference_library_dialog.dart';
 
 /// 90-Day Curriculum browser and study material reader.
 class CurriculumScreen extends StatefulWidget {
@@ -332,92 +333,127 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       // Header: Phase, Display Label, Meta Badges & Action
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Expanded(
-                            child: Column(
+                      LayoutBuilder(
+                        builder: (context, constraints) {
+                          final isCompact = constraints.maxWidth < 700;
+                          final infoColumn = Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                currentDayData.phase.title.toUpperCase(),
+                                style: const TextStyle(
+                                  color: ChessTheme.primaryLight,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.bold,
+                                  letterSpacing: 1.1,
+                                ),
+                              ),
+                              const SizedBox(height: 6),
+                              Text(
+                                currentDayData.displayLabel,
+                                style: TextStyle(
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.bold,
+                                  color: context.txt,
+                                ),
+                              ),
+                              const SizedBox(height: 10),
+                              // Meta Chips
+                              Wrap(
+                                spacing: 8,
+                                runSpacing: 8,
+                                children: [
+                                  Chip(
+                                    avatar: const Icon(Icons.star, size: 14, color: ChessTheme.accentGold),
+                                    label: Text('Elo ${currentDayData.difficultyRating}'),
+                                    backgroundColor: context.surfLight,
+                                    visualDensity: VisualDensity.compact,
+                                  ),
+                                  Chip(
+                                    avatar: const Icon(Icons.timer_outlined, size: 14, color: ChessTheme.primaryLight),
+                                    label: Text('${currentDayData.estimatedMinutes} min'),
+                                    backgroundColor: context.surfLight,
+                                    visualDensity: VisualDensity.compact,
+                                  ),
+                                  Chip(
+                                    avatar: const Icon(Icons.track_changes, size: 14, color: Colors.cyanAccent),
+                                    label: Text(currentDayData.primarySkillAxis.name.toUpperCase()),
+                                    backgroundColor: context.surfLight,
+                                    visualDensity: VisualDensity.compact,
+                                  ),
+                                  Chip(
+                                    avatar: const Icon(Icons.science_outlined, size: 14, color: Colors.purpleAccent),
+                                    label: Text(currentDayData.referencedLabId),
+                                    backgroundColor: context.surfLight,
+                                    visualDensity: VisualDensity.compact,
+                                  ),
+                                  if (currentDayData.isWeeklyExam)
+                                    Chip(
+                                      avatar: const Icon(Icons.verified, size: 14, color: Colors.orangeAccent),
+                                      label: Text('Pass: ${(currentDayData.examPassThreshold * 100).toInt()}%'),
+                                      backgroundColor: context.surfLight,
+                                      visualDensity: VisualDensity.compact,
+                                    ),
+                                ],
+                              ),
+                            ],
+                          );
+
+                          final actionButtons = Wrap(
+                            spacing: 8,
+                            runSpacing: 8,
+                            children: [
+                              OutlinedButton.icon(
+                                icon: const Icon(Icons.menu_book, size: 16),
+                                label: const Text('Cheat Sheets / Reference'),
+                                style: OutlinedButton.styleFrom(
+                                  foregroundColor: context.txt,
+                                  side: BorderSide(color: context.brd),
+                                  padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+                                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                                ),
+                                onPressed: () => ReferenceLibraryDialog.show(context),
+                              ),
+                              ElevatedButton.icon(
+                                icon: const Icon(Icons.play_arrow),
+                                label: const Text('Launch Lab',
+                                    style: TextStyle(fontWeight: FontWeight.bold)),
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: ChessTheme.primary,
+                                  foregroundColor: Colors.black,
+                                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                                ),
+                                onPressed: () {
+                                  widget.onNavigate('labs', args: {
+                                    'dayNumber': currentDayData.dayNumber,
+                                  });
+                                },
+                              ),
+                            ],
+                          );
+
+                          if (isCompact) {
+                            return Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
-                                  currentDayData.phase.title.toUpperCase(),
-                                  style: const TextStyle(
-                                    color: ChessTheme.primaryLight,
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.bold,
-                                    letterSpacing: 1.1,
-                                  ),
-                                ),
-                                const SizedBox(height: 6),
-                                Text(
-                                  currentDayData.displayLabel,
-                                  style: TextStyle(
-                                    fontSize: 22,
-                                    fontWeight: FontWeight.bold,
-                                    color: context.txt,
-                                  ),
-                                ),
-                                const SizedBox(height: 10),
-                                // Meta Chips
-                                Wrap(
-                                  spacing: 8,
-                                  runSpacing: 8,
-                                  children: [
-                                    Chip(
-                                      avatar: const Icon(Icons.star, size: 14, color: ChessTheme.accentGold),
-                                      label: Text('Elo ${currentDayData.difficultyRating}'),
-                                      backgroundColor: context.surfLight,
-                                      visualDensity: VisualDensity.compact,
-                                    ),
-                                    Chip(
-                                      avatar: const Icon(Icons.timer_outlined, size: 14, color: ChessTheme.primaryLight),
-                                      label: Text('${currentDayData.estimatedMinutes} min'),
-                                      backgroundColor: context.surfLight,
-                                      visualDensity: VisualDensity.compact,
-                                    ),
-                                    Chip(
-                                      avatar: const Icon(Icons.track_changes, size: 14, color: Colors.cyanAccent),
-                                      label: Text(currentDayData.primarySkillAxis.name.toUpperCase()),
-                                      backgroundColor: context.surfLight,
-                                      visualDensity: VisualDensity.compact,
-                                    ),
-                                    Chip(
-                                      avatar: const Icon(Icons.science_outlined, size: 14, color: Colors.purpleAccent),
-                                      label: Text(currentDayData.referencedLabId),
-                                      backgroundColor: context.surfLight,
-                                      visualDensity: VisualDensity.compact,
-                                    ),
-                                    if (currentDayData.isWeeklyExam)
-                                      Chip(
-                                        avatar: const Icon(Icons.verified, size: 14, color: Colors.orangeAccent),
-                                        label: Text('Pass: ${(currentDayData.examPassThreshold * 100).toInt()}%'),
-                                        backgroundColor: context.surfLight,
-                                        visualDensity: VisualDensity.compact,
-                                      ),
-                                  ],
-                                ),
+                                infoColumn,
+                                const SizedBox(height: 16),
+                                actionButtons,
                               ],
-                            ),
-                          ),
-                          const SizedBox(width: 16),
-                          ElevatedButton.icon(
-                            icon: const Icon(Icons.play_arrow),
-                            label: const Text('Launch Lab',
-                                style: TextStyle(fontWeight: FontWeight.bold)),
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: ChessTheme.primary,
-                              foregroundColor: Colors.black,
-                              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-                            ),
-                            onPressed: () {
-                              widget.onNavigate('labs', args: {
-                                'dayNumber': currentDayData.dayNumber,
-                              });
-                            },
-                          ),
-                        ],
+                            );
+                          }
+
+                          return Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Expanded(child: infoColumn),
+                              const SizedBox(width: 16),
+                              actionButtons,
+                            ],
+                          );
+                        },
                       ),
 
                       const SizedBox(height: 20),

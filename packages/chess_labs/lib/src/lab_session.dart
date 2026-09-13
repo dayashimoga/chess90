@@ -20,6 +20,10 @@ class LabSession {
   final String initialFen;
   final List<String> solutionSan;
   final List<String> hints;
+  final String? hintConcept;
+  final String? hintPiece;
+  final String? hintForcing;
+  final String? refutationAnalysis;
   final String explanation;
   final bool isNoTacticPosition;
 
@@ -41,6 +45,10 @@ class LabSession {
     required this.initialFen,
     required this.solutionSan,
     this.hints = const [],
+    this.hintConcept,
+    this.hintPiece,
+    this.hintForcing,
+    this.refutationAnalysis,
     required this.explanation,
     this.isNoTacticPosition = false,
   }) {
@@ -48,6 +56,19 @@ class LabSession {
   }
 
   Stream<LabSession> get onUpdate => _updateController.stream;
+
+  bool get isNoTacticActionVisible => isNoTacticPosition;
+
+  List<String> get tieredHints {
+    final list = <String>[];
+    if (hintConcept != null && hintConcept!.isNotEmpty) list.add(hintConcept!);
+    if (hintPiece != null && hintPiece!.isNotEmpty) list.add(hintPiece!);
+    if (hintForcing != null && hintForcing!.isNotEmpty) list.add(hintForcing!);
+    if (list.isEmpty) {
+      return hints;
+    }
+    return list;
+  }
 
   void reset() {
     currentBoard = Board.fromFen(initialFen);
@@ -61,17 +82,76 @@ class LabSession {
     _notify();
   }
 
-  /// Request next progressive hint (deducts 20% penalty per hint).
+  /// Request next progressive hint (deducts 20% penalty per hint in legacy mode).
   String? requestHint() {
-    if (hintsRevealed < hints.length) {
-      final hint = hints[hintsRevealed];
+    return requestTieredHint(penalize: true);
+  }
+
+  /// Request next tiered hint (Concept -> Piece -> Forcing move). Free in learning mode.
+  String? requestTieredHint({bool penalize = false}) {
+    final availableHints = tieredHints;
+    if (hintsRevealed < availableHints.length) {
+      final hint = availableHints[hintsRevealed];
       hintsRevealed++;
-      score = (score - 20.0).clamp(0.0, 100.0);
-      feedbackMessage = 'Hint $hintsRevealed: $hint';
+      if (penalize) {
+        score = (score - 20.0).clamp(0.0, 100.0);
+      }
+      final tierName = hintsRevealed == 1
+          ? 'H1 Concept'
+          : hintsRevealed == 2
+              ? 'H2 Candidate Piece'
+              : 'H3 Forcing Clue';
+      feedbackMessage = '$tierName: $hint';
       _notify();
       return hint;
     }
     return null;
+  }
+
+  /// Reveals and automatically executes the next best move from verified solution tree.
+  String? showBestMove({bool penalize = false}) {
+    if (isCompleted || currentSolutionIndex >= solutionSan.length) return null;
+    if (penalize) {
+      score = (score - 30.0).clamp(0.0, 100.0);
+    }
+    final nextSan = solutionSan[currentSolutionIndex];
+    final move = MoveGenerator.sanToMove(currentBoard, nextSan);
+    if (move != null) {
+      playMove(move);
+      feedbackMessage = 'Best Move: $nextSan played. Continuation: $explanation';
+      _notify();
+      return nextSan;
+    }
+    return null;
+  }
+
+  /// Reveals the complete continuation line and completes the exercise for review.
+  List<String> showLine() {
+    final movesPlayed = <String>[];
+    while (!isCompleted && currentSolutionIndex < solutionSan.length) {
+      final nextSan = solutionSan[currentSolutionIndex];
+      final move = MoveGenerator.sanToMove(currentBoard, nextSan);
+      if (move != null) {
+        playMove(move);
+        movesPlayed.add(nextSan);
+      } else {
+        break;
+      }
+    }
+    isCompleted = true;
+    isSuccess = true;
+    feedbackMessage = 'Verified Solution: ${solutionSan.join(' ')}\n$explanation';
+    _notify();
+    return movesPlayed;
+  }
+
+  /// Returns thorough explanation and refutation analysis.
+  String explainWhy() {
+    final sb = StringBuffer(explanation);
+    if (refutationAnalysis != null && refutationAnalysis!.isNotEmpty) {
+      sb.writeln('\nRefutation: $refutationAnalysis');
+    }
+    return sb.toString();
   }
 
   /// User action for declaring "No tactic exists in this position"

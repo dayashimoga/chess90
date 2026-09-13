@@ -1,7 +1,10 @@
 import 'dart:io';
 import 'package:chess_app/src/screens/analysis_screen.dart';
+import 'package:chess_app/src/screens/labs_screen.dart';
 import 'package:chess_app/src/screens/play_screen.dart';
+import 'package:chess_app/src/screens/video_studio_screen.dart';
 import 'package:chess_app/src/widgets/board/chess_board_widget.dart';
+import 'package:chess_app/src/widgets/curriculum/reference_library_dialog.dart';
 import 'package:chess_core/chess_core.dart';
 import 'package:chess_engine/chess_engine.dart';
 import 'package:chess_storage/chess_storage.dart';
@@ -144,6 +147,130 @@ void main() {
 
       expect(tester.takeException(), isNull);
       expect(navigatedScreen, anyOf(isNull, isNotNull));
+    });
+
+    testWidgets('ReferenceLibraryDialog searches topics and switches categories', (tester) async {
+      tester.view.physicalSize = const Size(1280, 800);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(tester.view.resetPhysicalSize);
+
+      await tester.pumpWidget(
+        MaterialApp(
+          home: Scaffold(
+            body: Builder(
+              builder: (ctx) => ElevatedButton(
+                onPressed: () => ReferenceLibraryDialog.show(ctx),
+                child: const Text('Open Reference'),
+              ),
+            ),
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      // Open Dialog
+      await tester.tap(find.text('Open Reference'));
+      await tester.pumpAndSettle();
+
+      expect(find.text('Mastery Reference Library & Cheat Sheets'), findsOneWidget);
+      expect(find.byType(TextField), findsOneWidget);
+
+      // Search for 'Kotov'
+      await tester.enterText(find.byType(TextField), 'Kotov');
+      await tester.pumpAndSettle();
+      expect(find.textContaining('Kotov'), findsWidgets);
+
+      // Select Topic Tile
+      await tester.tap(find.textContaining('Kotov').first);
+      await tester.pumpAndSettle();
+
+      // Tap Category Filter Chip
+      await tester.enterText(find.byType(TextField), '');
+      await tester.pumpAndSettle();
+
+      final tacticsChip = find.text('Tactics');
+      if (tacticsChip.evaluate().isNotEmpty) {
+        await tester.tap(tacticsChip.first);
+        await tester.pumpAndSettle();
+      }
+
+      // Close dialog
+      final closeBtn = find.byIcon(Icons.close);
+      expect(closeBtn, findsOneWidget);
+      await tester.tap(closeBtn);
+      await tester.pumpAndSettle();
+
+      expect(find.text('Mastery Reference Library & Cheat Sheets'), findsNothing);
+    });
+
+    testWidgets('LabsScreen learning action triggers: Explain Why dialog, Show Line, Replay', (tester) async {
+      tester.view.physicalSize = const Size(1280, 800);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(tester.view.resetPhysicalSize);
+
+      await tester.pumpWidget(
+        MaterialApp(
+          home: Scaffold(
+            body: LabsScreen(repository: repo),
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      // 1. Explain Why Dialog
+      final explainBtn = find.text('Explain Why');
+      expect(explainBtn, findsOneWidget);
+      await tester.tap(explainBtn);
+      await tester.pumpAndSettle();
+
+      expect(find.text('Grandmaster Explanation'), findsOneWidget);
+      final gotItBtn = find.text('Got It');
+      expect(gotItBtn, findsOneWidget);
+      await tester.tap(gotItBtn);
+      await tester.pumpAndSettle();
+
+      // 2. Show Line
+      final showLineBtn = find.text('Show Line');
+      expect(showLineBtn, findsOneWidget);
+      await tester.tap(showLineBtn);
+      await tester.pumpAndSettle();
+
+      // 3. Replay Button
+      final replayBtn = find.text('Replay');
+      if (replayBtn.evaluate().isNotEmpty) {
+        await tester.tap(replayBtn);
+        await tester.pumpAndSettle();
+      }
+
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('VideoStudioScreen background audio, volume, profiles, and hardware toggle', (tester) async {
+      tester.view.physicalSize = const Size(1280, 800);
+      tester.view.devicePixelRatio = 1.0;
+      addTearDown(tester.view.resetPhysicalSize);
+
+      await tester.pumpWidget(
+        MaterialApp(
+          home: Scaffold(
+            body: VideoStudioScreen(repository: repo),
+          ),
+        ),
+      );
+      await tester.pumpAndSettle();
+
+      // Verify Screen Elements
+      expect(find.text('Video Profile & Canvas Format'), findsOneWidget);
+      expect(find.text('BACKGROUND MUSIC & AUDIO'), findsOneWidget);
+
+      // Toggle Loop Switch
+      final switchFinders = find.byType(Switch);
+      for (final s in switchFinders.evaluate()) {
+        await tester.tap(find.byWidget(s.widget), warnIfMissed: false);
+        await tester.pumpAndSettle();
+      }
+
+      expect(tester.takeException(), isNull);
     });
   });
 }

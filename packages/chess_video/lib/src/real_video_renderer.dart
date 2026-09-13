@@ -92,6 +92,24 @@ class RealVideoRenderer {
   /// Resolves the absolute path to the native FFprobe executable.
   static String? findFfprobePath() => _findBinary('ffprobe', 'FFPROBE_PATH');
 
+  /// Detects available native hardware video encoders on the host system.
+  static List<String> detectHardwareEncoders() {
+    final ffmpeg = findFfmpegPath();
+    if (ffmpeg == null) return [];
+    try {
+      final res = Process.runSync(ffmpeg, ['-hide_banner', '-encoders']);
+      if (res.exitCode == 0) {
+        final out = res.stdout.toString();
+        final list = <String>[];
+        if (out.contains('h264_nvenc')) list.add('h264_nvenc');
+        if (out.contains('h264_qsv')) list.add('h264_qsv');
+        if (out.contains('h264_amf')) list.add('h264_amf');
+        return list;
+      }
+    } catch (_) {}
+    return [];
+  }
+
   /// Renders a full playable MP4, GIF, or WebM video from a PGN game.
   static Future<VideoRenderResult> renderVideo({
     required PgnGame game,
@@ -101,6 +119,9 @@ class RealVideoRenderer {
     List<int> criticalPlies = const [],
     String? thumbnailPath,
     String? audioPath,
+    String? hardwareEncoder,
+    double audioVolume = 1.0,
+    bool loopAudio = false,
     void Function(int currentFrame, int totalFrames, double progress, String phase)? onProgress,
     bool Function()? shouldCancel,
   }) async {
@@ -166,15 +187,33 @@ class RealVideoRenderer {
       final outFile = File(outputPath);
       outFile.parent.createSync(recursive: true);
 
-      // 5. Build FFmpeg arguments and execute
-      final ffmpegArgs = FfmpegCommandBuilder.buildEncodeCommand(
+      // 5. Build FFmpeg arguments and execute (with hardware acceleration fallback)
+      List<String> ffmpegArgs = FfmpegCommandBuilder.buildEncodeCommand(
         framesPattern: framesPattern,
         outputPath: outputPath,
         profile: profile,
         audioPath: audioPath,
+        hardwareEncoder: hardwareEncoder,
+        audioVolume: audioVolume,
+        loopAudio: loopAudio,
       );
 
-      final result = await Process.run(ffmpegPath, ffmpegArgs);
+      var result = await Process.run(ffmpegPath, ffmpegArgs);
+      if (result.exitCode != 0 && hardwareEncoder != null && hardwareEncoder != 'libx264') {
+        // Hardware encoder failed; fall back to software libx264
+        onProgress?.call(timeline.length, timeline.length, 0.92, 'Hardware encoder unavailable, falling back to libx264...');
+        ffmpegArgs = FfmpegCommandBuilder.buildEncodeCommand(
+          framesPattern: framesPattern,
+          outputPath: outputPath,
+          profile: profile,
+          audioPath: audioPath,
+          hardwareEncoder: 'libx264',
+          audioVolume: audioVolume,
+          loopAudio: loopAudio,
+        );
+        result = await Process.run(ffmpegPath, ffmpegArgs);
+      }
+
       if (result.exitCode != 0) {
         throw ProcessException(
           ffmpegPath,

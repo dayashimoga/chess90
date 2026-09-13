@@ -35,6 +35,13 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
   String _gameSubtitle = 'The Immortal Game · ECO C33 · King\'s Gambit Accepted';
 
   VideoAspectRatio _aspectRatio = VideoAspectRatio.youtube16x9;
+  VideoContentProfile _contentProfile = VideoContentProfile.fullGame;
+  String _selectedAudioTrackId = 'none';
+  double _audioVolume = 0.40;
+  bool _loopAudio = true;
+  bool _enableHardwareAccel = true;
+  List<String> _availableHardwareEncoders = [];
+
   double _moveSpeed = 0.35;
   double _criticalPause = 2.0;
   bool _showEvalBar = true;
@@ -58,6 +65,7 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
   void initState() {
     super.initState();
     _repository = widget.repository ?? StorageRepository();
+    _availableHardwareEncoders = RealVideoRenderer.detectHardwareEncoders();
 
     String pgn = ModelGamesDatabase.curatedGames.first.pgn;
     if (widget.initialArgs is Map && widget.initialArgs['pgn'] != null) {
@@ -90,6 +98,7 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
   void _generateTimeline() {
     final profile = VideoProfile(
       aspectRatio: _aspectRatio,
+      contentProfile: _contentProfile,
       moveSpeedSeconds: _moveSpeed,
       criticalMomentPauseSeconds: _criticalPause,
       showEvaluationBar: _showEvalBar,
@@ -108,10 +117,20 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
     final generator = VideoTimelineGenerator(profile: profile);
     _generatedTimeline = generator.generateTimeline(_game);
 
+    final track = AudioTrackManifest.getTrack(_selectedAudioTrackId);
+    final audioPath = track.id != 'none' ? 'audio/${track.id}.mp3' : null;
+    final hwEncoder = (_enableHardwareAccel && _availableHardwareEncoders.isNotEmpty)
+        ? _availableHardwareEncoders.first
+        : 'libx264';
+
     _generatedCommand = FfmpegCommandBuilder.buildCommandLineString(
       framesPattern: 'frames/frame_%06d.png',
       outputPath: 'output/chess_master_${_aspectRatio.name}.mp4',
       profile: profile,
+      audioPath: audioPath,
+      hardwareEncoder: hwEncoder,
+      audioVolume: _audioVolume,
+      loopAudio: _loopAudio,
     );
 
     setState(() {
@@ -232,6 +251,7 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
     try {
       final profile = VideoProfile(
         aspectRatio: _aspectRatio,
+        contentProfile: _contentProfile,
         moveSpeedSeconds: _moveSpeed,
         criticalMomentPauseSeconds: _criticalPause,
         showEvaluationBar: _showEvalBar,
@@ -247,10 +267,20 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
         blackPlayerName: _game.headers['Black'] ?? 'Black',
       );
 
+      final track = AudioTrackManifest.getTrack(_selectedAudioTrackId);
+      final audioPath = track.id != 'none' ? 'audio/${track.id}.mp3' : null;
+      final hwEncoder = (_enableHardwareAccel && _availableHardwareEncoders.isNotEmpty)
+          ? _availableHardwareEncoders.first
+          : 'libx264';
+
       final result = await RealVideoRenderer.renderVideo(
         game: _game,
         outputPath: outputPath,
         profile: profile,
+        audioPath: audioPath,
+        hardwareEncoder: hwEncoder,
+        audioVolume: _audioVolume,
+        loopAudio: _loopAudio,
         onProgress: (frame, total, prog, phase) {
           currentFrame = frame;
           totalFrames = total;
@@ -528,6 +558,8 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
                 isExpanded: true,
                 dropdownColor: context.surfLight,
                 decoration: InputDecoration(
+                  labelText: 'CANVAS RATIO',
+                  labelStyle: TextStyle(fontSize: 10, color: context.txtMut),
                   border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
                   contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                 ),
@@ -541,6 +573,35 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
                   if (val != null) {
                     setState(() {
                       _aspectRatio = val;
+                      _generateTimeline();
+                    });
+                  }
+                },
+              ),
+
+              const SizedBox(height: 10),
+
+              // Content Profile selector
+              DropdownButtonFormField<VideoContentProfile>(
+                initialValue: _contentProfile,
+                isExpanded: true,
+                dropdownColor: context.surfLight,
+                decoration: InputDecoration(
+                  labelText: 'CONTENT PROFILE',
+                  labelStyle: TextStyle(fontSize: 10, color: context.txtMut),
+                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+                  contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                ),
+                items: VideoContentProfile.values.map((cp) {
+                  return DropdownMenuItem(
+                    value: cp,
+                    child: Text(cp.title, style: const TextStyle(fontSize: 12), overflow: TextOverflow.ellipsis),
+                  );
+                }).toList(),
+                onChanged: (val) {
+                  if (val != null) {
+                    setState(() {
+                      _contentProfile = val;
                       _generateTimeline();
                     });
                   }
@@ -571,6 +632,112 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
                 activeColor: ChessTheme.primary,
                 onChanged: (val) => setState(() => _criticalPause = val),
                 onChangeEnd: (_) => _generateTimeline(),
+              ),
+
+              const Divider(height: 20),
+
+              // Background Music & Audio Section
+              Text('BACKGROUND MUSIC & AUDIO', style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: context.txtMut)),
+              const SizedBox(height: 6),
+              DropdownButtonFormField<String>(
+                initialValue: _selectedAudioTrackId,
+                isExpanded: true,
+                dropdownColor: context.surfLight,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+                  contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                ),
+                items: AudioTrackManifest.tracks.map((t) {
+                  return DropdownMenuItem(
+                    value: t.id,
+                    child: Text(t.title, style: const TextStyle(fontSize: 12), overflow: TextOverflow.ellipsis),
+                  );
+                }).toList(),
+                onChanged: (val) {
+                  if (val != null) {
+                    setState(() {
+                      _selectedAudioTrackId = val;
+                      final t = AudioTrackManifest.getTrack(val);
+                      _audioVolume = t.defaultVolume > 0 ? t.defaultVolume : 0.35;
+                      _generateTimeline();
+                    });
+                  }
+                },
+              ),
+
+              if (_selectedAudioTrackId != 'none') ...[
+                const SizedBox(height: 8),
+                Builder(builder: (context) {
+                  final t = AudioTrackManifest.getTrack(_selectedAudioTrackId);
+                  return Container(
+                    padding: const EdgeInsets.all(8),
+                    decoration: BoxDecoration(
+                      color: Colors.black.withAlpha(35),
+                      borderRadius: BorderRadius.circular(6),
+                      border: Border.all(color: context.brd),
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('License: ${t.license}', style: const TextStyle(fontSize: 10, color: ChessTheme.primaryLight, fontWeight: FontWeight.bold)),
+                        const SizedBox(height: 2),
+                        Text(t.attribution, style: TextStyle(fontSize: 9, color: context.txtMut)),
+                        const SizedBox(height: 2),
+                        Text('SHA-256: ${t.checksumSha256.substring(0, 16)}...', style: TextStyle(fontSize: 9, color: context.txtMut, fontFamily: 'monospace')),
+                      ],
+                    ),
+                  );
+                }),
+                const SizedBox(height: 8),
+                Text('Music Volume (${(_audioVolume * 100).toInt()}%)',
+                    style: TextStyle(fontSize: 11, color: context.txtSec)),
+                Slider(
+                  value: _audioVolume,
+                  min: 0.05,
+                  max: 1.0,
+                  activeColor: ChessTheme.primary,
+                  onChanged: (val) {
+                    setState(() => _audioVolume = val);
+                    _generateTimeline();
+                  },
+                ),
+                SwitchListTile(
+                  dense: true,
+                  contentPadding: EdgeInsets.zero,
+                  title: Text('Loop Music Seamlessly', style: TextStyle(fontSize: 12, color: context.txt)),
+                  value: _loopAudio,
+                  activeThumbColor: ChessTheme.primary,
+                  onChanged: (val) {
+                    setState(() => _loopAudio = val);
+                    _generateTimeline();
+                  },
+                ),
+              ],
+
+              const Divider(height: 20),
+
+              // Hardware Acceleration
+              SwitchListTile(
+                dense: true,
+                contentPadding: EdgeInsets.zero,
+                title: Text(
+                  _availableHardwareEncoders.isNotEmpty
+                      ? 'GPU Acceleration (${_availableHardwareEncoders.first})'
+                      : 'GPU Acceleration (Fallback to CPU)',
+                  style: TextStyle(fontSize: 12, color: context.txt),
+                ),
+                subtitle: Text(
+                  _availableHardwareEncoders.isNotEmpty
+                      ? 'Hardware encoder detected and validated'
+                      : 'Software libx264 encoding active',
+                  style: TextStyle(fontSize: 10, color: context.txtMut),
+                ),
+                value: _enableHardwareAccel,
+                activeThumbColor: ChessTheme.primary,
+                onChanged: (val) {
+                  setState(() => _enableHardwareAccel = val);
+                  _generateTimeline();
+                },
               ),
 
               const Divider(height: 20),

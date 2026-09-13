@@ -8,6 +8,9 @@ class FfmpegCommandBuilder {
     required String outputPath,    // e.g. 'output/game.mp4'
     required VideoProfile profile,
     String? audioPath,
+    String? hardwareEncoder,       // e.g. 'h264_nvenc', 'h264_qsv', 'h264_amf', 'libx264'
+    double audioVolume = 1.0,
+    bool loopAudio = false,
   }) {
     final args = <String>[
       '-y', // Overwrite output
@@ -17,10 +20,13 @@ class FfmpegCommandBuilder {
     ];
 
     if (audioPath != null) {
+      if (loopAudio) {
+        args.addAll(['-stream_loop', '-1']);
+      }
       args.addAll(['-i', audioPath]);
     }
 
-    if (profile.aspectRatio == VideoAspectRatio.animatedGif) {
+    if (profile.aspectRatio == VideoAspectRatio.animatedGif || outputPath.toLowerCase().endsWith('.gif')) {
       // Optimized palette generation for GIF
       args.addAll([
         '-vf', 'fps=${profile.fps},scale=${profile.width}:${profile.height}:flags=lanczos,split[s0][s1];[s0]palettegen[p];[s1][p]paletteuse',
@@ -29,17 +35,40 @@ class FfmpegCommandBuilder {
       return args;
     }
 
-    // MP4 H.264 video encoding
-    args.addAll([
-      '-c:v', 'libx264',
-      '-pix_fmt', 'yuv420p',
-      '-preset', 'fast',
-      '-crf', '18', // visually lossless
-      '-movflags', '+faststart',
-    ]);
+    final isWebm = outputPath.toLowerCase().endsWith('.webm');
+    if (isWebm) {
+      args.addAll([
+        '-c:v', 'libvpx-vp9',
+        '-b:v', '0',
+        '-crf', '30',
+        '-pix_fmt', 'yuv420p',
+      ]);
+    } else {
+      // MP4 H.264 video encoding (Hardware acceleration with software fallback)
+      final encoder = hardwareEncoder ?? 'libx264';
+      args.addAll([
+        '-c:v', encoder,
+        '-pix_fmt', 'yuv420p',
+      ]);
+      if (encoder == 'libx264') {
+        args.addAll(['-preset', 'fast', '-crf', '18']);
+      } else if (encoder == 'h264_nvenc') {
+        args.addAll(['-preset', 'p4', '-cq', '19']);
+      } else if (encoder == 'h264_qsv') {
+        args.addAll(['-preset', 'fast', '-global_quality', '20']);
+      } else if (encoder == 'h264_amf') {
+        args.addAll(['-quality', 'balanced']);
+      }
+      args.addAll(['-movflags', '+faststart']);
+    }
 
     if (audioPath != null) {
-      args.addAll(['-c:a', 'aac', '-b:a', '192k', '-shortest']);
+      final audioCodec = isWebm ? 'libopus' : 'aac';
+      args.addAll(['-c:a', audioCodec, '-b:a', '192k']);
+      if ((audioVolume - 1.0).abs() > 0.01) {
+        args.addAll(['-filter:a', 'volume=${audioVolume.toStringAsFixed(2)}']);
+      }
+      args.add('-shortest');
     }
 
     args.add(outputPath);
@@ -52,12 +81,18 @@ class FfmpegCommandBuilder {
     required String outputPath,
     required VideoProfile profile,
     String? audioPath,
+    String? hardwareEncoder,
+    double audioVolume = 1.0,
+    bool loopAudio = false,
   }) {
     final args = buildEncodeCommand(
       framesPattern: framesPattern,
       outputPath: outputPath,
       profile: profile,
       audioPath: audioPath,
+      hardwareEncoder: hardwareEncoder,
+      audioVolume: audioVolume,
+      loopAudio: loopAudio,
     );
     return 'ffmpeg ${args.map((a) => a.contains(' ') ? '"$a"' : a).join(' ')}';
   }

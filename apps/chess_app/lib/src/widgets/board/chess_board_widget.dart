@@ -506,104 +506,147 @@ class _ChessBoardWidgetState extends State<ChessBoardWidget> with SingleTickerPr
                               ? '${semanticPiece.color == PieceColor.white ? "White" : "Black"} ${semanticPiece.type.name} on ${square.name}'
                               : 'Empty square ${square.name}',
                           button: true,
-                          child: GestureDetector(
-                            onTap: () => _onSquareTapped(square),
-                            child: Container(
-                              color: squareBg,
-                              child: Stack(
-                                alignment: Alignment.center,
-                                children: [
-                                  // Last move source overlay
-                                  if (widget.showMoveHighlights && isLastFrom)
-                                    Container(color: boardTheme.lastMoveSourceOverlay),
+                          child: DragTarget<Square>(
+                            onWillAcceptWithDetails: (details) {
+                              if (!widget.isInteractive) return false;
+                              final fromSq = details.data;
+                              if (fromSq == square) return false;
+                              final legals = MoveGenerator.generateLegalMoves(widget.board);
+                              return legals.any((m) => m.from == fromSq && m.to == square);
+                            },
+                            onAcceptWithDetails: (details) {
+                              final fromSq = details.data;
+                              _onSquareTapped(fromSq);
+                              _onSquareTapped(square);
+                            },
+                            builder: (context, candidateData, rejectedData) {
+                              final isHoverTarget = candidateData.isNotEmpty;
 
-                                  // Last move destination overlay
-                                  if (widget.showMoveHighlights && isLastTo)
-                                    Container(color: boardTheme.lastMoveDestinationOverlay),
+                              return GestureDetector(
+                                onTap: () => _onSquareTapped(square),
+                                child: Container(
+                                  color: isHoverTarget ? boardTheme.legalMoveDotColor.withAlpha(80) : squareBg,
+                                  child: Stack(
+                                    alignment: Alignment.center,
+                                    children: [
+                                      // Last move source overlay
+                                      if (widget.showMoveHighlights && isLastFrom)
+                                        Container(color: boardTheme.lastMoveSourceOverlay),
 
-                                  // Selected square overlay
-                                  if (isSelected)
-                                    Container(color: boardTheme.selectedSquareOverlay),
+                                      // Last move destination overlay
+                                      if (widget.showMoveHighlights && isLastTo)
+                                        Container(color: boardTheme.lastMoveDestinationOverlay),
 
-                                  // User hint / custom highlighted squares
-                                  if (isHighlighted)
-                                    Container(color: boardTheme.hintSquareOverlay),
+                                      // Selected square overlay
+                                      if (isSelected)
+                                        Container(color: boardTheme.selectedSquareOverlay),
 
-                                  // Keyboard focus indicator
-                                  if (isFocused)
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        border: Border.all(color: ChessTheme.accentGold, width: 2.5),
-                                      ),
-                                    ),
+                                      // User hint / custom highlighted squares
+                                      if (isHighlighted)
+                                        Container(color: boardTheme.hintSquareOverlay),
 
-                                  // In-Check Glow Overlay
-                                  if (isCheckSquare)
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: boardTheme.checkGlowColor,
-                                            blurRadius: 18,
-                                            spreadRadius: 6,
+                                      // Keyboard focus indicator
+                                      if (isFocused)
+                                        Container(
+                                          decoration: BoxDecoration(
+                                            border: Border.all(color: ChessTheme.accentGold, width: 2.5),
                                           ),
-                                        ],
-                                      ),
-                                    ),
-
-                                  // Coordinate labels (rank on edge file, file on edge rank)
-                                  if (widget.showCoordinates && file == (widget.isFlipped ? 7 : 0))
-                                    Positioned(
-                                      top: 2,
-                                      left: 2,
-                                      child: Text(
-                                        square.rankName,
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                          fontWeight: FontWeight.bold,
-                                          color: isLight ? boardTheme.coordinateLightSquare : boardTheme.coordinateDarkSquare,
                                         ),
-                                      ),
-                                    ),
-                                  if (widget.showCoordinates && rank == (widget.isFlipped ? 7 : 0))
-                                    Positioned(
-                                      bottom: 2,
-                                      right: 2,
-                                      child: Text(
-                                        square.fileName,
-                                        style: TextStyle(
-                                          fontSize: 10,
-                                          fontWeight: FontWeight.bold,
-                                          color: isLight ? boardTheme.coordinateLightSquare : boardTheme.coordinateDarkSquare,
+
+                                      // In-Check Glow Overlay
+                                      if (isCheckSquare)
+                                        Container(
+                                          decoration: BoxDecoration(
+                                            shape: BoxShape.circle,
+                                            boxShadow: [
+                                              BoxShadow(
+                                                color: boardTheme.checkGlowColor,
+                                                blurRadius: 18,
+                                                spreadRadius: 6,
+                                              ),
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                    ),
 
-                                  // Settled / In-Flight-Captured piece rendering (Resolution-independent vector)
-                                  if (pieceToRender != null)
-                                    VectorPieceWidget(
-                                      piece: pieceToRender,
-                                      size: squareSize * 0.82,
-                                      theme: pieceTheme,
-                                    ),
+                                      // Coordinate labels (rank on edge file, file on edge rank)
+                                      if (widget.showCoordinates && file == (widget.isFlipped ? 7 : 0))
+                                        Positioned(
+                                          top: 2,
+                                          left: 2,
+                                          child: Text(
+                                            square.rankName,
+                                            style: TextStyle(
+                                              fontSize: 10,
+                                              fontWeight: FontWeight.bold,
+                                              color: isLight ? boardTheme.coordinateLightSquare : boardTheme.coordinateDarkSquare,
+                                            ),
+                                          ),
+                                        ),
+                                      if (widget.showCoordinates && rank == (widget.isFlipped ? 7 : 0))
+                                        Positioned(
+                                          bottom: 2,
+                                          right: 2,
+                                          child: Text(
+                                            square.fileName,
+                                            style: TextStyle(
+                                              fontSize: 10,
+                                              fontWeight: FontWeight.bold,
+                                              color: isLight ? boardTheme.coordinateLightSquare : boardTheme.coordinateDarkSquare,
+                                            ),
+                                          ),
+                                        ),
 
-                                  // Legal move target dot / capture ring
-                                  if (widget.showLegalMoveHints && isLegalTarget)
-                                    Container(
-                                      width: piece == null ? squareSize * 0.28 : squareSize * 0.85,
-                                      height: piece == null ? squareSize * 0.28 : squareSize * 0.85,
-                                      decoration: BoxDecoration(
-                                        color: piece == null ? boardTheme.legalMoveDotColor : Colors.transparent,
-                                        shape: BoxShape.circle,
-                                        border: piece != null
-                                            ? Border.all(color: boardTheme.legalMoveCaptureRingColor, width: 3)
-                                            : null,
-                                      ),
-                                    ),
-                                ],
-                              ),
-                            ),
+                                      // Settled / In-Flight-Captured piece rendering with Drag & Drop
+                                      if (pieceToRender != null)
+                                        (widget.isInteractive && pieceToRender.color == widget.board.activeColor)
+                                            ? Draggable<Square>(
+                                                data: square,
+                                                feedback: Material(
+                                                  color: Colors.transparent,
+                                                  child: VectorPieceWidget(
+                                                    piece: pieceToRender,
+                                                    size: squareSize * 0.95,
+                                                    theme: pieceTheme,
+                                                  ),
+                                                ),
+                                                childWhenDragging: Opacity(
+                                                  opacity: 0.25,
+                                                  child: VectorPieceWidget(
+                                                    piece: pieceToRender,
+                                                    size: squareSize * 0.82,
+                                                    theme: pieceTheme,
+                                                  ),
+                                                ),
+                                                child: VectorPieceWidget(
+                                                  piece: pieceToRender,
+                                                  size: squareSize * 0.82,
+                                                  theme: pieceTheme,
+                                                ),
+                                              )
+                                            : VectorPieceWidget(
+                                                piece: pieceToRender,
+                                                size: squareSize * 0.82,
+                                                theme: pieceTheme,
+                                              ),
+
+                                      // Legal move target dot / capture ring
+                                      if (widget.showLegalMoveHints && isLegalTarget)
+                                        Container(
+                                          width: piece == null ? squareSize * 0.28 : squareSize * 0.85,
+                                          height: piece == null ? squareSize * 0.28 : squareSize * 0.85,
+                                          decoration: BoxDecoration(
+                                            color: piece == null ? boardTheme.legalMoveDotColor : Colors.transparent,
+                                            shape: BoxShape.circle,
+                                            border: piece != null
+                                                ? Border.all(color: boardTheme.legalMoveCaptureRingColor, width: 3)
+                                                : null,
+                                          ),
+                                        ),
+                                    ],
+                                  ),
+                                ),
+                              );
+                            },
                           ),
                         );
                       },
@@ -672,25 +715,6 @@ class _ChessBoardWidgetState extends State<ChessBoardWidget> with SingleTickerPr
                               isFlipped: widget.isFlipped,
                               squareSize: squareSize,
                             ),
-                          ),
-                        ),
-                      ),
-
-                    // Quick customizer shortcut button
-                    if (widget.showQuickCustomizer && widget.onQuickCustomizerPressed != null)
-                      Positioned(
-                        top: 6,
-                        right: 6,
-                        child: Material(
-                          color: Colors.black.withAlpha(140),
-                          shape: const CircleBorder(),
-                          child: IconButton(
-                            icon: const Icon(Icons.palette, size: 16, color: Colors.white),
-                            tooltip: 'Customize Board',
-                            splashRadius: 18,
-                            padding: const EdgeInsets.all(4),
-                            constraints: const BoxConstraints(minWidth: 28, minHeight: 28),
-                            onPressed: widget.onQuickCustomizerPressed,
                           ),
                         ),
                       ),

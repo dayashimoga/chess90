@@ -2,6 +2,7 @@ library chess_video;
 
 export 'src/models/video_profile.dart';
 export 'src/models/video_frame.dart';
+export 'src/models/audio_track_manifest.dart';
 export 'src/video_timeline_generator.dart';
 export 'src/ffmpeg_command_builder.dart';
 export 'src/frame_rasterizer.dart';

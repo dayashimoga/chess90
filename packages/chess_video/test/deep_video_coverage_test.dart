@@ -293,5 +293,60 @@ void main() {
         expect(img.width, equals(1920));
       }
     });
+
+    test('AudioTrackManifest and hardware encoder command coverage', () async {
+      // 1. AudioTrackManifest
+      expect(AudioTrackManifest.tracks.length, equals(4));
+      for (final track in AudioTrackManifest.tracks) {
+        expect(track.id, isNotEmpty);
+        expect(track.title, isNotEmpty);
+        expect(track.license, isNotEmpty);
+        expect(track.checksumSha256, isNotEmpty);
+      }
+
+      // 2. Hardware Encoders
+      final hwEncoders = await RealVideoRenderer.detectHardwareEncoders();
+      expect(hwEncoders, isNotNull);
+
+      // 3. FfmpegCommandBuilder hardware encoders
+      final nvencCmd = FfmpegCommandBuilder.buildEncodeCommand(
+        framesPattern: 'frames/%05d.png',
+        outputPath: 'out.mp4',
+        profile: const VideoProfile(),
+        hardwareEncoder: 'h264_nvenc',
+        audioPath: 'music.mp3',
+        loopAudio: true,
+        audioVolume: 0.7,
+      );
+      expect(nvencCmd, contains('h264_nvenc'));
+      expect(nvencCmd.join(' '), contains('stream_loop'));
+      expect(nvencCmd.join(' '), contains('volume=0.70'));
+
+      final qsvCmd = FfmpegCommandBuilder.buildEncodeCommand(
+        framesPattern: 'frames/%05d.png',
+        outputPath: 'out.mp4',
+        profile: const VideoProfile(),
+        hardwareEncoder: 'h264_qsv',
+      );
+      expect(qsvCmd, contains('h264_qsv'));
+
+      final amfCmd = FfmpegCommandBuilder.buildEncodeCommand(
+        framesPattern: 'frames/%05d.png',
+        outputPath: 'out.mp4',
+        profile: const VideoProfile(),
+        hardwareEncoder: 'h264_amf',
+      );
+      expect(amfCmd, contains('h264_amf'));
+
+      // 4. WebM encoding
+      final webmCmd = FfmpegCommandBuilder.buildEncodeCommand(
+        framesPattern: 'frames/%05d.png',
+        outputPath: 'out.webm',
+        profile: const VideoProfile(),
+        audioPath: 'audio.wav',
+      );
+      expect(webmCmd, contains('libvpx-vp9'));
+      expect(webmCmd, contains('libopus'));
+    });
   });
 }

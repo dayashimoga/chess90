@@ -161,5 +161,62 @@ void main() {
       trueNoTacLab.dispose();
       expect(streamFired, isTrue);
     });
+
+    test('Learning-first features: tiered hints, show best move, show line, and explain why', () {
+      final session = LabSession(
+        id: 'pedagogical_test',
+        title: 'Fork Tactics',
+        labType: 'tactical_lab',
+        initialFen: 'r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 0 5',
+        solutionSan: const ['Bxf7+', 'Kxf7', 'Ng5+'],
+        hints: const ['Look for forcing checks on f7.'],
+        explanation: 'Bxf7+ destroys king safety followed by Ng5+ fork.',
+        hintConcept: 'King safety destruction',
+        hintPiece: 'Light-squared bishop on c4',
+        hintForcing: 'Play Bxf7+',
+        refutationAnalysis: 'Playing quiet moves cedes initiative.',
+      );
+
+      expect(session.isNoTacticActionVisible, isFalse);
+      expect(session.tieredHints.length, 3);
+      expect(session.tieredHints[0], contains('King safety destruction'));
+      expect(session.tieredHints[1], contains('Light-squared bishop'));
+      expect(session.tieredHints[2], contains('Bxf7+'));
+
+      // 1. Tiered Hint without penalty
+      final h1 = session.requestTieredHint(penalize: false);
+      expect(h1, contains('King safety destruction'));
+      expect(session.score, 100.0);
+      expect(session.hintsRevealed, 1);
+
+      final h2 = session.requestTieredHint(penalize: false);
+      expect(h2, contains('Light-squared bishop'));
+      expect(session.score, 100.0);
+
+      final h3 = session.requestTieredHint(penalize: false);
+      expect(h3, contains('Bxf7+'));
+      expect(session.score, 100.0);
+
+      // Exhausted hints
+      final h4 = session.requestTieredHint(penalize: false);
+      expect(h4, isNull);
+
+      // 2. Explain Why
+      final explanation = session.explainWhy();
+      expect(explanation, contains('Bxf7+'));
+      expect(explanation, contains('Refutation:'));
+
+      // 3. Show Move (plays Bxf7+ and auto-replies Kxf7)
+      final bestMove = session.showBestMove();
+      expect(bestMove, 'Bxf7+');
+      expect(session.currentSolutionIndex, 2);
+
+      // 4. Show Line (plays remaining verified line: Ng5+)
+      final line = session.showLine();
+      expect(line, equals(const ['Ng5+']));
+      expect(session.isCompleted, isTrue);
+
+      session.dispose();
+    });
   });
 }

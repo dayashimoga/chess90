@@ -712,24 +712,30 @@ class _PlayScreenState extends State<PlayScreen> {
                   ),
                   const SizedBox(width: 24),
 
-                  // Engine Thinking Indicator
-                  if (_isEngineThinking)
+                  // Engine Thinking Indicator (subtle, non-distracting, hidden in tournament mode)
+                  if (_isEngineThinking && !_isTournamentMode)
                     Container(
                       margin: const EdgeInsets.only(right: 12),
-                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
+                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
                       decoration: BoxDecoration(
-                        color: ChessTheme.accentGold.withAlpha(25),
-                        borderRadius: BorderRadius.circular(12),
-                        border: Border.all(color: ChessTheme.accentGold.withAlpha(80)),
+                        color: ChessTheme.accentGold.withAlpha(20),
+                        borderRadius: BorderRadius.circular(10),
                       ),
-                      child: const Row(
+                      child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Icon(Icons.hourglass_top, size: 12, color: ChessTheme.accentGold),
-                          SizedBox(width: 6),
-                          Text(
-                            'Stockfish calculating...',
-                            style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: ChessTheme.accentGold),
+                          Container(
+                            width: 6,
+                            height: 6,
+                            decoration: const BoxDecoration(
+                              color: ChessTheme.accentGold,
+                              shape: BoxShape.circle,
+                            ),
+                          ),
+                          const SizedBox(width: 6),
+                          const Text(
+                            'Thinking',
+                            style: TextStyle(fontSize: 10, fontWeight: FontWeight.w600, color: ChessTheme.accentGold),
                           ),
                         ],
                       ),
@@ -846,8 +852,6 @@ class _PlayScreenState extends State<PlayScreen> {
                                     showLegalMoveHints: profile.showLegalMoveHints,
                                     highlightedSquares: _highlightedSquares,
                                     arrows: _boardArrows,
-                                    showQuickCustomizer: true,
-                                    onQuickCustomizerPressed: () => _openQuickCustomizer(context),
                                   ),
                                 );
                               },

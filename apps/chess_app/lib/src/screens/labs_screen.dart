@@ -11,7 +11,6 @@ import '../theme/chess_board_theme.dart';
 import '../theme/chess_theme.dart';
 import '../theme/piece_theme.dart';
 import '../widgets/board/chess_board_widget.dart';
-import '../widgets/board/evaluation_bar_widget.dart';
 import '../widgets/board/move_list_widget.dart';
 
 /// Available learning and training categories in the interactive laboratory.
@@ -282,6 +281,10 @@ class _LabsScreenState extends State<LabsScreen> {
       initialFen: ex.fen,
       solutionSan: ex.solutionSan,
       hints: ex.hints,
+      hintConcept: ex.hintConcept,
+      hintPiece: ex.hintPiece,
+      hintForcing: ex.hintForcing,
+      refutationAnalysis: ex.refutationAnalysis,
       explanation: ex.explanation,
       isNoTacticPosition: ex.isNoTacticPosition,
     );
@@ -293,6 +296,143 @@ class _LabsScreenState extends State<LabsScreen> {
           _recordExerciseCompletion();
         }
       }
+    });
+  }
+
+  void _onShowBestMove() {
+    if (_session.isCompleted || _session.currentSolutionIndex >= _session.solutionSan.length) return;
+    final prevBoard = _session.currentBoard.clone();
+    final moveSan = _session.showBestMove(penalize: false);
+    if (moveSan != null) {
+      if (_session.userMoveHistory.isNotEmpty) {
+        final lastMove = _session.userMoveHistory.last;
+        _lastMoveFrom = lastMove.from;
+        _lastMoveTo = lastMove.to;
+        _playedMoveNodes.add(PgnMoveNode(
+          ply: _playedMoveNodes.length + 1,
+          moveNumber: (_playedMoveNodes.length ~/ 2) + 1,
+          isWhite: prevBoard.activeColor == PieceColor.white,
+          san: moveSan,
+          move: lastMove,
+        ));
+      }
+      setState(() {});
+    }
+  }
+
+  void _onShowLine() {
+    if (_session.isCompleted) return;
+    _session.showLine();
+    _rebuildMoveHistoryFromBoard();
+    setState(() {});
+  }
+
+  void _rebuildMoveHistoryFromBoard() {
+    _playedMoveNodes.clear();
+    final tempBoard = Board.fromFen(_session.initialFen);
+    for (int i = 0; i < _session.userMoveHistory.length; i++) {
+      final m = _session.userMoveHistory[i];
+      final isWhite = tempBoard.activeColor == PieceColor.white;
+      final san = MoveGenerator.moveToSan(tempBoard, m);
+      tempBoard.makeMove(m);
+      _playedMoveNodes.add(PgnMoveNode(
+        ply: i + 1,
+        moveNumber: (i ~/ 2) + 1,
+        isWhite: isWhite,
+        san: san,
+        move: m,
+      ));
+    }
+    if (_session.userMoveHistory.isNotEmpty) {
+      _lastMoveFrom = _session.userMoveHistory.last.from;
+      _lastMoveTo = _session.userMoveHistory.last.to;
+    }
+  }
+
+  void _onExplainWhy() {
+    final explanation = _session.explainWhy();
+    final currentEx = _sprintExercises[_currentExerciseIndex];
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        backgroundColor: context.surf,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
+        title: Row(
+          children: [
+            const Icon(Icons.psychology, color: ChessTheme.primaryLight, size: 22),
+            const SizedBox(width: 8),
+            Text(
+              'Grandmaster Explanation',
+              style: TextStyle(color: context.txt, fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+          ],
+        ),
+        content: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                decoration: BoxDecoration(
+                  color: ChessTheme.accentGold.withAlpha(25),
+                  borderRadius: BorderRadius.circular(6),
+                  border: Border.all(color: ChessTheme.accentGold.withAlpha(80)),
+                ),
+                child: Text(
+                  'Motif: ${currentEx.motif}',
+                  style: const TextStyle(color: ChessTheme.accentGold, fontWeight: FontWeight.bold, fontSize: 12),
+                ),
+              ),
+              const SizedBox(height: 12),
+              Text(
+                explanation,
+                style: TextStyle(color: context.txt, fontSize: 13, height: 1.45),
+              ),
+            ],
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(ctx).pop(),
+            child: const Text('Got It', style: TextStyle(color: ChessTheme.primaryLight)),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _onReplay() {
+    final moves = List<Move>.from(_session.userMoveHistory);
+    if (moves.isEmpty) return;
+    _session.reset();
+    _playedMoveNodes.clear();
+    _lastMoveFrom = null;
+    _lastMoveTo = null;
+    setState(() {});
+
+    int step = 0;
+    Timer.periodic(const Duration(milliseconds: 400), (timer) {
+      if (!mounted || step >= moves.length) {
+        timer.cancel();
+        return;
+      }
+      final m = moves[step];
+      final prevBoard = _session.currentBoard.clone();
+      final san = MoveGenerator.moveToSan(prevBoard, m);
+      _session.currentBoard.makeMove(m);
+      _session.userMoveHistory.add(m);
+      _lastMoveFrom = m.from;
+      _lastMoveTo = m.to;
+      _playedMoveNodes.add(PgnMoveNode(
+        ply: step + 1,
+        moveNumber: (step ~/ 2) + 1,
+        isWhite: prevBoard.activeColor == PieceColor.white,
+        san: san,
+        move: m,
+      ));
+      step++;
+      setState(() {});
     });
   }
 
@@ -815,67 +955,115 @@ class _LabsScreenState extends State<LabsScreen> {
             ),
           );
 
-          // Interactive Chess Board Area
+          // Interactive Chess Board Area (Clean, board-first layout)
           final boardArea = FittedBox(
             fit: BoxFit.scaleDown,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: boardSize,
-                  child: const EvaluationBarWidget(isVertical: true),
-                ),
-                SizedBox(width: evalBarSpacing),
-                SizedBox(
-                  width: boardSize,
-                  height: boardSize,
-                  child: ChessBoardWidget(
-                    board: _session.currentBoard,
-                    isFlipped: currentEx.sideToPlay == PieceColor.black,
-                    onMovePlayed: _onMovePlayed,
-                    isInteractive: !_session.isCompleted,
-                    lastMoveFrom: _lastMoveFrom,
-                    lastMoveTo: _lastMoveTo,
-                    boardTheme: ChessBoardTheme.fromName(profile.boardThemeName),
-                    pieceTheme: PieceTheme.fromName(profile.pieceThemeName),
-                    animationDurationMs: _getAnimationDurationMs(profile.animationSpeed),
-                    showCoordinates: profile.showCoordinates,
-                    showMoveHighlights: profile.showMoveHighlights,
-                    showLegalMoveHints: profile.showLegalMoveHints,
-                  ),
-                ),
-              ],
+            child: SizedBox(
+              width: boardSize,
+              height: boardSize,
+              child: ChessBoardWidget(
+                board: _session.currentBoard,
+                isFlipped: currentEx.sideToPlay == PieceColor.black,
+                onMovePlayed: _onMovePlayed,
+                isInteractive: !_session.isCompleted,
+                lastMoveFrom: _lastMoveFrom,
+                lastMoveTo: _lastMoveTo,
+                boardTheme: ChessBoardTheme.fromName(profile.boardThemeName),
+                pieceTheme: PieceTheme.fromName(profile.pieceThemeName),
+                animationDurationMs: _getAnimationDurationMs(profile.animationSpeed),
+                showCoordinates: profile.showCoordinates,
+                showMoveHighlights: profile.showMoveHighlights,
+                showLegalMoveHints: profile.showLegalMoveHints,
+              ),
             ),
           );
 
-          // Interactive Action Buttons
+          // Interactive Action Buttons (Learning-first pedagogical workflow)
           final actionButtons = Wrap(
             alignment: WrapAlignment.center,
             spacing: 8,
             runSpacing: 8,
             children: [
+              // Tiered Hint (H1 Concept -> H2 Candidate Piece -> H3 Forcing Clue)
               ElevatedButton.icon(
                 icon: const Icon(Icons.lightbulb_outline, size: 16),
-                label: Text('Hint (${_session.hintsRevealed}/${currentEx.hints.length})'),
+                label: Text(
+                  _session.hintsRevealed == 0
+                      ? 'Hint (H1/H2/H3)'
+                      : 'Next Hint (${_session.hintsRevealed}/${currentEx.tieredHints.length})',
+                ),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: context.surf,
                   foregroundColor: ChessTheme.accentGold,
                   side: const BorderSide(color: ChessTheme.accentGold),
                 ),
-                onPressed: _session.hintsRevealed < currentEx.hints.length
-                    ? () => _session.requestHint()
+                onPressed: _session.hintsRevealed < currentEx.tieredHints.length
+                    ? () => _session.requestTieredHint(penalize: false)
                     : null,
               ),
+
+              // Show Move
               ElevatedButton.icon(
-                icon: const Icon(Icons.shield_outlined, size: 16),
-                label: const Text('Declare "No Tactic"'),
+                icon: const Icon(Icons.play_arrow_outlined, size: 16),
+                label: const Text('Show Move'),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: context.surf,
-                  foregroundColor: ChessTheme.secondary,
-                  side: const BorderSide(color: ChessTheme.secondary),
+                  foregroundColor: ChessTheme.primaryLight,
+                  side: const BorderSide(color: ChessTheme.primaryLight),
                 ),
-                onPressed: !_session.isCompleted ? () => _session.declareNoTactic() : null,
+                onPressed: !_session.isCompleted ? _onShowBestMove : null,
               ),
+
+              // Show Solution Line
+              ElevatedButton.icon(
+                icon: const Icon(Icons.fast_forward_outlined, size: 16),
+                label: const Text('Show Line'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: context.surf,
+                  foregroundColor: const Color(0xFF60A5FA),
+                  side: const BorderSide(color: Color(0xFF60A5FA)),
+                ),
+                onPressed: !_session.isCompleted ? _onShowLine : null,
+              ),
+
+              // Grandmaster Explain Why
+              ElevatedButton.icon(
+                icon: const Icon(Icons.psychology_outlined, size: 16),
+                label: const Text('Explain Why'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: context.surf,
+                  foregroundColor: const Color(0xFFA78BFA),
+                  side: const BorderSide(color: Color(0xFFA78BFA)),
+                ),
+                onPressed: _onExplainWhy,
+              ),
+
+              // Replay
+              if (_session.userMoveHistory.isNotEmpty)
+                ElevatedButton.icon(
+                  icon: const Icon(Icons.replay, size: 16),
+                  label: const Text('Replay'),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: context.surfLight,
+                    foregroundColor: context.txt,
+                  ),
+                  onPressed: _onReplay,
+                ),
+
+              // Contextual "No Tactic" - ONLY visible when current exercise is actually a "No Tactic" position!
+              if (currentEx.isNoTacticPosition)
+                ElevatedButton.icon(
+                  icon: const Icon(Icons.shield_outlined, size: 16),
+                  label: const Text('Declare "No Tactic"'),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: context.surf,
+                    foregroundColor: ChessTheme.secondary,
+                    side: const BorderSide(color: ChessTheme.secondary),
+                  ),
+                  onPressed: !_session.isCompleted ? () => _session.declareNoTactic() : null,
+                ),
+
+              // Reset / Retry
               ElevatedButton.icon(
                 icon: const Icon(Icons.refresh, size: 16),
                 label: const Text('Reset'),
@@ -891,6 +1079,7 @@ class _LabsScreenState extends State<LabsScreen> {
                   setState(() {});
                 },
               ),
+
               if (_currentExerciseIndex > 0)
                 OutlinedButton.icon(
                   icon: const Icon(Icons.arrow_back, size: 16),
@@ -901,6 +1090,7 @@ class _LabsScreenState extends State<LabsScreen> {
                   ),
                   onPressed: _prevExercise,
                 ),
+
               if (_currentExerciseIndex < _sprintExercises.length - 1)
                 ElevatedButton.icon(
                   icon: const Icon(Icons.arrow_forward, size: 16),
@@ -911,6 +1101,7 @@ class _LabsScreenState extends State<LabsScreen> {
                   ),
                   onPressed: _nextExercise,
                 ),
+
               if (_session.isCompleted && _currentExerciseIndex == _sprintExercises.length - 1)
                 ElevatedButton.icon(
                   icon: const Icon(Icons.emoji_events, size: 16),

@@ -56,6 +56,14 @@ class CurriculumDay {
   final List<String> srsReview;
   final int estimatedMinutes;
 
+  // 10-step GM spiral dimensions
+  final String? definition;
+  final String? whyItMatters;
+  final String? visualBoardFen;
+  final String? patternRule;
+  final List<String> commonMistakes;
+  final List<String> cheatSheetSummary;
+
   const CurriculumDay({
     required this.dayNumber,
     required this.title,
@@ -80,6 +88,12 @@ class CurriculumDay {
     String? remediation,
     List<String>? srsReview,
     int? estimatedMinutes,
+    this.definition,
+    this.whyItMatters,
+    this.visualBoardFen,
+    this.patternRule,
+    List<String>? commonMistakes,
+    List<String>? cheatSheetSummary,
   })  : topic = topic ?? title,
         workedExamples = workedExamples ?? const [],
         referencedPuzzles = referencedPuzzles ?? const [],
@@ -89,7 +103,9 @@ class CurriculumDay {
         masteryThreshold = masteryThreshold ?? (isWeeklyExam ? 0.85 : 0.80),
         remediation = remediation ?? 'Review core tactical motifs and complete 5 targeted SRS flashcard drills.',
         srsReview = srsReview ?? const ['Tactical Pattern Flashcards', 'Candidate Selection Review'],
-        estimatedMinutes = estimatedMinutes ?? (isWeeklyExam ? 90 : 60);
+        estimatedMinutes = estimatedMinutes ?? (isWeeklyExam ? 90 : 60),
+        commonMistakes = commonMistakes ?? const [],
+        cheatSheetSummary = cheatSheetSummary ?? const [];
 
   String get displayLabel => 'Day $dayNumber · $topic — $theme';
 
@@ -117,6 +133,12 @@ class CurriculumDay {
         'remediation': remediation,
         'srsReview': srsReview,
         'estimatedMinutes': estimatedMinutes,
+        'definition': definition,
+        'whyItMatters': whyItMatters,
+        'visualBoardFen': visualBoardFen,
+        'patternRule': patternRule,
+        'commonMistakes': commonMistakes,
+        'cheatSheetSummary': cheatSheetSummary,
       };
 
   factory CurriculumDay.fromJson(Map<String, dynamic> json) {
@@ -147,6 +169,13 @@ class CurriculumDay {
       remediation: json['remediation'] as String?,
       srsReview: (json['srsReview'] as List<dynamic>?)?.cast<String>(),
       estimatedMinutes: json['estimatedMinutes'] as int?,
+      definition: json['definition'] as String?,
+      whyItMatters: json['whyItMatters'] as String?,
+      visualBoardFen: json['visualBoardFen'] as String?,
+      patternRule: json['patternRule'] as String?,
+      commonMistakes: (json['commonMistakes'] as List<dynamic>?)?.cast<String>(),
+      cheatSheetSummary: (json['cheatSheetSummary'] as List<dynamic>?)?.cast<String>(),
     );
   }
 }
+

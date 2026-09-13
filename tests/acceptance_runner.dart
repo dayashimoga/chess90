@@ -283,7 +283,7 @@ Future<void> main(List<String> args) async {
 
   // Gate 8: Model Games & Automated Puzzle Miner
   results.add(await _runTest('8. Model Games & Puzzle Miner', 'Content', () async {
-    final games = ModelGamesDatabase.curatedGames;
+    const games = ModelGamesDatabase.curatedGames;
     if (games.length < 4) throw Exception('Insufficient model games');
 
     final engine = EmbeddedHeuristicEngine();
@@ -406,9 +406,13 @@ Future<void> main(List<String> args) async {
   results.add(await _runTest('13. Adversarial Security & DoS Resilience', 'Security', () async {
     // 1. Recursive PGN nesting
     final deeplyNested = StringBuffer();
-    for (int i = 0; i < 50; i++) deeplyNested.write('(1. e4 (1. d4 ');
+    for (int i = 0; i < 50; i++) {
+      deeplyNested.write('(1. e4 (1. d4 ');
+    }
     deeplyNested.write('1. c4');
-    for (int i = 0; i < 50; i++) deeplyNested.write('))');
+    for (int i = 0; i < 50; i++) {
+      deeplyNested.write('))');
+    }
     final parsed = PgnParser.parse(deeplyNested.toString());
     if (parsed == null) throw Exception('Failed to handle nested PGN');
 
