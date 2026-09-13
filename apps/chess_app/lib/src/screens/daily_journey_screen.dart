@@ -62,6 +62,81 @@ class _DailyJourneyScreenState extends State<DailyJourneyScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            // Unfinished Game Quick-Resume Banner
+            Builder(
+              builder: (ctx) {
+                final unfinished = widget.repository.getUnfinishedGame();
+                if (unfinished == null) return const SizedBox.shrink();
+
+                final movesCount = (unfinished.moveSanList.length / 2).ceil();
+                return Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                  margin: const EdgeInsets.only(bottom: 20),
+                  decoration: BoxDecoration(
+                    color: ChessTheme.accentGold.withValues(alpha: 0.12),
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(color: ChessTheme.accentGold.withValues(alpha: 0.4)),
+                  ),
+                  child: Wrap(
+                    alignment: WrapAlignment.spaceBetween,
+                    crossAxisAlignment: WrapCrossAlignment.center,
+                    spacing: 12,
+                    runSpacing: 8,
+                    children: [
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          const Icon(Icons.play_circle_filled, color: ChessTheme.accentGold, size: 28),
+                          const SizedBox(width: 12),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'Match in Progress (${unfinished.timeControl.toUpperCase()})',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
+                                  color: context.txt,
+                                ),
+                              ),
+                              const SizedBox(height: 2),
+                              Text(
+                                'Move $movesCount • ${unfinished.whiteRemainingSeconds}s vs ${unfinished.blackRemainingSeconds}s',
+                                style: TextStyle(fontSize: 12, color: context.txtSec),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          TextButton(
+                            onPressed: () {
+                              widget.repository.clearUnfinishedGame();
+                              setState(() {});
+                            },
+                            child: const Text('Discard'),
+                          ),
+                          const SizedBox(width: 8),
+                          ElevatedButton.icon(
+                            icon: const Icon(Icons.play_arrow, size: 16),
+                            label: const Text('Resume Game'),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: ChessTheme.accentGold,
+                              foregroundColor: Colors.black,
+                            ),
+                            onPressed: () => widget.onNavigate('play'),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                );
+              },
+            ),
+
             // Header Banner
             Container(
               padding: const EdgeInsets.all(24),

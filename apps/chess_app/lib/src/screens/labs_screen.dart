@@ -7,7 +7,9 @@ import 'package:chess_labs/chess_labs.dart';
 import 'package:chess_storage/chess_storage.dart';
 import 'package:flutter/material.dart';
 import '../theme/board_size_policy.dart';
+import '../theme/chess_board_theme.dart';
 import '../theme/chess_theme.dart';
+import '../theme/piece_theme.dart';
 import '../widgets/board/chess_board_widget.dart';
 import '../widgets/board/evaluation_bar_widget.dart';
 import '../widgets/board/move_list_widget.dart';
@@ -503,6 +505,20 @@ class _LabsScreenState extends State<LabsScreen> {
     );
   }
 
+  static int _getAnimationDurationMs(String speed) {
+    switch (speed) {
+      case 'instant':
+        return 0;
+      case 'fast':
+        return 150;
+      case 'learning':
+        return 500;
+      case 'normal':
+      default:
+        return 250;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     if (_sprintExercises.isEmpty) {
@@ -515,6 +531,7 @@ class _LabsScreenState extends State<LabsScreen> {
     }
 
     final currentEx = _sprintExercises[_currentExerciseIndex];
+    final profile = widget.repository.getProfile();
 
     return Scaffold(
       backgroundColor: context.bg,
@@ -819,6 +836,12 @@ class _LabsScreenState extends State<LabsScreen> {
                     isInteractive: !_session.isCompleted,
                     lastMoveFrom: _lastMoveFrom,
                     lastMoveTo: _lastMoveTo,
+                    boardTheme: ChessBoardTheme.fromName(profile.boardThemeName),
+                    pieceTheme: PieceTheme.fromName(profile.pieceThemeName),
+                    animationDurationMs: _getAnimationDurationMs(profile.animationSpeed),
+                    showCoordinates: profile.showCoordinates,
+                    showMoveHighlights: profile.showMoveHighlights,
+                    showLegalMoveHints: profile.showLegalMoveHints,
                   ),
                 ),
               ],

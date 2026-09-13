@@ -248,22 +248,6 @@ class _MainShellState extends State<MainShell> {
                                 label: Text('Analysis'),
                               ),
                               NavigationRailDestination(
-                                icon: Icon(Icons.explore),
-                                label: Text('Openings'),
-                              ),
-                              NavigationRailDestination(
-                                icon: Icon(Icons.shield_outlined),
-                                label: Text('Endgame'),
-                              ),
-                              NavigationRailDestination(
-                                icon: Icon(Icons.auto_stories),
-                                label: Text('Model Games'),
-                              ),
-                              NavigationRailDestination(
-                                icon: Icon(Icons.troubleshoot),
-                                label: Text('Weakness'),
-                              ),
-                              NavigationRailDestination(
                                 icon: Icon(Icons.video_library),
                                 label: Text('Video Studio'),
                               ),
@@ -290,7 +274,11 @@ class _MainShellState extends State<MainShell> {
           ? NavigationBar(
               selectedIndex: _mobileNavIndexForScreen(_activeScreen),
               onDestinationSelected: (idx) {
-                _navigateTo(_mobileScreenKeyForNavIndex(idx));
+                if (idx == 5) {
+                  _openMobileMoreSheet(context);
+                } else {
+                  _navigateTo(_mobileScreenKeyForNavIndex(idx));
+                }
               },
               destinations: const [
                 NavigationDestination(icon: Icon(Icons.today), label: 'Daily'),
@@ -316,21 +304,17 @@ class _MainShellState extends State<MainShell> {
       case 'play':
         return 3;
       case 'analysis':
-        return 4;
       case 'openings':
-        return 5;
       case 'endgame':
-        return 6;
       case 'models':
-        return 7;
-      case 'weakness':
-        return 8;
+        return 4;
       case 'video':
-        return 9;
+        return 5;
       case 'cert':
-        return 10;
+      case 'weakness':
+        return 6;
       case 'settings':
-        return 11;
+        return 7;
       default:
         return 0;
     }
@@ -349,18 +333,10 @@ class _MainShellState extends State<MainShell> {
       case 4:
         return 'analysis';
       case 5:
-        return 'openings';
-      case 6:
-        return 'endgame';
-      case 7:
-        return 'models';
-      case 8:
-        return 'weakness';
-      case 9:
         return 'video';
-      case 10:
+      case 6:
         return 'cert';
-      case 11:
+      case 7:
         return 'settings';
       default:
         return 'daily';
@@ -378,6 +354,9 @@ class _MainShellState extends State<MainShell> {
       case 'play':
         return 3;
       case 'analysis':
+      case 'openings':
+      case 'endgame':
+      case 'models':
         return 4;
       default:
         return 5;
@@ -403,7 +382,271 @@ class _MainShellState extends State<MainShell> {
     }
   }
 
+  void _openMobileMoreSheet(BuildContext context) {
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: context.surf,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (ctx) {
+        return SafeArea(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    const Icon(Icons.apps, color: ChessTheme.primaryLight),
+                    const SizedBox(width: 8),
+                    Expanded(
+                      child: Text(
+                        'All Learning & Analysis Hubs',
+                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: ctx.txt),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 16),
+                ListTile(
+                  leading: const Icon(Icons.video_library, color: ChessTheme.primaryLight),
+                  title: const Text('Video Studio'),
+                  subtitle: const Text('Export animated tactical reels & narrated videos'),
+                  onTap: () {
+                    Navigator.pop(ctx);
+                    _navigateTo('video');
+                  },
+                ),
+                ListTile(
+                  leading: const Icon(Icons.workspace_premium, color: ChessTheme.primaryLight),
+                  title: const Text('Mastery Report & Certification'),
+                  subtitle: const Text('GM progress audit and performance credentials'),
+                  onTap: () {
+                    Navigator.pop(ctx);
+                    _navigateTo('cert');
+                  },
+                ),
+                ListTile(
+                  leading: const Icon(Icons.troubleshoot, color: ChessTheme.primaryLight),
+                  title: const Text('Weakness Radar'),
+                  subtitle: const Text('Tactical, calculation, and psychological diagnosis'),
+                  onTap: () {
+                    Navigator.pop(ctx);
+                    _navigateTo('weakness');
+                  },
+                ),
+                ListTile(
+                  leading: const Icon(Icons.explore, color: ChessTheme.primaryLight),
+                  title: const Text('Opening Explorer'),
+                  subtitle: const Text('72 ECO master variations and master win-rates'),
+                  onTap: () {
+                    Navigator.pop(ctx);
+                    _navigateTo('openings');
+                  },
+                ),
+                ListTile(
+                  leading: const Icon(Icons.shield_outlined, color: ChessTheme.primaryLight),
+                  title: const Text('Endgame Workspace'),
+                  subtitle: const Text('Theoretical positions and engine win/draw drills'),
+                  onTap: () {
+                    Navigator.pop(ctx);
+                    _navigateTo('endgame');
+                  },
+                ),
+                ListTile(
+                  leading: const Icon(Icons.auto_stories, color: ChessTheme.primaryLight),
+                  title: const Text('Model Games'),
+                  subtitle: const Text('60 annotated master games throughout history'),
+                  onTap: () {
+                    Navigator.pop(ctx);
+                    _navigateTo('models');
+                  },
+                ),
+                ListTile(
+                  leading: const Icon(Icons.settings, color: ChessTheme.primaryLight),
+                  title: const Text('Settings & Storage'),
+                  subtitle: const Text('Theme, pieces, board sizing, engine & backups'),
+                  onTap: () {
+                    Navigator.pop(ctx);
+                    _navigateTo('settings');
+                  },
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  Widget _buildStudyHub() {
+    Widget content;
+    switch (_activeScreen) {
+      case 'openings':
+        content = OpeningExplorerScreen(onNavigate: _navigateTo);
+        break;
+      case 'endgame':
+        content = const EndgameWorkspaceScreen();
+        break;
+      case 'models':
+        content = ModelGamesScreen(onNavigate: _navigateTo);
+        break;
+      case 'analysis':
+      default:
+        content = AnalysisScreen(
+          repository: _repository,
+          initialArgs: _navigationArgs,
+          engine: widget.engine,
+        );
+        break;
+    }
+
+    return Column(
+      children: [
+        Container(
+          width: double.infinity,
+          color: Theme.of(context).colorScheme.surface,
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                _buildSubTabButton(
+                  icon: Icons.analytics,
+                  label: 'Analysis',
+                  isSelected: _activeScreen == 'analysis',
+                  onTap: () => _navigateTo('analysis'),
+                ),
+                const SizedBox(width: 8),
+                _buildSubTabButton(
+                  icon: Icons.explore,
+                  label: 'Openings',
+                  isSelected: _activeScreen == 'openings',
+                  onTap: () => _navigateTo('openings'),
+                ),
+                const SizedBox(width: 8),
+                _buildSubTabButton(
+                  icon: Icons.shield_outlined,
+                  label: 'Endgame',
+                  isSelected: _activeScreen == 'endgame',
+                  onTap: () => _navigateTo('endgame'),
+                ),
+                const SizedBox(width: 8),
+                _buildSubTabButton(
+                  icon: Icons.auto_stories,
+                  label: 'Model Games',
+                  isSelected: _activeScreen == 'models',
+                  onTap: () => _navigateTo('models'),
+                ),
+              ],
+            ),
+          ),
+        ),
+        const Divider(height: 1, thickness: 1),
+        Expanded(child: content),
+      ],
+    );
+  }
+
+  Widget _buildAnalyticsHub() {
+    Widget content;
+    switch (_activeScreen) {
+      case 'weakness':
+        content = WeaknessAnalyticsScreen(
+          repository: _repository,
+          onNavigate: _navigateTo,
+        );
+        break;
+      case 'cert':
+      default:
+        content = CertificationScreen(repository: _repository);
+        break;
+    }
+
+    return Column(
+      children: [
+        Container(
+          width: double.infinity,
+          color: Theme.of(context).colorScheme.surface,
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                _buildSubTabButton(
+                  icon: Icons.workspace_premium,
+                  label: 'Mastery Report',
+                  isSelected: _activeScreen == 'cert',
+                  onTap: () => _navigateTo('cert'),
+                ),
+                const SizedBox(width: 8),
+                _buildSubTabButton(
+                  icon: Icons.troubleshoot,
+                  label: 'Weakness Radar',
+                  isSelected: _activeScreen == 'weakness',
+                  onTap: () => _navigateTo('weakness'),
+                ),
+              ],
+            ),
+          ),
+        ),
+        const Divider(height: 1, thickness: 1),
+        Expanded(child: content),
+      ],
+    );
+  }
+
+  Widget _buildSubTabButton({
+    required IconData icon,
+    required String label,
+    required bool isSelected,
+    required VoidCallback onTap,
+  }) {
+    return InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(20),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
+        decoration: BoxDecoration(
+          color: isSelected ? ChessTheme.primary.withValues(alpha: 0.2) : Colors.transparent,
+          borderRadius: BorderRadius.circular(20),
+          border: Border.all(
+            color: isSelected ? ChessTheme.primaryLight : Colors.transparent,
+          ),
+        ),
+        child: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(icon, size: 16, color: isSelected ? ChessTheme.primaryLight : context.txtSec),
+            const SizedBox(width: 6),
+            Text(
+              label,
+              style: TextStyle(
+                fontSize: 12,
+                fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+                color: isSelected ? ChessTheme.primaryLight : context.txtSec,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
   Widget _buildCurrentScreen() {
+    // Check if in Study hub (analysis, openings, endgame, models)
+    if (['analysis', 'openings', 'endgame', 'models'].contains(_activeScreen)) {
+      return _buildStudyHub();
+    }
+
+    // Check if in Analytics hub (cert, weakness)
+    if (['cert', 'weakness'].contains(_activeScreen)) {
+      return _buildAnalyticsHub();
+    }
+
     switch (_activeScreen) {
       case 'daily':
         return DailyJourneyScreen(
@@ -419,6 +662,7 @@ class _MainShellState extends State<MainShell> {
         return LabsScreen(
           repository: _repository,
           initialArgs: _navigationArgs,
+          onNavigate: _navigateTo,
         );
       case 'play':
         return PlayScreen(
@@ -427,35 +671,10 @@ class _MainShellState extends State<MainShell> {
           initialArgs: _navigationArgs,
           engine: widget.engine,
         );
-      case 'analysis':
-        return AnalysisScreen(
-          repository: _repository,
-          initialArgs: _navigationArgs,
-          engine: widget.engine,
-        );
-      case 'openings':
-        return OpeningExplorerScreen(
-          onNavigate: _navigateTo,
-        );
-      case 'endgame':
-        return const EndgameWorkspaceScreen();
-      case 'models':
-        return ModelGamesScreen(
-          onNavigate: _navigateTo,
-        );
-      case 'weakness':
-        return WeaknessAnalyticsScreen(
-          repository: _repository,
-          onNavigate: _navigateTo,
-        );
       case 'video':
         return VideoStudioScreen(
           repository: _repository,
           initialArgs: _navigationArgs,
-        );
-      case 'cert':
-        return CertificationScreen(
-          repository: _repository,
         );
       case 'settings':
         return SettingsStorageScreen(

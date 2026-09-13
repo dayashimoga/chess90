@@ -328,9 +328,12 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
                             children: [
                               const Icon(Icons.edit_note, color: ChessTheme.primary, size: 20),
                               const SizedBox(width: 8),
-                              Text(
-                                'Step 1: Human Self-Analysis',
-                                style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: context.txt),
+                              Expanded(
+                                child: Text(
+                                  'Step 1: Human Self-Analysis',
+                                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: context.txt),
+                                  overflow: TextOverflow.ellipsis,
+                                ),
                               ),
                             ],
                           ),

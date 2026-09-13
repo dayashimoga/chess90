@@ -100,6 +100,16 @@ class _PlayScreenState extends State<PlayScreen> {
     _isFlipped = _playerColor == PieceColor.black;
     _isRated = !_setupConfig.isCasualOrTraining;
 
+    if (widget.initialArgs is Map) {
+      final args = widget.initialArgs as Map;
+      if (args['isVsEngine'] != null) {
+        _playVsEngine = args['isVsEngine'] as bool;
+      }
+      if (args['isRated'] != null) {
+        _isRated = args['isRated'] as bool;
+      }
+    }
+
     if (_pendingUnfinishedGame != null) {
       _clock.whiteRemaining = Duration(seconds: _pendingUnfinishedGame!.whiteRemainingSeconds);
       _clock.blackRemaining = Duration(seconds: _pendingUnfinishedGame!.blackRemainingSeconds);
@@ -113,7 +123,10 @@ class _PlayScreenState extends State<PlayScreen> {
     _engine.initialize();
 
     _startClockTimer();
-    _clock.start();
+    // Only start clock if resuming an existing game with moves
+    if (_moves.isNotEmpty) {
+      _clock.start();
+    }
 
     // If player plays Black vs Engine, engine makes the opening move
     if (_playVsEngine && _playerColor == PieceColor.black) {
@@ -144,6 +157,9 @@ class _PlayScreenState extends State<PlayScreen> {
     final san = MoveGenerator.moveToSan(prevBoard, move);
 
     _board = _board.clone()..makeMove(move);
+    if (!_clock.isRunning && !_isGameOver) {
+      _clock.start();
+    }
     _clock.onMovePlayed();
 
     _moves.add(PgnMoveNode(
@@ -276,7 +292,9 @@ class _PlayScreenState extends State<PlayScreen> {
     }
 
     _startClockTimer();
-    _clock.start();
+    if (_moves.isNotEmpty) {
+      _clock.start();
+    }
 
     widget.repository.clearUnfinishedGame();
     setState(() {});
@@ -413,27 +431,26 @@ class _PlayScreenState extends State<PlayScreen> {
   void _executeTakeback() {
     if (_moves.isEmpty) return;
 
+    int pliesToRevert = 1;
     if (_playVsEngine) {
       if (_board.activeColor == _playerColor) {
         // Opponent engine moved, player also moved -> revert 2 plies
-        if (_moves.length >= 2) {
-          _moves.removeLast();
-          _moves.removeLast();
-        } else {
-          _moves.removeLast();
-        }
+        pliesToRevert = _moves.length >= 2 ? 2 : 1;
       } else {
         // Player just moved and engine hasn't moved yet -> revert 1 ply
-        _moves.removeLast();
+        pliesToRevert = 1;
       }
-    } else {
-      _moves.removeLast();
     }
 
-    // Replay remaining moves to rebuild board
-    _board = Board.initial();
-    for (final m in _moves) {
-      if (m.move != null) _board.makeMove(m.move!);
+    for (int i = 0; i < pliesToRevert && _moves.isNotEmpty; i++) {
+      _moves.removeLast();
+      if (_board.history.isNotEmpty) {
+        _board.unmakeMove();
+      }
+    }
+
+    if (_moves.isEmpty) {
+      _clock.pause();
     }
 
     _clearHints();
@@ -519,6 +536,20 @@ class _PlayScreenState extends State<PlayScreen> {
         },
       ),
     );
+  }
+
+  static int _getAnimationDurationMs(String speed) {
+    switch (speed) {
+      case 'instant':
+        return 0;
+      case 'fast':
+        return 150;
+      case 'learning':
+        return 500;
+      case 'normal':
+      default:
+        return 250;
+    }
   }
 
   void _copyToClipboard(String text, String label) {
@@ -809,6 +840,7 @@ class _PlayScreenState extends State<PlayScreen> {
                                     lastMoveTo: _moves.isNotEmpty ? _moves.last.move?.to : null,
                                     boardTheme: boardTheme,
                                     pieceTheme: pieceTheme,
+                                    animationDurationMs: _getAnimationDurationMs(profile.animationSpeed),
                                     showCoordinates: profile.showCoordinates,
                                     showMoveHighlights: profile.showMoveHighlights,
                                     showLegalMoveHints: profile.showLegalMoveHints,

@@ -482,10 +482,7 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
                               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: context.txt),
                             ),
                             const SizedBox(height: 14),
-                            Text(
-                              currentDayData.theoryMarkdown,
-                              style: TextStyle(fontSize: 13, height: 1.6, color: context.txtSec),
-                            ),
+                            _buildTheoryMarkdownView(context, currentDayData.theoryMarkdown),
                           ],
                         ),
                       ),
@@ -776,5 +773,170 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
         ],
       ),
     );
+  }
+
+  Widget _buildTheoryMarkdownView(BuildContext context, String markdown) {
+    final lines = markdown.split('\n');
+    final widgets = <Widget>[];
+
+    for (int i = 0; i < lines.length; i++) {
+      final line = lines[i].trim();
+      if (line.isEmpty) {
+        widgets.add(const SizedBox(height: 6));
+        continue;
+      }
+
+      if (line.startsWith('# ')) {
+        final text = line.substring(2).trim();
+        widgets.add(
+          Padding(
+            padding: const EdgeInsets.only(top: 4, bottom: 10),
+            child: Row(
+              children: [
+                const Icon(Icons.school, color: ChessTheme.primaryLight, size: 20),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Text(
+                    text,
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: context.txt,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      } else if (line.startsWith('## ')) {
+        final text = line.substring(3).trim();
+        widgets.add(
+          Container(
+            margin: const EdgeInsets.only(top: 12, bottom: 8),
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+            decoration: BoxDecoration(
+              color: context.surfLight,
+              borderRadius: BorderRadius.circular(8),
+              border: Border.all(color: context.brd),
+            ),
+            child: Row(
+              children: [
+                Container(
+                  width: 4,
+                  height: 16,
+                  decoration: BoxDecoration(
+                    color: ChessTheme.primary,
+                    borderRadius: BorderRadius.circular(2),
+                  ),
+                ),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Text(
+                    text,
+                    style: const TextStyle(
+                      fontSize: 13,
+                      fontWeight: FontWeight.bold,
+                      color: ChessTheme.primaryLight,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      } else if (line.startsWith('- ') || line.startsWith('* ')) {
+        final rawText = line.substring(2).trim();
+        widgets.add(
+          Padding(
+            padding: const EdgeInsets.only(left: 4, top: 3, bottom: 3),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.only(top: 3),
+                  child: Icon(Icons.arrow_right, size: 16, color: ChessTheme.primaryLight),
+                ),
+                const SizedBox(width: 4),
+                Expanded(
+                  child: _buildRichFormattedText(context, rawText),
+                ),
+              ],
+            ),
+          ),
+        );
+      } else if (RegExp(r'^\d+\.\s').hasMatch(line)) {
+        final match = RegExp(r'^(\d+)\.\s*(.*)').firstMatch(line);
+        final stepNum = match?.group(1) ?? '1';
+        final rawText = match?.group(2) ?? line;
+        widgets.add(
+          Padding(
+            padding: const EdgeInsets.only(left: 4, top: 3, bottom: 3),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  width: 18,
+                  height: 18,
+                  margin: const EdgeInsets.only(top: 2),
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: ChessTheme.primary.withValues(alpha: 0.2),
+                    shape: BoxShape.circle,
+                  ),
+                  child: Text(
+                    stepNum,
+                    style: const TextStyle(
+                      fontSize: 10,
+                      fontWeight: FontWeight.bold,
+                      color: ChessTheme.primaryLight,
+                    ),
+                  ),
+                ),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: _buildRichFormattedText(context, rawText),
+                ),
+              ],
+            ),
+          ),
+        );
+      } else {
+        widgets.add(
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 3),
+            child: _buildRichFormattedText(context, line),
+          ),
+        );
+      }
+    }
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: widgets,
+    );
+  }
+
+  Widget _buildRichFormattedText(BuildContext context, String text) {
+    final spans = <TextSpan>[];
+    final parts = text.split('**');
+
+    for (int i = 0; i < parts.length; i++) {
+      final isBold = i % 2 == 1;
+      if (parts[i].isEmpty) continue;
+      spans.add(
+        TextSpan(
+          text: parts[i],
+          style: TextStyle(
+            fontSize: 13,
+            height: 1.5,
+            fontWeight: isBold ? FontWeight.bold : FontWeight.normal,
+            color: isBold ? context.txt : context.txtSec,
+          ),
+        ),
+      );
+    }
+
+    return RichText(text: TextSpan(children: spans));
   }
 }

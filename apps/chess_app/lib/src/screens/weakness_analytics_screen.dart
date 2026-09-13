@@ -54,19 +54,27 @@ class WeaknessAnalyticsScreen extends StatelessWidget {
                       child: const Icon(Icons.troubleshoot, color: ChessTheme.qualityBlunder, size: 22),
                     ),
                     const SizedBox(width: 12),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          'WEAKNESS & COGNITIVE ROOT-CAUSE ANALYTICS',
-                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, letterSpacing: 0.5, color: context.txt),
-                        ),
-                        Text(
-                          '14-Axis diagnostic decomposition and retraining',
-                          style: TextStyle(fontSize: 12, color: context.txtSec),
-                        ),
-                      ],
+                    ConstrainedBox(
+                      constraints: const BoxConstraints(maxWidth: 260),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          FittedBox(
+                            fit: BoxFit.scaleDown,
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              'WEAKNESS & COGNITIVE ROOT-CAUSE ANALYTICS',
+                              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, letterSpacing: 0.5, color: context.txt),
+                            ),
+                          ),
+                          Text(
+                            '14-Axis diagnostic decomposition',
+                            style: TextStyle(fontSize: 12, color: context.txtSec),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
@@ -141,8 +149,11 @@ class WeaknessAnalyticsScreen extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          Wrap(
+            alignment: WrapAlignment.spaceBetween,
+            crossAxisAlignment: WrapCrossAlignment.center,
+            spacing: 8,
+            runSpacing: 4,
             children: [
               Text('12-Axis Skill Radar', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: context.txt)),
               Text('Real Stored Metrics', style: TextStyle(fontSize: 11, color: context.txtMut)),
