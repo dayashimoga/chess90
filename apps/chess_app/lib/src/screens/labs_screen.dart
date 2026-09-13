@@ -717,7 +717,7 @@ class _LabsScreenState extends State<LabsScreen> {
                       Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Icon(Icons.stars, size: 14, color: ChessTheme.accentGold),
+                          const Icon(Icons.stars, size: 14, color: ChessTheme.accentGold),
                           const SizedBox(width: 4),
                           Text(
                             'Solved: ${_exerciseScores.length}/${_sprintExercises.length}',

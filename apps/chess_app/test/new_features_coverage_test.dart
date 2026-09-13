@@ -94,8 +94,11 @@ void main() {
 
       expect(savedBoardTheme, equals('classicWood'));
       expect(savedPieceTheme, equals('highContrast'));
+      expect(savedBoardSize, equals('standard'));
       expect(savedAnimationSpeed, equals('learning'));
       expect(savedCoordinates, isFalse);
+      expect(savedHighlights, isTrue);
+      expect(savedHints, isTrue);
     });
 
     testWidgets('PlaySetupDialog supports side, difficulty, mode, and clock selection', (tester) async {

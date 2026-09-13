@@ -1,5 +1,3 @@
-import 'package:chess_app/src/theme/chess_board_theme.dart';
-import 'package:chess_app/src/theme/piece_theme.dart';
 import 'package:chess_app/src/widgets/board/chess_board_widget.dart';
 import 'package:chess_app/src/widgets/board/vector_piece_widget.dart';
 import 'package:chess_core/chess_core.dart';
@@ -223,7 +221,7 @@ void main() {
       await tester.pumpAndSettle();
 
       // Simulate external engine playing e2 -> e4
-      final engineMove = Move(from: Square.e2, to: Square.e4);
+      const engineMove = Move(from: Square.e2, to: Square.e4);
       parentSetState(() {
         board = board.clone()..makeMove(engineMove);
         lastFrom = engineMove.from;
@@ -281,7 +279,7 @@ void main() {
 
       // Move 1
       parentSetState(() {
-        final m1 = Move(from: Square.e2, to: Square.e4);
+        const m1 = Move(from: Square.e2, to: Square.e4);
         board = board.clone()..makeMove(m1);
         lastFrom = m1.from;
         lastTo = m1.to;
@@ -299,7 +297,7 @@ void main() {
 
       // Move 3 interrupts Move 2 mid-flight
       parentSetState(() {
-        final m3 = Move(from: Square.g1, to: Square.f3);
+        const m3 = Move(from: Square.g1, to: Square.f3);
         board = board.clone()..makeMove(m3);
         lastFrom = m3.from;
         lastTo = m3.to;
@@ -313,7 +311,7 @@ void main() {
 
     testWidgets('Backward navigation / undo does not animate forward', (tester) async {
       Board board = Board.initial();
-      final m1 = Move(from: Square.e2, to: Square.e4);
+      const m1 = Move(from: Square.e2, to: Square.e4);
       board.makeMove(m1);
       final m2 = Move(from: Square.named('e7'), to: Square.e5);
       board.makeMove(m2);
