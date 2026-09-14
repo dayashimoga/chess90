@@ -1,17 +1,17 @@
 {
   "platform": "ChessMaster",
-  "timestamp": "2026-09-13T20:48:08.529708",
+  "timestamp": "2026-09-14T07:45:23.466580",
   "allPassed": true,
   "totalTests": 16,
   "passedTests": 16,
-  "totalDurationMs": 629,
+  "totalDurationMs": 815,
   "results": [
     {
       "testName": "1. Perft Correctness (d1-d4) & Core Rules",
       "category": "Core Chess",
       "passed": true,
       "details": "Perft d1=20, d2=400, d3=8902 verified. 50/75-move rules, stalemate, checkmate, and threefold repetition validated.",
-      "durationMs": 46,
+      "durationMs": 55,
       "statusClassification": "PROVEN"
     },
     {
@@ -27,7 +27,7 @@
       "category": "Engine",
       "passed": true,
       "details": "Engine initialized: Stockfish 19 (isFallback: false). UCI pipes, MultiPV, and mate evaluation validated.",
-      "durationMs": 354,
+      "durationMs": 542,
       "statusClassification": "PROVEN"
     },
     {
@@ -67,7 +67,7 @@
       "category": "Content",
       "passed": true,
       "details": "Curated model games database, batch pipeline, ECO classification, and automated PGN puzzle miner validated.",
-      "durationMs": 92,
+      "durationMs": 98,
       "statusClassification": "PROVEN"
     },
     {
@@ -75,7 +75,7 @@
       "category": "Video",
       "passed": true,
       "details": "Timeline generator (30/60fps), FFmpeg H.264/GIF builder verified. Host binaries: Discovered.",
-      "durationMs": 64,
+      "durationMs": 6,
       "statusClassification": "PROVEN"
     },
     {
@@ -83,7 +83,7 @@
       "category": "Storage",
       "passed": true,
       "details": "Offline LocalDatabase, Schema V1->V2 migrations, atomic write/rename, and full backup roundtrip verified.",
-      "durationMs": 23,
+      "durationMs": 54,
       "statusClassification": "PROVEN"
     },
     {
@@ -91,7 +91,7 @@
       "category": "Learning Loop",
       "passed": true,
       "details": "Complete loop validated: Game -> Self-Analysis -> Engine Audit -> Root Cause (missedTacticOpponentForcingMove) -> SRS Retraining.",
-      "durationMs": 10,
+      "durationMs": 15,
       "statusClassification": "PROVEN"
     },
     {
@@ -107,7 +107,7 @@
       "category": "Security",
       "passed": true,
       "details": "Deeply nested PGNs (50 levels), malformed FEN payloads, and corrupt backup rejection verified.",
-      "durationMs": 5,
+      "durationMs": 7,
       "statusClassification": "PROVEN"
     },
     {

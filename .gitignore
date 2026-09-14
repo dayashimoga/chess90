@@ -27,6 +27,13 @@ test-results/
 acceptance_tmp/
 dist/
 
+# Release Binaries
+ChessMaster-Portable.exe
+ChessMaster-Windows-x64.zip
+ChessMaster-Setup.exe
+ChessMaster.apk
+ChessMaster.aab
+
 # Local databases
 *.db
 *.db-journal
