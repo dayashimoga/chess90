@@ -17,3 +17,4 @@ export 'src/labs/guess_the_move_lab.dart';
 export 'src/labs/defensive_resource_lab.dart';
 export 'src/labs/conversion_challenge_lab.dart';
 export 'src/labs/time_management_lab.dart';
+export 'src/labs/mini_games.dart';

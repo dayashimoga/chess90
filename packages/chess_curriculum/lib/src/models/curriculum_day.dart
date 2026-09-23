@@ -1,18 +1,21 @@
 import 'package:chess_learning/chess_learning.dart';
 import 'curriculum_exercise.dart';
 
-/// The 10 phases of the 90-day GM mastery program.
+/// The 13 weekly phases of the authentic 90-day mastery spiral.
 enum CurriculumPhase {
-  phase1Diagnostic(1, 1, 'Phase 1: Baseline Diagnostic & Plan'),
-  phase2Tactics(2, 14, 'Phase 2: Tactical Foundation & Pattern Vision'),
-  phase3Calculation(15, 28, 'Phase 3: Calculation & Visualization Trees'),
-  phase4Strategy(29, 42, 'Phase 4: Positional Strategy & Pawn Structures'),
-  phase5Endgames(43, 56, 'Phase 5: Endgame Technique & Engine Conversion'),
-  phase6Openings(57, 63, 'Phase 6: Personalized Opening Repertoire'),
-  phase7AttackDefense(64, 70, 'Phase 7: King Attacks & Defensive Tenacity'),
-  phase8Conversion(71, 77, 'Phase 8: Advantage Conversion & Practical Chess'),
-  phase9Tournament(78, 84, 'Phase 9: Tournament Simulation Mode'),
-  phase10Integration(85, 90, 'Phase 10: Retention Stabilization & Certification');
+  phase1Fundamentals(1, 7, 'Phase 1: Rules, Notation, Movement & Board Vision'),
+  phase2Tactics(8, 14, 'Phase 2: Tactical Motifs & Combinations'),
+  phase3Calculation(15, 21, 'Phase 3: Candidate Moves & Calculation Trees (CCT)'),
+  phase4Strategy(22, 28, 'Phase 4: Positional Strategy & Piece Activity'),
+  phase5PawnStructures(29, 35, 'Phase 5: Pawn Structures, Chains & Breaks'),
+  phase6AttackDefense(36, 42, 'Phase 6: King Attacks & Defensive Tenacity'),
+  phase7PawnEndgames(43, 49, 'Phase 7: King & Pawn Endgames, Opposition & Mates'),
+  phase8RookEndgames(50, 56, 'Phase 8: Rook Endgames (Lucena/Philidor) & Minor Pieces'),
+  phase9Openings(57, 63, 'Phase 9: Opening Mastery & Compact Repertoires'),
+  phase10Transitions(64, 70, 'Phase 10: Transitions, Strategic Transformations & Planning'),
+  phase11Conversion(71, 77, 'Phase 11: Advantage Conversion & Pressure Decisions'),
+  phase12ModelGames(78, 84, 'Phase 12: Master Model Games & Guess-The-Move'),
+  phase13Tournament(85, 90, 'Phase 13: Tournament Simulation & Final Assessment');
 
   final int startDay;
   final int endDay;
@@ -24,8 +27,12 @@ enum CurriculumPhase {
     for (final phase in CurriculumPhase.values) {
       if (day >= phase.startDay && day <= phase.endDay) return phase;
     }
-    return CurriculumPhase.phase10Integration;
+    return CurriculumPhase.phase13Tournament;
   }
+
+  // Legacy backwards-compatible aliases
+  static const CurriculumPhase phase1Diagnostic = phase1Fundamentals;
+  static const CurriculumPhase phase10Integration = phase13Tournament;
 }
 
 /// Represents one complete day in the 90-day GM-style program.
@@ -63,6 +70,13 @@ class CurriculumDay {
   final String? patternRule;
   final List<String> commonMistakes;
   final List<String> cheatSheetSummary;
+  final List<String> animatedDemoMoves;
+  final String? miniGameType;
+  final String? modelGameClip;
+
+  String get shortExplanation => definition ?? (theoryMarkdown.isNotEmpty ? theoryMarkdown.split('\n\n').first : topic);
+  List<String> get commonMistakesList => commonMistakes;
+  String get cheatSheetText => cheatSheetSummary.isNotEmpty ? cheatSheetSummary.join(' • ') : (patternRule ?? theme);
 
   const CurriculumDay({
     required this.dayNumber,
@@ -94,6 +108,9 @@ class CurriculumDay {
     this.patternRule,
     List<String>? commonMistakes,
     List<String>? cheatSheetSummary,
+    List<String>? animatedDemoMoves,
+    this.miniGameType,
+    this.modelGameClip,
   })  : topic = topic ?? title,
         workedExamples = workedExamples ?? const [],
         referencedPuzzles = referencedPuzzles ?? const [],
@@ -105,7 +122,8 @@ class CurriculumDay {
         srsReview = srsReview ?? const ['Tactical Pattern Flashcards', 'Candidate Selection Review'],
         estimatedMinutes = estimatedMinutes ?? (isWeeklyExam ? 90 : 60),
         commonMistakes = commonMistakes ?? const [],
-        cheatSheetSummary = cheatSheetSummary ?? const [];
+        cheatSheetSummary = cheatSheetSummary ?? const [],
+        animatedDemoMoves = animatedDemoMoves ?? const [];
 
   String get displayLabel => 'Day $dayNumber · $topic — $theme';
 
@@ -139,14 +157,23 @@ class CurriculumDay {
         'patternRule': patternRule,
         'commonMistakes': commonMistakes,
         'cheatSheetSummary': cheatSheetSummary,
+        'animatedDemoMoves': animatedDemoMoves,
+        'miniGameType': miniGameType,
+        'modelGameClip': modelGameClip,
       };
 
   factory CurriculumDay.fromJson(Map<String, dynamic> json) {
     final isExam = json['isWeeklyExam'] as bool? ?? false;
+    final dayNum = json['dayNumber'] as int;
+    final phaseName = json['phase'] as String?;
+    final phase = CurriculumPhase.values.firstWhere(
+      (p) => p.name == phaseName,
+      orElse: () => CurriculumPhase.forDay(dayNum),
+    );
     return CurriculumDay(
-      dayNumber: json['dayNumber'] as int,
+      dayNumber: dayNum,
       title: json['title'] as String,
-      phase: CurriculumPhase.values.firstWhere((p) => p.name == json['phase']),
+      phase: phase,
       theme: json['theme'] as String,
       learningObjectives: (json['learningObjectives'] as List<dynamic>).cast<String>(),
       theoryMarkdown: json['theoryMarkdown'] as String,
@@ -175,6 +202,9 @@ class CurriculumDay {
       patternRule: json['patternRule'] as String?,
       commonMistakes: (json['commonMistakes'] as List<dynamic>?)?.cast<String>(),
       cheatSheetSummary: (json['cheatSheetSummary'] as List<dynamic>?)?.cast<String>(),
+      animatedDemoMoves: (json['animatedDemoMoves'] as List<dynamic>?)?.cast<String>(),
+      miniGameType: json['miniGameType'] as String?,
+      modelGameClip: json['modelGameClip'] as String?,
     );
   }
 }

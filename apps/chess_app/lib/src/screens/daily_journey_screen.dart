@@ -3,6 +3,7 @@ import 'package:chess_learning/chess_learning.dart';
 import 'package:chess_storage/chess_storage.dart';
 import 'package:flutter/material.dart';
 import '../theme/chess_theme.dart';
+import '../widgets/curriculum/onboarding_dialog.dart';
 
 /// Screen displaying the daily GM journey, adaptive schedule, and active weakness queue.
 class DailyJourneyScreen extends StatefulWidget {
@@ -30,6 +31,18 @@ class _DailyJourneyScreenState extends State<DailyJourneyScreen> {
     _profile = widget.repository.getProfile();
     _selectedBudgetMinutes = _profile.dailyTimeBudgetMinutes;
     _updatePlan();
+  }
+
+  String _getCausalWhyText(CurriculumDay day) {
+    final weakNodes = widget.repository.getSkillNodes().where((n) => n.status == SkillStatus.reviewDue || n.status == SkillStatus.learning).toList();
+    if (weakNodes.isNotEmpty) {
+      final node = weakNodes.first;
+      return '${node.axis.title} prioritized today because your recent drill accuracy was ${(node.isolatedAccuracy * 100).toStringAsFixed(0)}% with ${node.recurrenceCount} recurring inaccuracies.';
+    }
+    if (day.dayNumber > 1) {
+      return 'Today\'s lesson directly builds on Day ${day.dayNumber - 1} foundational knowledge, spiraling into deeper pattern synthesis.';
+    }
+    return 'Welcome! Today establishes the visual coordinate reflexes and board anatomy essential for all future tactical calculations.';
   }
 
   void _updatePlan() {
@@ -62,6 +75,95 @@ class _DailyJourneyScreenState extends State<DailyJourneyScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            // Onboarding Level Selection Banner (Non-blocking)
+            if (!_profile.hasCompletedDiagnostic)
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.all(16),
+                margin: const EdgeInsets.only(bottom: 20),
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      ChessTheme.primary.withAlpha(25),
+                      ChessTheme.accentGold.withAlpha(25),
+                    ],
+                  ),
+                  borderRadius: BorderRadius.circular(12),
+                  border: Border.all(color: ChessTheme.primaryLight.withAlpha(100)),
+                ),
+                child: Wrap(
+                  alignment: WrapAlignment.spaceBetween,
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  spacing: 16,
+                  runSpacing: 12,
+                  children: [
+                    ConstrainedBox(
+                      constraints: const BoxConstraints(maxWidth: 480),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          const Icon(Icons.explore, color: ChessTheme.accentGold, size: 28),
+                          const SizedBox(width: 12),
+                          Expanded(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'First Time? Select Your Starting Level',
+                                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: context.txt),
+                                ),
+                                const SizedBox(height: 2),
+                                Text(
+                                  'Choose from 5 tiers or take an optional diagnostic.',
+                                  style: TextStyle(fontSize: 12, color: context.txtSec),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Wrap(
+                      spacing: 10,
+                      runSpacing: 8,
+                      children: [
+                        OutlinedButton(
+                          onPressed: () {
+                            setState(() {
+                              _profile.hasCompletedDiagnostic = true;
+                              widget.repository.saveProfile(_profile);
+                            });
+                          },
+                          child: const Text('Start Day 1 (Beginner)'),
+                        ),
+                        ElevatedButton.icon(
+                          icon: const Icon(Icons.tune, size: 16),
+                          label: const Text('Choose Tier / Diagnostic'),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: ChessTheme.primary,
+                            foregroundColor: Colors.black,
+                          ),
+                          onPressed: () {
+                            showDialog<void>(
+                              context: context,
+                              builder: (ctx) => OnboardingDialog(
+                                repository: widget.repository,
+                                onPlanSelected: (day) {
+                                  setState(() {
+                                    _profile = widget.repository.getProfile();
+                                    _updatePlan();
+                                  });
+                                },
+                              ),
+                            );
+                          },
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+
             // Unfinished Game Quick-Resume Banner
             Builder(
               builder: (ctx) {
@@ -74,9 +176,9 @@ class _DailyJourneyScreenState extends State<DailyJourneyScreen> {
                   padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                   margin: const EdgeInsets.only(bottom: 20),
                   decoration: BoxDecoration(
-                    color: ChessTheme.accentGold.withValues(alpha: 0.12),
+                    color: ChessTheme.accentGold.withOpacity(0.12),
                     borderRadius: BorderRadius.circular(12),
-                    border: Border.all(color: ChessTheme.accentGold.withValues(alpha: 0.4)),
+                    border: Border.all(color: ChessTheme.accentGold.withOpacity(0.4)),
                   ),
                   child: Wrap(
                     alignment: WrapAlignment.spaceBetween,
@@ -198,6 +300,59 @@ class _DailyJourneyScreenState extends State<DailyJourneyScreen> {
                       minHeight: 8,
                       backgroundColor: context.surfLight,
                       valueColor: const AlwaysStoppedAnimation<Color>(ChessTheme.primary),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+
+                  // Causal "WHY" Diagnostic Card
+                  Container(
+                    width: double.infinity,
+                    padding: const EdgeInsets.all(12),
+                    decoration: BoxDecoration(
+                      color: Colors.purple.withAlpha(20),
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(color: Colors.purple.withAlpha(60)),
+                    ),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Icon(Icons.psychology, color: Colors.purpleAccent, size: 20),
+                        const SizedBox(width: 10),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                'WHY THIS IS PRIORITIZED TODAY:',
+                                style: TextStyle(
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.bold,
+                                  letterSpacing: 0.8,
+                                  color: Colors.purpleAccent,
+                                ),
+                              ),
+                              const SizedBox(height: 3),
+                              Text(
+                                _getCausalWhyText(dayData),
+                                style: TextStyle(fontSize: 12, height: 1.3, color: context.txt),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 14),
+
+                  // Primary Lesson Player Launcher
+                  FilledButton.icon(
+                    onPressed: () => widget.onNavigate('curriculum', args: {'dayNumber': _profile.currentDay}),
+                    icon: const Icon(Icons.school, size: 18),
+                    label: Text('Start Day ${_profile.currentDay}: 8-Stage Interactive Lesson'),
+                    style: FilledButton.styleFrom(
+                      backgroundColor: ChessTheme.primaryLight,
+                      padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 12),
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                     ),
                   ),
                 ],

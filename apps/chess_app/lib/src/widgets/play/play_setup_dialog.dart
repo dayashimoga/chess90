@@ -213,7 +213,7 @@ class _PlaySetupDialogState extends State<PlaySetupDialog> {
                 Text('TIME CONTROL', style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: context.txtMut)),
                 const SizedBox(height: 8),
                 DropdownButtonFormField<String>(
-                  initialValue: _selectedTimeControl,
+                  value: _selectedTimeControl,
                   decoration: InputDecoration(
                     contentPadding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
                     filled: true,

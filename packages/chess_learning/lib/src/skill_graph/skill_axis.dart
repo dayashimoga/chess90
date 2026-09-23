@@ -19,18 +19,33 @@ enum SkillAxis {
   const SkillAxis(this.title, this.description);
 }
 
-/// Mastery states for skill nodes.
+/// Mastery states for skill nodes representing the full adaptive mastery spiral:
+/// UNSEEN -> LEARNING -> GUIDED -> PRACTICING -> INDEPENDENT -> MASTERED -> REVIEW-DUE.
 enum SkillStatus {
   unseen('Unseen'),
   learning('Learning'),
+  guided('Guided Practice'),
   practicing('Practicing'),
-  weak('Weak'),
-  retest('Retest Required'),
+  independent('Independent'),
   mastered('Mastered'),
-  decaying('Decaying');
+  reviewDue('Review Due'),
+
+  // Backwards-compatible aliases for legacy persistence
+  weak('Needs Review'),
+  retest('Retest Required'),
+  decaying('Review Due');
 
   final String label;
   const SkillStatus(this.label);
+
+  static SkillStatus parse(String name) {
+    for (final s in SkillStatus.values) {
+      if (s.name.toLowerCase() == name.toLowerCase()) return s;
+    }
+    if (name.toLowerCase() == 'review_due') return SkillStatus.reviewDue;
+    if (name.toLowerCase() == 'guided_practice') return SkillStatus.guided;
+    return SkillStatus.unseen;
+  }
 }
 
 /// Represents an individual tracked node in the hierarchical skill graph.
@@ -155,7 +170,7 @@ class SkillNode {
       responseTimeMs: json['responseTimeMs'] as int? ?? 0,
       recurrenceCount: json['recurrenceCount'] as int? ?? 0,
       confidenceScore: (json['confidenceScore'] as num?)?.toDouble() ?? 0.5,
-      status: SkillStatus.values.firstWhere((s) => s.name == json['status']),
+      status: SkillStatus.parse(json['status'] as String? ?? 'unseen'),
       lastPracticed: DateTime.tryParse(json['lastPracticed'] as String? ?? '') ?? DateTime.now(),
     );
   }

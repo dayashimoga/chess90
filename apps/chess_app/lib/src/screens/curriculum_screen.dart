@@ -2,6 +2,7 @@ import 'package:chess_curriculum/chess_curriculum.dart';
 import 'package:chess_storage/chess_storage.dart';
 import 'package:flutter/material.dart';
 import '../theme/chess_theme.dart';
+import '../widgets/curriculum/lesson_player_widget.dart';
 import '../widgets/curriculum/reference_library_dialog.dart';
 
 /// 90-Day Curriculum browser and study material reader.
@@ -29,6 +30,35 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
   void dispose() {
     _searchController.dispose();
     super.dispose();
+  }
+
+  void _launchLessonPlayer(CurriculumDay day) {
+    showDialog<void>(
+      context: context,
+      barrierDismissible: false,
+      builder: (ctx) => LessonPlayerWidget(
+        day: day,
+        repository: widget.repository,
+        onLessonCompleted: () {
+          setState(() {
+            final profile = widget.repository.getProfile();
+            profile.completedDays.add(day.dayNumber);
+            if (day.dayNumber == profile.currentDay && profile.currentDay < 90) {
+              profile.currentDay++;
+            }
+            widget.repository.saveProfile(profile);
+          });
+          Navigator.of(ctx).pop();
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text('Congratulations! Day ${day.dayNumber} mastered and certified.'),
+              backgroundColor: Colors.green,
+            ),
+          );
+        },
+        onCancel: () => Navigator.of(ctx).pop(),
+      ),
+    );
   }
 
   @override
@@ -122,7 +152,7 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
                             const SizedBox(height: 10),
                             // Phase Selector Dropdown
                             DropdownButtonFormField<CurriculumPhase?>(
-                              initialValue: _selectedPhase,
+                              value: _selectedPhase,
                               isExpanded: true,
                               dropdownColor: context.surfLight,
                               decoration: InputDecoration(
@@ -335,7 +365,7 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
                       // Header: Phase, Display Label, Meta Badges & Action
                       LayoutBuilder(
                         builder: (context, constraints) {
-                          final isCompact = constraints.maxWidth < 700;
+                          final isCompact = constraints.maxWidth < 1100;
                           final infoColumn = Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -415,6 +445,18 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
                                 onPressed: () => ReferenceLibraryDialog.show(context),
                               ),
                               ElevatedButton.icon(
+                                icon: const Icon(Icons.school, size: 16),
+                                label: const Text('Start 8-Stage Lesson',
+                                    style: TextStyle(fontWeight: FontWeight.bold)),
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: ChessTheme.primaryLight,
+                                  foregroundColor: Colors.black,
+                                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                                ),
+                                onPressed: () => _launchLessonPlayer(currentDayData),
+                              ),
+                              ElevatedButton.icon(
                                 icon: const Icon(Icons.play_arrow),
                                 label: const Text('Launch Lab',
                                     style: TextStyle(fontWeight: FontWeight.bold)),
@@ -454,6 +496,64 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
                             ],
                           );
                         },
+                      ),
+
+                      const SizedBox(height: 20),
+
+                      // Pedagogical 8-Stage Flow Banner
+                      Container(
+                        width: double.infinity,
+                        padding: const EdgeInsets.all(16),
+                        decoration: BoxDecoration(
+                          color: ChessTheme.primary.withAlpha(20),
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(color: ChessTheme.primaryLight.withAlpha(80)),
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Wrap(
+                              alignment: WrapAlignment.spaceBetween,
+                              crossAxisAlignment: WrapCrossAlignment.center,
+                              spacing: 8,
+                              runSpacing: 4,
+                              children: [
+                                const Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Icon(Icons.auto_stories, color: ChessTheme.primaryLight, size: 16),
+                                    SizedBox(width: 6),
+                                    Text(
+                                      '8-STAGE FLOW',
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.bold,
+                                        letterSpacing: 0.8,
+                                        color: ChessTheme.primaryLight,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Text(
+                                  'No Reading-Only Completion',
+                                  style: TextStyle(fontSize: 10, fontStyle: FontStyle.italic, color: context.txtMut),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 10),
+                            Text(
+                              'LEARN → SEE → UNDERSTAND → GUIDED PRACTICE → INDEPENDENT PRACTICE → MINI-GAME → REVIEW → RETENTION TEST',
+                              style: TextStyle(fontSize: 11, fontWeight: FontWeight.w700, color: context.txt),
+                            ),
+                            const SizedBox(height: 12),
+                            FilledButton.icon(
+                              onPressed: () => _launchLessonPlayer(currentDayData),
+                              icon: const Icon(Icons.play_circle_outline, size: 18),
+                              label: Text('Launch Interactive Lesson Player (Day ${currentDayData.dayNumber})'),
+                              style: FilledButton.styleFrom(backgroundColor: ChessTheme.primaryLight),
+                            ),
+                          ],
+                        ),
                       ),
 
                       const SizedBox(height: 20),
@@ -917,7 +1017,7 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
                   margin: const EdgeInsets.only(top: 2),
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
-                    color: ChessTheme.primary.withValues(alpha: 0.2),
+                    color: ChessTheme.primary.withOpacity(0.2),
                     shape: BoxShape.circle,
                   ),
                   child: Text(

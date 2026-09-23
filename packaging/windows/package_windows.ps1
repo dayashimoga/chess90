@@ -293,16 +293,22 @@ if ($isccExe) {
 }
 
 # 4. Create Clean Unnested Portable ZIP Archive
-Write-Host "`n[4/4] Creating Clean Unnested Portable ZIP Archive..." -ForegroundColor Yellow
-$outZip = Join-Path $OutputDir "ChessMaster-Windows-x64.zip"
-if (Test-Path $outZip) { Remove-Item $outZip -Force }
+Write-Host "`n[4/4] Creating Clean Unnested Portable ZIP Archive (ChessMaster-Windows-x64-Portable.zip)..." -ForegroundColor Yellow
+$outPortableZip = Join-Path $OutputDir "ChessMaster-Windows-x64-Portable.zip"
+$outLegacyZip = Join-Path $OutputDir "ChessMaster-Windows-x64.zip"
 
-Compress-Archive -Path "$stagingDir\*" -DestinationPath $outZip -Force
-$zipSizeMb = [math]::Round((Get-Item $outZip).Length / 1MB, 2)
-Write-Host "  -> Generated ChessMaster-Windows-x64.zip ($zipSizeMb MB)" -ForegroundColor Green
+if (Test-Path $outPortableZip) { Remove-Item $outPortableZip -Force }
+if (Test-Path $outLegacyZip) { Remove-Item $outLegacyZip -Force }
+
+Compress-Archive -Path "$stagingDir\*" -DestinationPath $outPortableZip -Force
+Copy-Item $outPortableZip $outLegacyZip -Force
+
+$zipSizeMb = [math]::Round((Get-Item $outPortableZip).Length / 1MB, 2)
+Write-Host "  -> Generated ChessMaster-Windows-x64-Portable.zip ($zipSizeMb MB)" -ForegroundColor Green
 
 # Copy to workspace root for release scripts
-Copy-Item $outZip (Join-Path $rootDir "ChessMaster-Windows-x64.zip") -Force
+Copy-Item $outPortableZip (Join-Path $rootDir "ChessMaster-Windows-x64-Portable.zip") -Force
+Copy-Item $outLegacyZip (Join-Path $rootDir "ChessMaster-Windows-x64.zip") -Force
 
 Write-Host "`n======================================================" -ForegroundColor Cyan
 Write-Host "         WINDOWS PACKAGING COMPLETED CLEANLY          " -ForegroundColor Cyan

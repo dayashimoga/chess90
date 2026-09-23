@@ -19,9 +19,11 @@ enum BoardSizeMode {
 
 /// User preference scaling for chessboard display.
 enum BoardScalePreference {
+  auto(0.0),
   small(0.85),
   medium(1.00),
-  large(1.15);
+  large(1.20),
+  max(1.45);
 
   final double multiplier;
   const BoardScalePreference(this.multiplier);
@@ -36,6 +38,7 @@ class BoardSizePolicy {
     required BoxConstraints constraints,
     BoardSizeMode mode = BoardSizeMode.standard,
     BoardScalePreference scale = BoardScalePreference.medium,
+    double? customScaleMultiplier,
     double horizontalPadding = 32.0,
     double verticalPadding = 32.0,
     bool hasEvaluationBar = false,
@@ -47,6 +50,8 @@ class BoardSizePolicy {
 
     if (maxSquare <= 0) return 280.0;
 
+    final effectiveMultiplier = customScaleMultiplier ?? scale.multiplier;
+
     double targetSize;
     switch (mode) {
       case BoardSizeMode.compact:
@@ -56,19 +61,28 @@ class BoardSizePolicy {
 
       case BoardSizeMode.standard:
         // Standard desktop/tablet workflow sizing:
-        // Responsive up to 540px, never smaller than 280px
-        if (maxSquare >= 560.0) {
-          targetSize = 500.0 * scale.multiplier;
+        if (scale == BoardScalePreference.auto) {
+          targetSize = maxSquare * 0.96;
+        } else if (effectiveMultiplier > 1.0) {
+          // Large or Max desktop scaling: dynamically expand up to 860px
+          targetSize = min(maxSquare * 0.96, 500.0 * effectiveMultiplier);
+        } else if (maxSquare >= 560.0) {
+          targetSize = 500.0 * effectiveMultiplier;
         } else {
-          targetSize = (maxSquare * 0.92) * scale.multiplier;
+          targetSize = (maxSquare * 0.92) * effectiveMultiplier;
         }
-        targetSize = targetSize.clamp(280.0, 560.0);
+        final maxClamp = (scale == BoardScalePreference.auto || effectiveMultiplier > 1.0) ? 860.0 : 560.0;
+        targetSize = targetSize.clamp(280.0, maxClamp);
         break;
 
       case BoardSizeMode.focus:
-        // Maximizes viewport for serious tournament focus, up to 660px
-        targetSize = (maxSquare * 0.96) * scale.multiplier;
-        targetSize = targetSize.clamp(320.0, 660.0);
+        // Maximizes viewport for serious tournament focus, up to 880px
+        if (scale == BoardScalePreference.auto) {
+          targetSize = maxSquare * 0.98;
+        } else {
+          targetSize = (maxSquare * 0.96) * (effectiveMultiplier > 0 ? effectiveMultiplier : 1.0);
+        }
+        targetSize = targetSize.clamp(320.0, 880.0);
         break;
 
       case BoardSizeMode.editorPreview:
@@ -82,3 +96,4 @@ class BoardSizePolicy {
     return min(targetSize, maxSquare);
   }
 }
+

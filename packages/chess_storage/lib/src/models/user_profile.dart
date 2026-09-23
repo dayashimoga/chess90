@@ -16,6 +16,8 @@ class UserProfile {
   bool showMovementArrows;
   String animationSpeed; // 'off', 'fast', 'normal', 'learning'
   bool soundEnabled;
+  bool hasCompletedDiagnostic;
+  List<int> completedDays;
   DateTime createdDate;
   DateTime lastActiveDate;
 
@@ -36,9 +38,12 @@ class UserProfile {
     this.showMovementArrows = true,
     this.animationSpeed = 'normal',
     this.soundEnabled = true,
+    this.hasCompletedDiagnostic = false,
+    List<int>? completedDays,
     DateTime? createdDate,
     DateTime? lastActiveDate,
-  })  : createdDate = createdDate ?? DateTime.now(),
+  })  : completedDays = completedDays ?? [],
+        createdDate = createdDate ?? DateTime.now(),
         lastActiveDate = lastActiveDate ?? DateTime.now();
 
   static UserProfile createDefault() => UserProfile(
@@ -63,6 +68,8 @@ class UserProfile {
         'showMovementArrows': showMovementArrows,
         'animationSpeed': animationSpeed,
         'soundEnabled': soundEnabled,
+        'hasCompletedDiagnostic': hasCompletedDiagnostic,
+        'completedDays': completedDays,
         'createdDate': createdDate.toIso8601String(),
         'lastActiveDate': lastActiveDate.toIso8601String(),
       };
@@ -85,6 +92,8 @@ class UserProfile {
       showMovementArrows: json['showMovementArrows'] as bool? ?? true,
       animationSpeed: json['animationSpeed'] as String? ?? 'normal',
       soundEnabled: json['soundEnabled'] as bool? ?? true,
+      hasCompletedDiagnostic: json['hasCompletedDiagnostic'] as bool? ?? false,
+      completedDays: (json['completedDays'] as List<dynamic>?)?.cast<int>() ?? [],
       createdDate: DateTime.tryParse(json['createdDate'] as String? ?? '') ?? DateTime.now(),
       lastActiveDate: DateTime.tryParse(json['lastActiveDate'] as String? ?? '') ?? DateTime.now(),
     );

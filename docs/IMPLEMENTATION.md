@@ -120,3 +120,23 @@
   - Completed all 15 required documentation specifications in `docs/`: `ARCHITECTURE.md`, `LEARNING_DESIGN.md`, `CONTENT_INVENTORY.md`, `PLATFORM_MATRIX.md`, `BUILD_RELEASE.md`, `ANDROID.md`, `WEB.md`, `SETUP.md`, `PRODUCTION_CERTIFICATION.md`.
   - Kept `TODO.md` and `CHANGELOG.md` append-only.
 
+### Sprint 14: Zero-Host-Installation Podman Automation, Pedagogical Active-Learning Overhaul & Windows Portable Packaging
+- **Zero-Host-Installation Container Certification**:
+  - Engineered reproducible OCI containerization with Podman 5.8.3 (`infra/Containerfile`, `scripts/run_container.ps1`).
+  - Container encapsulates complete headless Linux environment: Dart stable, Flutter SDK, Stockfish UCI, FFmpeg, Clang, CMake, and build utilities.
+  - Zero packages, tools, or runtimes required on the host system.
+  - Verified `scripts/run_container.ps1 -Action "certify"` running unit tests, 90-day simulation, pedagogical audit, coverage gates, performance benchmarks, and security audits in complete isolation.
+- **Non-Blocking Onboarding & Daily Journey Overhaul**:
+  - Replaced modal dialog traps with an embedded, non-blocking onboarding banner card in `DailyJourneyScreen`.
+  - Beginners launch Day 1 in 1 tap without mandatory diagnostic barriers.
+  - 5 starting tiers supported (`Complete Beginner`, `Beginner with Basics`, `Intermediate`, `Advanced`, `Optional Diagnostic`).
+- **8-Stage Active Pedagogical Lesson Player**:
+  - Enforced strict active mastery cycle: `LEARN → SEE → UNDERSTAND → GUIDED PRACTICE → INDEPENDENT PRACTICE → MINI-GAME → REVIEW → RETENTION TEST`.
+  - Zero reading-only completions permitted; progressive 80% passing gate enforced.
+- **Clean Unnested Windows Portable Distribution**:
+  - Generated `dist/ChessMaster-Windows-x64-Portable.zip` (12.07 MB) with true unnested directory layout (`ChessMaster.exe`, `flutter_windows.dll`, and `data/` at the root).
+  - Native standalone launcher `ChessMaster-Portable.exe` (11.65 MB) compiled via Windows built-in `csc.exe` with silent zero-prompt unpacking.
+- **Universal Flutter API Backwards Compatibility**:
+  - Refactored UI components to universal Flutter primitives (`CardTheme`, `DialogTheme`, `activeColor`, `SemanticsService.announce`, `.withOpacity`).
+
+

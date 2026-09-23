@@ -151,7 +151,7 @@ class _BoardCustomizerDialogState extends State<BoardCustomizerDialog> {
                   contentPadding: EdgeInsets.zero,
                   title: Text('Board Coordinates (1-8, a-h)', style: TextStyle(fontSize: 12, color: context.txt)),
                   value: _showCoordinates,
-                  activeThumbColor: ChessTheme.primary,
+                  activeColor: ChessTheme.primary,
                   onChanged: (val) {
                     setState(() => _showCoordinates = val);
                     _apply();
@@ -162,7 +162,7 @@ class _BoardCustomizerDialogState extends State<BoardCustomizerDialog> {
                   contentPadding: EdgeInsets.zero,
                   title: Text('Last Move Highlights', style: TextStyle(fontSize: 12, color: context.txt)),
                   value: _showMoveHighlights,
-                  activeThumbColor: ChessTheme.primary,
+                  activeColor: ChessTheme.primary,
                   onChanged: (val) {
                     setState(() => _showMoveHighlights = val);
                     _apply();
@@ -173,7 +173,7 @@ class _BoardCustomizerDialogState extends State<BoardCustomizerDialog> {
                   contentPadding: EdgeInsets.zero,
                   title: Text('Legal Move Indicators (Dots/Rings)', style: TextStyle(fontSize: 12, color: context.txt)),
                   value: _showLegalMoveHints,
-                  activeThumbColor: ChessTheme.primary,
+                  activeColor: ChessTheme.primary,
                   onChanged: (val) {
                     setState(() => _showLegalMoveHints = val);
                     _apply();

@@ -1,13 +1,13 @@
 # Disposable development container for ChessMaster platform
-FROM dart:stable AS build
+FROM ghcr.io/cirruslabs/flutter:3.24.3 AS build
+
+USER root
+
+# Configure git safe directory
+RUN git config --global --add safe.directory '*'
 
 # Install Python, FFmpeg, Stockfish and build utilities
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    curl \
-    git \
-    unzip \
-    xz-utils \
-    python3 \
     ffmpeg \
     stockfish \
     clang \
@@ -19,26 +19,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/* \
     && ln -sf /usr/games/stockfish /usr/local/bin/stockfish
 
-# Configure tar to avoid ownership errors in rootless container runtimes
-ENV TAR_OPTIONS="--no-same-owner"
-
-# Install Flutter stable (shallow clone for rapid container build & zero disk bloat)
-ENV FLUTTER_HOME="/opt/flutter"
-ENV PATH="/usr/local/bin:$FLUTTER_HOME/bin:/usr/games:$PATH"
-
-RUN printf '#!/bin/sh\nexec /bin/tar --no-same-owner "$@"\n' > /usr/local/bin/tar \
-    && chmod +x /usr/local/bin/tar \
-    && git config --global --add safe.directory '*' \
-    && git clone --depth 1 -b stable https://github.com/flutter/flutter.git $FLUTTER_HOME \
-    && flutter config --no-analytics \
-    && flutter config --enable-linux-desktop \
-    && flutter precache --web --linux
+ENV PATH="/usr/games:/sdks/flutter/bin:$PATH"
 
 WORKDIR /workspace
 
-# Copy monorepo
-COPY . .
-
 # Run test verification
 CMD ["bash", "scripts/test.sh"]
+
 

@@ -266,8 +266,8 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
                       margin: const EdgeInsets.only(bottom: 16),
                       decoration: BoxDecoration(
                         color: _engine.isFallback
-                            ? Colors.amber.withValues(alpha: 0.12)
-                            : const Color(0xFF10B981).withValues(alpha: 0.12),
+                            ? Colors.amber.withOpacity(0.12)
+                            : const Color(0xFF10B981).withOpacity(0.12),
                         borderRadius: BorderRadius.circular(8),
                         border: Border.all(
                           color: _engine.isFallback
@@ -305,8 +305,8 @@ class _AnalysisScreenState extends State<AnalysisScreen> {
                             style: TextStyle(
                               fontSize: 11,
                               color: _engine.isFallback
-                                  ? Colors.amber.withValues(alpha: 0.8)
-                                  : const Color(0xFF10B981).withValues(alpha: 0.8),
+                                  ? Colors.amber.withOpacity(0.8)
+                                  : const Color(0xFF10B981).withOpacity(0.8),
                             ),
                           ),
                         ],

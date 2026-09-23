@@ -1,6 +1,7 @@
 import 'package:chess_engine/chess_engine.dart';
 import 'package:chess_storage/chess_storage.dart';
 import 'package:flutter/material.dart';
+import 'src/screens/academy_screen.dart';
 import 'src/screens/analysis_screen.dart';
 import 'src/screens/certification_screen.dart';
 import 'src/screens/curriculum_screen.dart';
@@ -14,6 +15,7 @@ import 'src/screens/settings_storage_screen.dart';
 import 'src/screens/video_studio_screen.dart';
 import 'src/screens/weakness_analytics_screen.dart';
 import 'src/theme/chess_theme.dart';
+import 'src/widgets/curriculum/chess_companion_dialog.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -150,6 +152,13 @@ class _MainShellState extends State<MainShell> {
           ),
         ),
         actions: [
+          // Chess Companion (16 Cheat Sheets & Algorithm)
+          IconButton(
+            icon: const Icon(Icons.auto_stories, size: 20),
+            tooltip: 'Chess Companion (16 Cheat Sheets & Algorithm)',
+            onPressed: () => ChessCompanionDialog.show(context),
+          ),
+
           // Theme Toggle
           IconButton(
             icon: Icon(widget.isDarkMode ? Icons.light_mode : Icons.dark_mode, size: 20),
@@ -236,6 +245,10 @@ class _MainShellState extends State<MainShell> {
                                 label: Text('Curriculum'),
                               ),
                               NavigationRailDestination(
+                                icon: Icon(Icons.school),
+                                label: Text('Academy'),
+                              ),
+                              NavigationRailDestination(
                                 icon: Icon(Icons.science),
                                 label: Text('Labs'),
                               ),
@@ -299,22 +312,24 @@ class _MainShellState extends State<MainShell> {
         return 0;
       case 'curriculum':
         return 1;
-      case 'labs':
+      case 'academy':
         return 2;
-      case 'play':
+      case 'labs':
         return 3;
+      case 'play':
+        return 4;
       case 'analysis':
       case 'openings':
       case 'endgame':
       case 'models':
-        return 4;
-      case 'video':
         return 5;
+      case 'video':
+        return 6;
       case 'cert':
       case 'weakness':
-        return 6;
-      case 'settings':
         return 7;
+      case 'settings':
+        return 8;
       default:
         return 0;
     }
@@ -327,16 +342,18 @@ class _MainShellState extends State<MainShell> {
       case 1:
         return 'curriculum';
       case 2:
-        return 'labs';
+        return 'academy';
       case 3:
-        return 'play';
+        return 'labs';
       case 4:
-        return 'analysis';
+        return 'play';
       case 5:
-        return 'video';
+        return 'analysis';
       case 6:
-        return 'cert';
+        return 'video';
       case 7:
+        return 'cert';
+      case 8:
         return 'settings';
       default:
         return 'daily';
@@ -611,7 +628,7 @@ class _MainShellState extends State<MainShell> {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
         decoration: BoxDecoration(
-          color: isSelected ? ChessTheme.primary.withValues(alpha: 0.2) : Colors.transparent,
+          color: isSelected ? ChessTheme.primary.withOpacity(0.2) : Colors.transparent,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
             color: isSelected ? ChessTheme.primaryLight : Colors.transparent,
@@ -655,6 +672,11 @@ class _MainShellState extends State<MainShell> {
         );
       case 'curriculum':
         return CurriculumScreen(
+          repository: _repository,
+          onNavigate: _navigateTo,
+        );
+      case 'academy':
+        return AcademyScreen(
           repository: _repository,
           onNavigate: _navigateTo,
         );

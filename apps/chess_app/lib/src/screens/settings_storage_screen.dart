@@ -301,7 +301,7 @@ class _SettingsStorageScreenState extends State<SettingsStorageScreen> {
                       ),
                       Switch(
                         value: context.isDark,
-                        activeThumbColor: ChessTheme.primaryLight,
+                        activeColor: ChessTheme.primaryLight,
                         onChanged: (val) {
                           final profile = widget.repository.getProfile();
                           profile.isDarkMode = val;
@@ -331,7 +331,7 @@ class _SettingsStorageScreenState extends State<SettingsStorageScreen> {
                                     Text('Board Theme', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: context.txtSec)),
                                     const SizedBox(height: 6),
                                     DropdownButtonFormField<String>(
-                                      initialValue: profile.boardThemeName,
+                                      value: profile.boardThemeName,
                                       isExpanded: true,
                                       dropdownColor: context.surfLight,
                                       decoration: InputDecoration(
@@ -366,7 +366,7 @@ class _SettingsStorageScreenState extends State<SettingsStorageScreen> {
                                     Text('Piece Theme', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: context.txtSec)),
                                     const SizedBox(height: 6),
                                     DropdownButtonFormField<String>(
-                                      initialValue: profile.pieceThemeName,
+                                      value: profile.pieceThemeName,
                                       isExpanded: true,
                                       dropdownColor: context.surfLight,
                                       decoration: InputDecoration(
@@ -406,7 +406,7 @@ class _SettingsStorageScreenState extends State<SettingsStorageScreen> {
                                     Text('Board Sizing Policy', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: context.txtSec)),
                                     const SizedBox(height: 6),
                                     DropdownButtonFormField<String>(
-                                      initialValue: profile.boardSizeMode,
+                                      value: profile.boardSizeMode,
                                       isExpanded: true,
                                       dropdownColor: context.surfLight,
                                       decoration: InputDecoration(
@@ -442,7 +442,7 @@ class _SettingsStorageScreenState extends State<SettingsStorageScreen> {
                                     Text('Move Animation Speed', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: context.txtSec)),
                                     const SizedBox(height: 6),
                                     DropdownButtonFormField<String>(
-                                      initialValue: profile.animationSpeed,
+                                      value: profile.animationSpeed,
                                       isExpanded: true,
                                       dropdownColor: context.surfLight,
                                       decoration: InputDecoration(
@@ -482,7 +482,7 @@ class _SettingsStorageScreenState extends State<SettingsStorageScreen> {
                                 children: [
                                   Switch(
                                     value: profile.showCoordinates,
-                                    activeThumbColor: ChessTheme.primaryLight,
+                                    activeColor: ChessTheme.primaryLight,
                                     onChanged: (val) {
                                       profile.showCoordinates = val;
                                       widget.repository.saveProfile(profile);
@@ -498,7 +498,7 @@ class _SettingsStorageScreenState extends State<SettingsStorageScreen> {
                                 children: [
                                   Switch(
                                     value: profile.showMoveHighlights,
-                                    activeThumbColor: ChessTheme.primaryLight,
+                                    activeColor: ChessTheme.primaryLight,
                                     onChanged: (val) {
                                       profile.showMoveHighlights = val;
                                       widget.repository.saveProfile(profile);
@@ -514,7 +514,7 @@ class _SettingsStorageScreenState extends State<SettingsStorageScreen> {
                                 children: [
                                   Switch(
                                     value: profile.showLegalMoveHints,
-                                    activeThumbColor: ChessTheme.primaryLight,
+                                    activeColor: ChessTheme.primaryLight,
                                     onChanged: (val) {
                                       profile.showLegalMoveHints = val;
                                       widget.repository.saveProfile(profile);
@@ -530,7 +530,7 @@ class _SettingsStorageScreenState extends State<SettingsStorageScreen> {
                                 children: [
                                   Switch(
                                     value: profile.showMovementArrows,
-                                    activeThumbColor: ChessTheme.primaryLight,
+                                    activeColor: ChessTheme.primaryLight,
                                     onChanged: (val) {
                                       profile.showMovementArrows = val;
                                       widget.repository.saveProfile(profile);

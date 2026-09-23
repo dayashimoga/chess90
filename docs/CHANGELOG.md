@@ -209,4 +209,28 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   - 0 static analysis issues across monorepo and tools (`flutter analyze`).
   - 16/16 Acceptance gates verified in `tests/acceptance_runner.dart`.
 
+---
+
+## [1.5.0] - 2026-09-23
+
+### Added
+- **Zero-Host-Installation Podman Automation**:
+  - Engineered disposable development and certification containerization via Podman 5.8.3 (`infra/Containerfile`, `scripts/run_container.ps1`).
+  - Container encapsulates complete headless Linux environment: Dart stable, Flutter SDK, Stockfish UCI, FFmpeg, Clang, CMake, and build utilities.
+  - Zero packages, tools, or runtimes required on the host system.
+  - Clean-room certification command `scripts/run_container.ps1 -Action "certify"` runs end-to-end unit, integration, pedagogical, performance, security, and manifest generation passes in complete isolation.
+- **Non-Blocking Onboarding & Daily Journey Overhaul**:
+  - Replaced modal dialog traps with an embedded, non-blocking onboarding banner card in `DailyJourneyScreen`.
+  - Beginners launch Day 1 in 1 tap without mandatory diagnostic barriers.
+  - 5 starting tiers supported (`Complete Beginner`, `Beginner with Basics`, `Intermediate`, `Advanced`, `Optional Diagnostic`).
+- **8-Stage Active Pedagogical Lesson Player**:
+  - Enforced strict active mastery cycle: `LEARN → SEE → UNDERSTAND → GUIDED PRACTICE → INDEPENDENT PRACTICE → MINI-GAME → REVIEW → RETENTION TEST`.
+  - Zero reading-only completions permitted; progressive 80% passing gate enforced.
+- **Clean Unnested Windows Portable Distribution**:
+  - Generated `dist/ChessMaster-Windows-x64-Portable.zip` (12.07 MB) with true unnested directory layout (`ChessMaster.exe`, `flutter_windows.dll`, and `data/` at the root).
+  - Native standalone launcher `ChessMaster-Portable.exe` (11.65 MB) compiled via Windows built-in `csc.exe` with silent zero-prompt unpacking.
+- **Universal Flutter API Backwards Compatibility**:
+  - Refactored UI components to universal Flutter primitives (`CardTheme`, `DialogTheme`, `activeColor`, `SemanticsService.announce`, `.withOpacity`).
+
+
 

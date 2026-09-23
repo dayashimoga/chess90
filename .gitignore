@@ -30,6 +30,7 @@ dist/
 # Release Binaries
 ChessMaster-Portable.exe
 ChessMaster-Windows-x64.zip
+ChessMaster-Windows-x64-Portable.zip
 ChessMaster-Setup.exe
 ChessMaster.apk
 ChessMaster.aab

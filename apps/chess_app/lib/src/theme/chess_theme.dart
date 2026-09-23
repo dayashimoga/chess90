@@ -92,7 +92,7 @@ class ChessTheme {
         surface: surface,
         error: qualityBlunder,
       ),
-      cardTheme: CardThemeData(
+      cardTheme: CardTheme(
         color: surface,
         elevation: 0,
         shape: RoundedRectangleBorder(
@@ -104,7 +104,7 @@ class ChessTheme {
         color: border,
         thickness: 1,
       ),
-      dialogTheme: const DialogThemeData(
+      dialogTheme: const DialogTheme(
         backgroundColor: surface,
         titleTextStyle: TextStyle(color: textPrimary, fontSize: 18, fontWeight: FontWeight.bold),
         contentTextStyle: TextStyle(color: textSecondary, fontSize: 14),
@@ -143,7 +143,7 @@ class ChessTheme {
         surface: surfaceLightCard,
         error: qualityBlunder,
       ),
-      cardTheme: CardThemeData(
+      cardTheme: CardTheme(
         color: surfaceLightCard,
         elevation: 0,
         shape: RoundedRectangleBorder(
@@ -155,7 +155,7 @@ class ChessTheme {
         color: borderLightGray,
         thickness: 1,
       ),
-      dialogTheme: const DialogThemeData(
+      dialogTheme: const DialogTheme(
         backgroundColor: surfaceLightCard,
         titleTextStyle: TextStyle(color: textPrimaryDark, fontSize: 18, fontWeight: FontWeight.bold),
         contentTextStyle: TextStyle(color: textSecondaryDark, fontSize: 14),

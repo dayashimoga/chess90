@@ -1,8 +1,8 @@
 {
   "platformName": "ChessMaster 90-Day GM Mastery Platform",
   "version": "1.4.0",
-  "commitSha": "09b397b6d8dbfc7f32de84306f94e47f52c7c96f",
-  "buildTimestamp": "2026-09-13T05:10:00.256491",
+  "commitSha": "71c41f2d20ee824a6b7f993806bca5665d15335f",
+  "buildTimestamp": "2026-09-23T10:06:39.252532",
   "overallStatus": "PRODUCTION_CERTIFIED",
   "certifiedGates": [
     "Single Chess Rendering Engine (100% Vector Staunton in-app & MP4 rasterizer, 0 letter-circle placeholders)",
@@ -29,9 +29,9 @@
       "buildCommand": "flutter build web --release && zip -r ChessMaster-Web.zip .",
       "ciJob": "build-web",
       "e2eJob": "web-e2e",
-      "sizeBytes": 14197046,
+      "sizeBytes": 14196328,
       "sizeMb": "13.54",
-      "sha256": "d061fbb3904c99744ee48550b3e144d55c4a0a81fad35ae65b719b617c6e009a",
+      "sha256": "4968a2757aecf01eec0449e1437ea5abe594e872f1626a8a4323ac77cf8b8747",
       "runtimeResult": "HTTP 200 OK, CanvasKit rendering, Offline PWA ServiceWorker functional",
       "evidence": "Headless Python HTTP server + curl smoke check passing",
       "status": "PROVEN"
@@ -43,9 +43,9 @@
       "buildCommand": "flutter build windows --release && powershell packaging\\windows\\package_windows.ps1",
       "ciJob": "build-windows",
       "e2eJob": "windows-smoke",
-      "sizeBytes": 0,
-      "sizeMb": "N/A",
-      "sha256": "UNAVAILABLE",
+      "sizeBytes": 12656722,
+      "sizeMb": "12.07",
+      "sha256": "b76825dfd960e3dd1074c29066b7ed00e8e109ba9fd8423efec719d7f63563d5",
       "runtimeResult": "Native Flutter Win32 runtime, Stockfish/FFmpeg integration ready",
       "evidence": "Unnested zip containing ChessMaster.exe, flutter_windows.dll, data/ folder, Launch-ChessMaster.bat",
       "status": "PROVEN"
@@ -57,9 +57,9 @@
       "buildCommand": "powershell packaging\\windows\\package_windows.ps1 (C# Self-Extractor / 7z SFX)",
       "ciJob": "build-windows",
       "e2eJob": "windows-smoke",
-      "sizeBytes": 0,
-      "sizeMb": "N/A",
-      "sha256": "UNAVAILABLE",
+      "sizeBytes": 12216832,
+      "sizeMb": "11.65",
+      "sha256": "984c57b2b172881192027a3055ba4cf12f24e7105f316059823fa32430f80560",
       "runtimeResult": "Single-click zero-install execution to %LocalAppData%\\ChessMaster\\portable",
       "evidence": "Standalone executable launching ChessMaster.exe without manual archive extraction",
       "status": "PROVEN"

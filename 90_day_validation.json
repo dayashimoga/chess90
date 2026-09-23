@@ -1,6 +1,6 @@
 {
   "version": "1.3.0",
-  "timestamp": "2026-09-13T05:09:36.882717Z",
+  "timestamp": "2026-09-23T10:05:00.603666Z",
   "status": "PASSED",
   "simulations": {
     "personaA_Dedicated": {
@@ -21,37 +21,37 @@
       },
       "day90Radar": {
         "tactics": 1.0,
-        "calculation": 0.9484000000000002,
+        "calculation": 0.9536000000000003,
         "visualization": 0.7952500000000005,
-        "strategy": 0.9079000000000003,
-        "pawnStructures": 0.7865500000000004,
-        "endgames": 0.8949000000000003,
+        "strategy": 0.8923000000000003,
+        "pawnStructures": 0.7778500000000004,
+        "endgames": 0.8923000000000003,
         "openings": 0.8528500000000003,
         "attack": 0.8528500000000003,
         "defense": 0.7865500000000004,
         "conversion": 0.8636500000000005,
-        "timeManagement": 0.8039500000000005,
+        "timeManagement": 0.8083000000000005,
         "tournamentPlay": 1.0
       },
       "skillDeltas": {
         "tactics": 0.69,
-        "calculation": 0.6384000000000002,
+        "calculation": 0.6436000000000003,
         "visualization": 0.4852500000000004,
-        "strategy": 0.5979000000000002,
-        "pawnStructures": 0.47655000000000036,
-        "endgames": 0.5849000000000002,
+        "strategy": 0.5823000000000003,
+        "pawnStructures": 0.4678500000000003,
+        "endgames": 0.5823000000000003,
         "openings": 0.5428500000000003,
         "attack": 0.5428500000000003,
         "defense": 0.47655000000000036,
         "conversion": 0.5536500000000004,
-        "timeManagement": 0.49395000000000044,
+        "timeManagement": 0.4983000000000004,
         "tournamentPlay": 0.69
       },
       "baselineOverallMastery": 21.700000000000003,
-      "overallMastery": 92.659625,
+      "overallMastery": 91.37775000000002,
       "srsItemsCount": 0,
       "postRoadmap": [
-        "Focus 1: Deep Dive on Defensive Tenacity (Current Score: 78.7%)",
+        "Focus 1: Deep Dive on Pawn Structures (Current Score: 77.8%)",
         "Focus 2: Maintain 30-day spaced repetition queue (0 active items)",
         "Focus 3: Tournament simulation against 2200+ Elo engine"
       ]
@@ -62,7 +62,7 @@
       "threshold": 0.8,
       "advancementBlocked": true,
       "remediationEngaged": true,
-      "remediationProtocol": "Mandatory Remediation Protocol: Review Day 11 foundations, drill 10 targeted flashcards on tactics, and repeat exercises until achieving >= 85%.",
+      "remediationProtocol": "Review Day 11 foundational concepts, drill 5 targeted flashcards on tactics, and repeat exercise set.",
       "retestScore": 0.9,
       "retestPassed": true
     },
@@ -123,16 +123,19 @@
     "prerequisitesValid": true,
     "difficultyProgressionMonotonic": true,
     "phaseAverages": {
-      "Phase 1": 1200.0,
-      "Phase 2": 1298.0,
-      "Phase 3": 1487.0,
-      "Phase 4": 1683.0,
-      "Phase 5": 1879.0,
-      "Phase 6": 2026.0,
-      "Phase 7": 2124.0,
-      "Phase 8": 2222.0,
-      "Phase 9": 2320.0,
-      "Phase 10": 2411.0
+      "Phase 1": 1243.4285714285713,
+      "Phase 2": 1345.5714285714287,
+      "Phase 3": 1447.857142857143,
+      "Phase 4": 1550.0,
+      "Phase 5": 1652.2857142857142,
+      "Phase 6": 1754.5714285714287,
+      "Phase 7": 1856.857142857143,
+      "Phase 8": 1959.0,
+      "Phase 9": 2061.285714285714,
+      "Phase 10": 2163.5714285714284,
+      "Phase 11": 2265.8571428571427,
+      "Phase 12": 2368.0,
+      "Phase 13": 2463.0
     },
     "fideTitleDisclaimerPresent": true
   }

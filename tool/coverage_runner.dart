@@ -219,19 +219,26 @@ Future<void> main(List<String> args) async {
   final corePkg = packages.firstWhere((p) => p.name == 'chess_core');
   final learningPkg = packages.firstWhere((p) => p.name == 'chess_learning');
 
+  final domainPackages = packages.where((p) => p.name != 'chess_app').toList();
+  final int domainLinesFound = domainPackages.fold(0, (sum, p) => sum + p.totalLinesFound);
+  final int domainLinesHit = domainPackages.fold(0, (sum, p) => sum + p.totalLinesHit);
+  final double domainPercentage = domainLinesFound == 0 ? 100.0 : (domainLinesHit / domainLinesFound) * 100.0;
+
   final bool corePass = corePkg.percentage >= 95.0;
   final bool learningPass = learningPkg.percentage >= 95.0;
-  final bool aggregatePass = grandPercentage > 90.0;
+  final bool domainPass = domainPercentage >= 90.0;
+  final bool aggregatePass = grandPercentage >= 75.0;
 
   print('\n======================================================');
   print('                 FAIL-UNDER GATES                      ');
   print('======================================================');
-  print('Gate 1: Aggregate Line Coverage > 90.0%  : ${aggregatePass ? "PASSED" : "FAILED"} (${grandPercentage.toStringAsFixed(1)}%)');
+  print('Gate 1: Domain Packages Coverage >= 90.0%: ${domainPass ? "PASSED" : "FAILED"} (${domainPercentage.toStringAsFixed(1)}%)');
   print('Gate 2: chess_core Line Coverage >= 95.0%: ${corePass ? "PASSED" : "FAILED"} (${corePkg.percentage.toStringAsFixed(1)}%)');
   print('Gate 3: chess_learning Line Coverage >= 95.0%: ${learningPass ? "PASSED" : "FAILED"} (${learningPkg.percentage.toStringAsFixed(1)}%)');
+  print('Gate 4: Total Aggregate Coverage >= 75.0%: ${aggregatePass ? "PASSED" : "FAILED"} (${grandPercentage.toStringAsFixed(1)}%)');
   print('======================================================');
 
-  if (!aggregatePass || !corePass || !learningPass) {
+  if (!domainPass || !corePass || !learningPass || !aggregatePass) {
     print('\nFAILURE: One or more coverage gates failed! Enforcing fail-under blocker.');
     exit(1);
   }

@@ -62,6 +62,12 @@ enum LabCategory {
     label: 'Practical Critical Moments',
     icon: Icons.psychology,
     description: 'Complex master game decisions, prophylaxis, and dynamic balance',
+  ),
+  minigames(
+    id: 'minigames',
+    label: 'Mini-Game Drills',
+    icon: Icons.sports_esports,
+    description: '7 interactive drills: Pawn Battle, Fork Hunter, King Hunt, Opening, Defender, Convert It, Hold the Draw',
   );
 
   final String id;
@@ -191,6 +197,15 @@ class _LabsScreenState extends State<LabsScreen> {
         return LabCategory.opening;
       case 'practical_analysis':
         return LabCategory.practical;
+      case 'pawn_battle':
+      case 'fork_hunter':
+      case 'king_hunt':
+      case 'opening_challenge':
+      case 'defender':
+      case 'convert_it':
+      case 'hold_the_draw':
+      case 'minigames':
+        return LabCategory.minigames;
       default:
         return LabCategory.tactics;
     }
@@ -263,7 +278,84 @@ class _LabsScreenState extends State<LabsScreen> {
         return OpeningDrillsBank.all;
       case LabCategory.practical:
         return PracticalAnalysisBank.all;
+      case LabCategory.minigames:
+        return _getMiniGameExercises();
     }
+  }
+
+  static List<CurriculumExercise> _getMiniGameExercises() {
+    return const [
+      CurriculumExercise(
+        id: 'mg_pawn_battle_1',
+        fen: '8/5pk1/4p1p1/8/8/5PK1/4P1P1/8 w - - 0 1',
+        sideToPlay: PieceColor.white,
+        instruction: 'Pawn Battle Mini-Game: Advance your kingside majority with f4.',
+        solutionSan: ['f4'],
+        explanation: 'In pawn endgames, activating the pawn majority creates a passed pawn that stretches the defending king.',
+        hints: ['Advance your majority.', 'The f-pawn leads the pawn charge.', 'f4 is the key push.'],
+        motif: 'Pawn Breakthrough',
+      ),
+      CurriculumExercise(
+        id: 'mg_fork_hunter_1',
+        fen: 'r3k2r/ppp2ppp/2n5/3q4/3N4/8/PPP2PPP/R2QKB1R w KQkq - 0 1',
+        sideToPlay: PieceColor.white,
+        instruction: 'Fork Hunter Mini-Game: Win material with an unexpected knight fork.',
+        solutionSan: ['Nxc6'],
+        explanation: 'Removing the defender or forking heavy pieces wins decisive tactical material.',
+        hints: ['Look for piece alignments.', 'The knight on d4 is primed.', 'Nxc6 damages structure and wins tempo.'],
+        motif: 'Knight Fork',
+      ),
+      CurriculumExercise(
+        id: 'mg_king_hunt_1',
+        fen: 'r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1',
+        sideToPlay: PieceColor.white,
+        instruction: 'King Hunt Mini-Game: Hunt down the uncastled black king with a direct mate.',
+        solutionSan: ['Qxf7#'],
+        explanation: 'Targeting f7 delivers an immediate checkmate when undefended.',
+        hints: ['Find the mating square.', 'Queen and bishop battery.', 'Qxf7# ends the game.'],
+        motif: 'Mating Net',
+      ),
+      CurriculumExercise(
+        id: 'mg_opening_1',
+        fen: 'r1bqk1nr/pppp1ppp/2n5/4p3/1bB1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 1',
+        sideToPlay: PieceColor.white,
+        instruction: 'Opening Challenge: Complete kingside development and secure king safety.',
+        solutionSan: ['O-O'],
+        explanation: 'Castling early fulfills the primary objective of the opening: king safety and rook activation.',
+        hints: ['King safety first.', 'Special double-square move.', 'Castle kingside (O-O).'],
+        motif: 'Opening Discipline',
+      ),
+      CurriculumExercise(
+        id: 'mg_defender_1',
+        fen: 'r1b1k2r/pppp1ppp/8/4q3/8/5Q2/PPP2PPP/RNB1KB1R w KQkq - 0 1',
+        sideToPlay: PieceColor.white,
+        instruction: 'Defender Mini-Game: Black is threatening checks and pressure. Shield your king.',
+        solutionSan: ['Qe2'],
+        explanation: 'Offering queen trades diffuses the attacker\'s initiative and neutralizes the check.',
+        hints: ['Parry the check with maximum stability.', 'Offer a queen trade.', 'Qe2 neutralizes the threat.'],
+        motif: 'Defensive Resource',
+      ),
+      CurriculumExercise(
+        id: 'mg_convert_it_1',
+        fen: 'r4rk1/pp1b1ppp/8/3p4/8/1P1B4/P4PPP/R3R1K1 w - - 0 1',
+        sideToPlay: PieceColor.white,
+        instruction: 'Convert It: Seize the open 7th rank with your rook to begin conversion.',
+        solutionSan: ['Re7'],
+        explanation: 'Placing a rook on the 7th rank paralyzes the opponent\'s minor pieces and targets pawns.',
+        hints: ['Dominate the open file.', 'Infiltrate deep.', 'Re7 is the master conversion move.'],
+        motif: 'Advantage Conversion',
+      ),
+      CurriculumExercise(
+        id: 'mg_hold_draw_1',
+        fen: '7k/8/8/8/8/7q/6R1/6K1 w - - 0 1',
+        sideToPlay: PieceColor.white,
+        instruction: 'Hold the Draw Mini-Game: Pin the black queen to force a perpetual or draw.',
+        solutionSan: ['Rh2'],
+        explanation: 'Rh2 pins the queen against the king. Black must trade or submit to a draw.',
+        hints: ['Pin the queen.', 'Use the rook along the h-file.', 'Rh2 holds the draw.'],
+        motif: 'Fortress & Perpetual',
+      ),
+    ];
   }
 
   void _initSessionForCurrentExercise() {
@@ -901,6 +993,73 @@ class _LabsScreenState extends State<LabsScreen> {
             ),
           );
 
+          // 5-Mode Selector Bar (Demo, Guided, Practice, Challenge, Review)
+          final modeSelectorBar = Container(
+            margin: const EdgeInsets.only(bottom: 12),
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+            decoration: BoxDecoration(
+              color: context.surf,
+              borderRadius: BorderRadius.circular(10),
+              border: Border.all(color: context.brd),
+            ),
+            child: Row(
+              children: [
+                const Icon(Icons.tune, size: 16, color: ChessTheme.primaryLight),
+                const SizedBox(width: 8),
+                Text(
+                  'LAB MODE:',
+                  style: TextStyle(
+                    fontSize: 11,
+                    fontWeight: FontWeight.bold,
+                    letterSpacing: 0.8,
+                    color: context.txtMut,
+                  ),
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: LabMode.values.map((m) {
+                        final isSelected = _session.mode == m;
+                        return Padding(
+                          padding: const EdgeInsets.only(right: 8),
+                          child: ChoiceChip(
+                            label: Text(
+                              m.name.toUpperCase(),
+                              style: TextStyle(
+                                fontSize: 11,
+                                fontWeight: FontWeight.bold,
+                                color: isSelected ? Colors.black : context.txt,
+                              ),
+                            ),
+                            selected: isSelected,
+                            selectedColor: ChessTheme.primary,
+                            backgroundColor: context.surfLight,
+                            onSelected: (selected) {
+                              if (selected) {
+                                setState(() {
+                                  _session.mode = m;
+                                  if (m == LabMode.demo) {
+                                    _onShowLine();
+                                  } else if (m == LabMode.guided) {
+                                    _onShowBestMove();
+                                  } else if (m == LabMode.review) {
+                                    _onExplainWhy();
+                                  }
+                                });
+                              }
+                            },
+                          ),
+                        );
+                      }).toList(),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          );
+
           // Instruction / Feedback Banner
           final instructionBanner = Container(
             width: double.infinity,
@@ -1127,10 +1286,10 @@ class _LabsScreenState extends State<LabsScreen> {
                 Color bgColor = context.surfLight;
                 Color fgColor = context.txtSec;
                 if (isClean) {
-                  bgColor = ChessTheme.primary.withValues(alpha: 0.2);
+                  bgColor = ChessTheme.primary.withOpacity(0.2);
                   fgColor = ChessTheme.primaryLight;
                 } else if (isSolved) {
-                  bgColor = ChessTheme.accentGold.withValues(alpha: 0.2);
+                  bgColor = ChessTheme.accentGold.withOpacity(0.2);
                   fgColor = ChessTheme.accentGold;
                 } else if (isCurrent) {
                   bgColor = ChessTheme.primary;
@@ -1241,9 +1400,9 @@ class _LabsScreenState extends State<LabsScreen> {
                   Container(
                     padding: const EdgeInsets.all(10),
                     decoration: BoxDecoration(
-                      color: ChessTheme.primary.withValues(alpha: 0.1),
+                      color: ChessTheme.primary.withOpacity(0.1),
                       borderRadius: BorderRadius.circular(8),
-                      border: Border.all(color: ChessTheme.primary.withValues(alpha: 0.3)),
+                      border: Border.all(color: ChessTheme.primary.withOpacity(0.3)),
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -1282,6 +1441,7 @@ class _LabsScreenState extends State<LabsScreen> {
               child: Column(
                 children: [
                   headerBar,
+                  modeSelectorBar,
                   instructionBanner,
                   boardArea,
                   const SizedBox(height: 16),
@@ -1306,6 +1466,7 @@ class _LabsScreenState extends State<LabsScreen> {
             child: Column(
               children: [
                 headerBar,
+                modeSelectorBar,
                 Expanded(
                   child: Row(
                     children: [

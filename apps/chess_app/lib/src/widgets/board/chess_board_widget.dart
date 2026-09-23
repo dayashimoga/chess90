@@ -278,7 +278,7 @@ class _ChessBoardWidgetState extends State<ChessBoardWidget> with SingleTickerPr
           _promptPromotion(matchingMove.from, square);
         } else {
           final san = MoveGenerator.moveToSan(widget.board, matchingMove);
-          SemanticsService.sendAnnouncement(View.of(context), 'Move played: $san', TextDirection.ltr);
+          SemanticsService.announce('Move played: $san', TextDirection.ltr);
           _triggerMoveAnimation(matchingMove);
           widget.onMovePlayed?.call(matchingMove);
         }

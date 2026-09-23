@@ -34,6 +34,9 @@ class CurriculumExercise {
     this.refutationAnalysis,
   });
 
+  String get concept => hintConcept ?? (hints.isNotEmpty ? hints[0] : 'Tactical Calculation');
+  String get targetPiece => hintPiece ?? 'active piece';
+
   /// Resolves the 3 tiered hints (H1 concept, H2 piece, H3 forcing).
   List<String> get tieredHints {
     final list = <String>[];

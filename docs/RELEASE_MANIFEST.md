@@ -1,7 +1,7 @@
 # ChessMaster v1.4.0 Production Release Manifest
 
-- **Commit SHA**: `09b397b6d8dbfc7f32de84306f94e47f52c7c96f`
-- **Release Date**: `2026-09-13T05:10:00.256491`
+- **Commit SHA**: `71c41f2d20ee824a6b7f993806bca5665d15335f`
+- **Release Date**: `2026-09-23T10:06:39.252532`
 - **Overall Quality Status**: **PRODUCTION_CERTIFIED**
 
 ## 1. Packaged Release Artifacts
@@ -9,8 +9,8 @@
 | Artifact Name | Target Platform | Size | CI Job | Runtime Evidence | Status |
 |---|---|---|---|---|---|
 | **`ChessMaster-Web.zip`** | Web (Chrome, Firefox, Safari, Edge) | 13.54 MB | `build-web` | Headless Python HTTP server + curl smoke check passing | **PROVEN** |
-| **`ChessMaster-Windows-x64.zip`** | Windows 10/11 x64 | N/A MB | `build-windows` | Unnested zip containing ChessMaster.exe, flutter_windows.dll, data/ folder, Launch-ChessMaster.bat | **PROVEN** |
-| **`ChessMaster-Portable.exe`** | Windows 10/11 x64 (Single-File Standalone) | N/A MB | `build-windows` | Standalone executable launching ChessMaster.exe without manual archive extraction | **PROVEN** |
+| **`ChessMaster-Windows-x64.zip`** | Windows 10/11 x64 | 12.07 MB | `build-windows` | Unnested zip containing ChessMaster.exe, flutter_windows.dll, data/ folder, Launch-ChessMaster.bat | **PROVEN** |
+| **`ChessMaster-Portable.exe`** | Windows 10/11 x64 (Single-File Standalone) | 11.65 MB | `build-windows` | Standalone executable launching ChessMaster.exe without manual archive extraction | **PROVEN** |
 | **`ChessMaster-Setup.exe`** | Windows 10/11 x64 (Inno Setup Installer) | N/A MB | `build-windows` | Inno Setup 6 compiled modern installer with uninstall support | **PROVEN** |
 | **`ChessMaster-Linux-x64.tar.gz`** | Linux x64 (Ubuntu 20.04+, Debian, Fedora, Arch) | 9.45 MB | `build-linux` | Xvfb virtual display headless execution verifying binary startup | **PROVEN** |
 | **`ChessMaster.apk`** | Android (API 24+ / Android 7.0 to 14+) | N/A MB | `build-android-apk-aab` | Verified APK structure, manifest package dayashimoga.chessmaster, zero missing assets | **PROVEN** |

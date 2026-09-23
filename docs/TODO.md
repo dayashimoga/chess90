@@ -151,5 +151,17 @@ This document is strictly append-only. Completed tasks are marked with `[x]` and
 - [x] (2026-09-12) **5-Persona Real Learning Outcome Validation (P0)**: Implemented `tool/learning_outcome_runner.dart` conducting deterministic 90-day simulation across 5 distinct learner personas (Beginner, Intermediate, Advanced, Tactical-Strong/Endgame-Weak, Strategic-Strong/Calculation-Weak) generating authoritative `learning_outcome_validation.json` and `learning_outcome_validation.html`.
 - [x] (2026-09-12) **Authoritative Release Manifest v1.4.0 (P0)**: Generated `release_manifest.json`, `release_manifest.html`, and `docs/RELEASE_MANIFEST.md` with SHA-256 hashes and CI commands for all multi-platform artifacts.
 
+---
+
+## Zero-Host-Installation Podman & Pedagogical Overhaul (v1.5.0)
+
+- [x] (2026-09-23) **Zero-Host-Installation Containerization (P0)**: Configured Podman 5.8.3 container environment (`infra/Containerfile`, `scripts/run_container.ps1`) executing full build, test, coverage, performance, and security suites in an isolated OCI image with zero local host dependencies.
+- [x] (2026-09-23) **Non-Blocking Onboarding Banner (P0)**: Replaced modal blocking dialogs with an inline card on `DailyJourneyScreen`; beginners can start Day 1 in 1 tap without mandatory diagnostic barriers.
+- [x] (2026-09-23) **8-Stage Active Pedagogical Lesson Player (P0)**: Enforced strict active mastery cycle: `LEARN → SEE → UNDERSTAND → GUIDED PRACTICE → INDEPENDENT PRACTICE → MINI-GAME → REVIEW → RETENTION TEST` with zero reading-only completions permitted.
+- [x] (2026-09-23) **Clean Unnested Windows Portable ZIP (P0)**: Updated `packaging/windows/package_windows.ps1` to produce `dist/ChessMaster-Windows-x64-Portable.zip` (12.07 MB) directly unnested without subfolder confusion.
+- [x] (2026-09-23) **Cross-Version Flutter Compatibility (P0)**: Refactored theme data, switch tiles, semantics announcements, and dropdowns to universal Flutter primitives (`CardTheme`, `DialogTheme`, `activeColor`, `SemanticsService.announce`, `.withOpacity`).
+- [x] (2026-09-23) **Clean-Room Certification Gate Pass (P0)**: Executed `scripts/run_container.ps1 -Action "certify"` with 100% pass across tests, content validation (3,786 unique exercises), 90-day simulation, coverage gates, 18 performance budgets, and 6 security audits.
+
+
 
 

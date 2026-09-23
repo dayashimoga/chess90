@@ -11,6 +11,18 @@ enum LabStepResult {
   noTacticIncorrect,
 }
 
+/// Available educational interaction modes in the laboratory.
+enum LabMode {
+  demo('Demo Mode (Observe GM Execution)'),
+  guided('Guided Mode (Targeted Visual Clues)'),
+  practice('Independent Practice'),
+  challenge('Timed Tournament Challenge'),
+  review('Post-Session Forensic Review');
+
+  final String label;
+  const LabMode(this.label);
+}
+
 /// Generic interactive lab controller supporting variations, progressive hints,
 /// retry, auto-reply, and penalty scoring.
 class LabSession {
@@ -35,6 +47,7 @@ class LabSession {
   bool isCompleted = false;
   bool isSuccess = false;
   String? feedbackMessage;
+  LabMode mode = LabMode.practice;
 
   final _updateController = StreamController<LabSession>.broadcast();
 
@@ -51,6 +64,7 @@ class LabSession {
     this.refutationAnalysis,
     required this.explanation,
     this.isNoTacticPosition = false,
+    this.mode = LabMode.practice,
   }) {
     reset();
   }
@@ -59,15 +73,69 @@ class LabSession {
 
   bool get isNoTacticActionVisible => isNoTacticPosition;
 
+  /// Returns the next legal Move object expected by the solution.
+  Move? get nextSolutionMove {
+    if (currentSolutionIndex >= solutionSan.length) return null;
+    return MoveGenerator.sanToMove(currentBoard, solutionSan[currentSolutionIndex]);
+  }
+
+  /// The square of the active piece in the current solution step.
+  Square? get candidatePieceSquare => nextSolutionMove?.from;
+
+  /// The destination square in the current solution step.
+  Square? get candidateTargetSquare => nextSolutionMove?.to;
+
+  void setMode(LabMode newMode) {
+    mode = newMode;
+    if (newMode == LabMode.demo) {
+      showLine();
+    } else {
+      reset();
+    }
+  }
+
   List<String> get tieredHints {
     final list = <String>[];
-    if (hintConcept != null && hintConcept!.isNotEmpty) list.add(hintConcept!);
-    if (hintPiece != null && hintPiece!.isNotEmpty) list.add(hintPiece!);
-    if (hintForcing != null && hintForcing!.isNotEmpty) list.add(hintForcing!);
-    if (list.isEmpty) {
+    if (hintConcept != null && hintConcept!.isNotEmpty) {
+      list.add(hintConcept!);
+    }
+    if (hintPiece != null && hintPiece!.isNotEmpty) {
+      list.add(hintPiece!);
+    }
+    if (hintForcing != null && hintForcing!.isNotEmpty) {
+      list.add(hintForcing!);
+    }
+
+    if (list.isNotEmpty) {
+      return list;
+    }
+
+    if (hints.isNotEmpty) {
       return hints;
     }
-    return list;
+
+    final dynamicHints = <String>[];
+    if (solutionSan.isNotEmpty) {
+      final nextSan = solutionSan[currentSolutionIndex < solutionSan.length ? currentSolutionIndex : 0];
+      if (nextSan.contains('#')) {
+        dynamicHints.add('Look for an immediate mating net against the vulnerable king.');
+      } else if (nextSan.contains('+')) {
+        dynamicHints.add('A forcing check disrupts the opponent defensive alignment.');
+      } else if (nextSan.contains('x')) {
+        dynamicHints.add('Capture: Identify undefended or underdefended pieces (LPDO).');
+      } else {
+        dynamicHints.add('Look for candidate moves that improve piece activity or create concrete threats.');
+      }
+    }
+
+    final nextMove = nextSolutionMove;
+    if (nextMove != null) {
+      final piece = currentBoard.pieceAt(nextMove.from);
+      dynamicHints.add('Candidate Piece: Focus on your ${piece?.type.name.toUpperCase() ?? "piece"} located on ${nextMove.from.name}.');
+      dynamicHints.add('Forcing Clue: Direct your move towards the critical square ${nextMove.to.name}.');
+    }
+
+    return dynamicHints.isNotEmpty ? dynamicHints : ['Scan checks, captures, and threats (CCT).'];
   }
 
   void reset() {
@@ -82,12 +150,17 @@ class LabSession {
     _notify();
   }
 
+  /// Retries the exercise from the beginning with a clean state and no penalty.
+  void retry() {
+    reset();
+  }
+
   /// Request next progressive hint (deducts 20% penalty per hint in legacy mode).
   String? requestHint() {
     return requestTieredHint(penalize: true);
   }
 
-  /// Request next tiered hint (Concept -> Piece -> Forcing move). Free in learning mode.
+  /// Request next tiered hint (Concept -> Piece -> Forcing move). Free in learning/practice mode when penalize is false.
   String? requestTieredHint({bool penalize = false}) {
     final availableHints = tieredHints;
     if (hintsRevealed < availableHints.length) {

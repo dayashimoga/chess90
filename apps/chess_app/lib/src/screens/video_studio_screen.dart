@@ -554,7 +554,7 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
 
               // Format selector
               DropdownButtonFormField<VideoAspectRatio>(
-                initialValue: _aspectRatio,
+                value: _aspectRatio,
                 isExpanded: true,
                 dropdownColor: context.surfLight,
                 decoration: InputDecoration(
@@ -583,7 +583,7 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
 
               // Content Profile selector
               DropdownButtonFormField<VideoContentProfile>(
-                initialValue: _contentProfile,
+                value: _contentProfile,
                 isExpanded: true,
                 dropdownColor: context.surfLight,
                 decoration: InputDecoration(
@@ -640,7 +640,7 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
               Text('BACKGROUND MUSIC & AUDIO', style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: context.txtMut)),
               const SizedBox(height: 6),
               DropdownButtonFormField<String>(
-                initialValue: _selectedAudioTrackId,
+                value: _selectedAudioTrackId,
                 isExpanded: true,
                 dropdownColor: context.surfLight,
                 decoration: InputDecoration(
@@ -706,7 +706,7 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
                   contentPadding: EdgeInsets.zero,
                   title: Text('Loop Music Seamlessly', style: TextStyle(fontSize: 12, color: context.txt)),
                   value: _loopAudio,
-                  activeThumbColor: ChessTheme.primary,
+                  activeColor: ChessTheme.primary,
                   onChanged: (val) {
                     setState(() => _loopAudio = val);
                     _generateTimeline();
@@ -733,7 +733,7 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
                   style: TextStyle(fontSize: 10, color: context.txtMut),
                 ),
                 value: _enableHardwareAccel,
-                activeThumbColor: ChessTheme.primary,
+                activeColor: ChessTheme.primary,
                 onChanged: (val) {
                   setState(() => _enableHardwareAccel = val);
                   _generateTimeline();
@@ -746,7 +746,7 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
               Text('BOARD THEME', style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: context.txtMut)),
               const SizedBox(height: 6),
               DropdownButtonFormField<String>(
-                initialValue: _selectedBoardTheme,
+                value: _selectedBoardTheme,
                 isExpanded: true,
                 decoration: InputDecoration(
                   contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
@@ -773,7 +773,7 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
               Text('PIECE THEME', style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: context.txtMut)),
               const SizedBox(height: 6),
               DropdownButtonFormField<String>(
-                initialValue: _selectedPieceTheme,
+                value: _selectedPieceTheme,
                 isExpanded: true,
                 decoration: InputDecoration(
                   contentPadding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
@@ -804,7 +804,7 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
                 contentPadding: EdgeInsets.zero,
                 title: Text('Show Coordinates', style: TextStyle(fontSize: 12, color: context.txt)),
                 value: _showCoordinates,
-                activeThumbColor: ChessTheme.primary,
+                activeColor: ChessTheme.primary,
                 onChanged: (val) {
                   setState(() => _showCoordinates = val);
                   _generateTimeline();
@@ -815,7 +815,7 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
                 contentPadding: EdgeInsets.zero,
                 title: Text('Highlight Last Move', style: TextStyle(fontSize: 12, color: context.txt)),
                 value: _showLastMoveHighlight,
-                activeThumbColor: ChessTheme.primary,
+                activeColor: ChessTheme.primary,
                 onChanged: (val) {
                   setState(() => _showLastMoveHighlight = val);
                   _generateTimeline();
@@ -826,7 +826,7 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
                 contentPadding: EdgeInsets.zero,
                 title: Text('Evaluation Bar', style: TextStyle(fontSize: 12, color: context.txt)),
                 value: _showEvalBar,
-                activeThumbColor: ChessTheme.primary,
+                activeColor: ChessTheme.primary,
                 onChanged: (val) => setState(() => _showEvalBar = val),
               ),
               SwitchListTile(
@@ -834,7 +834,7 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
                 contentPadding: EdgeInsets.zero,
                 title: Text('Arrows & Highlights', style: TextStyle(fontSize: 12, color: context.txt)),
                 value: _showArrows,
-                activeThumbColor: ChessTheme.primary,
+                activeColor: ChessTheme.primary,
                 onChanged: (val) => setState(() => _showArrows = val),
               ),
               SwitchListTile(
@@ -842,7 +842,7 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
                 contentPadding: EdgeInsets.zero,
                 title: Text('Educational Subtitles', style: TextStyle(fontSize: 12, color: context.txt)),
                 value: _showSubtitles,
-                activeThumbColor: ChessTheme.primary,
+                activeColor: ChessTheme.primary,
                 onChanged: (val) => setState(() => _showSubtitles = val),
               ),
 

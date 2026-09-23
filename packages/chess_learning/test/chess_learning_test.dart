@@ -112,4 +112,76 @@ void main() {
       expect(plan.blocks.first.labType, equals('tactical_recognition'));
     });
   });
+
+  group('Deep Coverage & Causal Mistake Diagnosis Tests', () {
+    test('Diagnoses all tactical and strategic mistake categories', () {
+      final pinDiag = MasteryGates.diagnoseMistake(motifOrType: 'Absolute Pin', mistakeCount: 2);
+      expect(pinDiag.axis, equals(SkillAxis.tactics));
+      expect(pinDiag.cause, contains('2 pinned pieces'));
+      expect(pinDiag.recommendation, contains('Pins prioritized'));
+
+      final forkDiag = MasteryGates.diagnoseMistake(motifOrType: 'Knight Fork', mistakeCount: 1);
+      expect(forkDiag.axis, equals(SkillAxis.tactics));
+      expect(forkDiag.recommendation, contains('Forks prioritized'));
+
+      final skewerDiag = MasteryGates.diagnoseMistake(motifOrType: 'Skewer Attack', mistakeCount: 3);
+      expect(skewerDiag.axis, equals(SkillAxis.tactics));
+      expect(skewerDiag.recommendation, contains('Discovery defense'));
+
+      final blunderDiag = MasteryGates.diagnoseMistake(motifOrType: 'Blunder LPDO', mistakeCount: 1);
+      expect(blunderDiag.axis, equals(SkillAxis.calculation));
+      expect(blunderDiag.recommendation, contains('Blunder prevention'));
+
+      final endgameDiag = MasteryGates.diagnoseMistake(motifOrType: 'Pawn Race Lucena', mistakeCount: 1);
+      expect(endgameDiag.axis, equals(SkillAxis.endgames));
+      expect(endgameDiag.recommendation, contains('Lucena'));
+
+      final openingDiag = MasteryGates.diagnoseMistake(motifOrType: 'Opening Deviation', mistakeCount: 1);
+      expect(openingDiag.axis, equals(SkillAxis.openings));
+      expect(openingDiag.recommendation, contains('Opening repertoire'));
+
+      final generalDiag = MasteryGates.diagnoseMistake(motifOrType: 'Generic Inaccuracy', mistakeCount: 1);
+      expect(generalDiag.axis, equals(SkillAxis.tactics));
+      expect(generalDiag.recommendation, contains('CCT'));
+    });
+
+    test('SkillNode serialization, copyWith, and composite score', () {
+      final original = SkillNode(
+        id: 'node_test',
+        name: 'Calculation Depth',
+        axis: SkillAxis.calculation,
+        knowledgeScore: 0.9,
+        isolatedAccuracy: 0.85,
+        mixedAccuracy: 0.8,
+        realGameApplication: 0.75,
+        retention7Day: 0.9,
+        retention30Day: 0.85,
+        responseTimeMs: 1200,
+        recurrenceCount: 2,
+        confidenceScore: 0.88,
+        status: SkillStatus.guided,
+      );
+
+      expect(original.compositeScore, greaterThan(0.8));
+
+      final json = original.toJson();
+      final revived = SkillNode.fromJson(json);
+      expect(revived.id, equals(original.id));
+      expect(revived.name, equals(original.name));
+      expect(revived.axis, equals(original.axis));
+      expect(revived.status, equals(SkillStatus.guided));
+
+      final copied = original.copyWith(
+        isolatedAccuracy: 0.95,
+        status: SkillStatus.mastered,
+      );
+      expect(copied.isolatedAccuracy, equals(0.95));
+      expect(copied.status, equals(SkillStatus.mastered));
+      expect(copied.name, equals(original.name));
+
+      expect(SkillStatus.parse('review_due'), equals(SkillStatus.reviewDue));
+      expect(SkillStatus.parse('guided_practice'), equals(SkillStatus.guided));
+      expect(SkillStatus.parse('unknown_xyz'), equals(SkillStatus.unseen));
+    });
+  });
 }

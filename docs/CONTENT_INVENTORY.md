@@ -1,6 +1,6 @@
 # ChessMaster v1.3.0 Content Depth & Curriculum Inventory
 
-**Audit Date:** 2026-09-13T04:39:15.538798Z  
+**Audit Date:** 2026-09-23T10:04:58.760592Z  
 **Validation Status:** `CERTIFIED_VALID` (Errors: 0)  
 
 ---
@@ -11,14 +11,14 @@
 |:---|:---:|:---|
 | **Curriculum Days** | **90 / 90** | 100% complete; 0 reading-only days; progressive difficulty. |
 | **Structured Lessons** | **90** | Comprehensive theory, pedagogical objectives, and worked examples. |
-| **Interactive Exercises** | **4231** | 100% legally verified solution paths with strict MoveGenerator validation. |
-| **Unique Exercise IDs** | **4231** | 0 duplicate IDs; verified non-overlapping progression. |
+| **Interactive Exercises** | **3786** | 100% legally verified solution paths with strict MoveGenerator validation. |
+| **Unique Exercise IDs** | **3786** | 0 duplicate IDs; verified non-overlapping progression. |
 | **Multi-Ply Calculation Puzzles** | **0** | Deep calculation positions requiring 2+ consecutive ply solutions. |
-| **Tactical Motifs Cataloged** | **51** | Canonical tactical patterns with dedicated Leitner flashcards. |
-| **Calculation Tree Positions** | **396** | Complex branched positions exercising candidate move pruning. |
+| **Tactical Motifs Cataloged** | **120** | Canonical tactical patterns with dedicated Leitner flashcards. |
+| **Calculation Tree Positions** | **363** | Complex branched positions exercising candidate move pruning. |
 | **Visualization Drills** | **233** | Blindfold and mental board geometry training positions. |
-| **Strategic & Positional Positions** | **418** | Outpost, weak square, piece activity, and prophylaxis drills. |
-| **Pawn Structure Modules** | **248** | Carlsbad, Isolani, Hanging Pawns, Hedgehog, and French structures. |
+| **Strategic & Positional Positions** | **292** | Outpost, weak square, piece activity, and prophylaxis drills. |
+| **Pawn Structure Modules** | **296** | Carlsbad, Isolani, Hanging Pawns, Hedgehog, and French structures. |
 | **Annotated Master Games** | **60** | Full PGN master games with move-by-move pedagogical annotations. |
 | **ECO Opening Variations** | **72** | Master repertoire lines and deviation defenses indexed via trie. |
 | **Interactive Lab Types** | **16** | 16 distinct training modes with hint penalties and auto-replies. |
@@ -39,66 +39,135 @@
 
 | Endgame Category | Positions Count | Primary Theoretical Focus |
 |:---|:---:|:---|
-| **Rook Endgames** | **96** | Lucena, Philidor, Queen vs 7th, Opposition & Key Squares |
-| **Pawn Endgames** | **168** | Lucena, Philidor, Queen vs 7th, Opposition & Key Squares |
-| **Queen Endgames** | **96** | Lucena, Philidor, Queen vs 7th, Opposition & Key Squares |
-| **Minor Piece Endgames** | **96** | Lucena, Philidor, Queen vs 7th, Opposition & Key Squares |
+| **Rook Endgames** | **74** | Lucena, Philidor, Queen vs 7th, Opposition & Key Squares |
+| **Pawn Endgames** | **153** | Lucena, Philidor, Queen vs 7th, Opposition & Key Squares |
+| **Queen Endgames** | **73** | Lucena, Philidor, Queen vs 7th, Opposition & Key Squares |
+| **Minor Piece Endgames** | **76** | Lucena, Philidor, Queen vs 7th, Opposition & Key Squares |
 
 ---
 
 ## 4. Tactical Motifs Covered
 
-- Absolute Pin
+- Active Rook & Tarrasch Rule
 - Advantage Conversion
-- Anastasia Mate
-- Arabian Mate
+- Alekhine Model: Attacking Combinations
+- Anti-Blunder Verification
+- Back Rank Checkmate
 - Back-Rank Mate
-- Bishop Fork
-- Bishop Pair Dominance
-- Boden Mate
-- Calculation Horizon
-- Candidate Selection
+- Back-Rank Penetration
+- Battery Attack
+- Bishop Endgames
+- Black Repertoire vs 1.d4
+- Black Repertoire vs 1.e4
+- Board Visualization
+- CCT Hierarchy
+- Calculation Trees
+- Candidate Move Verification
+- Candidate Moves
+- Capablanca Model: Endgame Clarity
 - Carlsbad Minority Attack
-- Clearance Sacrifice
-- Counter Pin
-- Cross Pin
-- Decoy
+- Carlsen Model: Positional Squeeze
+- Central Liquidation
+- Central Strike
+- Checking & Cutting Off
+- Checkmate
+- Classic Pawn Skeletons
+- Clock Discipline & Pacing
+- Coordinate Vision: Knight Anchor
+- Coordinate Vision: Open Game
+- Coordinate Vision: Two Knights Defense
+- Critical Moment Detection
 - Defensive Tenacity
-- Deflection
-- Discovered Attack
-- Discovered Check
-- Double Check
-- Dovetail Mate
-- French Chain Break
-- Hanging Pawns
-- Hanging Piece
-- IQP Dynamics
-- Interference
-- King Hunt
-- Knight Fork
-- Mating Net
+- Discovered Attacks & Double Checks
+- Doubled & Backward Pawns
+- Dynamic ECO Recognition
+- Fischer Model: Concrete Precision
+- Forcing Liquidation
+- Fork Trick Preparation
+- Forks & Double Attacks
+- Fortresses & Counter-Attacks
+- Fried Liver Attack Target
+- Full Game Reconstruction
+- Fundamental Endgame Mates
+- Good vs Bad Bishops
+- Greek Gift Sacrifice (Bxh7+)
+- Harmonious Development
+- IQP Central Outpost
+- Interference, Clearance & Zwischenzug
+- Isolated Queen Pawn (IQP)
+- Kasparov Model: Aggressive Initiative
+- Key Squares in Pawn Endings
+- King & Pawn Opposition
+- King Safety
+- King Safety & Shelter
+- Kingside Swarms & Batteries
+- Knight Endgames & Blockades
+- Lucena Position (Building the Bridge)
+- Mastery Assessment & Completion Report
+- Material Capture
+- Material vs Dynamic Activity
+- Mating Calculation Tree
+- Middlegame Pawn Breaks
+- Milestone 10: Middlegame Strategy
+- Milestone 11: Conversion & Pressure
+- Milestone 2: Tactics & Mating Patterns
+- Milestone 3: Calculation Exam
+- Milestone 4: Strategy Exam
+- Milestone 5: Pawn Structures
+- Milestone 6: Attack & Defense
+- Milestone 7: Pawn Endgames
+- Milestone 8: Advanced Endgames
+- Milestone 9: Opening Repertoire
 - Minor Piece Endgames
+- Morphy Model: Rapid Mobilization
+- Open Files & Diagonals
+- Opening Philosophy & Architecture
+- Opening Principles
 - Opening Repertoire
-- Opposition
-- Outpost Seizure
-- Overloaded Defender
+- Opening-to-Middlegame Transition
+- Opponent Best Reply
+- Opposite-Side Castling Storms
+- Passed Pawns & Promotion
+- Pawn Breakthrough in Endings
+- Pawn Chains & Base Attacks
 - Pawn Endgames
-- Pawn Fork
-- Pawn Promotion Tactic
-- Prophylaxis
+- Pawn Promotion
+- Pawn Structure Clarification
+- Philidor Defense (Rook Endings)
+- Pin & Pressure
+- Pin Neutralization
+- Pins & Vectors
+- Practical Queen Endgames
+- Promotion Races & Square Rule
+- Prophylactic Defense
+- Prophylactic Planning
+- Prophylactic Solidification
+- Prophylaxis & King Safety
+- Psychological Resilience
 - Queen Endgames
-- Queen Fork
-- Quiet Move
-- Relative Pin
+- Quiet Horizon Moves
+- Rapid Development
 - Removal of Defender
+- Retention Stabilization
 - Rook Endgames
-- Rook Fork
-- Skewer
-- Smothered Mate
-- Trapped Piece
-- Visualization & Board Memory
-- Windmill
-- Zwischenzug
+- Scandinavian Punishment
+- Simplification
+- Simplification vs Tension
+- Skewers & X-Ray Attacks
+- Space Advantage & Central Territory
+- Strategic Planning & Imbalances
+- Strategic Transformations
+- Tal Model: Intuitive Attacks
+- Tenacious Defense
+- Timing the Attack
+- Tournament Simulation
+- Triangulation & Zugzwang
+- Vulnerable f7 Strike
+- Weak Squares & Outposts
+- Weakness Repair & Diagnostics
+- White Repertoire: 1.d4 Catalan
+- White Repertoire: 1.e4 Strategy
+- Worst-Piece Improvement
 
 ---
 

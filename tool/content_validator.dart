@@ -87,7 +87,7 @@ void main(List<String> args) async {
     if (themeLower.contains('positional') || themeLower.contains('strategy') || themeLower.contains('prophylaxis')) {
       totalStrategicPositions += day.exercises.length;
     }
-    if (day.phase == CurriculumPhase.phase5Endgames || themeLower.contains('endgame') || themeLower.contains('rook ending')) {
+    if (day.phase == CurriculumPhase.phase7PawnEndgames || day.phase == CurriculumPhase.phase8RookEndgames || themeLower.contains('endgame') || themeLower.contains('rook ending')) {
       if (themeLower.contains('rook')) {
         endgamePositionsByCategory['Rook Endgames'] = (endgamePositionsByCategory['Rook Endgames'] ?? 0) + day.exercises.length;
       } else if (themeLower.contains('queen')) {

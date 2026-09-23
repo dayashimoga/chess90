@@ -25,7 +25,8 @@ class MasteryGates {
         node.retention30Day >= retention30DayThreshold;
   }
 
-  /// Updates node status based on metric thresholds and practice recency.
+  /// Updates node status based on metric thresholds and practice recency:
+  /// UNSEEN -> LEARNING -> GUIDED -> PRACTICING -> INDEPENDENT -> MASTERED -> REVIEW-DUE.
   static void updateNodeStatus(SkillNode node) {
     final now = DateTime.now();
     final daysSincePractice = now.difference(node.lastPracticed).inDays;
@@ -44,8 +45,18 @@ class MasteryGates {
       return;
     }
 
-    if (node.isolatedAccuracy >= 0.75 || node.mixedAccuracy >= 0.70) {
+    if (node.realGameApplication >= 0.80 || (node.isolatedAccuracy >= 0.85 && node.mixedAccuracy >= 0.80)) {
+      node.status = SkillStatus.independent;
+      return;
+    }
+
+    if (node.isolatedAccuracy >= 0.70 || node.mixedAccuracy >= 0.65) {
       node.status = SkillStatus.practicing;
+      return;
+    }
+
+    if (node.isolatedAccuracy > 0.0) {
+      node.status = SkillStatus.guided;
       return;
     }
 
@@ -55,6 +66,62 @@ class MasteryGates {
     }
 
     node.status = SkillStatus.unseen;
+  }
+
+  /// Diagnoses in-game blunders and maps them to concrete skill nodes and causal explanations.
+  /// Generates the human-readable "WHY" for adaptive daily priorities.
+  static ({SkillAxis axis, String cause, String recommendation}) diagnoseMistake({
+    required String motifOrType,
+    int mistakeCount = 1,
+  }) {
+    final lower = motifOrType.toLowerCase();
+    if (lower.contains('pin') || lower.contains('pinned')) {
+      return (
+        axis: SkillAxis.tactics,
+        cause: 'Missed $mistakeCount pinned piece${mistakeCount > 1 ? "s" : ""} or relative pin threat in recent play.',
+        recommendation: 'Pins prioritized: Review pin ray geometry and relative vs absolute pin mechanics.',
+      );
+    }
+    if (lower.contains('fork') || lower.contains('double attack')) {
+      return (
+        axis: SkillAxis.tactics,
+        cause: 'Overlooked $mistakeCount knight or pawn fork${mistakeCount > 1 ? "s" : ""} during calculation.',
+        recommendation: 'Forks prioritized: Drill LPDO (loose pieces drop off) scanning before every move.',
+      );
+    }
+    if (lower.contains('skewer') || lower.contains('discovery')) {
+      return (
+        axis: SkillAxis.tactics,
+        cause: 'Conceded $mistakeCount discovered attack${mistakeCount > 1 ? "s" : ""} along open lines.',
+        recommendation: 'Discovery defense prioritized: Track aligned king and queen batteries.',
+      );
+    }
+    if (lower.contains('blunder') || lower.contains('hanging') || lower.contains('lpdo')) {
+      return (
+        axis: SkillAxis.calculation,
+        cause: 'Left $mistakeCount undefended piece${mistakeCount > 1 ? "s" : ""} under opponent attack.',
+        recommendation: 'Blunder prevention check prioritized: Run the 3-step safety check before committing.',
+      );
+    }
+    if (lower.contains('endgame') || lower.contains('pawn race') || lower.contains('lucena')) {
+      return (
+        axis: SkillAxis.endgames,
+        cause: 'Struggled with technical conversion or opposition in the endgame.',
+        recommendation: 'Endgame technique prioritized: Practice Lucena and Philidor reference positions.',
+      );
+    }
+    if (lower.contains('opening') || lower.contains('deviation')) {
+      return (
+        axis: SkillAxis.openings,
+        cause: 'Deviated prematurely from opening principles or theoretical mainlines.',
+        recommendation: 'Opening repertoire prioritized: Reinforce rapid piece development and center control.',
+      );
+    }
+    return (
+      axis: SkillAxis.tactics,
+      cause: 'Tactical inaccuracy detected during recent game play.',
+      recommendation: 'Tactical scan prioritized: Execute CCT (Checks, Captures, Threats) on every ply.',
+    );
   }
 
   /// Calculates radar plot values (0.0 to 1.0) for each of the 12 skill axes.
