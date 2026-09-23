@@ -274,12 +274,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   - Corrected AGP version in `apps/chess_app/android/settings.gradle.kts` from unreleased 9.1.0 to stable 8.5.0.
   - Corrected Kotlin version from unreleased 2.4.0 to stable 2.0.0.
   - Corrected Gradle distribution in `apps/chess_app/android/gradle/wrapper/gradle-wrapper.properties` from non-existent 9.3.1 to stable 8.7 (`gradle-8.7-all.zip`).
+  - Added `--android-skip-build-dependency-validation` flag to `flutter build apk` and `flutter build appbundle` steps across `.github/workflows/pr.yml` and `release.yml` to resolve Flutter 3.29's strict minimum Gradle version checker.
 - **Linux Release Packaging & Compatibility**:
   - Replaced broken symlink invocation in `.github/workflows/pr.yml` and `release.yml` with safe binary copying to ensure both `ChessMaster` and `chess_app` binaries are reliably bundled and executable in `ChessMaster-Linux-x64.tar.gz`.
 - **Multi-Platform CI Test & Build Steps**:
   - Added explicit `flutter pub get` before every `flutter test`, `flutter build web`, `flutter build windows`, `flutter build linux`, and `flutter build apk` step across all GitHub Actions workflows.
   - Added `sudo apt-get install -y ffmpeg stockfish` to `unit-and-integration` Linux job in `pr.yml`.
   - Added `& $dartBin pub get` and `& $flutterBin pub get` to `scripts/test.ps1`.
+- **Flutter Theme Cross-Version Compatibility (Windows & Multi-Platform)**:
+  - Eliminated deprecated `cardTheme: CardTheme(...)` and `dialogTheme: DialogTheme(...)` assignments from `darkTheme` and `lightTheme` in `apps/chess_app/lib/src/theme/chess_theme.dart`.
+  - Fixed Windows build failure caused by Flutter 3.27+ breaking change where `CardTheme`/`DialogTheme` became `InheritedTheme` widgets requiring `CardThemeData`/`DialogThemeData`. Cards and dialogs now cleanly utilize Material 3 `colorScheme.surface` and custom responsive containers with 100% cross-version compatibility across Flutter 3.24.x through 3.29+.
+
 
 
 

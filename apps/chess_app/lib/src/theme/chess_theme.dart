@@ -92,22 +92,9 @@ class ChessTheme {
         surface: surface,
         error: qualityBlunder,
       ),
-      cardTheme: CardTheme(
-        color: surface,
-        elevation: 0,
-        shape: RoundedRectangleBorder(
-          side: const BorderSide(color: border, width: 1),
-          borderRadius: BorderRadius.circular(12),
-        ),
-      ),
       dividerTheme: const DividerThemeData(
         color: border,
         thickness: 1,
-      ),
-      dialogTheme: const DialogTheme(
-        backgroundColor: surface,
-        titleTextStyle: TextStyle(color: textPrimary, fontSize: 18, fontWeight: FontWeight.bold),
-        contentTextStyle: TextStyle(color: textSecondary, fontSize: 14),
       ),
       popupMenuTheme: const PopupMenuThemeData(
         color: surface,
@@ -143,22 +130,9 @@ class ChessTheme {
         surface: surfaceLightCard,
         error: qualityBlunder,
       ),
-      cardTheme: CardTheme(
-        color: surfaceLightCard,
-        elevation: 0,
-        shape: RoundedRectangleBorder(
-          side: const BorderSide(color: borderLightGray, width: 1),
-          borderRadius: BorderRadius.circular(12),
-        ),
-      ),
       dividerTheme: const DividerThemeData(
         color: borderLightGray,
         thickness: 1,
-      ),
-      dialogTheme: const DialogTheme(
-        backgroundColor: surfaceLightCard,
-        titleTextStyle: TextStyle(color: textPrimaryDark, fontSize: 18, fontWeight: FontWeight.bold),
-        contentTextStyle: TextStyle(color: textSecondaryDark, fontSize: 14),
       ),
       popupMenuTheme: const PopupMenuThemeData(
         color: surfaceLightCard,

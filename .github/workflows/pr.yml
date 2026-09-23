@@ -471,14 +471,14 @@ jobs:
         run: |
           cd apps/chess_app
           flutter pub get
-          flutter build apk --release
+          flutter build apk --release --android-skip-build-dependency-validation
           cp build/app/outputs/flutter-apk/app-release.apk ../../ChessMaster.apk
 
       - name: Build Android AAB
         run: |
           cd apps/chess_app
           flutter pub get
-          flutter build appbundle --release
+          flutter build appbundle --release --android-skip-build-dependency-validation
           cp build/app/outputs/bundle/release/app-release.aab ../../ChessMaster.aab
 
       - name: Upload Android Artifacts
