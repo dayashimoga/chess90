@@ -1,6 +1,7 @@
 library chess_labs;
 
 export 'src/lab_session.dart';
+export 'src/socratic_pedagogy_engine.dart';
 export 'src/labs/tactical_lab.dart';
 export 'src/labs/candidate_selection_lab.dart';
 export 'src/labs/blind_calculation_lab.dart';

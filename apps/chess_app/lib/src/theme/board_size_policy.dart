@@ -61,18 +61,13 @@ class BoardSizePolicy {
 
       case BoardSizeMode.standard:
         // Standard desktop/tablet workflow sizing:
-        if (scale == BoardScalePreference.auto) {
+        // Dynamically occupies available square dimension without artificial clamps
+        if (scale == BoardScalePreference.auto || effectiveMultiplier == 0.0) {
           targetSize = maxSquare * 0.96;
-        } else if (effectiveMultiplier > 1.0) {
-          // Large or Max desktop scaling: dynamically expand up to 860px
-          targetSize = min(maxSquare * 0.96, 500.0 * effectiveMultiplier);
-        } else if (maxSquare >= 560.0) {
-          targetSize = 500.0 * effectiveMultiplier;
         } else {
-          targetSize = (maxSquare * 0.92) * effectiveMultiplier;
+          targetSize = (maxSquare * 0.96) * effectiveMultiplier;
         }
-        final maxClamp = (scale == BoardScalePreference.auto || effectiveMultiplier > 1.0) ? 860.0 : 560.0;
-        targetSize = targetSize.clamp(280.0, maxClamp);
+        targetSize = targetSize.clamp(240.0, min(1200.0, maxSquare));
         break;
 
       case BoardSizeMode.focus:

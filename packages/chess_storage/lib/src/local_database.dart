@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:chess_learning/chess_learning.dart';
 import 'models/game_record.dart';
+import 'models/game_session.dart';
 import 'models/unfinished_game.dart';
 import 'models/user_profile.dart';
 
@@ -26,7 +27,10 @@ class LocalDatabase {
   final Map<String, SkillNode> skillNodes = {};
   final Map<String, ReviewItem> reviewItems = {};
   final Map<String, GameRecord> games = {};
+  final Map<String, GameSession> gameSessions = {};
   UnfinishedGame? unfinishedGame;
+  GameSession? activeGameSession;
+  GameSession? lastCompletedGame;
 
   LocalDatabase({this.dbPath}) {
     if (dbPath != null) {
@@ -106,6 +110,36 @@ class LocalDatabase {
     _saveToFile();
   }
 
+  // --- Game Session Operations (Continuous Source of Truth) ---
+  GameSession? getActiveGameSession() => activeGameSession;
+
+  void saveActiveGameSession(GameSession session) {
+    activeGameSession = session;
+    _saveToFile();
+  }
+
+  void clearActiveGameSession() {
+    activeGameSession = null;
+    _saveToFile();
+  }
+
+  GameSession? getLastCompletedGame() => lastCompletedGame;
+
+  void saveCompletedGame(GameSession session) {
+    lastCompletedGame = session;
+    gameSessions[session.id] = session;
+    if (activeGameSession?.id == session.id) {
+      activeGameSession = null;
+    }
+    _saveToFile();
+  }
+
+  List<GameSession> getGameHistory() {
+    final list = gameSessions.values.toList();
+    list.sort((a, b) => b.updatedAt.compareTo(a.updatedAt));
+    return List.unmodifiable(list);
+  }
+
   // --- Backup Export & Import ---
   String exportFullBackupJson() {
     final data = {
@@ -116,6 +150,9 @@ class LocalDatabase {
       'reviewItems': reviewItems.values.map((i) => i.toJson()).toList(),
       'games': games.values.map((g) => g.toJson()).toList(),
       if (unfinishedGame != null) 'unfinishedGame': unfinishedGame!.toJson(),
+      if (activeGameSession != null) 'activeGameSession': activeGameSession!.toJson(),
+      if (lastCompletedGame != null) 'lastCompletedGame': lastCompletedGame!.toJson(),
+      'gameSessions': gameSessions.values.map((s) => s.toJson()).toList(),
     };
     return const JsonEncoder.withIndent('  ').convert(data);
   }
@@ -174,6 +211,26 @@ class LocalDatabase {
       unfinishedGame = UnfinishedGame.fromJson(data['unfinishedGame'] as Map<String, dynamic>);
     } else {
       unfinishedGame = null;
+    }
+
+    if (data.containsKey('activeGameSession') && data['activeGameSession'] != null) {
+      activeGameSession = GameSession.fromJson(data['activeGameSession'] as Map<String, dynamic>);
+    } else {
+      activeGameSession = null;
+    }
+
+    if (data.containsKey('lastCompletedGame') && data['lastCompletedGame'] != null) {
+      lastCompletedGame = GameSession.fromJson(data['lastCompletedGame'] as Map<String, dynamic>);
+    } else {
+      lastCompletedGame = null;
+    }
+
+    gameSessions.clear();
+    if (data.containsKey('gameSessions')) {
+      for (final raw in (data['gameSessions'] as List<dynamic>)) {
+        final s = GameSession.fromJson(raw as Map<String, dynamic>);
+        gameSessions[s.id] = s;
+      }
     }
 
     _saveToFile();
@@ -251,6 +308,26 @@ class LocalDatabase {
       unfinishedGame = UnfinishedGame.fromJson(workingData['unfinishedGame'] as Map<String, dynamic>);
     } else {
       unfinishedGame = null;
+    }
+
+    if (workingData.containsKey('activeGameSession') && workingData['activeGameSession'] != null) {
+      activeGameSession = GameSession.fromJson(workingData['activeGameSession'] as Map<String, dynamic>);
+    } else {
+      activeGameSession = null;
+    }
+
+    if (workingData.containsKey('lastCompletedGame') && workingData['lastCompletedGame'] != null) {
+      lastCompletedGame = GameSession.fromJson(workingData['lastCompletedGame'] as Map<String, dynamic>);
+    } else {
+      lastCompletedGame = null;
+    }
+
+    gameSessions.clear();
+    if (workingData.containsKey('gameSessions')) {
+      for (final raw in (workingData['gameSessions'] as List<dynamic>)) {
+        final s = GameSession.fromJson(raw as Map<String, dynamic>);
+        gameSessions[s.id] = s;
+      }
     }
   }
 

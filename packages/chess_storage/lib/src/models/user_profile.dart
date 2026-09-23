@@ -10,6 +10,8 @@ class UserProfile {
   String boardThemeName;
   String pieceThemeName;
   String boardSizeMode; // 'auto', 'small', 'medium', 'large', 'extraLarge'
+  double boardScaleMultiplier; // 0.70 to 1.50 multiplier
+  bool sidePanelCollapsed;
   bool showCoordinates;
   bool showMoveHighlights;
   bool showLegalMoveHints;
@@ -32,6 +34,8 @@ class UserProfile {
     this.boardThemeName = 'tournamentGreen',
     this.pieceThemeName = 'standard',
     this.boardSizeMode = 'auto',
+    this.boardScaleMultiplier = 1.0,
+    this.sidePanelCollapsed = false,
     this.showCoordinates = true,
     this.showMoveHighlights = true,
     this.showLegalMoveHints = true,
@@ -62,6 +66,8 @@ class UserProfile {
         'boardThemeName': boardThemeName,
         'pieceThemeName': pieceThemeName,
         'boardSizeMode': boardSizeMode,
+        'boardScaleMultiplier': boardScaleMultiplier,
+        'sidePanelCollapsed': sidePanelCollapsed,
         'showCoordinates': showCoordinates,
         'showMoveHighlights': showMoveHighlights,
         'showLegalMoveHints': showLegalMoveHints,
@@ -86,6 +92,8 @@ class UserProfile {
       boardThemeName: json['boardThemeName'] as String? ?? 'tournamentGreen',
       pieceThemeName: json['pieceThemeName'] as String? ?? 'standard',
       boardSizeMode: json['boardSizeMode'] as String? ?? 'auto',
+      boardScaleMultiplier: (json['boardScaleMultiplier'] as num?)?.toDouble() ?? 1.0,
+      sidePanelCollapsed: json['sidePanelCollapsed'] as bool? ?? false,
       showCoordinates: json['showCoordinates'] as bool? ?? true,
       showMoveHighlights: json['showMoveHighlights'] as bool? ?? true,
       showLegalMoveHints: json['showLegalMoveHints'] as bool? ?? true,

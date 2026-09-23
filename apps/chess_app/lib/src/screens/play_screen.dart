@@ -4,13 +4,14 @@ import 'package:chess_engine/chess_engine.dart';
 import 'package:chess_storage/chess_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../theme/board_size_policy.dart';
 import '../theme/chess_board_theme.dart';
 import '../theme/chess_theme.dart';
 import '../theme/piece_theme.dart';
 import '../widgets/board/board_customizer_dialog.dart';
 import '../widgets/board/chess_board_widget.dart';
 import '../widgets/board/move_list_widget.dart';
+import '../widgets/board/responsive_chess_workspace.dart';
+import '../widgets/play/game_library_dialog.dart';
 import '../widgets/play/play_setup_dialog.dart';
 
 /// Play screen supporting Human vs Engine, complete game setup, full game controls,
@@ -37,6 +38,7 @@ class _PlayScreenState extends State<PlayScreen> {
   late Board _board;
   late ChessClock _clock;
   late ChessEngine _engine;
+  late GameSession _activeSession;
   Timer? _timer;
 
   // Game Configuration
@@ -108,14 +110,19 @@ class _PlayScreenState extends State<PlayScreen> {
       if (args['isRated'] != null) {
         _isRated = args['isRated'] as bool;
       }
+      if (args['gameSession'] is GameSession) {
+        _restoreFromGameSession(args['gameSession'] as GameSession);
+      }
     }
 
-    if (_pendingUnfinishedGame != null) {
-      _clock.whiteRemaining = Duration(seconds: _pendingUnfinishedGame!.whiteRemainingSeconds);
-      _clock.blackRemaining = Duration(seconds: _pendingUnfinishedGame!.blackRemainingSeconds);
+    // Check if an active continuous game session exists in the repository
+    final existingSession = widget.repository.getActiveGameSession();
+    if (existingSession != null && !existingSession.isCompleted && existingSession.moveSanList.isNotEmpty) {
+      _restoreFromGameSession(existingSession);
+    } else {
+      _initNewActiveSession();
     }
 
-    _board = Board.initial();
     _engine = widget.engine ??
         (NativeStockfishEngine.isSupported
             ? NativeStockfishEngine()
@@ -123,14 +130,62 @@ class _PlayScreenState extends State<PlayScreen> {
     _engine.initialize();
 
     _startClockTimer();
-    // Only start clock if resuming an existing game with moves
     if (_moves.isNotEmpty) {
       _clock.start();
     }
 
     // If player plays Black vs Engine, engine makes the opening move
-    if (_playVsEngine && _playerColor == PieceColor.black) {
+    if (_playVsEngine && _playerColor == PieceColor.black && _moves.isEmpty) {
       WidgetsBinding.instance.addPostFrameCallback((_) => _playEngineMove());
+    }
+  }
+
+  void _initNewActiveSession() {
+    _board = Board.initial();
+    _activeSession = GameSession.newGame(
+      timeControl: _setupConfig.timeControlName,
+      initialMinutes: _setupConfig.initialMinutes,
+      incrementSeconds: _setupConfig.incrementSeconds,
+      playerColor: _playerColor == PieceColor.white ? 'white' : 'black',
+      opponentName: _playVsEngine ? 'Stockfish ${_setupConfig.strengthPreset}' : 'Human Opponent',
+      isVsEngine: _playVsEngine,
+      engineElo: _setupConfig.eloRating,
+    );
+    widget.repository.saveActiveGameSession(_activeSession);
+  }
+
+  void _restoreFromGameSession(GameSession session) {
+    _activeSession = session;
+    _board = Board.fromFen(session.currentFen);
+    _playVsEngine = session.isVsEngine;
+    _playerColor = session.playerColor == 'black' ? PieceColor.black : PieceColor.white;
+    _isFlipped = _playerColor == PieceColor.black;
+
+    _clock.whiteRemaining = Duration(seconds: session.whiteRemainingSeconds);
+    _clock.blackRemaining = Duration(seconds: session.blackRemainingSeconds);
+
+    _moves.clear();
+    // Replay moves into _moves list
+    final tempBoard = Board.fromFen(session.initialFen);
+    for (int i = 0; i < session.moveUciList.length; i++) {
+      final uci = session.moveUciList[i];
+      final san = i < session.moveSanList.length ? session.moveSanList[i] : uci;
+      final parsedMove = MoveGenerator.generateLegalMoves(tempBoard).where((m) => m.uci == uci).firstOrNull;
+      _moves.add(PgnMoveNode(
+        ply: i + 1,
+        moveNumber: (i ~/ 2) + 1,
+        isWhite: tempBoard.activeColor == PieceColor.white,
+        san: san,
+        move: parsedMove,
+      ));
+      if (parsedMove != null) {
+        tempBoard.makeMove(parsedMove);
+      }
+    }
+
+    if (session.isCompleted) {
+      _isGameOver = true;
+      _gameStatusMessage = 'Game completed: ${session.result}';
     }
   }
 
@@ -173,9 +228,19 @@ class _PlayScreenState extends State<PlayScreen> {
     // Reset hints on move
     _clearHints();
 
-    // Save unfinished game for crash-safe recovery
+    // Autosave after EVERY move into persistent continuous GameSession!
+    _activeSession.recordMove(
+      san: san,
+      uci: move.uci,
+      newFen: _board.toFen(),
+      whiteTime: _clock.whiteRemaining.inSeconds,
+      blackTime: _clock.blackRemaining.inSeconds,
+    );
+    widget.repository.saveActiveGameSession(_activeSession);
+
+    // Also update legacy unfinished game for crash-safe recovery
     widget.repository.saveUnfinishedGame(UnfinishedGame(
-      id: 'active_game',
+      id: _activeSession.id,
       currentFen: _board.toFen(),
       moveSanList: _moves.map((m) => m.san).toList(),
       timeControl: _setupConfig.timeControlName,
@@ -183,7 +248,7 @@ class _PlayScreenState extends State<PlayScreen> {
       blackRemainingSeconds: _clock.blackRemaining.inSeconds,
       isVsEngine: _playVsEngine,
       isTournamentMode: _isTournamentMode,
-      startedAt: DateTime.now(),
+      startedAt: _activeSession.startedAt,
       lastMoveAt: DateTime.now(),
       thoughtNotes: _thoughtNotes,
     ));
@@ -245,11 +310,18 @@ class _PlayScreenState extends State<PlayScreen> {
     // Clear active unfinished game on completion
     widget.repository.clearUnfinishedGame();
 
-    // Save game record to repository
-    final pgn = _buildPgn();
+    // Determine result string
     final resultStr = _board.activeColor == PieceColor.black ? '1-0' : '0-1';
+
+    // Complete continuous GameSession & save to history
+    _activeSession.completeGame(resultStr);
+    widget.repository.saveCompletedGame(_activeSession);
+    widget.repository.clearActiveGameSession();
+
+    // Save game record to legacy game table
+    final pgn = _buildPgn();
     final record = GameRecord(
-      id: 'game_${DateTime.now().millisecondsSinceEpoch}',
+      id: _activeSession.id,
       pgn: pgn,
       playedDate: DateTime.now(),
       whitePlayer: _playerColor == PieceColor.white ? 'User' : 'Engine (${_setupConfig.strengthPreset})',
@@ -279,7 +351,6 @@ class _PlayScreenState extends State<PlayScreen> {
     _board = Board.initial();
 
     if (config.initialMinutes == 0) {
-      // Untimed
       _clock = ChessClock(
         initialTime: const Duration(hours: 99),
         increment: Duration.zero,
@@ -292,9 +363,7 @@ class _PlayScreenState extends State<PlayScreen> {
     }
 
     _startClockTimer();
-    if (_moves.isNotEmpty) {
-      _clock.start();
-    }
+    _initNewActiveSession();
 
     widget.repository.clearUnfinishedGame();
     setState(() {});
@@ -314,6 +383,14 @@ class _PlayScreenState extends State<PlayScreen> {
     if (newConfig != null) {
       _startNewGameWithConfig(newConfig);
     }
+  }
+
+  void _openGameLibrary() {
+    GameLibraryDialog.show(
+      context,
+      repository: widget.repository,
+      onNavigate: widget.onNavigate,
+    );
   }
 
   void _confirmRestart() {
@@ -447,7 +524,20 @@ class _PlayScreenState extends State<PlayScreen> {
       if (_board.history.isNotEmpty) {
         _board.unmakeMove();
       }
+      if (_activeSession.moveSanList.isNotEmpty) {
+        _activeSession.moveSanList.removeLast();
+      }
+      if (_activeSession.moveUciList.isNotEmpty) {
+        _activeSession.moveUciList.removeLast();
+      }
+      if (_activeSession.moveTimesMs.isNotEmpty) {
+        _activeSession.moveTimesMs.removeLast();
+      }
     }
+
+    _activeSession.currentFen = _board.toFen();
+    _activeSession.rebuildPgn();
+    widget.repository.saveActiveGameSession(_activeSession);
 
     if (_moves.isEmpty) {
       _clock.pause();
@@ -656,7 +746,7 @@ class _PlayScreenState extends State<PlayScreen> {
               ),
             ),
 
-          // Match Setup Summary Header (Horizontally scrollable on narrow displays)
+          // Match Setup Summary Header with Game Library Trigger
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             decoration: BoxDecoration(
@@ -710,9 +800,9 @@ class _PlayScreenState extends State<PlayScreen> {
                     '•  ${_setupConfig.timeControlName}',
                     style: TextStyle(fontSize: 11, color: context.txtSec),
                   ),
-                  const SizedBox(width: 24),
+                  const SizedBox(width: 20),
 
-                  // Engine Thinking Indicator (subtle, non-distracting, hidden in tournament mode)
+                  // Engine Thinking Indicator
                   if (_isEngineThinking && !_isTournamentMode)
                     Container(
                       margin: const EdgeInsets.only(right: 12),
@@ -741,6 +831,19 @@ class _PlayScreenState extends State<PlayScreen> {
                       ),
                     ),
 
+                  // Game Library Trigger
+                  OutlinedButton.icon(
+                    icon: const Icon(Icons.library_books, size: 14),
+                    label: const Text('Game Library'),
+                    style: OutlinedButton.styleFrom(
+                      foregroundColor: context.txt,
+                      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                      textStyle: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold),
+                    ),
+                    onPressed: _openGameLibrary,
+                  ),
+                  const SizedBox(width: 8),
+
                   // Quick Setup Modal Trigger
                   ElevatedButton.icon(
                     icon: const Icon(Icons.tune, size: 14),
@@ -758,293 +861,317 @@ class _PlayScreenState extends State<PlayScreen> {
             ),
           ),
 
-          // Main Gameplay Workspace
+          // Main Gameplay Workspace wrapped in ResponsiveChessWorkspace
           Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Row(
+            child: ResponsiveChessWorkspace(
+              initialScale: profile.boardScaleMultiplier,
+              initialSidePanelCollapsed: profile.sidePanelCollapsed,
+              onScaleChanged: (scale) {
+                profile.boardScaleMultiplier = scale;
+                widget.repository.saveProfile(profile);
+              },
+              onSidePanelToggled: (collapsed) {
+                profile.sidePanelCollapsed = collapsed;
+                widget.repository.saveProfile(profile);
+              },
+              header: Column(
+                mainAxisSize: MainAxisSize.min,
                 children: [
-                  // Left: Clocks + Board + Controls
-                  Expanded(
-                    flex: 5,
-                    child: Column(
-                      children: [
-                        // Opponent Clock Bar
-                        _buildClockBar(
-                          context,
-                          name: _playVsEngine
-                              ? 'Engine (${_engine.engineName} - Est. ${_setupConfig.eloRating})'
-                              : (_playerColor == PieceColor.white ? 'Black Player' : 'White Player'),
-                          timeString: _setupConfig.initialMinutes == 0
-                              ? 'Untimed'
-                              : (_playerColor == PieceColor.white ? _clock.blackDisplayString : _clock.whiteDisplayString),
-                          isActive: _clock.activeColor != _playerColor,
-                          isEngine: _playVsEngine,
-                        ),
-
-                        const SizedBox(height: 8),
-
-                        // Progressive Hint Banner
-                        if (_hintExplanation != null)
-                          Container(
-                            width: 520,
-                            margin: const EdgeInsets.only(bottom: 8),
-                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                            decoration: BoxDecoration(
-                              color: ChessTheme.accentGold.withAlpha(20),
-                              borderRadius: BorderRadius.circular(8),
-                              border: Border.all(color: ChessTheme.accentGold),
-                            ),
-                            child: Row(
-                              children: [
-                                const Icon(Icons.lightbulb, color: ChessTheme.accentGold, size: 18),
-                                const SizedBox(width: 10),
-                                Expanded(
-                                  child: Text(
-                                    _hintExplanation!,
-                                    style: const TextStyle(fontSize: 12, color: ChessTheme.accentGold, fontWeight: FontWeight.w600),
-                                  ),
-                                ),
-                                if (_hintLevel < 4)
-                                  TextButton(
-                                    onPressed: _requestProgressiveHint,
-                                    child: const Text('Next Hint', style: TextStyle(fontSize: 11, color: ChessTheme.accentGold)),
-                                  ),
-                                IconButton(
-                                  icon: const Icon(Icons.close, size: 16, color: ChessTheme.accentGold),
-                                  onPressed: () => setState(_clearHints),
-                                ),
-                              ],
-                            ),
-                          ),
-
-                        // Chess Board
-                        Expanded(
-                          child: Center(
-                            child: LayoutBuilder(
-                              builder: (context, constraints) {
-                                final sizeMode = BoardSizeMode.values.firstWhere(
-                                  (m) => m.name == profile.boardSizeMode,
-                                  orElse: () => _isTournamentMode ? BoardSizeMode.focus : BoardSizeMode.standard,
-                                );
-                                final boardSize = BoardSizePolicy.calculateBoardSize(
-                                  constraints: constraints,
-                                  mode: sizeMode,
-                                );
-                                return SizedBox(
-                                  width: boardSize,
-                                  height: boardSize,
-                                  child: ChessBoardWidget(
-                                    board: displayBoard,
-                                    isFlipped: _isFlipped,
-                                    onMovePlayed: _onMovePlayed,
-                                    isInteractive: !_isGameOver &&
-                                        !_isPaused &&
-                                        _replayPlyIndex == null &&
-                                        (_playVsEngine ? _board.activeColor == _playerColor : true),
-                                    lastMoveFrom: _moves.isNotEmpty ? _moves.last.move?.from : null,
-                                    lastMoveTo: _moves.isNotEmpty ? _moves.last.move?.to : null,
-                                    boardTheme: boardTheme,
-                                    pieceTheme: pieceTheme,
-                                    animationDurationMs: _getAnimationDurationMs(profile.animationSpeed),
-                                    showCoordinates: profile.showCoordinates,
-                                    showMoveHighlights: profile.showMoveHighlights,
-                                    showLegalMoveHints: profile.showLegalMoveHints,
-                                    highlightedSquares: _highlightedSquares,
-                                    arrows: _boardArrows,
-                                  ),
-                                );
-                              },
-                            ),
-                          ),
-                        ),
-
-                        const SizedBox(height: 8),
-
-                        // Player Clock Bar
-                        _buildClockBar(
-                          context,
-                          name: 'Player (You)',
-                          timeString: _setupConfig.initialMinutes == 0
-                              ? 'Untimed'
-                              : (_playerColor == PieceColor.white ? _clock.whiteDisplayString : _clock.blackDisplayString),
-                          isActive: _clock.activeColor == _playerColor,
-                          isEngine: false,
-                        ),
-
-                        const SizedBox(height: 10),
-
-                        // Primary In-Game Controls Toolbar
-                        _buildControlsToolbar(context),
-                      ],
-                    ),
+                  _buildClockBar(
+                    context,
+                    name: _playVsEngine
+                        ? 'Engine (${_engine.engineName} - Est. ${_setupConfig.eloRating})'
+                        : (_playerColor == PieceColor.white ? 'Black Player' : 'White Player'),
+                    timeString: _setupConfig.initialMinutes == 0
+                        ? 'Untimed'
+                        : (_playerColor == PieceColor.white ? _clock.blackDisplayString : _clock.whiteDisplayString),
+                    isActive: _clock.activeColor != _playerColor,
+                    isEngine: _playVsEngine,
                   ),
-
-                  const SizedBox(width: 20),
-
-                  // Right: Match Status, Moves, Post-Game Navigation
-                  Expanded(
-                    flex: 3,
-                    child: Column(
-                      children: [
-                        // Game Status Card
-                        Container(
-                          padding: const EdgeInsets.all(14),
-                          margin: const EdgeInsets.only(bottom: 12),
-                          decoration: BoxDecoration(
-                            color: context.surf,
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(color: context.brd),
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    _setupConfig.gameType.toUpperCase(),
-                                    style: const TextStyle(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.bold,
-                                      color: ChessTheme.primaryLight,
-                                    ),
-                                  ),
-                                  Text(
-                                    _clock.isRunning ? 'RUNNING' : (_isPaused ? 'PAUSED' : 'STOPPED'),
-                                    style: TextStyle(
-                                      fontSize: 10,
-                                      fontWeight: FontWeight.bold,
-                                      color: _clock.isRunning ? const Color(0xFF10B981) : Colors.amber,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                              const SizedBox(height: 6),
-                              Text(
-                                _gameStatusMessage,
-                                style: TextStyle(fontSize: 13, color: context.txt),
-                              ),
-
-                              // Post-Game Action Buttons
-                              if (_isGameOver) ...[
-                                const SizedBox(height: 10),
-                                Row(
-                                  children: [
-                                    Expanded(
-                                      child: ElevatedButton.icon(
-                                        icon: const Icon(Icons.analytics_outlined, size: 16),
-                                        label: const Text('Open Full Analysis'),
-                                        style: ElevatedButton.styleFrom(
-                                          backgroundColor: ChessTheme.primary,
-                                          foregroundColor: Colors.black,
-                                          padding: const EdgeInsets.symmetric(vertical: 8),
-                                          textStyle: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
-                                        ),
-                                        onPressed: () {
-                                          widget.onNavigate('analysis', args: {
-                                            'pgn': _buildPgn(),
-                                            'fen': _board.toFen(),
-                                          });
-                                        },
-                                      ),
-                                    ),
-                                    const SizedBox(width: 8),
-                                    ElevatedButton.icon(
-                                      icon: const Icon(Icons.refresh, size: 16),
-                                      label: const Text('Rematch'),
-                                      style: ElevatedButton.styleFrom(
-                                        backgroundColor: context.surfLight,
-                                        foregroundColor: context.txt,
-                                        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-                                      ),
-                                      onPressed: () {
-                                        // Reverse sides for rematch
-                                        final newSide = _playerColor == PieceColor.white ? PieceColor.black : PieceColor.white;
-                                        final rematchConfig = PlaySetupConfig(
-                                          playerColor: newSide,
-                                          strengthPreset: _setupConfig.strengthPreset,
-                                          eloRating: _setupConfig.eloRating,
-                                          gameType: _setupConfig.gameType,
-                                          timeControlName: _setupConfig.timeControlName,
-                                          initialMinutes: _setupConfig.initialMinutes,
-                                          incrementSeconds: _setupConfig.incrementSeconds,
-                                        );
-                                        _startNewGameWithConfig(rematchConfig);
-                                      },
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ],
-                          ),
-                        ),
-
-                        // Move Notation Tree
-                        Expanded(
-                          child: MoveListWidget(
-                            moves: _moves,
-                            currentPlyIndex: _replayPlyIndex ?? _moves.length,
-                          ),
-                        ),
-
-                        // Replay Navigation Toolbar after game over
-                        if (_isGameOver && _moves.isNotEmpty)
-                          Container(
-                            padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 8),
-                            margin: const EdgeInsets.only(top: 8),
-                            decoration: BoxDecoration(
-                              color: context.surf,
-                              borderRadius: BorderRadius.circular(8),
-                              border: Border.all(color: context.brd),
-                            ),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                IconButton(
-                                  icon: const Icon(Icons.first_page, size: 18),
-                                  tooltip: 'First Move',
-                                  onPressed: () => setState(() => _replayPlyIndex = 0),
-                                ),
-                                IconButton(
-                                  icon: const Icon(Icons.chevron_left, size: 18),
-                                  tooltip: 'Previous Move',
-                                  onPressed: () {
-                                    final cur = _replayPlyIndex ?? _moves.length;
-                                    if (cur > 0) setState(() => _replayPlyIndex = cur - 1);
-                                  },
-                                ),
-                                Text(
-                                  _replayPlyIndex != null
-                                      ? 'Ply ${_replayPlyIndex! + 1}/${_moves.length}'
-                                      : 'Final Position',
-                                  style: TextStyle(fontSize: 11, color: context.txtSec),
-                                ),
-                                IconButton(
-                                  icon: const Icon(Icons.chevron_right, size: 18),
-                                  tooltip: 'Next Move',
-                                  onPressed: () {
-                                    final cur = _replayPlyIndex ?? _moves.length;
-                                    if (cur < _moves.length) setState(() => _replayPlyIndex = cur + 1);
-                                  },
-                                ),
-                                IconButton(
-                                  icon: const Icon(Icons.last_page, size: 18),
-                                  tooltip: 'Live/Final Position',
-                                  onPressed: () => setState(() => _replayPlyIndex = null),
-                                ),
-                              ],
+                  if (_hintExplanation != null) ...[
+                    const SizedBox(height: 6),
+                    Container(
+                      width: double.infinity,
+                      constraints: const BoxConstraints(maxWidth: 600),
+                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                      decoration: BoxDecoration(
+                        color: ChessTheme.accentGold.withAlpha(20),
+                        borderRadius: BorderRadius.circular(8),
+                        border: Border.all(color: ChessTheme.accentGold),
+                      ),
+                      child: Row(
+                        children: [
+                          const Icon(Icons.lightbulb, color: ChessTheme.accentGold, size: 18),
+                          const SizedBox(width: 10),
+                          Expanded(
+                            child: Text(
+                              _hintExplanation!,
+                              style: const TextStyle(fontSize: 12, color: ChessTheme.accentGold, fontWeight: FontWeight.w600),
                             ),
                           ),
-                      ],
+                          if (_hintLevel < 4)
+                            TextButton(
+                              onPressed: _requestProgressiveHint,
+                              child: const Text('Next Hint', style: TextStyle(fontSize: 11, color: ChessTheme.accentGold)),
+                            ),
+                          IconButton(
+                            icon: const Icon(Icons.close, size: 16, color: ChessTheme.accentGold),
+                            onPressed: () => setState(_clearHints),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
+                  ],
                 ],
               ),
+              boardBuilder: (context, boardSize) {
+                return SizedBox(
+                  width: boardSize,
+                  height: boardSize,
+                  child: ChessBoardWidget(
+                    board: displayBoard,
+                    isFlipped: _isFlipped,
+                    onMovePlayed: _onMovePlayed,
+                    isInteractive: !_isGameOver &&
+                        !_isPaused &&
+                        _replayPlyIndex == null &&
+                        (_playVsEngine ? _board.activeColor == _playerColor : true),
+                    lastMoveFrom: _moves.isNotEmpty ? _moves.last.move?.from : null,
+                    lastMoveTo: _moves.isNotEmpty ? _moves.last.move?.to : null,
+                    boardTheme: boardTheme,
+                    pieceTheme: pieceTheme,
+                    animationDurationMs: _getAnimationDurationMs(profile.animationSpeed),
+                    showCoordinates: profile.showCoordinates,
+                    showMoveHighlights: profile.showMoveHighlights,
+                    showLegalMoveHints: profile.showLegalMoveHints,
+                    highlightedSquares: _highlightedSquares,
+                    arrows: _boardArrows,
+                  ),
+                );
+              },
+              footer: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  _buildClockBar(
+                    context,
+                    name: 'Player (You)',
+                    timeString: _setupConfig.initialMinutes == 0
+                        ? 'Untimed'
+                        : (_playerColor == PieceColor.white ? _clock.whiteDisplayString : _clock.blackDisplayString),
+                    isActive: _clock.activeColor == _playerColor,
+                    isEngine: false,
+                  ),
+                  const SizedBox(height: 8),
+                  _buildControlsToolbar(context),
+                ],
+              ),
+              sidePanel: _buildSidePanel(context),
             ),
           ),
         ],
       ),
+    );
+  }
+
+  Widget _buildSidePanel(BuildContext context) {
+    return Column(
+      children: [
+        // Game Status Card & Post-Game 5 One-Click Actions
+        Container(
+          padding: const EdgeInsets.all(14),
+          margin: const EdgeInsets.only(bottom: 12),
+          decoration: BoxDecoration(
+            color: context.surf,
+            borderRadius: BorderRadius.circular(10),
+            border: Border.all(color: context.brd),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    _setupConfig.gameType.toUpperCase(),
+                    style: const TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                      color: ChessTheme.primaryLight,
+                    ),
+                  ),
+                  Text(
+                    _clock.isRunning ? 'RUNNING' : (_isPaused ? 'PAUSED' : 'STOPPED'),
+                    style: TextStyle(
+                      fontSize: 10,
+                      fontWeight: FontWeight.bold,
+                      color: _clock.isRunning ? const Color(0xFF10B981) : Colors.amber,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 6),
+              Text(
+                _gameStatusMessage,
+                style: TextStyle(fontSize: 13, color: context.txt),
+              ),
+
+              // Post-Game Action Buttons: 5 Key Actions
+              if (_isGameOver) ...[
+                const SizedBox(height: 12),
+                Wrap(
+                  spacing: 8,
+                  runSpacing: 8,
+                  children: [
+                    // 1. ANALYZE GAME
+                    ElevatedButton.icon(
+                      icon: const Icon(Icons.analytics_outlined, size: 15),
+                      label: const Text('ANALYZE GAME'),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: ChessTheme.primary,
+                        foregroundColor: Colors.black,
+                        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                        textStyle: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold),
+                      ),
+                      onPressed: () {
+                        widget.onNavigate('analysis', args: {
+                          'gameSession': _activeSession,
+                          'pgn': _buildPgn(),
+                          'fen': _board.toFen(),
+                        });
+                      },
+                    ),
+
+                    // 2. REVIEW MISTAKES
+                    ElevatedButton.icon(
+                      icon: const Icon(Icons.psychology, size: 15),
+                      label: const Text('REVIEW MISTAKES'),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: context.surfLight,
+                        foregroundColor: context.txt,
+                        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                        textStyle: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold),
+                      ),
+                      onPressed: () {
+                        widget.onNavigate('analysis', args: {
+                          'gameSession': _activeSession,
+                          'tab': 'mistakes',
+                          'pgn': _buildPgn(),
+                        });
+                      },
+                    ),
+
+                    // 3. CREATE VIDEO
+                    ElevatedButton.icon(
+                      icon: const Icon(Icons.movie_creation_outlined, size: 15),
+                      label: const Text('CREATE VIDEO'),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: context.surfLight,
+                        foregroundColor: context.txt,
+                        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                        textStyle: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold),
+                      ),
+                      onPressed: () {
+                        widget.onNavigate('video', args: {
+                          'gameSession': _activeSession,
+                          'pgn': _buildPgn(),
+                        });
+                      },
+                    ),
+
+                    // 4. REMATCH
+                    OutlinedButton.icon(
+                      icon: const Icon(Icons.refresh, size: 15),
+                      label: const Text('REMATCH'),
+                      style: OutlinedButton.styleFrom(
+                        foregroundColor: context.txt,
+                        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                        textStyle: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold),
+                      ),
+                      onPressed: () {
+                        final newSide = _playerColor == PieceColor.white ? PieceColor.black : PieceColor.white;
+                        final rematchConfig = PlaySetupConfig(
+                          playerColor: newSide,
+                          strengthPreset: _setupConfig.strengthPreset,
+                          eloRating: _setupConfig.eloRating,
+                          gameType: _setupConfig.gameType,
+                          timeControlName: _setupConfig.timeControlName,
+                          initialMinutes: _setupConfig.initialMinutes,
+                          incrementSeconds: _setupConfig.incrementSeconds,
+                        );
+                        _startNewGameWithConfig(rematchConfig);
+                      },
+                    ),
+
+                    // 5. EXPORT PGN
+                    IconButton(
+                      icon: const Icon(Icons.download_outlined, size: 18),
+                      tooltip: 'SAVE / EXPORT PGN',
+                      onPressed: () => _copyToClipboard(_buildPgn(), 'PGN'),
+                    ),
+                  ],
+                ),
+              ],
+            ],
+          ),
+        ),
+
+        // Move Notation Tree
+        Expanded(
+          child: MoveListWidget(
+            moves: _moves,
+            currentPlyIndex: _replayPlyIndex ?? _moves.length,
+          ),
+        ),
+
+        // Replay Navigation Toolbar after game over
+        if (_isGameOver && _moves.isNotEmpty)
+          Container(
+            padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 8),
+            margin: const EdgeInsets.only(top: 8),
+            decoration: BoxDecoration(
+              color: context.surf,
+              borderRadius: BorderRadius.circular(8),
+              border: Border.all(color: context.brd),
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                IconButton(
+                  icon: const Icon(Icons.first_page, size: 18),
+                  tooltip: 'First Move',
+                  onPressed: () => setState(() => _replayPlyIndex = 0),
+                ),
+                IconButton(
+                  icon: const Icon(Icons.chevron_left, size: 18),
+                  tooltip: 'Previous Move',
+                  onPressed: () {
+                    final cur = _replayPlyIndex ?? _moves.length;
+                    if (cur > 0) setState(() => _replayPlyIndex = cur - 1);
+                  },
+                ),
+                Text(
+                  _replayPlyIndex != null
+                      ? 'Ply ${_replayPlyIndex! + 1}/${_moves.length}'
+                      : 'Final Position',
+                  style: TextStyle(fontSize: 11, color: context.txtSec),
+                ),
+                IconButton(
+                  icon: const Icon(Icons.chevron_right, size: 18),
+                  tooltip: 'Next Move',
+                  onPressed: () {
+                    final cur = _replayPlyIndex ?? _moves.length;
+                    if (cur < _moves.length) setState(() => _replayPlyIndex = cur + 1);
+                  },
+                ),
+                IconButton(
+                  icon: const Icon(Icons.last_page, size: 18),
+                  tooltip: 'Live/Final Position',
+                  onPressed: () => setState(() => _replayPlyIndex = null),
+                ),
+              ],
+            ),
+          ),
+      ],
     );
   }
 
@@ -1056,7 +1183,8 @@ class _PlayScreenState extends State<PlayScreen> {
     required bool isEngine,
   }) {
     return Container(
-      width: 520,
+      width: double.infinity,
+      constraints: const BoxConstraints(maxWidth: 600),
       padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
       decoration: BoxDecoration(
         color: isActive ? context.surfLight : context.surf,
@@ -1117,96 +1245,100 @@ class _PlayScreenState extends State<PlayScreen> {
 
   Widget _buildControlsToolbar(BuildContext context) {
     return Container(
-      width: 520,
+      width: double.infinity,
+      constraints: const BoxConstraints(maxWidth: 600),
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
       decoration: BoxDecoration(
         color: context.surf,
         borderRadius: BorderRadius.circular(8),
         border: Border.all(color: context.brd),
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          // Undo / Takeback
-          IconButton(
-            icon: const Icon(Icons.undo, size: 18),
-            tooltip: 'Takeback',
-            color: _moves.isNotEmpty && !_isGameOver ? context.txt : context.txtMut,
-            onPressed: _moves.isNotEmpty && !_isGameOver ? _handleUndo : null,
-          ),
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            // Undo / Takeback
+            IconButton(
+              icon: const Icon(Icons.undo, size: 18),
+              tooltip: 'Takeback',
+              color: _moves.isNotEmpty && !_isGameOver ? context.txt : context.txtMut,
+              onPressed: _moves.isNotEmpty && !_isGameOver ? _handleUndo : null,
+            ),
 
-          // Progressive Hint
-          IconButton(
-            icon: const Icon(Icons.lightbulb_outline, size: 18),
-            tooltip: 'Progressive Hint (1 to 4)',
-            color: !_isGameOver && _board.activeColor == _playerColor ? ChessTheme.accentGold : context.txtMut,
-            onPressed: !_isGameOver && _board.activeColor == _playerColor ? _requestProgressiveHint : null,
-          ),
+            // Progressive Hint
+            IconButton(
+              icon: const Icon(Icons.lightbulb_outline, size: 18),
+              tooltip: 'Progressive Hint (1 to 4)',
+              color: !_isGameOver && _board.activeColor == _playerColor ? ChessTheme.accentGold : context.txtMut,
+              onPressed: !_isGameOver && _board.activeColor == _playerColor ? _requestProgressiveHint : null,
+            ),
 
-          // Pause / Resume
-          IconButton(
-            icon: Icon(_isPaused ? Icons.play_arrow : Icons.pause, size: 18),
-            tooltip: _isPaused ? 'Resume Clock' : 'Pause Game',
-            color: !_isGameOver ? context.txt : context.txtMut,
-            onPressed: !_isGameOver ? _togglePause : null,
-          ),
+            // Pause / Resume
+            IconButton(
+              icon: Icon(_isPaused ? Icons.play_arrow : Icons.pause, size: 18),
+              tooltip: _isPaused ? 'Resume Clock' : 'Pause Game',
+              color: !_isGameOver ? context.txt : context.txtMut,
+              onPressed: !_isGameOver ? _togglePause : null,
+            ),
 
-          // Flip Board
-          IconButton(
-            icon: const Icon(Icons.swap_vert, size: 18),
-            tooltip: 'Flip Board',
-            color: context.txt,
-            onPressed: () => setState(() => _isFlipped = !_isFlipped),
-          ),
+            // Flip Board
+            IconButton(
+              icon: const Icon(Icons.swap_vert, size: 18),
+              tooltip: 'Flip Board',
+              color: context.txt,
+              onPressed: () => setState(() => _isFlipped = !_isFlipped),
+            ),
 
-          // Offer Draw
-          IconButton(
-            icon: const Icon(Icons.handshake_outlined, size: 18),
-            tooltip: 'Offer Draw',
-            color: !_isGameOver ? context.txt : context.txtMut,
-            onPressed: !_isGameOver ? _offerDraw : null,
-          ),
+            // Offer Draw
+            IconButton(
+              icon: const Icon(Icons.handshake_outlined, size: 18),
+              tooltip: 'Offer Draw',
+              color: !_isGameOver ? context.txt : context.txtMut,
+              onPressed: !_isGameOver ? _offerDraw : null,
+            ),
 
-          // Resign
-          IconButton(
-            icon: const Icon(Icons.flag_outlined, size: 18),
-            tooltip: 'Resign Game',
-            color: !_isGameOver ? ChessTheme.qualityBlunder : context.txtMut,
-            onPressed: !_isGameOver ? _confirmResign : null,
-          ),
+            // Resign
+            IconButton(
+              icon: const Icon(Icons.flag_outlined, size: 18),
+              tooltip: 'Resign Game',
+              color: !_isGameOver ? ChessTheme.qualityBlunder : context.txtMut,
+              onPressed: !_isGameOver ? _confirmResign : null,
+            ),
 
-          // Restart / New Game
-          IconButton(
-            icon: const Icon(Icons.restart_alt, size: 18),
-            tooltip: 'Reset / New Game',
-            color: context.txt,
-            onPressed: _confirmRestart,
-          ),
+            // Restart / New Game
+            IconButton(
+              icon: const Icon(Icons.restart_alt, size: 18),
+              tooltip: 'Reset / New Game',
+              color: context.txt,
+              onPressed: _confirmRestart,
+            ),
 
-          // Board & Piece Customizer
-          IconButton(
-            icon: const Icon(Icons.palette_outlined, size: 18),
-            tooltip: 'Customize Board & Pieces',
-            color: ChessTheme.primaryLight,
-            onPressed: () => _openQuickCustomizer(context),
-          ),
+            // Board & Piece Customizer
+            IconButton(
+              icon: const Icon(Icons.palette_outlined, size: 18),
+              tooltip: 'Customize Board & Pieces',
+              color: ChessTheme.primaryLight,
+              onPressed: () => _openQuickCustomizer(context),
+            ),
 
-          // Copy PGN
-          IconButton(
-            icon: const Icon(Icons.copy, size: 18),
-            tooltip: 'Copy PGN',
-            color: context.txtSec,
-            onPressed: () => _copyToClipboard(_buildPgn(), 'PGN'),
-          ),
+            // Copy PGN
+            IconButton(
+              icon: const Icon(Icons.copy, size: 18),
+              tooltip: 'Copy PGN',
+              color: context.txtSec,
+              onPressed: () => _copyToClipboard(_buildPgn(), 'PGN'),
+            ),
 
-          // Copy FEN
-          IconButton(
-            icon: const Icon(Icons.code, size: 18),
-            tooltip: 'Copy FEN',
-            color: context.txtSec,
-            onPressed: () => _copyToClipboard(_board.toFen(), 'FEN'),
-          ),
-        ],
+            // Copy FEN
+            IconButton(
+              icon: const Icon(Icons.code, size: 18),
+              tooltip: 'Copy FEN',
+              color: context.txtSec,
+              onPressed: () => _copyToClipboard(_board.toFen(), 'FEN'),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -6,12 +6,12 @@ import 'package:chess_curriculum/chess_curriculum.dart';
 import 'package:chess_labs/chess_labs.dart';
 import 'package:chess_storage/chess_storage.dart';
 import 'package:flutter/material.dart';
-import '../theme/board_size_policy.dart';
 import '../theme/chess_board_theme.dart';
 import '../theme/chess_theme.dart';
 import '../theme/piece_theme.dart';
 import '../widgets/board/chess_board_widget.dart';
 import '../widgets/board/move_list_widget.dart';
+import '../widgets/board/responsive_chess_workspace.dart';
 
 /// Available learning and training categories in the interactive laboratory.
 enum LabCategory {
@@ -589,6 +589,10 @@ class _LabsScreenState extends State<LabsScreen> {
       ));
     }
 
+    if (_session.isCompleted) {
+      _recordExerciseCompletion();
+    }
+
     setState(() {});
   }
 
@@ -751,6 +755,128 @@ class _LabsScreenState extends State<LabsScreen> {
     }
   }
 
+  Board _getDisplayBoard() {
+    if (_session.mode == LabMode.demo) {
+      final step = _session.pedagogyEngine.currentDemoStep;
+      if (step != null && step.animatedMove != null) {
+        final demoBoard = Board.fromFen(_session.initialFen);
+        demoBoard.makeMove(step.animatedMove!);
+        return demoBoard;
+      }
+      return Board.fromFen(_session.initialFen);
+    }
+    return _session.currentBoard;
+  }
+
+  List<Square> _getDisplayHighlights() {
+    if (_session.mode == LabMode.demo) {
+      return _session.pedagogyEngine.currentDemoStep?.highlightedSquares ?? [];
+    } else if (_session.mode == LabMode.guided) {
+      return _session.pedagogyEngine.currentSocraticStep?.highlightedSquares ?? [];
+    } else if (_session.mode == LabMode.practice) {
+      if (_session.hintsRevealed >= 2 && _session.candidatePieceSquare != null) {
+        return [_session.candidatePieceSquare!];
+      }
+    }
+    return [];
+  }
+
+  List<BoardArrow> _getDisplayArrows() {
+    if (_session.mode == LabMode.demo) {
+      final arrows = _session.pedagogyEngine.currentDemoStep?.arrows ?? [];
+      return arrows.map((a) {
+        Color c = const Color(0xCC22C55E);
+        if (a.colorHex.startsWith('#EF')) c = const Color(0xCCEF4444);
+        if (a.colorHex.startsWith('#F5')) c = const Color(0xCCF59E0B);
+        return BoardArrow(from: a.from, to: a.to, color: c);
+      }).toList();
+    } else if (_session.mode == LabMode.guided) {
+      final arrows = _session.pedagogyEngine.currentSocraticStep?.arrows ?? [];
+      return arrows.map((a) => BoardArrow(from: a.from, to: a.to, color: const Color(0xCC22C55E))).toList();
+    } else if (_session.mode == LabMode.practice) {
+      if (_session.hintsRevealed >= 3 && _session.candidatePieceSquare != null && _session.candidateTargetSquare != null) {
+        return [BoardArrow(from: _session.candidatePieceSquare!, to: _session.candidateTargetSquare!, color: const Color(0xCC22C55E))];
+      }
+    }
+    return [];
+  }
+
+  void _onSocraticCandidateSelected(String san) {
+    if (_session.pedagogyEngine.validateSocraticMove(san)) {
+      final move = MoveGenerator.sanToMove(_session.currentBoard, san);
+      if (move != null) {
+        _onMovePlayed(move);
+      }
+    }
+    setState(() {});
+  }
+
+  void _showCognitiveDecisionTreeDialog() {
+    showDialog(
+      context: context,
+      builder: (ctx) => AlertDialog(
+        backgroundColor: ctx.surf,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+        title: const Row(
+          children: [
+            Icon(Icons.psychology, color: ChessTheme.primaryLight, size: 22),
+            SizedBox(width: 8),
+            Text('Grandmaster Cognitive Thinking Method', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+          ],
+        ),
+        content: SizedBox(
+          width: 520,
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: CognitiveStage.values.map((stage) {
+                return Padding(
+                  padding: const EdgeInsets.only(bottom: 12.0),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.all(6),
+                        decoration: BoxDecoration(
+                          color: ChessTheme.primary.withAlpha(30),
+                          shape: BoxShape.circle,
+                        ),
+                        child: Text(
+                          '${stage.index + 1}',
+                          style: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: ChessTheme.primaryLight),
+                        ),
+                      ),
+                      const SizedBox(width: 10),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(stage.title, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: ctx.txt)),
+                            const SizedBox(height: 2),
+                            Text(stage.description, style: TextStyle(fontSize: 11, color: ctx.txtSec)),
+                            const SizedBox(height: 2),
+                            Text('💡 GM Tip: ${stage.gmTip}', style: const TextStyle(fontSize: 11, fontStyle: FontStyle.italic, color: ChessTheme.accentGold)),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                );
+              }).toList(),
+            ),
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: const Text('Apply in Practice', style: TextStyle(color: ChessTheme.primaryLight)),
+          ),
+        ],
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     if (_sprintExercises.isEmpty) {
@@ -764,75 +890,165 @@ class _LabsScreenState extends State<LabsScreen> {
 
     final currentEx = _sprintExercises[_currentExerciseIndex];
     final profile = widget.repository.getProfile();
+    final boardTheme = ChessBoardTheme.fromName(profile.boardThemeName);
+    final pieceTheme = PieceTheme.fromName(profile.pieceThemeName);
+    final displayBoard = _getDisplayBoard();
+    final displayHighlights = _getDisplayHighlights();
+    final displayArrows = _getDisplayArrows();
 
     return Scaffold(
       backgroundColor: context.bg,
-      body: LayoutBuilder(
-        builder: (context, constraints) {
-          final isCompact = constraints.maxWidth < 900;
-          final evalBarSpacing = isCompact ? 8.0 : 12.0;
-          const evalBarWidth = 28.0;
-          final boardSize = BoardSizePolicy.calculateBoardSize(
-            constraints: constraints,
-            mode: isCompact ? BoardSizeMode.compact : BoardSizeMode.standard,
-            hasEvaluationBar: true,
-            evalBarWidth: evalBarWidth + evalBarSpacing,
-            verticalPadding: 260.0,
+      body: ResponsiveChessWorkspace(
+        initialScale: profile.boardScaleMultiplier,
+        initialSidePanelCollapsed: profile.sidePanelCollapsed,
+        onScaleChanged: (scale) {
+          profile.boardScaleMultiplier = scale;
+          widget.repository.saveProfile(profile);
+        },
+        onSidePanelToggled: (collapsed) {
+          profile.sidePanelCollapsed = collapsed;
+          widget.repository.saveProfile(profile);
+        },
+        header: Column(
+          children: [
+            _buildHeaderBar(context, currentEx),
+            _buildModeSelectorBar(context),
+            _buildInstructionBanner(context, currentEx),
+          ],
+        ),
+        boardBuilder: (context, boardSize) {
+          return ChessBoardWidget(
+            board: displayBoard,
+            isFlipped: currentEx.sideToPlay == PieceColor.black,
+            onMovePlayed: (_session.mode == LabMode.demo) ? null : _onMovePlayed,
+            isInteractive: _session.mode != LabMode.demo && !_session.isCompleted,
+            lastMoveFrom: _lastMoveFrom,
+            lastMoveTo: _lastMoveTo,
+            boardTheme: boardTheme,
+            pieceTheme: pieceTheme,
+            animationDurationMs: _getAnimationDurationMs(profile.animationSpeed),
+            showCoordinates: profile.showCoordinates,
+            showMoveHighlights: profile.showMoveHighlights,
+            showLegalMoveHints: profile.showLegalMoveHints,
+            highlightedSquares: displayHighlights,
+            arrows: displayArrows,
           );
+        },
+        footer: _buildPedagogicalFooter(context, currentEx),
+        sidePanel: _buildPedagogicalSidePanel(context, currentEx),
+      ),
+    );
+  }
 
-          // Top Header Bar with Category, Day/Sprint & Live Performance
-          final headerBar = Container(
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-            margin: const EdgeInsets.only(bottom: 12),
-            decoration: BoxDecoration(
-              color: context.surf,
-              borderRadius: BorderRadius.circular(12),
-              border: Border.all(color: context.brd),
-            ),
-            child: Wrap(
-              spacing: 12,
-              runSpacing: 10,
-              crossAxisAlignment: WrapCrossAlignment.center,
-              alignment: WrapAlignment.spaceBetween,
-              children: [
-                // Category Picker
-                ConstrainedBox(
-                  constraints: BoxConstraints(
-                    minWidth: 160,
-                    maxWidth: isCompact ? math.max(160, constraints.maxWidth - 48) : 220,
-                  ),
-                  child: DropdownButtonHideUnderline(
-                    child: DropdownButton<LabCategory>(
-                      isExpanded: true,
-                      value: _selectedCategory,
-                      dropdownColor: context.surf,
-                      icon: const Icon(Icons.arrow_drop_down, color: ChessTheme.primary),
-                      items: LabCategory.values.map((cat) {
-                        return DropdownMenuItem<LabCategory>(
-                          value: cat,
-                          child: Row(
-                            children: [
-                              Icon(cat.icon, size: 16, color: ChessTheme.primaryLight),
-                              const SizedBox(width: 8),
-                              Expanded(
-                                child: Text(
-                                  cat.label,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(
-                                    color: context.txt,
-                                    fontSize: 13,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                              ),
-                            ],
+  Widget _buildHeaderBar(BuildContext context, CurriculumExercise currentEx) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+      margin: const EdgeInsets.only(bottom: 8),
+      decoration: BoxDecoration(
+        color: context.surf,
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: context.brd),
+      ),
+      child: Wrap(
+        spacing: 12,
+        runSpacing: 8,
+        crossAxisAlignment: WrapCrossAlignment.center,
+        alignment: WrapAlignment.spaceBetween,
+        children: [
+          // Category Picker
+          ConstrainedBox(
+            constraints: const BoxConstraints(minWidth: 160, maxWidth: 220),
+            child: DropdownButtonHideUnderline(
+              child: DropdownButton<LabCategory>(
+                isExpanded: true,
+                value: _selectedCategory,
+                dropdownColor: context.surf,
+                icon: const Icon(Icons.arrow_drop_down, color: ChessTheme.primary),
+                items: LabCategory.values.map((cat) {
+                  return DropdownMenuItem<LabCategory>(
+                    value: cat,
+                    child: Row(
+                      children: [
+                        Icon(cat.icon, size: 16, color: ChessTheme.primaryLight),
+                        const SizedBox(width: 8),
+                        Expanded(
+                          child: Text(
+                            cat.label,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(color: context.txt, fontSize: 13, fontWeight: FontWeight.w600),
                           ),
+                        ),
+                      ],
+                    ),
+                  );
+                }).toList(),
+                onChanged: (cat) {
+                  if (cat != null && cat != _selectedCategory) {
+                    setState(() {
+                      _selectedCategory = cat;
+                      _currentSprintIndex = 0;
+                      _reloadExercises();
+                    });
+                  }
+                },
+              ),
+            ),
+          ),
+
+          // Curriculum Day / Sprint Index
+          if (_selectedCategory == LabCategory.curriculum)
+            ConstrainedBox(
+              constraints: const BoxConstraints(minWidth: 160, maxWidth: 240),
+              child: DropdownButtonHideUnderline(
+                child: DropdownButton<int>(
+                  isExpanded: true,
+                  value: _selectedDayNumber,
+                  dropdownColor: context.surf,
+                  icon: const Icon(Icons.arrow_drop_down, color: ChessTheme.primary),
+                  items: List.generate(90, (i) => i + 1).map((day) {
+                    return DropdownMenuItem<int>(
+                      value: day,
+                      child: Text(
+                        'Day $day: ${CurriculumCatalog.getDay(day).title}',
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(color: context.txt, fontSize: 13),
+                      ),
+                    );
+                  }).toList(),
+                  onChanged: (day) {
+                    if (day != null && day != _selectedDayNumber) {
+                      setState(() {
+                        _selectedDayNumber = day;
+                        _reloadExercises();
+                      });
+                    }
+                  },
+                ),
+              ),
+            )
+          else
+            Wrap(
+              spacing: 8,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              children: [
+                ConstrainedBox(
+                  constraints: const BoxConstraints(minWidth: 110, maxWidth: 130),
+                  child: DropdownButtonHideUnderline(
+                    child: DropdownButton<SprintLength>(
+                      isExpanded: true,
+                      value: _selectedSprintLength,
+                      dropdownColor: context.surf,
+                      icon: const Icon(Icons.tune, size: 14, color: ChessTheme.primary),
+                      items: SprintLength.values.map((sl) {
+                        return DropdownMenuItem<SprintLength>(
+                          value: sl,
+                          child: Text(sl.label, style: TextStyle(color: context.txt, fontSize: 13)),
                         );
                       }).toList(),
-                      onChanged: (cat) {
-                        if (cat != null && cat != _selectedCategory) {
+                      onChanged: (sl) {
+                        if (sl != null && sl != _selectedSprintLength) {
                           setState(() {
-                            _selectedCategory = cat;
+                            _selectedSprintLength = sl;
                             _currentSprintIndex = 0;
                             _reloadExercises();
                           });
@@ -841,670 +1057,778 @@ class _LabsScreenState extends State<LabsScreen> {
                     ),
                   ),
                 ),
-
-                // Curriculum Day selector OR Sprint Length & Index selector
-                if (_selectedCategory == LabCategory.curriculum)
-                  ConstrainedBox(
-                    constraints: BoxConstraints(
-                      minWidth: 160,
-                      maxWidth: isCompact ? math.max(160, constraints.maxWidth - 48) : 260,
+                ConstrainedBox(
+                  constraints: const BoxConstraints(minWidth: 130, maxWidth: 160),
+                  child: DropdownButtonHideUnderline(
+                    child: DropdownButton<int>(
+                      isExpanded: true,
+                      value: _currentSprintIndex,
+                      dropdownColor: context.surf,
+                      icon: const Icon(Icons.arrow_drop_down, color: ChessTheme.primary),
+                      items: List.generate(
+                        (_bankExercises.length / _selectedSprintLength.count).ceil(),
+                        (i) => i,
+                      ).map((idx) {
+                        final start = idx * _selectedSprintLength.count + 1;
+                        final end = math.min((idx + 1) * _selectedSprintLength.count, _bankExercises.length);
+                        return DropdownMenuItem<int>(
+                          value: idx,
+                          child: Text('Sprint ${idx + 1} ($start–$end)', style: TextStyle(color: context.txt, fontSize: 13)),
+                        );
+                      }).toList(),
+                      onChanged: (idx) {
+                        if (idx != null && idx != _currentSprintIndex) {
+                          setState(() {
+                            _currentSprintIndex = idx;
+                            _reloadExercises();
+                          });
+                        }
+                      },
                     ),
-                    child: DropdownButtonHideUnderline(
-                      child: DropdownButton<int>(
-                        isExpanded: true,
-                        value: _selectedDayNumber,
-                        dropdownColor: context.surf,
-                        icon: const Icon(Icons.arrow_drop_down, color: ChessTheme.primary),
-                        items: List.generate(90, (i) => i + 1).map((day) {
-                          return DropdownMenuItem<int>(
-                            value: day,
-                            child: Text(
-                              'Day $day: ${CurriculumCatalog.getDay(day).title}',
-                              overflow: TextOverflow.ellipsis,
-                              style: TextStyle(color: context.txt, fontSize: 13),
-                            ),
-                          );
-                        }).toList(),
-                        onChanged: (day) {
-                          if (day != null && day != _selectedDayNumber) {
-                            setState(() {
-                              _selectedDayNumber = day;
-                              _reloadExercises();
-                            });
-                          }
-                        },
-                      ),
-                    ),
-                  )
-                else
-                  Wrap(
-                    spacing: 8,
-                    runSpacing: 8,
-                    crossAxisAlignment: WrapCrossAlignment.center,
-                    children: [
-                      // Sprint Length
-                      ConstrainedBox(
-                        constraints: const BoxConstraints(minWidth: 110, maxWidth: 130),
-                        child: DropdownButtonHideUnderline(
-                          child: DropdownButton<SprintLength>(
-                            isExpanded: true,
-                            value: _selectedSprintLength,
-                            dropdownColor: context.surf,
-                            icon: const Icon(Icons.tune, size: 14, color: ChessTheme.primary),
-                            items: SprintLength.values.map((sl) {
-                              return DropdownMenuItem<SprintLength>(
-                                value: sl,
-                                child: Text(
-                                  sl.label,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(color: context.txt, fontSize: 13),
-                                ),
-                              );
-                            }).toList(),
-                            onChanged: (sl) {
-                              if (sl != null && sl != _selectedSprintLength) {
-                                setState(() {
-                                  _selectedSprintLength = sl;
-                                  _currentSprintIndex = 0;
-                                  _reloadExercises();
-                                });
-                              }
-                            },
-                          ),
-                        ),
-                      ),
-                      // Sprint index selector
-                      ConstrainedBox(
-                        constraints: const BoxConstraints(minWidth: 130, maxWidth: 160),
-                        child: DropdownButtonHideUnderline(
-                          child: DropdownButton<int>(
-                            isExpanded: true,
-                            value: _currentSprintIndex,
-                            dropdownColor: context.surf,
-                            icon: const Icon(Icons.arrow_drop_down, color: ChessTheme.primary),
-                            items: List.generate(
-                              (_bankExercises.length / _selectedSprintLength.count).ceil(),
-                              (i) => i,
-                            ).map((idx) {
-                              final start = idx * _selectedSprintLength.count + 1;
-                              final end = math.min((idx + 1) * _selectedSprintLength.count, _bankExercises.length);
-                              return DropdownMenuItem<int>(
-                                value: idx,
-                                child: Text(
-                                  'Sprint ${idx + 1} ($start–$end)',
-                                  overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(color: context.txt, fontSize: 13),
-                                ),
-                              );
-                            }).toList(),
-                            onChanged: (idx) {
-                              if (idx != null && idx != _currentSprintIndex) {
-                                setState(() {
-                                  _currentSprintIndex = idx;
-                                  _reloadExercises();
-                                });
-                              }
-                            },
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-
-                // Live Sprint Stats Pill
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                  decoration: BoxDecoration(
-                    color: context.surfLight,
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                  child: Wrap(
-                    spacing: 8,
-                    runSpacing: 4,
-                    crossAxisAlignment: WrapCrossAlignment.center,
-                    children: [
-                      Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          const Icon(Icons.stars, size: 14, color: ChessTheme.accentGold),
-                          const SizedBox(width: 4),
-                          Text(
-                            'Solved: ${_exerciseScores.length}/${_sprintExercises.length}',
-                            style: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold,
-                              color: context.txt,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Text(
-                        'Score: ${_session.score.round()}%',
-                        style: TextStyle(
-                          fontSize: 12,
-                          fontWeight: FontWeight.bold,
-                          color: _session.score >= 80 ? ChessTheme.primaryLight : ChessTheme.accentGold,
-                        ),
-                      ),
-                    ],
                   ),
                 ),
               ],
             ),
-          );
 
-          // 5-Mode Selector Bar (Demo, Guided, Practice, Challenge, Review)
-          final modeSelectorBar = Container(
-            margin: const EdgeInsets.only(bottom: 12),
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+          // Live Performance Pill
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
             decoration: BoxDecoration(
-              color: context.surf,
-              borderRadius: BorderRadius.circular(10),
-              border: Border.all(color: context.brd),
+              color: context.surfLight,
+              borderRadius: BorderRadius.circular(16),
             ),
             child: Row(
+              mainAxisSize: MainAxisSize.min,
               children: [
-                const Icon(Icons.tune, size: 16, color: ChessTheme.primaryLight),
+                const Icon(Icons.stars, size: 14, color: ChessTheme.accentGold),
+                const SizedBox(width: 4),
+                Text(
+                  'Solved: ${_exerciseScores.length}/${_sprintExercises.length}',
+                  style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: context.txt),
+                ),
                 const SizedBox(width: 8),
                 Text(
-                  'LAB MODE:',
+                  'Score: ${_session.score.round()}%',
                   style: TextStyle(
                     fontSize: 11,
                     fontWeight: FontWeight.bold,
-                    letterSpacing: 0.8,
-                    color: context.txtMut,
-                  ),
-                ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: LabMode.values.map((m) {
-                        final isSelected = _session.mode == m;
-                        return Padding(
-                          padding: const EdgeInsets.only(right: 8),
-                          child: ChoiceChip(
-                            label: Text(
-                              m.name.toUpperCase(),
-                              style: TextStyle(
-                                fontSize: 11,
-                                fontWeight: FontWeight.bold,
-                                color: isSelected ? Colors.black : context.txt,
-                              ),
-                            ),
-                            selected: isSelected,
-                            selectedColor: ChessTheme.primary,
-                            backgroundColor: context.surfLight,
-                            onSelected: (selected) {
-                              if (selected) {
-                                setState(() {
-                                  _session.mode = m;
-                                  if (m == LabMode.demo) {
-                                    _onShowLine();
-                                  } else if (m == LabMode.guided) {
-                                    _onShowBestMove();
-                                  } else if (m == LabMode.review) {
-                                    _onExplainWhy();
-                                  }
-                                });
-                              }
-                            },
-                          ),
-                        );
-                      }).toList(),
-                    ),
+                    color: _session.score >= 80 ? ChessTheme.primaryLight : ChessTheme.accentGold,
                   ),
                 ),
               ],
             ),
-          );
+          ),
+        ],
+      ),
+    );
+  }
 
-          // Instruction / Feedback Banner
-          final instructionBanner = Container(
-            width: double.infinity,
-            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-            margin: const EdgeInsets.only(bottom: 12),
-            decoration: BoxDecoration(
-              color: context.surf,
-              borderRadius: BorderRadius.circular(10),
-              border: Border.all(
-                color: _session.isCompleted
-                    ? (_session.isSuccess ? ChessTheme.primary : ChessTheme.qualityBlunder)
-                    : context.brd,
-              ),
-            ),
-            child: Row(
-              children: [
-                Icon(
-                  _session.isCompleted
-                      ? (_session.isSuccess ? Icons.check_circle : Icons.cancel)
-                      : Icons.help_outline,
-                  color: _session.isCompleted
-                      ? (_session.isSuccess ? ChessTheme.primary : ChessTheme.qualityBlunder)
-                      : context.txtSec,
-                ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: Text(
-                    _session.feedbackMessage ?? currentEx.instruction,
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                      color: _session.isSuccess ? ChessTheme.primaryLight : context.txt,
-                    ),
-                  ),
-                ),
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                  decoration: BoxDecoration(
-                    color: context.surfLight,
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                  child: Text(
-                    'Score: ${_session.score.round()}%',
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                      color: _session.score >= 80 ? ChessTheme.primaryLight : ChessTheme.accentGold,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          );
-
-          // Interactive Chess Board Area (Clean, board-first layout)
-          final boardArea = FittedBox(
-            fit: BoxFit.scaleDown,
-            child: SizedBox(
-              width: boardSize,
-              height: boardSize,
-              child: ChessBoardWidget(
-                board: _session.currentBoard,
-                isFlipped: currentEx.sideToPlay == PieceColor.black,
-                onMovePlayed: _onMovePlayed,
-                isInteractive: !_session.isCompleted,
-                lastMoveFrom: _lastMoveFrom,
-                lastMoveTo: _lastMoveTo,
-                boardTheme: ChessBoardTheme.fromName(profile.boardThemeName),
-                pieceTheme: PieceTheme.fromName(profile.pieceThemeName),
-                animationDurationMs: _getAnimationDurationMs(profile.animationSpeed),
-                showCoordinates: profile.showCoordinates,
-                showMoveHighlights: profile.showMoveHighlights,
-                showLegalMoveHints: profile.showLegalMoveHints,
-              ),
-            ),
-          );
-
-          // Interactive Action Buttons (Learning-first pedagogical workflow)
-          final actionButtons = Wrap(
-            alignment: WrapAlignment.center,
-            spacing: 8,
-            runSpacing: 8,
-            children: [
-              // Tiered Hint (H1 Concept -> H2 Candidate Piece -> H3 Forcing Clue)
-              ElevatedButton.icon(
-                icon: const Icon(Icons.lightbulb_outline, size: 16),
-                label: Text(
-                  _session.hintsRevealed == 0
-                      ? 'Hint (H1/H2/H3)'
-                      : 'Next Hint (${_session.hintsRevealed}/${currentEx.tieredHints.length})',
-                ),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: context.surf,
-                  foregroundColor: ChessTheme.accentGold,
-                  side: const BorderSide(color: ChessTheme.accentGold),
-                ),
-                onPressed: _session.hintsRevealed < currentEx.tieredHints.length
-                    ? () => _session.requestTieredHint(penalize: false)
-                    : null,
-              ),
-
-              // Show Move
-              ElevatedButton.icon(
-                icon: const Icon(Icons.play_arrow_outlined, size: 16),
-                label: const Text('Show Move'),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: context.surf,
-                  foregroundColor: ChessTheme.primaryLight,
-                  side: const BorderSide(color: ChessTheme.primaryLight),
-                ),
-                onPressed: !_session.isCompleted ? _onShowBestMove : null,
-              ),
-
-              // Show Solution Line
-              ElevatedButton.icon(
-                icon: const Icon(Icons.fast_forward_outlined, size: 16),
-                label: const Text('Show Line'),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: context.surf,
-                  foregroundColor: const Color(0xFF60A5FA),
-                  side: const BorderSide(color: Color(0xFF60A5FA)),
-                ),
-                onPressed: !_session.isCompleted ? _onShowLine : null,
-              ),
-
-              // Grandmaster Explain Why
-              ElevatedButton.icon(
-                icon: const Icon(Icons.psychology_outlined, size: 16),
-                label: const Text('Explain Why'),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: context.surf,
-                  foregroundColor: const Color(0xFFA78BFA),
-                  side: const BorderSide(color: Color(0xFFA78BFA)),
-                ),
-                onPressed: _onExplainWhy,
-              ),
-
-              // Replay
-              if (_session.userMoveHistory.isNotEmpty)
-                ElevatedButton.icon(
-                  icon: const Icon(Icons.replay, size: 16),
-                  label: const Text('Replay'),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: context.surfLight,
-                    foregroundColor: context.txt,
-                  ),
-                  onPressed: _onReplay,
-                ),
-
-              // Contextual "No Tactic" - ONLY visible when current exercise is actually a "No Tactic" position!
-              if (currentEx.isNoTacticPosition)
-                ElevatedButton.icon(
-                  icon: const Icon(Icons.shield_outlined, size: 16),
-                  label: const Text('Declare "No Tactic"'),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: context.surf,
-                    foregroundColor: ChessTheme.secondary,
-                    side: const BorderSide(color: ChessTheme.secondary),
-                  ),
-                  onPressed: !_session.isCompleted ? () => _session.declareNoTactic() : null,
-                ),
-
-              // Reset / Retry
-              ElevatedButton.icon(
-                icon: const Icon(Icons.refresh, size: 16),
-                label: const Text('Reset'),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: context.surfLight,
-                  foregroundColor: context.txt,
-                ),
-                onPressed: () {
-                  _session.reset();
-                  _playedMoveNodes.clear();
-                  _lastMoveFrom = null;
-                  _lastMoveTo = null;
-                  setState(() {});
-                },
-              ),
-
-              if (_currentExerciseIndex > 0)
-                OutlinedButton.icon(
-                  icon: const Icon(Icons.arrow_back, size: 16),
-                  label: const Text('Previous'),
-                  style: OutlinedButton.styleFrom(
-                    foregroundColor: context.txt,
-                    side: BorderSide(color: context.brd),
-                  ),
-                  onPressed: _prevExercise,
-                ),
-
-              if (_currentExerciseIndex < _sprintExercises.length - 1)
-                ElevatedButton.icon(
-                  icon: const Icon(Icons.arrow_forward, size: 16),
-                  label: const Text('Next Exercise'),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: _session.isCompleted ? ChessTheme.primary : context.surfLight,
-                    foregroundColor: _session.isCompleted ? Colors.black : context.txt,
-                  ),
-                  onPressed: _nextExercise,
-                ),
-
-              if (_session.isCompleted && _currentExerciseIndex == _sprintExercises.length - 1)
-                ElevatedButton.icon(
-                  icon: const Icon(Icons.emoji_events, size: 16),
-                  label: const Text('View Summary'),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: ChessTheme.accentGold,
-                    foregroundColor: Colors.black,
-                  ),
-                  onPressed: _showSprintSummaryDialog,
-                ),
-            ],
-          );
-
-          // Sprint Step Navigator & Meta Panel
-          final sprintSteps = SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: List.generate(_sprintExercises.length, (i) {
-                final isCurrent = i == _currentExerciseIndex;
-                final isSolved = _exerciseScores.containsKey(i);
-                final isClean = _cleanSolves.contains(i);
-
-                Color bgColor = context.surfLight;
-                Color fgColor = context.txtSec;
-                if (isClean) {
-                  bgColor = ChessTheme.primary.withOpacity(0.2);
-                  fgColor = ChessTheme.primaryLight;
-                } else if (isSolved) {
-                  bgColor = ChessTheme.accentGold.withOpacity(0.2);
-                  fgColor = ChessTheme.accentGold;
-                } else if (isCurrent) {
-                  bgColor = ChessTheme.primary;
-                  fgColor = Colors.black;
-                }
-
-                return Padding(
-                  padding: const EdgeInsets.only(right: 6),
-                  child: InkWell(
-                    borderRadius: BorderRadius.circular(8),
-                    onTap: () {
-                      setState(() {
-                        _currentExerciseIndex = i;
-                        _initSessionForCurrentExercise();
-                      });
-                    },
-                    child: Container(
-                      width: 28,
-                      height: 28,
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        color: bgColor,
-                        borderRadius: BorderRadius.circular(8),
-                        border: Border.all(
-                          color: isCurrent ? ChessTheme.primary : Colors.transparent,
-                          width: 1.5,
-                        ),
-                      ),
-                      child: Text(
-                        '${i + 1}',
+  Widget _buildModeSelectorBar(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.only(bottom: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+      decoration: BoxDecoration(
+        color: context.surf,
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(color: context.brd),
+      ),
+      child: Row(
+        children: [
+          const Icon(Icons.school, size: 16, color: ChessTheme.primaryLight),
+          const SizedBox(width: 8),
+          Text(
+            'PEDAGOGY MODE:',
+            style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, letterSpacing: 0.8, color: context.txtMut),
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: LabMode.values.map((m) {
+                  final isSelected = _session.mode == m;
+                  return Padding(
+                    padding: const EdgeInsets.only(right: 8),
+                    child: ChoiceChip(
+                      label: Text(
+                        m.name.toUpperCase(),
                         style: TextStyle(
-                          color: fgColor,
-                          fontSize: 12,
+                          fontSize: 11,
                           fontWeight: FontWeight.bold,
+                          color: isSelected ? Colors.black : context.txt,
                         ),
                       ),
+                      selected: isSelected,
+                      selectedColor: ChessTheme.primary,
+                      backgroundColor: context.surfLight,
+                      onSelected: (selected) {
+                        if (selected) {
+                          setState(() {
+                            _session.setMode(m);
+                          });
+                        }
+                      },
                     ),
-                  ),
-                );
-              }),
+                  );
+                }).toList(),
+              ),
             ),
-          );
+          ),
+        ],
+      ),
+    );
+  }
 
-          final metaPanel = Container(
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: context.surf,
-              borderRadius: BorderRadius.circular(10),
-              border: Border.all(color: context.brd),
-            ),
+  Widget _buildInstructionBanner(BuildContext context, CurriculumExercise currentEx) {
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+      margin: const EdgeInsets.only(bottom: 8),
+      decoration: BoxDecoration(
+        color: context.surf,
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(
+          color: _session.isCompleted
+              ? (_session.isSuccess ? ChessTheme.primary : ChessTheme.qualityBlunder)
+              : context.brd,
+        ),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Icon(
+            _session.mode == LabMode.demo
+                ? Icons.smart_toy
+                : (_session.mode == LabMode.guided ? Icons.contact_support : Icons.lightbulb_outline),
+            size: 16,
+            color: ChessTheme.primaryLight,
+          ),
+          const SizedBox(width: 10),
+          Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
-                Wrap(
-                  alignment: WrapAlignment.spaceBetween,
-                  crossAxisAlignment: WrapCrossAlignment.center,
-                  spacing: 8,
-                  runSpacing: 4,
-                  children: [
-                    Text(
-                      'Exercise ${_currentExerciseIndex + 1} of ${_sprintExercises.length}',
-                      style: const TextStyle(
-                        fontSize: 12,
-                        color: ChessTheme.primaryLight,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-                      decoration: BoxDecoration(
-                        color: currentEx.sideToPlay == PieceColor.white ? Colors.white : Colors.black,
-                        borderRadius: BorderRadius.circular(4),
-                        border: Border.all(color: context.brd),
-                      ),
-                      child: Text(
-                        currentEx.sideToPlay == PieceColor.white ? 'White to move' : 'Black to move',
-                        style: TextStyle(
-                          fontSize: 11,
-                          fontWeight: FontWeight.bold,
-                          color: currentEx.sideToPlay == PieceColor.white ? Colors.black : Colors.white,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 8),
-                sprintSteps,
-                const SizedBox(height: 12),
                 Text(
-                  currentEx.instruction,
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: context.txt),
+                  _session.feedbackMessage ?? currentEx.instruction,
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w600,
+                    color: _session.isSuccess ? ChessTheme.primaryLight : context.txt,
+                  ),
                 ),
                 const SizedBox(height: 6),
-                Wrap(
-                  crossAxisAlignment: WrapCrossAlignment.center,
-                  spacing: 4,
-                  children: [
-                    Icon(Icons.category, size: 14, color: context.txtSec),
-                    Text(
-                      'Theme: ${currentEx.motif}',
-                      style: TextStyle(fontSize: 12, color: context.txtSec),
-                    ),
-                  ],
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                  decoration: BoxDecoration(
+                    color: ChessTheme.accentGold.withAlpha(20),
+                    borderRadius: BorderRadius.circular(4),
+                    border: Border.all(color: ChessTheme.accentGold.withAlpha(60)),
+                  ),
+                  child: Text(
+                    currentEx.motif,
+                    style: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: ChessTheme.accentGold),
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
-                if (_session.isCompleted && _session.isSuccess) ...[
-                  const SizedBox(height: 12),
-                  Container(
-                    padding: const EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      color: ChessTheme.primary.withOpacity(0.1),
-                      borderRadius: BorderRadius.circular(8),
-                      border: Border.all(color: ChessTheme.primary.withOpacity(0.3)),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildPedagogicalFooter(BuildContext context, CurriculumExercise currentEx) {
+    switch (_session.mode) {
+      case LabMode.demo:
+        return _buildDemoTeacherControls(context);
+      case LabMode.guided:
+        return _buildGuidedSocraticControls(context);
+      case LabMode.practice:
+        return _buildPracticeControls(context, currentEx);
+      case LabMode.challenge:
+        return _buildChallengeControls(context, currentEx);
+      case LabMode.review:
+        return _buildReviewControls(context, currentEx);
+    }
+  }
+
+  Widget _buildDemoTeacherControls(BuildContext context) {
+    final engine = _session.pedagogyEngine;
+    final step = engine.currentDemoStep;
+
+    return Container(
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: context.surf,
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: ChessTheme.primaryLight.withAlpha(80)),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Row(
+            children: [
+              const Icon(Icons.school, size: 18, color: ChessTheme.primaryLight),
+              const SizedBox(width: 8),
+              Text(
+                step?.title ?? 'Autonomous Demonstration',
+                style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: ChessTheme.primaryLight),
+              ),
+              const Spacer(),
+              Text(
+                'Step ${(step?.stepIndex ?? 1)} of ${engine.demoSteps.length}',
+                style: TextStyle(fontSize: 11, color: context.txtSec, fontWeight: FontWeight.bold),
+              ),
+            ],
+          ),
+          const SizedBox(height: 6),
+          Text(
+            step?.caption ?? 'Observe the board structure and critical motifs.',
+            style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: context.txt),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            'Why this works: ${step?.explanationWhy ?? ""}',
+            style: TextStyle(fontSize: 11, color: context.txtSec),
+          ),
+          const SizedBox(height: 10),
+          Wrap(
+            alignment: WrapAlignment.spaceBetween,
+            crossAxisAlignment: WrapCrossAlignment.center,
+            spacing: 8,
+            runSpacing: 8,
+            children: [
+              OutlinedButton.icon(
+                icon: const Icon(Icons.replay, size: 14),
+                label: const Text('Restart Demo'),
+                style: OutlinedButton.styleFrom(padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6)),
+                onPressed: () {
+                  setState(() => engine.resetDemo());
+                },
+              ),
+              Wrap(
+                spacing: 8,
+                runSpacing: 6,
+                crossAxisAlignment: WrapCrossAlignment.center,
+                children: [
+                  OutlinedButton.icon(
+                    icon: const Icon(Icons.arrow_back, size: 14),
+                    label: const Text('Prev'),
+                    style: OutlinedButton.styleFrom(padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6)),
+                    onPressed: engine.currentDemoIndex > 0
+                        ? () {
+                            setState(() => engine.prevDemoStep());
+                          }
+                        : null,
+                  ),
+                  ElevatedButton.icon(
+                    icon: const Icon(Icons.arrow_forward, size: 14),
+                    label: Text(engine.isDemoFinished ? 'Switch to Guided' : 'Next Step'),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: ChessTheme.primary,
+                      foregroundColor: Colors.black,
+                      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 6),
                     ),
+                    onPressed: () {
+                      if (engine.isDemoFinished) {
+                        setState(() => _session.setMode(LabMode.guided));
+                      } else {
+                        setState(() => engine.nextDemoStep());
+                      }
+                    },
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildGuidedSocraticControls(BuildContext context) {
+    final engine = _session.pedagogyEngine;
+    final step = engine.currentSocraticStep;
+
+    return Container(
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: context.surf,
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: ChessTheme.accentGold.withAlpha(80)),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Row(
+            children: [
+              const Icon(Icons.help_center_outlined, size: 18, color: ChessTheme.accentGold),
+              const SizedBox(width: 8),
+              Expanded(
+                child: Text(
+                  'Socratic Discovery: ${step?.conceptTitle ?? "Finding the Weakness"}',
+                  style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: ChessTheme.accentGold),
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+              const SizedBox(width: 8),
+              Text(
+                'Checkpoint ${(engine.currentSocraticIndex + 1)} of ${engine.socraticSteps.length}',
+                style: TextStyle(fontSize: 11, color: context.txtSec, fontWeight: FontWeight.bold),
+              ),
+            ],
+          ),
+          const SizedBox(height: 6),
+          Text(
+            step?.prompt ?? 'Follow Socratic questions to discover the move independently.',
+            style: TextStyle(fontSize: 13, fontWeight: FontWeight.w600, color: context.txt),
+          ),
+          if (step != null && step.hint.isNotEmpty) ...[
+            const SizedBox(height: 4),
+            Text(
+              '💡 Hint: ${step.hint}',
+              style: TextStyle(fontSize: 11, color: context.txtSec),
+            ),
+          ],
+          const SizedBox(height: 10),
+          Wrap(
+            alignment: WrapAlignment.spaceBetween,
+            crossAxisAlignment: WrapCrossAlignment.center,
+            spacing: 8,
+            runSpacing: 8,
+            children: [
+              if (step != null && step.candidateMovesSan.isNotEmpty)
+                Wrap(
+                  spacing: 8,
+                  runSpacing: 4,
+                  children: step.candidateMovesSan.map((san) {
+                    return ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: ChessTheme.primaryLight.withAlpha(30),
+                        foregroundColor: ChessTheme.primaryLight,
+                        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                      ),
+                      onPressed: () => _onSocraticCandidateSelected(san),
+                      child: Text('Play $san'),
+                    );
+                  }).toList(),
+                )
+              else
+                Text(
+                  'Tap the target square or piece directly on the board.',
+                  style: TextStyle(fontSize: 11, fontStyle: FontStyle.italic, color: context.txtMut),
+                ),
+              ElevatedButton.icon(
+                icon: const Icon(Icons.check, size: 14),
+                label: Text(engine.isSocraticFinished ? 'Practice Now' : 'Advance Checkpoint'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: ChessTheme.primary,
+                  foregroundColor: Colors.black,
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                ),
+                onPressed: () {
+                  if (engine.isSocraticFinished) {
+                    setState(() => _session.setMode(LabMode.practice));
+                  } else {
+                    setState(() => engine.advanceSocratic());
+                  }
+                },
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildPracticeControls(BuildContext context, CurriculumExercise currentEx) {
+    return Wrap(
+      alignment: WrapAlignment.center,
+      spacing: 8,
+      runSpacing: 8,
+      children: [
+        // Progressive Hint (H1 Concept -> H2 Piece -> H3 Forcing Clue)
+        ElevatedButton.icon(
+          icon: const Icon(Icons.lightbulb_outline, size: 15),
+          label: Text(
+            _session.hintsRevealed == 0
+                ? 'Hint (H1/H2/H3)'
+                : 'Next Hint (${_session.hintsRevealed}/${currentEx.tieredHints.length})',
+          ),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: context.surf,
+            foregroundColor: ChessTheme.accentGold,
+            side: const BorderSide(color: ChessTheme.accentGold),
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+          ),
+          onPressed: _session.hintsRevealed < currentEx.tieredHints.length
+              ? () => _session.requestTieredHint(penalize: false)
+              : null,
+        ),
+
+        // Cognitive Method Modal Trigger
+        OutlinedButton.icon(
+          icon: const Icon(Icons.psychology, size: 15),
+          label: const Text('GM Thinking Method'),
+          style: OutlinedButton.styleFrom(
+            foregroundColor: ChessTheme.primaryLight,
+            side: const BorderSide(color: ChessTheme.primaryLight),
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+          ),
+          onPressed: _showCognitiveDecisionTreeDialog,
+        ),
+
+        // Show Move
+        ElevatedButton.icon(
+          icon: const Icon(Icons.play_arrow_outlined, size: 15),
+          label: const Text('Show Move'),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: context.surf,
+            foregroundColor: ChessTheme.primaryLight,
+            side: const BorderSide(color: ChessTheme.primaryLight),
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+          ),
+          onPressed: !_session.isCompleted ? _onShowBestMove : null,
+        ),
+
+        // Show Line
+        ElevatedButton.icon(
+          icon: const Icon(Icons.fast_forward_outlined, size: 15),
+          label: const Text('Show Line'),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: context.surf,
+            foregroundColor: const Color(0xFF60A5FA),
+            side: const BorderSide(color: Color(0xFF60A5FA)),
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+          ),
+          onPressed: !_session.isCompleted ? _onShowLine : null,
+        ),
+
+        // Explain Why
+        ElevatedButton.icon(
+          icon: const Icon(Icons.psychology_outlined, size: 15),
+          label: const Text('Explain Why'),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: context.surf,
+            foregroundColor: const Color(0xFFA78BFA),
+            side: const BorderSide(color: Color(0xFFA78BFA)),
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+          ),
+          onPressed: _onExplainWhy,
+        ),
+
+        // Reset
+        ElevatedButton.icon(
+          icon: const Icon(Icons.refresh, size: 15),
+          label: const Text('Reset'),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: context.surfLight,
+            foregroundColor: context.txt,
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+          ),
+          onPressed: () {
+            _session.reset();
+            _playedMoveNodes.clear();
+            _lastMoveFrom = null;
+            _lastMoveTo = null;
+            setState(() {});
+          },
+        ),
+
+        // Replay
+        ElevatedButton.icon(
+          icon: const Icon(Icons.replay, size: 15),
+          label: const Text('Replay'),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: context.surfLight,
+            foregroundColor: context.txt,
+            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+          ),
+          onPressed: _session.userMoveHistory.isNotEmpty ? _onReplay : null,
+        ),
+
+        // Navigation
+        if (_currentExerciseIndex > 0)
+          OutlinedButton(
+            style: OutlinedButton.styleFrom(padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6)),
+            onPressed: _prevExercise,
+            child: const Text('Previous'),
+          ),
+
+        if (_currentExerciseIndex < _sprintExercises.length - 1)
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: _session.isCompleted ? ChessTheme.primary : context.surfLight,
+              foregroundColor: _session.isCompleted ? Colors.black : context.txt,
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+            ),
+            onPressed: _nextExercise,
+            child: const Text('Next Exercise'),
+          ),
+      ],
+    );
+  }
+
+  Widget _buildChallengeControls(BuildContext context, CurriculumExercise currentEx) {
+    return Container(
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: context.surf,
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: Colors.amber.withAlpha(80)),
+      ),
+      child: Wrap(
+        alignment: WrapAlignment.spaceBetween,
+        crossAxisAlignment: WrapCrossAlignment.center,
+        spacing: 8,
+        runSpacing: 8,
+        children: [
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const Icon(Icons.timer, color: Colors.amber, size: 18),
+              const SizedBox(width: 8),
+              Text('Scored Challenge Mode — No Hints', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12, color: context.txt)),
+            ],
+          ),
+          Wrap(
+            spacing: 8,
+            runSpacing: 6,
+            crossAxisAlignment: WrapCrossAlignment.center,
+            children: [
+              if (currentEx.isNoTacticPosition)
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(backgroundColor: ChessTheme.secondary, foregroundColor: Colors.black),
+                  onPressed: !_session.isCompleted ? () => _session.declareNoTactic() : null,
+                  child: const Text('Declare "No Tactic"'),
+                ),
+              OutlinedButton(
+                onPressed: () {
+                  setState(() => _session.setMode(LabMode.review));
+                },
+                child: const Text('Reveal & Review'),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildReviewControls(BuildContext context, CurriculumExercise currentEx) {
+    return Container(
+      padding: const EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: context.surf,
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: const Color(0xFFA78BFA)),
+      ),
+      child: Row(
+        children: [
+          const Icon(Icons.fact_check, color: Color(0xFFA78BFA), size: 20),
+          const SizedBox(width: 10),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text('Forensic Review: Solution is ${currentEx.solutionSan.join(" ")}', style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13, color: Color(0xFFA78BFA))),
+                const SizedBox(height: 2),
+                Text(currentEx.explanation, style: TextStyle(fontSize: 11, color: context.txtSec)),
+              ],
+            ),
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(backgroundColor: ChessTheme.primary, foregroundColor: Colors.black),
+            onPressed: () {
+              setState(() => _session.setMode(LabMode.practice));
+            },
+            child: const Text('Practice Again'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildPedagogicalSidePanel(BuildContext context, CurriculumExercise currentEx) {
+    final sprintSteps = SingleChildScrollView(
+      scrollDirection: Axis.horizontal,
+      child: Row(
+        children: List.generate(_sprintExercises.length, (i) {
+          final isCurrent = i == _currentExerciseIndex;
+          final isSolved = _exerciseScores.containsKey(i);
+          final isClean = _cleanSolves.contains(i);
+
+          Color bgColor = context.surfLight;
+          Color fgColor = context.txtSec;
+          if (isClean) {
+            bgColor = ChessTheme.primary.withAlpha(50);
+            fgColor = ChessTheme.primaryLight;
+          } else if (isSolved) {
+            bgColor = ChessTheme.accentGold.withAlpha(50);
+            fgColor = ChessTheme.accentGold;
+          } else if (isCurrent) {
+            bgColor = ChessTheme.primary;
+            fgColor = Colors.black;
+          }
+
+          return Padding(
+            padding: const EdgeInsets.only(right: 6),
+            child: InkWell(
+              borderRadius: BorderRadius.circular(6),
+              onTap: () {
+                setState(() {
+                  _currentExerciseIndex = i;
+                  _initSessionForCurrentExercise();
+                });
+              },
+              child: Container(
+                width: 26,
+                height: 26,
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  color: bgColor,
+                  borderRadius: BorderRadius.circular(6),
+                  border: Border.all(
+                    color: isCurrent ? ChessTheme.primary : Colors.transparent,
+                    width: 1.5,
+                  ),
+                ),
+                child: Text(
+                  '${i + 1}',
+                  style: TextStyle(color: fgColor, fontSize: 11, fontWeight: FontWeight.bold),
+                ),
+              ),
+            ),
+          );
+        }),
+      ),
+    );
+
+    return SingleChildScrollView(
+      padding: const EdgeInsets.all(12),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Wrap(
+            alignment: WrapAlignment.spaceBetween,
+            crossAxisAlignment: WrapCrossAlignment.center,
+            spacing: 8,
+            runSpacing: 4,
+            children: [
+              Text(
+                'Exercise ${_currentExerciseIndex + 1} of ${_sprintExercises.length}',
+                style: const TextStyle(fontSize: 12, color: ChessTheme.primaryLight, fontWeight: FontWeight.bold),
+              ),
+              Container(
+                padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                decoration: BoxDecoration(
+                  color: currentEx.sideToPlay == PieceColor.white ? Colors.white : Colors.black,
+                  borderRadius: BorderRadius.circular(4),
+                  border: Border.all(color: context.brd),
+                ),
+                child: Text(
+                  currentEx.sideToPlay == PieceColor.white ? 'White to move' : 'Black to move',
+                  style: TextStyle(
+                    fontSize: 10,
+                    fontWeight: FontWeight.bold,
+                    color: currentEx.sideToPlay == PieceColor.white ? Colors.black : Colors.white,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 8),
+          sprintSteps,
+          const SizedBox(height: 12),
+          Text(
+            currentEx.instruction,
+            style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: context.txt),
+          ),
+          const SizedBox(height: 4),
+          Text('Theme: ${currentEx.motif}', style: TextStyle(fontSize: 11, color: context.txtSec)),
+          if (_session.isCompleted && _session.isSuccess) ...[
+            const SizedBox(height: 10),
+            Container(
+              padding: const EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: ChessTheme.primary.withAlpha(25),
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(color: ChessTheme.primary.withAlpha(75)),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      const Icon(Icons.check_circle, size: 16, color: ChessTheme.primary),
+                      const SizedBox(width: 6),
+                      Expanded(
+                        child: Text(
+                          'Master Solution: ${currentEx.solutionSan.join(" ")}',
+                          style: const TextStyle(
+                            fontSize: 13,
+                            fontWeight: FontWeight.bold,
+                            color: ChessTheme.primaryLight,
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 4),
+                  Text(
+                    currentEx.explanation,
+                    style: TextStyle(fontSize: 12, color: context.txt),
+                  ),
+                ],
+              ),
+            ),
+          ],
+          const Divider(height: 20),
+
+          // Cognitive GM checklist
+          const Text('Grandmaster Thinking Steps', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: ChessTheme.accentGold)),
+          const SizedBox(height: 6),
+          ..._session.pedagogyEngine.cognitiveChecklist.map((step) {
+            return Padding(
+              padding: const EdgeInsets.only(bottom: 6.0),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Icon(Icons.check_box_outline_blank, size: 14, color: ChessTheme.primaryLight),
+                  const SizedBox(width: 6),
+                  Expanded(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Wrap(
-                          crossAxisAlignment: WrapCrossAlignment.center,
-                          spacing: 6,
-                          children: [
-                            const Icon(Icons.check_circle, size: 16, color: ChessTheme.primary),
-                            Text(
-                              'Master Solution: ${currentEx.solutionSan.join(" ")}',
-                              style: const TextStyle(
-                                fontSize: 13,
-                                fontWeight: FontWeight.bold,
-                                color: ChessTheme.primaryLight,
-                              ),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 4),
-                        Text(
-                          currentEx.explanation,
-                          style: TextStyle(fontSize: 12, color: context.txt),
-                        ),
+                        Text(step.stage.title, style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: context.txt)),
+                        Text(step.observation, style: TextStyle(fontSize: 10, color: context.txtSec)),
                       ],
-                    ),
-                  ),
-                ],
-              ],
-            ),
-          );
-
-          if (isCompact) {
-            return SingleChildScrollView(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                children: [
-                  headerBar,
-                  modeSelectorBar,
-                  instructionBanner,
-                  boardArea,
-                  const SizedBox(height: 16),
-                  actionButtons,
-                  const SizedBox(height: 16),
-                  metaPanel,
-                  const SizedBox(height: 12),
-                  SizedBox(
-                    height: 200,
-                    child: MoveListWidget(
-                      moves: _playedMoveNodes,
-                      currentPlyIndex: _playedMoveNodes.length,
                     ),
                   ),
                 ],
               ),
             );
-          }
+          }),
 
-          return Padding(
-            padding: const EdgeInsets.all(24.0),
-            child: Column(
-              children: [
-                headerBar,
-                modeSelectorBar,
-                Expanded(
-                  child: Row(
-                    children: [
-                      Expanded(
-                        flex: 5,
-                        child: Column(
-                          children: [
-                            instructionBanner,
-                            Expanded(child: Center(child: boardArea)),
-                            const SizedBox(height: 16),
-                            actionButtons,
-                          ],
-                        ),
-                      ),
-                      const SizedBox(width: 24),
-                      Expanded(
-                        flex: 3,
-                        child: Column(
-                          children: [
-                            metaPanel,
-                            const SizedBox(height: 16),
-                            Expanded(
-                              child: MoveListWidget(
-                                moves: _playedMoveNodes,
-                                currentPlyIndex: _playedMoveNodes.length,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+          const Divider(height: 20),
+          const Text('Move Notation Tree', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
+          const SizedBox(height: 8),
+          SizedBox(
+            height: 160,
+            child: MoveListWidget(
+              moves: _playedMoveNodes,
+              currentPlyIndex: _playedMoveNodes.length,
             ),
-          );
-        },
+          ),
+        ],
       ),
     );
   }
 }
+

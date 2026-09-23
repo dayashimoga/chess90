@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:chess_learning/chess_learning.dart';
 import 'local_database.dart';
 import 'models/game_record.dart';
+import 'models/game_session.dart';
 import 'models/unfinished_game.dart';
 import 'models/user_profile.dart';
 
@@ -57,6 +58,18 @@ class StorageRepository {
   void saveUnfinishedGame(UnfinishedGame game) => _db.saveUnfinishedGame(game);
 
   void clearUnfinishedGame() => _db.clearUnfinishedGame();
+
+  GameSession? getActiveGameSession() => _db.getActiveGameSession();
+
+  void saveActiveGameSession(GameSession session) => _db.saveActiveGameSession(session);
+
+  void clearActiveGameSession() => _db.clearActiveGameSession();
+
+  GameSession? getLastCompletedGame() => _db.getLastCompletedGame();
+
+  void saveCompletedGame(GameSession session) => _db.saveCompletedGame(session);
+
+  List<GameSession> getGameHistory() => _db.getGameHistory();
 
   /// Exports complete platform database into a single JSON backup.
   String exportFullBackupJson() => _db.exportFullBackupJson();

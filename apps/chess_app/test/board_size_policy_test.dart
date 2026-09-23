@@ -12,7 +12,7 @@ void main() {
         mode: BoardSizeMode.standard,
       );
       expect(sizeDesktop, greaterThanOrEqualTo(450.0));
-      expect(sizeDesktop, lessThanOrEqualTo(560.0));
+      expect(sizeDesktop, lessThanOrEqualTo(desktopConstraints.maxHeight));
 
       // Tablet 800x600
       const tabletConstraints = BoxConstraints(maxWidth: 500, maxHeight: 500);

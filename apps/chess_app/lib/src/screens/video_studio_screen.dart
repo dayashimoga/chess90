@@ -68,8 +68,16 @@ class _VideoStudioScreenState extends State<VideoStudioScreen> {
     _availableHardwareEncoders = RealVideoRenderer.detectHardwareEncoders();
 
     String pgn = ModelGamesDatabase.curatedGames.first.pgn;
-    if (widget.initialArgs is Map && widget.initialArgs['pgn'] != null) {
-      pgn = widget.initialArgs['pgn'] as String;
+    if (widget.initialArgs is Map) {
+      final args = widget.initialArgs as Map;
+      if (args['gameSession'] is GameSession) {
+        final session = args['gameSession'] as GameSession;
+        pgn = session.pgn.isNotEmpty ? session.pgn : session.toPgnGame().toPgnString();
+      } else if (args['pgn'] != null) {
+        pgn = args['pgn'] as String;
+      }
+    } else if (widget.initialArgs is String) {
+      pgn = widget.initialArgs as String;
     }
     _loadPgn(pgn);
   }

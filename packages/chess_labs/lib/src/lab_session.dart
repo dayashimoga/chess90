@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:chess_core/chess_core.dart';
+import 'socratic_pedagogy_engine.dart';
 
 /// Represents the status of a user's action in an interactive lab.
 enum LabStepResult {
@@ -40,6 +41,7 @@ class LabSession {
   final bool isNoTacticPosition;
 
   late Board currentBoard;
+  late SocraticPedagogyEngine pedagogyEngine;
   final List<Move> userMoveHistory = [];
   int currentSolutionIndex = 0;
   int hintsRevealed = 0;
@@ -87,11 +89,19 @@ class LabSession {
 
   void setMode(LabMode newMode) {
     mode = newMode;
+    reset();
     if (newMode == LabMode.demo) {
-      showLine();
+      feedbackMessage = 'Demo Mode: Observe autonomous concept demonstration on the board.';
+    } else if (newMode == LabMode.guided) {
+      feedbackMessage = 'Guided Mode: Socratic discovery active. Follow prompts to locate weaknesses.';
+    } else if (newMode == LabMode.challenge) {
+      feedbackMessage = 'Challenge Mode: Scored tournament test. No assistance permitted.';
+    } else if (newMode == LabMode.review) {
+      feedbackMessage = 'Review Mode: Post-session cognitive breakdown and alternatives.';
     } else {
-      reset();
+      feedbackMessage = 'Practice Mode: Solve with optional progressive hints.';
     }
+    _notify();
   }
 
   List<String> get tieredHints {
@@ -140,6 +150,14 @@ class LabSession {
 
   void reset() {
     currentBoard = Board.fromFen(initialFen);
+    pedagogyEngine = SocraticPedagogyEngine(
+      initialBoard: Board.fromFen(initialFen),
+      sideToPlay: currentBoard.activeColor,
+      solutionSan: solutionSan,
+      motif: title,
+      explanation: explanation,
+      hints: hints,
+    );
     userMoveHistory.clear();
     currentSolutionIndex = 0;
     hintsRevealed = 0;

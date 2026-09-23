@@ -517,6 +517,7 @@ class _MainShellState extends State<MainShell> {
           repository: _repository,
           initialArgs: _navigationArgs,
           engine: widget.engine,
+          onNavigate: _navigateTo,
         );
         break;
     }
