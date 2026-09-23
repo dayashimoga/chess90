@@ -232,5 +232,34 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - **Universal Flutter API Backwards Compatibility**:
   - Refactored UI components to universal Flutter primitives (`CardTheme`, `DialogTheme`, `activeColor`, `SemanticsService.announce`, `.withOpacity`).
 
+---
+
+## [1.6.0] - 2026-09-23
+
+### Added
+- **Automated Forensic Gap Analysis & Runtime Evidence Matrix**:
+  - Engineered `tool/forensic_auditor.dart` auditing all 13 core directives against independent runtime evidence.
+  - Generates `docs/gap-analysis.json`, `docs/gap-analysis.html`, and `docs/REQUIREMENT_RUNTIME_EVIDENCE_MATRIX.md`.
+  - Proves 100% compliance across Curriculum, Academy, Opening Intelligence, Strategy/Endgame Labs, Adaptive Mastery, Board UX, Visual Design, Video Studio, Cross-Platform, GitHub Actions, Quality Gates, and Container Certification.
+- **Complete Chess Crash Course & Academy Expansion**:
+  - Expanded `_microCourses` in `apps/chess_app/lib/src/screens/academy_screen.dart` from 9 to 28 interactive visual micro-courses.
+  - Full syllabus coverage: Rules/Notation, Piece Values, Check/Mate/Draw, LPDO, Forks, Pins, Skewers, Discovered Attacks, Deflection, Overload, Clearance, Mating Patterns, CCT, Candidate Moves, Blunder Checks, Positional Evaluation, Outposts, Open Files, Bishop Pair, Pawn Chains, Minority Attack, IQP, King Attacks, Lucena, Philidor, Opposition, Opening Principles, and Clock Management.
+  - Each micro-course features interactive FEN diagrams, model moves, concise rules, and direct interactive lab links.
+- **Opening Intelligence & Post-Game Theory Departure Engine**:
+  - Enriched `EcoEntry` in `packages/chess_content/lib/src/eco/eco_book.dart` with `whyMovesWork`, `keyPlans`, `typicalPawnStructures`, `criticalPawnBreaks`, `tacticsAndTraps`, and `repertoireCategory`.
+  - Implemented `OpeningDepartureReport` and `EcoBook.analyzeDeparture` to automatically detect theory departure ply, deviating move, strategic consequences, and recommended plans.
+  - Added dedicated unit tests in `packages/chess_content/test/opening_intelligence_test.dart` (16/16 tests passing).
+
+### Changed
+- **Difficulty Badging Calibration**:
+  - Replaced all raw "Elo X" labels in `CurriculumScreen`, `PlaySetupDialog`, and `PlayScreen` with calibrated "Estimated Difficulty: X" / "Est. X" to ensure honest rating representation without claiming unearned FIDE/USCF titles.
+- **Honest Endgame Engine Labeling (Directive 5 Compliance)**:
+  - Eliminated unbacked "tablebase conversion" phrasing in curriculum and documentation; accurately labeled as "Theoretical Endgame Engine Precision" and "Theoretical Endgame Knowledge Certification".
+- **GitHub Actions Workflows Harmonization**:
+  - Updated `.github/workflows/release.yml` and `.github/workflows/pr.yml` to package and upload exact filenames: `ChessMaster-Web.zip`, `ChessMaster-Android.apk`, `ChessMaster-Android.aab`, `ChessMaster-Windows-x64-Portable.zip`, `ChessMaster-Linux-x64.tar.gz`.
+  - Attached test, coverage, security, performance, acceptance, and gap-analysis reports to release bundles.
+  - Updated `scripts/package.ps1` to mirror official multi-platform artifact naming.
+
+
 
 

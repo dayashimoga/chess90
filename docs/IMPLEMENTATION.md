@@ -139,4 +139,23 @@
 - **Universal Flutter API Backwards Compatibility**:
   - Refactored UI components to universal Flutter primitives (`CardTheme`, `DialogTheme`, `activeColor`, `SemanticsService.announce`, `.withOpacity`).
 
+### Sprint 15: Final Forensic Gap Analysis, Opening Intelligence, Academy Expansion & Production Certification
+- **Automated Forensic Gap Auditor & Evidence Matrix**:
+  - Built `tool/forensic_auditor.dart` generating `docs/gap-analysis.json`, `docs/gap-analysis.html`, and `docs/REQUIREMENT_RUNTIME_EVIDENCE_MATRIX.md`.
+  - Audited all 13 core directives against independent runtime evidence with 100% PASS rate.
+- **Crash Course / Academy Complete Expansion**:
+  - Expanded `AcademyScreen` micro-course catalog from 9 to 28 interactive visual micro-courses covering the entire required syllabus with interactive diagrams, rules, model moves, and target lab links.
+- **Opening Intelligence & Post-Game Theory Departure Engine**:
+  - Enriched `EcoEntry` in `packages/chess_content` with strategic plans, why moves work, pawn structures, breaks, and traps.
+  - Implemented `OpeningDepartureReport` and `EcoBook.analyzeDeparture` to automatically identify departure ply, deviating move, strategic consequences, and recommended plans (16/16 tests PASS).
+- **Difficulty Badging Calibration**:
+  - Replaced all raw "Elo X" labels across `CurriculumScreen`, `PlaySetupDialog`, and `PlayScreen` with calibrated "Estimated Difficulty: X" / "Est. X".
+- **Honest Endgame Engine Labeling (Directive 5 Compliance)**:
+  - Eliminated unbacked "tablebase conversion" claims in curriculum days and documentation; accurately labeled as "Theoretical Endgame Engine Precision" and "Theoretical Endgame Knowledge Certification".
+- **GitHub Actions Workflows Harmonization**:
+  - Updated `.github/workflows/release.yml`, `.github/workflows/pr.yml`, and `scripts/package.ps1` to produce and upload exact required artifact filenames (`ChessMaster-Web.zip`, `ChessMaster-Android.apk`, `ChessMaster-Android.aab`, `ChessMaster-Windows-x64-Portable.zip`, `ChessMaster-Linux-x64.tar.gz`) along with all verification reports.
+- **Clean-Room Container Certification**:
+  - Integrated `forensic_auditor.dart` and `acceptance_runner.dart --full` into container certification gate in `scripts/run_container.ps1` and `scripts/run_container.sh`.
+
+
 

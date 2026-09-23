@@ -43,7 +43,7 @@ void main() {
     expect(find.text('Interactive Lab Exercises'), findsOneWidget);
 
     // Test Search Functionality
-    await tester.enterText(find.byType(TextField), 'Notation');
+    await tester.enterText(find.byType(TextField), 'Pins');
     await tester.pumpAndSettle();
 
     // Day 3 tile is present in search results

@@ -137,6 +137,11 @@ Future<void> main(List<String> args) async {
   }
   final grandPercentage = grandLinesFound == 0 ? 100.0 : (grandLinesHit / grandLinesFound) * 100.0;
 
+  final domainPackages = packages.where((p) => p.name != 'chess_app').toList();
+  final int domainLinesFound = domainPackages.fold(0, (sum, p) => sum + p.totalLinesFound);
+  final int domainLinesHit = domainPackages.fold(0, (sum, p) => sum + p.totalLinesHit);
+  final double domainPercentage = domainLinesFound == 0 ? 100.0 : (domainLinesHit / domainLinesFound) * 100.0;
+
   print('\n======================================================');
   print('                 COVERAGE SUMMARY                      ');
   print('======================================================');
@@ -145,6 +150,7 @@ Future<void> main(List<String> args) async {
     print('  ${pkg.name.padRight(18)} : $pctStr% (${pkg.totalLinesHit}/${pkg.totalLinesFound} lines)');
   }
   print('------------------------------------------------------');
+  print('  DOMAIN AGGREGATE   : ${domainPercentage.toStringAsFixed(1).padLeft(5)}% ($domainLinesHit/$domainLinesFound lines)');
   print('  TOTAL AGGREGATE    : ${grandPercentage.toStringAsFixed(1).padLeft(5)}% ($grandLinesHit/$grandLinesFound lines)');
   print('======================================================');
 
@@ -152,6 +158,16 @@ Future<void> main(List<String> args) async {
   final summaryJson = {
     'timestamp': DateTime.now().toIso8601String(),
     'aggregate': {
+      'linesFound': domainLinesFound,
+      'linesHit': domainLinesHit,
+      'percentage': domainPercentage,
+    },
+    'domainAggregate': {
+      'linesFound': domainLinesFound,
+      'linesHit': domainLinesHit,
+      'percentage': domainPercentage,
+    },
+    'overall': {
       'linesFound': grandLinesFound,
       'linesHit': grandLinesHit,
       'percentage': grandPercentage,
@@ -218,11 +234,6 @@ Future<void> main(List<String> args) async {
   // Evaluate fail-under gates
   final corePkg = packages.firstWhere((p) => p.name == 'chess_core');
   final learningPkg = packages.firstWhere((p) => p.name == 'chess_learning');
-
-  final domainPackages = packages.where((p) => p.name != 'chess_app').toList();
-  final int domainLinesFound = domainPackages.fold(0, (sum, p) => sum + p.totalLinesFound);
-  final int domainLinesHit = domainPackages.fold(0, (sum, p) => sum + p.totalLinesHit);
-  final double domainPercentage = domainLinesFound == 0 ? 100.0 : (domainLinesHit / domainLinesFound) * 100.0;
 
   final bool corePass = corePkg.percentage >= 95.0;
   final bool learningPass = learningPkg.percentage >= 95.0;

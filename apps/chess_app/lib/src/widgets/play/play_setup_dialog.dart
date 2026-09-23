@@ -157,7 +157,7 @@ class _PlaySetupDialogState extends State<PlaySetupDialog> {
                     final isSelected = _selectedStrength == preset;
                     final elo = preset == 'Custom' ? _customElo : strengthElos[preset]!;
                     return ChoiceChip(
-                      label: Text('$preset ($elo Elo)'),
+                      label: Text('$preset (~$elo Est.)'),
                       selected: isSelected,
                       selectedColor: ChessTheme.primary,
                       backgroundColor: context.surfLight,
@@ -175,7 +175,7 @@ class _PlaySetupDialogState extends State<PlaySetupDialog> {
                   const SizedBox(height: 10),
                   Row(
                     children: [
-                      Text('Elo: $_customElo', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: context.txt)),
+                      Text('Estimated Difficulty: $_customElo', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: context.txt)),
                       Expanded(
                         child: Slider(
                           value: _customElo.toDouble(),
@@ -246,7 +246,7 @@ class _PlaySetupDialogState extends State<PlaySetupDialog> {
                       const SizedBox(width: 12),
                       Expanded(
                         child: Text(
-                          'You: ${_selectedColor.toUpperCase()} vs Engine ($_selectedStrength · $_effectiveElo Elo) · $_selectedGameType · $_selectedTimeControl',
+                          'You: ${_selectedColor.toUpperCase()} vs Engine ($_selectedStrength · Est. $_effectiveElo) · $_selectedGameType · $_selectedTimeControl',
                           style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600, color: context.txt),
                         ),
                       ),

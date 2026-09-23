@@ -395,7 +395,7 @@ class _CurriculumScreenState extends State<CurriculumScreen> {
                                 children: [
                                   Chip(
                                     avatar: const Icon(Icons.star, size: 14, color: ChessTheme.accentGold),
-                                    label: Text('Elo ${currentDayData.difficultyRating}'),
+                                    label: Text('Estimated Difficulty: ${currentDayData.difficultyRating}'),
                                     backgroundColor: context.surfLight,
                                     visualDensity: VisualDensity.compact,
                                   ),

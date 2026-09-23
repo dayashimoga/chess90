@@ -8,619 +8,966 @@
 
 ---
 
-## Day 1: Board Anatomy & Coordinates
+## Day 1: Baseline Diagnostic
 
 - **Phase**: Phase 1: Rules, Notation, Movement & Board Vision
-- **Theme**: Baseline Diagnostic & Board Vision Fundamentals
-- **Primary Skill Axis**: `visualization`
+- **Theme**: Diagnostic Assessment & Board Vision: Coordinate Fluency & 12-Axis Skill Radar
+- **Primary Skill Axis**: `tactics`
 - **Estimated Training Time**: 60 minutes
 - **Difficulty Rating**: Elo 1200
 - **Prerequisites**: None (Foundational Entry)
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Name and identify any of the 64 squares within 1 second.
-- Verify the correct orientation of the board and piece placement.
+- Map baseline 12-axis skill radar across tactical, positional, and calculation dimensions.
+- Solve 6 diagnostic positions under tournament time limits.
 
 ### Theoretical Instruction & Lesson Guidance
-# Day 1: Chess Rules, Board Anatomy & Coordinate Fluency
+# Day 1: Comprehensive Baseline Diagnostic
 
 ### 1. Simple Definition & Core Concept
-Chess is played on an 8x8 grid of 64 alternating light and dark squares. Files are columns (a-h), ranks are rows (1-8). The board must always be set with a light square in the bottom-right corner ("white on right").
+Diagnostic evaluation measuring tactical recognition speed, coordinate vision, and calculation depth.
 
 ### 2. Why It Matters in Practical Play
-Instant coordinate vision is the foundation of chess thinking. You cannot calculate variations or read chess literature without effortlessly mapping squares like e4, c6, and f7 in your mind.
+Establishes personalized training benchmarks and maps your initial 12-axis cognitive skill profile.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** "White on right" for the board setup; queens begin on their own matching color (White Queen on d1, Black Queen on d8).
+**Core Rule / Heuristic:** Establish baseline tactical accuracy and coordinate vision before starting training.
 
-**Canonical Diagram FEN:** `rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1`
+**Canonical Diagram FEN:** `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 
-### 4. Canonical Model Game Study
-Historical Board Origins — The 64 Squares of Shatranj
+### 4. Canonical Model Game
+Diagnostic Benchmark Protocols
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Setting up the board rotated 90 degrees with a dark square in the right corner.
-- **Mistake:** Swapping the King and Queen on setup (White Queen must be on d1, King on e1).
-- **Mistake:** Confusing file coordinates (columns) with rank coordinates (rows).
+- **Mistake:** Rushing through calculation without identifying opponent counter-checks.
+- **Mistake:** Overlooking quiet retreating moves.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-In the starting position, White's primary central candidate moves are 1. e4 (King's pawn) and 1. d4 (Queen's pawn). Flank candidates like 1. h4 control zero central space and waste time. Always choose central presence over edge pawns.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- White on right: The right-hand corner square is always light.
-- Queen on her color: White Queen on d1 (white square), Black Queen on d8 (dark square).
-- Files run vertically (a-h); ranks run horizontally (1-8).
+- Scan checks, captures, and threats (CCT) on every ply.
+- Identify undefended pieces (LPDO).
+- Maintain steady clock rhythm.
+
 
 
 ### Worked Examples
-- Model Demonstration 1: Mapping the center quartet (e4, d4, e5, d5) from White and Black perspective.
-- Model Demonstration 2: Tracing the long light-square diagonal a1-h8 and dark-square diagonal h1-a8.
+- Model Demonstration 1: Textbook execution of Baseline Diagnostic with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Baseline Diagnostic.
 
 ### Interactive Exercises (3 Exercises)
 #### Exercise 1 (cur_d1_ex1)
-- **FEN**: `rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opening Principles
-- **Instruction**: White to move: Occupy the center with your King's pawn.
-- **Solution Sequence**: `e4`
-- **Explanation**: 1. e4 controls d5 and f5 and opens paths for Queen and Bishop.
-- **Hints**: Push your king\'s pawn forward two squares. (Penalty: 20% per hint)
+- **Motif**: Scholar Mate Attack
+- **Instruction**: White to move: Deliver immediate checkmate exploiting the f7 weakness.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# delivers checkmate supported by the bishop on c4.
+- **Hints**: Find the undefended mating square adjacent to the enemy king. (Penalty: 20% per hint)
 
 #### Exercise 2 (cur_d1_ex2)
-- **FEN**: `r1bqkbnr/pppppppp/2n5/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 1 2`
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opening Principles
-- **Instruction**: White to move: Develop your king knight toward the center.
-- **Solution Sequence**: `Nf3`
-- **Explanation**: Nf3 controls central squares e5 and d4 and prepares king castling.
-- **Hints**: Develop the knight on g1 to f3. (Penalty: 20% per hint)
+- **Motif**: Back Rank Mate
+- **Instruction**: White to move: Exploit the vulnerable back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the classic corridor checkmate.
+- **Hints**: Look at Black's uncastled back rank with no escape luft. (Penalty: 20% per hint)
 
 #### Exercise 3 (cur_d1_ex3)
-- **FEN**: `r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3`
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opening Principles
-- **Instruction**: White to move: Develop your light-squared bishop actively.
-- **Solution Sequence**: `Bc4`
-- **Explanation**: Bc4 takes aim at Black's vulnerable f7 square and completes minor piece mobilization.
-- **Hints**: Move your light-squared bishop to c4. (Penalty: 20% per hint)
+- **Motif**: Opposition
+- **Instruction**: White to move: Claim the vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 claims direct vertical opposition, forcing Black to step aside.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Historical Board Origins — The 64 Squares of Shatranj
+Diagnostic Benchmark Protocols
 
 ### Practical Sparring Assignment
-Complete coordinate vision drills in the laboratory, reaching 100% accuracy on 20 random square prompts.
+Interactive Lab Session: Complete all daily drills in tactical_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Board Anatomy & Coordinates: Flashcard
-- Candidate Selection Review
-
-### Remediation Protocol
-Review Day 1 foundational concepts, drill 5 targeted flashcards on visualization, and repeat exercise set.
-
----
-
-## Day 2: Piece Movement & Material Values
-
-- **Phase**: Phase 1: Rules, Notation, Movement & Board Vision
-- **Theme**: Pawns, Knights, Bishops, Rooks, Queen, King & Standard Point Scale
-- **Primary Skill Axis**: `tactics`
-- **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1214
-- **Prerequisites**: Day(s) 1
-- **Mastery Pass Threshold**: 80% accuracy with zero hints
-
-### Learning Objectives
-- Master the movement vectors for all 6 piece types.
-- Evaluate equal versus advantageous exchanges using the point scale.
-
-### Theoretical Instruction & Lesson Guidance
-# Day 2: Piece Movement, Capture Mechanics & Relative Values
-
-### 1. Simple Definition & Core Concept
-Every piece possesses unique geometric movement rules. Material values guide trade decisions: Pawn=1, Knight=3, Bishop=3.25, Rook=5, Queen=9, and the King is invaluable.
-
-### 2. Why It Matters in Practical Play
-Understanding relative piece values prevents catastrophic trades (e.g. giving up a Rook for a Pawn) and establishes the arithmetic foundation for all tactical combinations.
-
-### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Value pieces dynamically: a Knight in an active central outpost is worth more than a buried passive Rook.
-
-**Canonical Diagram FEN:** `8/8/8/4N3/8/8/8/8 w - - 0 1`
-
-### 4. Canonical Model Game Study
-Paul Morphy vs Duke of Brunswick & Count Isouard (Paris Opera, 1858)
-
-### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Moving a Bishop across color complexes (bishops can never leave their starting color complex).
-- **Mistake:** Trading a Rook (5 points) for a Knight or Bishop (3 points) without concrete compensation.
-- **Mistake:** Moving the King into check or failing to defend against immediate captures.
-
-### 6. Candidate Moves & Kotov Calculation Discipline
-When choosing between captures, calculate the net trade value: capturing a 5-point Rook with a 3-point Bishop is a winning trade (+2 exchange); capturing a defended pawn with a Queen is losing (-8 net).
-
-### 7. Concise Cheat Sheet
-- Standard scale: Pawn=1, Knight=3, Bishop=3, Rook=5, Queen=9.
-- Knights are jumpers: the only piece that can leap over other units.
-- Bishops are color-bound: light-squared bishops stay on light squares forever.
-
-
-### Worked Examples
-- Model Demonstration 1: The knight's L-shape jumping over closed pawns.
-- Model Demonstration 2: Trade evaluation comparing minor piece trades vs rook exchanges.
-
-### Interactive Exercises (1 Exercises)
-#### Exercise 1 (cur_d2_ex1)
-- **FEN**: `r1bqk2r/pppp1ppp/2n5/2b1p3/4n3/3P1N2/PPP2PPP/RNBQKB1R w KQkq - 0 5`
-- **Side to Play**: WHITE
-- **Motif**: Material Capture
-- **Instruction**: White to move: Strike the undefended black knight on e4.
-- **Solution Sequence**: `dxe4`
-- **Explanation**: dxe4 captures the knight, winning 3 points of material cleanly.
-- **Hints**: Look for the hanging black knight in the center. (Penalty: 20% per hint)
-
-### Master Game Study Reference
-Paul Morphy vs Duke of Brunswick & Count Isouard (Paris Opera, 1858)
-
-### Practical Sparring Assignment
-Identify and execute winning material trades in the Candidate Selection lab.
-
-### Spaced Repetition (SRS) Review Queue
-- Piece Movement & Material Values: Flashcard
-- Candidate Selection Review
+- Baseline Diagnostic: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for tactics
 
 ### Remediation Protocol
 Review Day 1 foundational concepts, drill 5 targeted flashcards on tactics, and repeat exercise set.
 
 ---
 
-## Day 3: Notation, Castling & En Passant
+## Day 2: Tactics — Hanging Pieces & LPDO
 
 - **Phase**: Phase 1: Rules, Notation, Movement & Board Vision
-- **Theme**: Standard SAN Notation, Kingside/Queenside Castling, En Passant & Promotion
+- **Theme**: Exploiting undefended pieces and loose tactical vulnerabilities
 - **Primary Skill Axis**: `tactics`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1229
-- **Prerequisites**: Day(s) 1, 2
+- **Difficulty Rating**: Elo 1215
+- **Prerequisites**: Day(s) 1
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Record and read algebraic notation moves without hesitation.
-- Execute legal castling, en passant, and promotion in practical exercises.
+- Master the core mechanics and geometric triggers of Tactics — Hanging Pieces & LPDO.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Day 3: Algebraic Notation, Special Moves & Promotion
+# Day 2: Tactics — Hanging Pieces & LPDO
 
 ### 1. Simple Definition & Core Concept
-Standard Algebraic Notation (SAN) records chess moves concisely. Special rules include: Castling (O-O and O-O-O) to tuck the king away, En Passant pawn captures, and Pawn Promotion upon reaching the 8th rank.
+Tactics — Hanging Pieces & LPDO teaches foundational chess mastery: Exploiting undefended pieces and loose tactical vulnerabilities.
 
 ### 2. Why It Matters in Practical Play
-Accurate notation allows you to record your tournament games, study master literature, and employ special rules that frequently decide games.
+Mastering Tactics — Hanging Pieces & LPDO allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Castling requires that neither the king nor the castling rook has moved, no squares between are occupied, and the king does not pass through or land in check.
+**Core Rule / Heuristic:** Undefended pieces are primary tactical targets.
 
-**Canonical Diagram FEN:** `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Adolf Anderssen vs Jean Dufresne (The Evergreen Game, 1852)
+### 4. Canonical Model Game
+Harry Pillsbury vs Emanuel Lasker (1895)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Attempting to castle out of, through, or into check (all are strictly illegal).
-- **Mistake:** Attempting En Passant on a move other than the immediate reply to a two-square pawn push.
-- **Mistake:** Underpromoting accidentally when a Queen is required, or failing to promote to a Queen.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Before castling, verify the three safety conditions: 1) Has the king moved? 2) Is any square in the transit path under attack? 3) Are all pieces cleared? If transit square f1 is attacked by a bishop, O-O is illegal.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- O-O = Kingside castling (short); O-O-O = Queenside castling (long).
-- En Passant: Captures an adjacent enemy pawn that just moved two squares as if it had moved one.
-- Promotion: Any pawn reaching the 8th rank transforms immediately into Queen, Rook, Bishop, or Knight.
+- Always verify candidate moves before committing to calculation.
+- Undefended pieces are primary tactical targets.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Model Demonstration 1: The step-by-step en passant pawn mechanics.
-- Model Demonstration 2: Castling verification checklist under enemy sniper fire.
+- Model Demonstration 1: Textbook execution of Tactics — Hanging Pieces & LPDO with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Tactics — Hanging Pieces & LPDO.
 
-### Interactive Exercises (1 Exercises)
-#### Exercise 1 (cur_d3_ex1)
+### Interactive Exercises (6 Exercises)
+#### Exercise 1 (cur_d2_ex1)
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Tactics — Hanging Pieces & LPDO
+- **Instruction**: White to move: Find the tactical solution demonstrating Tactics — Hanging Pieces & LPDO.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d2_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d2_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d2_ex4)
 - **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
 - **Side to Play**: WHITE
 - **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote your passed pawn to a Queen.
+- **Instruction**: White to move: Promote the pawn into a queen.
 - **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q transforms the pawn into the most powerful piece on the board.
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
 - **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
 
+#### Exercise 5 (cur_d2_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d2_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+
 ### Master Game Study Reference
-Adolf Anderssen vs Jean Dufresne (The Evergreen Game, 1852)
+Harry Pillsbury vs Emanuel Lasker (1895)
 
 ### Practical Sparring Assignment
-Perform castling, en passant, and promotion drills under strict tournament rules.
+Interactive Lab Session: Complete all daily drills in tactical_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Notation, Castling & En Passant: Flashcard
-- Candidate Selection Review
+- Tactics — Hanging Pieces & LPDO: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for tactics
+
+### Remediation Protocol
+Review Day 1 foundational concepts, drill 5 targeted flashcards on tactics, and repeat exercise set.
+
+---
+
+## Day 3: Tactics — Absolute & Relative Pins
+
+- **Phase**: Phase 1: Rules, Notation, Movement & Board Vision
+- **Theme**: Freezing pieces against king and queen vectors
+- **Primary Skill Axis**: `tactics`
+- **Estimated Training Time**: 60 minutes
+- **Difficulty Rating**: Elo 1229
+- **Prerequisites**: Day(s) 2
+- **Mastery Pass Threshold**: 80% accuracy with zero hints
+
+### Learning Objectives
+- Master the core mechanics and geometric triggers of Tactics — Absolute & Relative Pins.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
+
+### Theoretical Instruction & Lesson Guidance
+# Day 3: Tactics — Absolute & Relative Pins
+
+### 1. Simple Definition & Core Concept
+Tactics — Absolute & Relative Pins teaches foundational chess mastery: Freezing pieces against king and queen vectors.
+
+### 2. Why It Matters in Practical Play
+Mastering Tactics — Absolute & Relative Pins allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
+
+### 3. Visual Board Model & Pattern Heuristic
+**Core Rule / Heuristic:** Pinned pieces lose their defensive power.
+
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+
+### 4. Canonical Model Game
+Alexander Alekhine vs Richard Reti (1925)
+
+### 5. Common Amateur Mistakes & Refutations
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
+
+### 6. Candidate Moves & Kotov Calculation Discipline
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
+
+### 7. Concise Cheat Sheet
+- Always verify candidate moves before committing to calculation.
+- Pinned pieces lose their defensive power.
+- Maintain clock discipline and check opponent tactical resources.
+
+
+
+### Worked Examples
+- Model Demonstration 1: Textbook execution of Tactics — Absolute & Relative Pins with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Tactics — Absolute & Relative Pins.
+
+### Interactive Exercises (6 Exercises)
+#### Exercise 1 (cur_d3_ex1)
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Tactics — Absolute & Relative Pins
+- **Instruction**: White to move: Find the tactical solution demonstrating Tactics — Absolute & Relative Pins.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d3_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d3_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d3_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d3_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d3_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+
+### Master Game Study Reference
+Alexander Alekhine vs Richard Reti (1925)
+
+### Practical Sparring Assignment
+Interactive Lab Session: Complete all daily drills in tactical_lab, applying the move decision checklist on every ply.
+
+### Spaced Repetition (SRS) Review Queue
+- Tactics — Absolute & Relative Pins: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for tactics
 
 ### Remediation Protocol
 Review Day 2 foundational concepts, drill 5 targeted flashcards on tactics, and repeat exercise set.
 
 ---
 
-## Day 4: Check, Checkmate & Draw Rules
+## Day 4: Tactics — Skewers & X-Ray Attacks
 
 - **Phase**: Phase 1: Rules, Notation, Movement & Board Vision
-- **Theme**: Check (CPR: Capture, Protect, Run), Checkmate, Stalemate & 50-Move Draw
+- **Theme**: Attacking higher-value targets with collateral pieces behind
 - **Primary Skill Axis**: `tactics`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1243
-- **Prerequisites**: Day(s) 1, 2, 3
+- **Difficulty Rating**: Elo 1244
+- **Prerequisites**: Day(s) 3
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Differentiate checkmate from stalemate in any position instantaneously.
-- Execute the CPR defense whenever put into check.
+- Master the core mechanics and geometric triggers of Tactics — Skewers & X-Ray Attacks.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Day 4: Checks, Checkmates, and Draws
+# Day 4: Tactics — Skewers & X-Ray Attacks
 
 ### 1. Simple Definition & Core Concept
-A check threatens the king. A checkmate leaves the king in check with zero legal evasions (game over). A draw occurs via stalemate, insufficient material, 3-fold repetition, or the 50-move rule.
+Tactics — Skewers & X-Ray Attacks teaches foundational chess mastery: Attacking higher-value targets with collateral pieces behind.
 
 ### 2. Why It Matters in Practical Play
-Knowing the distinction between checkmate (a win) and stalemate (a draw) saves games: you can swindle a draw when losing, and avoid throwing away a won position when ahead.
+Mastering Tactics — Skewers & X-Ray Attacks allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** CPR Response to Check: 1) Capture the checking piece; 2) Protect by blocking the ray; 3) Run with the King.
+**Core Rule / Heuristic:** The valuable piece in front must yield.
 
-**Canonical Diagram FEN:** `k7/2K5/1Q6/8/8/8/8/8 b - - 0 1`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Johannes Zukertort vs Joseph Blackburne (London, 1883)
+### 4. Canonical Model Game
+Jose Raul Capablanca vs Rudolf Spielmann (1911)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Allowing stalemate when up overwhelming material (e.g. Queen + King vs King).
-- **Mistake:** Failing to notice an opponent is in check and attempting an illegal non-evading move.
-- **Mistake:** Resigning in a drawn stalemate position.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-When ahead in material, always provide the lone enemy king an escape square until the final mating blow is delivered. If the king has no legal moves and is NOT in check, the game is immediately drawn by stalemate.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- CPR: Capture, Protect, Run are the only 3 legal ways out of check.
-- Stalemate = NOT in check + NO legal moves = Draw 1/2-1/2.
-- Checkmate = IN check + NO legal moves = Win 1-0.
+- Always verify candidate moves before committing to calculation.
+- The valuable piece in front must yield.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Model Demonstration 1: The classic Stalemate trap with King and Queen vs lone King.
-- Model Demonstration 2: Queen and helper piece delivering checkmate on the edge.
+- Model Demonstration 1: Textbook execution of Tactics — Skewers & X-Ray Attacks with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Tactics — Skewers & X-Ray Attacks.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d4_ex1)
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Tactics — Skewers & X-Ray Attacks
+- **Instruction**: White to move: Find the tactical solution demonstrating Tactics — Skewers & X-Ray Attacks.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d4_ex2)
 - **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Back Rank Checkmate
-- **Instruction**: White to move: Deliver back-rank checkmate.
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
 - **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers checkmate because Black has no pawn luft escape.
-- **Hints**: Slide your rook down to the 8th rank. (Penalty: 20% per hint)
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d4_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d4_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d4_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d4_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Johannes Zukertort vs Joseph Blackburne (London, 1883)
+Jose Raul Capablanca vs Rudolf Spielmann (1911)
 
 ### Practical Sparring Assignment
-Deliver clean checkmates and avoid accidental stalemates in the Tactical Lab.
+Interactive Lab Session: Complete all daily drills in tactical_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Check, Checkmate & Draw Rules: Flashcard
-- Candidate Selection Review
+- Tactics — Skewers & X-Ray Attacks: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for tactics
 
 ### Remediation Protocol
 Review Day 3 foundational concepts, drill 5 targeted flashcards on tactics, and repeat exercise set.
 
 ---
 
-## Day 5: Board Vision & Ray Tracing
+## Day 5: Tactics — Knight Forks & Geometry
 
 - **Phase**: Phase 1: Rules, Notation, Movement & Board Vision
-- **Theme**: Tracing Attack Rays, Color Complexes, Knight Wheels & Diagonal Blind Spots
-- **Primary Skill Axis**: `visualization`
+- **Theme**: Octopus knight anchors and lethal royal forks
+- **Primary Skill Axis**: `tactics`
 - **Estimated Training Time**: 60 minutes
 - **Difficulty Rating**: Elo 1258
-- **Prerequisites**: Day(s) 1, 2, 4
+- **Prerequisites**: Day(s) 4
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Trace all attacking rays radiating from both friendly and enemy pieces.
-- Eliminate geometric blind spots on backward diagonals.
+- Master the core mechanics and geometric triggers of Tactics — Knight Forks & Geometry.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Day 5: Board Vision & Geometric Sight
+# Day 5: Tactics — Knight Forks & Geometry
 
 ### 1. Simple Definition & Core Concept
-Board vision is the intuitive ability to see all lines of force across the board: rook files, bishop diagonals, and knight wheel jumps without conscious effort.
+Tactics — Knight Forks & Geometry teaches foundational chess mastery: Octopus knight anchors and lethal royal forks.
 
 ### 2. Why It Matters in Practical Play
-Most beginner mistakes stem from "tunnel vision"—focusing on one local skirmish while forgetting a long-range bishop or queen slicing across the whole board.
+Mastering Tactics — Knight Forks & Geometry allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Look at the ENTIRE board on every ply; never look at only one half of the board.
+**Core Rule / Heuristic:** Knights attack pieces on opposite color squares.
 
-**Canonical Diagram FEN:** `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Wilhelm Steinitz vs Curt von Bardeleben (Hastings, 1895)
+### 4. Canonical Model Game
+Wilhelm Steinitz vs Curt von Bardeleben (1895)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Looking only at the forward squares of a piece and forgetting its backward diagonal retreats.
-- **Mistake:** Forgetting that long-range queens and bishops cut across the entire 8-rank span.
-- **Mistake:** Overlooking knight jumps onto rim squares (a4, h4, a5, h5).
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-When scanning a position, run your eyes along all 4 diagonals radiating from every bishop and queen on the board. Trace them to their destination to identify hidden sniper attacks.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Bishops control diagonals of one color only (32 squares of influence).
-- Rooks control open files and ranks (horizontal and vertical pressure).
-- Knights control up to 8 squares of the opposite color from where they stand.
+- Always verify candidate moves before committing to calculation.
+- Knights attack pieces on opposite color squares.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Model Demonstration 1: The knight's full 8-square radius octopus wheel.
-- Model Demonstration 2: Diagonal bishop laser penetrating through uncastled king.
+- Model Demonstration 1: Textbook execution of Tactics — Knight Forks & Geometry with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Tactics — Knight Forks & Geometry.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d5_ex1)
 - **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Battery Attack
-- **Instruction**: White to move: Spot the coordinated ray attack on the f7 square.
+- **Motif**: Tactics — Knight Forks & Geometry
+- **Instruction**: White to move: Find the tactical solution demonstrating Tactics — Knight Forks & Geometry.
 - **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# checkmates with Queen backed up by the Bishop on c4.
-- **Hints**: Look at the intersection of the queen and bishop rays on f7. (Penalty: 20% per hint)
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d5_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d5_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d5_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d5_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d5_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Wilhelm Steinitz vs Curt von Bardeleben (Hastings, 1895)
+Wilhelm Steinitz vs Curt von Bardeleben (1895)
 
 ### Practical Sparring Assignment
-Complete multi-diagonal and multi-file tracking exercises in the Board Memory Lab.
+Interactive Lab Session: Complete all daily drills in tactical_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Board Vision & Ray Tracing: Flashcard
-- Candidate Selection Review
+- Tactics — Knight Forks & Geometry: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for tactics
 
 ### Remediation Protocol
-Review Day 4 foundational concepts, drill 5 targeted flashcards on visualization, and repeat exercise set.
+Review Day 4 foundational concepts, drill 5 targeted flashcards on tactics, and repeat exercise set.
 
 ---
 
-## Day 6: Hanging Pieces & LPDO
+## Day 6: Tactics — Double Attacks & Dual Threats
 
 - **Phase**: Phase 1: Rules, Notation, Movement & Board Vision
-- **Theme**: Spotting Undefended Pieces, Counting Attackers vs Defenders & Alignment
+- **Theme**: Simultaneous dual threats splitting enemy coordination
 - **Primary Skill Axis**: `tactics`
 - **Estimated Training Time**: 60 minutes
 - **Difficulty Rating**: Elo 1273
-- **Prerequisites**: Day(s) 1, 2, 5
+- **Prerequisites**: Day(s) 5
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Spot every loose piece on the board within 2 seconds.
-- Exploit undefended enemy pieces with direct captures or double attacks.
+- Master the core mechanics and geometric triggers of Tactics — Double Attacks & Dual Threats.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Day 6: Hanging Pieces & LPDO (Loose Pieces Drop Off)
+# Day 6: Tactics — Double Attacks & Dual Threats
 
 ### 1. Simple Definition & Core Concept
-John Nunn's famous acronym LPDO: "Loose Pieces Drop Off." Over 80% of all amateur blunders and master tactics begin with an undefended or underdefended piece.
+Tactics — Double Attacks & Dual Threats teaches foundational chess mastery: Simultaneous dual threats splitting enemy coordination.
 
 ### 2. Why It Matters in Practical Play
-By developing an instant radar for loose pieces—both your opponent's and your own—you simultaneously win free material and protect yourself against unexpected tactics.
+Mastering Tactics — Double Attacks & Dual Threats allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Before making any move, ask: "Are any of my pieces undefended? Are any of their pieces undefended?"
+**Core Rule / Heuristic:** One defender cannot respond to two threats.
 
-**Canonical Diagram FEN:** `r1bqk2r/pppp1ppp/2n5/4p3/1b2n3/2NP1N2/PPP2PPP/R1BQKB1R w KQkq - 0 5`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Mikhail Chigorin vs Siegbert Tarrasch (St. Petersburg, 1893)
+### 4. Canonical Model Game
+Frank Marshall vs Stepan Levitsky (1912)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Leaving pieces on squares where they have zero friendly defenders.
-- **Mistake:** Counting defenders incorrectly when one defender is pinned or overloaded.
-- **Mistake:** Believing a piece is safe just because it is not currently under attack.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-When evaluating candidate moves, prioritize capturing loose pieces. If an opponent knight is undefended on e4 and attacked by a d3 pawn, capturing it with 1. dxe4 wins a full piece immediately.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- LPDO: Loose Pieces Drop Off. Undefended pieces are tactical targets.
-- Attacker count > Defender count = Winning material exchange.
-- A pinned defender is an illusion—it cannot defend its target.
+- Always verify candidate moves before committing to calculation.
+- One defender cannot respond to two threats.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Model Demonstration 1: Identifying three loose pieces simultaneously in an open center.
-- Model Demonstration 2: Piling up attackers on a defended piece until attackers outnumber defenders.
+- Model Demonstration 1: Textbook execution of Tactics — Double Attacks & Dual Threats with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Tactics — Double Attacks & Dual Threats.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d6_ex1)
-- **FEN**: `r1bqk2r/pppp1ppp/2n2n2/4p3/1bB1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Prophylaxis & King Safety
-- **Instruction**: White to move: Defend the attacked e4 pawn or castle safely.
+- **Motif**: Tactics — Double Attacks & Dual Threats
+- **Instruction**: White to move: Find the tactical solution demonstrating Tactics — Double Attacks & Dual Threats.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d6_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d6_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d6_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d6_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d6_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
 - **Solution Sequence**: `O-O`
-- **Explanation**: O-O protects the king and safeguards the position while development continues.
-- **Hints**: Castle your king to safety. (Penalty: 20% per hint)
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Mikhail Chigorin vs Siegbert Tarrasch (St. Petersburg, 1893)
+Frank Marshall vs Stepan Levitsky (1912)
 
 ### Practical Sparring Assignment
-Run loose-piece detection drills in the Tactical Lab with zero calculation errors.
+Interactive Lab Session: Complete all daily drills in tactical_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Hanging Pieces & LPDO: Flashcard
-- Candidate Selection Review
+- Tactics — Double Attacks & Dual Threats: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for tactics
 
 ### Remediation Protocol
 Review Day 5 foundational concepts, drill 5 targeted flashcards on tactics, and repeat exercise set.
 
 ---
 
-## Day 7: Milestone 1: Fundamentals & Principles
+## Day 7: Tactics — Tactical Milestone Exam I
 
 - **Phase**: Phase 1: Rules, Notation, Movement & Board Vision
-- **Theme**: Control Center, Develop Minor Pieces, Castle Early & Milestone Examination
-- **Primary Skill Axis**: `openings`
+- **Theme**: Timed combination evaluation under tournament pressure
+- **Primary Skill Axis**: `tactics`
 - **Estimated Training Time**: 90 minutes
 - **Difficulty Rating**: Elo 1287
-- **Prerequisites**: Day(s) 1, 2, 3, 4, 5, 6
+- **Prerequisites**: Day(s) 6
 - **Mastery Pass Threshold**: 85% accuracy with zero hints
 
 ### Learning Objectives
-- Pass the Milestone 1 exam with >= 85% accuracy.
-- Demonstrate adherence to the golden opening triad in practical sparring.
+- Master the core mechanics and geometric triggers of Tactics — Tactical Milestone Exam I.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Day 7: Milestone 1: Opening Principles & Fundamentals Exam
+# Day 7: Tactics — Tactical Milestone Exam I
 
 ### 1. Simple Definition & Core Concept
-The golden opening triad: 1) Control the center (e4, d4); 2) Develop minor pieces (Knights before Bishops); 3) Castle early (within 8-10 moves). Never move the same piece twice or launch premature attacks.
+Tactics — Tactical Milestone Exam I teaches foundational chess mastery: Timed combination evaluation under tournament pressure.
 
 ### 2. Why It Matters in Practical Play
-Milestone 1 tests your complete mastery of board rules, notation, values, checks, and opening principles before advancing to combinations.
+Mastering Tactics — Tactical Milestone Exam I allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Central control + Rapid development + King safety = The Grandmaster Foundation.
+**Core Rule / Heuristic:** Calculate forcing variations to the quiet move.
 
-**Canonical Diagram FEN:** `rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Paul Morphy vs Duke of Brunswick (Paris Opera Model, 1858)
+### 4. Canonical Model Game
+Johannes Zukertort vs Joseph Blackburne (1883)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Moving the queen out on move 2 or 3 (she will be chased by developing knights).
-- **Mistake:** Moving the same minor piece two or three times in the first 6 moves.
-- **Mistake:** Neglecting king safety and keeping the king stranded in the center.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Candidate Moves in the opening: 1. e4 or 1. d4 are primary. If Black responds with 1... e5, your candidate is 2. Nf3 (developing with tempo against the e5 pawn). Moves like 2. h3 fail to develop any piece.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Triad: Center control, rapid piece mobilization, early castling.
-- Knights before Bishops: Knights belong on f3/c3; Bishops need open diagonals.
-- Connect the Rooks: The opening phase is complete when rooks communicate.
+- Always verify candidate moves before committing to calculation.
+- Calculate forcing variations to the quiet move.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Model Demonstration 1: Morphy's lightning development punishing Black's slow defense.
-- Model Demonstration 2: Comprehensive review of Weeks 1 core rules and coordinate reflexes.
+- Model Demonstration 1: Textbook execution of Tactics — Tactical Milestone Exam I with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Tactics — Tactical Milestone Exam I.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d7_ex1)
-- **FEN**: `r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Rapid Development
-- **Instruction**: White to move: Develop your light-squared bishop toward the center.
-- **Solution Sequence**: `Bc4`
-- **Explanation**: Bc4 develops the bishop to an active diagonal targeting f7.
-- **Hints**: Place the bishop on c4. (Penalty: 20% per hint)
+- **Motif**: Tactics — Tactical Milestone Exam I
+- **Instruction**: White to move: Find the tactical solution demonstrating Tactics — Tactical Milestone Exam I.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d7_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d7_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d7_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d7_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d7_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Paul Morphy vs Duke of Brunswick (Paris Opera Model, 1858)
+Johannes Zukertort vs Joseph Blackburne (1883)
 
 ### Practical Sparring Assignment
-Take the Milestone 1 Comprehensive Exam covering all foundational rules and principles.
+Weekly Milestone Comprehensive Exam: Solve all positions with >= 85% accuracy and zero hints permitted.
 
 ### Spaced Repetition (SRS) Review Queue
-- Milestone 1: Fundamentals & Principles: Flashcard
-- Candidate Selection Review
+- Tactics — Tactical Milestone Exam I: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for tactics
 
 ### Remediation Protocol
-Review Day 6 foundational concepts, drill 5 targeted flashcards on openings, and repeat exercise set.
+Review Day 6 foundational concepts, drill 5 targeted flashcards on tactics, and repeat exercise set.
 
 ---
 
-## Day 8: Forks & Double Attacks
+## Day 8: Tactics — Discovered Attacks & Double Checks
 
 - **Phase**: Phase 2: Tactical Motifs & Combinations
-- **Theme**: Knight forks, pawn forks, royal forks
-- **Primary Skill Axis**: `tactics`
+- **Theme**: The most lethal tactical force: simultaneous unmasking
+- **Primary Skill Axis**: `attack`
 - **Estimated Training Time**: 60 minutes
 - **Difficulty Rating**: Elo 1302
 - **Prerequisites**: Day(s) 7
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Forks & Double Attacks patterns.
-- Apply Forks & Double Attacks in tournament conditions.
+- Master the core mechanics and geometric triggers of Tactics — Discovered Attacks & Double Checks.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Day 8: The Fork & Double Attack
+# Day 8: Tactics — Discovered Attacks & Double Checks
 
 ### 1. Simple Definition & Core Concept
-A fork occurs when a single piece attacks two or more enemy targets simultaneously.
+Tactics — Discovered Attacks & Double Checks teaches foundational chess mastery: The most lethal tactical force: simultaneous unmasking.
 
 ### 2. Why It Matters in Practical Play
-Forks win material because one defender cannot parry two simultaneous threats.
+Mastering Tactics — Discovered Attacks & Double Checks allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Knights are the ultimate forking pieces because their geometric leap cannot be blocked.
+**Core Rule / Heuristic:** In double check, the enemy king must move.
 
-**Canonical Diagram FEN:** `r1b1k2r/pppp1ppp/2n5/1B2p3/4n3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 0 6`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Bobby Fischer vs Samuel Reshevsky (1958)
+### 4. Canonical Model Game
+Carlos Torre vs Emanuel Lasker (1925)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Missing knight forks from rim squares
-- **Mistake:** Forgetting pawn forks
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Look for knight jumps that deliver check and attack an undefended piece simultaneously.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Forks & Double Attacks principles.
-- Verify candidate moves on every ply.
-- Maintain calculating discipline.
+- Always verify candidate moves before committing to calculation.
+- In double check, the enemy king must move.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Textbook execution of Forks & Double Attacks.
-- Defensive counter to Forks & Double Attacks.
+- Model Demonstration 1: Textbook execution of Tactics — Discovered Attacks & Double Checks with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Tactics — Discovered Attacks & Double Checks.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d8_ex1)
-- **FEN**: `r1b1k2r/pppp1ppp/2n5/1B2p3/4n3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 0 6`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Forks & Double Attacks
-- **Instruction**: White to move: Apply the core Forks & Double Attacks technique.
-- **Solution Sequence**: `Nd5`
-- **Explanation**: Executing Nd5 demonstrates the thematic mastery of Forks & Double Attacks.
-- **Hints**: Look for the key move utilizing Forks & Double Attacks. (Penalty: 20% per hint)
+- **Motif**: Tactics — Discovered Attacks & Double Checks
+- **Instruction**: White to move: Find the tactical solution demonstrating Tactics — Discovered Attacks & Double Checks.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d8_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d8_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d8_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d8_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d8_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Bobby Fischer vs Samuel Reshevsky (1958)
+Carlos Torre vs Emanuel Lasker (1925)
 
 ### Practical Sparring Assignment
-Complete targeted tactical_lab drills.
+Interactive Lab Session: Complete all daily drills in tactical_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Forks & Double Attacks: Flashcard
-- Candidate Selection Review
+- Tactics — Discovered Attacks & Double Checks: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for attack
 
 ### Remediation Protocol
-Review Day 7 foundational concepts, drill 5 targeted flashcards on tactics, and repeat exercise set.
+Review Day 7 foundational concepts, drill 5 targeted flashcards on attack, and repeat exercise set.
 
 ---
 
-## Day 9: Pins & Vectors
+## Day 9: Tactics — Deflection & Removal of Defender
 
 - **Phase**: Phase 2: Tactical Motifs & Combinations
-- **Theme**: Freezing pieces against king and queen vectors
+- **Theme**: Liquidating key protectors away from critical squares
 - **Primary Skill Axis**: `tactics`
 - **Estimated Training Time**: 60 minutes
 - **Difficulty Rating**: Elo 1316
@@ -628,218 +975,368 @@ Review Day 7 foundational concepts, drill 5 targeted flashcards on tactics, and 
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Pins & Vectors patterns.
-- Apply Pins & Vectors in tournament conditions.
+- Master the core mechanics and geometric triggers of Tactics — Deflection & Removal of Defender.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Day 9: The Pin: Absolute & Relative
+# Day 9: Tactics — Deflection & Removal of Defender
 
 ### 1. Simple Definition & Core Concept
-A pin paralyzes an enemy piece along a ray. Absolute pins freeze against the king; relative pins against the queen.
+Tactics — Deflection & Removal of Defender teaches foundational chess mastery: Liquidating key protectors away from critical squares.
 
 ### 2. Why It Matters in Practical Play
-Pinned pieces lose their mobility and defensive duties. Pile pressure onto the pinned piece!
+Mastering Tactics — Deflection & Removal of Defender allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Piling on the pinned piece: Attack the immobilized piece with pawns and less valuable pieces.
+**Core Rule / Heuristic:** Strip away the guardian of the target square.
 
-**Canonical Diagram FEN:** `r1bqk2r/pppp1ppp/2n2n2/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 2 4`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Alexander Alekhine vs Richard Reti (1925)
+### 4. Canonical Model Game
+Mikhail Chigorin vs Siegbert Tarrasch (1893)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Moving an absolutely pinned piece (illegal)
-- **Mistake:** Failing to pressure pinned units
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Identify the pinning ray and advance pawns to attack the frozen piece.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Pins & Vectors principles.
-- Verify candidate moves on every ply.
-- Maintain calculating discipline.
+- Always verify candidate moves before committing to calculation.
+- Strip away the guardian of the target square.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Textbook execution of Pins & Vectors.
-- Defensive counter to Pins & Vectors.
+- Model Demonstration 1: Textbook execution of Tactics — Deflection & Removal of Defender with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Tactics — Deflection & Removal of Defender.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d9_ex1)
-- **FEN**: `r1bqk2r/pppp1ppp/2n2n2/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 2 4`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Pins & Vectors
-- **Instruction**: White to move: Apply the core Pins & Vectors technique.
-- **Solution Sequence**: `Bxc6`
-- **Explanation**: Executing Bxc6 demonstrates the thematic mastery of Pins & Vectors.
-- **Hints**: Look for the key move utilizing Pins & Vectors. (Penalty: 20% per hint)
+- **Motif**: Tactics — Deflection & Removal of Defender
+- **Instruction**: White to move: Find the tactical solution demonstrating Tactics — Deflection & Removal of Defender.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d9_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d9_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d9_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d9_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d9_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Alexander Alekhine vs Richard Reti (1925)
+Mikhail Chigorin vs Siegbert Tarrasch (1893)
 
 ### Practical Sparring Assignment
-Complete targeted tactical_lab drills.
+Interactive Lab Session: Complete all daily drills in tactical_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Pins & Vectors: Flashcard
-- Candidate Selection Review
+- Tactics — Deflection & Removal of Defender: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for tactics
 
 ### Remediation Protocol
 Review Day 8 foundational concepts, drill 5 targeted flashcards on tactics, and repeat exercise set.
 
 ---
 
-## Day 10: Skewers & X-Ray Attacks
+## Day 10: Tactics — Decoy & Attraction Sacrifices
 
 - **Phase**: Phase 2: Tactical Motifs & Combinations
-- **Theme**: Attacking higher-value targets with collateral pieces behind
-- **Primary Skill Axis**: `tactics`
+- **Theme**: Luring heavy pieces into fatal geometric squares
+- **Primary Skill Axis**: `attack`
 - **Estimated Training Time**: 60 minutes
 - **Difficulty Rating**: Elo 1331
 - **Prerequisites**: Day(s) 9
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Skewers & X-Ray Attacks patterns.
-- Apply Skewers & X-Ray Attacks in tournament conditions.
+- Master the core mechanics and geometric triggers of Tactics — Decoy & Attraction Sacrifices.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Day 10: The Skewer & X-Ray Attacks
+# Day 10: Tactics — Decoy & Attraction Sacrifices
 
 ### 1. Simple Definition & Core Concept
-A skewer attacks a valuable piece in front, forcing it to step aside and exposing a target behind it.
+Tactics — Decoy & Attraction Sacrifices teaches foundational chess mastery: Luring heavy pieces into fatal geometric squares.
 
 ### 2. Why It Matters in Practical Play
-Skewers are reverse pins. When the high-value piece runs away, the piece behind falls.
+Mastering Tactics — Decoy & Attraction Sacrifices allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Align your rooks, queens, and bishops against enemy pieces sharing the same file or diagonal.
+**Core Rule / Heuristic:** Bait the target into an unrecoverable trap.
 
-**Canonical Diagram FEN:** `r3k3/8/8/8/8/8/2B5/4K3 w - - 0 1`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Jose Raul Capablanca vs Rudolf Spielmann (1911)
+### 4. Canonical Model Game
+Adolf Anderssen vs Lionel Kieseritzky (1851)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Confusing pins and skewers
-- **Mistake:** Forgetting long diagonals
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Force the enemy king or queen to move and capture the loose rook behind it.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Skewers & X-Ray Attacks principles.
-- Verify candidate moves on every ply.
-- Maintain calculating discipline.
+- Always verify candidate moves before committing to calculation.
+- Bait the target into an unrecoverable trap.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Textbook execution of Skewers & X-Ray Attacks.
-- Defensive counter to Skewers & X-Ray Attacks.
+- Model Demonstration 1: Textbook execution of Tactics — Decoy & Attraction Sacrifices with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Tactics — Decoy & Attraction Sacrifices.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d10_ex1)
-- **FEN**: `r3k3/8/8/8/8/8/2B5/4K3 w - - 0 1`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Skewers & X-Ray Attacks
-- **Instruction**: White to move: Apply the core Skewers & X-Ray Attacks technique.
-- **Solution Sequence**: `Ba4+`
-- **Explanation**: Executing Ba4+ demonstrates the thematic mastery of Skewers & X-Ray Attacks.
-- **Hints**: Look for the key move utilizing Skewers & X-Ray Attacks. (Penalty: 20% per hint)
+- **Motif**: Tactics — Decoy & Attraction Sacrifices
+- **Instruction**: White to move: Find the tactical solution demonstrating Tactics — Decoy & Attraction Sacrifices.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d10_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d10_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d10_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d10_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d10_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Jose Raul Capablanca vs Rudolf Spielmann (1911)
+Adolf Anderssen vs Lionel Kieseritzky (1851)
 
 ### Practical Sparring Assignment
-Complete targeted tactical_lab drills.
+Interactive Lab Session: Complete all daily drills in tactical_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Skewers & X-Ray Attacks: Flashcard
-- Candidate Selection Review
+- Tactics — Decoy & Attraction Sacrifices: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for attack
 
 ### Remediation Protocol
-Review Day 9 foundational concepts, drill 5 targeted flashcards on tactics, and repeat exercise set.
+Review Day 9 foundational concepts, drill 5 targeted flashcards on attack, and repeat exercise set.
 
 ---
 
-## Day 11: Discovered Attacks & Double Checks
+## Day 11: Tactics — Overloading & Line Clearance
 
 - **Phase**: Phase 2: Tactical Motifs & Combinations
-- **Theme**: Unmasking batteries and forcing double check evasions
+- **Theme**: Exploiting pieces burdened with excessive duties
 - **Primary Skill Axis**: `tactics`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1346
+- **Difficulty Rating**: Elo 1345
 - **Prerequisites**: Day(s) 10
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Discovered Attacks & Double Checks patterns.
-- Apply Discovered Attacks & Double Checks in tournament conditions.
+- Master the core mechanics and geometric triggers of Tactics — Overloading & Line Clearance.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Day 11: Discovered Attacks & Double Checks
+# Day 11: Tactics — Overloading & Line Clearance
 
 ### 1. Simple Definition & Core Concept
-A discovered attack occurs when one piece moves, unmasking a deadly attack from a friendly piece behind it.
+Tactics — Overloading & Line Clearance teaches foundational chess mastery: Exploiting pieces burdened with excessive duties.
 
 ### 2. Why It Matters in Practical Play
-Double check is the most destructive force in chess: the enemy king MUST move; capturing or blocking is impossible.
+Mastering Tactics — Overloading & Line Clearance allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** When delivering double check, both pieces strike simultaneously. The king is forced to flee.
+**Core Rule / Heuristic:** When one piece guards two squares, strike the third.
 
-**Canonical Diagram FEN:** `r1bqk2r/pppp1ppp/2n5/2b1p3/2B1n3/3P1N2/PPP2PPP/RNBQ1RK1 w kq - 0 6`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Carlos Torre vs Emanuel Lasker (The Windmill, 1925)
+### 4. Canonical Model Game
+Akiba Rubinstein vs Gersz Rotlewi (1907)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Blocking only one check during double check
-- **Mistake:** Missing backward discoverers
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Step the front piece to a square that creates an independent threat while uncovering the battery.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Discovered Attacks & Double Checks principles.
-- Verify candidate moves on every ply.
-- Maintain calculating discipline.
+- Always verify candidate moves before committing to calculation.
+- When one piece guards two squares, strike the third.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Textbook execution of Discovered Attacks & Double Checks.
-- Defensive counter to Discovered Attacks & Double Checks.
+- Model Demonstration 1: Textbook execution of Tactics — Overloading & Line Clearance with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Tactics — Overloading & Line Clearance.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d11_ex1)
-- **FEN**: `r1bqk2r/pppp1ppp/2n5/2b1p3/2B1n3/3P1N2/PPP2PPP/RNBQ1RK1 w kq - 0 6`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Discovered Attacks & Double Checks
-- **Instruction**: White to move: Apply the core Discovered Attacks & Double Checks technique.
-- **Solution Sequence**: `dxe4`
-- **Explanation**: Executing dxe4 demonstrates the thematic mastery of Discovered Attacks & Double Checks.
-- **Hints**: Look for the key move utilizing Discovered Attacks & Double Checks. (Penalty: 20% per hint)
+- **Motif**: Tactics — Overloading & Line Clearance
+- **Instruction**: White to move: Find the tactical solution demonstrating Tactics — Overloading & Line Clearance.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d11_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d11_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d11_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d11_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d11_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Carlos Torre vs Emanuel Lasker (The Windmill, 1925)
+Akiba Rubinstein vs Gersz Rotlewi (1907)
 
 ### Practical Sparring Assignment
-Complete targeted tactical_lab drills.
+Interactive Lab Session: Complete all daily drills in tactical_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Discovered Attacks & Double Checks: Flashcard
-- Candidate Selection Review
+- Tactics — Overloading & Line Clearance: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for tactics
 
 ### Remediation Protocol
 Review Day 10 foundational concepts, drill 5 targeted flashcards on tactics, and repeat exercise set.
 
 ---
 
-## Day 12: Removal of Defender
+## Day 12: Tactics — Interference & Obstruction
 
 - **Phase**: Phase 2: Tactical Motifs & Combinations
-- **Theme**: Deflection, attraction, decoy, and overloaded guardians
+- **Theme**: Severing vital defensive communication lines
 - **Primary Skill Axis**: `tactics`
 - **Estimated Training Time**: 60 minutes
 - **Difficulty Rating**: Elo 1360
@@ -847,145 +1344,245 @@ Review Day 10 foundational concepts, drill 5 targeted flashcards on tactics, and
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Removal of Defender patterns.
-- Apply Removal of Defender in tournament conditions.
+- Master the core mechanics and geometric triggers of Tactics — Interference & Obstruction.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Day 12: Removing the Defender: Deflection & Overload
+# Day 12: Tactics — Interference & Obstruction
 
 ### 1. Simple Definition & Core Concept
-When a key square or piece is guarded, eliminate the guardian by capturing it, deflecting it, or overloading it.
+Tactics — Interference & Obstruction teaches foundational chess mastery: Severing vital defensive communication lines.
 
 ### 2. Why It Matters in Practical Play
-Tactical combinations rarely work against solid defense until you strip away the critical guard.
+Mastering Tactics — Interference & Obstruction allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** If one piece is burdened with defending two targets, attack one target to overload the defender.
+**Core Rule / Heuristic:** Place a piece between defenders to cut coordination.
 
-**Canonical Diagram FEN:** `r1bq1rk1/ppp2ppp/2np1n2/2b1p3/2B1P3/2NP1N2/PPP2PPP/R1BQ1RK1 w - - 0 7`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Akiba Rubinstein vs Gersz Rotlewi (1907)
+### 4. Canonical Model Game
+Efim Geller vs Max Euwe (1953)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Attacking the guarded square instead of removing the guard
-- **Mistake:** Overlooking deflection sacrifices
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Calculate sacrifices that force the defending piece away from guarding the back rank or queen.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Removal of Defender principles.
-- Verify candidate moves on every ply.
-- Maintain calculating discipline.
+- Always verify candidate moves before committing to calculation.
+- Place a piece between defenders to cut coordination.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Textbook execution of Removal of Defender.
-- Defensive counter to Removal of Defender.
+- Model Demonstration 1: Textbook execution of Tactics — Interference & Obstruction with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Tactics — Interference & Obstruction.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d12_ex1)
-- **FEN**: `r1bq1rk1/ppp2ppp/2np1n2/2b1p3/2B1P3/2NP1N2/PPP2PPP/R1BQ1RK1 w - - 0 7`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Removal of Defender
-- **Instruction**: White to move: Apply the core Removal of Defender technique.
-- **Solution Sequence**: `Bg5`
-- **Explanation**: Executing Bg5 demonstrates the thematic mastery of Removal of Defender.
-- **Hints**: Look for the key move utilizing Removal of Defender. (Penalty: 20% per hint)
+- **Motif**: Tactics — Interference & Obstruction
+- **Instruction**: White to move: Find the tactical solution demonstrating Tactics — Interference & Obstruction.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d12_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d12_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d12_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d12_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d12_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Akiba Rubinstein vs Gersz Rotlewi (1907)
+Efim Geller vs Max Euwe (1953)
 
 ### Practical Sparring Assignment
-Complete targeted tactical_lab drills.
+Interactive Lab Session: Complete all daily drills in tactical_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Removal of Defender: Flashcard
-- Candidate Selection Review
+- Tactics — Interference & Obstruction: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for tactics
 
 ### Remediation Protocol
 Review Day 11 foundational concepts, drill 5 targeted flashcards on tactics, and repeat exercise set.
 
 ---
 
-## Day 13: Interference, Clearance & Zwischenzug
+## Day 13: Tactics — Trapped Pieces & Domination
 
 - **Phase**: Phase 2: Tactical Motifs & Combinations
-- **Theme**: Cutting communication lines and inserting deadly in-between moves
+- **Theme**: Depriving opponent pieces of safe retreat squares
 - **Primary Skill Axis**: `tactics`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1375
+- **Difficulty Rating**: Elo 1374
 - **Prerequisites**: Day(s) 12
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Interference, Clearance & Zwischenzug patterns.
-- Apply Interference, Clearance & Zwischenzug in tournament conditions.
+- Master the core mechanics and geometric triggers of Tactics — Trapped Pieces & Domination.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Day 13: Interference, Line Clearance & The Zwischenzug
+# Day 13: Tactics — Trapped Pieces & Domination
 
 ### 1. Simple Definition & Core Concept
-Interference places a piece between two enemy units to cut coordination. A Zwischenzug inserts an intermediate check.
+Tactics — Trapped Pieces & Domination teaches foundational chess mastery: Depriving opponent pieces of safe retreat squares.
 
 ### 2. Why It Matters in Practical Play
-Mastering intermediate moves prevents you from falling into traps when recapturing automatically.
+Mastering Tactics — Trapped Pieces & Domination allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Never recapture blindly. Always look for a venomous in-between check or counter-threat first.
+**Core Rule / Heuristic:** A piece with nowhere to run is already lost.
 
-**Canonical Diagram FEN:** `r1bqk2r/pppp1ppp/2n5/4p3/1b2n3/3P1N2/PPP2PPP/RNBQKB1R w KQkq - 0 5`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Viswanathan Anand vs Levon Aronian (2013)
+### 4. Canonical Model Game
+Bobby Fischer vs Samuel Reshevsky (1958)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Recapturing on impulse
-- **Mistake:** Failing to spot interference blockades
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Before recapturing the piece, insert an intermediate check (zwischenzug) that wins a pawn.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Interference, Clearance & Zwischenzug principles.
-- Verify candidate moves on every ply.
-- Maintain calculating discipline.
+- Always verify candidate moves before committing to calculation.
+- A piece with nowhere to run is already lost.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Textbook execution of Interference, Clearance & Zwischenzug.
-- Defensive counter to Interference, Clearance & Zwischenzug.
+- Model Demonstration 1: Textbook execution of Tactics — Trapped Pieces & Domination with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Tactics — Trapped Pieces & Domination.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d13_ex1)
-- **FEN**: `r1bqk2r/pppp1ppp/2n5/4p3/1b2n3/3P1N2/PPP2PPP/RNBQKB1R w KQkq - 0 5`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Interference, Clearance & Zwischenzug
-- **Instruction**: White to move: Apply the core Interference, Clearance & Zwischenzug technique.
-- **Solution Sequence**: `c3`
-- **Explanation**: Executing c3 demonstrates the thematic mastery of Interference, Clearance & Zwischenzug.
-- **Hints**: Look for the key move utilizing Interference, Clearance & Zwischenzug. (Penalty: 20% per hint)
+- **Motif**: Tactics — Trapped Pieces & Domination
+- **Instruction**: White to move: Find the tactical solution demonstrating Tactics — Trapped Pieces & Domination.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d13_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d13_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d13_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d13_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d13_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Viswanathan Anand vs Levon Aronian (2013)
+Bobby Fischer vs Samuel Reshevsky (1958)
 
 ### Practical Sparring Assignment
-Complete targeted tactical_lab drills.
+Interactive Lab Session: Complete all daily drills in tactical_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Interference, Clearance & Zwischenzug: Flashcard
-- Candidate Selection Review
+- Tactics — Trapped Pieces & Domination: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for tactics
 
 ### Remediation Protocol
 Review Day 12 foundational concepts, drill 5 targeted flashcards on tactics, and repeat exercise set.
 
 ---
 
-## Day 14: Milestone 2: Tactics & Mating Patterns
+## Day 14: Tactics — Grand Milestone Exam: Tactics
 
 - **Phase**: Phase 2: Tactical Motifs & Combinations
-- **Theme**: Comprehensive tactical exam & canonical checkmating geometries
+- **Theme**: Multi-step combination synthesis and tactical certification
 - **Primary Skill Axis**: `tactics`
 - **Estimated Training Time**: 90 minutes
 - **Difficulty Rating**: Elo 1389
@@ -993,5681 +1590,9462 @@ Review Day 12 foundational concepts, drill 5 targeted flashcards on tactics, and
 - **Mastery Pass Threshold**: 85% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Milestone 2: Tactics & Mating Patterns patterns.
-- Apply Milestone 2: Tactics & Mating Patterns in tournament conditions.
+- Master the core mechanics and geometric triggers of Tactics — Grand Milestone Exam: Tactics.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Day 14: Milestone 2: Tactical Mastery & Checkmating Patterns
+# Day 14: Tactics — Grand Milestone Exam: Tactics
 
 ### 1. Simple Definition & Core Concept
-Milestone 2 tests tactical pattern synthesis: Anastasia, Boden, Smothered, Arabian, and Epaulette mates.
+Tactics — Grand Milestone Exam: Tactics teaches foundational chess mastery: Multi-step combination synthesis and tactical certification.
 
 ### 2. Why It Matters in Practical Play
-Certified tactical mastery allows you to spot game-ending combinations within seconds under clock pressure.
+Mastering Tactics — Grand Milestone Exam: Tactics allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Pattern recognition turns complex tactical geometry into instantaneous tactical sight.
+**Core Rule / Heuristic:** Verify Kotov forcing hierarchy on every ply.
 
 **Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Adolf Anderssen vs Lionel Kieseritzky (The Immortal Game, 1851)
+### 4. Canonical Model Game
+Emanuel Lasker vs William Steinitz (1894)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Rushing through calculation
-- **Mistake:** Overlooking quiet retreats
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Calculate all CCT forcing moves to checkmate or winning material advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Milestone 2: Tactics & Mating Patterns principles.
-- Verify candidate moves on every ply.
-- Maintain calculating discipline.
+- Always verify candidate moves before committing to calculation.
+- Verify Kotov forcing hierarchy on every ply.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Textbook execution of Milestone 2: Tactics & Mating Patterns.
-- Defensive counter to Milestone 2: Tactics & Mating Patterns.
+- Model Demonstration 1: Textbook execution of Tactics — Grand Milestone Exam: Tactics with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Tactics — Grand Milestone Exam: Tactics.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d14_ex1)
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Tactics — Grand Milestone Exam: Tactics
+- **Instruction**: White to move: Find the tactical solution demonstrating Tactics — Grand Milestone Exam: Tactics.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d14_ex2)
 - **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Milestone 2: Tactics & Mating Patterns
-- **Instruction**: White to move: Apply the core Milestone 2: Tactics & Mating Patterns technique.
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
 - **Solution Sequence**: `Re8#`
-- **Explanation**: Executing Re8# demonstrates the thematic mastery of Milestone 2: Tactics & Mating Patterns.
-- **Hints**: Look for the key move utilizing Milestone 2: Tactics & Mating Patterns. (Penalty: 20% per hint)
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d14_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d14_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d14_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d14_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Adolf Anderssen vs Lionel Kieseritzky (The Immortal Game, 1851)
+Emanuel Lasker vs William Steinitz (1894)
 
 ### Practical Sparring Assignment
-Complete targeted tactical_lab drills.
+Weekly Milestone Comprehensive Exam: Solve all positions with >= 85% accuracy and zero hints permitted.
 
 ### Spaced Repetition (SRS) Review Queue
-- Milestone 2: Tactics & Mating Patterns: Flashcard
-- Candidate Selection Review
+- Tactics — Grand Milestone Exam: Tactics: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for tactics
 
 ### Remediation Protocol
 Review Day 13 foundational concepts, drill 5 targeted flashcards on tactics, and repeat exercise set.
 
 ---
 
-## Day 15: CCT Hierarchy
+## Day 15: Calculation — Kotov Forcing Hierarchy (CCT)
 
 - **Phase**: Phase 3: Candidate Moves & Calculation Trees (CCT)
-- **Theme**: Checks, Captures, Threats on every ply
+- **Theme**: Systematic checks, captures, and threats priority list
 - **Primary Skill Axis**: `calculation`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1404
+- **Difficulty Rating**: Elo 1403
 - **Prerequisites**: Day(s) 14
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary CCT Hierarchy patterns.
-- Apply CCT Hierarchy in tournament conditions.
+- Master the core mechanics and geometric triggers of Calculation — Kotov Forcing Hierarchy (CCT).
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Day 15: The CCT Forcing Hierarchy
+# Day 15: Calculation — Kotov Forcing Hierarchy (CCT)
 
 ### 1. Simple Definition & Core Concept
-The CCT hierarchy dictates move ordering: evaluate all Checks first, then all Captures, then all concrete Threats.
+Calculation — Kotov Forcing Hierarchy (CCT) teaches foundational chess mastery: Systematic checks, captures, and threats priority list.
 
 ### 2. Why It Matters in Practical Play
-Forcing moves limit opponent choices and make calculation concrete, reliable, and resistant to errors.
+Mastering Calculation — Kotov Forcing Hierarchy (CCT) allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Checks limit the king; captures alter material; threats demand defensive concessions.
+**Core Rule / Heuristic:** Calculate the most forcing branches first.
 
-**Canonical Diagram FEN:** `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
+### 4. Canonical Model Game
 Alexander Kotov vs Igor Bondarevsky (1946)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Evaluating quiet moves before forcing moves
-- **Mistake:** Missing long-range checks
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Survey all legal checks and captures before considering any quiet developing move.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master CCT Hierarchy principles.
-- Verify candidate moves on every ply.
-- Maintain calculating discipline.
+- Always verify candidate moves before committing to calculation.
+- Calculate the most forcing branches first.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Textbook execution of CCT Hierarchy.
-- Defensive counter to CCT Hierarchy.
+- Model Demonstration 1: Textbook execution of Calculation — Kotov Forcing Hierarchy (CCT) with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Calculation — Kotov Forcing Hierarchy (CCT).
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d15_ex1)
 - **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: CCT Hierarchy
-- **Instruction**: White to move: Apply the core CCT Hierarchy technique.
+- **Motif**: Calculation — Kotov Forcing Hierarchy (CCT)
+- **Instruction**: White to move: Find the tactical solution demonstrating Calculation — Kotov Forcing Hierarchy (CCT).
 - **Solution Sequence**: `Qxf7#`
-- **Explanation**: Executing Qxf7# demonstrates the thematic mastery of CCT Hierarchy.
-- **Hints**: Look for the key move utilizing CCT Hierarchy. (Penalty: 20% per hint)
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d15_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d15_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d15_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d15_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d15_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Alexander Kotov vs Igor Bondarevsky (1946)
 
 ### Practical Sparring Assignment
-Complete targeted candidate_selection_lab drills.
+Interactive Lab Session: Complete all daily drills in candidate_selection_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- CCT Hierarchy: Flashcard
-- Candidate Selection Review
+- Calculation — Kotov Forcing Hierarchy (CCT): Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for calculation
 
 ### Remediation Protocol
 Review Day 14 foundational concepts, drill 5 targeted flashcards on calculation, and repeat exercise set.
 
 ---
 
-## Day 16: Candidate Moves
+## Day 16: Calculation — Candidate Move Generation
 
 - **Phase**: Phase 3: Candidate Moves & Calculation Trees (CCT)
-- **Theme**: Brainstorming 2-4 candidate moves at the root
+- **Theme**: Systematic candidate selection before calculation begins
 - **Primary Skill Axis**: `calculation`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1419
+- **Difficulty Rating**: Elo 1418
 - **Prerequisites**: Day(s) 15
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Candidate Moves patterns.
-- Apply Candidate Moves in tournament conditions.
+- Master the core mechanics and geometric triggers of Calculation — Candidate Move Generation.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Day 16: Candidate Move Generation
+# Day 16: Calculation — Candidate Move Generation
 
 ### 1. Simple Definition & Core Concept
-Candidate moves are the short list of plausible moves generated at the root before deep calculation begins.
+Calculation — Candidate Move Generation teaches foundational chess mastery: Systematic candidate selection before calculation begins.
 
 ### 2. Why It Matters in Practical Play
-If a winning move is not on your candidate list, you will never calculate it and never play it.
+Mastering Calculation — Candidate Move Generation allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Breadth before depth: brainstorm 3 candidate moves before calculating any single variation deeply.
+**Core Rule / Heuristic:** Never calculate the first move you see.
 
-**Canonical Diagram FEN:** `r1bq1rk1/pp1nbppp/2p1pn2/3p4/2PP4/2N1PN2/PPQ1BPPP/R1B2RK1 w - - 0 9`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
+### 4. Canonical Model Game
 Garry Kasparov vs Veselin Topalov (1999)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Tunnel-vision calculating only the first move seen
-- **Mistake:** Forgetting quiet retreats
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Generate 3 diverse candidate moves: one forcing, one central, and one prophylactic.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Candidate Moves principles.
-- Verify candidate moves on every ply.
-- Maintain calculating discipline.
+- Always verify candidate moves before committing to calculation.
+- Never calculate the first move you see.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Textbook execution of Candidate Moves.
-- Defensive counter to Candidate Moves.
+- Model Demonstration 1: Textbook execution of Calculation — Candidate Move Generation with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Calculation — Candidate Move Generation.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d16_ex1)
-- **FEN**: `r1bq1rk1/pp1nbppp/2p1pn2/3p4/2PP4/2N1PN2/PPQ1BPPP/R1B2RK1 w - - 0 9`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Candidate Moves
-- **Instruction**: White to move: Apply the core Candidate Moves technique.
-- **Solution Sequence**: `b4`
-- **Explanation**: Executing b4 demonstrates the thematic mastery of Candidate Moves.
-- **Hints**: Look for the key move utilizing Candidate Moves. (Penalty: 20% per hint)
+- **Motif**: Calculation — Candidate Move Generation
+- **Instruction**: White to move: Find the tactical solution demonstrating Calculation — Candidate Move Generation.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d16_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d16_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d16_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d16_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d16_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Garry Kasparov vs Veselin Topalov (1999)
 
 ### Practical Sparring Assignment
-Complete targeted candidate_selection_lab drills.
+Interactive Lab Session: Complete all daily drills in candidate_selection_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Candidate Moves: Flashcard
-- Candidate Selection Review
+- Calculation — Candidate Move Generation: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for calculation
 
 ### Remediation Protocol
 Review Day 15 foundational concepts, drill 5 targeted flashcards on calculation, and repeat exercise set.
 
 ---
 
-## Day 17: Calculation Trees
+## Day 17: Calculation — Calculation Tree Pruning
 
 - **Phase**: Phase 3: Candidate Moves & Calculation Trees (CCT)
-- **Theme**: Line-by-line discipline, avoid retracing and tree pruning
+- **Theme**: Pruning dead branches and prioritizing decisive lines
 - **Primary Skill Axis**: `calculation`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1433
+- **Difficulty Rating**: Elo 1432
 - **Prerequisites**: Day(s) 16
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Calculation Trees patterns.
-- Apply Calculation Trees in tournament conditions.
+- Master the core mechanics and geometric triggers of Calculation — Calculation Tree Pruning.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Day 17: Kotov Calculation Trees & Pruning
+# Day 17: Calculation — Calculation Tree Pruning
 
 ### 1. Simple Definition & Core Concept
-Calculate variations like a tree branching outwards: calculate Branch A to completion, evaluate, and never retrace.
+Calculation — Calculation Tree Pruning teaches foundational chess mastery: Pruning dead branches and prioritizing decisive lines.
 
 ### 2. Why It Matters in Practical Play
-Systematic calculation eliminates nervous second-guessing and saves critical clock time.
+Mastering Calculation — Calculation Tree Pruning allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Calculate Branch A to a quiet horizon. Assess. Prune dead branches and move to Branch B.
+**Core Rule / Heuristic:** Stop calculating lines that fail immediately.
 
-**Canonical Diagram FEN:** `r1bq1rk1/pp1nbppp/2p1pn2/3p4/2PP4/2N1PN2/PP2BPPP/R1BQ1RK1 w - - 0 8`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
+### 4. Canonical Model Game
 Mikhail Botvinnik vs Jose Raul Capablanca (1938)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Jumping between branches without concluding
-- **Mistake:** Recalculating the same line repeatedly
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Follow the primary forcing variation until all captures and checks are exhausted.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Calculation Trees principles.
-- Verify candidate moves on every ply.
-- Maintain calculating discipline.
+- Always verify candidate moves before committing to calculation.
+- Stop calculating lines that fail immediately.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Textbook execution of Calculation Trees.
-- Defensive counter to Calculation Trees.
+- Model Demonstration 1: Textbook execution of Calculation — Calculation Tree Pruning with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Calculation — Calculation Tree Pruning.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d17_ex1)
-- **FEN**: `r1bq1rk1/pp1nbppp/2p1pn2/3p4/2PP4/2N1PN2/PP2BPPP/R1BQ1RK1 w - - 0 8`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Calculation Trees
-- **Instruction**: White to move: Apply the core Calculation Trees technique.
-- **Solution Sequence**: `c5`
-- **Explanation**: Executing c5 demonstrates the thematic mastery of Calculation Trees.
-- **Hints**: Look for the key move utilizing Calculation Trees. (Penalty: 20% per hint)
+- **Motif**: Calculation — Calculation Tree Pruning
+- **Instruction**: White to move: Find the tactical solution demonstrating Calculation — Calculation Tree Pruning.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d17_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d17_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d17_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d17_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d17_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Mikhail Botvinnik vs Jose Raul Capablanca (1938)
 
 ### Practical Sparring Assignment
-Complete targeted blind_calculation_lab drills.
+Interactive Lab Session: Complete all daily drills in blind_calculation_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Calculation Trees: Flashcard
-- Candidate Selection Review
+- Calculation — Calculation Tree Pruning: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for calculation
 
 ### Remediation Protocol
 Review Day 16 foundational concepts, drill 5 targeted flashcards on calculation, and repeat exercise set.
 
 ---
 
-## Day 18: Board Visualization
+## Day 18: Calculation — Intermediate Moves (Zwischenzug)
 
 - **Phase**: Phase 3: Candidate Moves & Calculation Trees (CCT)
-- **Theme**: Mental board coordinates and multi-ply lookahead
-- **Primary Skill Axis**: `visualization`
+- **Theme**: Inserting venomous in-between checks and counters
+- **Primary Skill Axis**: `calculation`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1448
+- **Difficulty Rating**: Elo 1447
 - **Prerequisites**: Day(s) 17
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Board Visualization patterns.
-- Apply Board Visualization in tournament conditions.
+- Master the core mechanics and geometric triggers of Calculation — Intermediate Moves (Zwischenzug).
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Day 18: Board Visualization & Blindfold Lookahead
+# Day 18: Calculation — Intermediate Moves (Zwischenzug)
 
 ### 1. Simple Definition & Core Concept
-Visualization is the ability to see future board states clearly in your mind without moving the pieces physically.
+Calculation — Intermediate Moves (Zwischenzug) teaches foundational chess mastery: Inserting venomous in-between checks and counters.
 
 ### 2. Why It Matters in Practical Play
-Deep calculation is useless if you hallucinate piece positions or forget which pieces have moved.
+Mastering Calculation — Intermediate Moves (Zwischenzug) allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Update your mental board state square-by-square as pieces move along the calculated path.
+**Core Rule / Heuristic:** Watch for quiet in-between moves before capturing.
 
-**Canonical Diagram FEN:** `8/8/8/8/8/8/4P3/4K2k w - - 0 1`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-George Koltanowski Blindfold Marathon (1960)
+### 4. Canonical Model Game
+Viswanathan Anand vs Levon Aronian (2013)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Ghost pieces (calculating with a captured piece)
-- **Mistake:** Blind spots on vacated squares
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Visualize the position 3 plies forward and identify which diagonals are now open.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Board Visualization principles.
-- Verify candidate moves on every ply.
-- Maintain calculating discipline.
+- Always verify candidate moves before committing to calculation.
+- Watch for quiet in-between moves before capturing.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Textbook execution of Board Visualization.
-- Defensive counter to Board Visualization.
+- Model Demonstration 1: Textbook execution of Calculation — Intermediate Moves (Zwischenzug) with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Calculation — Intermediate Moves (Zwischenzug).
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d18_ex1)
-- **FEN**: `8/8/8/8/8/8/4P3/4K2k w - - 0 1`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Board Visualization
-- **Instruction**: White to move: Apply the core Board Visualization technique.
-- **Solution Sequence**: `Kf2`
-- **Explanation**: Executing Kf2 demonstrates the thematic mastery of Board Visualization.
-- **Hints**: Look for the key move utilizing Board Visualization. (Penalty: 20% per hint)
+- **Motif**: Calculation — Intermediate Moves (Zwischenzug)
+- **Instruction**: White to move: Find the tactical solution demonstrating Calculation — Intermediate Moves (Zwischenzug).
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d18_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d18_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d18_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d18_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d18_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-George Koltanowski Blindfold Marathon (1960)
+Viswanathan Anand vs Levon Aronian (2013)
 
 ### Practical Sparring Assignment
-Complete targeted visualization_lab drills.
+Interactive Lab Session: Complete all daily drills in candidate_selection_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Board Visualization: Flashcard
-- Candidate Selection Review
+- Calculation — Intermediate Moves (Zwischenzug): Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for calculation
 
 ### Remediation Protocol
-Review Day 17 foundational concepts, drill 5 targeted flashcards on visualization, and repeat exercise set.
+Review Day 17 foundational concepts, drill 5 targeted flashcards on calculation, and repeat exercise set.
 
 ---
 
-## Day 19: Opponent Best Reply
+## Day 19: Calculation — Opponent Counter-Resources
 
 - **Phase**: Phase 3: Candidate Moves & Calculation Trees (CCT)
-- **Theme**: Anticipating opponent counter-punches and resourcefulness
+- **Theme**: Prophylactic calculation anticipating enemy surprises
 - **Primary Skill Axis**: `defense`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1462
+- **Difficulty Rating**: Elo 1461
 - **Prerequisites**: Day(s) 18
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Opponent Best Reply patterns.
-- Apply Opponent Best Reply in tournament conditions.
+- Master the core mechanics and geometric triggers of Calculation — Opponent Counter-Resources.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Day 19: Opponent Best Reply & Refutation Finding
+# Day 19: Calculation — Opponent Counter-Resources
 
 ### 1. Simple Definition & Core Concept
-Assume your opponent will always find the most stubborn, resourceful, and annoying defensive reply.
+Calculation — Opponent Counter-Resources teaches foundational chess mastery: Prophylactic calculation anticipating enemy surprises.
 
 ### 2. Why It Matters in Practical Play
-Hope chess loses games. Expecting the opponent to blunder is a fatal cognitive defect.
+Mastering Calculation — Opponent Counter-Resources allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Never judge a candidate move until you have calculated the opponent's strongest defense against it.
+**Core Rule / Heuristic:** Always ask: What is my opponent's strongest defense?
 
-**Canonical Diagram FEN:** `r1b1k2r/ppppqppp/2n5/1B2P3/1b2n3/2N2N2/PPP2PPP/R1BQK2R w KQkq - 0 7`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
+### 4. Canonical Model Game
 Tigran Petrosian vs Boris Spassky (1966)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Assuming opponent will make a passive blunder
-- **Mistake:** Missing interposition checks
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Calculate Black's best defensive move and ensure your line retains advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Opponent Best Reply principles.
-- Verify candidate moves on every ply.
-- Maintain calculating discipline.
+- Always verify candidate moves before committing to calculation.
+- Always ask: What is my opponent's strongest defense?
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Textbook execution of Opponent Best Reply.
-- Defensive counter to Opponent Best Reply.
+- Model Demonstration 1: Textbook execution of Calculation — Opponent Counter-Resources with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Calculation — Opponent Counter-Resources.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d19_ex1)
-- **FEN**: `r1b1k2r/ppppqppp/2n5/1B2P3/1b2n3/2N2N2/PPP2PPP/R1BQK2R w KQkq - 0 7`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opponent Best Reply
-- **Instruction**: White to move: Apply the core Opponent Best Reply technique.
+- **Motif**: Calculation — Opponent Counter-Resources
+- **Instruction**: White to move: Find the tactical solution demonstrating Calculation — Opponent Counter-Resources.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d19_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d19_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d19_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d19_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d19_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
 - **Solution Sequence**: `O-O`
-- **Explanation**: Executing O-O demonstrates the thematic mastery of Opponent Best Reply.
-- **Hints**: Look for the key move utilizing Opponent Best Reply. (Penalty: 20% per hint)
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Tigran Petrosian vs Boris Spassky (1966)
 
 ### Practical Sparring Assignment
-Complete targeted defensive_resource_lab drills.
+Interactive Lab Session: Complete all daily drills in defensive_resource_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Opponent Best Reply: Flashcard
-- Candidate Selection Review
+- Calculation — Opponent Counter-Resources: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for defense
 
 ### Remediation Protocol
 Review Day 18 foundational concepts, drill 5 targeted flashcards on defense, and repeat exercise set.
 
 ---
 
-## Day 20: Quiet Horizon Moves
+## Day 20: Calculation — Visualizing Quiet Moves
 
 - **Phase**: Phase 3: Candidate Moves & Calculation Trees (CCT)
-- **Theme**: Subtle non-forcing killer blows at the end of variations
-- **Primary Skill Axis**: `calculation`
+- **Theme**: Silent killer moves at the horizon of sharp variations
+- **Primary Skill Axis**: `visualization`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1477
+- **Difficulty Rating**: Elo 1476
 - **Prerequisites**: Day(s) 19
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Quiet Horizon Moves patterns.
-- Apply Quiet Horizon Moves in tournament conditions.
+- Master the core mechanics and geometric triggers of Calculation — Visualizing Quiet Moves.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Day 20: Quiet Moves at the Calculation Horizon
+# Day 20: Calculation — Visualizing Quiet Moves
 
 ### 1. Simple Definition & Core Concept
-A quiet move is a non-check, non-capture move that decides the game by creating an inescapable net.
+Calculation — Visualizing Quiet Moves teaches foundational chess mastery: Silent killer moves at the horizon of sharp variations.
 
 ### 2. Why It Matters in Practical Play
-Players frequently miss quiet moves because their brains stop looking after all checks and captures end.
+Mastering Calculation — Visualizing Quiet Moves allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Look for quiet retreats or pawn nudges at the end of sharp forcing exchanges.
+**Core Rule / Heuristic:** Quiet moves at the end of wild lines seal the win.
 
-**Canonical Diagram FEN:** `r1bq1rk1/pp3ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 0 9`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
+### 4. Canonical Model Game
 Vladimir Kramnik vs Garry Kasparov (2000)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Stopping calculation too early
-- **Mistake:** Expecting only loud checks
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Find the quiet preparatory move that seals the opponent's king fate.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Quiet Horizon Moves principles.
-- Verify candidate moves on every ply.
-- Maintain calculating discipline.
+- Always verify candidate moves before committing to calculation.
+- Quiet moves at the end of wild lines seal the win.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Textbook execution of Quiet Horizon Moves.
-- Defensive counter to Quiet Horizon Moves.
+- Model Demonstration 1: Textbook execution of Calculation — Visualizing Quiet Moves with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Calculation — Visualizing Quiet Moves.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d20_ex1)
-- **FEN**: `r1bq1rk1/pp3ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 0 9`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Quiet Horizon Moves
-- **Instruction**: White to move: Apply the core Quiet Horizon Moves technique.
-- **Solution Sequence**: `Ne5`
-- **Explanation**: Executing Ne5 demonstrates the thematic mastery of Quiet Horizon Moves.
-- **Hints**: Look for the key move utilizing Quiet Horizon Moves. (Penalty: 20% per hint)
+- **Motif**: Calculation — Visualizing Quiet Moves
+- **Instruction**: White to move: Find the tactical solution demonstrating Calculation — Visualizing Quiet Moves.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d20_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d20_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d20_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d20_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d20_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Vladimir Kramnik vs Garry Kasparov (2000)
 
 ### Practical Sparring Assignment
-Complete targeted candidate_selection_lab drills.
+Interactive Lab Session: Complete all daily drills in visualization_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Quiet Horizon Moves: Flashcard
-- Candidate Selection Review
+- Calculation — Visualizing Quiet Moves: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for visualization
 
 ### Remediation Protocol
-Review Day 19 foundational concepts, drill 5 targeted flashcards on calculation, and repeat exercise set.
+Review Day 19 foundational concepts, drill 5 targeted flashcards on visualization, and repeat exercise set.
 
 ---
 
-## Day 21: Milestone 3: Calculation Exam
+## Day 21: Calculation — Milestone Exam: Calculation Trees
 
 - **Phase**: Phase 3: Candidate Moves & Calculation Trees (CCT)
 - **Theme**: 4-ply verified calculation tests with zero hints
 - **Primary Skill Axis**: `calculation`
 - **Estimated Training Time**: 90 minutes
-- **Difficulty Rating**: Elo 1492
+- **Difficulty Rating**: Elo 1490
 - **Prerequisites**: Day(s) 20
 - **Mastery Pass Threshold**: 85% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Milestone 3: Calculation Exam patterns.
-- Apply Milestone 3: Calculation Exam in tournament conditions.
+- Master the core mechanics and geometric triggers of Calculation — Milestone Exam: Calculation Trees.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Day 21: Milestone 3: Calculation & Visualization Exam
+# Day 21: Calculation — Milestone Exam: Calculation Trees
 
 ### 1. Simple Definition & Core Concept
-Milestone 3 certifies your ability to calculate 4-ply deep trees cleanly under tournament time pressure.
+Calculation — Milestone Exam: Calculation Trees teaches foundational chess mastery: 4-ply verified calculation tests with zero hints.
 
 ### 2. Why It Matters in Practical Play
-Grandmaster calculation is not calculating 20 moves ahead; it is calculating 3-4 moves with absolute precision.
+Mastering Calculation — Milestone Exam: Calculation Trees allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Precision at ply 3 is worth more than speculation at ply 10.
+**Core Rule / Heuristic:** See the final position clearly before moving.
 
-**Canonical Diagram FEN:** `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
+### 4. Canonical Model Game
 Alexander Alekhine vs Efim Bogoljubov (1922)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Clock panic
-- **Mistake:** Guessing without verifying the quiet horizon
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Calculate all branches to completion before executing your first move on the board.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Milestone 3: Calculation Exam principles.
-- Verify candidate moves on every ply.
-- Maintain calculating discipline.
+- Always verify candidate moves before committing to calculation.
+- See the final position clearly before moving.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Textbook execution of Milestone 3: Calculation Exam.
-- Defensive counter to Milestone 3: Calculation Exam.
+- Model Demonstration 1: Textbook execution of Calculation — Milestone Exam: Calculation Trees with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Calculation — Milestone Exam: Calculation Trees.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d21_ex1)
 - **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Milestone 3: Calculation Exam
-- **Instruction**: White to move: Apply the core Milestone 3: Calculation Exam technique.
+- **Motif**: Calculation — Milestone Exam: Calculation Trees
+- **Instruction**: White to move: Find the tactical solution demonstrating Calculation — Milestone Exam: Calculation Trees.
 - **Solution Sequence**: `Qxf7#`
-- **Explanation**: Executing Qxf7# demonstrates the thematic mastery of Milestone 3: Calculation Exam.
-- **Hints**: Look for the key move utilizing Milestone 3: Calculation Exam. (Penalty: 20% per hint)
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d21_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d21_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d21_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d21_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d21_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Alexander Alekhine vs Efim Bogoljubov (1922)
 
 ### Practical Sparring Assignment
-Complete targeted blind_calculation_lab drills.
+Weekly Milestone Comprehensive Exam: Solve all positions with >= 85% accuracy and zero hints permitted.
 
 ### Spaced Repetition (SRS) Review Queue
-- Milestone 3: Calculation Exam: Flashcard
-- Candidate Selection Review
+- Calculation — Milestone Exam: Calculation Trees: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for calculation
 
 ### Remediation Protocol
 Review Day 20 foundational concepts, drill 5 targeted flashcards on calculation, and repeat exercise set.
 
 ---
 
-## Day 22: Material vs Dynamic Activity
+## Day 22: Calculation — Blindfold Board Geometry
 
 - **Phase**: Phase 4: Positional Strategy & Piece Activity
-- **Theme**: Static material vs temporary dynamic initiative
-- **Primary Skill Axis**: `strategy`
+- **Theme**: Spatial coordinates fluency without visual board reference
+- **Primary Skill Axis**: `visualization`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1506
+- **Difficulty Rating**: Elo 1505
 - **Prerequisites**: Day(s) 21
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Material vs Dynamic Activity themes.
-- Execute Material vs Dynamic Activity in practical games.
+- Master the core mechanics and geometric triggers of Calculation — Blindfold Board Geometry.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Material vs Dynamic Piece Activity
+# Day 22: Calculation — Blindfold Board Geometry
 
 ### 1. Simple Definition & Core Concept
-Mastery of Material vs Dynamic Activity is essential for grandmaster-level chess thinking. Focus on Static material vs temporary dynamic initiative.
+Calculation — Blindfold Board Geometry teaches foundational chess mastery: Spatial coordinates fluency without visual board reference.
 
 ### 2. Why It Matters in Practical Play
-Understanding Material vs Dynamic Activity gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Calculation — Blindfold Board Geometry allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Material vs Dynamic Activity systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Master the 64 squares and diagonal color vectors.
 
-**Canonical Diagram FEN:** `r1bq1rk1/pp3ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 0 9`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Material vs Dynamic Activity
+### 4. Canonical Model Game
+George Koltanowski Blindfold Marathon (1960)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Material vs Dynamic Activity.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Material vs Dynamic Activity with strict Kotov discipline. Look for candidate Ne5 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Material vs Dynamic Activity principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Master the 64 squares and diagonal color vectors.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Material vs Dynamic Activity.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Material vs Dynamic Activity.
+- Model Demonstration 1: Textbook execution of Calculation — Blindfold Board Geometry with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Calculation — Blindfold Board Geometry.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d22_ex1)
-- **FEN**: `r1bq1rk1/pp3ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 0 9`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Material vs Dynamic Activity
-- **Instruction**: White to move: Execute the key move demonstrating Material vs Dynamic Activity.
-- **Solution Sequence**: `Ne5`
-- **Explanation**: Playing Ne5 directly reinforces the primary theme of Material vs Dynamic Activity.
-- **Hints**: Look for the most forcing move that executes Material vs Dynamic Activity. (Penalty: 20% per hint)
+- **Motif**: Calculation — Blindfold Board Geometry
+- **Instruction**: White to move: Find the tactical solution demonstrating Calculation — Blindfold Board Geometry.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d22_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d22_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d22_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d22_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d22_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Material vs Dynamic Activity
+George Koltanowski Blindfold Marathon (1960)
 
 ### Practical Sparring Assignment
-Complete targeted positional_evaluation_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in board_memory_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Material vs Dynamic Activity: Flashcard
-- Candidate Selection Review
+- Calculation — Blindfold Board Geometry: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for visualization
 
 ### Remediation Protocol
-Review Day 21 foundational concepts, drill 5 targeted flashcards on strategy, and repeat exercise set.
+Review Day 21 foundational concepts, drill 5 targeted flashcards on visualization, and repeat exercise set.
 
 ---
 
-## Day 23: King Safety & Shelter
+## Day 23: Calculation — Multi-Ply Pawn Races
 
 - **Phase**: Phase 4: Positional Strategy & Piece Activity
-- **Theme**: Assessing pawn shelters, g3/h3 hooks, and king flight squares
-- **Primary Skill Axis**: `strategy`
+- **Theme**: Visualizing passed pawns and calculating promotion tempos
+- **Primary Skill Axis**: `visualization`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1521
+- **Difficulty Rating**: Elo 1519
 - **Prerequisites**: Day(s) 22
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary King Safety & Shelter themes.
-- Execute King Safety & Shelter in practical games.
+- Master the core mechanics and geometric triggers of Calculation — Multi-Ply Pawn Races.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# King Safety & Shelter Weaknesses
+# Day 23: Calculation — Multi-Ply Pawn Races
 
 ### 1. Simple Definition & Core Concept
-Mastery of King Safety & Shelter is essential for grandmaster-level chess thinking. Focus on Assessing pawn shelters, g3/h3 hooks, and king flight squares.
+Calculation — Multi-Ply Pawn Races teaches foundational chess mastery: Visualizing passed pawns and calculating promotion tempos.
 
 ### 2. Why It Matters in Practical Play
-Understanding King Safety & Shelter gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Calculation — Multi-Ply Pawn Races allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply King Safety & Shelter systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Count promotion squares precisely with check.
 
-**Canonical Diagram FEN:** `r1bq1rk1/pp3ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 0 9`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating King Safety & Shelter
+### 4. Canonical Model Game
+Richard Reti Endgame Studies (1921)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in King Safety & Shelter.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in King Safety & Shelter with strict Kotov discipline. Look for candidate Ne5 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master King Safety & Shelter principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Count promotion squares precisely with check.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of King Safety & Shelter.
-- Worked Demonstration 2: Refutation of sub-optimal replies in King Safety & Shelter.
+- Model Demonstration 1: Textbook execution of Calculation — Multi-Ply Pawn Races with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Calculation — Multi-Ply Pawn Races.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d23_ex1)
-- **FEN**: `r1bq1rk1/pp3ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 0 9`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: King Safety & Shelter
-- **Instruction**: White to move: Execute the key move demonstrating King Safety & Shelter.
-- **Solution Sequence**: `Ne5`
-- **Explanation**: Playing Ne5 directly reinforces the primary theme of King Safety & Shelter.
-- **Hints**: Look for the most forcing move that executes King Safety & Shelter. (Penalty: 20% per hint)
+- **Motif**: Calculation — Multi-Ply Pawn Races
+- **Instruction**: White to move: Find the tactical solution demonstrating Calculation — Multi-Ply Pawn Races.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d23_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d23_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d23_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d23_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d23_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating King Safety & Shelter
+Richard Reti Endgame Studies (1921)
 
 ### Practical Sparring Assignment
-Complete targeted find_the_plan_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in visualization_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- King Safety & Shelter: Flashcard
-- Candidate Selection Review
+- Calculation — Multi-Ply Pawn Races: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for visualization
 
 ### Remediation Protocol
-Review Day 22 foundational concepts, drill 5 targeted flashcards on strategy, and repeat exercise set.
+Review Day 22 foundational concepts, drill 5 targeted flashcards on visualization, and repeat exercise set.
 
 ---
 
-## Day 24: Space Advantage & Central Territory
+## Day 24: Calculation — Mental Board Retention
 
 - **Phase**: Phase 4: Positional Strategy & Piece Activity
-- **Theme**: Cramping opponent pieces and controlling the four central squares
-- **Primary Skill Axis**: `strategy`
+- **Theme**: Retaining piece coordinates across 4 consecutive plies
+- **Primary Skill Axis**: `visualization`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1535
+- **Difficulty Rating**: Elo 1534
 - **Prerequisites**: Day(s) 23
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Space Advantage & Central Territory themes.
-- Execute Space Advantage & Central Territory in practical games.
+- Master the core mechanics and geometric triggers of Calculation — Mental Board Retention.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Space Advantage & Central Dominance
+# Day 24: Calculation — Mental Board Retention
 
 ### 1. Simple Definition & Core Concept
-Mastery of Space Advantage & Central Territory is essential for grandmaster-level chess thinking. Focus on Cramping opponent pieces and controlling the four central squares.
+Calculation — Mental Board Retention teaches foundational chess mastery: Retaining piece coordinates across 4 consecutive plies.
 
 ### 2. Why It Matters in Practical Play
-Understanding Space Advantage & Central Territory gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Calculation — Mental Board Retention allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Space Advantage & Central Territory systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Maintain mental board fidelity under non-captures.
 
-**Canonical Diagram FEN:** `r1bq1rk1/pp3ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 0 9`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Space Advantage & Central Territory
+### 4. Canonical Model Game
+Miguel Najdorf Blindfold Simultaneous (1947)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Space Advantage & Central Territory.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Space Advantage & Central Territory with strict Kotov discipline. Look for candidate Ne5 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Space Advantage & Central Territory principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Maintain mental board fidelity under non-captures.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Space Advantage & Central Territory.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Space Advantage & Central Territory.
+- Model Demonstration 1: Textbook execution of Calculation — Mental Board Retention with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Calculation — Mental Board Retention.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d24_ex1)
-- **FEN**: `r1bq1rk1/pp3ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 0 9`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Space Advantage & Central Territory
-- **Instruction**: White to move: Execute the key move demonstrating Space Advantage & Central Territory.
-- **Solution Sequence**: `Ne5`
-- **Explanation**: Playing Ne5 directly reinforces the primary theme of Space Advantage & Central Territory.
-- **Hints**: Look for the most forcing move that executes Space Advantage & Central Territory. (Penalty: 20% per hint)
+- **Motif**: Calculation — Mental Board Retention
+- **Instruction**: White to move: Find the tactical solution demonstrating Calculation — Mental Board Retention.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d24_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d24_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d24_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d24_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d24_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Space Advantage & Central Territory
+Miguel Najdorf Blindfold Simultaneous (1947)
 
 ### Practical Sparring Assignment
-Complete targeted find_the_plan_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in board_memory_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Space Advantage & Central Territory: Flashcard
-- Candidate Selection Review
+- Calculation — Mental Board Retention: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for visualization
 
 ### Remediation Protocol
-Review Day 23 foundational concepts, drill 5 targeted flashcards on strategy, and repeat exercise set.
+Review Day 23 foundational concepts, drill 5 targeted flashcards on visualization, and repeat exercise set.
 
 ---
 
-## Day 25: Weak Squares & Outposts
+## Day 25: Calculation — Eliminating Blind Spots
 
 - **Phase**: Phase 4: Positional Strategy & Piece Activity
-- **Theme**: Anchoring knights on unchallengeable outpost squares
-- **Primary Skill Axis**: `strategy`
+- **Theme**: Detecting backward moves and unexpected knight leaps
+- **Primary Skill Axis**: `calculation`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1550
+- **Difficulty Rating**: Elo 1548
 - **Prerequisites**: Day(s) 24
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Weak Squares & Outposts themes.
-- Execute Weak Squares & Outposts in practical games.
+- Master the core mechanics and geometric triggers of Calculation — Eliminating Blind Spots.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Weak Squares, Holes & Outposts
+# Day 25: Calculation — Eliminating Blind Spots
 
 ### 1. Simple Definition & Core Concept
-Mastery of Weak Squares & Outposts is essential for grandmaster-level chess thinking. Focus on Anchoring knights on unchallengeable outpost squares.
+Calculation — Eliminating Blind Spots teaches foundational chess mastery: Detecting backward moves and unexpected knight leaps.
 
 ### 2. Why It Matters in Practical Play
-Understanding Weak Squares & Outposts gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Calculation — Eliminating Blind Spots allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Weak Squares & Outposts systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Backward piece moves are the hardest to spot.
 
-**Canonical Diagram FEN:** `r1bq1rk1/pp3ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 0 9`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Weak Squares & Outposts
+### 4. Canonical Model Game
+David Bronstein vs Alexander Kotov (1950)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Weak Squares & Outposts.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Weak Squares & Outposts with strict Kotov discipline. Look for candidate Ne5 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Weak Squares & Outposts principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Backward piece moves are the hardest to spot.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Weak Squares & Outposts.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Weak Squares & Outposts.
+- Model Demonstration 1: Textbook execution of Calculation — Eliminating Blind Spots with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Calculation — Eliminating Blind Spots.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d25_ex1)
-- **FEN**: `r1bq1rk1/pp3ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 0 9`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Weak Squares & Outposts
-- **Instruction**: White to move: Execute the key move demonstrating Weak Squares & Outposts.
-- **Solution Sequence**: `Ne5`
-- **Explanation**: Playing Ne5 directly reinforces the primary theme of Weak Squares & Outposts.
-- **Hints**: Look for the most forcing move that executes Weak Squares & Outposts. (Penalty: 20% per hint)
+- **Motif**: Calculation — Eliminating Blind Spots
+- **Instruction**: White to move: Find the tactical solution demonstrating Calculation — Eliminating Blind Spots.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d25_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d25_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d25_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d25_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d25_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Weak Squares & Outposts
+David Bronstein vs Alexander Kotov (1950)
 
 ### Practical Sparring Assignment
-Complete targeted find_the_plan_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in candidate_selection_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Weak Squares & Outposts: Flashcard
-- Candidate Selection Review
+- Calculation — Eliminating Blind Spots: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for calculation
 
 ### Remediation Protocol
-Review Day 24 foundational concepts, drill 5 targeted flashcards on strategy, and repeat exercise set.
+Review Day 24 foundational concepts, drill 5 targeted flashcards on calculation, and repeat exercise set.
 
 ---
 
-## Day 26: Open Files & Diagonals
+## Day 26: Clock Discipline & Rhythm
 
 - **Phase**: Phase 4: Positional Strategy & Piece Activity
-- **Theme**: Rook doubling, controlling the 7th rank and long diagonal batteries
-- **Primary Skill Axis**: `strategy`
+- **Theme**: Allocating calculation time efficiently across critical moves
+- **Primary Skill Axis**: `timeManagement`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1565
+- **Difficulty Rating**: Elo 1563
 - **Prerequisites**: Day(s) 25
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Open Files & Diagonals themes.
-- Execute Open Files & Diagonals in practical games.
+- Master the core mechanics and geometric triggers of Clock Discipline & Rhythm.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Open Files, Diagonals & Infiltration
+# Day 26: Clock Discipline & Rhythm
 
 ### 1. Simple Definition & Core Concept
-Mastery of Open Files & Diagonals is essential for grandmaster-level chess thinking. Focus on Rook doubling, controlling the 7th rank and long diagonal batteries.
+Clock Discipline & Rhythm teaches foundational chess mastery: Allocating calculation time efficiently across critical moves.
 
 ### 2. Why It Matters in Practical Play
-Understanding Open Files & Diagonals gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Clock Discipline & Rhythm allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Open Files & Diagonals systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Do not waste time when only one move is reasonable.
 
-**Canonical Diagram FEN:** `r1bq1rk1/pp3ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 0 9`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Open Files & Diagonals
+### 4. Canonical Model Game
+Anatoly Karpov vs Viktor Korchnoi (1978)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Open Files & Diagonals.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Open Files & Diagonals with strict Kotov discipline. Look for candidate Ne5 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Open Files & Diagonals principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Do not waste time when only one move is reasonable.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Open Files & Diagonals.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Open Files & Diagonals.
+- Model Demonstration 1: Textbook execution of Clock Discipline & Rhythm with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Clock Discipline & Rhythm.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d26_ex1)
-- **FEN**: `r1bq1rk1/pp3ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 0 9`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Open Files & Diagonals
-- **Instruction**: White to move: Execute the key move demonstrating Open Files & Diagonals.
-- **Solution Sequence**: `Ne5`
-- **Explanation**: Playing Ne5 directly reinforces the primary theme of Open Files & Diagonals.
-- **Hints**: Look for the most forcing move that executes Open Files & Diagonals. (Penalty: 20% per hint)
+- **Motif**: Clock Discipline & Rhythm
+- **Instruction**: White to move: Find the tactical solution demonstrating Clock Discipline & Rhythm.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d26_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d26_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d26_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d26_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d26_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Open Files & Diagonals
+Anatoly Karpov vs Viktor Korchnoi (1978)
 
 ### Practical Sparring Assignment
-Complete targeted find_the_plan_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in time_management_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Open Files & Diagonals: Flashcard
-- Candidate Selection Review
+- Clock Discipline & Rhythm: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for timeManagement
 
 ### Remediation Protocol
-Review Day 25 foundational concepts, drill 5 targeted flashcards on strategy, and repeat exercise set.
+Review Day 25 foundational concepts, drill 5 targeted flashcards on timeManagement, and repeat exercise set.
 
 ---
 
-## Day 27: Good vs Bad Bishops
+## Day 27: Practical Tree Pruning
 
 - **Phase**: Phase 4: Positional Strategy & Piece Activity
-- **Theme**: Operating around friendly fixed pawns and exploiting the two bishops
-- **Primary Skill Axis**: `strategy`
+- **Theme**: Discarding inferior candidate lines without hesitation
+- **Primary Skill Axis**: `calculation`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1579
+- **Difficulty Rating**: Elo 1577
 - **Prerequisites**: Day(s) 26
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Good vs Bad Bishops themes.
-- Execute Good vs Bad Bishops in practical games.
+- Master the core mechanics and geometric triggers of Practical Tree Pruning.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Good vs Bad Bishops & Bishop Pair Power
+# Day 27: Practical Tree Pruning
 
 ### 1. Simple Definition & Core Concept
-Mastery of Good vs Bad Bishops is essential for grandmaster-level chess thinking. Focus on Operating around friendly fixed pawns and exploiting the two bishops.
+Practical Tree Pruning teaches foundational chess mastery: Discarding inferior candidate lines without hesitation.
 
 ### 2. Why It Matters in Practical Play
-Understanding Good vs Bad Bishops gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Practical Tree Pruning allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Good vs Bad Bishops systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Decisive execution beats endless recalculation.
 
-**Canonical Diagram FEN:** `r1bq1rk1/pp3ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 0 9`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Good vs Bad Bishops
+### 4. Canonical Model Game
+Lev Polugaevsky vs Eugenio Torre (1981)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Good vs Bad Bishops.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Good vs Bad Bishops with strict Kotov discipline. Look for candidate Ne5 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Good vs Bad Bishops principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Decisive execution beats endless recalculation.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Good vs Bad Bishops.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Good vs Bad Bishops.
+- Model Demonstration 1: Textbook execution of Practical Tree Pruning with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Practical Tree Pruning.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d27_ex1)
-- **FEN**: `r1bq1rk1/pp3ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 0 9`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Good vs Bad Bishops
-- **Instruction**: White to move: Execute the key move demonstrating Good vs Bad Bishops.
-- **Solution Sequence**: `Ne5`
-- **Explanation**: Playing Ne5 directly reinforces the primary theme of Good vs Bad Bishops.
-- **Hints**: Look for the most forcing move that executes Good vs Bad Bishops. (Penalty: 20% per hint)
+- **Motif**: Practical Tree Pruning
+- **Instruction**: White to move: Find the tactical solution demonstrating Practical Tree Pruning.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d27_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d27_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d27_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d27_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d27_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Good vs Bad Bishops
+Lev Polugaevsky vs Eugenio Torre (1981)
 
 ### Practical Sparring Assignment
-Complete targeted improve_worst_piece_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in candidate_selection_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Good vs Bad Bishops: Flashcard
-- Candidate Selection Review
+- Practical Tree Pruning: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for calculation
 
 ### Remediation Protocol
-Review Day 26 foundational concepts, drill 5 targeted flashcards on strategy, and repeat exercise set.
+Review Day 26 foundational concepts, drill 5 targeted flashcards on calculation, and repeat exercise set.
 
 ---
 
-## Day 28: Milestone 4: Strategy Exam
+## Day 28: Grand Milestone: Calculation
 
 - **Phase**: Phase 4: Positional Strategy & Piece Activity
-- **Theme**: Exchanges, piece improvement, and prophylactic restriction
-- **Primary Skill Axis**: `strategy`
+- **Theme**: Complete calculation depth and visualization certification
+- **Primary Skill Axis**: `calculation`
 - **Estimated Training Time**: 90 minutes
-- **Difficulty Rating**: Elo 1594
+- **Difficulty Rating**: Elo 1592
 - **Prerequisites**: Day(s) 27
 - **Mastery Pass Threshold**: 85% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Milestone 4: Strategy Exam themes.
-- Execute Milestone 4: Strategy Exam in practical games.
+- Master the core mechanics and geometric triggers of Grand Milestone: Calculation.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Milestone 4: Positional Strategy & Prophylaxis
+# Day 28: Grand Milestone: Calculation
 
 ### 1. Simple Definition & Core Concept
-Mastery of Milestone 4: Strategy Exam is essential for grandmaster-level chess thinking. Focus on Exchanges, piece improvement, and prophylactic restriction.
+Grand Milestone: Calculation teaches foundational chess mastery: Complete calculation depth and visualization certification.
 
 ### 2. Why It Matters in Practical Play
-Understanding Milestone 4: Strategy Exam gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Grand Milestone: Calculation allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Milestone 4: Strategy Exam systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Calculate 3 to 4 plies deep with zero hallucinations.
 
-**Canonical Diagram FEN:** `r1bq1rk1/pp3ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 0 9`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Milestone 4: Strategy Exam
+### 4. Canonical Model Game
+Alexander Kotov vs Paul Keres (1950)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Milestone 4: Strategy Exam.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Milestone 4: Strategy Exam with strict Kotov discipline. Look for candidate Ne5 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Milestone 4: Strategy Exam principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Calculate 3 to 4 plies deep with zero hallucinations.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Milestone 4: Strategy Exam.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Milestone 4: Strategy Exam.
+- Model Demonstration 1: Textbook execution of Grand Milestone: Calculation with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Grand Milestone: Calculation.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d28_ex1)
-- **FEN**: `r1bq1rk1/pp3ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 0 9`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Milestone 4: Strategy Exam
-- **Instruction**: White to move: Execute the key move demonstrating Milestone 4: Strategy Exam.
-- **Solution Sequence**: `Ne5`
-- **Explanation**: Playing Ne5 directly reinforces the primary theme of Milestone 4: Strategy Exam.
-- **Hints**: Look for the most forcing move that executes Milestone 4: Strategy Exam. (Penalty: 20% per hint)
+- **Motif**: Grand Milestone: Calculation
+- **Instruction**: White to move: Find the tactical solution demonstrating Grand Milestone: Calculation.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d28_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d28_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d28_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d28_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d28_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Milestone 4: Strategy Exam
+Alexander Kotov vs Paul Keres (1950)
 
 ### Practical Sparring Assignment
-Complete targeted positional_evaluation_lab interactive drills applying the decision checklist.
+Weekly Milestone Comprehensive Exam: Solve all positions with >= 85% accuracy and zero hints permitted.
 
 ### Spaced Repetition (SRS) Review Queue
-- Milestone 4: Strategy Exam: Flashcard
-- Candidate Selection Review
+- Grand Milestone: Calculation: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for calculation
 
 ### Remediation Protocol
-Review Day 27 foundational concepts, drill 5 targeted flashcards on strategy, and repeat exercise set.
+Review Day 27 foundational concepts, drill 5 targeted flashcards on calculation, and repeat exercise set.
 
 ---
 
-## Day 29: Pawn Chains & Base Attacks
+## Day 29: Piece Harmony & Improvement
 
 - **Phase**: Phase 5: Pawn Structures, Chains & Breaks
-- **Theme**: Attacking the root of the enemy pawn chain with pawn levers
-- **Primary Skill Axis**: `pawnStructures`
+- **Theme**: Identifying and improving your worst-placed piece
+- **Primary Skill Axis**: `strategy`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1608
+- **Difficulty Rating**: Elo 1606
 - **Prerequisites**: Day(s) 28
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Pawn Chains & Base Attacks themes.
-- Execute Pawn Chains & Base Attacks in practical games.
+- Master the core mechanics and geometric triggers of Piece Harmony & Improvement.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Pawn Chains, Base Attacks & Thematic Breaks
+# Day 29: Piece Harmony & Improvement
 
 ### 1. Simple Definition & Core Concept
-Mastery of Pawn Chains & Base Attacks is essential for grandmaster-level chess thinking. Focus on Attacking the root of the enemy pawn chain with pawn levers.
+Piece Harmony & Improvement teaches foundational chess mastery: Identifying and improving your worst-placed piece.
 
 ### 2. Why It Matters in Practical Play
-Understanding Pawn Chains & Base Attacks gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Piece Harmony & Improvement allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Pawn Chains & Base Attacks systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Every piece must have an active job.
 
-**Canonical Diagram FEN:** `r1bq1rk1/pp1nbppp/2p1pn2/3p4/2PP4/2N1PN2/PP2BPPP/R1BQ1RK1 w - - 0 8`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Pawn Chains & Base Attacks
+### 4. Canonical Model Game
+Aron Nimzowitsch vs Akiba Rubinstein (1926)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Pawn Chains & Base Attacks.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Pawn Chains & Base Attacks with strict Kotov discipline. Look for candidate b4 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Pawn Chains & Base Attacks principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Every piece must have an active job.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Pawn Chains & Base Attacks.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Pawn Chains & Base Attacks.
+- Model Demonstration 1: Textbook execution of Piece Harmony & Improvement with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Piece Harmony & Improvement.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d29_ex1)
-- **FEN**: `r1bq1rk1/pp1nbppp/2p1pn2/3p4/2PP4/2N1PN2/PP2BPPP/R1BQ1RK1 w - - 0 8`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Pawn Chains & Base Attacks
-- **Instruction**: White to move: Execute the key move demonstrating Pawn Chains & Base Attacks.
-- **Solution Sequence**: `b4`
-- **Explanation**: Playing b4 directly reinforces the primary theme of Pawn Chains & Base Attacks.
-- **Hints**: Look for the most forcing move that executes Pawn Chains & Base Attacks. (Penalty: 20% per hint)
+- **Motif**: Piece Harmony & Improvement
+- **Instruction**: White to move: Find the tactical solution demonstrating Piece Harmony & Improvement.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d29_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d29_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d29_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d29_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d29_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Pawn Chains & Base Attacks
+Aron Nimzowitsch vs Akiba Rubinstein (1926)
 
 ### Practical Sparring Assignment
-Complete targeted pawn_break_discovery_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in improve_worst_piece_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Pawn Chains & Base Attacks: Flashcard
-- Candidate Selection Review
+- Piece Harmony & Improvement: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for strategy
 
 ### Remediation Protocol
-Review Day 28 foundational concepts, drill 5 targeted flashcards on pawnStructures, and repeat exercise set.
+Review Day 28 foundational concepts, drill 5 targeted flashcards on strategy, and repeat exercise set.
 
 ---
 
-## Day 30: Isolated Queen Pawn (IQP)
+## Day 30: Outposts & Knight Anchoring
 
 - **Phase**: Phase 5: Pawn Structures, Chains & Breaks
-- **Theme**: Dynamic central attack vs blockading d5 and endgame liquidation
-- **Primary Skill Axis**: `pawnStructures`
+- **Theme**: Securing eternal outposts supported by pawns on 5th/6th ranks
+- **Primary Skill Axis**: `strategy`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1623
+- **Difficulty Rating**: Elo 1621
 - **Prerequisites**: Day(s) 29
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Isolated Queen Pawn (IQP) themes.
-- Execute Isolated Queen Pawn (IQP) in practical games.
+- Master the core mechanics and geometric triggers of Outposts & Knight Anchoring.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Isolated Queen Pawn (IQP): Attack vs Defense
+# Day 30: Outposts & Knight Anchoring
 
 ### 1. Simple Definition & Core Concept
-Mastery of Isolated Queen Pawn (IQP) is essential for grandmaster-level chess thinking. Focus on Dynamic central attack vs blockading d5 and endgame liquidation.
+Outposts & Knight Anchoring teaches foundational chess mastery: Securing eternal outposts supported by pawns on 5th/6th ranks.
 
 ### 2. Why It Matters in Practical Play
-Understanding Isolated Queen Pawn (IQP) gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Outposts & Knight Anchoring allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Isolated Queen Pawn (IQP) systematically; never make a move without purpose.
+**Core Rule / Heuristic:** A knight on a 6th-rank outpost paralyzes an army.
 
-**Canonical Diagram FEN:** `r1bq1rk1/pp1nbppp/2p1pn2/3p4/2PP4/2N1PN2/PP2BPPP/R1BQ1RK1 w - - 0 8`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Isolated Queen Pawn (IQP)
+### 4. Canonical Model Game
+Anatoly Karpov vs Garry Kasparov (1985 Game 16)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Isolated Queen Pawn (IQP).
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Isolated Queen Pawn (IQP) with strict Kotov discipline. Look for candidate b4 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Isolated Queen Pawn (IQP) principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- A knight on a 6th-rank outpost paralyzes an army.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Isolated Queen Pawn (IQP).
-- Worked Demonstration 2: Refutation of sub-optimal replies in Isolated Queen Pawn (IQP).
+- Model Demonstration 1: Textbook execution of Outposts & Knight Anchoring with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Outposts & Knight Anchoring.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d30_ex1)
-- **FEN**: `r1bq1rk1/pp1nbppp/2p1pn2/3p4/2PP4/2N1PN2/PP2BPPP/R1BQ1RK1 w - - 0 8`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Isolated Queen Pawn (IQP)
-- **Instruction**: White to move: Execute the key move demonstrating Isolated Queen Pawn (IQP).
-- **Solution Sequence**: `b4`
-- **Explanation**: Playing b4 directly reinforces the primary theme of Isolated Queen Pawn (IQP).
-- **Hints**: Look for the most forcing move that executes Isolated Queen Pawn (IQP). (Penalty: 20% per hint)
+- **Motif**: Outposts & Knight Anchoring
+- **Instruction**: White to move: Find the tactical solution demonstrating Outposts & Knight Anchoring.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d30_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d30_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d30_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d30_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d30_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Isolated Queen Pawn (IQP)
+Anatoly Karpov vs Garry Kasparov (1985 Game 16)
 
 ### Practical Sparring Assignment
-Complete targeted pawn_structure_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in find_the_plan_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Isolated Queen Pawn (IQP): Flashcard
-- Candidate Selection Review
+- Outposts & Knight Anchoring: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for strategy
 
 ### Remediation Protocol
-Review Day 29 foundational concepts, drill 5 targeted flashcards on pawnStructures, and repeat exercise set.
+Review Day 29 foundational concepts, drill 5 targeted flashcards on strategy, and repeat exercise set.
 
 ---
 
-## Day 31: Doubled & Backward Pawns
+## Day 31: Open Files & Infiltration
 
 - **Phase**: Phase 5: Pawn Structures, Chains & Breaks
-- **Theme**: Fixing and blockading structural pawn defects on open files
-- **Primary Skill Axis**: `pawnStructures`
+- **Theme**: Battery doubling, penetrating 7th/8th ranks
+- **Primary Skill Axis**: `strategy`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1638
+- **Difficulty Rating**: Elo 1635
 - **Prerequisites**: Day(s) 30
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Doubled & Backward Pawns themes.
-- Execute Doubled & Backward Pawns in practical games.
+- Master the core mechanics and geometric triggers of Open Files & Infiltration.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Doubled & Backward Pawns: Structural Targets
+# Day 31: Open Files & Infiltration
 
 ### 1. Simple Definition & Core Concept
-Mastery of Doubled & Backward Pawns is essential for grandmaster-level chess thinking. Focus on Fixing and blockading structural pawn defects on open files.
+Open Files & Infiltration teaches foundational chess mastery: Battery doubling, penetrating 7th/8th ranks.
 
 ### 2. Why It Matters in Practical Play
-Understanding Doubled & Backward Pawns gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Open Files & Infiltration allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Doubled & Backward Pawns systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Rooks on the 7th rank decimate pawn skeletons.
 
-**Canonical Diagram FEN:** `r1bq1rk1/pp1nbppp/2p1pn2/3p4/2PP4/2N1PN2/PP2BPPP/R1BQ1RK1 w - - 0 8`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Doubled & Backward Pawns
+### 4. Canonical Model Game
+Alexander Alekhine vs Aron Nimzowitsch (1930)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Doubled & Backward Pawns.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Doubled & Backward Pawns with strict Kotov discipline. Look for candidate b4 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Doubled & Backward Pawns principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Rooks on the 7th rank decimate pawn skeletons.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Doubled & Backward Pawns.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Doubled & Backward Pawns.
+- Model Demonstration 1: Textbook execution of Open Files & Infiltration with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Open Files & Infiltration.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d31_ex1)
-- **FEN**: `r1bq1rk1/pp1nbppp/2p1pn2/3p4/2PP4/2N1PN2/PP2BPPP/R1BQ1RK1 w - - 0 8`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Doubled & Backward Pawns
-- **Instruction**: White to move: Execute the key move demonstrating Doubled & Backward Pawns.
-- **Solution Sequence**: `b4`
-- **Explanation**: Playing b4 directly reinforces the primary theme of Doubled & Backward Pawns.
-- **Hints**: Look for the most forcing move that executes Doubled & Backward Pawns. (Penalty: 20% per hint)
+- **Motif**: Open Files & Infiltration
+- **Instruction**: White to move: Find the tactical solution demonstrating Open Files & Infiltration.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d31_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d31_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d31_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d31_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d31_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Doubled & Backward Pawns
+Alexander Alekhine vs Aron Nimzowitsch (1930)
 
 ### Practical Sparring Assignment
-Complete targeted pawn_structure_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in find_the_plan_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Doubled & Backward Pawns: Flashcard
-- Candidate Selection Review
+- Open Files & Infiltration: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for strategy
 
 ### Remediation Protocol
-Review Day 30 foundational concepts, drill 5 targeted flashcards on pawnStructures, and repeat exercise set.
+Review Day 30 foundational concepts, drill 5 targeted flashcards on strategy, and repeat exercise set.
 
 ---
 
-## Day 32: Passed Pawns & Promotion
+## Day 32: Good vs Bad Bishops
 
 - **Phase**: Phase 5: Pawn Structures, Chains & Breaks
-- **Theme**: Creating outside passers, supporting the push, and queen races
-- **Primary Skill Axis**: `pawnStructures`
+- **Theme**: Operating harmoniously around friendly fixed pawn colors
+- **Primary Skill Axis**: `strategy`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1652
+- **Difficulty Rating**: Elo 1650
 - **Prerequisites**: Day(s) 31
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Passed Pawns & Promotion themes.
-- Execute Passed Pawns & Promotion in practical games.
+- Master the core mechanics and geometric triggers of Good vs Bad Bishops.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Passed Pawns: Creation, Protection & March
+# Day 32: Good vs Bad Bishops
 
 ### 1. Simple Definition & Core Concept
-Mastery of Passed Pawns & Promotion is essential for grandmaster-level chess thinking. Focus on Creating outside passers, supporting the push, and queen races.
+Good vs Bad Bishops teaches foundational chess mastery: Operating harmoniously around friendly fixed pawn colors.
 
 ### 2. Why It Matters in Practical Play
-Understanding Passed Pawns & Promotion gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Good vs Bad Bishops allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Passed Pawns & Promotion systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Trade your bad bishop or liberate its diagonals.
 
-**Canonical Diagram FEN:** `r1bq1rk1/pp1nbppp/2p1pn2/3p4/2PP4/2N1PN2/PP2BPPP/R1BQ1RK1 w - - 0 8`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Passed Pawns & Promotion
+### 4. Canonical Model Game
+Bobby Fischer vs Tigran Petrosian (1970)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Passed Pawns & Promotion.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Passed Pawns & Promotion with strict Kotov discipline. Look for candidate b4 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Passed Pawns & Promotion principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Trade your bad bishop or liberate its diagonals.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Passed Pawns & Promotion.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Passed Pawns & Promotion.
+- Model Demonstration 1: Textbook execution of Good vs Bad Bishops with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Good vs Bad Bishops.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d32_ex1)
-- **FEN**: `r1bq1rk1/pp1nbppp/2p1pn2/3p4/2PP4/2N1PN2/PP2BPPP/R1BQ1RK1 w - - 0 8`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Passed Pawns & Promotion
-- **Instruction**: White to move: Execute the key move demonstrating Passed Pawns & Promotion.
-- **Solution Sequence**: `b4`
-- **Explanation**: Playing b4 directly reinforces the primary theme of Passed Pawns & Promotion.
-- **Hints**: Look for the most forcing move that executes Passed Pawns & Promotion. (Penalty: 20% per hint)
+- **Motif**: Good vs Bad Bishops
+- **Instruction**: White to move: Find the tactical solution demonstrating Good vs Bad Bishops.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d32_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d32_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d32_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d32_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d32_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Passed Pawns & Promotion
+Bobby Fischer vs Tigran Petrosian (1970)
 
 ### Practical Sparring Assignment
-Complete targeted pawn_structure_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in improve_worst_piece_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Passed Pawns & Promotion: Flashcard
-- Candidate Selection Review
+- Good vs Bad Bishops: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for strategy
 
 ### Remediation Protocol
-Review Day 31 foundational concepts, drill 5 targeted flashcards on pawnStructures, and repeat exercise set.
+Review Day 31 foundational concepts, drill 5 targeted flashcards on strategy, and repeat exercise set.
 
 ---
 
-## Day 33: Carlsbad Minority Attack
+## Day 33: Positional Exchange Sacrifice
 
 - **Phase**: Phase 5: Pawn Structures, Chains & Breaks
-- **Theme**: Pushing the queenside minority (a4-b4-b5) to shatter c6 pawn structure
-- **Primary Skill Axis**: `pawnStructures`
+- **Theme**: Petrosian-style rook-for-minor sacrifices to clamp squares
+- **Primary Skill Axis**: `strategy`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1667
+- **Difficulty Rating**: Elo 1664
 - **Prerequisites**: Day(s) 32
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Carlsbad Minority Attack themes.
-- Execute Carlsbad Minority Attack in practical games.
+- Master the core mechanics and geometric triggers of Positional Exchange Sacrifice.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Pawn Majorities & Minority Attack (Carlsbad)
+# Day 33: Positional Exchange Sacrifice
 
 ### 1. Simple Definition & Core Concept
-Mastery of Carlsbad Minority Attack is essential for grandmaster-level chess thinking. Focus on Pushing the queenside minority (a4-b4-b5) to shatter c6 pawn structure.
+Positional Exchange Sacrifice teaches foundational chess mastery: Petrosian-style rook-for-minor sacrifices to clamp squares.
 
 ### 2. Why It Matters in Practical Play
-Understanding Carlsbad Minority Attack gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Positional Exchange Sacrifice allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Carlsbad Minority Attack systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Dominance of key dark squares trumps nominal points.
 
-**Canonical Diagram FEN:** `r1bq1rk1/pp1nbppp/2p1pn2/3p4/2PP4/2N1PN2/PP2BPPP/R1BQ1RK1 w - - 0 8`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Carlsbad Minority Attack
+### 4. Canonical Model Game
+Tigran Petrosian vs Ludek Pachman (1961)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Carlsbad Minority Attack.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Carlsbad Minority Attack with strict Kotov discipline. Look for candidate b4 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Carlsbad Minority Attack principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Dominance of key dark squares trumps nominal points.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Carlsbad Minority Attack.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Carlsbad Minority Attack.
+- Model Demonstration 1: Textbook execution of Positional Exchange Sacrifice with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Positional Exchange Sacrifice.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d33_ex1)
-- **FEN**: `r1bq1rk1/pp1nbppp/2p1pn2/3p4/2PP4/2N1PN2/PP2BPPP/R1BQ1RK1 w - - 0 8`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Carlsbad Minority Attack
-- **Instruction**: White to move: Execute the key move demonstrating Carlsbad Minority Attack.
-- **Solution Sequence**: `b4`
-- **Explanation**: Playing b4 directly reinforces the primary theme of Carlsbad Minority Attack.
-- **Hints**: Look for the most forcing move that executes Carlsbad Minority Attack. (Penalty: 20% per hint)
+- **Motif**: Positional Exchange Sacrifice
+- **Instruction**: White to move: Find the tactical solution demonstrating Positional Exchange Sacrifice.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d33_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d33_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d33_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d33_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d33_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Carlsbad Minority Attack
+Tigran Petrosian vs Ludek Pachman (1961)
 
 ### Practical Sparring Assignment
-Complete targeted pawn_structure_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in positional_evaluation_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Carlsbad Minority Attack: Flashcard
-- Candidate Selection Review
+- Positional Exchange Sacrifice: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for strategy
 
 ### Remediation Protocol
-Review Day 32 foundational concepts, drill 5 targeted flashcards on pawnStructures, and repeat exercise set.
+Review Day 32 foundational concepts, drill 5 targeted flashcards on strategy, and repeat exercise set.
 
 ---
 
-## Day 34: Classic Pawn Skeletons
+## Day 34: Prophylaxis & Restriction
 
 - **Phase**: Phase 5: Pawn Structures, Chains & Breaks
-- **Theme**: Structural plans, typical pawn breaks, and ideal minor piece squares
-- **Primary Skill Axis**: `pawnStructures`
+- **Theme**: Neutralizing opponent counterplay before executing your plan
+- **Primary Skill Axis**: `defense`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1682
+- **Difficulty Rating**: Elo 1679
 - **Prerequisites**: Day(s) 33
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Classic Pawn Skeletons themes.
-- Execute Classic Pawn Skeletons in practical games.
+- Master the core mechanics and geometric triggers of Prophylaxis & Restriction.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Recurring Pawn Skeletons: French, Caro & Hedgehog
+# Day 34: Prophylaxis & Restriction
 
 ### 1. Simple Definition & Core Concept
-Mastery of Classic Pawn Skeletons is essential for grandmaster-level chess thinking. Focus on Structural plans, typical pawn breaks, and ideal minor piece squares.
+Prophylaxis & Restriction teaches foundational chess mastery: Neutralizing opponent counterplay before executing your plan.
 
 ### 2. Why It Matters in Practical Play
-Understanding Classic Pawn Skeletons gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Prophylaxis & Restriction allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Classic Pawn Skeletons systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Extinguish opponent hope before pushing your own agenda.
 
-**Canonical Diagram FEN:** `r1bq1rk1/pp1nbppp/2p1pn2/3p4/2PP4/2N1PN2/PP2BPPP/R1BQ1RK1 w - - 0 8`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Classic Pawn Skeletons
+### 4. Canonical Model Game
+Anatoly Karpov vs Wolfgang Unzicker (1974)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Classic Pawn Skeletons.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Classic Pawn Skeletons with strict Kotov discipline. Look for candidate b4 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Classic Pawn Skeletons principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Extinguish opponent hope before pushing your own agenda.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Classic Pawn Skeletons.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Classic Pawn Skeletons.
+- Model Demonstration 1: Textbook execution of Prophylaxis & Restriction with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Prophylaxis & Restriction.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d34_ex1)
-- **FEN**: `r1bq1rk1/pp1nbppp/2p1pn2/3p4/2PP4/2N1PN2/PP2BPPP/R1BQ1RK1 w - - 0 8`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Classic Pawn Skeletons
-- **Instruction**: White to move: Execute the key move demonstrating Classic Pawn Skeletons.
-- **Solution Sequence**: `b4`
-- **Explanation**: Playing b4 directly reinforces the primary theme of Classic Pawn Skeletons.
-- **Hints**: Look for the most forcing move that executes Classic Pawn Skeletons. (Penalty: 20% per hint)
+- **Motif**: Prophylaxis & Restriction
+- **Instruction**: White to move: Find the tactical solution demonstrating Prophylaxis & Restriction.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d34_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d34_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d34_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d34_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d34_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Classic Pawn Skeletons
+Anatoly Karpov vs Wolfgang Unzicker (1974)
 
 ### Practical Sparring Assignment
-Complete targeted pawn_structure_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in defensive_resource_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Classic Pawn Skeletons: Flashcard
-- Candidate Selection Review
+- Prophylaxis & Restriction: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for defense
 
 ### Remediation Protocol
-Review Day 33 foundational concepts, drill 5 targeted flashcards on pawnStructures, and repeat exercise set.
+Review Day 33 foundational concepts, drill 5 targeted flashcards on defense, and repeat exercise set.
 
 ---
 
-## Day 35: Milestone 5: Pawn Structures
+## Day 35: Milestone Exam: Strategy
 
 - **Phase**: Phase 5: Pawn Structures, Chains & Breaks
-- **Theme**: Structural transformation and timing the decisive pawn break
-- **Primary Skill Axis**: `pawnStructures`
+- **Theme**: Static vs dynamic positional advantage evaluation
+- **Primary Skill Axis**: `strategy`
 - **Estimated Training Time**: 90 minutes
-- **Difficulty Rating**: Elo 1696
+- **Difficulty Rating**: Elo 1693
 - **Prerequisites**: Day(s) 34
 - **Mastery Pass Threshold**: 85% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Milestone 5: Pawn Structures themes.
-- Execute Milestone 5: Pawn Structures in practical games.
+- Master the core mechanics and geometric triggers of Milestone Exam: Strategy.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Milestone 5: Pawn Structure Mastery Exam
+# Day 35: Milestone Exam: Strategy
 
 ### 1. Simple Definition & Core Concept
-Mastery of Milestone 5: Pawn Structures is essential for grandmaster-level chess thinking. Focus on Structural transformation and timing the decisive pawn break.
+Milestone Exam: Strategy teaches foundational chess mastery: Static vs dynamic positional advantage evaluation.
 
 ### 2. Why It Matters in Practical Play
-Understanding Milestone 5: Pawn Structures gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Milestone Exam: Strategy allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Milestone 5: Pawn Structures systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Assess static pawn structure vs dynamic piece lead.
 
-**Canonical Diagram FEN:** `r1bq1rk1/pp1nbppp/2p1pn2/3p4/2PP4/2N1PN2/PP2BPPP/R1BQ1RK1 w - - 0 8`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Milestone 5: Pawn Structures
+### 4. Canonical Model Game
+Vasily Smyslov vs Mikhail Botvinnik (1957)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Milestone 5: Pawn Structures.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Milestone 5: Pawn Structures with strict Kotov discipline. Look for candidate b4 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Milestone 5: Pawn Structures principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Assess static pawn structure vs dynamic piece lead.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Milestone 5: Pawn Structures.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Milestone 5: Pawn Structures.
+- Model Demonstration 1: Textbook execution of Milestone Exam: Strategy with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Milestone Exam: Strategy.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d35_ex1)
-- **FEN**: `r1bq1rk1/pp1nbppp/2p1pn2/3p4/2PP4/2N1PN2/PP2BPPP/R1BQ1RK1 w - - 0 8`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Milestone 5: Pawn Structures
-- **Instruction**: White to move: Execute the key move demonstrating Milestone 5: Pawn Structures.
-- **Solution Sequence**: `b4`
-- **Explanation**: Playing b4 directly reinforces the primary theme of Milestone 5: Pawn Structures.
-- **Hints**: Look for the most forcing move that executes Milestone 5: Pawn Structures. (Penalty: 20% per hint)
+- **Motif**: Milestone Exam: Strategy
+- **Instruction**: White to move: Find the tactical solution demonstrating Milestone Exam: Strategy.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d35_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d35_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d35_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d35_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d35_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Milestone 5: Pawn Structures
+Vasily Smyslov vs Mikhail Botvinnik (1957)
 
 ### Practical Sparring Assignment
-Complete targeted pawn_structure_lab interactive drills applying the decision checklist.
+Weekly Milestone Comprehensive Exam: Solve all positions with >= 85% accuracy and zero hints permitted.
 
 ### Spaced Repetition (SRS) Review Queue
-- Milestone 5: Pawn Structures: Flashcard
-- Candidate Selection Review
+- Milestone Exam: Strategy: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for strategy
 
 ### Remediation Protocol
-Review Day 34 foundational concepts, drill 5 targeted flashcards on pawnStructures, and repeat exercise set.
+Review Day 34 foundational concepts, drill 5 targeted flashcards on strategy, and repeat exercise set.
 
 ---
 
-## Day 36: Timing the Attack
+## Day 36: Weak Squares & Holes
 
 - **Phase**: Phase 6: King Attacks & Defensive Tenacity
-- **Theme**: Building piece superiority before launching the central or wing breakthrough
-- **Primary Skill Axis**: `attack`
+- **Theme**: Exploiting permanent structural holes that cannot be pawn-guarded
+- **Primary Skill Axis**: `strategy`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1711
+- **Difficulty Rating**: Elo 1708
 - **Prerequisites**: Day(s) 35
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Timing the Attack themes.
-- Execute Timing the Attack in practical games.
+- Master the core mechanics and geometric triggers of Weak Squares & Holes.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Accumulation of Advantages & Timing Attacks
+# Day 36: Weak Squares & Holes
 
 ### 1. Simple Definition & Core Concept
-Mastery of Timing the Attack is essential for grandmaster-level chess thinking. Focus on Building piece superiority before launching the central or wing breakthrough.
+Weak Squares & Holes teaches foundational chess mastery: Exploiting permanent structural holes that cannot be pawn-guarded.
 
 ### 2. Why It Matters in Practical Play
-Understanding Timing the Attack gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Weak Squares & Holes allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Timing the Attack systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Holes in enemy camp belong to your knights.
 
-**Canonical Diagram FEN:** `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Timing the Attack
+### 4. Canonical Model Game
+Garry Kasparov vs Anatoly Karpov (1985 Game 24)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Timing the Attack.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Timing the Attack with strict Kotov discipline. Look for candidate Qxf7# to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Timing the Attack principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Holes in enemy camp belong to your knights.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Timing the Attack.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Timing the Attack.
+- Model Demonstration 1: Textbook execution of Weak Squares & Holes with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Weak Squares & Holes.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d36_ex1)
 - **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Timing the Attack
-- **Instruction**: White to move: Execute the key move demonstrating Timing the Attack.
+- **Motif**: Weak Squares & Holes
+- **Instruction**: White to move: Find the tactical solution demonstrating Weak Squares & Holes.
 - **Solution Sequence**: `Qxf7#`
-- **Explanation**: Playing Qxf7# directly reinforces the primary theme of Timing the Attack.
-- **Hints**: Look for the most forcing move that executes Timing the Attack. (Penalty: 20% per hint)
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d36_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d36_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d36_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d36_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d36_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Timing the Attack
+Garry Kasparov vs Anatoly Karpov (1985 Game 24)
 
 ### Practical Sparring Assignment
-Complete targeted find_the_plan_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in find_the_plan_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Timing the Attack: Flashcard
-- Candidate Selection Review
+- Weak Squares & Holes: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for strategy
 
 ### Remediation Protocol
-Review Day 35 foundational concepts, drill 5 targeted flashcards on attack, and repeat exercise set.
+Review Day 35 foundational concepts, drill 5 targeted flashcards on strategy, and repeat exercise set.
 
 ---
 
-## Day 37: Greek Gift Sacrifice (Bxh7+)
+## Day 37: Principle of Two Weaknesses
 
 - **Phase**: Phase 6: King Attacks & Defensive Tenacity
-- **Theme**: Ripping open the enemy king shelter with tactical sacrifices
-- **Primary Skill Axis**: `attack`
+- **Theme**: Stretching the defense between two distant sectors
+- **Primary Skill Axis**: `strategy`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1725
+- **Difficulty Rating**: Elo 1722
 - **Prerequisites**: Day(s) 36
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Greek Gift Sacrifice (Bxh7+) themes.
-- Execute Greek Gift Sacrifice (Bxh7+) in practical games.
+- Master the core mechanics and geometric triggers of Principle of Two Weaknesses.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Classical Bishop Sacrifices (Greek Gift)
+# Day 37: Principle of Two Weaknesses
 
 ### 1. Simple Definition & Core Concept
-Mastery of Greek Gift Sacrifice (Bxh7+) is essential for grandmaster-level chess thinking. Focus on Ripping open the enemy king shelter with tactical sacrifices.
+Principle of Two Weaknesses teaches foundational chess mastery: Stretching the defense between two distant sectors.
 
 ### 2. Why It Matters in Practical Play
-Understanding Greek Gift Sacrifice (Bxh7+) gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Principle of Two Weaknesses allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Greek Gift Sacrifice (Bxh7+) systematically; never make a move without purpose.
+**Core Rule / Heuristic:** One weakness can be held; two weaknesses crumble.
 
-**Canonical Diagram FEN:** `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Greek Gift Sacrifice (Bxh7+)
+### 4. Canonical Model Game
+Akiba Rubinstein vs Carl Schlechter (1912)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Greek Gift Sacrifice (Bxh7+).
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Greek Gift Sacrifice (Bxh7+) with strict Kotov discipline. Look for candidate Qxf7# to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Greek Gift Sacrifice (Bxh7+) principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- One weakness can be held; two weaknesses crumble.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Greek Gift Sacrifice (Bxh7+).
-- Worked Demonstration 2: Refutation of sub-optimal replies in Greek Gift Sacrifice (Bxh7+).
+- Model Demonstration 1: Textbook execution of Principle of Two Weaknesses with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Principle of Two Weaknesses.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d37_ex1)
 - **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Greek Gift Sacrifice (Bxh7+)
-- **Instruction**: White to move: Execute the key move demonstrating Greek Gift Sacrifice (Bxh7+).
+- **Motif**: Principle of Two Weaknesses
+- **Instruction**: White to move: Find the tactical solution demonstrating Principle of Two Weaknesses.
 - **Solution Sequence**: `Qxf7#`
-- **Explanation**: Playing Qxf7# directly reinforces the primary theme of Greek Gift Sacrifice (Bxh7+).
-- **Hints**: Look for the most forcing move that executes Greek Gift Sacrifice (Bxh7+). (Penalty: 20% per hint)
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d37_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d37_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d37_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d37_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d37_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Greek Gift Sacrifice (Bxh7+)
+Akiba Rubinstein vs Carl Schlechter (1912)
 
 ### Practical Sparring Assignment
-Complete targeted tactical_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in find_the_plan_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Greek Gift Sacrifice (Bxh7+): Flashcard
-- Candidate Selection Review
+- Principle of Two Weaknesses: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for strategy
 
 ### Remediation Protocol
-Review Day 36 foundational concepts, drill 5 targeted flashcards on attack, and repeat exercise set.
+Review Day 36 foundational concepts, drill 5 targeted flashcards on strategy, and repeat exercise set.
 
 ---
 
-## Day 38: Opposite-Side Castling Storms
+## Day 38: Favorable Piece Exchanges
 
 - **Phase**: Phase 6: King Attacks & Defensive Tenacity
-- **Theme**: Speed and pawn storm race when kings castle on opposite flanks
-- **Primary Skill Axis**: `attack`
+- **Theme**: Simplifying into won positions and stripping counterplay
+- **Primary Skill Axis**: `strategy`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1740
+- **Difficulty Rating**: Elo 1737
 - **Prerequisites**: Day(s) 37
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Opposite-Side Castling Storms themes.
-- Execute Opposite-Side Castling Storms in practical games.
+- Master the core mechanics and geometric triggers of Favorable Piece Exchanges.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Opposite-Side Castling Pawn Storms
+# Day 38: Favorable Piece Exchanges
 
 ### 1. Simple Definition & Core Concept
-Mastery of Opposite-Side Castling Storms is essential for grandmaster-level chess thinking. Focus on Speed and pawn storm race when kings castle on opposite flanks.
+Favorable Piece Exchanges teaches foundational chess mastery: Simplifying into won positions and stripping counterplay.
 
 ### 2. Why It Matters in Practical Play
-Understanding Opposite-Side Castling Storms gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Favorable Piece Exchanges allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Opposite-Side Castling Storms systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Trade pieces when ahead in material; trade pawns when behind.
 
-**Canonical Diagram FEN:** `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Opposite-Side Castling Storms
+### 4. Canonical Model Game
+Jose Raul Capablanca vs Frank Marshall (1918)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Opposite-Side Castling Storms.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Opposite-Side Castling Storms with strict Kotov discipline. Look for candidate Qxf7# to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Opposite-Side Castling Storms principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Trade pieces when ahead in material; trade pawns when behind.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Opposite-Side Castling Storms.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Opposite-Side Castling Storms.
+- Model Demonstration 1: Textbook execution of Favorable Piece Exchanges with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Favorable Piece Exchanges.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d38_ex1)
 - **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposite-Side Castling Storms
-- **Instruction**: White to move: Execute the key move demonstrating Opposite-Side Castling Storms.
+- **Motif**: Favorable Piece Exchanges
+- **Instruction**: White to move: Find the tactical solution demonstrating Favorable Piece Exchanges.
 - **Solution Sequence**: `Qxf7#`
-- **Explanation**: Playing Qxf7# directly reinforces the primary theme of Opposite-Side Castling Storms.
-- **Hints**: Look for the most forcing move that executes Opposite-Side Castling Storms. (Penalty: 20% per hint)
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d38_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d38_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d38_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d38_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d38_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Opposite-Side Castling Storms
+Jose Raul Capablanca vs Frank Marshall (1918)
 
 ### Practical Sparring Assignment
-Complete targeted find_the_plan_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in positional_evaluation_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Opposite-Side Castling Storms: Flashcard
-- Candidate Selection Review
+- Favorable Piece Exchanges: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for strategy
 
 ### Remediation Protocol
-Review Day 37 foundational concepts, drill 5 targeted flashcards on attack, and repeat exercise set.
+Review Day 37 foundational concepts, drill 5 targeted flashcards on strategy, and repeat exercise set.
 
 ---
 
-## Day 39: Kingside Swarms & Batteries
+## Day 39: Restricting Minor Pieces
 
 - **Phase**: Phase 6: King Attacks & Defensive Tenacity
-- **Theme**: Transferring heavy pieces via rook lifts and queen-bishop batteries
-- **Primary Skill Axis**: `attack`
+- **Theme**: Asphyxiating opponent knight outposts and bishop diagonals
+- **Primary Skill Axis**: `strategy`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1755
+- **Difficulty Rating**: Elo 1751
 - **Prerequisites**: Day(s) 38
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Kingside Swarms & Batteries themes.
-- Execute Kingside Swarms & Batteries in practical games.
+- Master the core mechanics and geometric triggers of Restricting Minor Pieces.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Kingside Piece Swarms & Open Lines
+# Day 39: Restricting Minor Pieces
 
 ### 1. Simple Definition & Core Concept
-Mastery of Kingside Swarms & Batteries is essential for grandmaster-level chess thinking. Focus on Transferring heavy pieces via rook lifts and queen-bishop batteries.
+Restricting Minor Pieces teaches foundational chess mastery: Asphyxiating opponent knight outposts and bishop diagonals.
 
 ### 2. Why It Matters in Practical Play
-Understanding Kingside Swarms & Batteries gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Restricting Minor Pieces allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Kingside Swarms & Batteries systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Build pawn wedges that blind enemy bishops.
 
-**Canonical Diagram FEN:** `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Kingside Swarms & Batteries
+### 4. Canonical Model Game
+Bobby Fischer vs Boris Spassky (1972 Game 4)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Kingside Swarms & Batteries.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Kingside Swarms & Batteries with strict Kotov discipline. Look for candidate Qxf7# to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Kingside Swarms & Batteries principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Build pawn wedges that blind enemy bishops.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Kingside Swarms & Batteries.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Kingside Swarms & Batteries.
+- Model Demonstration 1: Textbook execution of Restricting Minor Pieces with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Restricting Minor Pieces.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d39_ex1)
 - **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Kingside Swarms & Batteries
-- **Instruction**: White to move: Execute the key move demonstrating Kingside Swarms & Batteries.
+- **Motif**: Restricting Minor Pieces
+- **Instruction**: White to move: Find the tactical solution demonstrating Restricting Minor Pieces.
 - **Solution Sequence**: `Qxf7#`
-- **Explanation**: Playing Qxf7# directly reinforces the primary theme of Kingside Swarms & Batteries.
-- **Hints**: Look for the most forcing move that executes Kingside Swarms & Batteries. (Penalty: 20% per hint)
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d39_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d39_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d39_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d39_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d39_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Kingside Swarms & Batteries
+Bobby Fischer vs Boris Spassky (1972 Game 4)
 
 ### Practical Sparring Assignment
-Complete targeted tactical_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in find_the_plan_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Kingside Swarms & Batteries: Flashcard
-- Candidate Selection Review
+- Restricting Minor Pieces: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for strategy
 
 ### Remediation Protocol
-Review Day 38 foundational concepts, drill 5 targeted flashcards on attack, and repeat exercise set.
+Review Day 38 foundational concepts, drill 5 targeted flashcards on strategy, and repeat exercise set.
 
 ---
 
-## Day 40: Prophylactic Defense
+## Day 40: Patient Maneuvering
 
 - **Phase**: Phase 6: King Attacks & Defensive Tenacity
-- **Theme**: Anticipating opponent tactical plans and snuffing them out in advance
-- **Primary Skill Axis**: `defense`
+- **Theme**: Improving positional grip without premature pawn breaks
+- **Primary Skill Axis**: `strategy`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1769
+- **Difficulty Rating**: Elo 1766
 - **Prerequisites**: Day(s) 39
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Prophylactic Defense themes.
-- Execute Prophylactic Defense in practical games.
+- Master the core mechanics and geometric triggers of Patient Maneuvering.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Prophylactic Defense & Threat Neutralization
+# Day 40: Patient Maneuvering
 
 ### 1. Simple Definition & Core Concept
-Mastery of Prophylactic Defense is essential for grandmaster-level chess thinking. Focus on Anticipating opponent tactical plans and snuffing them out in advance.
+Patient Maneuvering teaches foundational chess mastery: Improving positional grip without premature pawn breaks.
 
 ### 2. Why It Matters in Practical Play
-Understanding Prophylactic Defense gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Patient Maneuvering allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Prophylactic Defense systematically; never make a move without purpose.
+**Core Rule / Heuristic:** The threat is stronger than the execution.
 
-**Canonical Diagram FEN:** `4r1k1/5ppp/8/8/8/8/4QPPP/6K1 w - - 0 1`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Prophylactic Defense
+### 4. Canonical Model Game
+Anatoly Karpov vs Boris Spassky (1974)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Prophylactic Defense.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Prophylactic Defense with strict Kotov discipline. Look for candidate Qxe8# to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Prophylactic Defense principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- The threat is stronger than the execution.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Prophylactic Defense.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Prophylactic Defense.
+- Model Demonstration 1: Textbook execution of Patient Maneuvering with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Patient Maneuvering.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d40_ex1)
-- **FEN**: `4r1k1/5ppp/8/8/8/8/4QPPP/6K1 w - - 0 1`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Prophylactic Defense
-- **Instruction**: White to move: Execute the key move demonstrating Prophylactic Defense.
-- **Solution Sequence**: `Qxe8#`
-- **Explanation**: Playing Qxe8# directly reinforces the primary theme of Prophylactic Defense.
-- **Hints**: Look for the most forcing move that executes Prophylactic Defense. (Penalty: 20% per hint)
+- **Motif**: Patient Maneuvering
+- **Instruction**: White to move: Find the tactical solution demonstrating Patient Maneuvering.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d40_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d40_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d40_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d40_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d40_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Prophylactic Defense
+Anatoly Karpov vs Boris Spassky (1974)
 
 ### Practical Sparring Assignment
-Complete targeted defensive_resource_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in find_the_plan_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Prophylactic Defense: Flashcard
-- Candidate Selection Review
+- Patient Maneuvering: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for strategy
 
 ### Remediation Protocol
-Review Day 39 foundational concepts, drill 5 targeted flashcards on defense, and repeat exercise set.
+Review Day 39 foundational concepts, drill 5 targeted flashcards on strategy, and repeat exercise set.
 
 ---
 
-## Day 41: Fortresses & Counter-Attacks
+## Day 41: Transforming Advantages
 
 - **Phase**: Phase 6: King Attacks & Defensive Tenacity
-- **Theme**: Constructing unbreakable fortresses and launching decisive counter-strikes
-- **Primary Skill Axis**: `defense`
+- **Theme**: Converting dynamic initiative into permanent static gains
+- **Primary Skill Axis**: `conversion`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1784
+- **Difficulty Rating**: Elo 1780
 - **Prerequisites**: Day(s) 40
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Fortresses & Counter-Attacks themes.
-- Execute Fortresses & Counter-Attacks in practical games.
+- Master the core mechanics and geometric triggers of Transforming Advantages.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Defensive Resources: Fortresses & Counter-Attacks
+# Day 41: Transforming Advantages
 
 ### 1. Simple Definition & Core Concept
-Mastery of Fortresses & Counter-Attacks is essential for grandmaster-level chess thinking. Focus on Constructing unbreakable fortresses and launching decisive counter-strikes.
+Transforming Advantages teaches foundational chess mastery: Converting dynamic initiative into permanent static gains.
 
 ### 2. Why It Matters in Practical Play
-Understanding Fortresses & Counter-Attacks gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Transforming Advantages allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Fortresses & Counter-Attacks systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Initiative is temporary; material and structure are permanent.
 
-**Canonical Diagram FEN:** `4r1k1/5ppp/8/8/8/8/4QPPP/6K1 w - - 0 1`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Fortresses & Counter-Attacks
+### 4. Canonical Model Game
+Vasily Smyslov vs David Bronstein (1953)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Fortresses & Counter-Attacks.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Fortresses & Counter-Attacks with strict Kotov discipline. Look for candidate Qxe8# to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Fortresses & Counter-Attacks principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Initiative is temporary; material and structure are permanent.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Fortresses & Counter-Attacks.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Fortresses & Counter-Attacks.
+- Model Demonstration 1: Textbook execution of Transforming Advantages with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Transforming Advantages.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d41_ex1)
-- **FEN**: `4r1k1/5ppp/8/8/8/8/4QPPP/6K1 w - - 0 1`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Fortresses & Counter-Attacks
-- **Instruction**: White to move: Execute the key move demonstrating Fortresses & Counter-Attacks.
-- **Solution Sequence**: `Qxe8#`
-- **Explanation**: Playing Qxe8# directly reinforces the primary theme of Fortresses & Counter-Attacks.
-- **Hints**: Look for the most forcing move that executes Fortresses & Counter-Attacks. (Penalty: 20% per hint)
+- **Motif**: Transforming Advantages
+- **Instruction**: White to move: Find the tactical solution demonstrating Transforming Advantages.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d41_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d41_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d41_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d41_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d41_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Fortresses & Counter-Attacks
+Vasily Smyslov vs David Bronstein (1953)
 
 ### Practical Sparring Assignment
-Complete targeted defensive_resource_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in conversion_challenge_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Fortresses & Counter-Attacks: Flashcard
-- Candidate Selection Review
+- Transforming Advantages: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for conversion
 
 ### Remediation Protocol
-Review Day 40 foundational concepts, drill 5 targeted flashcards on defense, and repeat exercise set.
+Review Day 40 foundational concepts, drill 5 targeted flashcards on conversion, and repeat exercise set.
 
 ---
 
-## Day 42: Milestone 6: Attack & Defense
+## Day 42: Grand Milestone: Strategy
 
 - **Phase**: Phase 6: King Attacks & Defensive Tenacity
-- **Theme**: Balancing attacking aggression with rock-solid defensive resilience
-- **Primary Skill Axis**: `attack`
+- **Theme**: Comprehensive positional evaluation and master planning exam
+- **Primary Skill Axis**: `strategy`
 - **Estimated Training Time**: 90 minutes
-- **Difficulty Rating**: Elo 1798
+- **Difficulty Rating**: Elo 1795
 - **Prerequisites**: Day(s) 41
 - **Mastery Pass Threshold**: 85% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Milestone 6: Attack & Defense themes.
-- Execute Milestone 6: Attack & Defense in practical games.
+- Master the core mechanics and geometric triggers of Grand Milestone: Strategy.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Milestone 6: Attack & Defense Comprehensive Exam
+# Day 42: Grand Milestone: Strategy
 
 ### 1. Simple Definition & Core Concept
-Mastery of Milestone 6: Attack & Defense is essential for grandmaster-level chess thinking. Focus on Balancing attacking aggression with rock-solid defensive resilience.
+Grand Milestone: Strategy teaches foundational chess mastery: Comprehensive positional evaluation and master planning exam.
 
 ### 2. Why It Matters in Practical Play
-Understanding Milestone 6: Attack & Defense gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Grand Milestone: Strategy allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Milestone 6: Attack & Defense systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Plan with harmonic piece coordination and structure.
 
-**Canonical Diagram FEN:** `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Milestone 6: Attack & Defense
+### 4. Canonical Model Game
+Mikhail Botvinnik vs David Bronstein (1951)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Milestone 6: Attack & Defense.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Milestone 6: Attack & Defense with strict Kotov discipline. Look for candidate Qxf7# to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Milestone 6: Attack & Defense principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Plan with harmonic piece coordination and structure.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Milestone 6: Attack & Defense.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Milestone 6: Attack & Defense.
+- Model Demonstration 1: Textbook execution of Grand Milestone: Strategy with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Grand Milestone: Strategy.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d42_ex1)
 - **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Milestone 6: Attack & Defense
-- **Instruction**: White to move: Execute the key move demonstrating Milestone 6: Attack & Defense.
+- **Motif**: Grand Milestone: Strategy
+- **Instruction**: White to move: Find the tactical solution demonstrating Grand Milestone: Strategy.
 - **Solution Sequence**: `Qxf7#`
-- **Explanation**: Playing Qxf7# directly reinforces the primary theme of Milestone 6: Attack & Defense.
-- **Hints**: Look for the most forcing move that executes Milestone 6: Attack & Defense. (Penalty: 20% per hint)
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d42_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d42_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d42_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d42_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d42_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Milestone 6: Attack & Defense
+Mikhail Botvinnik vs David Bronstein (1951)
 
 ### Practical Sparring Assignment
-Complete targeted defensive_resource_lab interactive drills applying the decision checklist.
+Weekly Milestone Comprehensive Exam: Solve all positions with >= 85% accuracy and zero hints permitted.
 
 ### Spaced Repetition (SRS) Review Queue
-- Milestone 6: Attack & Defense: Flashcard
-- Candidate Selection Review
+- Grand Milestone: Strategy: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for strategy
 
 ### Remediation Protocol
-Review Day 41 foundational concepts, drill 5 targeted flashcards on attack, and repeat exercise set.
+Review Day 41 foundational concepts, drill 5 targeted flashcards on strategy, and repeat exercise set.
 
 ---
 
-## Day 43: King & Pawn Opposition
+## Day 43: Pawn Chains & Base Attacks
 
 - **Phase**: Phase 7: King & Pawn Endgames, Opposition & Mates
-- **Theme**: Direct, distant, and diagonal opposition in pawn promotion battles
-- **Primary Skill Axis**: `endgames`
+- **Theme**: Attacking the base of pawn chains to shatter coordination
+- **Primary Skill Axis**: `pawnStructures`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1813
+- **Difficulty Rating**: Elo 1809
 - **Prerequisites**: Day(s) 42
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary King & Pawn Opposition themes.
-- Execute King & Pawn Opposition in practical games.
+- Master the core mechanics and geometric triggers of Pawn Chains & Base Attacks.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# King & Pawn Endgames: Principle of Opposition
+# Day 43: Pawn Chains & Base Attacks
 
 ### 1. Simple Definition & Core Concept
-Mastery of King & Pawn Opposition is essential for grandmaster-level chess thinking. Focus on Direct, distant, and diagonal opposition in pawn promotion battles.
+Pawn Chains & Base Attacks teaches foundational chess mastery: Attacking the base of pawn chains to shatter coordination.
 
 ### 2. Why It Matters in Practical Play
-Understanding King & Pawn Opposition gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Pawn Chains & Base Attacks allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply King & Pawn Opposition systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Strike the root of the chain, not the head.
 
-**Canonical Diagram FEN:** `8/8/5k2/P7/8/8/8/4K3 w - - 0 1`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating King & Pawn Opposition
+### 4. Canonical Model Game
+Aron Nimzowitsch vs Jose Raul Capablanca (1927)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in King & Pawn Opposition.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in King & Pawn Opposition with strict Kotov discipline. Look for candidate a6 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master King & Pawn Opposition principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Strike the root of the chain, not the head.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of King & Pawn Opposition.
-- Worked Demonstration 2: Refutation of sub-optimal replies in King & Pawn Opposition.
+- Model Demonstration 1: Textbook execution of Pawn Chains & Base Attacks with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Pawn Chains & Base Attacks.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d43_ex1)
-- **FEN**: `8/8/5k2/P7/8/8/8/4K3 w - - 0 1`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: King & Pawn Opposition
-- **Instruction**: White to move: Execute the key move demonstrating King & Pawn Opposition.
-- **Solution Sequence**: `a6`
-- **Explanation**: Playing a6 directly reinforces the primary theme of King & Pawn Opposition.
-- **Hints**: Look for the most forcing move that executes King & Pawn Opposition. (Penalty: 20% per hint)
+- **Motif**: Pawn Chains & Base Attacks
+- **Instruction**: White to move: Find the tactical solution demonstrating Pawn Chains & Base Attacks.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d43_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d43_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d43_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d43_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d43_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating King & Pawn Opposition
+Aron Nimzowitsch vs Jose Raul Capablanca (1927)
 
 ### Practical Sparring Assignment
-Complete targeted endgame_win_defend_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in pawn_break_discovery_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- King & Pawn Opposition: Flashcard
-- Candidate Selection Review
+- Pawn Chains & Base Attacks: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for pawnStructures
 
 ### Remediation Protocol
-Review Day 42 foundational concepts, drill 5 targeted flashcards on endgames, and repeat exercise set.
+Review Day 42 foundational concepts, drill 5 targeted flashcards on pawnStructures, and repeat exercise set.
 
 ---
 
-## Day 44: Key Squares in Pawn Endings
+## Day 44: The Carlsbad Structure
 
 - **Phase**: Phase 7: King & Pawn Endgames, Opposition & Mates
-- **Theme**: Occupying the critical key squares that guarantee pawn promotion
-- **Primary Skill Axis**: `endgames`
+- **Theme**: The classic Minority Attack (a3-b4-b5) creating c6 weaknesses
+- **Primary Skill Axis**: `pawnStructures`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1828
+- **Difficulty Rating**: Elo 1824
 - **Prerequisites**: Day(s) 43
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Key Squares in Pawn Endings themes.
-- Execute Key Squares in Pawn Endings in practical games.
+- Master the core mechanics and geometric triggers of The Carlsbad Structure.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Key Squares & Critical Promotion Zones
+# Day 44: The Carlsbad Structure
 
 ### 1. Simple Definition & Core Concept
-Mastery of Key Squares in Pawn Endings is essential for grandmaster-level chess thinking. Focus on Occupying the critical key squares that guarantee pawn promotion.
+The Carlsbad Structure teaches foundational chess mastery: The classic Minority Attack (a3-b4-b5) creating c6 weaknesses.
 
 ### 2. Why It Matters in Practical Play
-Understanding Key Squares in Pawn Endings gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering The Carlsbad Structure allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Key Squares in Pawn Endings systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Push the minority on queenside to weaken the majority.
 
-**Canonical Diagram FEN:** `8/8/5k2/P7/8/8/8/4K3 w - - 0 1`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Key Squares in Pawn Endings
+### 4. Canonical Model Game
+Garry Kasparov vs Anatoly Karpov (1987)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Key Squares in Pawn Endings.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Key Squares in Pawn Endings with strict Kotov discipline. Look for candidate a6 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Key Squares in Pawn Endings principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Push the minority on queenside to weaken the majority.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Key Squares in Pawn Endings.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Key Squares in Pawn Endings.
+- Model Demonstration 1: Textbook execution of The Carlsbad Structure with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering The Carlsbad Structure.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d44_ex1)
-- **FEN**: `8/8/5k2/P7/8/8/8/4K3 w - - 0 1`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Key Squares in Pawn Endings
-- **Instruction**: White to move: Execute the key move demonstrating Key Squares in Pawn Endings.
-- **Solution Sequence**: `a6`
-- **Explanation**: Playing a6 directly reinforces the primary theme of Key Squares in Pawn Endings.
-- **Hints**: Look for the most forcing move that executes Key Squares in Pawn Endings. (Penalty: 20% per hint)
+- **Motif**: The Carlsbad Structure
+- **Instruction**: White to move: Find the tactical solution demonstrating The Carlsbad Structure.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d44_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d44_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d44_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d44_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d44_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Key Squares in Pawn Endings
+Garry Kasparov vs Anatoly Karpov (1987)
 
 ### Practical Sparring Assignment
-Complete targeted endgame_win_defend_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in pawn_structure_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Key Squares in Pawn Endings: Flashcard
-- Candidate Selection Review
+- The Carlsbad Structure: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for pawnStructures
 
 ### Remediation Protocol
-Review Day 43 foundational concepts, drill 5 targeted flashcards on endgames, and repeat exercise set.
+Review Day 43 foundational concepts, drill 5 targeted flashcards on pawnStructures, and repeat exercise set.
 
 ---
 
-## Day 45: Triangulation & Zugzwang
+## Day 45: Isolated Queen Pawn (IQP)
 
 - **Phase**: Phase 7: King & Pawn Endgames, Opposition & Mates
-- **Theme**: Losing a tempo with king geometry to force enemy king retreat
-- **Primary Skill Axis**: `endgames`
+- **Theme**: Dynamic central attack vs blockading and liquidation
+- **Primary Skill Axis**: `pawnStructures`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1842
+- **Difficulty Rating**: Elo 1838
 - **Prerequisites**: Day(s) 44
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Triangulation & Zugzwang themes.
-- Execute Triangulation & Zugzwang in practical games.
+- Master the core mechanics and geometric triggers of Isolated Queen Pawn (IQP).
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Triangulation, Outflanking & Zugzwang
+# Day 45: Isolated Queen Pawn (IQP)
 
 ### 1. Simple Definition & Core Concept
-Mastery of Triangulation & Zugzwang is essential for grandmaster-level chess thinking. Focus on Losing a tempo with king geometry to force enemy king retreat.
+Isolated Queen Pawn (IQP) teaches foundational chess mastery: Dynamic central attack vs blockading and liquidation.
 
 ### 2. Why It Matters in Practical Play
-Understanding Triangulation & Zugzwang gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Isolated Queen Pawn (IQP) allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Triangulation & Zugzwang systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Use the d4/d5 outpost for an attack, or trade to endgames.
 
-**Canonical Diagram FEN:** `8/8/5k2/P7/8/8/8/4K3 w - - 0 1`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Triangulation & Zugzwang
+### 4. Canonical Model Game
+Mikhail Botvinnik vs Salo Flohr (1936)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Triangulation & Zugzwang.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Triangulation & Zugzwang with strict Kotov discipline. Look for candidate a6 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Triangulation & Zugzwang principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Use the d4/d5 outpost for an attack, or trade to endgames.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Triangulation & Zugzwang.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Triangulation & Zugzwang.
+- Model Demonstration 1: Textbook execution of Isolated Queen Pawn (IQP) with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Isolated Queen Pawn (IQP).
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d45_ex1)
-- **FEN**: `8/8/5k2/P7/8/8/8/4K3 w - - 0 1`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Triangulation & Zugzwang
-- **Instruction**: White to move: Execute the key move demonstrating Triangulation & Zugzwang.
-- **Solution Sequence**: `a6`
-- **Explanation**: Playing a6 directly reinforces the primary theme of Triangulation & Zugzwang.
-- **Hints**: Look for the most forcing move that executes Triangulation & Zugzwang. (Penalty: 20% per hint)
+- **Motif**: Isolated Queen Pawn (IQP)
+- **Instruction**: White to move: Find the tactical solution demonstrating Isolated Queen Pawn (IQP).
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d45_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d45_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d45_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d45_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d45_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Triangulation & Zugzwang
+Mikhail Botvinnik vs Salo Flohr (1936)
 
 ### Practical Sparring Assignment
-Complete targeted endgame_win_defend_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in pawn_structure_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Triangulation & Zugzwang: Flashcard
-- Candidate Selection Review
+- Isolated Queen Pawn (IQP): Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for pawnStructures
 
 ### Remediation Protocol
-Review Day 44 foundational concepts, drill 5 targeted flashcards on endgames, and repeat exercise set.
+Review Day 44 foundational concepts, drill 5 targeted flashcards on pawnStructures, and repeat exercise set.
 
 ---
 
-## Day 46: Pawn Breakthrough in Endings
+## Day 46: Hanging Pawns (c4/d4)
 
 - **Phase**: Phase 7: King & Pawn Endgames, Opposition & Mates
-- **Theme**: Sacrificing one pawn to queen another in symmetrical pawn chains
-- **Primary Skill Axis**: `endgames`
+- **Theme**: Dynamic central tension, breakthroughs, and overextended targets
+- **Primary Skill Axis**: `pawnStructures`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1857
+- **Difficulty Rating**: Elo 1853
 - **Prerequisites**: Day(s) 45
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Pawn Breakthrough in Endings themes.
-- Execute Pawn Breakthrough in Endings in practical games.
+- Master the core mechanics and geometric triggers of Hanging Pawns (c4/d4).
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Breakthrough: Pawns Punching Through Chains
+# Day 46: Hanging Pawns (c4/d4)
 
 ### 1. Simple Definition & Core Concept
-Mastery of Pawn Breakthrough in Endings is essential for grandmaster-level chess thinking. Focus on Sacrificing one pawn to queen another in symmetrical pawn chains.
+Hanging Pawns (c4/d4) teaches foundational chess mastery: Dynamic central tension, breakthroughs, and overextended targets.
 
 ### 2. Why It Matters in Practical Play
-Understanding Pawn Breakthrough in Endings gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Hanging Pawns (c4/d4) allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Pawn Breakthrough in Endings systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Push the break with support, or they fall under fire.
 
-**Canonical Diagram FEN:** `8/8/5k2/P7/8/8/8/4K3 w - - 0 1`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Pawn Breakthrough in Endings
+### 4. Canonical Model Game
+Garry Kasparov vs Nigel Short (1993)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Pawn Breakthrough in Endings.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Pawn Breakthrough in Endings with strict Kotov discipline. Look for candidate a6 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Pawn Breakthrough in Endings principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Push the break with support, or they fall under fire.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Pawn Breakthrough in Endings.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Pawn Breakthrough in Endings.
+- Model Demonstration 1: Textbook execution of Hanging Pawns (c4/d4) with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Hanging Pawns (c4/d4).
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d46_ex1)
-- **FEN**: `8/8/5k2/P7/8/8/8/4K3 w - - 0 1`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Pawn Breakthrough in Endings
-- **Instruction**: White to move: Execute the key move demonstrating Pawn Breakthrough in Endings.
-- **Solution Sequence**: `a6`
-- **Explanation**: Playing a6 directly reinforces the primary theme of Pawn Breakthrough in Endings.
-- **Hints**: Look for the most forcing move that executes Pawn Breakthrough in Endings. (Penalty: 20% per hint)
+- **Motif**: Hanging Pawns (c4/d4)
+- **Instruction**: White to move: Find the tactical solution demonstrating Hanging Pawns (c4/d4).
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d46_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d46_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d46_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d46_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d46_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Pawn Breakthrough in Endings
+Garry Kasparov vs Nigel Short (1993)
 
 ### Practical Sparring Assignment
-Complete targeted endgame_win_defend_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in pawn_structure_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Pawn Breakthrough in Endings: Flashcard
-- Candidate Selection Review
+- Hanging Pawns (c4/d4): Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for pawnStructures
 
 ### Remediation Protocol
-Review Day 45 foundational concepts, drill 5 targeted flashcards on endgames, and repeat exercise set.
+Review Day 45 foundational concepts, drill 5 targeted flashcards on pawnStructures, and repeat exercise set.
 
 ---
 
-## Day 47: Promotion Races & Square Rule
+## Day 47: Backward & Doubled Pawns
 
 - **Phase**: Phase 7: King & Pawn Endgames, Opposition & Mates
-- **Theme**: Calculating pawn races with checks and using the geometric square rule
-- **Primary Skill Axis**: `visualization`
+- **Theme**: Fixing and dismantling structural pawn defects on open files
+- **Primary Skill Axis**: `pawnStructures`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1871
+- **Difficulty Rating**: Elo 1867
 - **Prerequisites**: Day(s) 46
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Promotion Races & Square Rule themes.
-- Execute Promotion Races & Square Rule in practical games.
+- Master the core mechanics and geometric triggers of Backward & Doubled Pawns.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Pawn Promotion Races & Rule of the Square
+# Day 47: Backward & Doubled Pawns
 
 ### 1. Simple Definition & Core Concept
-Mastery of Promotion Races & Square Rule is essential for grandmaster-level chess thinking. Focus on Calculating pawn races with checks and using the geometric square rule.
+Backward & Doubled Pawns teaches foundational chess mastery: Fixing and dismantling structural pawn defects on open files.
 
 ### 2. Why It Matters in Practical Play
-Understanding Promotion Races & Square Rule gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Backward & Doubled Pawns allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Promotion Races & Square Rule systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Blockade the backward pawn, then double rooks on the file.
 
-**Canonical Diagram FEN:** `r1bq1rk1/pp3ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 0 9`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Promotion Races & Square Rule
+### 4. Canonical Model Game
+Jose Raul Capablanca vs Emanuel Lasker (1921)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Promotion Races & Square Rule.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Promotion Races & Square Rule with strict Kotov discipline. Look for candidate Ne5 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Promotion Races & Square Rule principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Blockade the backward pawn, then double rooks on the file.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Promotion Races & Square Rule.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Promotion Races & Square Rule.
+- Model Demonstration 1: Textbook execution of Backward & Doubled Pawns with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Backward & Doubled Pawns.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d47_ex1)
-- **FEN**: `r1bq1rk1/pp3ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 0 9`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Promotion Races & Square Rule
-- **Instruction**: White to move: Execute the key move demonstrating Promotion Races & Square Rule.
-- **Solution Sequence**: `Ne5`
-- **Explanation**: Playing Ne5 directly reinforces the primary theme of Promotion Races & Square Rule.
-- **Hints**: Look for the most forcing move that executes Promotion Races & Square Rule. (Penalty: 20% per hint)
+- **Motif**: Backward & Doubled Pawns
+- **Instruction**: White to move: Find the tactical solution demonstrating Backward & Doubled Pawns.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d47_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d47_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d47_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d47_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d47_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Promotion Races & Square Rule
+Jose Raul Capablanca vs Emanuel Lasker (1921)
 
 ### Practical Sparring Assignment
-Complete targeted visualization_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in pawn_structure_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Promotion Races & Square Rule: Flashcard
-- Candidate Selection Review
+- Backward & Doubled Pawns: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for pawnStructures
 
 ### Remediation Protocol
-Review Day 46 foundational concepts, drill 5 targeted flashcards on visualization, and repeat exercise set.
+Review Day 46 foundational concepts, drill 5 targeted flashcards on pawnStructures, and repeat exercise set.
 
 ---
 
-## Day 48: Fundamental Endgame Mates
+## Day 48: The Maroczy Bind (c4/e4)
 
 - **Phase**: Phase 7: King & Pawn Endgames, Opposition & Mates
-- **Theme**: Delivering clean technical checkmates with minimal minor pieces
-- **Primary Skill Axis**: `endgames`
+- **Theme**: Restricting Sicilian d5 breaks with a dark-square clamp
+- **Primary Skill Axis**: `pawnStructures`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1886
+- **Difficulty Rating**: Elo 1882
 - **Prerequisites**: Day(s) 47
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Fundamental Endgame Mates themes.
-- Execute Fundamental Endgame Mates in practical games.
+- Master the core mechanics and geometric triggers of The Maroczy Bind (c4/e4).
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Fundamental Checkmates: Q, R, 2B, and B+N
+# Day 48: The Maroczy Bind (c4/e4)
 
 ### 1. Simple Definition & Core Concept
-Mastery of Fundamental Endgame Mates is essential for grandmaster-level chess thinking. Focus on Delivering clean technical checkmates with minimal minor pieces.
+The Maroczy Bind (c4/e4) teaches foundational chess mastery: Restricting Sicilian d5 breaks with a dark-square clamp.
 
 ### 2. Why It Matters in Practical Play
-Understanding Fundamental Endgame Mates gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering The Maroczy Bind (c4/e4) allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Fundamental Endgame Mates systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Prevent d5 and smother Black counterplay.
 
-**Canonical Diagram FEN:** `8/8/5k2/P7/8/8/8/4K3 w - - 0 1`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Fundamental Endgame Mates
+### 4. Canonical Model Game
+Gedeon Barcza vs Bent Larsen (1964)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Fundamental Endgame Mates.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Fundamental Endgame Mates with strict Kotov discipline. Look for candidate a6 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Fundamental Endgame Mates principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Prevent d5 and smother Black counterplay.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Fundamental Endgame Mates.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Fundamental Endgame Mates.
+- Model Demonstration 1: Textbook execution of The Maroczy Bind (c4/e4) with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering The Maroczy Bind (c4/e4).
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d48_ex1)
-- **FEN**: `8/8/5k2/P7/8/8/8/4K3 w - - 0 1`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Fundamental Endgame Mates
-- **Instruction**: White to move: Execute the key move demonstrating Fundamental Endgame Mates.
-- **Solution Sequence**: `a6`
-- **Explanation**: Playing a6 directly reinforces the primary theme of Fundamental Endgame Mates.
-- **Hints**: Look for the most forcing move that executes Fundamental Endgame Mates. (Penalty: 20% per hint)
+- **Motif**: The Maroczy Bind (c4/e4)
+- **Instruction**: White to move: Find the tactical solution demonstrating The Maroczy Bind (c4/e4).
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d48_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d48_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d48_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d48_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d48_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Fundamental Endgame Mates
+Gedeon Barcza vs Bent Larsen (1964)
 
 ### Practical Sparring Assignment
-Complete targeted tactical_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in pawn_structure_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Fundamental Endgame Mates: Flashcard
-- Candidate Selection Review
+- The Maroczy Bind (c4/e4): Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for pawnStructures
 
 ### Remediation Protocol
-Review Day 47 foundational concepts, drill 5 targeted flashcards on endgames, and repeat exercise set.
+Review Day 47 foundational concepts, drill 5 targeted flashcards on pawnStructures, and repeat exercise set.
 
 ---
 
-## Day 49: Milestone 7: Pawn Endgames
+## Day 49: Milestone Exam: Pawn Breaks
 
 - **Phase**: Phase 7: King & Pawn Endgames, Opposition & Mates
-- **Theme**: Flawless calculation and execution of King and Pawn endgames
-- **Primary Skill Axis**: `endgames`
+- **Theme**: Timing central and flank breaks under sharp conditions
+- **Primary Skill Axis**: `pawnStructures`
 - **Estimated Training Time**: 90 minutes
-- **Difficulty Rating**: Elo 1901
+- **Difficulty Rating**: Elo 1896
 - **Prerequisites**: Day(s) 48
 - **Mastery Pass Threshold**: 85% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Milestone 7: Pawn Endgames themes.
-- Execute Milestone 7: Pawn Endgames in practical games.
+- Master the core mechanics and geometric triggers of Milestone Exam: Pawn Breaks.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Milestone 7: Fundamental Endgame Technique Exam
+# Day 49: Milestone Exam: Pawn Breaks
 
 ### 1. Simple Definition & Core Concept
-Mastery of Milestone 7: Pawn Endgames is essential for grandmaster-level chess thinking. Focus on Flawless calculation and execution of King and Pawn endgames.
+Milestone Exam: Pawn Breaks teaches foundational chess mastery: Timing central and flank breaks under sharp conditions.
 
 ### 2. Why It Matters in Practical Play
-Understanding Milestone 7: Pawn Endgames gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Milestone Exam: Pawn Breaks allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Milestone 7: Pawn Endgames systematically; never make a move without purpose.
+**Core Rule / Heuristic:** A premature break loses; a delayed break suffocates.
 
-**Canonical Diagram FEN:** `8/8/5k2/P7/8/8/8/4K3 w - - 0 1`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Milestone 7: Pawn Endgames
+### 4. Canonical Model Game
+Alexander Kotov vs Paul Keres (1950)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Milestone 7: Pawn Endgames.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Milestone 7: Pawn Endgames with strict Kotov discipline. Look for candidate a6 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Milestone 7: Pawn Endgames principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- A premature break loses; a delayed break suffocates.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Milestone 7: Pawn Endgames.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Milestone 7: Pawn Endgames.
+- Model Demonstration 1: Textbook execution of Milestone Exam: Pawn Breaks with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Milestone Exam: Pawn Breaks.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d49_ex1)
-- **FEN**: `8/8/5k2/P7/8/8/8/4K3 w - - 0 1`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Milestone 7: Pawn Endgames
-- **Instruction**: White to move: Execute the key move demonstrating Milestone 7: Pawn Endgames.
-- **Solution Sequence**: `a6`
-- **Explanation**: Playing a6 directly reinforces the primary theme of Milestone 7: Pawn Endgames.
-- **Hints**: Look for the most forcing move that executes Milestone 7: Pawn Endgames. (Penalty: 20% per hint)
+- **Motif**: Milestone Exam: Pawn Breaks
+- **Instruction**: White to move: Find the tactical solution demonstrating Milestone Exam: Pawn Breaks.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d49_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d49_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d49_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d49_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d49_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Milestone 7: Pawn Endgames
+Alexander Kotov vs Paul Keres (1950)
 
 ### Practical Sparring Assignment
-Complete targeted endgame_win_defend_lab interactive drills applying the decision checklist.
+Weekly Milestone Comprehensive Exam: Solve all positions with >= 85% accuracy and zero hints permitted.
 
 ### Spaced Repetition (SRS) Review Queue
-- Milestone 7: Pawn Endgames: Flashcard
-- Candidate Selection Review
+- Milestone Exam: Pawn Breaks: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for pawnStructures
 
 ### Remediation Protocol
-Review Day 48 foundational concepts, drill 5 targeted flashcards on endgames, and repeat exercise set.
+Review Day 48 foundational concepts, drill 5 targeted flashcards on pawnStructures, and repeat exercise set.
 
 ---
 
-## Day 50: Lucena Position (Building the Bridge)
+## Day 50: French Defense Pawn Chains
 
 - **Phase**: Phase 8: Rook Endgames (Lucena/Philidor) & Minor Pieces
-- **Theme**: The textbook winning method: rook on 4th rank, king shelter and bridge
-- **Primary Skill Axis**: `endgames`
+- **Theme**: Undermining White's d4 base with ...c5 and ...f6 strikes
+- **Primary Skill Axis**: `pawnStructures`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1915
+- **Difficulty Rating**: Elo 1911
 - **Prerequisites**: Day(s) 49
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Lucena Position (Building the Bridge) themes.
-- Execute Lucena Position (Building the Bridge) in practical games.
+- Master the core mechanics and geometric triggers of French Defense Pawn Chains.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Rook Endgames: Lucena Position & Bridge Building
+# Day 50: French Defense Pawn Chains
 
 ### 1. Simple Definition & Core Concept
-Mastery of Lucena Position (Building the Bridge) is essential for grandmaster-level chess thinking. Focus on The textbook winning method: rook on 4th rank, king shelter and bridge.
+French Defense Pawn Chains teaches foundational chess mastery: Undermining White's d4 base with ...c5 and ...f6 strikes.
 
 ### 2. Why It Matters in Practical Play
-Understanding Lucena Position (Building the Bridge) gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering French Defense Pawn Chains allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Lucena Position (Building the Bridge) systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Chisel the d4 pawn before White castles kingside.
 
-**Canonical Diagram FEN:** `8/8/5k2/P7/8/8/8/4K3 w - - 0 1`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Lucena Position (Building the Bridge)
+### 4. Canonical Model Game
+Mikhail Botvinnik vs Vasily Smyslov (1954)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Lucena Position (Building the Bridge).
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Lucena Position (Building the Bridge) with strict Kotov discipline. Look for candidate a6 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Lucena Position (Building the Bridge) principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Chisel the d4 pawn before White castles kingside.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Lucena Position (Building the Bridge).
-- Worked Demonstration 2: Refutation of sub-optimal replies in Lucena Position (Building the Bridge).
+- Model Demonstration 1: Textbook execution of French Defense Pawn Chains with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering French Defense Pawn Chains.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d50_ex1)
-- **FEN**: `8/8/5k2/P7/8/8/8/4K3 w - - 0 1`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Lucena Position (Building the Bridge)
-- **Instruction**: White to move: Execute the key move demonstrating Lucena Position (Building the Bridge).
-- **Solution Sequence**: `a6`
-- **Explanation**: Playing a6 directly reinforces the primary theme of Lucena Position (Building the Bridge).
-- **Hints**: Look for the most forcing move that executes Lucena Position (Building the Bridge). (Penalty: 20% per hint)
+- **Motif**: French Defense Pawn Chains
+- **Instruction**: White to move: Find the tactical solution demonstrating French Defense Pawn Chains.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d50_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d50_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d50_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d50_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d50_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Lucena Position (Building the Bridge)
+Mikhail Botvinnik vs Vasily Smyslov (1954)
 
 ### Practical Sparring Assignment
-Complete targeted endgame_win_defend_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in pawn_break_discovery_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Lucena Position (Building the Bridge): Flashcard
-- Candidate Selection Review
+- French Defense Pawn Chains: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for pawnStructures
 
 ### Remediation Protocol
-Review Day 49 foundational concepts, drill 5 targeted flashcards on endgames, and repeat exercise set.
+Review Day 49 foundational concepts, drill 5 targeted flashcards on pawnStructures, and repeat exercise set.
 
 ---
 
-## Day 51: Philidor Defense (Rook Endings)
+## Day 51: King's Indian Closed Chains
 
 - **Phase**: Phase 8: Rook Endgames (Lucena/Philidor) & Minor Pieces
-- **Theme**: The classic drawing method: 6th rank cut-off and rear check barrage
-- **Primary Skill Axis**: `endgames`
+- **Theme**: Opposite-flank attacks in closed center battlegrounds
+- **Primary Skill Axis**: `pawnStructures`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1930
+- **Difficulty Rating**: Elo 1925
 - **Prerequisites**: Day(s) 50
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Philidor Defense (Rook Endings) themes.
-- Execute Philidor Defense (Rook Endings) in practical games.
+- Master the core mechanics and geometric triggers of King's Indian Closed Chains.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Rook Endgames: The Philidor Defense
+# Day 51: King's Indian Closed Chains
 
 ### 1. Simple Definition & Core Concept
-Mastery of Philidor Defense (Rook Endings) is essential for grandmaster-level chess thinking. Focus on The classic drawing method: 6th rank cut-off and rear check barrage.
+King's Indian Closed Chains teaches foundational chess mastery: Opposite-flank attacks in closed center battlegrounds.
 
 ### 2. Why It Matters in Practical Play
-Understanding Philidor Defense (Rook Endings) gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering King's Indian Closed Chains allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Philidor Defense (Rook Endings) systematically; never make a move without purpose.
+**Core Rule / Heuristic:** White attacks on queenside; Black storms the king.
 
-**Canonical Diagram FEN:** `8/8/5k2/P7/8/8/8/4K3 w - - 0 1`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Philidor Defense (Rook Endings)
+### 4. Canonical Model Game
+Bobby Fischer vs Samuel Reshevsky (1961)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Philidor Defense (Rook Endings).
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Philidor Defense (Rook Endings) with strict Kotov discipline. Look for candidate a6 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Philidor Defense (Rook Endings) principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- White attacks on queenside; Black storms the king.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Philidor Defense (Rook Endings).
-- Worked Demonstration 2: Refutation of sub-optimal replies in Philidor Defense (Rook Endings).
+- Model Demonstration 1: Textbook execution of King's Indian Closed Chains with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering King's Indian Closed Chains.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d51_ex1)
-- **FEN**: `8/8/5k2/P7/8/8/8/4K3 w - - 0 1`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Philidor Defense (Rook Endings)
-- **Instruction**: White to move: Execute the key move demonstrating Philidor Defense (Rook Endings).
-- **Solution Sequence**: `a6`
-- **Explanation**: Playing a6 directly reinforces the primary theme of Philidor Defense (Rook Endings).
-- **Hints**: Look for the most forcing move that executes Philidor Defense (Rook Endings). (Penalty: 20% per hint)
+- **Motif**: King's Indian Closed Chains
+- **Instruction**: White to move: Find the tactical solution demonstrating King's Indian Closed Chains.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d51_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d51_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d51_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d51_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d51_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Philidor Defense (Rook Endings)
+Bobby Fischer vs Samuel Reshevsky (1961)
 
 ### Practical Sparring Assignment
-Complete targeted endgame_win_defend_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in pawn_break_discovery_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Philidor Defense (Rook Endings): Flashcard
-- Candidate Selection Review
+- King's Indian Closed Chains: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for pawnStructures
 
 ### Remediation Protocol
-Review Day 50 foundational concepts, drill 5 targeted flashcards on endgames, and repeat exercise set.
+Review Day 50 foundational concepts, drill 5 targeted flashcards on pawnStructures, and repeat exercise set.
 
 ---
 
-## Day 52: Active Rook & Tarrasch Rule
+## Day 52: Pawn Levers & Space Control
 
 - **Phase**: Phase 8: Rook Endgames (Lucena/Philidor) & Minor Pieces
-- **Theme**: Placing rooks behind passed pawns—both friendly and enemy
-- **Primary Skill Axis**: `endgames`
+- **Theme**: Using pawn levers to open diagonals for heavy artillery
+- **Primary Skill Axis**: `pawnStructures`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1944
+- **Difficulty Rating**: Elo 1940
 - **Prerequisites**: Day(s) 51
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Active Rook & Tarrasch Rule themes.
-- Execute Active Rook & Tarrasch Rule in practical games.
+- Master the core mechanics and geometric triggers of Pawn Levers & Space Control.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Active Rook Supremacy & The Tarrasch Rule
+# Day 52: Pawn Levers & Space Control
 
 ### 1. Simple Definition & Core Concept
-Mastery of Active Rook & Tarrasch Rule is essential for grandmaster-level chess thinking. Focus on Placing rooks behind passed pawns—both friendly and enemy.
+Pawn Levers & Space Control teaches foundational chess mastery: Using pawn levers to open diagonals for heavy artillery.
 
 ### 2. Why It Matters in Practical Play
-Understanding Active Rook & Tarrasch Rule gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Pawn Levers & Space Control allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Active Rook & Tarrasch Rule systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Pawn moves determine which files open for your rooks.
 
-**Canonical Diagram FEN:** `8/8/5k2/P7/8/8/8/4K3 w - - 0 1`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Active Rook & Tarrasch Rule
+### 4. Canonical Model Game
+Anatoly Karpov vs Viktor Korchnoi (1981)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Active Rook & Tarrasch Rule.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Active Rook & Tarrasch Rule with strict Kotov discipline. Look for candidate a6 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Active Rook & Tarrasch Rule principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Pawn moves determine which files open for your rooks.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Active Rook & Tarrasch Rule.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Active Rook & Tarrasch Rule.
+- Model Demonstration 1: Textbook execution of Pawn Levers & Space Control with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Pawn Levers & Space Control.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d52_ex1)
-- **FEN**: `8/8/5k2/P7/8/8/8/4K3 w - - 0 1`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Active Rook & Tarrasch Rule
-- **Instruction**: White to move: Execute the key move demonstrating Active Rook & Tarrasch Rule.
-- **Solution Sequence**: `a6`
-- **Explanation**: Playing a6 directly reinforces the primary theme of Active Rook & Tarrasch Rule.
-- **Hints**: Look for the most forcing move that executes Active Rook & Tarrasch Rule. (Penalty: 20% per hint)
+- **Motif**: Pawn Levers & Space Control
+- **Instruction**: White to move: Find the tactical solution demonstrating Pawn Levers & Space Control.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d52_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d52_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d52_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d52_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d52_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Active Rook & Tarrasch Rule
+Anatoly Karpov vs Viktor Korchnoi (1981)
 
 ### Practical Sparring Assignment
-Complete targeted endgame_win_defend_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in pawn_structure_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Active Rook & Tarrasch Rule: Flashcard
-- Candidate Selection Review
+- Pawn Levers & Space Control: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for pawnStructures
 
 ### Remediation Protocol
-Review Day 51 foundational concepts, drill 5 targeted flashcards on endgames, and repeat exercise set.
+Review Day 51 foundational concepts, drill 5 targeted flashcards on pawnStructures, and repeat exercise set.
 
 ---
 
-## Day 53: Bishop Endgames
+## Day 53: Middlegame Passed Pawns
 
 - **Phase**: Phase 8: Rook Endgames (Lucena/Philidor) & Minor Pieces
-- **Theme**: Drawish tendency of opposite-color bishops vs same-color pawn targets
-- **Primary Skill Axis**: `endgames`
+- **Theme**: Creating, advancing, and escorting passed pawns to victory
+- **Primary Skill Axis**: `pawnStructures`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1959
+- **Difficulty Rating**: Elo 1954
 - **Prerequisites**: Day(s) 52
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Bishop Endgames themes.
-- Execute Bishop Endgames in practical games.
+- Master the core mechanics and geometric triggers of Middlegame Passed Pawns.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Bishop Endgames: Same vs Opposite Color
+# Day 53: Middlegame Passed Pawns
 
 ### 1. Simple Definition & Core Concept
-Mastery of Bishop Endgames is essential for grandmaster-level chess thinking. Focus on Drawish tendency of opposite-color bishops vs same-color pawn targets.
+Middlegame Passed Pawns teaches foundational chess mastery: Creating, advancing, and escorting passed pawns to victory.
 
 ### 2. Why It Matters in Practical Play
-Understanding Bishop Endgames gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Middlegame Passed Pawns allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Bishop Endgames systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Passed pawns must be pushed with heavy piece escort.
 
-**Canonical Diagram FEN:** `8/8/5k2/P7/8/8/8/4K3 w - - 0 1`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Bishop Endgames
+### 4. Canonical Model Game
+Magnus Carlsen vs Fabiano Caruana (2018)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Bishop Endgames.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Bishop Endgames with strict Kotov discipline. Look for candidate a6 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Bishop Endgames principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Passed pawns must be pushed with heavy piece escort.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Bishop Endgames.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Bishop Endgames.
+- Model Demonstration 1: Textbook execution of Middlegame Passed Pawns with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Middlegame Passed Pawns.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d53_ex1)
-- **FEN**: `8/8/5k2/P7/8/8/8/4K3 w - - 0 1`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Bishop Endgames
-- **Instruction**: White to move: Execute the key move demonstrating Bishop Endgames.
-- **Solution Sequence**: `a6`
-- **Explanation**: Playing a6 directly reinforces the primary theme of Bishop Endgames.
-- **Hints**: Look for the most forcing move that executes Bishop Endgames. (Penalty: 20% per hint)
+- **Motif**: Middlegame Passed Pawns
+- **Instruction**: White to move: Find the tactical solution demonstrating Middlegame Passed Pawns.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d53_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d53_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d53_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d53_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d53_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Bishop Endgames
+Magnus Carlsen vs Fabiano Caruana (2018)
 
 ### Practical Sparring Assignment
-Complete targeted endgame_win_defend_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in pawn_structure_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Bishop Endgames: Flashcard
-- Candidate Selection Review
+- Middlegame Passed Pawns: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for pawnStructures
 
 ### Remediation Protocol
-Review Day 52 foundational concepts, drill 5 targeted flashcards on endgames, and repeat exercise set.
+Review Day 52 foundational concepts, drill 5 targeted flashcards on pawnStructures, and repeat exercise set.
 
 ---
 
-## Day 54: Knight Endgames & Blockades
+## Day 54: Pawn Majority Conversion
 
 - **Phase**: Phase 8: Rook Endgames (Lucena/Philidor) & Minor Pieces
-- **Theme**: Knight maneuvering speed against outside passed pawns
-- **Primary Skill Axis**: `endgames`
+- **Theme**: Creating distant passed pawns from queenside majorities
+- **Primary Skill Axis**: `conversion`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1974
+- **Difficulty Rating**: Elo 1969
 - **Prerequisites**: Day(s) 53
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Knight Endgames & Blockades themes.
-- Execute Knight Endgames & Blockades in practical games.
+- Master the core mechanics and geometric triggers of Pawn Majority Conversion.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Knight Endgames: Blockades & Pawn Races
+# Day 54: Pawn Majority Conversion
 
 ### 1. Simple Definition & Core Concept
-Mastery of Knight Endgames & Blockades is essential for grandmaster-level chess thinking. Focus on Knight maneuvering speed against outside passed pawns.
+Pawn Majority Conversion teaches foundational chess mastery: Creating distant passed pawns from queenside majorities.
 
 ### 2. Why It Matters in Practical Play
-Understanding Knight Endgames & Blockades gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Pawn Majority Conversion allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Knight Endgames & Blockades systematically; never make a move without purpose.
+**Core Rule / Heuristic:** An outside passed pawn deflects the enemy king.
 
-**Canonical Diagram FEN:** `8/8/5k2/P7/8/8/8/4K3 w - - 0 1`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Knight Endgames & Blockades
+### 4. Canonical Model Game
+Jose Raul Capablanca vs Savielly Tartakower (1924)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Knight Endgames & Blockades.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Knight Endgames & Blockades with strict Kotov discipline. Look for candidate a6 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Knight Endgames & Blockades principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- An outside passed pawn deflects the enemy king.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Knight Endgames & Blockades.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Knight Endgames & Blockades.
+- Model Demonstration 1: Textbook execution of Pawn Majority Conversion with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Pawn Majority Conversion.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d54_ex1)
-- **FEN**: `8/8/5k2/P7/8/8/8/4K3 w - - 0 1`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Knight Endgames & Blockades
-- **Instruction**: White to move: Execute the key move demonstrating Knight Endgames & Blockades.
-- **Solution Sequence**: `a6`
-- **Explanation**: Playing a6 directly reinforces the primary theme of Knight Endgames & Blockades.
-- **Hints**: Look for the most forcing move that executes Knight Endgames & Blockades. (Penalty: 20% per hint)
+- **Motif**: Pawn Majority Conversion
+- **Instruction**: White to move: Find the tactical solution demonstrating Pawn Majority Conversion.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d54_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d54_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d54_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d54_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d54_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Knight Endgames & Blockades
+Jose Raul Capablanca vs Savielly Tartakower (1924)
 
 ### Practical Sparring Assignment
-Complete targeted endgame_win_defend_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in conversion_challenge_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Knight Endgames & Blockades: Flashcard
-- Candidate Selection Review
+- Pawn Majority Conversion: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for conversion
 
 ### Remediation Protocol
-Review Day 53 foundational concepts, drill 5 targeted flashcards on endgames, and repeat exercise set.
+Review Day 53 foundational concepts, drill 5 targeted flashcards on conversion, and repeat exercise set.
 
 ---
 
-## Day 55: Practical Queen Endgames
+## Day 55: Positional Pawn Sacrifices
 
 - **Phase**: Phase 8: Rook Endgames (Lucena/Philidor) & Minor Pieces
-- **Theme**: Sheltering the king from perpetual spite checks and pushing passers
-- **Primary Skill Axis**: `endgames`
+- **Theme**: Dumping a pawn to seize eternal outposts and line dominance
+- **Primary Skill Axis**: `pawnStructures`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 1988
+- **Difficulty Rating**: Elo 1983
 - **Prerequisites**: Day(s) 54
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Practical Queen Endgames themes.
-- Execute Practical Queen Endgames in practical games.
+- Master the core mechanics and geometric triggers of Positional Pawn Sacrifices.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Practical Queen Endgames: King Safety & Checks
+# Day 55: Positional Pawn Sacrifices
 
 ### 1. Simple Definition & Core Concept
-Mastery of Practical Queen Endgames is essential for grandmaster-level chess thinking. Focus on Sheltering the king from perpetual spite checks and pushing passers.
+Positional Pawn Sacrifices teaches foundational chess mastery: Dumping a pawn to seize eternal outposts and line dominance.
 
 ### 2. Why It Matters in Practical Play
-Understanding Practical Queen Endgames gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Positional Pawn Sacrifices allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Practical Queen Endgames systematically; never make a move without purpose.
+**Core Rule / Heuristic:** A pawn given for dynamic open lines is often a bargain.
 
-**Canonical Diagram FEN:** `8/8/5k2/P7/8/8/8/4K3 w - - 0 1`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Practical Queen Endgames
+### 4. Canonical Model Game
+David Bronstein vs Paul Keres (1955)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Practical Queen Endgames.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Practical Queen Endgames with strict Kotov discipline. Look for candidate a6 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Practical Queen Endgames principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- A pawn given for dynamic open lines is often a bargain.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Practical Queen Endgames.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Practical Queen Endgames.
+- Model Demonstration 1: Textbook execution of Positional Pawn Sacrifices with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Positional Pawn Sacrifices.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d55_ex1)
-- **FEN**: `8/8/5k2/P7/8/8/8/4K3 w - - 0 1`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Practical Queen Endgames
-- **Instruction**: White to move: Execute the key move demonstrating Practical Queen Endgames.
-- **Solution Sequence**: `a6`
-- **Explanation**: Playing a6 directly reinforces the primary theme of Practical Queen Endgames.
-- **Hints**: Look for the most forcing move that executes Practical Queen Endgames. (Penalty: 20% per hint)
+- **Motif**: Positional Pawn Sacrifices
+- **Instruction**: White to move: Find the tactical solution demonstrating Positional Pawn Sacrifices.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d55_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d55_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d55_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d55_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d55_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Practical Queen Endgames
+David Bronstein vs Paul Keres (1955)
 
 ### Practical Sparring Assignment
-Complete targeted endgame_win_defend_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in pawn_structure_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Practical Queen Endgames: Flashcard
-- Candidate Selection Review
+- Positional Pawn Sacrifices: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for pawnStructures
 
 ### Remediation Protocol
-Review Day 54 foundational concepts, drill 5 targeted flashcards on endgames, and repeat exercise set.
+Review Day 54 foundational concepts, drill 5 targeted flashcards on pawnStructures, and repeat exercise set.
 
 ---
 
-## Day 56: Milestone 8: Advanced Endgames
+## Day 56: Grand Milestone: Pawn Mastery
 
 - **Phase**: Phase 8: Rook Endgames (Lucena/Philidor) & Minor Pieces
-- **Theme**: Technical mastery across Lucena, Philidor, and minor piece conversions
-- **Primary Skill Axis**: `endgames`
+- **Theme**: Complete structural evaluation and break mastery exam
+- **Primary Skill Axis**: `pawnStructures`
 - **Estimated Training Time**: 90 minutes
-- **Difficulty Rating**: Elo 2003
+- **Difficulty Rating**: Elo 1998
 - **Prerequisites**: Day(s) 55
 - **Mastery Pass Threshold**: 85% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Milestone 8: Advanced Endgames themes.
-- Execute Milestone 8: Advanced Endgames in practical games.
+- Master the core mechanics and geometric triggers of Grand Milestone: Pawn Mastery.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Milestone 8: Advanced Endgame Mastery Exam
+# Day 56: Grand Milestone: Pawn Mastery
 
 ### 1. Simple Definition & Core Concept
-Mastery of Milestone 8: Advanced Endgames is essential for grandmaster-level chess thinking. Focus on Technical mastery across Lucena, Philidor, and minor piece conversions.
+Grand Milestone: Pawn Mastery teaches foundational chess mastery: Complete structural evaluation and break mastery exam.
 
 ### 2. Why It Matters in Practical Play
-Understanding Milestone 8: Advanced Endgames gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Grand Milestone: Pawn Mastery allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Milestone 8: Advanced Endgames systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Pawns are the skeleton; understand every joint.
 
-**Canonical Diagram FEN:** `8/8/5k2/P7/8/8/8/4K3 w - - 0 1`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Milestone 8: Advanced Endgames
+### 4. Canonical Model Game
+Vasily Smyslov vs Paul Keres (1953)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Milestone 8: Advanced Endgames.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Milestone 8: Advanced Endgames with strict Kotov discipline. Look for candidate a6 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Milestone 8: Advanced Endgames principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Pawns are the skeleton; understand every joint.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Milestone 8: Advanced Endgames.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Milestone 8: Advanced Endgames.
+- Model Demonstration 1: Textbook execution of Grand Milestone: Pawn Mastery with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Grand Milestone: Pawn Mastery.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d56_ex1)
-- **FEN**: `8/8/5k2/P7/8/8/8/4K3 w - - 0 1`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Milestone 8: Advanced Endgames
-- **Instruction**: White to move: Execute the key move demonstrating Milestone 8: Advanced Endgames.
-- **Solution Sequence**: `a6`
-- **Explanation**: Playing a6 directly reinforces the primary theme of Milestone 8: Advanced Endgames.
-- **Hints**: Look for the most forcing move that executes Milestone 8: Advanced Endgames. (Penalty: 20% per hint)
+- **Motif**: Grand Milestone: Pawn Mastery
+- **Instruction**: White to move: Find the tactical solution demonstrating Grand Milestone: Pawn Mastery.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d56_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d56_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d56_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d56_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d56_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Milestone 8: Advanced Endgames
+Vasily Smyslov vs Paul Keres (1953)
 
 ### Practical Sparring Assignment
-Complete targeted endgame_win_defend_lab interactive drills applying the decision checklist.
+Weekly Milestone Comprehensive Exam: Solve all positions with >= 85% accuracy and zero hints permitted.
 
 ### Spaced Repetition (SRS) Review Queue
-- Milestone 8: Advanced Endgames: Flashcard
-- Candidate Selection Review
+- Grand Milestone: Pawn Mastery: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for pawnStructures
 
 ### Remediation Protocol
-Review Day 55 foundational concepts, drill 5 targeted flashcards on endgames, and repeat exercise set.
+Review Day 55 foundational concepts, drill 5 targeted flashcards on pawnStructures, and repeat exercise set.
 
 ---
 
-## Day 57: Opening Philosophy & Architecture
+## Day 57: King & Pawn: The Opposition
 
 - **Phase**: Phase 9: Opening Mastery & Compact Repertoires
-- **Theme**: Why moves work, pawn structure goals, and harmonious piece setups
-- **Primary Skill Axis**: `openings`
+- **Theme**: Seizing direct, distant, and diagonal opposition
+- **Primary Skill Axis**: `endgames`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 2017
+- **Difficulty Rating**: Elo 2012
 - **Prerequisites**: Day(s) 56
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Opening Philosophy & Architecture themes.
-- Execute Opening Philosophy & Architecture in practical games.
+- Master the core mechanics and geometric triggers of King & Pawn: The Opposition.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Opening Philosophy & Repertoire Architecture
+# Day 57: King & Pawn: The Opposition
 
 ### 1. Simple Definition & Core Concept
-Mastery of Opening Philosophy & Architecture is essential for grandmaster-level chess thinking. Focus on Why moves work, pawn structure goals, and harmonious piece setups.
+King & Pawn: The Opposition teaches foundational chess mastery: Seizing direct, distant, and diagonal opposition.
 
 ### 2. Why It Matters in Practical Play
-Understanding Opening Philosophy & Architecture gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering King & Pawn: The Opposition allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Opening Philosophy & Architecture systematically; never make a move without purpose.
+**Core Rule / Heuristic:** The player who does NOT have to move holds opposition.
 
-**Canonical Diagram FEN:** `r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Opening Philosophy & Architecture
+### 4. Canonical Model Game
+Emanuel Lasker vs Siegbert Tarrasch (1908)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Opening Philosophy & Architecture.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Opening Philosophy & Architecture with strict Kotov discipline. Look for candidate Bc4 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Opening Philosophy & Architecture principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- The player who does NOT have to move holds opposition.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Opening Philosophy & Architecture.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Opening Philosophy & Architecture.
+- Model Demonstration 1: Textbook execution of King & Pawn: The Opposition with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering King & Pawn: The Opposition.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d57_ex1)
-- **FEN**: `r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opening Philosophy & Architecture
-- **Instruction**: White to move: Execute the key move demonstrating Opening Philosophy & Architecture.
-- **Solution Sequence**: `Bc4`
-- **Explanation**: Playing Bc4 directly reinforces the primary theme of Opening Philosophy & Architecture.
-- **Hints**: Look for the most forcing move that executes Opening Philosophy & Architecture. (Penalty: 20% per hint)
+- **Motif**: King & Pawn: The Opposition
+- **Instruction**: White to move: Find the tactical solution demonstrating King & Pawn: The Opposition.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d57_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d57_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d57_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d57_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d57_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Opening Philosophy & Architecture
+Emanuel Lasker vs Siegbert Tarrasch (1908)
 
 ### Practical Sparring Assignment
-Complete targeted opening_plan_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in endgame_win_defend_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Opening Philosophy & Architecture: Flashcard
-- Candidate Selection Review
+- King & Pawn: The Opposition: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for endgames
 
 ### Remediation Protocol
-Review Day 56 foundational concepts, drill 5 targeted flashcards on openings, and repeat exercise set.
+Review Day 56 foundational concepts, drill 5 targeted flashcards on endgames, and repeat exercise set.
 
 ---
 
-## Day 58: White Repertoire: 1.e4 Strategy
+## Day 58: King & Pawn: Rule of Square
 
 - **Phase**: Phase 9: Opening Mastery & Compact Repertoires
-- **Theme**: Mastering the Italian, Scotch, and Open Sicilian structures as White
-- **Primary Skill Axis**: `openings`
+- **Theme**: Calculating pawn races and key queening squares without moving
+- **Primary Skill Axis**: `endgames`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 2032
+- **Difficulty Rating**: Elo 2027
 - **Prerequisites**: Day(s) 57
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary White Repertoire: 1.e4 Strategy themes.
-- Execute White Repertoire: 1.e4 Strategy in practical games.
+- Master the core mechanics and geometric triggers of King & Pawn: Rule of Square.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Compact White Repertoire: 1.e4 King's Pawn Strategy
+# Day 58: King & Pawn: Rule of Square
 
 ### 1. Simple Definition & Core Concept
-Mastery of White Repertoire: 1.e4 Strategy is essential for grandmaster-level chess thinking. Focus on Mastering the Italian, Scotch, and Open Sicilian structures as White.
+King & Pawn: Rule of Square teaches foundational chess mastery: Calculating pawn races and key queening squares without moving.
 
 ### 2. Why It Matters in Practical Play
-Understanding White Repertoire: 1.e4 Strategy gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering King & Pawn: Rule of Square allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply White Repertoire: 1.e4 Strategy systematically; never make a move without purpose.
+**Core Rule / Heuristic:** If the enemy king is inside the square, it catches the pawn.
 
-**Canonical Diagram FEN:** `r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating White Repertoire: 1.e4 Strategy
+### 4. Canonical Model Game
+Francois Philidor Studies (1777)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in White Repertoire: 1.e4 Strategy.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in White Repertoire: 1.e4 Strategy with strict Kotov discipline. Look for candidate Bc4 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master White Repertoire: 1.e4 Strategy principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- If the enemy king is inside the square, it catches the pawn.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of White Repertoire: 1.e4 Strategy.
-- Worked Demonstration 2: Refutation of sub-optimal replies in White Repertoire: 1.e4 Strategy.
+- Model Demonstration 1: Textbook execution of King & Pawn: Rule of Square with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering King & Pawn: Rule of Square.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d58_ex1)
-- **FEN**: `r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: White Repertoire: 1.e4 Strategy
-- **Instruction**: White to move: Execute the key move demonstrating White Repertoire: 1.e4 Strategy.
-- **Solution Sequence**: `Bc4`
-- **Explanation**: Playing Bc4 directly reinforces the primary theme of White Repertoire: 1.e4 Strategy.
-- **Hints**: Look for the most forcing move that executes White Repertoire: 1.e4 Strategy. (Penalty: 20% per hint)
+- **Motif**: King & Pawn: Rule of Square
+- **Instruction**: White to move: Find the tactical solution demonstrating King & Pawn: Rule of Square.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d58_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d58_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d58_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d58_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d58_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating White Repertoire: 1.e4 Strategy
+Francois Philidor Studies (1777)
 
 ### Practical Sparring Assignment
-Complete targeted opening_plan_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in endgame_win_defend_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- White Repertoire: 1.e4 Strategy: Flashcard
-- Candidate Selection Review
+- King & Pawn: Rule of Square: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for endgames
 
 ### Remediation Protocol
-Review Day 57 foundational concepts, drill 5 targeted flashcards on openings, and repeat exercise set.
+Review Day 57 foundational concepts, drill 5 targeted flashcards on endgames, and repeat exercise set.
 
 ---
 
-## Day 59: White Repertoire: 1.d4 Catalan
+## Day 59: Triangulation & Zugzwang
 
 - **Phase**: Phase 9: Opening Mastery & Compact Repertoires
-- **Theme**: Positional pressure, light-square clamp, and Catalan fianchetto
-- **Primary Skill Axis**: `openings`
+- **Theme**: Wasting a tempo deliberately to force opponent king backward
+- **Primary Skill Axis**: `endgames`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 2047
+- **Difficulty Rating**: Elo 2041
 - **Prerequisites**: Day(s) 58
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary White Repertoire: 1.d4 Catalan themes.
-- Execute White Repertoire: 1.d4 Catalan in practical games.
+- Master the core mechanics and geometric triggers of Triangulation & Zugzwang.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Compact White Repertoire: 1.d4 Queen's Pawn / Catalan
+# Day 59: Triangulation & Zugzwang
 
 ### 1. Simple Definition & Core Concept
-Mastery of White Repertoire: 1.d4 Catalan is essential for grandmaster-level chess thinking. Focus on Positional pressure, light-square clamp, and Catalan fianchetto.
+Triangulation & Zugzwang teaches foundational chess mastery: Wasting a tempo deliberately to force opponent king backward.
 
 ### 2. Why It Matters in Practical Play
-Understanding White Repertoire: 1.d4 Catalan gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Triangulation & Zugzwang allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply White Repertoire: 1.d4 Catalan systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Drop a tempo in king triangles to hand over the move.
 
-**Canonical Diagram FEN:** `r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating White Repertoire: 1.d4 Catalan
+### 4. Canonical Model Game
+Jose Raul Capablanca vs Alexander Alekhine (1927)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in White Repertoire: 1.d4 Catalan.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in White Repertoire: 1.d4 Catalan with strict Kotov discipline. Look for candidate Bc4 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master White Repertoire: 1.d4 Catalan principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Drop a tempo in king triangles to hand over the move.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of White Repertoire: 1.d4 Catalan.
-- Worked Demonstration 2: Refutation of sub-optimal replies in White Repertoire: 1.d4 Catalan.
+- Model Demonstration 1: Textbook execution of Triangulation & Zugzwang with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Triangulation & Zugzwang.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d59_ex1)
-- **FEN**: `r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: White Repertoire: 1.d4 Catalan
-- **Instruction**: White to move: Execute the key move demonstrating White Repertoire: 1.d4 Catalan.
-- **Solution Sequence**: `Bc4`
-- **Explanation**: Playing Bc4 directly reinforces the primary theme of White Repertoire: 1.d4 Catalan.
-- **Hints**: Look for the most forcing move that executes White Repertoire: 1.d4 Catalan. (Penalty: 20% per hint)
+- **Motif**: Triangulation & Zugzwang
+- **Instruction**: White to move: Find the tactical solution demonstrating Triangulation & Zugzwang.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d59_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d59_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d59_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d59_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d59_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating White Repertoire: 1.d4 Catalan
+Jose Raul Capablanca vs Alexander Alekhine (1927)
 
 ### Practical Sparring Assignment
-Complete targeted opening_plan_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in endgame_win_defend_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- White Repertoire: 1.d4 Catalan: Flashcard
-- Candidate Selection Review
+- Triangulation & Zugzwang: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for endgames
 
 ### Remediation Protocol
-Review Day 58 foundational concepts, drill 5 targeted flashcards on openings, and repeat exercise set.
+Review Day 58 foundational concepts, drill 5 targeted flashcards on endgames, and repeat exercise set.
 
 ---
 
-## Day 60: Black Repertoire vs 1.e4
+## Day 60: The Reti Diagonal Maneuver
 
 - **Phase**: Phase 9: Opening Mastery & Compact Repertoires
-- **Theme**: Asymmetric counter-play in the Sicilian or impenetrable Caro-Kann fortress
-- **Primary Skill Axis**: `openings`
+- **Theme**: Diagonal king marches with dual threats to queen or defend
+- **Primary Skill Axis**: `endgames`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 2061
+- **Difficulty Rating**: Elo 2056
 - **Prerequisites**: Day(s) 59
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Black Repertoire vs 1.e4 themes.
-- Execute Black Repertoire vs 1.e4 in practical games.
+- Master the core mechanics and geometric triggers of The Reti Diagonal Maneuver.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Black Repertoire vs 1.e4: Resilient Sicilian / Caro-Kann
+# Day 60: The Reti Diagonal Maneuver
 
 ### 1. Simple Definition & Core Concept
-Mastery of Black Repertoire vs 1.e4 is essential for grandmaster-level chess thinking. Focus on Asymmetric counter-play in the Sicilian or impenetrable Caro-Kann fortress.
+The Reti Diagonal Maneuver teaches foundational chess mastery: Diagonal king marches with dual threats to queen or defend.
 
 ### 2. Why It Matters in Practical Play
-Understanding Black Repertoire vs 1.e4 gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering The Reti Diagonal Maneuver allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Black Repertoire vs 1.e4 systematically; never make a move without purpose.
+**Core Rule / Heuristic:** March diagonally to pursue one pawn while escorting another.
 
-**Canonical Diagram FEN:** `r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Black Repertoire vs 1.e4
+### 4. Canonical Model Game
+Richard Reti Endgame Studies (1921)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Black Repertoire vs 1.e4.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Black Repertoire vs 1.e4 with strict Kotov discipline. Look for candidate Bc4 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Black Repertoire vs 1.e4 principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- March diagonally to pursue one pawn while escorting another.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Black Repertoire vs 1.e4.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Black Repertoire vs 1.e4.
+- Model Demonstration 1: Textbook execution of The Reti Diagonal Maneuver with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering The Reti Diagonal Maneuver.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d60_ex1)
-- **FEN**: `r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Black Repertoire vs 1.e4
-- **Instruction**: White to move: Execute the key move demonstrating Black Repertoire vs 1.e4.
-- **Solution Sequence**: `Bc4`
-- **Explanation**: Playing Bc4 directly reinforces the primary theme of Black Repertoire vs 1.e4.
-- **Hints**: Look for the most forcing move that executes Black Repertoire vs 1.e4. (Penalty: 20% per hint)
+- **Motif**: The Reti Diagonal Maneuver
+- **Instruction**: White to move: Find the tactical solution demonstrating The Reti Diagonal Maneuver.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d60_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d60_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d60_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d60_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d60_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Black Repertoire vs 1.e4
+Richard Reti Endgame Studies (1921)
 
 ### Practical Sparring Assignment
-Complete targeted opening_plan_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in endgame_win_defend_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Black Repertoire vs 1.e4: Flashcard
-- Candidate Selection Review
+- The Reti Diagonal Maneuver: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for endgames
 
 ### Remediation Protocol
-Review Day 59 foundational concepts, drill 5 targeted flashcards on openings, and repeat exercise set.
+Review Day 59 foundational concepts, drill 5 targeted flashcards on endgames, and repeat exercise set.
 
 ---
 
-## Day 61: Black Repertoire vs 1.d4
+## Day 61: Rook Endgames: Lucena Bridge
 
 - **Phase**: Phase 9: Opening Mastery & Compact Repertoires
-- **Theme**: Dark-square control in the Nimzo or dynamic kingside storm in the KID
-- **Primary Skill Axis**: `openings`
+- **Theme**: Building a bridge with Rf4/Rd4+ to safely queen on the 7th
+- **Primary Skill Axis**: `endgames`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 2076
+- **Difficulty Rating**: Elo 2070
 - **Prerequisites**: Day(s) 60
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Black Repertoire vs 1.d4 themes.
-- Execute Black Repertoire vs 1.d4 in practical games.
+- Master the core mechanics and geometric triggers of Rook Endgames: Lucena Bridge.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Black Repertoire vs 1.d4: Nimzo-Indian & King's Indian
+# Day 61: Rook Endgames: Lucena Bridge
 
 ### 1. Simple Definition & Core Concept
-Mastery of Black Repertoire vs 1.d4 is essential for grandmaster-level chess thinking. Focus on Dark-square control in the Nimzo or dynamic kingside storm in the KID.
+Rook Endgames: Lucena Bridge teaches foundational chess mastery: Building a bridge with Rf4/Rd4+ to safely queen on the 7th.
 
 ### 2. Why It Matters in Practical Play
-Understanding Black Repertoire vs 1.d4 gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Rook Endgames: Lucena Bridge allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Black Repertoire vs 1.d4 systematically; never make a move without purpose.
+**Core Rule / Heuristic:** With rook and pawn on 7th, build a bridge on the 4th rank.
 
-**Canonical Diagram FEN:** `r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Black Repertoire vs 1.d4
+### 4. Canonical Model Game
+Jose Raul Capablanca vs Savielly Tartakower (1924)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Black Repertoire vs 1.d4.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Black Repertoire vs 1.d4 with strict Kotov discipline. Look for candidate Bc4 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Black Repertoire vs 1.d4 principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- With rook and pawn on 7th, build a bridge on the 4th rank.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Black Repertoire vs 1.d4.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Black Repertoire vs 1.d4.
+- Model Demonstration 1: Textbook execution of Rook Endgames: Lucena Bridge with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Rook Endgames: Lucena Bridge.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d61_ex1)
-- **FEN**: `r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Black Repertoire vs 1.d4
-- **Instruction**: White to move: Execute the key move demonstrating Black Repertoire vs 1.d4.
-- **Solution Sequence**: `Bc4`
-- **Explanation**: Playing Bc4 directly reinforces the primary theme of Black Repertoire vs 1.d4.
-- **Hints**: Look for the most forcing move that executes Black Repertoire vs 1.d4. (Penalty: 20% per hint)
+- **Motif**: Rook Endgames: Lucena Bridge
+- **Instruction**: White to move: Find the tactical solution demonstrating Rook Endgames: Lucena Bridge.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d61_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d61_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d61_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d61_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d61_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Black Repertoire vs 1.d4
+Jose Raul Capablanca vs Savielly Tartakower (1924)
 
 ### Practical Sparring Assignment
-Complete targeted opening_plan_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in endgame_win_defend_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Black Repertoire vs 1.d4: Flashcard
-- Candidate Selection Review
+- Rook Endgames: Lucena Bridge: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for endgames
 
 ### Remediation Protocol
-Review Day 60 foundational concepts, drill 5 targeted flashcards on openings, and repeat exercise set.
+Review Day 60 foundational concepts, drill 5 targeted flashcards on endgames, and repeat exercise set.
 
 ---
 
-## Day 62: Dynamic ECO Recognition
+## Day 62: Rook Endgames: Philidor Defense
 
 - **Phase**: Phase 9: Opening Mastery & Compact Repertoires
-- **Theme**: Real-time opening tree identification and exploiting early deviations
-- **Primary Skill Axis**: `openings`
+- **Theme**: Third-rank passive clamp transitioning to rear checks
+- **Primary Skill Axis**: `endgames`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 2091
+- **Difficulty Rating**: Elo 2085
 - **Prerequisites**: Day(s) 61
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Dynamic ECO Recognition themes.
-- Execute Dynamic ECO Recognition in practical games.
+- Master the core mechanics and geometric triggers of Rook Endgames: Philidor Defense.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Dynamic ECO Opening Recognition & Punishing Blunders
+# Day 62: Rook Endgames: Philidor Defense
 
 ### 1. Simple Definition & Core Concept
-Mastery of Dynamic ECO Recognition is essential for grandmaster-level chess thinking. Focus on Real-time opening tree identification and exploiting early deviations.
+Rook Endgames: Philidor Defense teaches foundational chess mastery: Third-rank passive clamp transitioning to rear checks.
 
 ### 2. Why It Matters in Practical Play
-Understanding Dynamic ECO Recognition gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Rook Endgames: Philidor Defense allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Dynamic ECO Recognition systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Hold the 3rd/6th rank until the pawn steps forward, then check from rear.
 
-**Canonical Diagram FEN:** `r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Dynamic ECO Recognition
+### 4. Canonical Model Game
+Francois Philidor Studies (1777)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Dynamic ECO Recognition.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Dynamic ECO Recognition with strict Kotov discipline. Look for candidate Bc4 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Dynamic ECO Recognition principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Hold the 3rd/6th rank until the pawn steps forward, then check from rear.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Dynamic ECO Recognition.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Dynamic ECO Recognition.
+- Model Demonstration 1: Textbook execution of Rook Endgames: Philidor Defense with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Rook Endgames: Philidor Defense.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d62_ex1)
-- **FEN**: `r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Dynamic ECO Recognition
-- **Instruction**: White to move: Execute the key move demonstrating Dynamic ECO Recognition.
-- **Solution Sequence**: `Bc4`
-- **Explanation**: Playing Bc4 directly reinforces the primary theme of Dynamic ECO Recognition.
-- **Hints**: Look for the most forcing move that executes Dynamic ECO Recognition. (Penalty: 20% per hint)
+- **Motif**: Rook Endgames: Philidor Defense
+- **Instruction**: White to move: Find the tactical solution demonstrating Rook Endgames: Philidor Defense.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d62_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d62_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d62_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d62_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d62_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Dynamic ECO Recognition
+Francois Philidor Studies (1777)
 
 ### Practical Sparring Assignment
-Complete targeted opening_plan_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in endgame_win_defend_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Dynamic ECO Recognition: Flashcard
-- Candidate Selection Review
+- Rook Endgames: Philidor Defense: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for endgames
 
 ### Remediation Protocol
-Review Day 61 foundational concepts, drill 5 targeted flashcards on openings, and repeat exercise set.
+Review Day 61 foundational concepts, drill 5 targeted flashcards on endgames, and repeat exercise set.
 
 ---
 
-## Day 63: Milestone 9: Opening Repertoire
+## Day 63: Milestone Exam: Core Endgames
 
 - **Phase**: Phase 9: Opening Mastery & Compact Repertoires
-- **Theme**: Deep understanding of moves, pawn plans, and theoretical deviations
-- **Primary Skill Axis**: `openings`
+- **Theme**: Flawless execution of Lucena, Philidor, and opposition
+- **Primary Skill Axis**: `endgames`
 - **Estimated Training Time**: 90 minutes
-- **Difficulty Rating**: Elo 2105
+- **Difficulty Rating**: Elo 2099
 - **Prerequisites**: Day(s) 62
 - **Mastery Pass Threshold**: 85% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Milestone 9: Opening Repertoire themes.
-- Execute Milestone 9: Opening Repertoire in practical games.
+- Master the core mechanics and geometric triggers of Milestone Exam: Core Endgames.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Milestone 9: Opening Repertoire & Transition Exam
+# Day 63: Milestone Exam: Core Endgames
 
 ### 1. Simple Definition & Core Concept
-Mastery of Milestone 9: Opening Repertoire is essential for grandmaster-level chess thinking. Focus on Deep understanding of moves, pawn plans, and theoretical deviations.
+Milestone Exam: Core Endgames teaches foundational chess mastery: Flawless execution of Lucena, Philidor, and opposition.
 
 ### 2. Why It Matters in Practical Play
-Understanding Milestone 9: Opening Repertoire gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Milestone Exam: Core Endgames allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Milestone 9: Opening Repertoire systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Endgame theoretical benchmarks must be 100% automated.
 
-**Canonical Diagram FEN:** `r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Milestone 9: Opening Repertoire
+### 4. Canonical Model Game
+Viktor Korchnoi vs Anatoly Karpov (1978)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Milestone 9: Opening Repertoire.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Milestone 9: Opening Repertoire with strict Kotov discipline. Look for candidate Bc4 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Milestone 9: Opening Repertoire principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Endgame theoretical benchmarks must be 100% automated.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Milestone 9: Opening Repertoire.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Milestone 9: Opening Repertoire.
+- Model Demonstration 1: Textbook execution of Milestone Exam: Core Endgames with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Milestone Exam: Core Endgames.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d63_ex1)
-- **FEN**: `r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Milestone 9: Opening Repertoire
-- **Instruction**: White to move: Execute the key move demonstrating Milestone 9: Opening Repertoire.
-- **Solution Sequence**: `Bc4`
-- **Explanation**: Playing Bc4 directly reinforces the primary theme of Milestone 9: Opening Repertoire.
-- **Hints**: Look for the most forcing move that executes Milestone 9: Opening Repertoire. (Penalty: 20% per hint)
+- **Motif**: Milestone Exam: Core Endgames
+- **Instruction**: White to move: Find the tactical solution demonstrating Milestone Exam: Core Endgames.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d63_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d63_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d63_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d63_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d63_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Milestone 9: Opening Repertoire
+Viktor Korchnoi vs Anatoly Karpov (1978)
 
 ### Practical Sparring Assignment
-Complete targeted opening_plan_lab interactive drills applying the decision checklist.
+Weekly Milestone Comprehensive Exam: Solve all positions with >= 85% accuracy and zero hints permitted.
 
 ### Spaced Repetition (SRS) Review Queue
-- Milestone 9: Opening Repertoire: Flashcard
-- Candidate Selection Review
+- Milestone Exam: Core Endgames: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for endgames
 
 ### Remediation Protocol
-Review Day 62 foundational concepts, drill 5 targeted flashcards on openings, and repeat exercise set.
+Review Day 62 foundational concepts, drill 5 targeted flashcards on endgames, and repeat exercise set.
 
 ---
 
-## Day 64: Opening-to-Middlegame Transition
+## Day 64: Active Rook Supremacy
 
 - **Phase**: Phase 10: Transitions, Strategic Transformations & Planning
-- **Theme**: Translating opening development lead into concrete middlegame pressure
-- **Primary Skill Axis**: `strategy`
+- **Theme**: Placing rooks behind passed pawns and cutting off kings
+- **Primary Skill Axis**: `endgames`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 2120
+- **Difficulty Rating**: Elo 2114
 - **Prerequisites**: Day(s) 63
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Opening-to-Middlegame Transition themes.
-- Execute Opening-to-Middlegame Transition in practical games.
+- Master the core mechanics and geometric triggers of Active Rook Supremacy.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Opening-to-Middlegame Transition & Initiative
+# Day 64: Active Rook Supremacy
 
 ### 1. Simple Definition & Core Concept
-Mastery of Opening-to-Middlegame Transition is essential for grandmaster-level chess thinking. Focus on Translating opening development lead into concrete middlegame pressure.
+Active Rook Supremacy teaches foundational chess mastery: Placing rooks behind passed pawns and cutting off kings.
 
 ### 2. Why It Matters in Practical Play
-Understanding Opening-to-Middlegame Transition gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Active Rook Supremacy allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Opening-to-Middlegame Transition systematically; never make a move without purpose.
+**Core Rule / Heuristic:** An active rook is worth a pawn in all theoretical endings.
 
-**Canonical Diagram FEN:** `r1bq1rk1/pp3ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 0 9`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Opening-to-Middlegame Transition
+### 4. Canonical Model Game
+Akiba Rubinstein vs Milan Vidmar (1911)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Opening-to-Middlegame Transition.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Opening-to-Middlegame Transition with strict Kotov discipline. Look for candidate Ne5 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Opening-to-Middlegame Transition principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- An active rook is worth a pawn in all theoretical endings.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Opening-to-Middlegame Transition.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Opening-to-Middlegame Transition.
+- Model Demonstration 1: Textbook execution of Active Rook Supremacy with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Active Rook Supremacy.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d64_ex1)
-- **FEN**: `r1bq1rk1/pp3ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 0 9`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opening-to-Middlegame Transition
-- **Instruction**: White to move: Execute the key move demonstrating Opening-to-Middlegame Transition.
-- **Solution Sequence**: `Ne5`
-- **Explanation**: Playing Ne5 directly reinforces the primary theme of Opening-to-Middlegame Transition.
-- **Hints**: Look for the most forcing move that executes Opening-to-Middlegame Transition. (Penalty: 20% per hint)
+- **Motif**: Active Rook Supremacy
+- **Instruction**: White to move: Find the tactical solution demonstrating Active Rook Supremacy.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d64_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d64_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d64_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d64_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d64_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Opening-to-Middlegame Transition
+Akiba Rubinstein vs Milan Vidmar (1911)
 
 ### Practical Sparring Assignment
-Complete targeted find_the_plan_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in endgame_win_defend_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Opening-to-Middlegame Transition: Flashcard
-- Candidate Selection Review
+- Active Rook Supremacy: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for endgames
 
 ### Remediation Protocol
-Review Day 63 foundational concepts, drill 5 targeted flashcards on strategy, and repeat exercise set.
+Review Day 63 foundational concepts, drill 5 targeted flashcards on endgames, and repeat exercise set.
 
 ---
 
-## Day 65: Strategic Planning & Imbalances
+## Day 65: Vancura Defense & Flank Checks
 
 - **Phase**: Phase 10: Transitions, Strategic Transformations & Planning
-- **Theme**: Formulating concrete 3-stage plans based on static and dynamic factors
-- **Primary Skill Axis**: `strategy`
+- **Theme**: Defending against a-pawn and h-pawn rook passed pawns
+- **Primary Skill Axis**: `endgames`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 2134
+- **Difficulty Rating**: Elo 2128
 - **Prerequisites**: Day(s) 64
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Strategic Planning & Imbalances themes.
-- Execute Strategic Planning & Imbalances in practical games.
+- Master the core mechanics and geometric triggers of Vancura Defense & Flank Checks.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Strategic Planning: Identifying Imbalances
+# Day 65: Vancura Defense & Flank Checks
 
 ### 1. Simple Definition & Core Concept
-Mastery of Strategic Planning & Imbalances is essential for grandmaster-level chess thinking. Focus on Formulating concrete 3-stage plans based on static and dynamic factors.
+Vancura Defense & Flank Checks teaches foundational chess mastery: Defending against a-pawn and h-pawn rook passed pawns.
 
 ### 2. Why It Matters in Practical Play
-Understanding Strategic Planning & Imbalances gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Vancura Defense & Flank Checks allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Strategic Planning & Imbalances systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Deliver flank checks when the enemy king cannot hide.
 
-**Canonical Diagram FEN:** `r1bq1rk1/pp3ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 0 9`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Strategic Planning & Imbalances
+### 4. Canonical Model Game
+Josef Vancura Studies (1924)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Strategic Planning & Imbalances.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Strategic Planning & Imbalances with strict Kotov discipline. Look for candidate Ne5 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Strategic Planning & Imbalances principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Deliver flank checks when the enemy king cannot hide.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Strategic Planning & Imbalances.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Strategic Planning & Imbalances.
+- Model Demonstration 1: Textbook execution of Vancura Defense & Flank Checks with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Vancura Defense & Flank Checks.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d65_ex1)
-- **FEN**: `r1bq1rk1/pp3ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 0 9`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Strategic Planning & Imbalances
-- **Instruction**: White to move: Execute the key move demonstrating Strategic Planning & Imbalances.
-- **Solution Sequence**: `Ne5`
-- **Explanation**: Playing Ne5 directly reinforces the primary theme of Strategic Planning & Imbalances.
-- **Hints**: Look for the most forcing move that executes Strategic Planning & Imbalances. (Penalty: 20% per hint)
+- **Motif**: Vancura Defense & Flank Checks
+- **Instruction**: White to move: Find the tactical solution demonstrating Vancura Defense & Flank Checks.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d65_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d65_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d65_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d65_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d65_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Strategic Planning & Imbalances
+Josef Vancura Studies (1924)
 
 ### Practical Sparring Assignment
-Complete targeted find_the_plan_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in endgame_win_defend_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Strategic Planning & Imbalances: Flashcard
-- Candidate Selection Review
+- Vancura Defense & Flank Checks: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for endgames
 
 ### Remediation Protocol
-Review Day 64 foundational concepts, drill 5 targeted flashcards on strategy, and repeat exercise set.
+Review Day 64 foundational concepts, drill 5 targeted flashcards on endgames, and repeat exercise set.
 
 ---
 
-## Day 66: Worst-Piece Improvement
+## Day 66: Same-Colored Bishop Endgames
 
 - **Phase**: Phase 10: Transitions, Strategic Transformations & Planning
-- **Theme**: Finding your most passive piece and charting a route to an outpost
-- **Primary Skill Axis**: `strategy`
+- **Theme**: Attacking fixed pawn weaknesses on the color complex
+- **Primary Skill Axis**: `endgames`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 2149
+- **Difficulty Rating**: Elo 2143
 - **Prerequisites**: Day(s) 65
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Worst-Piece Improvement themes.
-- Execute Worst-Piece Improvement in practical games.
+- Master the core mechanics and geometric triggers of Same-Colored Bishop Endgames.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Piece Improvement: Upgrading Your Worst Piece
+# Day 66: Same-Colored Bishop Endgames
 
 ### 1. Simple Definition & Core Concept
-Mastery of Worst-Piece Improvement is essential for grandmaster-level chess thinking. Focus on Finding your most passive piece and charting a route to an outpost.
+Same-Colored Bishop Endgames teaches foundational chess mastery: Attacking fixed pawn weaknesses on the color complex.
 
 ### 2. Why It Matters in Practical Play
-Understanding Worst-Piece Improvement gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Same-Colored Bishop Endgames allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Worst-Piece Improvement systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Put your pawns on the opposite color of your bishop.
 
-**Canonical Diagram FEN:** `r1bq1rk1/pp3ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 0 9`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Worst-Piece Improvement
+### 4. Canonical Model Game
+Bobby Fischer vs Boris Spassky (1972 Game 4)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Worst-Piece Improvement.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Worst-Piece Improvement with strict Kotov discipline. Look for candidate Ne5 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Worst-Piece Improvement principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Put your pawns on the opposite color of your bishop.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Worst-Piece Improvement.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Worst-Piece Improvement.
+- Model Demonstration 1: Textbook execution of Same-Colored Bishop Endgames with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Same-Colored Bishop Endgames.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d66_ex1)
-- **FEN**: `r1bq1rk1/pp3ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 0 9`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Worst-Piece Improvement
-- **Instruction**: White to move: Execute the key move demonstrating Worst-Piece Improvement.
-- **Solution Sequence**: `Ne5`
-- **Explanation**: Playing Ne5 directly reinforces the primary theme of Worst-Piece Improvement.
-- **Hints**: Look for the most forcing move that executes Worst-Piece Improvement. (Penalty: 20% per hint)
+- **Motif**: Same-Colored Bishop Endgames
+- **Instruction**: White to move: Find the tactical solution demonstrating Same-Colored Bishop Endgames.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d66_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d66_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d66_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d66_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d66_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Worst-Piece Improvement
+Bobby Fischer vs Boris Spassky (1972 Game 4)
 
 ### Practical Sparring Assignment
-Complete targeted improve_worst_piece_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in endgame_win_defend_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Worst-Piece Improvement: Flashcard
-- Candidate Selection Review
+- Same-Colored Bishop Endgames: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for endgames
 
 ### Remediation Protocol
-Review Day 65 foundational concepts, drill 5 targeted flashcards on strategy, and repeat exercise set.
+Review Day 65 foundational concepts, drill 5 targeted flashcards on endgames, and repeat exercise set.
 
 ---
 
-## Day 67: Middlegame Pawn Breaks
+## Day 67: Opposite-Colored Bishop Fortresses
 
 - **Phase**: Phase 10: Transitions, Strategic Transformations & Planning
-- **Theme**: Executing the thematic d5, e5, or c5 break to unlock piece activity
-- **Primary Skill Axis**: `pawnStructures`
+- **Theme**: Constructing unbreachable blockades despite deficits
+- **Primary Skill Axis**: `endgames`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 2164
+- **Difficulty Rating**: Elo 2157
 - **Prerequisites**: Day(s) 66
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Middlegame Pawn Breaks themes.
-- Execute Middlegame Pawn Breaks in practical games.
+- Master the core mechanics and geometric triggers of Opposite-Colored Bishop Fortresses.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Middlegame Pawn Breaks: Timing Central Strikes
+# Day 67: Opposite-Colored Bishop Fortresses
 
 ### 1. Simple Definition & Core Concept
-Mastery of Middlegame Pawn Breaks is essential for grandmaster-level chess thinking. Focus on Executing the thematic d5, e5, or c5 break to unlock piece activity.
+Opposite-Colored Bishop Fortresses teaches foundational chess mastery: Constructing unbreachable blockades despite deficits.
 
 ### 2. Why It Matters in Practical Play
-Understanding Middlegame Pawn Breaks gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Opposite-Colored Bishop Fortresses allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Middlegame Pawn Breaks systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Blockade on dark squares: the enemy light bishop is blind.
 
-**Canonical Diagram FEN:** `r1bq1rk1/pp1nbppp/2p1pn2/3p4/2PP4/2N1PN2/PP2BPPP/R1BQ1RK1 w - - 0 8`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Middlegame Pawn Breaks
+### 4. Canonical Model Game
+David Bronstein vs Paul Keres (1955)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Middlegame Pawn Breaks.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Middlegame Pawn Breaks with strict Kotov discipline. Look for candidate b4 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Middlegame Pawn Breaks principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Blockade on dark squares: the enemy light bishop is blind.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Middlegame Pawn Breaks.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Middlegame Pawn Breaks.
+- Model Demonstration 1: Textbook execution of Opposite-Colored Bishop Fortresses with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Opposite-Colored Bishop Fortresses.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d67_ex1)
-- **FEN**: `r1bq1rk1/pp1nbppp/2p1pn2/3p4/2PP4/2N1PN2/PP2BPPP/R1BQ1RK1 w - - 0 8`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Middlegame Pawn Breaks
-- **Instruction**: White to move: Execute the key move demonstrating Middlegame Pawn Breaks.
-- **Solution Sequence**: `b4`
-- **Explanation**: Playing b4 directly reinforces the primary theme of Middlegame Pawn Breaks.
-- **Hints**: Look for the most forcing move that executes Middlegame Pawn Breaks. (Penalty: 20% per hint)
+- **Motif**: Opposite-Colored Bishop Fortresses
+- **Instruction**: White to move: Find the tactical solution demonstrating Opposite-Colored Bishop Fortresses.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d67_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d67_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d67_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d67_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d67_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Middlegame Pawn Breaks
+David Bronstein vs Paul Keres (1955)
 
 ### Practical Sparring Assignment
-Complete targeted pawn_break_discovery_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in endgame_win_defend_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Middlegame Pawn Breaks: Flashcard
-- Candidate Selection Review
+- Opposite-Colored Bishop Fortresses: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for endgames
 
 ### Remediation Protocol
-Review Day 66 foundational concepts, drill 5 targeted flashcards on pawnStructures, and repeat exercise set.
+Review Day 66 foundational concepts, drill 5 targeted flashcards on endgames, and repeat exercise set.
 
 ---
 
-## Day 68: Strategic Transformations
+## Day 68: Knight vs Bishop Endgames
 
 - **Phase**: Phase 10: Transitions, Strategic Transformations & Planning
-- **Theme**: Liquidating dynamic initiative into a won static endgame
-- **Primary Skill Axis**: `conversion`
+- **Theme**: Open board bishop scope vs closed board knight outposts
+- **Primary Skill Axis**: `endgames`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 2178
+- **Difficulty Rating**: Elo 2172
 - **Prerequisites**: Day(s) 67
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Strategic Transformations themes.
-- Execute Strategic Transformations in practical games.
+- Master the core mechanics and geometric triggers of Knight vs Bishop Endgames.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Strategic Transformations: Trading Pressure to Endgames
+# Day 68: Knight vs Bishop Endgames
 
 ### 1. Simple Definition & Core Concept
-Mastery of Strategic Transformations is essential for grandmaster-level chess thinking. Focus on Liquidating dynamic initiative into a won static endgame.
+Knight vs Bishop Endgames teaches foundational chess mastery: Open board bishop scope vs closed board knight outposts.
 
 ### 2. Why It Matters in Practical Play
-Understanding Strategic Transformations gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Knight vs Bishop Endgames allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Strategic Transformations systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Bishops dominate open pawns; Knights dominate closed blocks.
 
-**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/4QPPP/6K1 w - - 0 1`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Strategic Transformations
+### 4. Canonical Model Game
+Jose Raul Capablanca vs Emanuel Lasker (1921)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Strategic Transformations.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Strategic Transformations with strict Kotov discipline. Look for candidate Qe8# to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Strategic Transformations principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Bishops dominate open pawns; Knights dominate closed blocks.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Strategic Transformations.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Strategic Transformations.
+- Model Demonstration 1: Textbook execution of Knight vs Bishop Endgames with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Knight vs Bishop Endgames.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d68_ex1)
-- **FEN**: `6k1/5ppp/8/8/8/8/4QPPP/6K1 w - - 0 1`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Strategic Transformations
-- **Instruction**: White to move: Execute the key move demonstrating Strategic Transformations.
-- **Solution Sequence**: `Qe8#`
-- **Explanation**: Playing Qe8# directly reinforces the primary theme of Strategic Transformations.
-- **Hints**: Look for the most forcing move that executes Strategic Transformations. (Penalty: 20% per hint)
+- **Motif**: Knight vs Bishop Endgames
+- **Instruction**: White to move: Find the tactical solution demonstrating Knight vs Bishop Endgames.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d68_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d68_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d68_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d68_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d68_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Strategic Transformations
+Jose Raul Capablanca vs Emanuel Lasker (1921)
 
 ### Practical Sparring Assignment
-Complete targeted find_the_plan_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in endgame_win_defend_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Strategic Transformations: Flashcard
-- Candidate Selection Review
+- Knight vs Bishop Endgames: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for endgames
 
 ### Remediation Protocol
-Review Day 67 foundational concepts, drill 5 targeted flashcards on conversion, and repeat exercise set.
+Review Day 67 foundational concepts, drill 5 targeted flashcards on endgames, and repeat exercise set.
 
 ---
 
-## Day 69: Prophylactic Planning
+## Day 69: Queen Endgames & Perpetual
 
 - **Phase**: Phase 10: Transitions, Strategic Transformations & Planning
-- **Theme**: Stopping enemy counterplay before it starts while progressing your plan
-- **Primary Skill Axis**: `defense`
+- **Theme**: Shielding the king under pawn umbrellas and pushing passers
+- **Primary Skill Axis**: `endgames`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 2193
+- **Difficulty Rating**: Elo 2186
 - **Prerequisites**: Day(s) 68
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Prophylactic Planning themes.
-- Execute Prophylactic Planning in practical games.
+- Master the core mechanics and geometric triggers of Queen Endgames & Perpetual.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Prophylactic Master Planning: Restricting Opponent Ideas
+# Day 69: Queen Endgames & Perpetual
 
 ### 1. Simple Definition & Core Concept
-Mastery of Prophylactic Planning is essential for grandmaster-level chess thinking. Focus on Stopping enemy counterplay before it starts while progressing your plan.
+Queen Endgames & Perpetual teaches foundational chess mastery: Shielding the king under pawn umbrellas and pushing passers.
 
 ### 2. Why It Matters in Practical Play
-Understanding Prophylactic Planning gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Queen Endgames & Perpetual allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Prophylactic Planning systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Use friendly pawns as an umbrella against spite checks.
 
-**Canonical Diagram FEN:** `4r1k1/5ppp/8/8/8/8/4QPPP/6K1 w - - 0 1`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Prophylactic Planning
+### 4. Canonical Model Game
+Garry Kasparov vs Anatoly Karpov (1986 Game 22)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Prophylactic Planning.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Prophylactic Planning with strict Kotov discipline. Look for candidate Qxe8# to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Prophylactic Planning principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Use friendly pawns as an umbrella against spite checks.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Prophylactic Planning.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Prophylactic Planning.
+- Model Demonstration 1: Textbook execution of Queen Endgames & Perpetual with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Queen Endgames & Perpetual.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d69_ex1)
-- **FEN**: `4r1k1/5ppp/8/8/8/8/4QPPP/6K1 w - - 0 1`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Prophylactic Planning
-- **Instruction**: White to move: Execute the key move demonstrating Prophylactic Planning.
-- **Solution Sequence**: `Qxe8#`
-- **Explanation**: Playing Qxe8# directly reinforces the primary theme of Prophylactic Planning.
-- **Hints**: Look for the most forcing move that executes Prophylactic Planning. (Penalty: 20% per hint)
+- **Motif**: Queen Endgames & Perpetual
+- **Instruction**: White to move: Find the tactical solution demonstrating Queen Endgames & Perpetual.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d69_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d69_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d69_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d69_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d69_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Prophylactic Planning
+Garry Kasparov vs Anatoly Karpov (1986 Game 22)
 
 ### Practical Sparring Assignment
-Complete targeted defensive_resource_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in endgame_win_defend_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Prophylactic Planning: Flashcard
-- Candidate Selection Review
+- Queen Endgames & Perpetual: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for endgames
 
 ### Remediation Protocol
-Review Day 68 foundational concepts, drill 5 targeted flashcards on defense, and repeat exercise set.
+Review Day 68 foundational concepts, drill 5 targeted flashcards on endgames, and repeat exercise set.
 
 ---
 
-## Day 70: Milestone 10: Middlegame Strategy
+## Day 70: Grand Milestone: Endgames
 
 - **Phase**: Phase 10: Transitions, Strategic Transformations & Planning
-- **Theme**: Comprehensive planning, piece improvement, and strategic conversion
-- **Primary Skill Axis**: `strategy`
+- **Theme**: Engine-level endgame precision and conversion certification
+- **Primary Skill Axis**: `endgames`
 - **Estimated Training Time**: 90 minutes
-- **Difficulty Rating**: Elo 2207
+- **Difficulty Rating**: Elo 2201
 - **Prerequisites**: Day(s) 69
 - **Mastery Pass Threshold**: 85% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Milestone 10: Middlegame Strategy themes.
-- Execute Milestone 10: Middlegame Strategy in practical games.
+- Master the core mechanics and geometric triggers of Grand Milestone: Endgames.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Milestone 10: Strategic Middlegame Mastery Exam
+# Day 70: Grand Milestone: Endgames
 
 ### 1. Simple Definition & Core Concept
-Mastery of Milestone 10: Middlegame Strategy is essential for grandmaster-level chess thinking. Focus on Comprehensive planning, piece improvement, and strategic conversion.
+Grand Milestone: Endgames teaches foundational chess mastery: Engine-level endgame precision and conversion certification.
 
 ### 2. Why It Matters in Practical Play
-Understanding Milestone 10: Middlegame Strategy gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Grand Milestone: Endgames allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Milestone 10: Middlegame Strategy systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Theoretical endgame engine precision is non-negotiable in mastery.
 
-**Canonical Diagram FEN:** `r1bq1rk1/pp3ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 0 9`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Milestone 10: Middlegame Strategy
+### 4. Canonical Model Game
+Vasily Smyslov vs Paul Keres (1953)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Milestone 10: Middlegame Strategy.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Milestone 10: Middlegame Strategy with strict Kotov discipline. Look for candidate Ne5 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Milestone 10: Middlegame Strategy principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Theoretical endgame engine precision is non-negotiable in mastery.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Milestone 10: Middlegame Strategy.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Milestone 10: Middlegame Strategy.
+- Model Demonstration 1: Textbook execution of Grand Milestone: Endgames with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Grand Milestone: Endgames.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d70_ex1)
-- **FEN**: `r1bq1rk1/pp3ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 0 9`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Milestone 10: Middlegame Strategy
-- **Instruction**: White to move: Execute the key move demonstrating Milestone 10: Middlegame Strategy.
-- **Solution Sequence**: `Ne5`
-- **Explanation**: Playing Ne5 directly reinforces the primary theme of Milestone 10: Middlegame Strategy.
-- **Hints**: Look for the most forcing move that executes Milestone 10: Middlegame Strategy. (Penalty: 20% per hint)
+- **Motif**: Grand Milestone: Endgames
+- **Instruction**: White to move: Find the tactical solution demonstrating Grand Milestone: Endgames.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d70_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d70_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d70_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d70_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d70_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Milestone 10: Middlegame Strategy
+Vasily Smyslov vs Paul Keres (1953)
 
 ### Practical Sparring Assignment
-Complete targeted find_the_plan_lab interactive drills applying the decision checklist.
+Weekly Milestone Comprehensive Exam: Solve all positions with >= 85% accuracy and zero hints permitted.
 
 ### Spaced Repetition (SRS) Review Queue
-- Milestone 10: Middlegame Strategy: Flashcard
-- Candidate Selection Review
+- Grand Milestone: Endgames: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for endgames
 
 ### Remediation Protocol
-Review Day 69 foundational concepts, drill 5 targeted flashcards on strategy, and repeat exercise set.
+Review Day 69 foundational concepts, drill 5 targeted flashcards on endgames, and repeat exercise set.
 
 ---
 
-## Day 71: Advantage Conversion
+## Day 71: Opening Principles & Harmony
 
 - **Phase**: Phase 11: Advantage Conversion & Pressure Decisions
-- **Theme**: Simplifying without blundering and extinguishing counterplay when ahead
-- **Primary Skill Axis**: `conversion`
+- **Theme**: Central staking, harmonic development, and early castling
+- **Primary Skill Axis**: `openings`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 2222
+- **Difficulty Rating**: Elo 2215
 - **Prerequisites**: Day(s) 70
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Advantage Conversion themes.
-- Execute Advantage Conversion in practical games.
+- Master the core mechanics and geometric triggers of Opening Principles & Harmony.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Advantage Conversion: Technical Precision With Extra Material
+# Day 71: Opening Principles & Harmony
 
 ### 1. Simple Definition & Core Concept
-Mastery of Advantage Conversion is essential for grandmaster-level chess thinking. Focus on Simplifying without blundering and extinguishing counterplay when ahead.
+Opening Principles & Harmony teaches foundational chess mastery: Central staking, harmonic development, and early castling.
 
 ### 2. Why It Matters in Practical Play
-Understanding Advantage Conversion gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Opening Principles & Harmony allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Advantage Conversion systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Develop pieces toward the center; never hunt early pawns.
 
-**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/4QPPP/6K1 w - - 0 1`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Advantage Conversion
+### 4. Canonical Model Game
+Paul Morphy vs Adolf Anderssen (1858)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Advantage Conversion.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Advantage Conversion with strict Kotov discipline. Look for candidate Qe8# to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Advantage Conversion principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Develop pieces toward the center; never hunt early pawns.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Advantage Conversion.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Advantage Conversion.
+- Model Demonstration 1: Textbook execution of Opening Principles & Harmony with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Opening Principles & Harmony.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d71_ex1)
-- **FEN**: `6k1/5ppp/8/8/8/8/4QPPP/6K1 w - - 0 1`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Advantage Conversion
-- **Instruction**: White to move: Execute the key move demonstrating Advantage Conversion.
-- **Solution Sequence**: `Qe8#`
-- **Explanation**: Playing Qe8# directly reinforces the primary theme of Advantage Conversion.
-- **Hints**: Look for the most forcing move that executes Advantage Conversion. (Penalty: 20% per hint)
+- **Motif**: Opening Principles & Harmony
+- **Instruction**: White to move: Find the tactical solution demonstrating Opening Principles & Harmony.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d71_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d71_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d71_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d71_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d71_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Advantage Conversion
+Paul Morphy vs Adolf Anderssen (1858)
 
 ### Practical Sparring Assignment
-Complete targeted conversion_challenge_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in opening_plan_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Advantage Conversion: Flashcard
-- Candidate Selection Review
+- Opening Principles & Harmony: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for openings
 
 ### Remediation Protocol
-Review Day 70 foundational concepts, drill 5 targeted flashcards on conversion, and repeat exercise set.
+Review Day 70 foundational concepts, drill 5 targeted flashcards on openings, and repeat exercise set.
 
 ---
 
-## Day 72: Tenacious Defense
+## Day 72: 1.e4 Repertoire: Italian & Scotch
 
 - **Phase**: Phase 11: Advantage Conversion & Pressure Decisions
-- **Theme**: Finding resilient defensive moves when under severe positional squeeze
-- **Primary Skill Axis**: `defense`
+- **Theme**: Classical open game direct central challenges
+- **Primary Skill Axis**: `openings`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 2237
+- **Difficulty Rating**: Elo 2230
 - **Prerequisites**: Day(s) 71
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Tenacious Defense themes.
-- Execute Tenacious Defense in practical games.
+- Master the core mechanics and geometric triggers of 1.e4 Repertoire: Italian & Scotch.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Tenacious Defense Under Positional Pressure
+# Day 72: 1.e4 Repertoire: Italian & Scotch
 
 ### 1. Simple Definition & Core Concept
-Mastery of Tenacious Defense is essential for grandmaster-level chess thinking. Focus on Finding resilient defensive moves when under severe positional squeeze.
+1.e4 Repertoire: Italian & Scotch teaches foundational chess mastery: Classical open game direct central challenges.
 
 ### 2. Why It Matters in Practical Play
-Understanding Tenacious Defense gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering 1.e4 Repertoire: Italian & Scotch allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Tenacious Defense systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Control d4 and d5 with harmonized knight and bishop play.
 
-**Canonical Diagram FEN:** `4r1k1/5ppp/8/8/8/8/4QPPP/6K1 w - - 0 1`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Tenacious Defense
+### 4. Canonical Model Game
+Garry Kasparov vs Nigel Short (1993)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Tenacious Defense.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Tenacious Defense with strict Kotov discipline. Look for candidate Qxe8# to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Tenacious Defense principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Control d4 and d5 with harmonized knight and bishop play.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Tenacious Defense.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Tenacious Defense.
+- Model Demonstration 1: Textbook execution of 1.e4 Repertoire: Italian & Scotch with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering 1.e4 Repertoire: Italian & Scotch.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d72_ex1)
-- **FEN**: `4r1k1/5ppp/8/8/8/8/4QPPP/6K1 w - - 0 1`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Tenacious Defense
-- **Instruction**: White to move: Execute the key move demonstrating Tenacious Defense.
-- **Solution Sequence**: `Qxe8#`
-- **Explanation**: Playing Qxe8# directly reinforces the primary theme of Tenacious Defense.
-- **Hints**: Look for the most forcing move that executes Tenacious Defense. (Penalty: 20% per hint)
+- **Motif**: 1.e4 Repertoire: Italian & Scotch
+- **Instruction**: White to move: Find the tactical solution demonstrating 1.e4 Repertoire: Italian & Scotch.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d72_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d72_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d72_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d72_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d72_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Tenacious Defense
+Garry Kasparov vs Nigel Short (1993)
 
 ### Practical Sparring Assignment
-Complete targeted defensive_resource_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in opening_plan_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Tenacious Defense: Flashcard
-- Candidate Selection Review
+- 1.e4 Repertoire: Italian & Scotch: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for openings
 
 ### Remediation Protocol
-Review Day 71 foundational concepts, drill 5 targeted flashcards on defense, and repeat exercise set.
+Review Day 71 foundational concepts, drill 5 targeted flashcards on openings, and repeat exercise set.
 
 ---
 
-## Day 73: Simplification vs Tension
+## Day 73: 1.e4 vs The Sicilian Defense
 
 - **Phase**: Phase 11: Advantage Conversion & Pressure Decisions
-- **Theme**: Knowing when to maintain central tension and when to trade queens
-- **Primary Skill Axis**: `conversion`
+- **Theme**: Navigating Open Sicilians and solid Anti-Sicilian systems
+- **Primary Skill Axis**: `openings`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 2251
+- **Difficulty Rating**: Elo 2244
 - **Prerequisites**: Day(s) 72
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Simplification vs Tension themes.
-- Execute Simplification vs Tension in practical games.
+- Master the core mechanics and geometric triggers of 1.e4 vs The Sicilian Defense.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Practical Decisions: Simplification vs Keeping Tension
+# Day 73: 1.e4 vs The Sicilian Defense
 
 ### 1. Simple Definition & Core Concept
-Mastery of Simplification vs Tension is essential for grandmaster-level chess thinking. Focus on Knowing when to maintain central tension and when to trade queens.
+1.e4 vs The Sicilian Defense teaches foundational chess mastery: Navigating Open Sicilians and solid Anti-Sicilian systems.
 
 ### 2. Why It Matters in Practical Play
-Understanding Simplification vs Tension gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering 1.e4 vs The Sicilian Defense allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Simplification vs Tension systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Fight for d5 and maintain rapid kingside piece mobilization.
 
-**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/4QPPP/6K1 w - - 0 1`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Simplification vs Tension
+### 4. Canonical Model Game
+Bobby Fischer vs Boris Spassky (1972 Game 6)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Simplification vs Tension.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Simplification vs Tension with strict Kotov discipline. Look for candidate Qe8# to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Simplification vs Tension principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Fight for d5 and maintain rapid kingside piece mobilization.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Simplification vs Tension.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Simplification vs Tension.
+- Model Demonstration 1: Textbook execution of 1.e4 vs The Sicilian Defense with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering 1.e4 vs The Sicilian Defense.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d73_ex1)
-- **FEN**: `6k1/5ppp/8/8/8/8/4QPPP/6K1 w - - 0 1`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Simplification vs Tension
-- **Instruction**: White to move: Execute the key move demonstrating Simplification vs Tension.
-- **Solution Sequence**: `Qe8#`
-- **Explanation**: Playing Qe8# directly reinforces the primary theme of Simplification vs Tension.
-- **Hints**: Look for the most forcing move that executes Simplification vs Tension. (Penalty: 20% per hint)
+- **Motif**: 1.e4 vs The Sicilian Defense
+- **Instruction**: White to move: Find the tactical solution demonstrating 1.e4 vs The Sicilian Defense.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d73_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d73_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d73_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d73_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d73_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Simplification vs Tension
+Bobby Fischer vs Boris Spassky (1972 Game 6)
 
 ### Practical Sparring Assignment
-Complete targeted conversion_challenge_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in opening_plan_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Simplification vs Tension: Flashcard
-- Candidate Selection Review
+- 1.e4 vs The Sicilian Defense: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for openings
 
 ### Remediation Protocol
-Review Day 72 foundational concepts, drill 5 targeted flashcards on conversion, and repeat exercise set.
+Review Day 72 foundational concepts, drill 5 targeted flashcards on openings, and repeat exercise set.
 
 ---
 
-## Day 74: Clock Discipline & Pacing
+## Day 74: 1.d4 Repertoire: QGD & Catalan
 
 - **Phase**: Phase 11: Advantage Conversion & Pressure Decisions
-- **Theme**: Allocating time efficiently across opening, middlegame, and ending
-- **Primary Skill Axis**: `timeManagement`
+- **Theme**: Solid positional pressure and harmonic long diagonals
+- **Primary Skill Axis**: `openings`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 2266
+- **Difficulty Rating**: Elo 2259
 - **Prerequisites**: Day(s) 73
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Clock Discipline & Pacing themes.
-- Execute Clock Discipline & Pacing in practical games.
+- Master the core mechanics and geometric triggers of 1.d4 Repertoire: QGD & Catalan.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Clock Discipline & The 20-60-20 Rule
+# Day 74: 1.d4 Repertoire: QGD & Catalan
 
 ### 1. Simple Definition & Core Concept
-Mastery of Clock Discipline & Pacing is essential for grandmaster-level chess thinking. Focus on Allocating time efficiently across opening, middlegame, and ending.
+1.d4 Repertoire: QGD & Catalan teaches foundational chess mastery: Solid positional pressure and harmonic long diagonals.
 
 ### 2. Why It Matters in Practical Play
-Understanding Clock Discipline & Pacing gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering 1.d4 Repertoire: QGD & Catalan allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Clock Discipline & Pacing systematically; never make a move without purpose.
+**Core Rule / Heuristic:** The Catalan bishop on g2 exerts permanent central pressure.
 
-**Canonical Diagram FEN:** `r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Clock Discipline & Pacing
+### 4. Canonical Model Game
+Vladimir Kramnik vs Garry Kasparov (2000 Game 2)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Clock Discipline & Pacing.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Clock Discipline & Pacing with strict Kotov discipline. Look for candidate Bc4 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Clock Discipline & Pacing principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- The Catalan bishop on g2 exerts permanent central pressure.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Clock Discipline & Pacing.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Clock Discipline & Pacing.
+- Model Demonstration 1: Textbook execution of 1.d4 Repertoire: QGD & Catalan with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering 1.d4 Repertoire: QGD & Catalan.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d74_ex1)
-- **FEN**: `r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Clock Discipline & Pacing
-- **Instruction**: White to move: Execute the key move demonstrating Clock Discipline & Pacing.
-- **Solution Sequence**: `Bc4`
-- **Explanation**: Playing Bc4 directly reinforces the primary theme of Clock Discipline & Pacing.
-- **Hints**: Look for the most forcing move that executes Clock Discipline & Pacing. (Penalty: 20% per hint)
+- **Motif**: 1.d4 Repertoire: QGD & Catalan
+- **Instruction**: White to move: Find the tactical solution demonstrating 1.d4 Repertoire: QGD & Catalan.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d74_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d74_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d74_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d74_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d74_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Clock Discipline & Pacing
+Vladimir Kramnik vs Garry Kasparov (2000 Game 2)
 
 ### Practical Sparring Assignment
-Complete targeted time_management_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in opening_plan_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Clock Discipline & Pacing: Flashcard
-- Candidate Selection Review
+- 1.d4 Repertoire: QGD & Catalan: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for openings
 
 ### Remediation Protocol
-Review Day 73 foundational concepts, drill 5 targeted flashcards on timeManagement, and repeat exercise set.
+Review Day 73 foundational concepts, drill 5 targeted flashcards on openings, and repeat exercise set.
 
 ---
 
-## Day 75: Critical Moment Detection
+## Day 75: 1.c4 English Opening Principles
 
 - **Phase**: Phase 11: Advantage Conversion & Pressure Decisions
-- **Theme**: Recognizing the 2-3 decisive moves where deep calculation is mandatory
-- **Primary Skill Axis**: `calculation`
+- **Theme**: Transposition flexibility and kingside fianchetto dominance
+- **Primary Skill Axis**: `openings`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 2280
+- **Difficulty Rating**: Elo 2273
 - **Prerequisites**: Day(s) 74
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Critical Moment Detection themes.
-- Execute Critical Moment Detection in practical games.
+- Master the core mechanics and geometric triggers of 1.c4 English Opening Principles.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Critical Moment Detection: Deep Calculation Triggers
+# Day 75: 1.c4 English Opening Principles
 
 ### 1. Simple Definition & Core Concept
-Mastery of Critical Moment Detection is essential for grandmaster-level chess thinking. Focus on Recognizing the 2-3 decisive moves where deep calculation is mandatory.
+1.c4 English Opening Principles teaches foundational chess mastery: Transposition flexibility and kingside fianchetto dominance.
 
 ### 2. Why It Matters in Practical Play
-Understanding Critical Moment Detection gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering 1.c4 English Opening Principles allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Critical Moment Detection systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Control d5 from the flank while maintaining central options.
 
-**Canonical Diagram FEN:** `r1bq1rk1/pp3ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 0 9`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Critical Moment Detection
+### 4. Canonical Model Game
+Mikhail Botvinnik vs Vasily Smyslov (1954)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Critical Moment Detection.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Critical Moment Detection with strict Kotov discipline. Look for candidate Ne5 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Critical Moment Detection principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Control d5 from the flank while maintaining central options.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Critical Moment Detection.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Critical Moment Detection.
+- Model Demonstration 1: Textbook execution of 1.c4 English Opening Principles with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering 1.c4 English Opening Principles.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d75_ex1)
-- **FEN**: `r1bq1rk1/pp3ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 0 9`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Critical Moment Detection
-- **Instruction**: White to move: Execute the key move demonstrating Critical Moment Detection.
-- **Solution Sequence**: `Ne5`
-- **Explanation**: Playing Ne5 directly reinforces the primary theme of Critical Moment Detection.
-- **Hints**: Look for the most forcing move that executes Critical Moment Detection. (Penalty: 20% per hint)
+- **Motif**: 1.c4 English Opening Principles
+- **Instruction**: White to move: Find the tactical solution demonstrating 1.c4 English Opening Principles.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d75_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d75_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d75_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d75_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d75_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Critical Moment Detection
+Mikhail Botvinnik vs Vasily Smyslov (1954)
 
 ### Practical Sparring Assignment
-Complete targeted candidate_selection_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in opening_plan_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Critical Moment Detection: Flashcard
-- Candidate Selection Review
+- 1.c4 English Opening Principles: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for openings
 
 ### Remediation Protocol
-Review Day 74 foundational concepts, drill 5 targeted flashcards on calculation, and repeat exercise set.
+Review Day 74 foundational concepts, drill 5 targeted flashcards on openings, and repeat exercise set.
 
 ---
 
-## Day 76: Psychological Resilience
+## Day 76: Black Repertoire vs 1.e4 & 1.d4
 
 - **Phase**: Phase 11: Advantage Conversion & Pressure Decisions
-- **Theme**: Staying objective when winning, resisting despair when losing
-- **Primary Skill Axis**: `defense`
+- **Theme**: Sturdy classical defenses: Caro-Kann and Nimzo-Indian
+- **Primary Skill Axis**: `openings`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 2295
+- **Difficulty Rating**: Elo 2288
 - **Prerequisites**: Day(s) 75
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Psychological Resilience themes.
-- Execute Psychological Resilience in practical games.
+- Master the core mechanics and geometric triggers of Black Repertoire vs 1.e4 & 1.d4.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Psychological Composure: Swindles & Fighting Spirit
+# Day 76: Black Repertoire vs 1.e4 & 1.d4
 
 ### 1. Simple Definition & Core Concept
-Mastery of Psychological Resilience is essential for grandmaster-level chess thinking. Focus on Staying objective when winning, resisting despair when losing.
+Black Repertoire vs 1.e4 & 1.d4 teaches foundational chess mastery: Sturdy classical defenses: Caro-Kann and Nimzo-Indian.
 
 ### 2. Why It Matters in Practical Play
-Understanding Psychological Resilience gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Black Repertoire vs 1.e4 & 1.d4 allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Psychological Resilience systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Neutralize White's first-move advantage with sound pawn structure.
 
-**Canonical Diagram FEN:** `4r1k1/5ppp/8/8/8/8/4QPPP/6K1 w - - 0 1`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Psychological Resilience
+### 4. Canonical Model Game
+Anatoly Karpov vs Viktor Korchnoi (1981)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Psychological Resilience.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Psychological Resilience with strict Kotov discipline. Look for candidate Qxe8# to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Psychological Resilience principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Neutralize White's first-move advantage with sound pawn structure.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Psychological Resilience.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Psychological Resilience.
+- Model Demonstration 1: Textbook execution of Black Repertoire vs 1.e4 & 1.d4 with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Black Repertoire vs 1.e4 & 1.d4.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d76_ex1)
-- **FEN**: `4r1k1/5ppp/8/8/8/8/4QPPP/6K1 w - - 0 1`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Psychological Resilience
-- **Instruction**: White to move: Execute the key move demonstrating Psychological Resilience.
-- **Solution Sequence**: `Qxe8#`
-- **Explanation**: Playing Qxe8# directly reinforces the primary theme of Psychological Resilience.
-- **Hints**: Look for the most forcing move that executes Psychological Resilience. (Penalty: 20% per hint)
+- **Motif**: Black Repertoire vs 1.e4 & 1.d4
+- **Instruction**: White to move: Find the tactical solution demonstrating Black Repertoire vs 1.e4 & 1.d4.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d76_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d76_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d76_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d76_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d76_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Psychological Resilience
+Anatoly Karpov vs Viktor Korchnoi (1981)
 
 ### Practical Sparring Assignment
-Complete targeted defensive_resource_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in opening_plan_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Psychological Resilience: Flashcard
-- Candidate Selection Review
+- Black Repertoire vs 1.e4 & 1.d4: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for openings
 
 ### Remediation Protocol
-Review Day 75 foundational concepts, drill 5 targeted flashcards on defense, and repeat exercise set.
+Review Day 75 foundational concepts, drill 5 targeted flashcards on openings, and repeat exercise set.
 
 ---
 
-## Day 77: Milestone 11: Conversion & Pressure
+## Day 77: Milestone Exam: Opening Theory
 
 - **Phase**: Phase 11: Advantage Conversion & Pressure Decisions
-- **Theme**: Converting winning positions and defending difficult positions under time pressure
-- **Primary Skill Axis**: `conversion`
+- **Theme**: Move-tree verification across all personal opening branches
+- **Primary Skill Axis**: `openings`
 - **Estimated Training Time**: 90 minutes
-- **Difficulty Rating**: Elo 2310
+- **Difficulty Rating**: Elo 2302
 - **Prerequisites**: Day(s) 76
 - **Mastery Pass Threshold**: 85% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Milestone 11: Conversion & Pressure themes.
-- Execute Milestone 11: Conversion & Pressure in practical games.
+- Master the core mechanics and geometric triggers of Milestone Exam: Opening Theory.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Milestone 11: Practical Decision Making Exam
+# Day 77: Milestone Exam: Opening Theory
 
 ### 1. Simple Definition & Core Concept
-Mastery of Milestone 11: Conversion & Pressure is essential for grandmaster-level chess thinking. Focus on Converting winning positions and defending difficult positions under time pressure.
+Milestone Exam: Opening Theory teaches foundational chess mastery: Move-tree verification across all personal opening branches.
 
 ### 2. Why It Matters in Practical Play
-Understanding Milestone 11: Conversion & Pressure gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Milestone Exam: Opening Theory allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Milestone 11: Conversion & Pressure systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Know your plans, typical pawn structures, and key departures.
 
-**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/4QPPP/6K1 w - - 0 1`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Milestone 11: Conversion & Pressure
+### 4. Canonical Model Game
+Viswanathan Anand vs Boris Gelfand (2012)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Milestone 11: Conversion & Pressure.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Milestone 11: Conversion & Pressure with strict Kotov discipline. Look for candidate Qe8# to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Milestone 11: Conversion & Pressure principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Know your plans, typical pawn structures, and key departures.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Milestone 11: Conversion & Pressure.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Milestone 11: Conversion & Pressure.
+- Model Demonstration 1: Textbook execution of Milestone Exam: Opening Theory with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Milestone Exam: Opening Theory.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d77_ex1)
-- **FEN**: `6k1/5ppp/8/8/8/8/4QPPP/6K1 w - - 0 1`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Milestone 11: Conversion & Pressure
-- **Instruction**: White to move: Execute the key move demonstrating Milestone 11: Conversion & Pressure.
-- **Solution Sequence**: `Qe8#`
-- **Explanation**: Playing Qe8# directly reinforces the primary theme of Milestone 11: Conversion & Pressure.
-- **Hints**: Look for the most forcing move that executes Milestone 11: Conversion & Pressure. (Penalty: 20% per hint)
+- **Motif**: Milestone Exam: Opening Theory
+- **Instruction**: White to move: Find the tactical solution demonstrating Milestone Exam: Opening Theory.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d77_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d77_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d77_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d77_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d77_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Milestone 11: Conversion & Pressure
+Viswanathan Anand vs Boris Gelfand (2012)
 
 ### Practical Sparring Assignment
-Complete targeted conversion_challenge_lab interactive drills applying the decision checklist.
+Weekly Milestone Comprehensive Exam: Solve all positions with >= 85% accuracy and zero hints permitted.
 
 ### Spaced Repetition (SRS) Review Queue
-- Milestone 11: Conversion & Pressure: Flashcard
-- Candidate Selection Review
+- Milestone Exam: Opening Theory: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for openings
 
 ### Remediation Protocol
-Review Day 76 foundational concepts, drill 5 targeted flashcards on conversion, and repeat exercise set.
+Review Day 76 foundational concepts, drill 5 targeted flashcards on openings, and repeat exercise set.
 
 ---
 
-## Day 78: Morphy Model: Rapid Mobilization
+## Day 78: Punishing Uncastled Kings
 
 - **Phase**: Phase 12: Master Model Games & Guess-The-Move
-- **Theme**: Open lines, tempo development, and piece activity over material
-- **Primary Skill Axis**: `strategy`
+- **Theme**: Morphy-style central breakthroughs against delayed castling
+- **Primary Skill Axis**: `attack`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 2324
+- **Difficulty Rating**: Elo 2317
 - **Prerequisites**: Day(s) 77
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Morphy Model: Rapid Mobilization themes.
-- Execute Morphy Model: Rapid Mobilization in practical games.
+- Master the core mechanics and geometric triggers of Punishing Uncastled Kings.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Master Games: Paul Morphy's Rapid Development
+# Day 78: Punishing Uncastled Kings
 
 ### 1. Simple Definition & Core Concept
-Mastery of Morphy Model: Rapid Mobilization is essential for grandmaster-level chess thinking. Focus on Open lines, tempo development, and piece activity over material.
+Punishing Uncastled Kings teaches foundational chess mastery: Morphy-style central breakthroughs against delayed castling.
 
 ### 2. Why It Matters in Practical Play
-Understanding Morphy Model: Rapid Mobilization gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Punishing Uncastled Kings allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Morphy Model: Rapid Mobilization systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Blow open the center when the enemy king lingers on e8.
 
-**Canonical Diagram FEN:** `r1bq1rk1/pp3ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 0 9`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Morphy Model: Rapid Mobilization
+### 4. Canonical Model Game
+Adolf Anderssen vs Jean Dufresne (1852)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Morphy Model: Rapid Mobilization.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Morphy Model: Rapid Mobilization with strict Kotov discipline. Look for candidate Ne5 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Morphy Model: Rapid Mobilization principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Blow open the center when the enemy king lingers on e8.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Morphy Model: Rapid Mobilization.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Morphy Model: Rapid Mobilization.
+- Model Demonstration 1: Textbook execution of Punishing Uncastled Kings with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Punishing Uncastled Kings.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d78_ex1)
-- **FEN**: `r1bq1rk1/pp3ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 0 9`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Morphy Model: Rapid Mobilization
-- **Instruction**: White to move: Execute the key move demonstrating Morphy Model: Rapid Mobilization.
-- **Solution Sequence**: `Ne5`
-- **Explanation**: Playing Ne5 directly reinforces the primary theme of Morphy Model: Rapid Mobilization.
-- **Hints**: Look for the most forcing move that executes Morphy Model: Rapid Mobilization. (Penalty: 20% per hint)
+- **Motif**: Punishing Uncastled Kings
+- **Instruction**: White to move: Find the tactical solution demonstrating Punishing Uncastled Kings.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d78_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d78_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d78_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d78_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d78_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Morphy Model: Rapid Mobilization
+Adolf Anderssen vs Jean Dufresne (1852)
 
 ### Practical Sparring Assignment
-Complete targeted guess_the_move_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in tactical_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Morphy Model: Rapid Mobilization: Flashcard
-- Candidate Selection Review
+- Punishing Uncastled Kings: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for attack
 
 ### Remediation Protocol
-Review Day 77 foundational concepts, drill 5 targeted flashcards on strategy, and repeat exercise set.
+Review Day 77 foundational concepts, drill 5 targeted flashcards on attack, and repeat exercise set.
 
 ---
 
-## Day 79: Capablanca Model: Endgame Clarity
+## Day 79: The Greek Gift Sacrifice (Bxh7+)
 
 - **Phase**: Phase 12: Master Model Games & Guess-The-Move
-- **Theme**: Simplification, piece harmony, and crystalline conversion technique
-- **Primary Skill Axis**: `endgames`
+- **Theme**: Calculating standard sacrifices on h7/h2 with Ng5+ followups
+- **Primary Skill Axis**: `attack`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 2339
+- **Difficulty Rating**: Elo 2331
 - **Prerequisites**: Day(s) 78
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Capablanca Model: Endgame Clarity themes.
-- Execute Capablanca Model: Endgame Clarity in practical games.
+- Master the core mechanics and geometric triggers of The Greek Gift Sacrifice (Bxh7+).
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Master Games: Jose Raul Capablanca's Endgame Purity
+# Day 79: The Greek Gift Sacrifice (Bxh7+)
 
 ### 1. Simple Definition & Core Concept
-Mastery of Capablanca Model: Endgame Clarity is essential for grandmaster-level chess thinking. Focus on Simplification, piece harmony, and crystalline conversion technique.
+The Greek Gift Sacrifice (Bxh7+) teaches foundational chess mastery: Calculating standard sacrifices on h7/h2 with Ng5+ followups.
 
 ### 2. Why It Matters in Practical Play
-Understanding Capablanca Model: Endgame Clarity gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering The Greek Gift Sacrifice (Bxh7+) allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Capablanca Model: Endgame Clarity systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Sacrifice on h7 when Ng5+ and Qh5 cannot be refuted.
 
-**Canonical Diagram FEN:** `8/8/5k2/P7/8/8/8/4K3 w - - 0 1`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Capablanca Model: Endgame Clarity
+### 4. Canonical Model Game
+Rudolf Spielmann vs Baldur Hoenlinger (1929)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Capablanca Model: Endgame Clarity.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Capablanca Model: Endgame Clarity with strict Kotov discipline. Look for candidate a6 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Capablanca Model: Endgame Clarity principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Sacrifice on h7 when Ng5+ and Qh5 cannot be refuted.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Capablanca Model: Endgame Clarity.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Capablanca Model: Endgame Clarity.
+- Model Demonstration 1: Textbook execution of The Greek Gift Sacrifice (Bxh7+) with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering The Greek Gift Sacrifice (Bxh7+).
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d79_ex1)
-- **FEN**: `8/8/5k2/P7/8/8/8/4K3 w - - 0 1`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Capablanca Model: Endgame Clarity
-- **Instruction**: White to move: Execute the key move demonstrating Capablanca Model: Endgame Clarity.
-- **Solution Sequence**: `a6`
-- **Explanation**: Playing a6 directly reinforces the primary theme of Capablanca Model: Endgame Clarity.
-- **Hints**: Look for the most forcing move that executes Capablanca Model: Endgame Clarity. (Penalty: 20% per hint)
+- **Motif**: The Greek Gift Sacrifice (Bxh7+)
+- **Instruction**: White to move: Find the tactical solution demonstrating The Greek Gift Sacrifice (Bxh7+).
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d79_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d79_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d79_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d79_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d79_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Capablanca Model: Endgame Clarity
+Rudolf Spielmann vs Baldur Hoenlinger (1929)
 
 ### Practical Sparring Assignment
-Complete targeted guess_the_move_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in tactical_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Capablanca Model: Endgame Clarity: Flashcard
-- Candidate Selection Review
+- The Greek Gift Sacrifice (Bxh7+): Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for attack
 
 ### Remediation Protocol
-Review Day 78 foundational concepts, drill 5 targeted flashcards on endgames, and repeat exercise set.
+Review Day 78 foundational concepts, drill 5 targeted flashcards on attack, and repeat exercise set.
 
 ---
 
-## Day 80: Alekhine Model: Attacking Combinations
+## Day 80: Opposite-Side Castling Attacks
 
 - **Phase**: Phase 12: Master Model Games & Guess-The-Move
-- **Theme**: Dynamic energy, multi-piece assaults, and opening lines with sacrifices
+- **Theme**: Battering-ram pawn storms and line opening races
 - **Primary Skill Axis**: `attack`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 2353
+- **Difficulty Rating**: Elo 2346
 - **Prerequisites**: Day(s) 79
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Alekhine Model: Attacking Combinations themes.
-- Execute Alekhine Model: Attacking Combinations in practical games.
+- Master the core mechanics and geometric triggers of Opposite-Side Castling Attacks.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Master Games: Alexander Alekhine's Attack & Energy
+# Day 80: Opposite-Side Castling Attacks
 
 ### 1. Simple Definition & Core Concept
-Mastery of Alekhine Model: Attacking Combinations is essential for grandmaster-level chess thinking. Focus on Dynamic energy, multi-piece assaults, and opening lines with sacrifices.
+Opposite-Side Castling Attacks teaches foundational chess mastery: Battering-ram pawn storms and line opening races.
 
 ### 2. Why It Matters in Practical Play
-Understanding Alekhine Model: Attacking Combinations gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Opposite-Side Castling Attacks allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Alekhine Model: Attacking Combinations systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Whoever opens files to the opposing king first wins.
 
-**Canonical Diagram FEN:** `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Alekhine Model: Attacking Combinations
+### 4. Canonical Model Game
+Bobby Fischer vs Bent Larsen (1958)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Alekhine Model: Attacking Combinations.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Alekhine Model: Attacking Combinations with strict Kotov discipline. Look for candidate Qxf7# to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Alekhine Model: Attacking Combinations principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Whoever opens files to the opposing king first wins.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Alekhine Model: Attacking Combinations.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Alekhine Model: Attacking Combinations.
+- Model Demonstration 1: Textbook execution of Opposite-Side Castling Attacks with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Opposite-Side Castling Attacks.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d80_ex1)
 - **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Alekhine Model: Attacking Combinations
-- **Instruction**: White to move: Execute the key move demonstrating Alekhine Model: Attacking Combinations.
+- **Motif**: Opposite-Side Castling Attacks
+- **Instruction**: White to move: Find the tactical solution demonstrating Opposite-Side Castling Attacks.
 - **Solution Sequence**: `Qxf7#`
-- **Explanation**: Playing Qxf7# directly reinforces the primary theme of Alekhine Model: Attacking Combinations.
-- **Hints**: Look for the most forcing move that executes Alekhine Model: Attacking Combinations. (Penalty: 20% per hint)
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d80_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d80_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d80_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d80_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d80_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Alekhine Model: Attacking Combinations
+Bobby Fischer vs Bent Larsen (1958)
 
 ### Practical Sparring Assignment
-Complete targeted guess_the_move_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in tactical_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Alekhine Model: Attacking Combinations: Flashcard
-- Candidate Selection Review
+- Opposite-Side Castling Attacks: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for attack
 
 ### Remediation Protocol
 Review Day 79 foundational concepts, drill 5 targeted flashcards on attack, and repeat exercise set.
 
 ---
 
-## Day 81: Tal Model: Intuitive Attacks
+## Day 81: Destroying the Castled Shield
 
 - **Phase**: Phase 12: Master Model Games & Guess-The-Move
-- **Theme**: Psychological pressure, complex initiative, and tactical chaos
+- **Theme**: Piece sacrifices on h6, g7, and f7 to shatter shelters
 - **Primary Skill Axis**: `attack`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 2368
+- **Difficulty Rating**: Elo 2360
 - **Prerequisites**: Day(s) 80
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Tal Model: Intuitive Attacks themes.
-- Execute Tal Model: Intuitive Attacks in practical games.
+- Master the core mechanics and geometric triggers of Destroying the Castled Shield.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Master Games: Mikhail Tal's Intuitive Sacrifices
+# Day 81: Destroying the Castled Shield
 
 ### 1. Simple Definition & Core Concept
-Mastery of Tal Model: Intuitive Attacks is essential for grandmaster-level chess thinking. Focus on Psychological pressure, complex initiative, and tactical chaos.
+Destroying the Castled Shield teaches foundational chess mastery: Piece sacrifices on h6, g7, and f7 to shatter shelters.
 
 ### 2. Why It Matters in Practical Play
-Understanding Tal Model: Intuitive Attacks gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Destroying the Castled Shield allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Tal Model: Intuitive Attacks systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Rip open the defensive bunker to clear queen entry vectors.
 
-**Canonical Diagram FEN:** `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Tal Model: Intuitive Attacks
+### 4. Canonical Model Game
+Garry Kasparov vs Lajos Portisch (1989)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Tal Model: Intuitive Attacks.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Tal Model: Intuitive Attacks with strict Kotov discipline. Look for candidate Qxf7# to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Tal Model: Intuitive Attacks principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Rip open the defensive bunker to clear queen entry vectors.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Tal Model: Intuitive Attacks.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Tal Model: Intuitive Attacks.
+- Model Demonstration 1: Textbook execution of Destroying the Castled Shield with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Destroying the Castled Shield.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d81_ex1)
 - **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Tal Model: Intuitive Attacks
-- **Instruction**: White to move: Execute the key move demonstrating Tal Model: Intuitive Attacks.
+- **Motif**: Destroying the Castled Shield
+- **Instruction**: White to move: Find the tactical solution demonstrating Destroying the Castled Shield.
 - **Solution Sequence**: `Qxf7#`
-- **Explanation**: Playing Qxf7# directly reinforces the primary theme of Tal Model: Intuitive Attacks.
-- **Hints**: Look for the most forcing move that executes Tal Model: Intuitive Attacks. (Penalty: 20% per hint)
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d81_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d81_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d81_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d81_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d81_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Tal Model: Intuitive Attacks
+Garry Kasparov vs Lajos Portisch (1989)
 
 ### Practical Sparring Assignment
-Complete targeted guess_the_move_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in tactical_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Tal Model: Intuitive Attacks: Flashcard
-- Candidate Selection Review
+- Destroying the Castled Shield: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for attack
 
 ### Remediation Protocol
 Review Day 80 foundational concepts, drill 5 targeted flashcards on attack, and repeat exercise set.
 
 ---
 
-## Day 82: Fischer Model: Concrete Precision
+## Day 82: Tenacious Defensive Resources
 
 - **Phase**: Phase 12: Master Model Games & Guess-The-Move
-- **Theme**: Clarity of plan, relentless execution, and converting technical edges
-- **Primary Skill Axis**: `conversion`
+- **Theme**: Anticipating threats, counter-sacrifices, and stalemate saves
+- **Primary Skill Axis**: `defense`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 2383
+- **Difficulty Rating**: Elo 2375
 - **Prerequisites**: Day(s) 81
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Fischer Model: Concrete Precision themes.
-- Execute Fischer Model: Concrete Precision in practical games.
+- Master the core mechanics and geometric triggers of Tenacious Defensive Resources.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Master Games: Bobby Fischer's Concrete Precision
+# Day 82: Tenacious Defensive Resources
 
 ### 1. Simple Definition & Core Concept
-Mastery of Fischer Model: Concrete Precision is essential for grandmaster-level chess thinking. Focus on Clarity of plan, relentless execution, and converting technical edges.
+Tenacious Defensive Resources teaches foundational chess mastery: Anticipating threats, counter-sacrifices, and stalemate saves.
 
 ### 2. Why It Matters in Practical Play
-Understanding Fischer Model: Concrete Precision gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Tenacious Defensive Resources allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Fischer Model: Concrete Precision systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Find the only resilient resource when under heavy fire.
 
-**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/4QPPP/6K1 w - - 0 1`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Fischer Model: Concrete Precision
+### 4. Canonical Model Game
+Boris Spassky vs Bobby Fischer (1972 Game 13)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Fischer Model: Concrete Precision.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Fischer Model: Concrete Precision with strict Kotov discipline. Look for candidate Qe8# to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Fischer Model: Concrete Precision principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Find the only resilient resource when under heavy fire.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Fischer Model: Concrete Precision.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Fischer Model: Concrete Precision.
+- Model Demonstration 1: Textbook execution of Tenacious Defensive Resources with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Tenacious Defensive Resources.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d82_ex1)
-- **FEN**: `6k1/5ppp/8/8/8/8/4QPPP/6K1 w - - 0 1`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Fischer Model: Concrete Precision
-- **Instruction**: White to move: Execute the key move demonstrating Fischer Model: Concrete Precision.
-- **Solution Sequence**: `Qe8#`
-- **Explanation**: Playing Qe8# directly reinforces the primary theme of Fischer Model: Concrete Precision.
-- **Hints**: Look for the most forcing move that executes Fischer Model: Concrete Precision. (Penalty: 20% per hint)
+- **Motif**: Tenacious Defensive Resources
+- **Instruction**: White to move: Find the tactical solution demonstrating Tenacious Defensive Resources.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d82_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d82_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d82_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d82_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d82_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Fischer Model: Concrete Precision
+Boris Spassky vs Bobby Fischer (1972 Game 13)
 
 ### Practical Sparring Assignment
-Complete targeted guess_the_move_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in defensive_resource_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Fischer Model: Concrete Precision: Flashcard
-- Candidate Selection Review
+- Tenacious Defensive Resources: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for defense
 
 ### Remediation Protocol
-Review Day 81 foundational concepts, drill 5 targeted flashcards on conversion, and repeat exercise set.
+Review Day 81 foundational concepts, drill 5 targeted flashcards on defense, and repeat exercise set.
 
 ---
 
-## Day 83: Kasparov Model: Aggressive Initiative
+## Day 83: Simplification Under Attack
 
 - **Phase**: Phase 12: Master Model Games & Guess-The-Move
-- **Theme**: Deep opening preparation, dynamic piece coordination, and relentless pressure
-- **Primary Skill Axis**: `attack`
+- **Theme**: Trading dangerous attackers into calm winning endgames
+- **Primary Skill Axis**: `conversion`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 2397
+- **Difficulty Rating**: Elo 2389
 - **Prerequisites**: Day(s) 82
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Kasparov Model: Aggressive Initiative themes.
-- Execute Kasparov Model: Aggressive Initiative in practical games.
+- Master the core mechanics and geometric triggers of Simplification Under Attack.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Master Games: Garry Kasparov's Dynamic Dominance
+# Day 83: Simplification Under Attack
 
 ### 1. Simple Definition & Core Concept
-Mastery of Kasparov Model: Aggressive Initiative is essential for grandmaster-level chess thinking. Focus on Deep opening preparation, dynamic piece coordination, and relentless pressure.
+Simplification Under Attack teaches foundational chess mastery: Trading dangerous attackers into calm winning endgames.
 
 ### 2. Why It Matters in Practical Play
-Understanding Kasparov Model: Aggressive Initiative gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Simplification Under Attack allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Kasparov Model: Aggressive Initiative systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Trade attacking pieces to extinguish all enemy counterplay.
 
-**Canonical Diagram FEN:** `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Kasparov Model: Aggressive Initiative
+### 4. Canonical Model Game
+Jose Raul Capablanca vs Frank Marshall (1918)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Kasparov Model: Aggressive Initiative.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Kasparov Model: Aggressive Initiative with strict Kotov discipline. Look for candidate Qxf7# to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Kasparov Model: Aggressive Initiative principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Trade attacking pieces to extinguish all enemy counterplay.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Kasparov Model: Aggressive Initiative.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Kasparov Model: Aggressive Initiative.
+- Model Demonstration 1: Textbook execution of Simplification Under Attack with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Simplification Under Attack.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d83_ex1)
 - **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Kasparov Model: Aggressive Initiative
-- **Instruction**: White to move: Execute the key move demonstrating Kasparov Model: Aggressive Initiative.
+- **Motif**: Simplification Under Attack
+- **Instruction**: White to move: Find the tactical solution demonstrating Simplification Under Attack.
 - **Solution Sequence**: `Qxf7#`
-- **Explanation**: Playing Qxf7# directly reinforces the primary theme of Kasparov Model: Aggressive Initiative.
-- **Hints**: Look for the most forcing move that executes Kasparov Model: Aggressive Initiative. (Penalty: 20% per hint)
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d83_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d83_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d83_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d83_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d83_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Kasparov Model: Aggressive Initiative
+Jose Raul Capablanca vs Frank Marshall (1918)
 
 ### Practical Sparring Assignment
-Complete targeted guess_the_move_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in conversion_challenge_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Kasparov Model: Aggressive Initiative: Flashcard
-- Candidate Selection Review
+- Simplification Under Attack: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for conversion
 
 ### Remediation Protocol
-Review Day 82 foundational concepts, drill 5 targeted flashcards on attack, and repeat exercise set.
+Review Day 82 foundational concepts, drill 5 targeted flashcards on conversion, and repeat exercise set.
 
 ---
 
-## Day 84: Carlsen Model: Positional Squeeze
+## Day 84: Grand Milestone: Attack & Defense
 
 - **Phase**: Phase 12: Master Model Games & Guess-The-Move
-- **Theme**: Milestone 12: Guess-the-Move master game reconstruction and plan prediction
-- **Primary Skill Axis**: `strategy`
+- **Theme**: Comprehensive attacking execution and defensive tenacity exam
+- **Primary Skill Axis**: `attack`
 - **Estimated Training Time**: 90 minutes
-- **Difficulty Rating**: Elo 2412
+- **Difficulty Rating**: Elo 2404
 - **Prerequisites**: Day(s) 83
 - **Mastery Pass Threshold**: 85% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Carlsen Model: Positional Squeeze themes.
-- Execute Carlsen Model: Positional Squeeze in practical games.
+- Master the core mechanics and geometric triggers of Grand Milestone: Attack & Defense.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Master Games: Magnus Carlsen's Positional Squeeze Exam
+# Day 84: Grand Milestone: Attack & Defense
 
 ### 1. Simple Definition & Core Concept
-Mastery of Carlsen Model: Positional Squeeze is essential for grandmaster-level chess thinking. Focus on Milestone 12: Guess-the-Move master game reconstruction and plan prediction.
+Grand Milestone: Attack & Defense teaches foundational chess mastery: Comprehensive attacking execution and defensive tenacity exam.
 
 ### 2. Why It Matters in Practical Play
-Understanding Carlsen Model: Positional Squeeze gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Grand Milestone: Attack & Defense allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Carlsen Model: Positional Squeeze systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Combine sharp attacking instincts with bulletproof defense.
 
-**Canonical Diagram FEN:** `r1bq1rk1/pp3ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 0 9`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Carlsen Model: Positional Squeeze
+### 4. Canonical Model Game
+Paul Keres vs Alexander Kotov (1939)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Carlsen Model: Positional Squeeze.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Carlsen Model: Positional Squeeze with strict Kotov discipline. Look for candidate Ne5 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Carlsen Model: Positional Squeeze principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Combine sharp attacking instincts with bulletproof defense.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Carlsen Model: Positional Squeeze.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Carlsen Model: Positional Squeeze.
+- Model Demonstration 1: Textbook execution of Grand Milestone: Attack & Defense with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Grand Milestone: Attack & Defense.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d84_ex1)
-- **FEN**: `r1bq1rk1/pp3ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 0 9`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Carlsen Model: Positional Squeeze
-- **Instruction**: White to move: Execute the key move demonstrating Carlsen Model: Positional Squeeze.
-- **Solution Sequence**: `Ne5`
-- **Explanation**: Playing Ne5 directly reinforces the primary theme of Carlsen Model: Positional Squeeze.
-- **Hints**: Look for the most forcing move that executes Carlsen Model: Positional Squeeze. (Penalty: 20% per hint)
+- **Motif**: Grand Milestone: Attack & Defense
+- **Instruction**: White to move: Find the tactical solution demonstrating Grand Milestone: Attack & Defense.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d84_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d84_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d84_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d84_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d84_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Carlsen Model: Positional Squeeze
+Paul Keres vs Alexander Kotov (1939)
 
 ### Practical Sparring Assignment
-Complete targeted guess_the_move_lab interactive drills applying the decision checklist.
+Weekly Milestone Comprehensive Exam: Solve all positions with >= 85% accuracy and zero hints permitted.
 
 ### Spaced Repetition (SRS) Review Queue
-- Carlsen Model: Positional Squeeze: Flashcard
-- Candidate Selection Review
+- Grand Milestone: Attack & Defense: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for attack
 
 ### Remediation Protocol
-Review Day 83 foundational concepts, drill 5 targeted flashcards on strategy, and repeat exercise set.
+Review Day 83 foundational concepts, drill 5 targeted flashcards on attack, and repeat exercise set.
 
 ---
 
-## Day 85: Tournament Simulation
+## Day 85: Material Conversion Protocol
 
 - **Phase**: Phase 13: Tournament Simulation & Final Assessment
-- **Theme**: Full tournament time control discipline with scoresheet recording and pacing
-- **Primary Skill Axis**: `tournamentPlay`
+- **Theme**: Flawless conversion of two pawns up and technical liquidation
+- **Primary Skill Axis**: `conversion`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 2426
+- **Difficulty Rating**: Elo 2418
 - **Prerequisites**: Day(s) 84
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Tournament Simulation themes.
-- Execute Tournament Simulation in practical games.
+- Master the core mechanics and geometric triggers of Material Conversion Protocol.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Tournament Simulation: Classical Time Control Discipline
+# Day 85: Material Conversion Protocol
 
 ### 1. Simple Definition & Core Concept
-Mastery of Tournament Simulation is essential for grandmaster-level chess thinking. Focus on Full tournament time control discipline with scoresheet recording and pacing.
+Material Conversion Protocol teaches foundational chess mastery: Flawless conversion of two pawns up and technical liquidation.
 
 ### 2. Why It Matters in Practical Play
-Understanding Tournament Simulation gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Material Conversion Protocol allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Tournament Simulation systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Do not rush; extinguish counterplay and nurse passed pawns.
 
-**Canonical Diagram FEN:** `r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Tournament Simulation
+### 4. Canonical Model Game
+Magnus Carlsen vs Fabiano Caruana (2018)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Tournament Simulation.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Tournament Simulation with strict Kotov discipline. Look for candidate Bc4 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Tournament Simulation principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Do not rush; extinguish counterplay and nurse passed pawns.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Tournament Simulation.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Tournament Simulation.
+- Model Demonstration 1: Textbook execution of Material Conversion Protocol with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Material Conversion Protocol.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d85_ex1)
-- **FEN**: `r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Tournament Simulation
-- **Instruction**: White to move: Execute the key move demonstrating Tournament Simulation.
-- **Solution Sequence**: `Bc4`
-- **Explanation**: Playing Bc4 directly reinforces the primary theme of Tournament Simulation.
-- **Hints**: Look for the most forcing move that executes Tournament Simulation. (Penalty: 20% per hint)
+- **Motif**: Material Conversion Protocol
+- **Instruction**: White to move: Find the tactical solution demonstrating Material Conversion Protocol.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d85_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d85_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d85_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d85_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d85_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Tournament Simulation
+Magnus Carlsen vs Fabiano Caruana (2018)
 
 ### Practical Sparring Assignment
-Complete targeted time_management_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in conversion_challenge_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Tournament Simulation: Flashcard
-- Candidate Selection Review
+- Material Conversion Protocol: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for conversion
 
 ### Remediation Protocol
-Review Day 84 foundational concepts, drill 5 targeted flashcards on tournamentPlay, and repeat exercise set.
+Review Day 84 foundational concepts, drill 5 targeted flashcards on conversion, and repeat exercise set.
 
 ---
 
-## Day 86: Weakness Repair & Diagnostics
+## Day 86: Model Master Game Guess-the-Move
 
 - **Phase**: Phase 13: Tournament Simulation & Final Assessment
-- **Theme**: Identifying personalized cognitive blind spots and targeted remediation drills
-- **Primary Skill Axis**: `tactics`
+- **Theme**: Anticipating grandmaster candidate moves in complex middlegames
+- **Primary Skill Axis**: `calculation`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 2441
+- **Difficulty Rating**: Elo 2433
 - **Prerequisites**: Day(s) 85
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Weakness Repair & Diagnostics themes.
-- Execute Weakness Repair & Diagnostics in practical games.
+- Master the core mechanics and geometric triggers of Model Master Game Guess-the-Move.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Weakness Repair & Blind-Spot Diagnostics
+# Day 86: Model Master Game Guess-the-Move
 
 ### 1. Simple Definition & Core Concept
-Mastery of Weakness Repair & Diagnostics is essential for grandmaster-level chess thinking. Focus on Identifying personalized cognitive blind spots and targeted remediation drills.
+Model Master Game Guess-the-Move teaches foundational chess mastery: Anticipating grandmaster candidate moves in complex middlegames.
 
 ### 2. Why It Matters in Practical Play
-Understanding Weakness Repair & Diagnostics gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Model Master Game Guess-the-Move allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Weakness Repair & Diagnostics systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Find the master continuation under tournament time controls.
 
-**Canonical Diagram FEN:** `r1bq1rk1/pp3ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 0 9`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Weakness Repair & Diagnostics
+### 4. Canonical Model Game
+Garry Kasparov vs Anatoly Karpov (1985 World Championship)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Weakness Repair & Diagnostics.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Weakness Repair & Diagnostics with strict Kotov discipline. Look for candidate Ne5 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Weakness Repair & Diagnostics principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Find the master continuation under tournament time controls.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Weakness Repair & Diagnostics.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Weakness Repair & Diagnostics.
+- Model Demonstration 1: Textbook execution of Model Master Game Guess-the-Move with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Model Master Game Guess-the-Move.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d86_ex1)
-- **FEN**: `r1bq1rk1/pp3ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 0 9`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Weakness Repair & Diagnostics
-- **Instruction**: White to move: Execute the key move demonstrating Weakness Repair & Diagnostics.
-- **Solution Sequence**: `Ne5`
-- **Explanation**: Playing Ne5 directly reinforces the primary theme of Weakness Repair & Diagnostics.
-- **Hints**: Look for the most forcing move that executes Weakness Repair & Diagnostics. (Penalty: 20% per hint)
+- **Motif**: Model Master Game Guess-the-Move
+- **Instruction**: White to move: Find the tactical solution demonstrating Model Master Game Guess-the-Move.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d86_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d86_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d86_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d86_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d86_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Weakness Repair & Diagnostics
+Garry Kasparov vs Anatoly Karpov (1985 World Championship)
 
 ### Practical Sparring Assignment
-Complete targeted tactical_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in guess_the_move_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Weakness Repair & Diagnostics: Flashcard
-- Candidate Selection Review
+- Model Master Game Guess-the-Move: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for calculation
 
 ### Remediation Protocol
-Review Day 85 foundational concepts, drill 5 targeted flashcards on tactics, and repeat exercise set.
+Review Day 85 foundational concepts, drill 5 targeted flashcards on calculation, and repeat exercise set.
 
 ---
 
-## Day 87: Retention Stabilization
+## Day 87: Root Cause Self-Analysis
 
 - **Phase**: Phase 13: Tournament Simulation & Final Assessment
-- **Theme**: Locking in all 90 days of patterns with Leitner spaced repetition flashcards
-- **Primary Skill Axis**: `tactics`
+- **Theme**: Annotating turning points, identifying the 11 cognitive errors
+- **Primary Skill Axis**: `calculation`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 2456
+- **Difficulty Rating**: Elo 2447
 - **Prerequisites**: Day(s) 86
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Retention Stabilization themes.
-- Execute Retention Stabilization in practical games.
+- Master the core mechanics and geometric triggers of Root Cause Self-Analysis.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Long-Term Retention Stabilization & Spaced Repetition
+# Day 87: Root Cause Self-Analysis
 
 ### 1. Simple Definition & Core Concept
-Mastery of Retention Stabilization is essential for grandmaster-level chess thinking. Focus on Locking in all 90 days of patterns with Leitner spaced repetition flashcards.
+Root Cause Self-Analysis teaches foundational chess mastery: Annotating turning points, identifying the 11 cognitive errors.
 
 ### 2. Why It Matters in Practical Play
-Understanding Retention Stabilization gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Root Cause Self-Analysis allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Retention Stabilization systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Analyze without an engine first to diagnose your mental habits.
 
-**Canonical Diagram FEN:** `r1bq1rk1/pp3ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 0 9`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Retention Stabilization
+### 4. Canonical Model Game
+Mikhail Botvinnik Training Diaries (1958)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Retention Stabilization.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Retention Stabilization with strict Kotov discipline. Look for candidate Ne5 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Retention Stabilization principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Analyze without an engine first to diagnose your mental habits.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Retention Stabilization.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Retention Stabilization.
+- Model Demonstration 1: Textbook execution of Root Cause Self-Analysis with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Root Cause Self-Analysis.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d87_ex1)
-- **FEN**: `r1bq1rk1/pp3ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 0 9`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Retention Stabilization
-- **Instruction**: White to move: Execute the key move demonstrating Retention Stabilization.
-- **Solution Sequence**: `Ne5`
-- **Explanation**: Playing Ne5 directly reinforces the primary theme of Retention Stabilization.
-- **Hints**: Look for the most forcing move that executes Retention Stabilization. (Penalty: 20% per hint)
+- **Motif**: Root Cause Self-Analysis
+- **Instruction**: White to move: Find the tactical solution demonstrating Root Cause Self-Analysis.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d87_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d87_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d87_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d87_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d87_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Retention Stabilization
+Mikhail Botvinnik Training Diaries (1958)
 
 ### Practical Sparring Assignment
-Complete targeted tactical_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in positional_evaluation_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Retention Stabilization: Flashcard
-- Candidate Selection Review
+- Root Cause Self-Analysis: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for calculation
 
 ### Remediation Protocol
-Review Day 86 foundational concepts, drill 5 targeted flashcards on tactics, and repeat exercise set.
+Review Day 86 foundational concepts, drill 5 targeted flashcards on calculation, and repeat exercise set.
 
 ---
 
-## Day 88: Anti-Blunder Verification
+## Day 88: Tournament Psychology & Discipline
 
 - **Phase**: Phase 13: Tournament Simulation & Final Assessment
-- **Theme**: Automating the 3-step blunder check under extreme time pressure
+- **Theme**: Touch-move discipline, handling nerves, and scoresheet habits
 - **Primary Skill Axis**: `tournamentPlay`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 2470
+- **Difficulty Rating**: Elo 2462
 - **Prerequisites**: Day(s) 87
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Anti-Blunder Verification themes.
-- Execute Anti-Blunder Verification in practical games.
+- Master the core mechanics and geometric triggers of Tournament Psychology & Discipline.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Rapid & Blitz Discipline: Anti-Blunder Triggers
+# Day 88: Tournament Psychology & Discipline
 
 ### 1. Simple Definition & Core Concept
-Mastery of Anti-Blunder Verification is essential for grandmaster-level chess thinking. Focus on Automating the 3-step blunder check under extreme time pressure.
+Tournament Psychology & Discipline teaches foundational chess mastery: Touch-move discipline, handling nerves, and scoresheet habits.
 
 ### 2. Why It Matters in Practical Play
-Understanding Anti-Blunder Verification gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Tournament Psychology & Discipline allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Anti-Blunder Verification systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Master emotional stability across long competitive rounds.
 
-**Canonical Diagram FEN:** `r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Anti-Blunder Verification
+### 4. Canonical Model Game
+Garry Kasparov vs Anatoly Karpov (1985 World Championship)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Anti-Blunder Verification.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Anti-Blunder Verification with strict Kotov discipline. Look for candidate Bc4 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Anti-Blunder Verification principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Master emotional stability across long competitive rounds.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Anti-Blunder Verification.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Anti-Blunder Verification.
+- Model Demonstration 1: Textbook execution of Tournament Psychology & Discipline with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Tournament Psychology & Discipline.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d88_ex1)
-- **FEN**: `r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Anti-Blunder Verification
-- **Instruction**: White to move: Execute the key move demonstrating Anti-Blunder Verification.
-- **Solution Sequence**: `Bc4`
-- **Explanation**: Playing Bc4 directly reinforces the primary theme of Anti-Blunder Verification.
-- **Hints**: Look for the most forcing move that executes Anti-Blunder Verification. (Penalty: 20% per hint)
+- **Motif**: Tournament Psychology & Discipline
+- **Instruction**: White to move: Find the tactical solution demonstrating Tournament Psychology & Discipline.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d88_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d88_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d88_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d88_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d88_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Anti-Blunder Verification
+Garry Kasparov vs Anatoly Karpov (1985 World Championship)
 
 ### Practical Sparring Assignment
-Complete targeted time_management_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in find_the_plan_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Anti-Blunder Verification: Flashcard
-- Candidate Selection Review
+- Tournament Psychology & Discipline: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for tournamentPlay
 
 ### Remediation Protocol
 Review Day 87 foundational concepts, drill 5 targeted flashcards on tournamentPlay, and repeat exercise set.
 
 ---
 
-## Day 89: Full Game Reconstruction
+## Day 89: Competitive Tournament Simulation
 
 - **Phase**: Phase 13: Tournament Simulation & Final Assessment
-- **Theme**: Reconstructing master reasoning from move 1 to checkmate
-- **Primary Skill Axis**: `strategy`
+- **Theme**: Timed tournament game simulations with deep post-mortem analysis
+- **Primary Skill Axis**: `tournamentPlay`
 - **Estimated Training Time**: 60 minutes
-- **Difficulty Rating**: Elo 2485
+- **Difficulty Rating**: Elo 2476
 - **Prerequisites**: Day(s) 88
 - **Mastery Pass Threshold**: 80% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Full Game Reconstruction themes.
-- Execute Full Game Reconstruction in practical games.
+- Master the core mechanics and geometric triggers of Competitive Tournament Simulation.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Master Game Reconstruction: Full Guess-the-Move
+# Day 89: Competitive Tournament Simulation
 
 ### 1. Simple Definition & Core Concept
-Mastery of Full Game Reconstruction is essential for grandmaster-level chess thinking. Focus on Reconstructing master reasoning from move 1 to checkmate.
+Competitive Tournament Simulation teaches foundational chess mastery: Timed tournament game simulations with deep post-mortem analysis.
 
 ### 2. Why It Matters in Practical Play
-Understanding Full Game Reconstruction gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Mastering Competitive Tournament Simulation allows tournament players to navigate sharp tactical battles and positional imbalances with confidence.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Full Game Reconstruction systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Synthesize tactical alertness with clock discipline in competitive rounds.
 
-**Canonical Diagram FEN:** `r1bq1rk1/pp3ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 0 9`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Full Game Reconstruction
+### 4. Canonical Model Game
+Alexander Kotov Training Methodology (1970)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Full Game Reconstruction.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Full Game Reconstruction with strict Kotov discipline. Look for candidate Ne5 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Full Game Reconstruction principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Synthesize tactical alertness with clock discipline in competitive rounds.
+- Maintain clock discipline and check opponent tactical resources.
+
 
 
 ### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Full Game Reconstruction.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Full Game Reconstruction.
+- Model Demonstration 1: Textbook execution of Competitive Tournament Simulation with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Competitive Tournament Simulation.
 
-### Interactive Exercises (1 Exercises)
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d89_ex1)
-- **FEN**: `r1bq1rk1/pp3ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R1BQ1RK1 w - - 0 9`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Full Game Reconstruction
-- **Instruction**: White to move: Execute the key move demonstrating Full Game Reconstruction.
-- **Solution Sequence**: `Ne5`
-- **Explanation**: Playing Ne5 directly reinforces the primary theme of Full Game Reconstruction.
-- **Hints**: Look for the most forcing move that executes Full Game Reconstruction. (Penalty: 20% per hint)
+- **Motif**: Competitive Tournament Simulation
+- **Instruction**: White to move: Find the tactical solution demonstrating Competitive Tournament Simulation.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d89_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d89_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d89_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d89_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d89_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Full Game Reconstruction
+Alexander Kotov Training Methodology (1970)
 
 ### Practical Sparring Assignment
-Complete targeted guess_the_move_lab interactive drills applying the decision checklist.
+Interactive Lab Session: Complete all daily drills in tactical_lab, applying the move decision checklist on every ply.
 
 ### Spaced Repetition (SRS) Review Queue
-- Full Game Reconstruction: Flashcard
-- Candidate Selection Review
+- Competitive Tournament Simulation: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for tournamentPlay
 
 ### Remediation Protocol
-Review Day 88 foundational concepts, drill 5 targeted flashcards on strategy, and repeat exercise set.
+Review Day 88 foundational concepts, drill 5 targeted flashcards on tournamentPlay, and repeat exercise set.
 
 ---
 
-## Day 90: Mastery Assessment & Completion Report
+## Day 90: Final Capstone Certification — Mastery Assessment & Completion Report
 
 - **Phase**: Phase 13: Tournament Simulation & Final Assessment
-- **Theme**: Grandmaster-Thinking Mastery & Final Assessment
+- **Theme**: Comprehensive grandmaster mastery assessment and full 12-axis performance report
 - **Primary Skill Axis**: `tournamentPlay`
 - **Estimated Training Time**: 90 minutes
-- **Difficulty Rating**: Elo 2500
+- **Difficulty Rating**: Elo 2491
 - **Prerequisites**: Day(s) 89
 - **Mastery Pass Threshold**: 85% accuracy with zero hints
 
 ### Learning Objectives
-- Identify primary Mastery Assessment & Completion Report themes.
-- Execute Mastery Assessment & Completion Report in practical games.
+- Master the core mechanics and geometric triggers of Final Capstone Certification — Mastery Assessment & Completion Report.
+- Evaluate candidate moves side-by-side without tunnel vision.
+- Achieve >= 80% accuracy on today's verified interactive exercises.
 
 ### Theoretical Instruction & Lesson Guidance
-# Day 90: Final Certification, Mastery Assessment & Completion Report
+# Day 90: Final Capstone Certification — Mastery Assessment & Completion Report
 
 ### 1. Simple Definition & Core Concept
-Culmination of the 90-day mastery spiral. You have built deep calculation discipline, tactical pattern recognition, opening repertoire depth, and endgame precision. Disclaimer: Completion of this 90-day program builds master-level calculation habits, tactical pattern recognition, and strategic intuition, but does not confer an official FIDE Grandmaster title, which requires official FIDE rating and norm achievements in sanctioned tournament play.
+Final Grandmaster Capstone Examination and 12-axis Skill Radar Certification. Note: Official FIDE title ratings and norms require performance in sanctioned over-the-board tournament play; this program certifies comprehensive completion of our 90-day master curriculum.
 
 ### 2. Why It Matters in Practical Play
-Understanding Mastery Assessment & Completion Report gives you a permanent cognitive edge in evaluating positions and formulating concrete plans.
+Validates complete mastery of all tactical motifs, calculation trees, positional strategies, and theoretical endgame benchmarks.
 
 ### 3. Visual Board Model & Pattern Heuristic
-**Core Rule / Heuristic:** Core Principle: Apply Mastery Assessment & Completion Report systematically; never make a move without purpose.
+**Core Rule / Heuristic:** Final grandmaster assessment across all 12 core cognitive skill axes.
 
-**Canonical Diagram FEN:** `r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3`
+**Canonical Diagram FEN:** `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
 
-### 4. Canonical Model Game Study
-Classic Model Game illustrating Mastery Assessment & Completion Report
+### 4. Canonical Model Game
+Emanuel Lasker vs William Steinitz (1894 World Championship)
 
 ### 5. Common Amateur Mistakes & Refutations
-- **Mistake:** Underestimating the opponent's counterplay in Mastery Assessment & Completion Report.
-- **Mistake:** Playing intuitive moves without verifying the tactical consequences.
-- **Mistake:** Rushing through critical moments instead of calculating candidate branches.
+- **Mistake:** Making hasty moves without surveying all opponent checks and captures.
+- **Mistake:** Overestimating nominal point value over square activity and king safety.
 
 ### 6. Candidate Moves & Kotov Calculation Discipline
-Evaluate candidate moves in Mastery Assessment & Completion Report with strict Kotov discipline. Look for candidate Bc4 to seize the advantage.
+- **Primary Candidate Move:** Identify the most forcing continuation (check, capture, or concrete threat) that exploits the theme.
+- **Tempting Sub-Optimal Alternative:** Amateurs often choose an intuitive developing move that relieves tension and forfeits the initiative.
+- **Why Wrong Choices Fail:** Refutation lies in calculating opponent defensive resources and intermediate moves (zwischenzug).
 
 ### 7. Concise Cheat Sheet
-- Master Mastery Assessment & Completion Report principles.
-- Scan for CCT forcing moves on every ply.
-- Maintain steady time management and clock rhythm.
+- Always verify candidate moves before committing to calculation.
+- Final grandmaster assessment across all 12 core cognitive skill axes.
+- Maintain clock discipline and check opponent tactical resources.
 
 > **Official Educational Notice**: Completion of ChessMaster's 90-day curriculum certifies analytical mastery and cognitive benchmarks; it does **not** grant or imply an official FIDE Grandmaster or International Master title, nor an official FIDE rating.
 
 
-### Worked Examples
-- Worked Demonstration 1: Step-by-step application of Mastery Assessment & Completion Report.
-- Worked Demonstration 2: Refutation of sub-optimal replies in Mastery Assessment & Completion Report.
 
-### Interactive Exercises (1 Exercises)
+### Worked Examples
+- Model Demonstration 1: Textbook execution of Final Capstone Certification — Mastery Assessment & Completion Report with strict candidate move calculation.
+- Model Demonstration 2: Practical defensive resource discovery when countering Final Capstone Certification — Mastery Assessment & Completion Report.
+
+### Interactive Exercises (6 Exercises)
 #### Exercise 1 (cur_d90_ex1)
-- **FEN**: `r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3`
+- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Mastery Assessment & Completion Report
-- **Instruction**: White to move: Execute the key move demonstrating Mastery Assessment & Completion Report.
-- **Solution Sequence**: `Bc4`
-- **Explanation**: Playing Bc4 directly reinforces the primary theme of Mastery Assessment & Completion Report.
-- **Hints**: Look for the most forcing move that executes Mastery Assessment & Completion Report. (Penalty: 20% per hint)
+- **Motif**: Final Capstone Certification — Mastery Assessment & Completion Report
+- **Instruction**: White to move: Find the tactical solution demonstrating Final Capstone Certification — Mastery Assessment & Completion Report.
+- **Solution Sequence**: `Qxf7#`
+- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
+- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+
+#### Exercise 2 (cur_d90_ex2)
+- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Back-Rank Infiltration
+- **Instruction**: White to move: Infiltrate the opponent back rank.
+- **Solution Sequence**: `Re8#`
+- **Explanation**: Re8# delivers the canonical corridor checkmate.
+- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+
+#### Exercise 3 (cur_d90_ex3)
+- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Solution Sequence**: `Ke3`
+- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
+- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+
+#### Exercise 4 (cur_d90_ex4)
+- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Pawn Promotion
+- **Instruction**: White to move: Promote the pawn into a queen.
+- **Solution Sequence**: `e8=Q`
+- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
+- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
+
+#### Exercise 5 (cur_d90_ex5)
+- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Rook Checkmate
+- **Instruction**: White to move: Deliver checkmate with king and rook.
+- **Solution Sequence**: `Rh8#`
+- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
+- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
+
+#### Exercise 6 (cur_d90_ex6)
+- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
+- **Side to Play**: WHITE
+- **Motif**: Castling
+- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O castles kingside, tucking the king away safely.
+- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
-Classic Model Game illustrating Mastery Assessment & Completion Report
+Emanuel Lasker vs William Steinitz (1894 World Championship)
 
 ### Practical Sparring Assignment
-Complete targeted conversion_challenge_lab interactive drills applying the decision checklist.
+Weekly Milestone Comprehensive Exam: Solve all positions with >= 85% accuracy and zero hints permitted.
 
 ### Spaced Repetition (SRS) Review Queue
-- Mastery Assessment & Completion Report: Flashcard
-- Candidate Selection Review
+- Final Capstone Certification — Mastery Assessment & Completion Report: Pattern Recognition Flashcard
+- Candidate Move Selection Checklist
+- Anti-Blunder Verification Trigger for tournamentPlay
 
 ### Remediation Protocol
 Review Day 89 foundational concepts, drill 5 targeted flashcards on tournamentPlay, and repeat exercise set.

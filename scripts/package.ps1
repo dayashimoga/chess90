@@ -24,10 +24,12 @@ if (Test-Path $winDist) {
 # 3. Copy Android artifacts if present
 $apkSource = Join-Path $rootDir "apps\chess_app\build\app\outputs\flutter-apk\app-release.apk"
 if (Test-Path $apkSource) {
+    Copy-Item $apkSource (Join-Path $rootDir "ChessMaster-Android.apk") -Force
     Copy-Item $apkSource (Join-Path $rootDir "ChessMaster.apk") -Force
 }
 $aabSource = Join-Path $rootDir "apps\chess_app\build\app\outputs\bundle\release\app-release.aab"
 if (Test-Path $aabSource) {
+    Copy-Item $aabSource (Join-Path $rootDir "ChessMaster-Android.aab") -Force
     Copy-Item $aabSource (Join-Path $rootDir "ChessMaster.aab") -Force
 }
 
@@ -35,10 +37,13 @@ if (Test-Path $aabSource) {
 Write-Host "Generating SHA256SUMS..." -ForegroundColor Yellow
 $artifacts = @(
     "ChessMaster-Web.zip",
+    "ChessMaster-Windows-x64-Portable.zip",
     "ChessMaster-Windows-x64.zip",
     "ChessMaster-Portable.exe",
     "ChessMaster-Setup.exe",
     "ChessMaster-Linux-x64.tar.gz",
+    "ChessMaster-Android.apk",
+    "ChessMaster-Android.aab",
     "ChessMaster.apk",
     "ChessMaster.aab"
 )

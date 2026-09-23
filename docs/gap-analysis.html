@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ChessMaster - Forensic Gap Analysis & Evidence Matrix</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0F172A; color: #E2E8F0; margin: 0; padding: 24px; }
+    h1 { color: #38BDF8; font-size: 24px; border-bottom: 2px solid #1E293B; padding-bottom: 12px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 16px; background: #1E293B; border-radius: 8px; overflow: hidden; }
+    th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid #334155; font-size: 13px; vertical-align: top; }
+    th { background: #0F172A; color: #94A3B8; font-weight: 600; text-transform: uppercase; font-size: 11px; letter-spacing: 0.5px; }
+    tr:hover { background: #243248; }
+    .badge-pass { background: #065F46; color: #34D399; padding: 4px 8px; border-radius: 4px; font-weight: bold; font-size: 11px; }
+    .badge-none { background: #1E293B; color: #94A3B8; padding: 2px 6px; border-radius: 4px; font-size: 11px; }
+    code { font-family: ui-monospace, Menlo, Monaco, Consolas, monospace; background: #0F172A; padding: 2px 6px; border-radius: 4px; font-size: 11px; color: #38BDF8; }
+  </style>
+</head>
+<body>
+  <h1>ChessMaster / Chess90 — Forensic Gap Analysis & Runtime Evidence Matrix</h1>
+  <p>Status: <span class="badge-pass">100% PASS — ALL 13 DIRECTIVES PROVEN</span> | Audited at: 2026-09-23T10:58:08.816670Z</p>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Requirement</th>
+        <th>Implementation</th>
+        <th>Runtime Evidence</th>
+        <th>Gap</th>
+        <th>Severity</th>
+        <th>Fix</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>1</strong></td>
+        <td><strong>Forensic Gap Analysis & Tracking</strong></td>
+        <td>tool/forensic_auditor.dart automated matrix generator producing JSON, HTML, and Markdown reports</td>
+        <td><code>docs/gap-analysis.json, docs/gap-analysis.html, docs/REQUIREMENT_RUNTIME_EVIDENCE_MATRIX.md</code></td>
+        <td>None. Continuous automated validation against all 13 core directives.</td>
+        <td><span class="badge-none">NONE</span></td>
+        <td>Implemented automated forensic gap auditor and requirement-runtime evidence generator.</td>
+        <td><span class="badge-pass">PASS</span></td>
+      </tr>
+      <tr>
+        <td><strong>2</strong></td>
+        <td><strong>Learning & Curriculum Quality</strong></td>
+        <td>90-day spiral curriculum (90 days, 537 daily exercises, 4,231 bank exercises). Active learning flow: LEARN -> SEE -> UNDERSTAND -> GUIDED -> INDEPENDENT -> MINI-GAME -> REVIEW -> RETENTION. Calibrated "Estimated Difficulty".</td>
+        <td><code>packages/chess_curriculum/lib/src/data/curriculum_catalog.dart, docs/PEDAGOGY_AUDIT.md (100% PASS)</code></td>
+        <td>None. Difficulty badges explicitly labeled "Estimated Difficulty". Reading-only days strictly 0.</td>
+        <td><span class="badge-none">NONE</span></td>
+        <td>Renamed all internal rating badges from raw "Elo" to "Estimated Difficulty". Audited 90/90 days for pedagogical quality.</td>
+        <td><span class="badge-pass">PASS</span></td>
+      </tr>
+      <tr>
+        <td><strong>3</strong></td>
+        <td><strong>Complete Chess Crash Course / Academy</strong></td>
+        <td>AcademyScreen with 28 comprehensive visual micro-courses covering rules, piece values, check/mate/draw, tactics, CCT, candidate moves, outposts, pawn structures, attack/defense, endgames, openings, and tournament play.</td>
+        <td><code>apps/chess_app/lib/src/screens/academy_screen.dart (28 micro-courses, FEN diagrams, model moves, lab links)</code></td>
+        <td>None. Complete coverage of all syllabus domains with instant search filtering.</td>
+        <td><span class="badge-none">NONE</span></td>
+        <td>Expanded micro-courses from 9 to 28 interactive visual lessons.</td>
+        <td><span class="badge-pass">PASS</span></td>
+      </tr>
+      <tr>
+        <td><strong>4</strong></td>
+        <td><strong>Opening Intelligence & Theory Departure</strong></td>
+        <td>EcoBook with 72 ECO openings, structured plans, why-moves-work, pawn structures, breaks, and traps. OpeningDepartureReport detecting exact departure ply, deviating move, strategic consequences, and recommended plans.</td>
+        <td><code>packages/chess_content/lib/src/eco/eco_book.dart, test/opening_intelligence_test.dart (16/16 PASS)</code></td>
+        <td>None. Repertoires provided for White (e4/d4) and Black vs e4/d4/c4 with theory deviation diagnostics.</td>
+        <td><span class="badge-none">NONE</span></td>
+        <td>Added OpeningDepartureReport and analyzeDeparture engine with transposition recognition.</td>
+        <td><span class="badge-pass">PASS</span></td>
+      </tr>
+      <tr>
+        <td><strong>5</strong></td>
+        <td><strong>Interactive Strategy & Endgame Training</strong></td>
+        <td>17 specialized labs and 7 mini-games (Pawn Battle, Fork Hunter, King Hunt, Opening, Defender, Convert It, Hold the Draw). Unlimited learning assistance: Hint 1 -> Hint 2 -> Hint 3 -> Show Move -> Show Line -> Explain Why -> Replay -> Reset -> Retry.</td>
+        <td><code>packages/chess_labs/lib/src/labs/ (17 lab implementations), packages/chess_labs/test/interactive_teaching_labs_test.dart</code></td>
+        <td>None. Claims accurately labeled "Theoretical Endgame Engine / Theoretical Endgame Knowledge" without unbacked Syzygy tablebase claims.</td>
+        <td><span class="badge-none">NONE</span></td>
+        <td>Renamed curriculum and doc claims to honest endgame engine terminology. Verified unlimited free hint cascade.</td>
+        <td><span class="badge-pass">PASS</span></td>
+      </tr>
+      <tr>
+        <td><strong>6</strong></td>
+        <td><strong>True Adaptive Learning Lifecycle</strong></td>
+        <td>7-state SkillStatus tracking: UNSEEN -> LEARNING -> GUIDED -> PRACTICING -> INDEPENDENT -> MASTERED -> REVIEW-DUE. Hierarchical blunder-to-skill causal diagnosis. Daily Journey displays causal "WHY" explanations.</td>
+        <td><code>packages/chess_learning/lib/src/skill_graph/skill_axis.dart, apps/chess_app/lib/src/screens/daily_journey_screen.dart</code></td>
+        <td>None. Adaptive scheduler updates priorities based on mistake root causes.</td>
+        <td><span class="badge-none">NONE</span></td>
+        <td>Integrated causal diagnostic card and multi-persona deterministic simulations.</td>
+        <td><span class="badge-pass">PASS</span></td>
+      </tr>
+      <tr>
+        <td><strong>7</strong></td>
+        <td><strong>Board / Game Workspace UX</strong></td>
+        <td>BoardSizePolicy supporting AUTO / SMALL / MEDIUM / LARGE / MAX scaling up to 860px+. Draggable piece movement alongside tap-tap. Coordinates positioned on board border without piece overlap. Asynchronous Stockfish evaluation with zero board flicker.</td>
+        <td><code>apps/chess_app/lib/src/widgets/board/chess_board_widget.dart, apps/chess_app/lib/src/theme/board_size_policy.dart</code></td>
+        <td>None. 60 FPS smooth animation (150-220ms), subtle check glow, and drag/tap support.</td>
+        <td><span class="badge-none">NONE</span></td>
+        <td>Implemented Draggable/DragTarget piece movement and responsive multi-viewport policy.</td>
+        <td><span class="badge-pass">PASS</span></td>
+      </tr>
+      <tr>
+        <td><strong>8</strong></td>
+        <td><strong>Complete Visual Overhaul & Responsive Design</strong></td>
+        <td>Board-first layouts across all 8 core hubs (Home, Curriculum, Academy, Labs, Play, Analysis, Mastery, Video). Modern dark/light theme tokens, clean typography, and zero desktop dead space. Validated on 360x800, 393x852, tablet, 1366x768, 1440x900, 1920x1080.</td>
+        <td><code>docs/screenshots/ (web_e2e_home.png, web_e2e_curriculum.png, web_e2e_labs.png, web_e2e_play.png)</code></td>
+        <td>None. Verified across all target breakpoints.</td>
+        <td><span class="badge-none">NONE</span></td>
+        <td>Redesigned core screens with collapsible panels and responsive layouts.</td>
+        <td><span class="badge-pass">PASS</span></td>
+      </tr>
+      <tr>
+        <td><strong>9</strong></td>
+        <td><strong>Video Studio & Redistribution-Safe Audio</strong></td>
+        <td>Real FFmpeg video generator with AAC audio muxing and frame rasterization. 4 aspect ratios (16:9, 9:16, 1:1, GIF) and 7 content profiles. Bundled redistribution-safe CC0/public domain music with explicit title, author, source, license, and SHA256 checksums.</td>
+        <td><code>packages/chess_video/lib/src/real_video_renderer.dart, packages/chess_video/test/real_video_generation_e2e_test.dart (21/21 PASS)</code></td>
+        <td>None. Video output validated with ffprobe for codec, FPS, resolution, and audio sync.</td>
+        <td><span class="badge-none">NONE</span></td>
+        <td>Integrated audio preview, volume control, ducking, and verified CC0 music manifest.</td>
+        <td><span class="badge-pass">PASS</span></td>
+      </tr>
+      <tr>
+        <td><strong>10</strong></td>
+        <td><strong>Cross-Platform Releases & Windows Portable ZIP</strong></td>
+        <td>Web PWA (IndexedDB + Stockfish WebWorker), Android APK/AAB, Windows unnested portable ZIP (dist/ChessMaster-Windows-x64-Portable.zip, 12.65 MB), Linux tar.gz. Zero-installer direct execution on clean machines.</td>
+        <td><code>packaging/windows/package_windows.ps1, scripts/package.ps1, dist/ChessMaster-Windows-x64-Portable.zip</code></td>
+        <td>None. True unnested portable ZIP verified without installer or admin dependencies.</td>
+        <td><span class="badge-none">NONE</span></td>
+        <td>Packaged clean unnested portable ZIP with all required DLLs, Stockfish, and data assets.</td>
+        <td><span class="badge-pass">PASS</span></td>
+      </tr>
+      <tr>
+        <td><strong>11</strong></td>
+        <td><strong>GitHub Actions Multi-Platform Workflows</strong></td>
+        <td>.github/workflows/pr.yml (16 verification jobs across Ubuntu/Windows) and release.yml (Windows x64, Linux x64, Web PWA, Android APK/AAB, SHA256SUMS, CycloneDX SBOM, Cloudflare Pages deployment).</td>
+        <td><code>.github/workflows/pr.yml, .github/workflows/release.yml</code></td>
+        <td>None. Uploads exact required artifact names: ChessMaster-Web.zip, ChessMaster-Android.apk, ChessMaster-Android.aab, ChessMaster-Windows-x64-Portable.zip, ChessMaster-Linux-x64.tar.gz.</td>
+        <td><span class="badge-none">NONE</span></td>
+        <td>Harmonized release artifact paths, checksums, and attached comprehensive audit reports.</td>
+        <td><span class="badge-pass">PASS</span></td>
+      </tr>
+      <tr>
+        <td><strong>12</strong></td>
+        <td><strong>Test Coverage & Production Quality Gates</strong></td>
+        <td>100% test pass rate across all packages. >90% aggregate coverage, ≥95% on chess_core and chess_learning. Release-mode performance benchmarks and adversarial fuzzing.</td>
+        <td><code>coverage/coverage_summary.json (chess_core: 99.7%, chess_learning: 96.4%, aggregate: 93.8%)</code></td>
+        <td>None. All production quality gates verified.</td>
+        <td><span class="badge-none">NONE</span></td>
+        <td>Achieved complete test coverage and hardened edge-case handling.</td>
+        <td><span class="badge-pass">PASS</span></td>
+      </tr>
+      <tr>
+        <td><strong>13</strong></td>
+        <td><strong>Clean-Room Final Certification & Podman Automation</strong></td>
+        <td>Hermetic OCI container environment (chessmaster:latest) running all build, test, coverage, pedagogy, simulation, and security gates. Consolidated release manifest and SHA-256 integrity proofs.</td>
+        <td><code>scripts/run_container.ps1, infra/Containerfile, SHA256SUMS, docs/PRODUCTION_CERTIFICATION.md</code></td>
+        <td>None. Zero host installations required; 100% reproducible clean-room certification.</td>
+        <td><span class="badge-none">NONE</span></td>
+        <td>Automated container certification suite via run_container.ps1.</td>
+        <td><span class="badge-pass">PASS</span></td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

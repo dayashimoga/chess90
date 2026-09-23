@@ -588,7 +588,7 @@ Map<int, Map<String, dynamic>> _buildDayRegistry() {
     [67, 'Opposite-Colored Bishop Fortresses', 'Constructing unbreachable blockades despite deficits', SkillAxis.endgames, 'endgame_win_defend_lab', 'Blockade on dark squares: the enemy light bishop is blind.', 'David Bronstein vs Paul Keres (1955)'],
     [68, 'Knight vs Bishop Endgames', 'Open board bishop scope vs closed board knight outposts', SkillAxis.endgames, 'endgame_win_defend_lab', 'Bishops dominate open pawns; Knights dominate closed blocks.', 'Jose Raul Capablanca vs Emanuel Lasker (1921)'],
     [69, 'Queen Endgames & Perpetual', 'Shielding the king under pawn umbrellas and pushing passers', SkillAxis.endgames, 'endgame_win_defend_lab', 'Use friendly pawns as an umbrella against spite checks.', 'Garry Kasparov vs Anatoly Karpov (1986 Game 22)'],
-    [70, 'Grand Milestone: Endgames', 'Engine-level endgame precision and conversion certification', SkillAxis.endgames, 'endgame_win_defend_lab', 'Tablebase precision is non-negotiable in mastery.', 'Vasily Smyslov vs Paul Keres (1953)'],
+    [70, 'Grand Milestone: Endgames', 'Engine-level endgame precision and conversion certification', SkillAxis.endgames, 'endgame_win_defend_lab', 'Theoretical endgame engine precision is non-negotiable in mastery.', 'Vasily Smyslov vs Paul Keres (1953)'],
 
     // Phase 7: Openings (Days 71-77)
     [71, 'Opening Principles & Harmony', 'Central staking, harmonic development, and early castling', SkillAxis.openings, 'opening_plan_lab', 'Develop pieces toward the center; never hunt early pawns.', 'Paul Morphy vs Adolf Anderssen (1858)'],

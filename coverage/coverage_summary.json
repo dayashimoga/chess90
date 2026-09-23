@@ -1,9 +1,19 @@
 {
-  "timestamp": "2026-09-23T10:06:33.166392",
+  "timestamp": "2026-09-23T10:58:01.613770",
   "aggregate": {
-    "linesFound": 10390,
-    "linesHit": 8398,
-    "percentage": 80.82771896053897
+    "linesFound": 4006,
+    "linesHit": 3770,
+    "percentage": 94.10883674488268
+  },
+  "domainAggregate": {
+    "linesFound": 4006,
+    "linesHit": 3770,
+    "percentage": 94.10883674488268
+  },
+  "overall": {
+    "linesFound": 10349,
+    "linesHit": 8571,
+    "percentage": 82.81959609624118
   },
   "packages": {
     "chess_core": {
@@ -128,9 +138,9 @@
       }
     },
     "chess_curriculum": {
-      "linesFound": 1001,
-      "linesHit": 961,
-      "percentage": 96.00399600399601,
+      "linesFound": 908,
+      "linesHit": 868,
+      "percentage": 95.59471365638767,
       "files": {
         "package:chess_curriculum/src/models/curriculum_day.dart": {
           "linesFound": 80,
@@ -143,9 +153,9 @@
           "percentage": 61.53846153846154
         },
         "package:chess_curriculum/src/data/curriculum_catalog.dart": {
-          "linesFound": 854,
-          "linesHit": 853,
-          "percentage": 99.88290398126463
+          "linesFound": 761,
+          "linesHit": 760,
+          "percentage": 99.86859395532196
         },
         "package:chess_curriculum/src/data/cheat_sheets_catalog.dart": {
           "linesFound": 15,
@@ -156,8 +166,8 @@
     },
     "chess_labs": {
       "linesFound": 255,
-      "linesHit": 196,
-      "percentage": 76.86274509803923,
+      "linesHit": 210,
+      "percentage": 82.35294117647058,
       "files": {
         "package:chess_labs/src/lab_session.dart": {
           "linesFound": 141,
@@ -246,15 +256,15 @@
         },
         "package:chess_labs/src/labs/mini_games.dart": {
           "linesFound": 14,
-          "linesHit": 0,
-          "percentage": 0.0
+          "linesHit": 14,
+          "percentage": 100.0
         }
       }
     },
     "chess_content": {
-      "linesFound": 230,
-      "linesHit": 213,
-      "percentage": 92.6086956521739,
+      "linesFound": 282,
+      "linesHit": 264,
+      "percentage": 93.61702127659575,
       "files": {
         "package:chess_content/src/model_games/model_game.dart": {
           "linesFound": 31,
@@ -272,9 +282,9 @@
           "percentage": 92.85714285714286
         },
         "package:chess_content/src/eco/eco_book.dart": {
-          "linesFound": 8,
-          "linesHit": 8,
-          "percentage": 100.0
+          "linesFound": 60,
+          "linesHit": 59,
+          "percentage": 98.33333333333333
         },
         "package:chess_content/src/batch_pipeline.dart": {
           "linesFound": 134,
@@ -364,8 +374,8 @@
     },
     "chess_app": {
       "linesFound": 6343,
-      "linesHit": 4600,
-      "percentage": 72.52088916916286,
+      "linesHit": 4801,
+      "percentage": 75.6897367176415,
       "files": {
         "lib/src/widgets/board/chess_board_widget.dart": {
           "linesFound": 363,
@@ -376,16 +386,6 @@
           "linesFound": 97,
           "linesHit": 97,
           "percentage": 100.0
-        },
-        "lib/src/screens/play_screen.dart": {
-          "linesFound": 577,
-          "linesHit": 453,
-          "percentage": 78.50953206239168
-        },
-        "lib/src/theme/board_size_policy.dart": {
-          "linesFound": 27,
-          "linesHit": 24,
-          "percentage": 88.88888888888889
         },
         "lib/src/theme/chess_board_theme.dart": {
           "linesFound": 5,
@@ -402,75 +402,55 @@
           "linesHit": 4,
           "percentage": 100.0
         },
-        "lib/src/widgets/board/board_customizer_dialog.dart": {
-          "linesFound": 112,
-          "linesHit": 106,
-          "percentage": 94.64285714285714
-        },
-        "lib/src/widgets/board/move_list_widget.dart": {
-          "linesFound": 66,
-          "linesHit": 66,
+        "lib/src/widgets/board/vector_piece_widget.dart": {
+          "linesFound": 249,
+          "linesHit": 249,
           "percentage": 100.0
         },
-        "lib/src/widgets/play/play_setup_dialog.dart": {
-          "linesFound": 150,
-          "linesHit": 146,
-          "percentage": 97.33333333333334
+        "lib/src/widgets/radar/skill_radar_widget.dart": {
+          "linesFound": 100,
+          "linesHit": 99,
+          "percentage": 99.0
         },
-        "lib/src/screens/settings_storage_screen.dart": {
-          "linesFound": 264,
-          "linesHit": 246,
-          "percentage": 93.18181818181817
-        },
-        "lib/src/screens/video_studio_screen.dart": {
-          "linesFound": 491,
-          "linesHit": 307,
-          "percentage": 62.52545824847251
-        },
-        "lib/src/widgets/board/evaluation_bar_widget.dart": {
-          "linesFound": 35,
-          "linesHit": 35,
-          "percentage": 100.0
-        },
-        "lib/src/widgets/video/game_source_selector_dialog.dart": {
-          "linesFound": 149,
-          "linesHit": 123,
-          "percentage": 82.5503355704698
+        "lib/src/theme/board_size_policy.dart": {
+          "linesFound": 27,
+          "linesHit": 24,
+          "percentage": 88.88888888888889
         },
         "lib/src/screens/endgame_workspace_screen.dart": {
           "linesFound": 171,
           "linesHit": 151,
           "percentage": 88.30409356725146
         },
-        "lib/src/widgets/board/vector_piece_widget.dart": {
-          "linesFound": 249,
-          "linesHit": 249,
-          "percentage": 100.0
-        },
-        "lib/main.dart": {
-          "linesFound": 293,
-          "linesHit": 255,
-          "percentage": 87.03071672354949
-        },
-        "lib/src/screens/academy_screen.dart": {
-          "linesFound": 176,
-          "linesHit": 2,
-          "percentage": 1.1363636363636365
-        },
         "lib/src/screens/analysis_screen.dart": {
           "linesFound": 210,
           "linesHit": 204,
           "percentage": 97.14285714285714
+        },
+        "lib/src/widgets/board/evaluation_bar_widget.dart": {
+          "linesFound": 35,
+          "linesHit": 35,
+          "percentage": 100.0
+        },
+        "lib/src/widgets/board/move_list_widget.dart": {
+          "linesFound": 66,
+          "linesHit": 66,
+          "percentage": 100.0
         },
         "lib/src/screens/curriculum_screen.dart": {
           "linesFound": 462,
           "linesHit": 389,
           "percentage": 84.19913419913419
         },
-        "lib/src/screens/daily_journey_screen.dart": {
-          "linesFound": 238,
-          "linesHit": 221,
-          "percentage": 92.85714285714286
+        "lib/src/widgets/curriculum/lesson_player_widget.dart": {
+          "linesFound": 435,
+          "linesHit": 201,
+          "percentage": 46.206896551724135
+        },
+        "lib/src/widgets/curriculum/reference_library_dialog.dart": {
+          "linesFound": 136,
+          "linesHit": 127,
+          "percentage": 93.38235294117648
         },
         "lib/src/screens/labs_screen.dart": {
           "linesFound": 674,
@@ -487,30 +467,60 @@
           "linesHit": 157,
           "percentage": 87.22222222222223
         },
+        "lib/src/screens/play_screen.dart": {
+          "linesFound": 577,
+          "linesHit": 453,
+          "percentage": 78.50953206239168
+        },
+        "lib/src/widgets/board/board_customizer_dialog.dart": {
+          "linesFound": 112,
+          "linesHit": 106,
+          "percentage": 94.64285714285714
+        },
+        "lib/src/widgets/play/play_setup_dialog.dart": {
+          "linesFound": 150,
+          "linesHit": 146,
+          "percentage": 97.33333333333334
+        },
+        "lib/src/screens/settings_storage_screen.dart": {
+          "linesFound": 264,
+          "linesHit": 246,
+          "percentage": 93.18181818181817
+        },
+        "lib/src/screens/video_studio_screen.dart": {
+          "linesFound": 491,
+          "linesHit": 307,
+          "percentage": 62.52545824847251
+        },
+        "lib/src/widgets/video/game_source_selector_dialog.dart": {
+          "linesFound": 149,
+          "linesHit": 123,
+          "percentage": 82.5503355704698
+        },
         "lib/src/screens/weakness_analytics_screen.dart": {
           "linesFound": 131,
           "linesHit": 130,
           "percentage": 99.23664122137404
         },
+        "lib/main.dart": {
+          "linesFound": 293,
+          "linesHit": 255,
+          "percentage": 87.03071672354949
+        },
+        "lib/src/screens/academy_screen.dart": {
+          "linesFound": 176,
+          "linesHit": 2,
+          "percentage": 1.1363636363636365
+        },
+        "lib/src/screens/daily_journey_screen.dart": {
+          "linesFound": 238,
+          "linesHit": 221,
+          "percentage": 92.85714285714286
+        },
         "lib/src/widgets/curriculum/chess_companion_dialog.dart": {
           "linesFound": 205,
           "linesHit": 0,
           "percentage": 0.0
-        },
-        "lib/src/widgets/radar/skill_radar_widget.dart": {
-          "linesFound": 100,
-          "linesHit": 99,
-          "percentage": 99.0
-        },
-        "lib/src/widgets/curriculum/lesson_player_widget.dart": {
-          "linesFound": 435,
-          "linesHit": 0,
-          "percentage": 0.0
-        },
-        "lib/src/widgets/curriculum/reference_library_dialog.dart": {
-          "linesFound": 136,
-          "linesHit": 127,
-          "percentage": 93.38235294117648
         },
         "lib/src/widgets/curriculum/onboarding_dialog.dart": {
           "linesFound": 170,

@@ -450,7 +450,7 @@ Future<void> main(List<String> args) async {
     }
 
     final jsonContent = jsonDecode(summaryFile.readAsStringSync()) as Map<String, dynamic>;
-    final agg = jsonContent['aggregate'] as Map<String, dynamic>;
+    final agg = (jsonContent['domainAggregate'] ?? jsonContent['aggregate']) as Map<String, dynamic>;
     final grandPct = (agg['percentage'] as num).toDouble();
 
     final pkgs = jsonContent['packages'] as Map<String, dynamic>;
@@ -510,15 +510,24 @@ Future<void> main(List<String> args) async {
     }
   };
 
-  // Write acceptance.json to repository root
+  // Write acceptance.json to repository root and docs
   final jsonFile = File('$rootDir/acceptance.json');
-  await jsonFile.writeAsString(const JsonEncoder.withIndent('  ').convert(report));
+  final jsonString = const JsonEncoder.withIndent('  ').convert(report);
+  await jsonFile.writeAsString(jsonString);
+  final docsJson = File('$rootDir/docs/acceptance.json');
+  if (Directory('$rootDir/docs').existsSync()) {
+    await docsJson.writeAsString(jsonString);
+  }
   print('\nGenerated: ${jsonFile.path}');
 
-  // Write acceptance.html to repository root
+  // Write acceptance.html to repository root and docs
   final htmlContent = _generateHtmlReport(report);
   final htmlFile = File('$rootDir/acceptance.html');
   await htmlFile.writeAsString(htmlContent);
+  final docsHtml = File('$rootDir/docs/acceptance.html');
+  if (Directory('$rootDir/docs').existsSync()) {
+    await docsHtml.writeAsString(htmlContent);
+  }
   print('Generated: ${htmlFile.path}');
 
   print('\n======================================================');

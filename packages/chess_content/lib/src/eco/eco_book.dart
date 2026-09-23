@@ -1,13 +1,29 @@
-/// ECO (Encyclopaedia of Chess Openings) code and opening dictionary.
+/// ECO (Encyclopaedia of Chess Openings) code, opening dictionary, and strategic plan guide.
 class EcoEntry {
   final String code;
   final String name;
   final List<String> movesSan;
+  final String whyMovesWork;
+  final List<String> keyPlans;
+  final String typicalPawnStructures;
+  final List<String> criticalPawnBreaks;
+  final String tacticsAndTraps;
+  final String repertoireCategory;
 
   const EcoEntry({
     required this.code,
     required this.name,
     required this.movesSan,
+    this.whyMovesWork = 'Establishes central pawn control, rapid knight/bishop development, and king safety.',
+    this.keyPlans = const [
+      'Contest key central outposts',
+      'Harmonize rook placement on open files',
+      'Execute central pawn levers at the optimal moment',
+    ],
+    this.typicalPawnStructures = 'Central pawn tension with symmetric or asymmetric dynamic breaks.',
+    this.criticalPawnBreaks = const ['d4 / d5', 'e4 / e5', 'c4 / c5', 'f4 / f5'],
+    this.tacticsAndTraps = 'Watch for f7/f2 pressure, relative pins on the d-file, and queenside counter-levers.',
+    this.repertoireCategory = 'General',
   });
 }
 
@@ -109,4 +125,156 @@ class EcoBook {
 
     return bestMatch;
   }
+
+  /// Evaluates game move history to detect the exact departure from theory,
+  /// identifying the last recognized ECO code, the deviating move, and strategic implications.
+  static OpeningDepartureReport analyzeDeparture(List<String> playedSan) {
+    if (playedSan.isEmpty) {
+      return const OpeningDepartureReport(
+        lastBookEntry: null,
+        departureMoveIndex: -1,
+        departureMoveNumber: 0,
+        departureColor: '',
+        playedMove: '',
+        standardTheoryMoves: ['e4', 'd4', 'Nf3', 'c4'],
+        strategicConsequence: 'Game ready to begin.',
+        recommendedPlan: 'Occupy or contest the center with 1. e4 or 1. d4.',
+      );
+    }
+
+    final cleaned = playedSan.map((m) => m.replaceAll(RegExp(r'[+#?!]'), '')).toList();
+
+    EcoEntry? deepestMatch;
+    int deepestMatchedLength = 0;
+
+    for (final entry in entries) {
+      final entryCleaned = entry.movesSan.map((m) => m.replaceAll(RegExp(r'[+#?!]'), '')).toList();
+      int matchCount = 0;
+      final checkLen = cleaned.length < entryCleaned.length ? cleaned.length : entryCleaned.length;
+      for (int i = 0; i < checkLen; i++) {
+        if (cleaned[i] == entryCleaned[i]) {
+          matchCount++;
+        } else {
+          break;
+        }
+      }
+      if (matchCount > deepestMatchedLength) {
+        deepestMatchedLength = matchCount;
+        deepestMatch = entry;
+      }
+    }
+
+    if (deepestMatchedLength == cleaned.length) {
+      final nextBookCandidates = <String>{};
+      for (final entry in entries) {
+        final entryCleaned = entry.movesSan.map((m) => m.replaceAll(RegExp(r'[+#?!]'), '')).toList();
+        if (entryCleaned.length > cleaned.length) {
+          bool prefixMatches = true;
+          for (int i = 0; i < cleaned.length; i++) {
+            if (cleaned[i] != entryCleaned[i]) {
+              prefixMatches = false;
+              break;
+            }
+          }
+          if (prefixMatches) {
+            nextBookCandidates.add(entry.movesSan[cleaned.length]);
+          }
+        }
+      }
+
+      return OpeningDepartureReport(
+        lastBookEntry: deepestMatch ?? matchByMoves(playedSan),
+        departureMoveIndex: -1,
+        departureMoveNumber: (cleaned.length ~/ 2) + 1,
+        departureColor: cleaned.length.isOdd ? 'Black' : 'White',
+        playedMove: '',
+        standardTheoryMoves: nextBookCandidates.toList(),
+        strategicConsequence: 'Moves conform to standard master opening theory.',
+        recommendedPlan: deepestMatch?.keyPlans.join(' · ') ?? 'Maintain active piece development and king safety.',
+      );
+    }
+
+    final depIdx = deepestMatchedLength;
+    final moveNum = (depIdx ~/ 2) + 1;
+    final depColor = depIdx.isEven ? 'White' : 'Black';
+    final playedMove = playedSan[depIdx];
+
+    final bookMovesAtDeviation = <String>{};
+    for (final entry in entries) {
+      final entryCleaned = entry.movesSan.map((m) => m.replaceAll(RegExp(r'[+#?!]'), '')).toList();
+      if (entryCleaned.length > depIdx) {
+        bool prefixMatches = true;
+        for (int i = 0; i < depIdx; i++) {
+          if (cleaned[i] != entryCleaned[i]) {
+            prefixMatches = false;
+            break;
+          }
+        }
+        if (prefixMatches) {
+          bookMovesAtDeviation.add(entry.movesSan[depIdx]);
+        }
+      }
+    }
+
+    final lastEntry = matchByMoves(playedSan.sublist(0, depIdx));
+
+    return OpeningDepartureReport(
+      lastBookEntry: lastEntry,
+      departureMoveIndex: depIdx,
+      departureMoveNumber: moveNum,
+      departureColor: depColor,
+      playedMove: playedMove,
+      standardTheoryMoves: bookMovesAtDeviation.toList(),
+      strategicConsequence: '$depColor departed from standard theory with $moveNum.${depColor == "Black" ? "..." : ""} $playedMove (book alternatives: ${bookMovesAtDeviation.take(3).join(", ")}). The game transitions from memorized book lines to concrete middlegame planning.',
+      recommendedPlan: lastEntry != null && lastEntry.keyPlans.isNotEmpty
+          ? 'Exploit departure by executing thematic plans: ${lastEntry.keyPlans.join("; ")}.'
+          : 'Contest the center, solidify king safety, and seek candidate moves against unprotected enemy pieces.',
+    );
+  }
+
+  /// White 1. e4 repertoire lines
+  static List<EcoEntry> get repertoireWhiteE4 =>
+      entries.where((e) => e.movesSan.isNotEmpty && e.movesSan.first == 'e4').toList();
+
+  /// White 1. d4 repertoire lines
+  static List<EcoEntry> get repertoireWhiteD4 =>
+      entries.where((e) => e.movesSan.isNotEmpty && e.movesSan.first == 'd4').toList();
+
+  /// Black defenses vs 1. e4 (Sicilian, French, Caro-Kann, e5)
+  static List<EcoEntry> get repertoireBlackVsE4 =>
+      entries.where((e) => e.movesSan.length >= 2 && e.movesSan.first == 'e4').toList();
+
+  /// Black defenses vs 1. d4 (Nimzo, King's Indian, Grunfeld, Slav, QGD)
+  static List<EcoEntry> get repertoireBlackVsD4 =>
+      entries.where((e) => e.movesSan.length >= 2 && e.movesSan.first == 'd4').toList();
+
+  /// Black defenses vs 1. c4 (English)
+  static List<EcoEntry> get repertoireBlackVsC4 =>
+      entries.where((e) => e.movesSan.isNotEmpty && e.movesSan.first == 'c4').toList();
 }
+
+/// Diagnostic report generated when a played game deviates from established book opening theory.
+class OpeningDepartureReport {
+  final EcoEntry? lastBookEntry;
+  final int departureMoveIndex;
+  final int departureMoveNumber;
+  final String departureColor;
+  final String playedMove;
+  final List<String> standardTheoryMoves;
+  final String strategicConsequence;
+  final String recommendedPlan;
+
+  const OpeningDepartureReport({
+    this.lastBookEntry,
+    required this.departureMoveIndex,
+    required this.departureMoveNumber,
+    required this.departureColor,
+    required this.playedMove,
+    required this.standardTheoryMoves,
+    required this.strategicConsequence,
+    required this.recommendedPlan,
+  });
+
+  bool get isTheoryFollowedThrough => departureMoveIndex == -1;
+}
+

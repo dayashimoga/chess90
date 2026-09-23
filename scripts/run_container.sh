@@ -68,7 +68,7 @@ case "$ACTION" in
         ;;
     certify)
         echo "[Container] Running end-to-end certification gate in container..."
-        $CONTAINER_ENGINE run --rm -v "$ROOT_DIR:/workspace:z" -w /workspace "$IMAGE_TAG" bash -c "bash scripts/test.sh && cd tool && dart pub get && dart run content_validator.dart && dart run simulation_runner.dart && dart run coverage_runner.dart && dart run performance_runner.dart && dart run security_runner.dart"
+        $CONTAINER_ENGINE run --rm -v "$ROOT_DIR:/workspace:z" -w /workspace "$IMAGE_TAG" bash -c "bash scripts/test.sh && cd tool && dart pub get && dart run content_validator.dart && dart run pedagogy_auditor.dart && dart run simulation_runner.dart && dart run coverage_runner.dart && dart run performance_runner.dart && dart run security_runner.dart && dart run forensic_auditor.dart && dart run release_manifest_generator.dart && cd ../tests && dart pub get && dart run acceptance_runner.dart --full"
         ;;
     shell)
         echo "[Container] Launching interactive shell..."

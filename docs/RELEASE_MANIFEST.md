@@ -1,7 +1,7 @@
 # ChessMaster v1.4.0 Production Release Manifest
 
-- **Commit SHA**: `71c41f2d20ee824a6b7f993806bca5665d15335f`
-- **Release Date**: `2026-09-23T10:06:39.252532`
+- **Commit SHA**: `a52a247da6cb87b9621606518b3f1f3e4f9430fc`
+- **Release Date**: `2026-09-23T10:59:25.312551`
 - **Overall Quality Status**: **PRODUCTION_CERTIFIED**
 
 ## 1. Packaged Release Artifacts

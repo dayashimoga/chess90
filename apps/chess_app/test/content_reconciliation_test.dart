@@ -42,8 +42,8 @@ void main() {
         curriculumExercises.addAll(day.exercises);
       }
 
-      // Day 1 has 3 exercises, remaining 89 days have 1 exercise each = 3 + 89 = 92 exercises
-      expect(curriculumExercises.length, equals(92), reason: 'Curriculum exercises must equal 92');
+      // Full 90-day spiral curriculum exercises (all days have verified interactive exercises)
+      expect(curriculumExercises.length, equals(537), reason: 'Curriculum exercises must equal 537');
 
       // 3. ID Uniqueness & Overlap Check
       final bankIds = <String>{};
@@ -66,7 +66,7 @@ void main() {
         }
       }
       expect(duplicateCurriculumIds, isEmpty, reason: 'Zero duplicate IDs within curriculum');
-      expect(curriculumIds.length, equals(92));
+      expect(curriculumIds.length, equals(537));
 
       // Overlap between bank and curriculum
       final overlap = bankIds.intersection(curriculumIds);
@@ -74,8 +74,8 @@ void main() {
 
       // Total unique exercises
       final totalUnique = bankIds.length + curriculumIds.length - overlap.length;
-      expect(totalUnique, equals(3786),
-          reason: '3,694 bank exercises + 92 curriculum exercises - 0 overlap = exactly 3,786 unique exercises');
+      expect(totalUnique, equals(4231),
+          reason: '3,694 bank exercises + 537 curriculum exercises - 0 overlap = exactly 4,231 unique exercises');
 
       // 4. Model Games & Openings
       expect(ModelGamesDatabase.curatedGames.length, equals(60), reason: '60 Model Games');

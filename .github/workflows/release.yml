@@ -37,6 +37,7 @@ jobs:
         with:
           name: release-windows
           path: |
+            dist/ChessMaster-Windows-x64-Portable.zip
             dist/ChessMaster-Windows-x64.zip
             dist/ChessMaster-Portable.exe
             dist/ChessMaster-Setup.exe
@@ -91,14 +92,24 @@ jobs:
         run: |
           cd apps/chess_app
           flutter build apk --release
+          cp build/app/outputs/flutter-apk/app-release.apk ../../ChessMaster-Android.apk
           cp build/app/outputs/flutter-apk/app-release.apk ../../ChessMaster.apk
 
           flutter build appbundle --release
+          cp build/app/outputs/bundle/release/app-release.aab ../../ChessMaster-Android.aab
           cp build/app/outputs/bundle/release/app-release.aab ../../ChessMaster.aab
+
+      - name: Run Forensic Audit & Generate Acceptance Reports
+        run: |
+          cd tool
+          dart pub get
+          dart run content_validator.dart
+          dart run pedagogy_auditor.dart
+          dart run forensic_auditor.dart
 
       - name: Generate Checksums & CycloneDX SBOM
         run: |
-          sha256sum $(ls ChessMaster-Web.zip ChessMaster-Windows-x64.zip ChessMaster-Portable.exe ChessMaster-Setup.exe ChessMaster-Linux-x64.tar.gz ChessMaster.apk ChessMaster.aab 2>/dev/null) | sort -k 2 > SHA256SUMS
+          sha256sum $(ls ChessMaster-Web.zip ChessMaster-Windows-x64-Portable.zip ChessMaster-Windows-x64.zip ChessMaster-Portable.exe ChessMaster-Setup.exe ChessMaster-Linux-x64.tar.gz ChessMaster-Android.apk ChessMaster-Android.aab ChessMaster.apk ChessMaster.aab 2>/dev/null) | sort -k 2 > SHA256SUMS
 
           cat <<EOF > sbom.json
           {
@@ -121,20 +132,26 @@ jobs:
         with:
           files: |
             ChessMaster-Web.zip
-            ChessMaster-Windows-x64.zip
+            ChessMaster-Android.apk
+            ChessMaster-Android.aab
+            ChessMaster-Windows-x64-Portable.zip
+            ChessMaster-Linux-x64.tar.gz
             ChessMaster-Portable.exe
             ChessMaster-Setup.exe
-            ChessMaster-Linux-x64.tar.gz
-            ChessMaster.apk
-            ChessMaster.aab
             SHA256SUMS
             sbom.json
+            docs/gap-analysis.json
+            docs/gap-analysis.html
+            docs/acceptance.json
+            docs/pedagogy_audit.json
+            docs/PEDAGOGY_AUDIT.md
           draft: false
           prerelease: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Deploy to Cloudflare Pages
+        if: env.CLOUDFLARE_API_TOKEN != ''
         uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -142,3 +159,5 @@ jobs:
           projectName: chessmaster
           directory: apps/chess_app/build/web
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

@@ -96,7 +96,7 @@ switch ($Action) {
 
     "certify" {
         Write-Host "[Container] Running end-to-end certification gate in container..." -ForegroundColor Cyan
-        & $containerEngine run --rm -v chess_pub_cache:/root/.pub-cache -v "${rootDir}:/workspace:z" -w /workspace $imageTag bash -c "bash scripts/test.sh && cd tool && dart pub get && dart run content_validator.dart && dart run pedagogy_auditor.dart && dart run simulation_runner.dart && dart run coverage_runner.dart && dart run performance_runner.dart && dart run security_runner.dart && dart run release_manifest_generator.dart"
+        & $containerEngine run --rm -v chess_pub_cache:/root/.pub-cache -v "${rootDir}:/workspace:z" -w /workspace $imageTag bash -c "bash scripts/test.sh && cd tool && dart pub get && dart run content_validator.dart && dart run pedagogy_auditor.dart && dart run simulation_runner.dart && dart run coverage_runner.dart && dart run performance_runner.dart && dart run security_runner.dart && dart run forensic_auditor.dart && dart run release_manifest_generator.dart && cd ../tests && dart pub get && dart run acceptance_runner.dart --full"
     }
 
     "shell" {

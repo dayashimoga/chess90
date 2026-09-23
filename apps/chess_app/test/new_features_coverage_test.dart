@@ -137,7 +137,7 @@ void main() {
       await tester.pumpAndSettle();
 
       // Select Custom strength
-      await tester.tap(find.text('Custom (1400 Elo)'));
+      await tester.tap(find.text('Custom (~1400 Est.)'));
       await tester.pumpAndSettle();
 
       // Drag custom slider
@@ -148,7 +148,7 @@ void main() {
       }
 
       // Select Master strength
-      await tester.tap(find.text('Master (2400 Elo)'));
+      await tester.tap(find.text('Master (~2400 Est.)'));
       await tester.pumpAndSettle();
 
       // Select Serious mode

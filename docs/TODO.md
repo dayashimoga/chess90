@@ -162,6 +162,19 @@ This document is strictly append-only. Completed tasks are marked with `[x]` and
 - [x] (2026-09-23) **Cross-Version Flutter Compatibility (P0)**: Refactored theme data, switch tiles, semantics announcements, and dropdowns to universal Flutter primitives (`CardTheme`, `DialogTheme`, `activeColor`, `SemanticsService.announce`, `.withOpacity`).
 - [x] (2026-09-23) **Clean-Room Certification Gate Pass (P0)**: Executed `scripts/run_container.ps1 -Action "certify"` with 100% pass across tests, content validation (3,786 unique exercises), 90-day simulation, coverage gates, 18 performance budgets, and 6 security audits.
 
+---
+
+## Final Production Certification & Forensic Overhaul (v1.6.0)
+
+- [x] (2026-09-23) **Automated Forensic Gap Auditor & Matrix (P0)**: Created `tool/forensic_auditor.dart` producing `docs/gap-analysis.json`, `docs/gap-analysis.html`, and `docs/REQUIREMENT_RUNTIME_EVIDENCE_MATRIX.md` verifying all 13 core directives against independent runtime evidence.
+- [x] (2026-09-23) **Crash Course / Academy Complete Expansion (P0)**: Expanded `AcademyScreen` micro-course catalog from 9 to 28 interactive visual micro-courses covering the complete chess syllabus (Rules, Notation, Piece Values, Check/Mate/Draw, LPDO, Forks, Pins, Skewers, Discovered Attacks, Deflection, Overload, Clearance, Mating Patterns, CCT, Candidate Moves, Blunder Checks, Positional Evaluation, Outposts, Open Files, Bishop Pair, Pawn Chains, Minority Attack, IQP, King Attacks, Lucena, Philidor, Opposition, Opening Principles, and Clock Management) with interactive FEN diagrams and target lab links.
+- [x] (2026-09-23) **Opening Intelligence & Post-Game Theory Departure Engine (P0)**: Enriched `EcoEntry` in `packages/chess_content` with strategic plans, why moves work, pawn structures, breaks, and traps. Implemented `OpeningDepartureReport` and `EcoBook.analyzeDeparture` to automatically identify departure ply, deviating move, strategic consequences, and recommended plans (16/16 tests PASS).
+- [x] (2026-09-23) **Difficulty Badging Calibration (P0)**: Replaced all raw "Elo X" labels across `CurriculumScreen`, `PlaySetupDialog`, and `PlayScreen` with calibrated "Estimated Difficulty: X" / "Est. X".
+- [x] (2026-09-23) **Honest Endgame Engine Labeling (P0)**: Removed unbacked "tablebase conversion" claims in curriculum days and documentation; accurately labeled as "Theoretical Endgame Engine Precision" and "Theoretical Endgame Knowledge Certification".
+- [x] (2026-09-23) **GitHub Actions Multi-Platform Release Alignment (P0)**: Updated `.github/workflows/release.yml`, `.github/workflows/pr.yml`, and `scripts/package.ps1` to produce and upload exact required artifact filenames (`ChessMaster-Web.zip`, `ChessMaster-Android.apk`, `ChessMaster-Android.aab`, `ChessMaster-Windows-x64-Portable.zip`, `ChessMaster-Linux-x64.tar.gz`) along with all verification reports.
+- [x] (2026-09-23) **Clean-Room Container Certification (P0)**: Integrated `forensic_auditor.dart` and `acceptance_runner.dart --full` into container certification gate in `scripts/run_container.ps1` and `scripts/run_container.sh`.
+
+
 
 
 

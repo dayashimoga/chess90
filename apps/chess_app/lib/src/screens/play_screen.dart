@@ -685,7 +685,7 @@ class _PlayScreenState extends State<PlayScreen> {
                       borderRadius: BorderRadius.circular(4),
                     ),
                     child: Text(
-                      '${_setupConfig.strengthPreset} (${_setupConfig.eloRating} Elo)',
+                      '${_setupConfig.strengthPreset} (Est. ${_setupConfig.eloRating})',
                       style: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: ChessTheme.primaryLight),
                     ),
                   ),
@@ -773,7 +773,7 @@ class _PlayScreenState extends State<PlayScreen> {
                         _buildClockBar(
                           context,
                           name: _playVsEngine
-                              ? 'Engine (${_engine.engineName} - ${_setupConfig.eloRating} Elo)'
+                              ? 'Engine (${_engine.engineName} - Est. ${_setupConfig.eloRating})'
                               : (_playerColor == PieceColor.white ? 'Black Player' : 'White Player'),
                           timeString: _setupConfig.initialMinutes == 0
                               ? 'Untimed'
