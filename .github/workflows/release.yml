@@ -26,6 +26,7 @@ jobs:
         run: |
           flutter config --enable-windows-desktop
           cd apps\chess_app
+          flutter pub get
           flutter build windows --release
 
       - name: Package Windows Artifacts (Portable Exe, Setup, & Zip)
@@ -76,6 +77,7 @@ jobs:
       - name: Build Web Bundle
         run: |
           cd apps/chess_app
+          flutter pub get
           flutter build web --release
           cd build/web
           zip -r ../../../ChessMaster-Web.zip .
@@ -84,13 +86,19 @@ jobs:
         run: |
           flutter config --enable-linux-desktop
           cd apps/chess_app
+          flutter pub get
           flutter build linux --release
-          ln -sf ChessMaster build/linux/x64/release/bundle/chess_app || true
+          if [ -f build/linux/x64/release/bundle/chess_app ]; then
+            cp build/linux/x64/release/bundle/chess_app build/linux/x64/release/bundle/ChessMaster
+          elif [ -f build/linux/x64/release/bundle/ChessMaster ]; then
+            cp build/linux/x64/release/bundle/ChessMaster build/linux/x64/release/bundle/chess_app
+          fi
           tar -czf ../../ChessMaster-Linux-x64.tar.gz -C build/linux/x64/release/bundle .
 
       - name: Build Android APK & AAB
         run: |
           cd apps/chess_app
+          flutter pub get
           flutter build apk --release
           cp build/app/outputs/flutter-apk/app-release.apk ../../ChessMaster-Android.apk
           cp build/app/outputs/flutter-apk/app-release.apk ../../ChessMaster.apk

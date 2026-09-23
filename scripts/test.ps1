@@ -57,6 +57,7 @@ foreach ($pkg in $packages) {
     $pkgDir = Join-Path $rootDir $pkg
     Write-Host "`nTesting $pkg..." -ForegroundColor Yellow
     Push-Location $pkgDir
+    & $dartBin pub get
     & $dartBin test
     if ($LASTEXITCODE -eq 0) {
         $passedPackages++
@@ -73,6 +74,7 @@ foreach ($pkg in $packages) {
 $appDir = Join-Path $rootDir "apps\chess_app"
 Write-Host "`nTesting apps/chess_app widgets..." -ForegroundColor Yellow
 Push-Location $appDir
+& $flutterBin pub get
 & $flutterBin test
 if ($LASTEXITCODE -eq 0) {
     Write-Host "PASSED: apps/chess_app" -ForegroundColor Green

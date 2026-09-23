@@ -27,11 +27,7 @@ jobs:
           cache: true
 
       - name: Analyze Monorepo
-        run: |
-          for dir in packages/chess_core packages/chess_engine packages/chess_learning packages/chess_curriculum packages/chess_labs packages/chess_storage packages/chess_content packages/chess_video apps/chess_app tool; do
-            echo "Analyzing $dir..."
-            (cd "$dir" && dart pub get && dart analyze .)
-          done
+        run: bash scripts/analyze.sh
 
   # 2. Unit & Integration Tests
   unit-and-integration:
@@ -55,6 +51,10 @@ jobs:
         with:
           channel: stable
           cache: true
+
+      - name: Install System Utilities (Linux)
+        if: runner.os != 'Windows'
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends ffmpeg stockfish
 
       - name: Monorepo Package Tests (POSIX)
         if: runner.os != 'Windows'
@@ -123,6 +123,7 @@ jobs:
       - name: Run Flutter Widget Tests
         run: |
           cd apps/chess_app
+          flutter pub get
           flutter test --concurrency=4 test/labs_screen_deep_test.dart test/widget_test.dart
 
   # 5. Content Validation (90/90 Days & Legality)
@@ -256,6 +257,7 @@ jobs:
       - name: Build Web Production Bundle
         run: |
           cd apps/chess_app
+          flutter pub get
           flutter build web --release
 
       - name: Package Web Distribution Archive
@@ -320,6 +322,7 @@ jobs:
         run: |
           flutter config --enable-windows-desktop
           cd apps\chess_app
+          flutter pub get
           flutter build windows --release
 
       - name: Package Windows Artifacts (Portable Exe, Installer, & Folder)
@@ -400,12 +403,16 @@ jobs:
         run: |
           flutter config --enable-linux-desktop
           cd apps/chess_app
+          flutter pub get
           flutter build linux --release
 
       - name: Package Linux Archive
         run: |
-          # Provide chess_app compatibility symlink alongside ChessMaster
-          ln -sf ChessMaster apps/chess_app/build/linux/x64/release/bundle/chess_app || true
+          if [ -f apps/chess_app/build/linux/x64/release/bundle/chess_app ]; then
+            cp apps/chess_app/build/linux/x64/release/bundle/chess_app apps/chess_app/build/linux/x64/release/bundle/ChessMaster
+          elif [ -f apps/chess_app/build/linux/x64/release/bundle/ChessMaster ]; then
+            cp apps/chess_app/build/linux/x64/release/bundle/ChessMaster apps/chess_app/build/linux/x64/release/bundle/chess_app
+          fi
           tar -czf ChessMaster-Linux-x64.tar.gz -C apps/chess_app/build/linux/x64/release/bundle .
 
       - name: Upload Linux Artifact
@@ -463,12 +470,14 @@ jobs:
       - name: Build Android APK
         run: |
           cd apps/chess_app
+          flutter pub get
           flutter build apk --release
           cp build/app/outputs/flutter-apk/app-release.apk ../../ChessMaster.apk
 
       - name: Build Android AAB
         run: |
           cd apps/chess_app
+          flutter pub get
           flutter build appbundle --release
           cp build/app/outputs/bundle/release/app-release.aab ../../ChessMaster.aab
 

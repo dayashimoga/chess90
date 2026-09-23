@@ -1,9 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:chess_content/chess_content.dart';
-import 'package:chess_core/chess_core.dart';
 import 'package:chess_curriculum/chess_curriculum.dart';
-import 'package:chess_labs/chess_labs.dart';
 import 'package:chess_learning/chess_learning.dart';
 import 'package:chess_video/chess_video.dart';
 
@@ -116,7 +114,7 @@ void main(List<String> args) {
   );
 
   // 5. Interactive Strategy & Endgame Training
-  final labTypesCount = 17; // 16 interactive labs + mini-games framework
+  const labTypesCount = 17; // 16 interactive labs + mini-games framework
   recordDirective(
     id: 5,
     requirement: 'Interactive Strategy & Endgame Training',
@@ -170,8 +168,8 @@ void main(List<String> args) {
   );
 
   // 9. Video Studio Polish & Redistribution-Safe Audio
-  final audioTracks = AudioTrackManifest.tracks;
-  final videoProfiles = VideoAspectRatio.values;
+  const audioTracks = AudioTrackManifest.tracks;
+  const videoProfiles = VideoAspectRatio.values;
   recordDirective(
     id: 9,
     requirement: 'Video Studio & Redistribution-Safe Audio',

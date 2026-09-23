@@ -1,8 +1,8 @@
 {
   "platformName": "ChessMaster 90-Day GM Mastery Platform",
   "version": "1.4.0",
-  "commitSha": "a52a247da6cb87b9621606518b3f1f3e4f9430fc",
-  "buildTimestamp": "2026-09-23T10:59:25.312551",
+  "commitSha": "f5ffcb4332ca7cfb429a68d2ba740e6d25dc35fe",
+  "buildTimestamp": "2026-09-23T11:44:07.750492",
   "overallStatus": "PRODUCTION_CERTIFIED",
   "certifiedGates": [
     "Single Chess Rendering Engine (100% Vector Staunton in-app & MP4 rasterizer, 0 letter-circle placeholders)",

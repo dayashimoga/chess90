@@ -260,6 +260,28 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   - Attached test, coverage, security, performance, acceptance, and gap-analysis reports to release bundles.
   - Updated `scripts/package.ps1` to mirror official multi-platform artifact naming.
 
+---
+
+## [1.6.1] - 2026-09-23
+
+### Fixed
+- **CI / PR Pipeline Static Analysis & Analysis Options**:
+  - Replaced inline `dart analyze` loop in `.github/workflows/pr.yml` with `bash scripts/analyze.sh` which properly differentiates Flutter packages from pure Dart packages.
+  - Cleaned up unused imports and added `const` declarations in `tool/forensic_auditor.dart`.
+  - Added `tool/analysis_options.yaml` to exclude offline code generation scripts (`generate_training_banks.dart`, `generate_curriculum_catalog.dart`).
+  - Removed unneeded `await` on synchronous `RealVideoRenderer.detectHardwareEncoders()` in `packages/chess_video/test/deep_video_coverage_test.dart`.
+- **Android Build & Gradle Toolchain Compatibility**:
+  - Corrected AGP version in `apps/chess_app/android/settings.gradle.kts` from unreleased 9.1.0 to stable 8.5.0.
+  - Corrected Kotlin version from unreleased 2.4.0 to stable 2.0.0.
+  - Corrected Gradle distribution in `apps/chess_app/android/gradle/wrapper/gradle-wrapper.properties` from non-existent 9.3.1 to stable 8.7 (`gradle-8.7-all.zip`).
+- **Linux Release Packaging & Compatibility**:
+  - Replaced broken symlink invocation in `.github/workflows/pr.yml` and `release.yml` with safe binary copying to ensure both `ChessMaster` and `chess_app` binaries are reliably bundled and executable in `ChessMaster-Linux-x64.tar.gz`.
+- **Multi-Platform CI Test & Build Steps**:
+  - Added explicit `flutter pub get` before every `flutter test`, `flutter build web`, `flutter build windows`, `flutter build linux`, and `flutter build apk` step across all GitHub Actions workflows.
+  - Added `sudo apt-get install -y ffmpeg stockfish` to `unit-and-integration` Linux job in `pr.yml`.
+  - Added `& $dartBin pub get` and `& $flutterBin pub get` to `scripts/test.ps1`.
+
+
 
 
 

@@ -305,7 +305,7 @@ void main() {
       }
 
       // 2. Hardware Encoders
-      final hwEncoders = await RealVideoRenderer.detectHardwareEncoders();
+      final hwEncoders = RealVideoRenderer.detectHardwareEncoders();
       expect(hwEncoders, isNotNull);
 
       // 3. FfmpegCommandBuilder hardware encoders

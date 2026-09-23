@@ -1,6 +1,6 @@
 # ChessMaster / Chess90 — Requirement to Runtime Evidence Matrix
 
-*Generated automatically by `tool/forensic_auditor.dart` on 2026-09-23T10:58:08.816670Z*
+*Generated automatically by `tool/forensic_auditor.dart` on 2026-09-23T11:44:07.283983Z*
 
 ## Core Principle
 A feature is complete only when:

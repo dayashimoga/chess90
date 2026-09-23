@@ -1,0 +1,8 @@
+include: ../analysis_options.yaml
+
+analyzer:
+  exclude:
+    - 'generate_training_banks.dart'
+    - 'generate_curriculum_catalog.dart'
+    - 'generate_model_games.dart'
+    - 'generate_eco_book.dart'

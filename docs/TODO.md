@@ -174,6 +174,17 @@ This document is strictly append-only. Completed tasks are marked with `[x]` and
 - [x] (2026-09-23) **GitHub Actions Multi-Platform Release Alignment (P0)**: Updated `.github/workflows/release.yml`, `.github/workflows/pr.yml`, and `scripts/package.ps1` to produce and upload exact required artifact filenames (`ChessMaster-Web.zip`, `ChessMaster-Android.apk`, `ChessMaster-Android.aab`, `ChessMaster-Windows-x64-Portable.zip`, `ChessMaster-Linux-x64.tar.gz`) along with all verification reports.
 - [x] (2026-09-23) **Clean-Room Container Certification (P0)**: Integrated `forensic_auditor.dart` and `acceptance_runner.dart --full` into container certification gate in `scripts/run_container.ps1` and `scripts/run_container.sh`.
 
+---
+
+## CI / PR Pipeline Hardening & Multi-Platform Matrix Resolution (v1.6.1)
+
+- [x] (2026-09-23) **Monorepo Static Analysis Hardening (P0)**: Standardized CI `lint/static` job to run `bash scripts/analyze.sh` which executes `flutter pub get` and `flutter analyze` for Flutter apps and `dart pub get` and `dart analyze` for pure Dart packages; cleaned all warnings in `tool/forensic_auditor.dart` and added `tool/analysis_options.yaml` (0 issues across all 10 packages).
+- [x] (2026-09-23) **Android Gradle Toolchain Fix (P0)**: Corrected AGP to stable 8.5.0, Kotlin to 2.0.0, and Gradle wrapper to 8.7 in `apps/chess_app/android/`, resolving Android APK and AAB build failures.
+- [x] (2026-09-23) **Linux Packaging & Smoke Hardening (P0)**: Replaced symlink commands in `pr.yml` and `release.yml` with safe binary copy validation, ensuring `ChessMaster` and `chess_app` are intact in tarball and pass headless Xvfb smoke verification.
+- [x] (2026-09-23) **CI Clean-State Dependency Resolution (P0)**: Enforced explicit `flutter pub get` across all build jobs (`build-web`, `build-windows`, `build-linux`, `build-android-apk-aab`, `widget/golden`), added system utilities (`ffmpeg`, `stockfish`) on Ubuntu runner, and added `pub get` in `scripts/test.ps1`.
+- [x] (2026-09-23) **Clean-Room Podman Verification (P0)**: Re-validated 100% test pass rate, 0 lint issues, and full container certification gate via Podman with zero host dependencies.
+
+
 
 
 
