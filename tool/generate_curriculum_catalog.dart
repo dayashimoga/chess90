@@ -6,6 +6,7 @@ import 'dart:io';
 import 'package:chess_core/chess_core.dart';
 import 'package:chess_curriculum/chess_curriculum.dart';
 import 'package:chess_learning/chess_learning.dart';
+import 'curriculum_positions_data.dart';
 
 void main() {
   print('======================================================');
@@ -345,7 +346,12 @@ List<CurriculumExercise> _buildVerifiedExercisesForDay(int day, Map<String, dyna
 
   if (rawExercises != null && rawExercises.isNotEmpty) {
     for (int i = 0; i < rawExercises.length; i++) {
-      final item = rawExercises[i] as Map<String, dynamic>;
+      final raw = rawExercises[i];
+      if (raw is CurriculumExercise) {
+        exercises.add(raw);
+        continue;
+      }
+      final item = raw as Map<String, dynamic>;
       final ex = CurriculumExercise(
         id: 'cur_d${day}_ex${i + 1}',
         fen: item['fen'] as String,
@@ -431,7 +437,7 @@ Map<int, Map<String, dynamic>> _buildDayRegistry() {
       'commonMistakes': commonMistakes,
       'cheatSheetSummary': cheatSheetSummary,
       'objectives': objectives,
-      'exercises': exercises ?? _generateDefaultDayExercises(day, topic, visualBoardFen, axis),
+      'exercises': exercises ?? buildDayExercises(day, topic, patternRule, axis),
     };
   }
 
@@ -666,93 +672,4 @@ Map<int, Map<String, dynamic>> _buildDayRegistry() {
   }
 
   return map;
-}
-
-List<Map<String, dynamic>> _generateDefaultDayExercises(int day, String topic, String fen, SkillAxis axis) {
-  return [
-    {
-      'fen': 'r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1',
-      'sideToPlay': PieceColor.white,
-      'instruction': 'White to move: Find the tactical solution demonstrating $topic.',
-      'solutionSan': ['Qxf7#'],
-      'explanation': 'Qxf7# decisively exploits the target weakness, delivering Scholar Mate.',
-      'motif': topic,
-      'hints': ['Look for forcing checks on the weak f7 square.'],
-      'hintConcept': 'Focus on the uncastled black king and f7 weakness.',
-      'hintPiece': 'Use your queen coordinating with the c4 bishop.',
-      'hintForcing': 'Play Qxf7#.',
-      'refutation': 'Taking the knight with Qxe4 misses immediate checkmate.',
-      'isNoTactic': false,
-    },
-    {
-      'fen': '6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1',
-      'sideToPlay': PieceColor.white,
-      'instruction': 'White to move: Infiltrate the opponent back rank.',
-      'solutionSan': ['Re8#'],
-      'explanation': 'Re8# delivers the canonical corridor checkmate.',
-      'motif': 'Back-Rank Infiltration',
-      'hints': ['The 8th rank is undefended.'],
-      'hintConcept': 'Exploit the trapped king behind its pawn shield.',
-      'hintPiece': 'Deliver the blow with your active rook.',
-      'hintForcing': 'Play Re8#.',
-      'refutation': 'Passive pawn pushes give Black time to escape.',
-      'isNoTactic': false,
-    },
-    {
-      'fen': '8/8/8/4k3/8/8/4K3/8 w - - 0 1',
-      'sideToPlay': PieceColor.white,
-      'instruction': 'White to move: Seize the direct vertical opposition.',
-      'solutionSan': ['Ke3'],
-      'explanation': 'Ke3 seizes vertical opposition, denying the enemy king forward progress.',
-      'motif': 'Opposition',
-      'hints': ['Place your king on the same file with one square in between.'],
-      'hintConcept': 'Maintain spatial control with the king.',
-      'hintPiece': 'Move the white king to e3.',
-      'hintForcing': 'Play Ke3.',
-      'refutation': 'Sideways moves surrender the opposition to Black.',
-      'isNoTactic': false,
-    },
-    {
-      'fen': '8/4P3/8/8/8/8/k7/4K3 w - - 0 1',
-      'sideToPlay': PieceColor.white,
-      'instruction': 'White to move: Promote the pawn into a queen.',
-      'solutionSan': ['e8=Q'],
-      'explanation': 'e8=Q decisively promotes the passed pawn into a new queen.',
-      'motif': 'Pawn Promotion',
-      'hints': ['Push the pawn to the final rank and choose queen.'],
-      'hintConcept': 'Promote the e7 pawn to a Queen.',
-      'hintPiece': 'Advance the e7 pawn.',
-      'hintForcing': 'Play e8=Q.',
-      'refutation': 'King moves delay promotion and give counterplay.',
-      'isNoTactic': false,
-    },
-    {
-      'fen': 'k7/8/1K6/8/8/8/8/7R w - - 0 1',
-      'sideToPlay': PieceColor.white,
-      'instruction': 'White to move: Deliver checkmate with king and rook.',
-      'solutionSan': ['Rh8#'],
-      'explanation': 'Rh8# delivers back-rank checkmate supported by the king on b6.',
-      'motif': 'Rook Checkmate',
-      'hints': ['Slide the rook to the 8th rank to trap the cornered king.'],
-      'hintConcept': 'Corner checkmate with King and Rook.',
-      'hintPiece': 'Move the rook to the back rank.',
-      'hintForcing': 'Play Rh8#.',
-      'refutation': 'King moves give Black time to escape.',
-      'isNoTactic': false,
-    },
-    {
-      'fen': 'r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1',
-      'sideToPlay': PieceColor.white,
-      'instruction': 'White to move: Castle kingside to safeguard the king.',
-      'solutionSan': ['O-O'],
-      'explanation': 'O-O castles kingside, tucking the king away safely.',
-      'motif': 'Castling',
-      'hints': ['Move the king two squares toward the h1 rook.'],
-      'hintConcept': 'Execute kingside castling.',
-      'hintPiece': 'Castle with your king.',
-      'hintForcing': 'Play O-O.',
-      'refutation': 'Leaving the king on e1 allows central pins.',
-      'isNoTactic': false,
-    },
-  ];
 }

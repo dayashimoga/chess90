@@ -2,6 +2,7 @@ library chess_labs;
 
 export 'src/lab_session.dart';
 export 'src/socratic_pedagogy_engine.dart';
+export 'src/board_teaching_engine.dart';
 export 'src/labs/tactical_lab.dart';
 export 'src/labs/candidate_selection_lab.dart';
 export 'src/labs/blind_calculation_lab.dart';
@@ -19,3 +20,4 @@ export 'src/labs/defensive_resource_lab.dart';
 export 'src/labs/conversion_challenge_lab.dart';
 export 'src/labs/time_management_lab.dart';
 export 'src/labs/mini_games.dart';
+export 'src/labs/playable_mini_games.dart';

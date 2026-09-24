@@ -1,5 +1,6 @@
 import 'package:chess_core/chess_core.dart';
 import 'package:chess_curriculum/chess_curriculum.dart';
+import 'package:chess_labs/chess_labs.dart';
 import 'package:chess_storage/chess_storage.dart';
 import 'package:flutter/material.dart';
 import '../../theme/chess_theme.dart';
@@ -33,6 +34,7 @@ class _LessonPlayerWidgetState extends State<LessonPlayerWidget> {
   late Board _guidedBoard;
   late Board _independentBoard;
   late Board _retentionBoard;
+  late PlayableMiniGame _miniGameController;
 
   int _guidedHintLevel = 0;
   String? _guidedFeedback;
@@ -41,8 +43,11 @@ class _LessonPlayerWidgetState extends State<LessonPlayerWidget> {
   String? _independentFeedback;
   bool _independentCompleted = false;
 
+  bool _understandCompleted = false;
+  int? _selectedConceptOption;
+  String? _understandFeedback;
+
   bool _miniGameCompleted = false;
-  int _miniGameRound = 1;
 
   bool _retentionCompleted = false;
   String? _retentionFeedback;
@@ -64,6 +69,29 @@ class _LessonPlayerWidgetState extends State<LessonPlayerWidget> {
     _initBoards();
   }
 
+  @override
+  void dispose() {
+    _miniGameController.dispose();
+    super.dispose();
+  }
+
+  static MiniGameType _resolveMiniGameType(CurriculumDay day) {
+    final text = '${day.title} ${day.theme} ${day.topic}'.toLowerCase();
+    if (text.contains('fork')) return MiniGameType.forkHunter;
+    if (text.contains('pin')) return MiniGameType.pinBuilder;
+    if (text.contains('skewer')) return MiniGameType.skewerHunt;
+    if (text.contains('mate') || text.contains('king') || text.contains('attack')) return MiniGameType.kingHunt;
+    if (text.contains('defen') || text.contains('prophylaxis')) return MiniGameType.defender;
+    if (text.contains('pawn') || text.contains('chain')) return MiniGameType.pawnBattle;
+    if (text.contains('break')) return MiniGameType.findTheBreak;
+    if (text.contains('opening')) return MiniGameType.openingSurvival;
+    if (text.contains('calculat') || text.contains('tree')) return MiniGameType.calculationTree;
+    if (text.contains('convers')) return MiniGameType.conversionChallenge;
+    if (text.contains('endgame') || text.contains('rook')) return MiniGameType.endgameWinHold;
+    if (text.contains('piece') || text.contains('worst')) return MiniGameType.worstPieceImprovement;
+    return MiniGameType.forkHunter;
+  }
+
   void _initBoards() {
     final exercises = widget.day.exercises;
     final defaultFen = exercises.isNotEmpty ? exercises.first.fen : FenParser.initialFen;
@@ -71,6 +99,11 @@ class _LessonPlayerWidgetState extends State<LessonPlayerWidget> {
     _guidedBoard = Board.fromFen(widget.day.visualBoardFen ?? defaultFen);
     _independentBoard = Board.fromFen(defaultFen);
     _retentionBoard = Board.fromFen(widget.day.visualBoardFen ?? defaultFen);
+
+    _miniGameController = PlayableMiniGame.create(_resolveMiniGameType(widget.day));
+    _miniGameController.onUpdate.listen((_) {
+      if (mounted) setState(() {});
+    });
   }
 
   void _handleGuidedMove(Move move) {
@@ -297,10 +330,9 @@ class _LessonPlayerWidgetState extends State<LessonPlayerWidget> {
   }
 
   int _maxUnlockedStage() {
-    int maxStage = 0;
-    maxStage = 1; // can see
+    int maxStage = 1; // can see
     maxStage = 2; // can understand
-    maxStage = 3; // can do guided
+    if (_understandCompleted) maxStage = 3; // can do guided
     if (_guidedCompleted) maxStage = 4;
     if (_independentCompleted) maxStage = 5;
     if (_miniGameCompleted) maxStage = 6;
@@ -312,8 +344,9 @@ class _LessonPlayerWidgetState extends State<LessonPlayerWidget> {
     switch (_currentStage) {
       case 0: // Learn
       case 1: // See
-      case 2: // Understand
         return true;
+      case 2: // Understand
+        return _understandCompleted;
       case 3: // Guided
         return _guidedCompleted;
       case 4: // Independent
@@ -512,7 +545,7 @@ class _LessonPlayerWidgetState extends State<LessonPlayerWidget> {
     );
   }
 
-  // Stage 3: UNDERSTAND (Pattern Rule + Common Mistakes + Cheat Sheet)
+  // Stage 3: UNDERSTAND (Pattern Rule + Common Mistakes + Socratic Comprehension Check)
   Widget _buildUnderstandStage() {
     final day = widget.day;
 
@@ -544,6 +577,68 @@ class _LessonPlayerWidgetState extends State<LessonPlayerWidget> {
                 ],
               ),
             ),
+          const SizedBox(height: 16),
+          const Text(
+            'SOCRATIC ACTIVE CHECK: IDENTIFY THE THEMATIC TRIGGER',
+            style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, letterSpacing: 0.8, color: Colors.amber),
+          ),
+          const SizedBox(height: 8),
+          Container(
+            padding: const EdgeInsets.all(14),
+            decoration: BoxDecoration(
+              color: Colors.amber.withAlpha(15),
+              borderRadius: BorderRadius.circular(10),
+              border: Border.all(color: Colors.amber.withAlpha(60)),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'What is the fundamental tactical/strategic trigger for ${day.topic}?',
+                  style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(height: 10),
+                Wrap(
+                  spacing: 8,
+                  runSpacing: 8,
+                  children: [
+                    ChoiceChip(
+                      label: const Text('Scanning CCT: Checks, Captures, Threats & LPDO'),
+                      selected: _selectedConceptOption == 0,
+                      onSelected: (val) {
+                        setState(() {
+                          _selectedConceptOption = 0;
+                          _understandCompleted = true;
+                          _understandFeedback = 'Correct! Grandmasters prioritize scanning forcing moves and loose pieces first.';
+                        });
+                      },
+                    ),
+                    ChoiceChip(
+                      label: const Text('Playing fast intuitive pawn moves'),
+                      selected: _selectedConceptOption == 1,
+                      onSelected: (val) {
+                        setState(() {
+                          _selectedConceptOption = 1;
+                          _understandFeedback = 'Incorrect: Passive/rushed moves forfeit the initiative. Focus on CCT!';
+                        });
+                      },
+                    ),
+                  ],
+                ),
+                if (_understandFeedback != null) ...[
+                  const SizedBox(height: 8),
+                  Text(
+                    _understandFeedback!,
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                      color: _understandCompleted ? Colors.green : Colors.orange,
+                    ),
+                  ),
+                ],
+              ],
+            ),
+          ),
           const SizedBox(height: 16),
           const Text(
             'KEY TAKEAWAY CHEAT SHEET',
@@ -738,69 +833,131 @@ class _LessonPlayerWidgetState extends State<LessonPlayerWidget> {
     );
   }
 
-  // Stage 6: MINI-GAME APPLICATION
+  // Stage 6: MINI-GAME APPLICATION (Real Playable Chessboard)
   Widget _buildMiniGameStage() {
-    final miniGame = widget.day.miniGameType ?? 'fork_hunter';
+    final lvl = _miniGameController.currentLevel;
 
-    return Center(
-      child: Container(
-        width: 560,
-        padding: const EdgeInsets.all(24),
-        decoration: BoxDecoration(
-          color: context.surf,
-          borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: context.brd),
+    return Row(
+      children: [
+        SizedBox(
+          width: 380,
+          height: 380,
+          child: ChessBoardWidget(
+            board: _miniGameController.currentBoard,
+            isInteractive: !_miniGameController.isLevelCompleted && !_miniGameController.isGameOver,
+            onMovePlayed: (move) {
+              final ok = _miniGameController.playMove(move);
+              if (_miniGameController.roundsCompleted >= 1 || _miniGameController.isGameOver) {
+                setState(() => _miniGameCompleted = true);
+              }
+            },
+          ),
         ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Container(
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: ChessTheme.primary.withAlpha(30),
-                shape: BoxShape.circle,
+        const SizedBox(width: 20),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  const Icon(Icons.sports_esports, color: ChessTheme.primaryLight, size: 20),
+                  const SizedBox(width: 8),
+                  Text(
+                    'PLAYABLE MINI-GAME: ${_miniGameController.type.title.toUpperCase()}',
+                    style: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold, letterSpacing: 0.8, color: ChessTheme.primaryLight),
+                  ),
+                ],
               ),
-              child: const Icon(Icons.sports_esports, size: 36, color: ChessTheme.primaryLight),
-            ),
-            const SizedBox(height: 16),
-            Text(
-              'MINI-GAME APPLICATION: ${miniGame.toUpperCase().replaceAll("_", " ")}',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w900, color: context.txt),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              'Apply today\'s concept under focused constraints. Complete 2 rounds to lock in your mastery.',
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 13, color: context.txtMut),
-            ),
-            const SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text('Round $_miniGameRound of 2', style: const TextStyle(fontWeight: FontWeight.bold)),
-                const SizedBox(width: 14),
-                if (_miniGameCompleted)
-                  const Icon(Icons.check_circle, color: Colors.green, size: 22),
-              ],
-            ),
-            const SizedBox(height: 20),
-            FilledButton.icon(
-              onPressed: () {
-                setState(() {
-                  if (_miniGameRound < 2) {
-                    _miniGameRound++;
-                  } else {
-                    _miniGameCompleted = true;
-                  }
-                });
-              },
-              icon: Icon(_miniGameCompleted ? Icons.done_all : Icons.play_arrow),
-              label: Text(_miniGameCompleted ? 'Mini-Game Mastered!' : 'Play & Win Round $_miniGameRound'),
-              style: FilledButton.styleFrom(backgroundColor: _miniGameCompleted ? Colors.green : ChessTheme.primaryLight),
-            ),
-          ],
+              const SizedBox(height: 8),
+              Text(
+                lvl.title,
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: context.txt),
+              ),
+              const SizedBox(height: 6),
+              Text(
+                lvl.objective,
+                style: TextStyle(fontSize: 13, color: context.txtSec),
+              ),
+              const SizedBox(height: 12),
+              Row(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                    decoration: BoxDecoration(
+                      color: ChessTheme.primary.withAlpha(30),
+                      borderRadius: BorderRadius.circular(6),
+                      border: Border.all(color: ChessTheme.primaryLight),
+                    ),
+                    child: Text(
+                      'Level ${_miniGameController.currentLevelIndex + 1} / ${_miniGameController.totalLevels}',
+                      style: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: ChessTheme.primaryLight),
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  if (_miniGameCompleted)
+                    const Row(
+                      children: [
+                        Icon(Icons.check_circle, color: Colors.green, size: 18),
+                        SizedBox(width: 4),
+                        Text('Goal Achieved', style: TextStyle(color: Colors.green, fontSize: 12, fontWeight: FontWeight.bold)),
+                      ],
+                    ),
+                ],
+              ),
+              const SizedBox(height: 14),
+              Wrap(
+                spacing: 8,
+                children: [
+                  OutlinedButton.icon(
+                    onPressed: () {
+                      _miniGameController.requestHint();
+                    },
+                    icon: const Icon(Icons.help_outline, size: 14),
+                    label: const Text('Hint'),
+                  ),
+                  OutlinedButton.icon(
+                    onPressed: () {
+                      setState(() {
+                        _miniGameController.resetCurrentLevel();
+                      });
+                    },
+                    icon: const Icon(Icons.refresh, size: 14),
+                    label: const Text('Reset'),
+                  ),
+                  if (_miniGameController.isLevelCompleted && !_miniGameController.isGameOver)
+                    FilledButton.icon(
+                      onPressed: () {
+                        setState(() {
+                          _miniGameController.nextLevel();
+                        });
+                      },
+                      icon: const Icon(Icons.arrow_forward, size: 14),
+                      label: const Text('Next Level'),
+                      style: FilledButton.styleFrom(backgroundColor: Colors.green),
+                    ),
+                ],
+              ),
+              const Spacer(),
+              Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: _miniGameCompleted ? Colors.green.withAlpha(25) : context.surf,
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(color: _miniGameCompleted ? Colors.green : context.brd),
+                ),
+                child: Text(
+                  _miniGameController.feedbackMessage,
+                  style: TextStyle(
+                    fontSize: 13,
+                    fontWeight: FontWeight.bold,
+                    color: _miniGameCompleted ? Colors.green : context.txt,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
-      ),
+      ],
     );
   }
 

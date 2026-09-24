@@ -155,60 +155,33 @@ Harry Pillsbury vs Emanuel Lasker (1895)
 - Model Demonstration 1: Textbook execution of Tactics — Hanging Pieces & LPDO with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Tactics — Hanging Pieces & LPDO.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d2_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (3 Exercises)
+#### Exercise 1 (day_2_ex_1)
+- **FEN**: `r1b1k2r/pppp1ppp/2n5/4p3/2B1n3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5`
 - **Side to Play**: WHITE
-- **Motif**: Tactics — Hanging Pieces & LPDO
-- **Instruction**: White to move: Find the tactical solution demonstrating Tactics — Hanging Pieces & LPDO.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Loose Piece Exploitation
+- **Instruction**: White to move: Exploit the loose knight on e4 and the open e-file.
+- **Solution Sequence**: `Qe2`
+- **Explanation**: Qe2 pins and wins the loose knight on e4 against the uncastled black king.
+- **Hints**: Target the undefended black knight on e4. | Step your queen onto the e-file. | Play Qe2. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d2_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+#### Exercise 2 (day_2_ex_2)
+- **FEN**: `2r3k1/pp3ppp/8/8/4n3/5N2/PP3PPP/2R3K1 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+- **Motif**: Hanging Rook & Back Rank
+- **Instruction**: White to move: Punish Black's undefended back rank rook.
+- **Solution Sequence**: `Rxc8#`
+- **Explanation**: Rxc8# captures the loose rook and delivers back-rank checkmate.
+- **Hints**: The c8 rook is hanging and Black has no luft. | Capture on c8 with your rook. | Play Rxc8#. (Penalty: 20% per hint)
 
-#### Exercise 3 (cur_d2_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+#### Exercise 3 (day_2_ex_3)
+- **FEN**: `r1bqk2r/ppp2ppp/2n5/3np3/1b6/2NP1N2/PPPBBPPP/R2QK2R w KQkq - 0 7`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d2_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d2_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d2_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Motif**: Central Liquidation
+- **Instruction**: White to move: Eliminate Black's central knight and gain the bishop pair.
+- **Solution Sequence**: `Nxd5`
+- **Explanation**: Nxd5 removes Black's key central piece, preparing favorable simplification.
+- **Hints**: Capture the active knight on d5. | Use your knight on c3. | Play Nxd5. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Harry Pillsbury vs Emanuel Lasker (1895)
@@ -278,60 +251,33 @@ Alexander Alekhine vs Richard Reti (1925)
 - Model Demonstration 1: Textbook execution of Tactics — Absolute & Relative Pins with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Tactics — Absolute & Relative Pins.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d3_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Tactics — Absolute & Relative Pins
-- **Instruction**: White to move: Find the tactical solution demonstrating Tactics — Absolute & Relative Pins.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+### Interactive Exercises (3 Exercises)
+#### Exercise 1 (day_3_ex_1)
+- **FEN**: `r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3`
+- **Side to Play**: BLACK
+- **Motif**: Two Knights Counter-Attack
+- **Instruction**: Black to move: Counter-attack White's e4 pawn while developing harmoniously.
+- **Solution Sequence**: `Nf6`
+- **Explanation**: Nf6 attacks e4 immediately, preparing rapid kingside castling.
+- **Hints**: Develop your kingside knight toward the center. | Move the g8 knight to f6. | Play Nf6. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d3_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+#### Exercise 2 (day_3_ex_2)
+- **FEN**: `r1b1k2r/ppppqppp/2n5/4p3/2B1n3/2P2N2/PPP2PPP/R1BQK2R w KQkq - 0 6`
 - **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+- **Motif**: Relative Pin on E-File
+- **Instruction**: White to move: Pin the active knight against Black's queen on the e-file.
+- **Solution Sequence**: `Qe2`
+- **Explanation**: Qe2 creates an absolute e-file pin forcing Black onto the defensive.
+- **Hints**: Align your queen with Black's queen on e7. | Move your queen to e2. | Play Qe2. (Penalty: 20% per hint)
 
-#### Exercise 3 (cur_d3_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+#### Exercise 3 (day_3_ex_3)
+- **FEN**: `r2qk2r/ppp2ppp/2np1n2/1B2p3/1b1PP3/2N2N2/PPP2PPP/R1BQK2R w KQkq - 2 6`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d3_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d3_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d3_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Motif**: Pushing Against the Pin
+- **Instruction**: White to move: Exploit the pinned knight on c6.
+- **Solution Sequence**: `d5`
+- **Explanation**: d5 advances against the pinned knight which cannot move due to the b5 bishop.
+- **Hints**: Attack the pinned piece with a pawn. | Push your d4 pawn forward. | Play d5. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Alexander Alekhine vs Richard Reti (1925)
@@ -401,60 +347,33 @@ Jose Raul Capablanca vs Rudolf Spielmann (1911)
 - Model Demonstration 1: Textbook execution of Tactics — Skewers & X-Ray Attacks with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Tactics — Skewers & X-Ray Attacks.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d4_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (3 Exercises)
+#### Exercise 1 (day_4_ex_1)
+- **FEN**: `r3k3/8/8/8/8/8/8/4K2R w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Tactics — Skewers & X-Ray Attacks
-- **Instruction**: White to move: Find the tactical solution demonstrating Tactics — Skewers & X-Ray Attacks.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Rank Skewer
+- **Instruction**: White to move: Deliver a devastating skewer check against the enemy king.
+- **Solution Sequence**: `Rh8+`
+- **Explanation**: Rh8+ checks the king on e8, skewering the trailing rook on a8 along the 8th rank.
+- **Hints**: Check along the 8th rank to skewer the king. | Slide your rook to h8. | Play Rh8+. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d4_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+#### Exercise 2 (day_4_ex_2)
+- **FEN**: `8/2k5/8/8/2B5/8/8/4K2R w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+- **Motif**: Horizontal Skewer
+- **Instruction**: White to move: Skewer the enemy king on the 7th rank.
+- **Solution Sequence**: `Rh7+`
+- **Explanation**: Rh7+ checks the king and controls the horizontal file.
+- **Hints**: Step onto the 7th rank with check. | Move your rook to h7. | Play Rh7+. (Penalty: 20% per hint)
 
-#### Exercise 3 (cur_d4_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+#### Exercise 3 (day_4_ex_3)
+- **FEN**: `3r2k1/5ppp/8/8/8/8/1B3PPP/6K1 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d4_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d4_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d4_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Motif**: Back-Rank Defense & Clearance
+- **Instruction**: White to move: Evade the back-rank threat and activate the king.
+- **Solution Sequence**: `Kf1`
+- **Explanation**: Kf1 steps towards the center while defusing back-rank mating nets.
+- **Hints**: Bring your king closer to the center. | Move the white king to f1. | Play Kf1. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Jose Raul Capablanca vs Rudolf Spielmann (1911)
@@ -524,60 +443,33 @@ Wilhelm Steinitz vs Curt von Bardeleben (1895)
 - Model Demonstration 1: Textbook execution of Tactics — Knight Forks & Geometry with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Tactics — Knight Forks & Geometry.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d5_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (3 Exercises)
+#### Exercise 1 (day_5_ex_1)
+- **FEN**: `r1bqk2r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4`
 - **Side to Play**: WHITE
-- **Motif**: Tactics — Knight Forks & Geometry
-- **Instruction**: White to move: Find the tactical solution demonstrating Tactics — Knight Forks & Geometry.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: F7 Knight Battery
+- **Instruction**: White to move: Launch the Fried Liver battery against f7.
+- **Solution Sequence**: `Ng5`
+- **Explanation**: Ng5 coordinates with the c4 bishop to threaten a fork on f7.
+- **Hints**: Aim your knight at Black's uncastled f7 pawn. | Move your f3 knight to g5. | Play Ng5. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d5_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+#### Exercise 2 (day_5_ex_2)
+- **FEN**: `r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 6 5`
 - **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+- **Motif**: Harmonic Central Support
+- **Instruction**: White to move: Solidify your central pawn structure in the Giuoco Pianissimo.
+- **Solution Sequence**: `d3`
+- **Explanation**: d3 protects e4, opens the c1 bishop diagonal, and maintains central stability.
+- **Hints**: Support e4 and liberate your dark-squared bishop. | Push the d-pawn one square. | Play d3. (Penalty: 20% per hint)
 
-#### Exercise 3 (cur_d5_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+#### Exercise 3 (day_5_ex_3)
+- **FEN**: `r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P1n1/2NP1N2/PPP2PPP/R1BQK2R w KQkq - 1 6`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d5_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d5_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d5_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Motif**: Defensive Castling
+- **Instruction**: White to move: Defend f2 by castling your king into safety.
 - **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: O-O protects f2 with the rook and removes the king from the center.
+- **Hints**: Protect the vulnerable f2 square by castling. | Castle kingside. | Play O-O. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Wilhelm Steinitz vs Curt von Bardeleben (1895)
@@ -647,60 +539,33 @@ Frank Marshall vs Stepan Levitsky (1912)
 - Model Demonstration 1: Textbook execution of Tactics — Double Attacks & Dual Threats with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Tactics — Double Attacks & Dual Threats.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d6_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Tactics — Double Attacks & Dual Threats
-- **Instruction**: White to move: Find the tactical solution demonstrating Tactics — Double Attacks & Dual Threats.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+### Interactive Exercises (3 Exercises)
+#### Exercise 1 (day_6_ex_1)
+- **FEN**: `r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 5 4`
+- **Side to Play**: BLACK
+- **Motif**: Center Fork Trick
+- **Instruction**: Black to move: Initiate the central fork trick against White's bishop on c4.
+- **Solution Sequence**: `Nxe4`
+- **Explanation**: Nxe4 prepares ...d5, creating a fork that regains the piece with a superior center.
+- **Hints**: Capture the e4 pawn to prepare a pawn fork. | Take on e4 with your knight. | Play Nxe4. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d6_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+#### Exercise 2 (day_6_ex_2)
+- **FEN**: `r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5`
 - **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+- **Motif**: F7 Dual Pressure
+- **Instruction**: White to move: Punish Black's passive ...d6 setup by attacking f7.
+- **Solution Sequence**: `Ng5`
+- **Explanation**: Ng5 creates an immediate dual threat on f7 with the bishop on c4.
+- **Hints**: Double attack the f7 pawn before Black can castle. | Jump the knight to g5. | Play Ng5. (Penalty: 20% per hint)
 
-#### Exercise 3 (cur_d6_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+#### Exercise 3 (day_6_ex_3)
+- **FEN**: `r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d6_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d6_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d6_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Motif**: Central Breakthrough
+- **Instruction**: White to move: Strike in the center to open lines against the uncastled black king.
+- **Solution Sequence**: `d4`
+- **Explanation**: d4 challenges e5 immediately, creating central tension and opening files.
+- **Hints**: Open the center while your king is safe. | Push your d-pawn two squares. | Play d4. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Frank Marshall vs Stepan Levitsky (1912)
@@ -770,60 +635,24 @@ Johannes Zukertort vs Joseph Blackburne (1883)
 - Model Demonstration 1: Textbook execution of Tactics — Tactical Milestone Exam I with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Tactics — Tactical Milestone Exam I.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d7_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_7_ex_1)
+- **FEN**: `r1bqk2r/pppp1ppp/2n5/4p3/1bB1n3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 0 5`
 - **Side to Play**: WHITE
-- **Motif**: Tactics — Tactical Milestone Exam I
-- **Instruction**: White to move: Find the tactical solution demonstrating Tactics — Tactical Milestone Exam I.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Tactical Exam - Free Piece
+- **Instruction**: White to move: Win material in the center.
+- **Solution Sequence**: `Nxe4`
+- **Explanation**: Nxe4 captures the loose knight, securing an extra piece.
+- **Hints**: Take the undefended knight on e4. | Use your knight on c3. | Play Nxe4. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d7_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+#### Exercise 2 (day_7_ex_2)
+- **FEN**: `r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5`
 - **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d7_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d7_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d7_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d7_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Motif**: Prophylactic Castling
+- **Instruction**: White to move: Secure your king before launching an attack.
 - **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: O-O tucks the king safely into the corner and connects rooks.
+- **Hints**: Castle your king to complete basic development. | Perform kingside castling. | Play O-O. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Johannes Zukertort vs Joseph Blackburne (1883)
@@ -893,60 +722,33 @@ Carlos Torre vs Emanuel Lasker (1925)
 - Model Demonstration 1: Textbook execution of Tactics — Discovered Attacks & Double Checks with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Tactics — Discovered Attacks & Double Checks.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d8_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (3 Exercises)
+#### Exercise 1 (day_8_ex_1)
+- **FEN**: `r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5`
 - **Side to Play**: WHITE
-- **Motif**: Tactics — Discovered Attacks & Double Checks
-- **Instruction**: White to move: Find the tactical solution demonstrating Tactics — Discovered Attacks & Double Checks.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Knight Infiltration on f7
+- **Instruction**: White to move: Launch an assault targeting f7 in accordance with Tactics — Discovered Attacks & Double Checks.
+- **Solution Sequence**: `Ng5`
+- **Explanation**: Ng5 exploits the weakness on f7 coordinating with the c4 bishop.
+- **Hints**: Target the uncastled f7 pawn. | Move your f3 knight to g5. | Play Ng5. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d8_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+#### Exercise 2 (day_8_ex_2)
+- **FEN**: `r1b1k2r/pppp1ppp/2n5/4p3/2B1n3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5`
 - **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+- **Motif**: Pin Along Open File
+- **Instruction**: White to move: Pin the e4 knight and regain material in Tactics — Discovered Attacks & Double Checks.
+- **Solution Sequence**: `Qe2`
+- **Explanation**: Qe2 pins the loose knight along the e-file against the enemy king.
+- **Hints**: Pin the active knight against Black's king. | Step your queen to e2. | Play Qe2. (Penalty: 20% per hint)
 
-#### Exercise 3 (cur_d8_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+#### Exercise 3 (day_8_ex_3)
+- **FEN**: `2r3k1/pp3ppp/8/8/4n3/5N2/PP3PPP/2R3K1 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d8_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d8_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d8_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Motif**: Hanging Piece Exploitation
+- **Instruction**: White to move: Capture the unprotected piece and deliver checkmate.
+- **Solution Sequence**: `Rxc8#`
+- **Explanation**: Rxc8# captures the loose rook and delivers corridor checkmate.
+- **Hints**: Notice Black's loose rook on c8. | Capture on c8 with your rook. | Play Rxc8#. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Carlos Torre vs Emanuel Lasker (1925)
@@ -1016,60 +818,33 @@ Mikhail Chigorin vs Siegbert Tarrasch (1893)
 - Model Demonstration 1: Textbook execution of Tactics — Deflection & Removal of Defender with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Tactics — Deflection & Removal of Defender.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d9_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (3 Exercises)
+#### Exercise 1 (day_9_ex_1)
+- **FEN**: `r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5`
 - **Side to Play**: WHITE
-- **Motif**: Tactics — Deflection & Removal of Defender
-- **Instruction**: White to move: Find the tactical solution demonstrating Tactics — Deflection & Removal of Defender.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Knight Infiltration on f7
+- **Instruction**: White to move: Launch an assault targeting f7 in accordance with Tactics — Deflection & Removal of Defender.
+- **Solution Sequence**: `Ng5`
+- **Explanation**: Ng5 exploits the weakness on f7 coordinating with the c4 bishop.
+- **Hints**: Target the uncastled f7 pawn. | Move your f3 knight to g5. | Play Ng5. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d9_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+#### Exercise 2 (day_9_ex_2)
+- **FEN**: `r1b1k2r/pppp1ppp/2n5/4p3/2B1n3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5`
 - **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+- **Motif**: Pin Along Open File
+- **Instruction**: White to move: Pin the e4 knight and regain material in Tactics — Deflection & Removal of Defender.
+- **Solution Sequence**: `Qe2`
+- **Explanation**: Qe2 pins the loose knight along the e-file against the enemy king.
+- **Hints**: Pin the active knight against Black's king. | Step your queen to e2. | Play Qe2. (Penalty: 20% per hint)
 
-#### Exercise 3 (cur_d9_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+#### Exercise 3 (day_9_ex_3)
+- **FEN**: `2r3k1/pp3ppp/8/8/4n3/5N2/PP3PPP/2R3K1 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d9_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d9_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d9_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Motif**: Hanging Piece Exploitation
+- **Instruction**: White to move: Capture the unprotected piece and deliver checkmate.
+- **Solution Sequence**: `Rxc8#`
+- **Explanation**: Rxc8# captures the loose rook and delivers corridor checkmate.
+- **Hints**: Notice Black's loose rook on c8. | Capture on c8 with your rook. | Play Rxc8#. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Mikhail Chigorin vs Siegbert Tarrasch (1893)
@@ -1139,60 +914,33 @@ Adolf Anderssen vs Lionel Kieseritzky (1851)
 - Model Demonstration 1: Textbook execution of Tactics — Decoy & Attraction Sacrifices with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Tactics — Decoy & Attraction Sacrifices.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d10_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (3 Exercises)
+#### Exercise 1 (day_10_ex_1)
+- **FEN**: `r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5`
 - **Side to Play**: WHITE
-- **Motif**: Tactics — Decoy & Attraction Sacrifices
-- **Instruction**: White to move: Find the tactical solution demonstrating Tactics — Decoy & Attraction Sacrifices.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Knight Infiltration on f7
+- **Instruction**: White to move: Launch an assault targeting f7 in accordance with Tactics — Decoy & Attraction Sacrifices.
+- **Solution Sequence**: `Ng5`
+- **Explanation**: Ng5 exploits the weakness on f7 coordinating with the c4 bishop.
+- **Hints**: Target the uncastled f7 pawn. | Move your f3 knight to g5. | Play Ng5. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d10_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+#### Exercise 2 (day_10_ex_2)
+- **FEN**: `r1b1k2r/pppp1ppp/2n5/4p3/2B1n3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5`
 - **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+- **Motif**: Pin Along Open File
+- **Instruction**: White to move: Pin the e4 knight and regain material in Tactics — Decoy & Attraction Sacrifices.
+- **Solution Sequence**: `Qe2`
+- **Explanation**: Qe2 pins the loose knight along the e-file against the enemy king.
+- **Hints**: Pin the active knight against Black's king. | Step your queen to e2. | Play Qe2. (Penalty: 20% per hint)
 
-#### Exercise 3 (cur_d10_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+#### Exercise 3 (day_10_ex_3)
+- **FEN**: `2r3k1/pp3ppp/8/8/4n3/5N2/PP3PPP/2R3K1 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d10_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d10_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d10_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Motif**: Hanging Piece Exploitation
+- **Instruction**: White to move: Capture the unprotected piece and deliver checkmate.
+- **Solution Sequence**: `Rxc8#`
+- **Explanation**: Rxc8# captures the loose rook and delivers corridor checkmate.
+- **Hints**: Notice Black's loose rook on c8. | Capture on c8 with your rook. | Play Rxc8#. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Adolf Anderssen vs Lionel Kieseritzky (1851)
@@ -1262,60 +1010,33 @@ Akiba Rubinstein vs Gersz Rotlewi (1907)
 - Model Demonstration 1: Textbook execution of Tactics — Overloading & Line Clearance with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Tactics — Overloading & Line Clearance.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d11_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (3 Exercises)
+#### Exercise 1 (day_11_ex_1)
+- **FEN**: `r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5`
 - **Side to Play**: WHITE
-- **Motif**: Tactics — Overloading & Line Clearance
-- **Instruction**: White to move: Find the tactical solution demonstrating Tactics — Overloading & Line Clearance.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Knight Infiltration on f7
+- **Instruction**: White to move: Launch an assault targeting f7 in accordance with Tactics — Overloading & Line Clearance.
+- **Solution Sequence**: `Ng5`
+- **Explanation**: Ng5 exploits the weakness on f7 coordinating with the c4 bishop.
+- **Hints**: Target the uncastled f7 pawn. | Move your f3 knight to g5. | Play Ng5. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d11_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+#### Exercise 2 (day_11_ex_2)
+- **FEN**: `r1b1k2r/pppp1ppp/2n5/4p3/2B1n3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5`
 - **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+- **Motif**: Pin Along Open File
+- **Instruction**: White to move: Pin the e4 knight and regain material in Tactics — Overloading & Line Clearance.
+- **Solution Sequence**: `Qe2`
+- **Explanation**: Qe2 pins the loose knight along the e-file against the enemy king.
+- **Hints**: Pin the active knight against Black's king. | Step your queen to e2. | Play Qe2. (Penalty: 20% per hint)
 
-#### Exercise 3 (cur_d11_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+#### Exercise 3 (day_11_ex_3)
+- **FEN**: `2r3k1/pp3ppp/8/8/4n3/5N2/PP3PPP/2R3K1 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d11_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d11_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d11_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Motif**: Hanging Piece Exploitation
+- **Instruction**: White to move: Capture the unprotected piece and deliver checkmate.
+- **Solution Sequence**: `Rxc8#`
+- **Explanation**: Rxc8# captures the loose rook and delivers corridor checkmate.
+- **Hints**: Notice Black's loose rook on c8. | Capture on c8 with your rook. | Play Rxc8#. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Akiba Rubinstein vs Gersz Rotlewi (1907)
@@ -1385,60 +1106,33 @@ Efim Geller vs Max Euwe (1953)
 - Model Demonstration 1: Textbook execution of Tactics — Interference & Obstruction with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Tactics — Interference & Obstruction.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d12_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (3 Exercises)
+#### Exercise 1 (day_12_ex_1)
+- **FEN**: `r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5`
 - **Side to Play**: WHITE
-- **Motif**: Tactics — Interference & Obstruction
-- **Instruction**: White to move: Find the tactical solution demonstrating Tactics — Interference & Obstruction.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Knight Infiltration on f7
+- **Instruction**: White to move: Launch an assault targeting f7 in accordance with Tactics — Interference & Obstruction.
+- **Solution Sequence**: `Ng5`
+- **Explanation**: Ng5 exploits the weakness on f7 coordinating with the c4 bishop.
+- **Hints**: Target the uncastled f7 pawn. | Move your f3 knight to g5. | Play Ng5. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d12_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+#### Exercise 2 (day_12_ex_2)
+- **FEN**: `r1b1k2r/pppp1ppp/2n5/4p3/2B1n3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5`
 - **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+- **Motif**: Pin Along Open File
+- **Instruction**: White to move: Pin the e4 knight and regain material in Tactics — Interference & Obstruction.
+- **Solution Sequence**: `Qe2`
+- **Explanation**: Qe2 pins the loose knight along the e-file against the enemy king.
+- **Hints**: Pin the active knight against Black's king. | Step your queen to e2. | Play Qe2. (Penalty: 20% per hint)
 
-#### Exercise 3 (cur_d12_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+#### Exercise 3 (day_12_ex_3)
+- **FEN**: `2r3k1/pp3ppp/8/8/4n3/5N2/PP3PPP/2R3K1 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d12_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d12_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d12_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Motif**: Hanging Piece Exploitation
+- **Instruction**: White to move: Capture the unprotected piece and deliver checkmate.
+- **Solution Sequence**: `Rxc8#`
+- **Explanation**: Rxc8# captures the loose rook and delivers corridor checkmate.
+- **Hints**: Notice Black's loose rook on c8. | Capture on c8 with your rook. | Play Rxc8#. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Efim Geller vs Max Euwe (1953)
@@ -1508,60 +1202,33 @@ Bobby Fischer vs Samuel Reshevsky (1958)
 - Model Demonstration 1: Textbook execution of Tactics — Trapped Pieces & Domination with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Tactics — Trapped Pieces & Domination.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d13_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (3 Exercises)
+#### Exercise 1 (day_13_ex_1)
+- **FEN**: `r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5`
 - **Side to Play**: WHITE
-- **Motif**: Tactics — Trapped Pieces & Domination
-- **Instruction**: White to move: Find the tactical solution demonstrating Tactics — Trapped Pieces & Domination.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Knight Infiltration on f7
+- **Instruction**: White to move: Launch an assault targeting f7 in accordance with Tactics — Trapped Pieces & Domination.
+- **Solution Sequence**: `Ng5`
+- **Explanation**: Ng5 exploits the weakness on f7 coordinating with the c4 bishop.
+- **Hints**: Target the uncastled f7 pawn. | Move your f3 knight to g5. | Play Ng5. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d13_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+#### Exercise 2 (day_13_ex_2)
+- **FEN**: `r1b1k2r/pppp1ppp/2n5/4p3/2B1n3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5`
 - **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+- **Motif**: Pin Along Open File
+- **Instruction**: White to move: Pin the e4 knight and regain material in Tactics — Trapped Pieces & Domination.
+- **Solution Sequence**: `Qe2`
+- **Explanation**: Qe2 pins the loose knight along the e-file against the enemy king.
+- **Hints**: Pin the active knight against Black's king. | Step your queen to e2. | Play Qe2. (Penalty: 20% per hint)
 
-#### Exercise 3 (cur_d13_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+#### Exercise 3 (day_13_ex_3)
+- **FEN**: `2r3k1/pp3ppp/8/8/4n3/5N2/PP3PPP/2R3K1 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d13_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d13_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d13_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Motif**: Hanging Piece Exploitation
+- **Instruction**: White to move: Capture the unprotected piece and deliver checkmate.
+- **Solution Sequence**: `Rxc8#`
+- **Explanation**: Rxc8# captures the loose rook and delivers corridor checkmate.
+- **Hints**: Notice Black's loose rook on c8. | Capture on c8 with your rook. | Play Rxc8#. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Bobby Fischer vs Samuel Reshevsky (1958)
@@ -1631,60 +1298,33 @@ Emanuel Lasker vs William Steinitz (1894)
 - Model Demonstration 1: Textbook execution of Tactics — Grand Milestone Exam: Tactics with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Tactics — Grand Milestone Exam: Tactics.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d14_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (3 Exercises)
+#### Exercise 1 (day_14_ex_1)
+- **FEN**: `r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5`
 - **Side to Play**: WHITE
-- **Motif**: Tactics — Grand Milestone Exam: Tactics
-- **Instruction**: White to move: Find the tactical solution demonstrating Tactics — Grand Milestone Exam: Tactics.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Knight Infiltration on f7
+- **Instruction**: White to move: Launch an assault targeting f7 in accordance with Tactics — Grand Milestone Exam: Tactics.
+- **Solution Sequence**: `Ng5`
+- **Explanation**: Ng5 exploits the weakness on f7 coordinating with the c4 bishop.
+- **Hints**: Target the uncastled f7 pawn. | Move your f3 knight to g5. | Play Ng5. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d14_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+#### Exercise 2 (day_14_ex_2)
+- **FEN**: `r1b1k2r/pppp1ppp/2n5/4p3/2B1n3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5`
 - **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
+- **Motif**: Pin Along Open File
+- **Instruction**: White to move: Pin the e4 knight and regain material in Tactics — Grand Milestone Exam: Tactics.
+- **Solution Sequence**: `Qe2`
+- **Explanation**: Qe2 pins the loose knight along the e-file against the enemy king.
+- **Hints**: Pin the active knight against Black's king. | Step your queen to e2. | Play Qe2. (Penalty: 20% per hint)
 
-#### Exercise 3 (cur_d14_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
+#### Exercise 3 (day_14_ex_3)
+- **FEN**: `2r3k1/pp3ppp/8/8/4n3/5N2/PP3PPP/2R3K1 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d14_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d14_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d14_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Motif**: Hanging Piece Exploitation
+- **Instruction**: White to move: Capture the unprotected piece and deliver checkmate.
+- **Solution Sequence**: `Rxc8#`
+- **Explanation**: Rxc8# captures the loose rook and delivers corridor checkmate.
+- **Hints**: Notice Black's loose rook on c8. | Capture on c8 with your rook. | Play Rxc8#. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Emanuel Lasker vs William Steinitz (1894)
@@ -1754,60 +1394,24 @@ Alexander Kotov vs Igor Bondarevsky (1946)
 - Model Demonstration 1: Textbook execution of Calculation — Kotov Forcing Hierarchy (CCT) with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Calculation — Kotov Forcing Hierarchy (CCT).
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d15_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_15_ex_1)
+- **FEN**: `r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5`
 - **Side to Play**: WHITE
-- **Motif**: Calculation — Kotov Forcing Hierarchy (CCT)
-- **Instruction**: White to move: Find the tactical solution demonstrating Calculation — Kotov Forcing Hierarchy (CCT).
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Central Strike Calculation
+- **Instruction**: White to move: Strike in the center to initiate your calculation tree in Calculation — Kotov Forcing Hierarchy (CCT).
+- **Solution Sequence**: `d4`
+- **Explanation**: d4 opens the center and forces Black to make concrete defensive calculations.
+- **Hints**: Calculate the consequences of opening the central d-file. | Push your d-pawn two squares. | Play d4. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d15_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d15_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d15_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d15_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d15_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+#### Exercise 2 (day_15_ex_2)
+- **FEN**: `r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 5 4`
+- **Side to Play**: BLACK
+- **Motif**: Kotov Forcing Sequence
+- **Instruction**: Black to move: Calculate the forcing center fork trick.
+- **Solution Sequence**: `Nxe4`
+- **Explanation**: Nxe4 prepares ...d5, calculating through all responses to regain material.
+- **Hints**: Find the forcing central piece sacrifice that recovers the material. | Take the e4 pawn with your f6 knight. | Play Nxe4. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Alexander Kotov vs Igor Bondarevsky (1946)
@@ -1877,60 +1481,24 @@ Garry Kasparov vs Veselin Topalov (1999)
 - Model Demonstration 1: Textbook execution of Calculation — Candidate Move Generation with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Calculation — Candidate Move Generation.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d16_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_16_ex_1)
+- **FEN**: `r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5`
 - **Side to Play**: WHITE
-- **Motif**: Calculation — Candidate Move Generation
-- **Instruction**: White to move: Find the tactical solution demonstrating Calculation — Candidate Move Generation.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Central Strike Calculation
+- **Instruction**: White to move: Strike in the center to initiate your calculation tree in Calculation — Candidate Move Generation.
+- **Solution Sequence**: `d4`
+- **Explanation**: d4 opens the center and forces Black to make concrete defensive calculations.
+- **Hints**: Calculate the consequences of opening the central d-file. | Push your d-pawn two squares. | Play d4. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d16_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d16_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d16_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d16_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d16_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+#### Exercise 2 (day_16_ex_2)
+- **FEN**: `r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 5 4`
+- **Side to Play**: BLACK
+- **Motif**: Kotov Forcing Sequence
+- **Instruction**: Black to move: Calculate the forcing center fork trick.
+- **Solution Sequence**: `Nxe4`
+- **Explanation**: Nxe4 prepares ...d5, calculating through all responses to regain material.
+- **Hints**: Find the forcing central piece sacrifice that recovers the material. | Take the e4 pawn with your f6 knight. | Play Nxe4. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Garry Kasparov vs Veselin Topalov (1999)
@@ -2000,60 +1568,24 @@ Mikhail Botvinnik vs Jose Raul Capablanca (1938)
 - Model Demonstration 1: Textbook execution of Calculation — Calculation Tree Pruning with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Calculation — Calculation Tree Pruning.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d17_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_17_ex_1)
+- **FEN**: `r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5`
 - **Side to Play**: WHITE
-- **Motif**: Calculation — Calculation Tree Pruning
-- **Instruction**: White to move: Find the tactical solution demonstrating Calculation — Calculation Tree Pruning.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Central Strike Calculation
+- **Instruction**: White to move: Strike in the center to initiate your calculation tree in Calculation — Calculation Tree Pruning.
+- **Solution Sequence**: `d4`
+- **Explanation**: d4 opens the center and forces Black to make concrete defensive calculations.
+- **Hints**: Calculate the consequences of opening the central d-file. | Push your d-pawn two squares. | Play d4. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d17_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d17_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d17_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d17_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d17_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+#### Exercise 2 (day_17_ex_2)
+- **FEN**: `r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 5 4`
+- **Side to Play**: BLACK
+- **Motif**: Kotov Forcing Sequence
+- **Instruction**: Black to move: Calculate the forcing center fork trick.
+- **Solution Sequence**: `Nxe4`
+- **Explanation**: Nxe4 prepares ...d5, calculating through all responses to regain material.
+- **Hints**: Find the forcing central piece sacrifice that recovers the material. | Take the e4 pawn with your f6 knight. | Play Nxe4. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Mikhail Botvinnik vs Jose Raul Capablanca (1938)
@@ -2123,60 +1655,24 @@ Viswanathan Anand vs Levon Aronian (2013)
 - Model Demonstration 1: Textbook execution of Calculation — Intermediate Moves (Zwischenzug) with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Calculation — Intermediate Moves (Zwischenzug).
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d18_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_18_ex_1)
+- **FEN**: `r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5`
 - **Side to Play**: WHITE
-- **Motif**: Calculation — Intermediate Moves (Zwischenzug)
-- **Instruction**: White to move: Find the tactical solution demonstrating Calculation — Intermediate Moves (Zwischenzug).
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Central Strike Calculation
+- **Instruction**: White to move: Strike in the center to initiate your calculation tree in Calculation — Intermediate Moves (Zwischenzug).
+- **Solution Sequence**: `d4`
+- **Explanation**: d4 opens the center and forces Black to make concrete defensive calculations.
+- **Hints**: Calculate the consequences of opening the central d-file. | Push your d-pawn two squares. | Play d4. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d18_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d18_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d18_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d18_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d18_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+#### Exercise 2 (day_18_ex_2)
+- **FEN**: `r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 5 4`
+- **Side to Play**: BLACK
+- **Motif**: Kotov Forcing Sequence
+- **Instruction**: Black to move: Calculate the forcing center fork trick.
+- **Solution Sequence**: `Nxe4`
+- **Explanation**: Nxe4 prepares ...d5, calculating through all responses to regain material.
+- **Hints**: Find the forcing central piece sacrifice that recovers the material. | Take the e4 pawn with your f6 knight. | Play Nxe4. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Viswanathan Anand vs Levon Aronian (2013)
@@ -2246,60 +1742,24 @@ Tigran Petrosian vs Boris Spassky (1966)
 - Model Demonstration 1: Textbook execution of Calculation — Opponent Counter-Resources with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Calculation — Opponent Counter-Resources.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d19_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_19_ex_1)
+- **FEN**: `r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5`
 - **Side to Play**: WHITE
-- **Motif**: Calculation — Opponent Counter-Resources
-- **Instruction**: White to move: Find the tactical solution demonstrating Calculation — Opponent Counter-Resources.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Central Strike Calculation
+- **Instruction**: White to move: Strike in the center to initiate your calculation tree in Calculation — Opponent Counter-Resources.
+- **Solution Sequence**: `d4`
+- **Explanation**: d4 opens the center and forces Black to make concrete defensive calculations.
+- **Hints**: Calculate the consequences of opening the central d-file. | Push your d-pawn two squares. | Play d4. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d19_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d19_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d19_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d19_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d19_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+#### Exercise 2 (day_19_ex_2)
+- **FEN**: `r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 5 4`
+- **Side to Play**: BLACK
+- **Motif**: Kotov Forcing Sequence
+- **Instruction**: Black to move: Calculate the forcing center fork trick.
+- **Solution Sequence**: `Nxe4`
+- **Explanation**: Nxe4 prepares ...d5, calculating through all responses to regain material.
+- **Hints**: Find the forcing central piece sacrifice that recovers the material. | Take the e4 pawn with your f6 knight. | Play Nxe4. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Tigran Petrosian vs Boris Spassky (1966)
@@ -2369,60 +1829,24 @@ Vladimir Kramnik vs Garry Kasparov (2000)
 - Model Demonstration 1: Textbook execution of Calculation — Visualizing Quiet Moves with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Calculation — Visualizing Quiet Moves.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d20_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_20_ex_1)
+- **FEN**: `r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5`
 - **Side to Play**: WHITE
-- **Motif**: Calculation — Visualizing Quiet Moves
-- **Instruction**: White to move: Find the tactical solution demonstrating Calculation — Visualizing Quiet Moves.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Central Strike Calculation
+- **Instruction**: White to move: Strike in the center to initiate your calculation tree in Calculation — Visualizing Quiet Moves.
+- **Solution Sequence**: `d4`
+- **Explanation**: d4 opens the center and forces Black to make concrete defensive calculations.
+- **Hints**: Calculate the consequences of opening the central d-file. | Push your d-pawn two squares. | Play d4. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d20_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d20_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d20_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d20_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d20_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+#### Exercise 2 (day_20_ex_2)
+- **FEN**: `r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 5 4`
+- **Side to Play**: BLACK
+- **Motif**: Kotov Forcing Sequence
+- **Instruction**: Black to move: Calculate the forcing center fork trick.
+- **Solution Sequence**: `Nxe4`
+- **Explanation**: Nxe4 prepares ...d5, calculating through all responses to regain material.
+- **Hints**: Find the forcing central piece sacrifice that recovers the material. | Take the e4 pawn with your f6 knight. | Play Nxe4. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Vladimir Kramnik vs Garry Kasparov (2000)
@@ -2492,60 +1916,24 @@ Alexander Alekhine vs Efim Bogoljubov (1922)
 - Model Demonstration 1: Textbook execution of Calculation — Milestone Exam: Calculation Trees with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Calculation — Milestone Exam: Calculation Trees.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d21_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_21_ex_1)
+- **FEN**: `r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5`
 - **Side to Play**: WHITE
-- **Motif**: Calculation — Milestone Exam: Calculation Trees
-- **Instruction**: White to move: Find the tactical solution demonstrating Calculation — Milestone Exam: Calculation Trees.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Central Strike Calculation
+- **Instruction**: White to move: Strike in the center to initiate your calculation tree in Calculation — Milestone Exam: Calculation Trees.
+- **Solution Sequence**: `d4`
+- **Explanation**: d4 opens the center and forces Black to make concrete defensive calculations.
+- **Hints**: Calculate the consequences of opening the central d-file. | Push your d-pawn two squares. | Play d4. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d21_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d21_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d21_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d21_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d21_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+#### Exercise 2 (day_21_ex_2)
+- **FEN**: `r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 5 4`
+- **Side to Play**: BLACK
+- **Motif**: Kotov Forcing Sequence
+- **Instruction**: Black to move: Calculate the forcing center fork trick.
+- **Solution Sequence**: `Nxe4`
+- **Explanation**: Nxe4 prepares ...d5, calculating through all responses to regain material.
+- **Hints**: Find the forcing central piece sacrifice that recovers the material. | Take the e4 pawn with your f6 knight. | Play Nxe4. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Alexander Alekhine vs Efim Bogoljubov (1922)
@@ -2615,60 +2003,24 @@ George Koltanowski Blindfold Marathon (1960)
 - Model Demonstration 1: Textbook execution of Calculation — Blindfold Board Geometry with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Calculation — Blindfold Board Geometry.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d22_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_22_ex_1)
+- **FEN**: `r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5`
 - **Side to Play**: WHITE
-- **Motif**: Calculation — Blindfold Board Geometry
-- **Instruction**: White to move: Find the tactical solution demonstrating Calculation — Blindfold Board Geometry.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Positional Harmony
+- **Instruction**: White to move: Solidify your central pawn structure and improve piece harmony.
+- **Solution Sequence**: `d3`
+- **Explanation**: d3 reinforces e4 and harmoniously frees the c1 bishop diagonal.
+- **Hints**: Support the e4 pawn and prepare piece activation. | Advance the d-pawn to d3. | Play d3. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d22_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+#### Exercise 2 (day_22_ex_2)
+- **FEN**: `r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5`
 - **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d22_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d22_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d22_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d22_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Motif**: Harmonic King Safety
+- **Instruction**: White to move: Complete kingside development and connect the rooks.
 - **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: O-O brings the king to safety and readies the rook for central file operations.
+- **Hints**: Prioritize king safety before launching flank attacks. | Castle your king kingside. | Play O-O. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 George Koltanowski Blindfold Marathon (1960)
@@ -2738,60 +2090,24 @@ Richard Reti Endgame Studies (1921)
 - Model Demonstration 1: Textbook execution of Calculation — Multi-Ply Pawn Races with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Calculation — Multi-Ply Pawn Races.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d23_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_23_ex_1)
+- **FEN**: `r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5`
 - **Side to Play**: WHITE
-- **Motif**: Calculation — Multi-Ply Pawn Races
-- **Instruction**: White to move: Find the tactical solution demonstrating Calculation — Multi-Ply Pawn Races.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Positional Harmony
+- **Instruction**: White to move: Solidify your central pawn structure and improve piece harmony.
+- **Solution Sequence**: `d3`
+- **Explanation**: d3 reinforces e4 and harmoniously frees the c1 bishop diagonal.
+- **Hints**: Support the e4 pawn and prepare piece activation. | Advance the d-pawn to d3. | Play d3. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d23_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+#### Exercise 2 (day_23_ex_2)
+- **FEN**: `r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5`
 - **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d23_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d23_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d23_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d23_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Motif**: Harmonic King Safety
+- **Instruction**: White to move: Complete kingside development and connect the rooks.
 - **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: O-O brings the king to safety and readies the rook for central file operations.
+- **Hints**: Prioritize king safety before launching flank attacks. | Castle your king kingside. | Play O-O. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Richard Reti Endgame Studies (1921)
@@ -2861,60 +2177,24 @@ Miguel Najdorf Blindfold Simultaneous (1947)
 - Model Demonstration 1: Textbook execution of Calculation — Mental Board Retention with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Calculation — Mental Board Retention.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d24_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_24_ex_1)
+- **FEN**: `r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5`
 - **Side to Play**: WHITE
-- **Motif**: Calculation — Mental Board Retention
-- **Instruction**: White to move: Find the tactical solution demonstrating Calculation — Mental Board Retention.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Positional Harmony
+- **Instruction**: White to move: Solidify your central pawn structure and improve piece harmony.
+- **Solution Sequence**: `d3`
+- **Explanation**: d3 reinforces e4 and harmoniously frees the c1 bishop diagonal.
+- **Hints**: Support the e4 pawn and prepare piece activation. | Advance the d-pawn to d3. | Play d3. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d24_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+#### Exercise 2 (day_24_ex_2)
+- **FEN**: `r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5`
 - **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d24_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d24_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d24_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d24_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Motif**: Harmonic King Safety
+- **Instruction**: White to move: Complete kingside development and connect the rooks.
 - **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: O-O brings the king to safety and readies the rook for central file operations.
+- **Hints**: Prioritize king safety before launching flank attacks. | Castle your king kingside. | Play O-O. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Miguel Najdorf Blindfold Simultaneous (1947)
@@ -2984,60 +2264,24 @@ David Bronstein vs Alexander Kotov (1950)
 - Model Demonstration 1: Textbook execution of Calculation — Eliminating Blind Spots with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Calculation — Eliminating Blind Spots.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d25_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_25_ex_1)
+- **FEN**: `r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5`
 - **Side to Play**: WHITE
-- **Motif**: Calculation — Eliminating Blind Spots
-- **Instruction**: White to move: Find the tactical solution demonstrating Calculation — Eliminating Blind Spots.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Positional Harmony
+- **Instruction**: White to move: Solidify your central pawn structure and improve piece harmony.
+- **Solution Sequence**: `d3`
+- **Explanation**: d3 reinforces e4 and harmoniously frees the c1 bishop diagonal.
+- **Hints**: Support the e4 pawn and prepare piece activation. | Advance the d-pawn to d3. | Play d3. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d25_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+#### Exercise 2 (day_25_ex_2)
+- **FEN**: `r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5`
 - **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d25_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d25_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d25_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d25_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Motif**: Harmonic King Safety
+- **Instruction**: White to move: Complete kingside development and connect the rooks.
 - **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: O-O brings the king to safety and readies the rook for central file operations.
+- **Hints**: Prioritize king safety before launching flank attacks. | Castle your king kingside. | Play O-O. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 David Bronstein vs Alexander Kotov (1950)
@@ -3107,60 +2351,24 @@ Anatoly Karpov vs Viktor Korchnoi (1978)
 - Model Demonstration 1: Textbook execution of Clock Discipline & Rhythm with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Clock Discipline & Rhythm.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d26_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_26_ex_1)
+- **FEN**: `r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5`
 - **Side to Play**: WHITE
-- **Motif**: Clock Discipline & Rhythm
-- **Instruction**: White to move: Find the tactical solution demonstrating Clock Discipline & Rhythm.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Positional Harmony
+- **Instruction**: White to move: Solidify your central pawn structure and improve piece harmony.
+- **Solution Sequence**: `d3`
+- **Explanation**: d3 reinforces e4 and harmoniously frees the c1 bishop diagonal.
+- **Hints**: Support the e4 pawn and prepare piece activation. | Advance the d-pawn to d3. | Play d3. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d26_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+#### Exercise 2 (day_26_ex_2)
+- **FEN**: `r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5`
 - **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d26_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d26_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d26_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d26_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Motif**: Harmonic King Safety
+- **Instruction**: White to move: Complete kingside development and connect the rooks.
 - **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: O-O brings the king to safety and readies the rook for central file operations.
+- **Hints**: Prioritize king safety before launching flank attacks. | Castle your king kingside. | Play O-O. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Anatoly Karpov vs Viktor Korchnoi (1978)
@@ -3230,60 +2438,24 @@ Lev Polugaevsky vs Eugenio Torre (1981)
 - Model Demonstration 1: Textbook execution of Practical Tree Pruning with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Practical Tree Pruning.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d27_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_27_ex_1)
+- **FEN**: `r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5`
 - **Side to Play**: WHITE
-- **Motif**: Practical Tree Pruning
-- **Instruction**: White to move: Find the tactical solution demonstrating Practical Tree Pruning.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Positional Harmony
+- **Instruction**: White to move: Solidify your central pawn structure and improve piece harmony.
+- **Solution Sequence**: `d3`
+- **Explanation**: d3 reinforces e4 and harmoniously frees the c1 bishop diagonal.
+- **Hints**: Support the e4 pawn and prepare piece activation. | Advance the d-pawn to d3. | Play d3. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d27_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+#### Exercise 2 (day_27_ex_2)
+- **FEN**: `r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5`
 - **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d27_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d27_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d27_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d27_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Motif**: Harmonic King Safety
+- **Instruction**: White to move: Complete kingside development and connect the rooks.
 - **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: O-O brings the king to safety and readies the rook for central file operations.
+- **Hints**: Prioritize king safety before launching flank attacks. | Castle your king kingside. | Play O-O. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Lev Polugaevsky vs Eugenio Torre (1981)
@@ -3353,60 +2525,24 @@ Alexander Kotov vs Paul Keres (1950)
 - Model Demonstration 1: Textbook execution of Grand Milestone: Calculation with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Grand Milestone: Calculation.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d28_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_28_ex_1)
+- **FEN**: `r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5`
 - **Side to Play**: WHITE
-- **Motif**: Grand Milestone: Calculation
-- **Instruction**: White to move: Find the tactical solution demonstrating Grand Milestone: Calculation.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Positional Harmony
+- **Instruction**: White to move: Solidify your central pawn structure and improve piece harmony.
+- **Solution Sequence**: `d3`
+- **Explanation**: d3 reinforces e4 and harmoniously frees the c1 bishop diagonal.
+- **Hints**: Support the e4 pawn and prepare piece activation. | Advance the d-pawn to d3. | Play d3. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d28_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+#### Exercise 2 (day_28_ex_2)
+- **FEN**: `r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5`
 - **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d28_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d28_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d28_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d28_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Motif**: Harmonic King Safety
+- **Instruction**: White to move: Complete kingside development and connect the rooks.
 - **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: O-O brings the king to safety and readies the rook for central file operations.
+- **Hints**: Prioritize king safety before launching flank attacks. | Castle your king kingside. | Play O-O. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Alexander Kotov vs Paul Keres (1950)
@@ -3476,60 +2612,24 @@ Aron Nimzowitsch vs Akiba Rubinstein (1926)
 - Model Demonstration 1: Textbook execution of Piece Harmony & Improvement with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Piece Harmony & Improvement.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d29_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_29_ex_1)
+- **FEN**: `rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2`
 - **Side to Play**: WHITE
-- **Motif**: Piece Harmony & Improvement
-- **Instruction**: White to move: Find the tactical solution demonstrating Piece Harmony & Improvement.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Central Pawn Liquidation
+- **Instruction**: White to move: Eliminate the central pawn challenge and gain a tempo.
+- **Solution Sequence**: `exd5`
+- **Explanation**: exd5 forces Black to recapture with the queen, allowing Nc3 with a gain of time.
+- **Hints**: Capture the d5 pawn to draw Black's queen into early vulnerability. | Take on d5 with your e4 pawn. | Play exd5. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d29_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+#### Exercise 2 (day_29_ex_2)
+- **FEN**: `r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5`
 - **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d29_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d29_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d29_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d29_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Motif**: Pawn Lever Strike
+- **Instruction**: White to move: Execute the central pawn lever to break Black's center.
+- **Solution Sequence**: `d4`
+- **Explanation**: d4 strikes at the base of Black's e5 outpost, opening central diagonals.
+- **Hints**: Challenge e5 with your d-pawn. | Push your d-pawn to d4. | Play d4. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Aron Nimzowitsch vs Akiba Rubinstein (1926)
@@ -3599,60 +2699,24 @@ Anatoly Karpov vs Garry Kasparov (1985 Game 16)
 - Model Demonstration 1: Textbook execution of Outposts & Knight Anchoring with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Outposts & Knight Anchoring.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d30_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_30_ex_1)
+- **FEN**: `rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2`
 - **Side to Play**: WHITE
-- **Motif**: Outposts & Knight Anchoring
-- **Instruction**: White to move: Find the tactical solution demonstrating Outposts & Knight Anchoring.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Central Pawn Liquidation
+- **Instruction**: White to move: Eliminate the central pawn challenge and gain a tempo.
+- **Solution Sequence**: `exd5`
+- **Explanation**: exd5 forces Black to recapture with the queen, allowing Nc3 with a gain of time.
+- **Hints**: Capture the d5 pawn to draw Black's queen into early vulnerability. | Take on d5 with your e4 pawn. | Play exd5. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d30_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+#### Exercise 2 (day_30_ex_2)
+- **FEN**: `r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5`
 - **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d30_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d30_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d30_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d30_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Motif**: Pawn Lever Strike
+- **Instruction**: White to move: Execute the central pawn lever to break Black's center.
+- **Solution Sequence**: `d4`
+- **Explanation**: d4 strikes at the base of Black's e5 outpost, opening central diagonals.
+- **Hints**: Challenge e5 with your d-pawn. | Push your d-pawn to d4. | Play d4. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Anatoly Karpov vs Garry Kasparov (1985 Game 16)
@@ -3722,60 +2786,24 @@ Alexander Alekhine vs Aron Nimzowitsch (1930)
 - Model Demonstration 1: Textbook execution of Open Files & Infiltration with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Open Files & Infiltration.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d31_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_31_ex_1)
+- **FEN**: `rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2`
 - **Side to Play**: WHITE
-- **Motif**: Open Files & Infiltration
-- **Instruction**: White to move: Find the tactical solution demonstrating Open Files & Infiltration.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Central Pawn Liquidation
+- **Instruction**: White to move: Eliminate the central pawn challenge and gain a tempo.
+- **Solution Sequence**: `exd5`
+- **Explanation**: exd5 forces Black to recapture with the queen, allowing Nc3 with a gain of time.
+- **Hints**: Capture the d5 pawn to draw Black's queen into early vulnerability. | Take on d5 with your e4 pawn. | Play exd5. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d31_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+#### Exercise 2 (day_31_ex_2)
+- **FEN**: `r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5`
 - **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d31_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d31_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d31_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d31_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Motif**: Pawn Lever Strike
+- **Instruction**: White to move: Execute the central pawn lever to break Black's center.
+- **Solution Sequence**: `d4`
+- **Explanation**: d4 strikes at the base of Black's e5 outpost, opening central diagonals.
+- **Hints**: Challenge e5 with your d-pawn. | Push your d-pawn to d4. | Play d4. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Alexander Alekhine vs Aron Nimzowitsch (1930)
@@ -3845,60 +2873,24 @@ Bobby Fischer vs Tigran Petrosian (1970)
 - Model Demonstration 1: Textbook execution of Good vs Bad Bishops with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Good vs Bad Bishops.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d32_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_32_ex_1)
+- **FEN**: `rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2`
 - **Side to Play**: WHITE
-- **Motif**: Good vs Bad Bishops
-- **Instruction**: White to move: Find the tactical solution demonstrating Good vs Bad Bishops.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Central Pawn Liquidation
+- **Instruction**: White to move: Eliminate the central pawn challenge and gain a tempo.
+- **Solution Sequence**: `exd5`
+- **Explanation**: exd5 forces Black to recapture with the queen, allowing Nc3 with a gain of time.
+- **Hints**: Capture the d5 pawn to draw Black's queen into early vulnerability. | Take on d5 with your e4 pawn. | Play exd5. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d32_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+#### Exercise 2 (day_32_ex_2)
+- **FEN**: `r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5`
 - **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d32_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d32_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d32_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d32_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Motif**: Pawn Lever Strike
+- **Instruction**: White to move: Execute the central pawn lever to break Black's center.
+- **Solution Sequence**: `d4`
+- **Explanation**: d4 strikes at the base of Black's e5 outpost, opening central diagonals.
+- **Hints**: Challenge e5 with your d-pawn. | Push your d-pawn to d4. | Play d4. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Bobby Fischer vs Tigran Petrosian (1970)
@@ -3968,60 +2960,24 @@ Tigran Petrosian vs Ludek Pachman (1961)
 - Model Demonstration 1: Textbook execution of Positional Exchange Sacrifice with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Positional Exchange Sacrifice.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d33_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_33_ex_1)
+- **FEN**: `rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2`
 - **Side to Play**: WHITE
-- **Motif**: Positional Exchange Sacrifice
-- **Instruction**: White to move: Find the tactical solution demonstrating Positional Exchange Sacrifice.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Central Pawn Liquidation
+- **Instruction**: White to move: Eliminate the central pawn challenge and gain a tempo.
+- **Solution Sequence**: `exd5`
+- **Explanation**: exd5 forces Black to recapture with the queen, allowing Nc3 with a gain of time.
+- **Hints**: Capture the d5 pawn to draw Black's queen into early vulnerability. | Take on d5 with your e4 pawn. | Play exd5. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d33_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+#### Exercise 2 (day_33_ex_2)
+- **FEN**: `r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5`
 - **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d33_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d33_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d33_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d33_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Motif**: Pawn Lever Strike
+- **Instruction**: White to move: Execute the central pawn lever to break Black's center.
+- **Solution Sequence**: `d4`
+- **Explanation**: d4 strikes at the base of Black's e5 outpost, opening central diagonals.
+- **Hints**: Challenge e5 with your d-pawn. | Push your d-pawn to d4. | Play d4. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Tigran Petrosian vs Ludek Pachman (1961)
@@ -4091,60 +3047,24 @@ Anatoly Karpov vs Wolfgang Unzicker (1974)
 - Model Demonstration 1: Textbook execution of Prophylaxis & Restriction with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Prophylaxis & Restriction.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d34_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_34_ex_1)
+- **FEN**: `rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2`
 - **Side to Play**: WHITE
-- **Motif**: Prophylaxis & Restriction
-- **Instruction**: White to move: Find the tactical solution demonstrating Prophylaxis & Restriction.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Central Pawn Liquidation
+- **Instruction**: White to move: Eliminate the central pawn challenge and gain a tempo.
+- **Solution Sequence**: `exd5`
+- **Explanation**: exd5 forces Black to recapture with the queen, allowing Nc3 with a gain of time.
+- **Hints**: Capture the d5 pawn to draw Black's queen into early vulnerability. | Take on d5 with your e4 pawn. | Play exd5. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d34_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+#### Exercise 2 (day_34_ex_2)
+- **FEN**: `r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5`
 - **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d34_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d34_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d34_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d34_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Motif**: Pawn Lever Strike
+- **Instruction**: White to move: Execute the central pawn lever to break Black's center.
+- **Solution Sequence**: `d4`
+- **Explanation**: d4 strikes at the base of Black's e5 outpost, opening central diagonals.
+- **Hints**: Challenge e5 with your d-pawn. | Push your d-pawn to d4. | Play d4. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Anatoly Karpov vs Wolfgang Unzicker (1974)
@@ -4214,60 +3134,24 @@ Vasily Smyslov vs Mikhail Botvinnik (1957)
 - Model Demonstration 1: Textbook execution of Milestone Exam: Strategy with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Milestone Exam: Strategy.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d35_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_35_ex_1)
+- **FEN**: `rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2`
 - **Side to Play**: WHITE
-- **Motif**: Milestone Exam: Strategy
-- **Instruction**: White to move: Find the tactical solution demonstrating Milestone Exam: Strategy.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Central Pawn Liquidation
+- **Instruction**: White to move: Eliminate the central pawn challenge and gain a tempo.
+- **Solution Sequence**: `exd5`
+- **Explanation**: exd5 forces Black to recapture with the queen, allowing Nc3 with a gain of time.
+- **Hints**: Capture the d5 pawn to draw Black's queen into early vulnerability. | Take on d5 with your e4 pawn. | Play exd5. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d35_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+#### Exercise 2 (day_35_ex_2)
+- **FEN**: `r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5`
 - **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d35_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d35_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d35_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d35_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Motif**: Pawn Lever Strike
+- **Instruction**: White to move: Execute the central pawn lever to break Black's center.
+- **Solution Sequence**: `d4`
+- **Explanation**: d4 strikes at the base of Black's e5 outpost, opening central diagonals.
+- **Hints**: Challenge e5 with your d-pawn. | Push your d-pawn to d4. | Play d4. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Vasily Smyslov vs Mikhail Botvinnik (1957)
@@ -4337,60 +3221,24 @@ Garry Kasparov vs Anatoly Karpov (1985 Game 24)
 - Model Demonstration 1: Textbook execution of Weak Squares & Holes with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Weak Squares & Holes.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d36_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_36_ex_1)
+- **FEN**: `r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P1n1/2NP1N2/PPP2PPP/R1BQK2R w KQkq - 1 6`
 - **Side to Play**: WHITE
-- **Motif**: Weak Squares & Holes
-- **Instruction**: White to move: Find the tactical solution demonstrating Weak Squares & Holes.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
-
-#### Exercise 2 (cur_d36_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d36_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d36_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d36_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d36_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Motif**: Prophylactic Castling Under Fire
+- **Instruction**: White to move: Neutralize Black's kingside battery by castling safely.
 - **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: O-O brings the king to safety and protects f2 with the rook.
+- **Hints**: Castling immediately disarms Black's f2 threats. | Castle kingside. | Play O-O. (Penalty: 20% per hint)
+
+#### Exercise 2 (day_36_ex_2)
+- **FEN**: `r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5`
+- **Side to Play**: WHITE
+- **Motif**: F7 Aggressive Attack
+- **Instruction**: White to move: Launch an aggressive attack against Black's uncastled f7 weakness.
+- **Solution Sequence**: `Ng5`
+- **Explanation**: Ng5 coordinates with c4 to strike f7 before Black can castle.
+- **Hints**: Double the attack on Black's weakest square. | Jump your knight to g5. | Play Ng5. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Garry Kasparov vs Anatoly Karpov (1985 Game 24)
@@ -4460,60 +3308,24 @@ Akiba Rubinstein vs Carl Schlechter (1912)
 - Model Demonstration 1: Textbook execution of Principle of Two Weaknesses with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Principle of Two Weaknesses.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d37_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_37_ex_1)
+- **FEN**: `r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P1n1/2NP1N2/PPP2PPP/R1BQK2R w KQkq - 1 6`
 - **Side to Play**: WHITE
-- **Motif**: Principle of Two Weaknesses
-- **Instruction**: White to move: Find the tactical solution demonstrating Principle of Two Weaknesses.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
-
-#### Exercise 2 (cur_d37_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d37_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d37_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d37_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d37_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Motif**: Prophylactic Castling Under Fire
+- **Instruction**: White to move: Neutralize Black's kingside battery by castling safely.
 - **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: O-O brings the king to safety and protects f2 with the rook.
+- **Hints**: Castling immediately disarms Black's f2 threats. | Castle kingside. | Play O-O. (Penalty: 20% per hint)
+
+#### Exercise 2 (day_37_ex_2)
+- **FEN**: `r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5`
+- **Side to Play**: WHITE
+- **Motif**: F7 Aggressive Attack
+- **Instruction**: White to move: Launch an aggressive attack against Black's uncastled f7 weakness.
+- **Solution Sequence**: `Ng5`
+- **Explanation**: Ng5 coordinates with c4 to strike f7 before Black can castle.
+- **Hints**: Double the attack on Black's weakest square. | Jump your knight to g5. | Play Ng5. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Akiba Rubinstein vs Carl Schlechter (1912)
@@ -4583,60 +3395,24 @@ Jose Raul Capablanca vs Frank Marshall (1918)
 - Model Demonstration 1: Textbook execution of Favorable Piece Exchanges with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Favorable Piece Exchanges.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d38_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_38_ex_1)
+- **FEN**: `r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P1n1/2NP1N2/PPP2PPP/R1BQK2R w KQkq - 1 6`
 - **Side to Play**: WHITE
-- **Motif**: Favorable Piece Exchanges
-- **Instruction**: White to move: Find the tactical solution demonstrating Favorable Piece Exchanges.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
-
-#### Exercise 2 (cur_d38_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d38_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d38_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d38_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d38_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Motif**: Prophylactic Castling Under Fire
+- **Instruction**: White to move: Neutralize Black's kingside battery by castling safely.
 - **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: O-O brings the king to safety and protects f2 with the rook.
+- **Hints**: Castling immediately disarms Black's f2 threats. | Castle kingside. | Play O-O. (Penalty: 20% per hint)
+
+#### Exercise 2 (day_38_ex_2)
+- **FEN**: `r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5`
+- **Side to Play**: WHITE
+- **Motif**: F7 Aggressive Attack
+- **Instruction**: White to move: Launch an aggressive attack against Black's uncastled f7 weakness.
+- **Solution Sequence**: `Ng5`
+- **Explanation**: Ng5 coordinates with c4 to strike f7 before Black can castle.
+- **Hints**: Double the attack on Black's weakest square. | Jump your knight to g5. | Play Ng5. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Jose Raul Capablanca vs Frank Marshall (1918)
@@ -4706,60 +3482,24 @@ Bobby Fischer vs Boris Spassky (1972 Game 4)
 - Model Demonstration 1: Textbook execution of Restricting Minor Pieces with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Restricting Minor Pieces.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d39_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_39_ex_1)
+- **FEN**: `r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P1n1/2NP1N2/PPP2PPP/R1BQK2R w KQkq - 1 6`
 - **Side to Play**: WHITE
-- **Motif**: Restricting Minor Pieces
-- **Instruction**: White to move: Find the tactical solution demonstrating Restricting Minor Pieces.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
-
-#### Exercise 2 (cur_d39_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d39_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d39_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d39_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d39_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Motif**: Prophylactic Castling Under Fire
+- **Instruction**: White to move: Neutralize Black's kingside battery by castling safely.
 - **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: O-O brings the king to safety and protects f2 with the rook.
+- **Hints**: Castling immediately disarms Black's f2 threats. | Castle kingside. | Play O-O. (Penalty: 20% per hint)
+
+#### Exercise 2 (day_39_ex_2)
+- **FEN**: `r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5`
+- **Side to Play**: WHITE
+- **Motif**: F7 Aggressive Attack
+- **Instruction**: White to move: Launch an aggressive attack against Black's uncastled f7 weakness.
+- **Solution Sequence**: `Ng5`
+- **Explanation**: Ng5 coordinates with c4 to strike f7 before Black can castle.
+- **Hints**: Double the attack on Black's weakest square. | Jump your knight to g5. | Play Ng5. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Bobby Fischer vs Boris Spassky (1972 Game 4)
@@ -4829,60 +3569,24 @@ Anatoly Karpov vs Boris Spassky (1974)
 - Model Demonstration 1: Textbook execution of Patient Maneuvering with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Patient Maneuvering.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d40_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_40_ex_1)
+- **FEN**: `r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P1n1/2NP1N2/PPP2PPP/R1BQK2R w KQkq - 1 6`
 - **Side to Play**: WHITE
-- **Motif**: Patient Maneuvering
-- **Instruction**: White to move: Find the tactical solution demonstrating Patient Maneuvering.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
-
-#### Exercise 2 (cur_d40_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d40_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d40_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d40_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d40_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Motif**: Prophylactic Castling Under Fire
+- **Instruction**: White to move: Neutralize Black's kingside battery by castling safely.
 - **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: O-O brings the king to safety and protects f2 with the rook.
+- **Hints**: Castling immediately disarms Black's f2 threats. | Castle kingside. | Play O-O. (Penalty: 20% per hint)
+
+#### Exercise 2 (day_40_ex_2)
+- **FEN**: `r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5`
+- **Side to Play**: WHITE
+- **Motif**: F7 Aggressive Attack
+- **Instruction**: White to move: Launch an aggressive attack against Black's uncastled f7 weakness.
+- **Solution Sequence**: `Ng5`
+- **Explanation**: Ng5 coordinates with c4 to strike f7 before Black can castle.
+- **Hints**: Double the attack on Black's weakest square. | Jump your knight to g5. | Play Ng5. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Anatoly Karpov vs Boris Spassky (1974)
@@ -4952,60 +3656,24 @@ Vasily Smyslov vs David Bronstein (1953)
 - Model Demonstration 1: Textbook execution of Transforming Advantages with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Transforming Advantages.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d41_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_41_ex_1)
+- **FEN**: `r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P1n1/2NP1N2/PPP2PPP/R1BQK2R w KQkq - 1 6`
 - **Side to Play**: WHITE
-- **Motif**: Transforming Advantages
-- **Instruction**: White to move: Find the tactical solution demonstrating Transforming Advantages.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
-
-#### Exercise 2 (cur_d41_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d41_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d41_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d41_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d41_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Motif**: Prophylactic Castling Under Fire
+- **Instruction**: White to move: Neutralize Black's kingside battery by castling safely.
 - **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: O-O brings the king to safety and protects f2 with the rook.
+- **Hints**: Castling immediately disarms Black's f2 threats. | Castle kingside. | Play O-O. (Penalty: 20% per hint)
+
+#### Exercise 2 (day_41_ex_2)
+- **FEN**: `r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5`
+- **Side to Play**: WHITE
+- **Motif**: F7 Aggressive Attack
+- **Instruction**: White to move: Launch an aggressive attack against Black's uncastled f7 weakness.
+- **Solution Sequence**: `Ng5`
+- **Explanation**: Ng5 coordinates with c4 to strike f7 before Black can castle.
+- **Hints**: Double the attack on Black's weakest square. | Jump your knight to g5. | Play Ng5. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Vasily Smyslov vs David Bronstein (1953)
@@ -5075,60 +3743,24 @@ Mikhail Botvinnik vs David Bronstein (1951)
 - Model Demonstration 1: Textbook execution of Grand Milestone: Strategy with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Grand Milestone: Strategy.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d42_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_42_ex_1)
+- **FEN**: `r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P1n1/2NP1N2/PPP2PPP/R1BQK2R w KQkq - 1 6`
 - **Side to Play**: WHITE
-- **Motif**: Grand Milestone: Strategy
-- **Instruction**: White to move: Find the tactical solution demonstrating Grand Milestone: Strategy.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
-
-#### Exercise 2 (cur_d42_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d42_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d42_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d42_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d42_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Motif**: Prophylactic Castling Under Fire
+- **Instruction**: White to move: Neutralize Black's kingside battery by castling safely.
 - **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: O-O brings the king to safety and protects f2 with the rook.
+- **Hints**: Castling immediately disarms Black's f2 threats. | Castle kingside. | Play O-O. (Penalty: 20% per hint)
+
+#### Exercise 2 (day_42_ex_2)
+- **FEN**: `r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5`
+- **Side to Play**: WHITE
+- **Motif**: F7 Aggressive Attack
+- **Instruction**: White to move: Launch an aggressive attack against Black's uncastled f7 weakness.
+- **Solution Sequence**: `Ng5`
+- **Explanation**: Ng5 coordinates with c4 to strike f7 before Black can castle.
+- **Hints**: Double the attack on Black's weakest square. | Jump your knight to g5. | Play Ng5. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Mikhail Botvinnik vs David Bronstein (1951)
@@ -5198,60 +3830,24 @@ Aron Nimzowitsch vs Jose Raul Capablanca (1927)
 - Model Demonstration 1: Textbook execution of Pawn Chains & Base Attacks with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Pawn Chains & Base Attacks.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d43_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Chains & Base Attacks
-- **Instruction**: White to move: Find the tactical solution demonstrating Pawn Chains & Base Attacks.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
-
-#### Exercise 2 (cur_d43_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d43_ex3)
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_43_ex_1)
 - **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Motif**: Direct Vertical Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition in the king and pawn ending.
 - **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+- **Explanation**: Ke3 claims vertical opposition, denying Black's king forward entry.
+- **Hints**: Take the square directly opposite the black king with one square in between. | Step your white king to e3. | Play Ke3. (Penalty: 20% per hint)
 
-#### Exercise 4 (cur_d43_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+#### Exercise 2 (day_43_ex_2)
+- **FEN**: `8/8/8/8/8/4k3/8/R3K3 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d43_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d43_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Motif**: Rook Rank Cutoff
+- **Instruction**: White to move: Cut off the enemy king along the 3rd rank.
+- **Solution Sequence**: `Ra3+`
+- **Explanation**: Ra3+ drives the king backward and restricts its escape squares.
+- **Hints**: Check along the 3rd rank to cut the king off from forward progress. | Slide your rook to a3. | Play Ra3+. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Aron Nimzowitsch vs Jose Raul Capablanca (1927)
@@ -5321,60 +3917,24 @@ Garry Kasparov vs Anatoly Karpov (1987)
 - Model Demonstration 1: Textbook execution of The Carlsbad Structure with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering The Carlsbad Structure.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d44_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: The Carlsbad Structure
-- **Instruction**: White to move: Find the tactical solution demonstrating The Carlsbad Structure.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
-
-#### Exercise 2 (cur_d44_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d44_ex3)
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_44_ex_1)
 - **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Motif**: Direct Vertical Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition in the king and pawn ending.
 - **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+- **Explanation**: Ke3 claims vertical opposition, denying Black's king forward entry.
+- **Hints**: Take the square directly opposite the black king with one square in between. | Step your white king to e3. | Play Ke3. (Penalty: 20% per hint)
 
-#### Exercise 4 (cur_d44_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+#### Exercise 2 (day_44_ex_2)
+- **FEN**: `8/8/8/8/8/4k3/8/R3K3 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d44_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d44_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Motif**: Rook Rank Cutoff
+- **Instruction**: White to move: Cut off the enemy king along the 3rd rank.
+- **Solution Sequence**: `Ra3+`
+- **Explanation**: Ra3+ drives the king backward and restricts its escape squares.
+- **Hints**: Check along the 3rd rank to cut the king off from forward progress. | Slide your rook to a3. | Play Ra3+. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Garry Kasparov vs Anatoly Karpov (1987)
@@ -5444,60 +4004,24 @@ Mikhail Botvinnik vs Salo Flohr (1936)
 - Model Demonstration 1: Textbook execution of Isolated Queen Pawn (IQP) with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Isolated Queen Pawn (IQP).
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d45_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Isolated Queen Pawn (IQP)
-- **Instruction**: White to move: Find the tactical solution demonstrating Isolated Queen Pawn (IQP).
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
-
-#### Exercise 2 (cur_d45_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d45_ex3)
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_45_ex_1)
 - **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Motif**: Direct Vertical Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition in the king and pawn ending.
 - **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+- **Explanation**: Ke3 claims vertical opposition, denying Black's king forward entry.
+- **Hints**: Take the square directly opposite the black king with one square in between. | Step your white king to e3. | Play Ke3. (Penalty: 20% per hint)
 
-#### Exercise 4 (cur_d45_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+#### Exercise 2 (day_45_ex_2)
+- **FEN**: `8/8/8/8/8/4k3/8/R3K3 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d45_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d45_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Motif**: Rook Rank Cutoff
+- **Instruction**: White to move: Cut off the enemy king along the 3rd rank.
+- **Solution Sequence**: `Ra3+`
+- **Explanation**: Ra3+ drives the king backward and restricts its escape squares.
+- **Hints**: Check along the 3rd rank to cut the king off from forward progress. | Slide your rook to a3. | Play Ra3+. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Mikhail Botvinnik vs Salo Flohr (1936)
@@ -5567,60 +4091,24 @@ Garry Kasparov vs Nigel Short (1993)
 - Model Demonstration 1: Textbook execution of Hanging Pawns (c4/d4) with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Hanging Pawns (c4/d4).
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d46_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Hanging Pawns (c4/d4)
-- **Instruction**: White to move: Find the tactical solution demonstrating Hanging Pawns (c4/d4).
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
-
-#### Exercise 2 (cur_d46_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d46_ex3)
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_46_ex_1)
 - **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Motif**: Direct Vertical Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition in the king and pawn ending.
 - **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+- **Explanation**: Ke3 claims vertical opposition, denying Black's king forward entry.
+- **Hints**: Take the square directly opposite the black king with one square in between. | Step your white king to e3. | Play Ke3. (Penalty: 20% per hint)
 
-#### Exercise 4 (cur_d46_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+#### Exercise 2 (day_46_ex_2)
+- **FEN**: `8/8/8/8/8/4k3/8/R3K3 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d46_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d46_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Motif**: Rook Rank Cutoff
+- **Instruction**: White to move: Cut off the enemy king along the 3rd rank.
+- **Solution Sequence**: `Ra3+`
+- **Explanation**: Ra3+ drives the king backward and restricts its escape squares.
+- **Hints**: Check along the 3rd rank to cut the king off from forward progress. | Slide your rook to a3. | Play Ra3+. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Garry Kasparov vs Nigel Short (1993)
@@ -5690,60 +4178,24 @@ Jose Raul Capablanca vs Emanuel Lasker (1921)
 - Model Demonstration 1: Textbook execution of Backward & Doubled Pawns with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Backward & Doubled Pawns.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d47_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Backward & Doubled Pawns
-- **Instruction**: White to move: Find the tactical solution demonstrating Backward & Doubled Pawns.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
-
-#### Exercise 2 (cur_d47_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d47_ex3)
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_47_ex_1)
 - **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Motif**: Direct Vertical Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition in the king and pawn ending.
 - **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+- **Explanation**: Ke3 claims vertical opposition, denying Black's king forward entry.
+- **Hints**: Take the square directly opposite the black king with one square in between. | Step your white king to e3. | Play Ke3. (Penalty: 20% per hint)
 
-#### Exercise 4 (cur_d47_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+#### Exercise 2 (day_47_ex_2)
+- **FEN**: `8/8/8/8/8/4k3/8/R3K3 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d47_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d47_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Motif**: Rook Rank Cutoff
+- **Instruction**: White to move: Cut off the enemy king along the 3rd rank.
+- **Solution Sequence**: `Ra3+`
+- **Explanation**: Ra3+ drives the king backward and restricts its escape squares.
+- **Hints**: Check along the 3rd rank to cut the king off from forward progress. | Slide your rook to a3. | Play Ra3+. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Jose Raul Capablanca vs Emanuel Lasker (1921)
@@ -5813,60 +4265,24 @@ Gedeon Barcza vs Bent Larsen (1964)
 - Model Demonstration 1: Textbook execution of The Maroczy Bind (c4/e4) with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering The Maroczy Bind (c4/e4).
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d48_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: The Maroczy Bind (c4/e4)
-- **Instruction**: White to move: Find the tactical solution demonstrating The Maroczy Bind (c4/e4).
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
-
-#### Exercise 2 (cur_d48_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d48_ex3)
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_48_ex_1)
 - **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Motif**: Direct Vertical Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition in the king and pawn ending.
 - **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+- **Explanation**: Ke3 claims vertical opposition, denying Black's king forward entry.
+- **Hints**: Take the square directly opposite the black king with one square in between. | Step your white king to e3. | Play Ke3. (Penalty: 20% per hint)
 
-#### Exercise 4 (cur_d48_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+#### Exercise 2 (day_48_ex_2)
+- **FEN**: `8/8/8/8/8/4k3/8/R3K3 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d48_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d48_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Motif**: Rook Rank Cutoff
+- **Instruction**: White to move: Cut off the enemy king along the 3rd rank.
+- **Solution Sequence**: `Ra3+`
+- **Explanation**: Ra3+ drives the king backward and restricts its escape squares.
+- **Hints**: Check along the 3rd rank to cut the king off from forward progress. | Slide your rook to a3. | Play Ra3+. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Gedeon Barcza vs Bent Larsen (1964)
@@ -5936,60 +4352,24 @@ Alexander Kotov vs Paul Keres (1950)
 - Model Demonstration 1: Textbook execution of Milestone Exam: Pawn Breaks with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Milestone Exam: Pawn Breaks.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d49_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Milestone Exam: Pawn Breaks
-- **Instruction**: White to move: Find the tactical solution demonstrating Milestone Exam: Pawn Breaks.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
-
-#### Exercise 2 (cur_d49_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d49_ex3)
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_49_ex_1)
 - **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Motif**: Direct Vertical Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition in the king and pawn ending.
 - **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+- **Explanation**: Ke3 claims vertical opposition, denying Black's king forward entry.
+- **Hints**: Take the square directly opposite the black king with one square in between. | Step your white king to e3. | Play Ke3. (Penalty: 20% per hint)
 
-#### Exercise 4 (cur_d49_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+#### Exercise 2 (day_49_ex_2)
+- **FEN**: `8/8/8/8/8/4k3/8/R3K3 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d49_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d49_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Motif**: Rook Rank Cutoff
+- **Instruction**: White to move: Cut off the enemy king along the 3rd rank.
+- **Solution Sequence**: `Ra3+`
+- **Explanation**: Ra3+ drives the king backward and restricts its escape squares.
+- **Hints**: Check along the 3rd rank to cut the king off from forward progress. | Slide your rook to a3. | Play Ra3+. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Alexander Kotov vs Paul Keres (1950)
@@ -6059,60 +4439,24 @@ Mikhail Botvinnik vs Vasily Smyslov (1954)
 - Model Demonstration 1: Textbook execution of French Defense Pawn Chains with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering French Defense Pawn Chains.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d50_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: French Defense Pawn Chains
-- **Instruction**: White to move: Find the tactical solution demonstrating French Defense Pawn Chains.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
-
-#### Exercise 2 (cur_d50_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d50_ex3)
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_50_ex_1)
 - **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Motif**: Direct Vertical Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition in the king and pawn ending.
 - **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+- **Explanation**: Ke3 claims vertical opposition, denying Black's king forward entry.
+- **Hints**: Take the square directly opposite the black king with one square in between. | Step your white king to e3. | Play Ke3. (Penalty: 20% per hint)
 
-#### Exercise 4 (cur_d50_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+#### Exercise 2 (day_50_ex_2)
+- **FEN**: `8/8/8/8/8/4k3/8/R3K3 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d50_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d50_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Motif**: Rook Rank Cutoff
+- **Instruction**: White to move: Cut off the enemy king along the 3rd rank.
+- **Solution Sequence**: `Ra3+`
+- **Explanation**: Ra3+ drives the king backward and restricts its escape squares.
+- **Hints**: Check along the 3rd rank to cut the king off from forward progress. | Slide your rook to a3. | Play Ra3+. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Mikhail Botvinnik vs Vasily Smyslov (1954)
@@ -6182,60 +4526,24 @@ Bobby Fischer vs Samuel Reshevsky (1961)
 - Model Demonstration 1: Textbook execution of King's Indian Closed Chains with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering King's Indian Closed Chains.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d51_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: King's Indian Closed Chains
-- **Instruction**: White to move: Find the tactical solution demonstrating King's Indian Closed Chains.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
-
-#### Exercise 2 (cur_d51_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d51_ex3)
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_51_ex_1)
 - **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Motif**: Direct Vertical Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition in the king and pawn ending.
 - **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+- **Explanation**: Ke3 claims vertical opposition, denying Black's king forward entry.
+- **Hints**: Take the square directly opposite the black king with one square in between. | Step your white king to e3. | Play Ke3. (Penalty: 20% per hint)
 
-#### Exercise 4 (cur_d51_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+#### Exercise 2 (day_51_ex_2)
+- **FEN**: `8/8/8/8/8/4k3/8/R3K3 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d51_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d51_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Motif**: Rook Rank Cutoff
+- **Instruction**: White to move: Cut off the enemy king along the 3rd rank.
+- **Solution Sequence**: `Ra3+`
+- **Explanation**: Ra3+ drives the king backward and restricts its escape squares.
+- **Hints**: Check along the 3rd rank to cut the king off from forward progress. | Slide your rook to a3. | Play Ra3+. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Bobby Fischer vs Samuel Reshevsky (1961)
@@ -6305,60 +4613,24 @@ Anatoly Karpov vs Viktor Korchnoi (1981)
 - Model Demonstration 1: Textbook execution of Pawn Levers & Space Control with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Pawn Levers & Space Control.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d52_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Levers & Space Control
-- **Instruction**: White to move: Find the tactical solution demonstrating Pawn Levers & Space Control.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
-
-#### Exercise 2 (cur_d52_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d52_ex3)
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_52_ex_1)
 - **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Motif**: Direct Vertical Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition in the king and pawn ending.
 - **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+- **Explanation**: Ke3 claims vertical opposition, denying Black's king forward entry.
+- **Hints**: Take the square directly opposite the black king with one square in between. | Step your white king to e3. | Play Ke3. (Penalty: 20% per hint)
 
-#### Exercise 4 (cur_d52_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+#### Exercise 2 (day_52_ex_2)
+- **FEN**: `8/8/8/8/8/4k3/8/R3K3 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d52_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d52_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Motif**: Rook Rank Cutoff
+- **Instruction**: White to move: Cut off the enemy king along the 3rd rank.
+- **Solution Sequence**: `Ra3+`
+- **Explanation**: Ra3+ drives the king backward and restricts its escape squares.
+- **Hints**: Check along the 3rd rank to cut the king off from forward progress. | Slide your rook to a3. | Play Ra3+. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Anatoly Karpov vs Viktor Korchnoi (1981)
@@ -6428,60 +4700,24 @@ Magnus Carlsen vs Fabiano Caruana (2018)
 - Model Demonstration 1: Textbook execution of Middlegame Passed Pawns with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Middlegame Passed Pawns.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d53_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Middlegame Passed Pawns
-- **Instruction**: White to move: Find the tactical solution demonstrating Middlegame Passed Pawns.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
-
-#### Exercise 2 (cur_d53_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d53_ex3)
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_53_ex_1)
 - **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Motif**: Direct Vertical Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition in the king and pawn ending.
 - **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+- **Explanation**: Ke3 claims vertical opposition, denying Black's king forward entry.
+- **Hints**: Take the square directly opposite the black king with one square in between. | Step your white king to e3. | Play Ke3. (Penalty: 20% per hint)
 
-#### Exercise 4 (cur_d53_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+#### Exercise 2 (day_53_ex_2)
+- **FEN**: `8/8/8/8/8/4k3/8/R3K3 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d53_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d53_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Motif**: Rook Rank Cutoff
+- **Instruction**: White to move: Cut off the enemy king along the 3rd rank.
+- **Solution Sequence**: `Ra3+`
+- **Explanation**: Ra3+ drives the king backward and restricts its escape squares.
+- **Hints**: Check along the 3rd rank to cut the king off from forward progress. | Slide your rook to a3. | Play Ra3+. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Magnus Carlsen vs Fabiano Caruana (2018)
@@ -6551,60 +4787,24 @@ Jose Raul Capablanca vs Savielly Tartakower (1924)
 - Model Demonstration 1: Textbook execution of Pawn Majority Conversion with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Pawn Majority Conversion.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d54_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Majority Conversion
-- **Instruction**: White to move: Find the tactical solution demonstrating Pawn Majority Conversion.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
-
-#### Exercise 2 (cur_d54_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d54_ex3)
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_54_ex_1)
 - **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Motif**: Direct Vertical Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition in the king and pawn ending.
 - **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+- **Explanation**: Ke3 claims vertical opposition, denying Black's king forward entry.
+- **Hints**: Take the square directly opposite the black king with one square in between. | Step your white king to e3. | Play Ke3. (Penalty: 20% per hint)
 
-#### Exercise 4 (cur_d54_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+#### Exercise 2 (day_54_ex_2)
+- **FEN**: `8/8/8/8/8/4k3/8/R3K3 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d54_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d54_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Motif**: Rook Rank Cutoff
+- **Instruction**: White to move: Cut off the enemy king along the 3rd rank.
+- **Solution Sequence**: `Ra3+`
+- **Explanation**: Ra3+ drives the king backward and restricts its escape squares.
+- **Hints**: Check along the 3rd rank to cut the king off from forward progress. | Slide your rook to a3. | Play Ra3+. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Jose Raul Capablanca vs Savielly Tartakower (1924)
@@ -6674,60 +4874,24 @@ David Bronstein vs Paul Keres (1955)
 - Model Demonstration 1: Textbook execution of Positional Pawn Sacrifices with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Positional Pawn Sacrifices.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d55_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Positional Pawn Sacrifices
-- **Instruction**: White to move: Find the tactical solution demonstrating Positional Pawn Sacrifices.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
-
-#### Exercise 2 (cur_d55_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d55_ex3)
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_55_ex_1)
 - **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Motif**: Direct Vertical Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition in the king and pawn ending.
 - **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+- **Explanation**: Ke3 claims vertical opposition, denying Black's king forward entry.
+- **Hints**: Take the square directly opposite the black king with one square in between. | Step your white king to e3. | Play Ke3. (Penalty: 20% per hint)
 
-#### Exercise 4 (cur_d55_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+#### Exercise 2 (day_55_ex_2)
+- **FEN**: `8/8/8/8/8/4k3/8/R3K3 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d55_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d55_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Motif**: Rook Rank Cutoff
+- **Instruction**: White to move: Cut off the enemy king along the 3rd rank.
+- **Solution Sequence**: `Ra3+`
+- **Explanation**: Ra3+ drives the king backward and restricts its escape squares.
+- **Hints**: Check along the 3rd rank to cut the king off from forward progress. | Slide your rook to a3. | Play Ra3+. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 David Bronstein vs Paul Keres (1955)
@@ -6797,60 +4961,24 @@ Vasily Smyslov vs Paul Keres (1953)
 - Model Demonstration 1: Textbook execution of Grand Milestone: Pawn Mastery with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Grand Milestone: Pawn Mastery.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d56_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Grand Milestone: Pawn Mastery
-- **Instruction**: White to move: Find the tactical solution demonstrating Grand Milestone: Pawn Mastery.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
-
-#### Exercise 2 (cur_d56_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d56_ex3)
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_56_ex_1)
 - **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Motif**: Direct Vertical Opposition
+- **Instruction**: White to move: Seize the direct vertical opposition in the king and pawn ending.
 - **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
+- **Explanation**: Ke3 claims vertical opposition, denying Black's king forward entry.
+- **Hints**: Take the square directly opposite the black king with one square in between. | Step your white king to e3. | Play Ke3. (Penalty: 20% per hint)
 
-#### Exercise 4 (cur_d56_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
+#### Exercise 2 (day_56_ex_2)
+- **FEN**: `8/8/8/8/8/4k3/8/R3K3 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d56_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d56_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Motif**: Rook Rank Cutoff
+- **Instruction**: White to move: Cut off the enemy king along the 3rd rank.
+- **Solution Sequence**: `Ra3+`
+- **Explanation**: Ra3+ drives the king backward and restricts its escape squares.
+- **Hints**: Check along the 3rd rank to cut the king off from forward progress. | Slide your rook to a3. | Play Ra3+. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Vasily Smyslov vs Paul Keres (1953)
@@ -6920,60 +5048,24 @@ Emanuel Lasker vs Siegbert Tarrasch (1908)
 - Model Demonstration 1: Textbook execution of King & Pawn: The Opposition with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering King & Pawn: The Opposition.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d57_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_57_ex_1)
+- **FEN**: `rnbqkb1r/pppp1ppp/5n2/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR w KQkq - 2 3`
 - **Side to Play**: WHITE
-- **Motif**: King & Pawn: The Opposition
-- **Instruction**: White to move: Find the tactical solution demonstrating King & Pawn: The Opposition.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Classical Piece Development
+- **Instruction**: White to move: Develop the kingside knight toward the center in the Vienna/Four Knights.
+- **Solution Sequence**: `Nf3`
+- **Explanation**: Nf3 develops with tempo, contesting the e5 central pawn.
+- **Hints**: Follow the golden rule: Knights before bishops. | Develop the g1 knight to f3. | Play Nf3. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d57_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d57_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d57_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d57_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d57_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+#### Exercise 2 (day_57_ex_2)
+- **FEN**: `r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3`
+- **Side to Play**: BLACK
+- **Motif**: Italian Defense - Two Knights
+- **Instruction**: Black to move: Counter-attack White's e4 pawn in the Italian Game.
+- **Solution Sequence**: `Nf6`
+- **Explanation**: Nf6 develops Black's kingside knight and attacks e4 directly.
+- **Hints**: Challenge White's central pawn with active knight development. | Move your g8 knight to f6. | Play Nf6. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Emanuel Lasker vs Siegbert Tarrasch (1908)
@@ -7043,60 +5135,24 @@ Francois Philidor Studies (1777)
 - Model Demonstration 1: Textbook execution of King & Pawn: Rule of Square with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering King & Pawn: Rule of Square.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d58_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_58_ex_1)
+- **FEN**: `rnbqkb1r/pppp1ppp/5n2/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR w KQkq - 2 3`
 - **Side to Play**: WHITE
-- **Motif**: King & Pawn: Rule of Square
-- **Instruction**: White to move: Find the tactical solution demonstrating King & Pawn: Rule of Square.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Classical Piece Development
+- **Instruction**: White to move: Develop the kingside knight toward the center in the Vienna/Four Knights.
+- **Solution Sequence**: `Nf3`
+- **Explanation**: Nf3 develops with tempo, contesting the e5 central pawn.
+- **Hints**: Follow the golden rule: Knights before bishops. | Develop the g1 knight to f3. | Play Nf3. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d58_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d58_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d58_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d58_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d58_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+#### Exercise 2 (day_58_ex_2)
+- **FEN**: `r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3`
+- **Side to Play**: BLACK
+- **Motif**: Italian Defense - Two Knights
+- **Instruction**: Black to move: Counter-attack White's e4 pawn in the Italian Game.
+- **Solution Sequence**: `Nf6`
+- **Explanation**: Nf6 develops Black's kingside knight and attacks e4 directly.
+- **Hints**: Challenge White's central pawn with active knight development. | Move your g8 knight to f6. | Play Nf6. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Francois Philidor Studies (1777)
@@ -7166,60 +5222,24 @@ Jose Raul Capablanca vs Alexander Alekhine (1927)
 - Model Demonstration 1: Textbook execution of Triangulation & Zugzwang with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Triangulation & Zugzwang.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d59_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_59_ex_1)
+- **FEN**: `rnbqkb1r/pppp1ppp/5n2/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR w KQkq - 2 3`
 - **Side to Play**: WHITE
-- **Motif**: Triangulation & Zugzwang
-- **Instruction**: White to move: Find the tactical solution demonstrating Triangulation & Zugzwang.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Classical Piece Development
+- **Instruction**: White to move: Develop the kingside knight toward the center in the Vienna/Four Knights.
+- **Solution Sequence**: `Nf3`
+- **Explanation**: Nf3 develops with tempo, contesting the e5 central pawn.
+- **Hints**: Follow the golden rule: Knights before bishops. | Develop the g1 knight to f3. | Play Nf3. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d59_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d59_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d59_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d59_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d59_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+#### Exercise 2 (day_59_ex_2)
+- **FEN**: `r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3`
+- **Side to Play**: BLACK
+- **Motif**: Italian Defense - Two Knights
+- **Instruction**: Black to move: Counter-attack White's e4 pawn in the Italian Game.
+- **Solution Sequence**: `Nf6`
+- **Explanation**: Nf6 develops Black's kingside knight and attacks e4 directly.
+- **Hints**: Challenge White's central pawn with active knight development. | Move your g8 knight to f6. | Play Nf6. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Jose Raul Capablanca vs Alexander Alekhine (1927)
@@ -7289,60 +5309,24 @@ Richard Reti Endgame Studies (1921)
 - Model Demonstration 1: Textbook execution of The Reti Diagonal Maneuver with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering The Reti Diagonal Maneuver.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d60_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_60_ex_1)
+- **FEN**: `rnbqkb1r/pppp1ppp/5n2/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR w KQkq - 2 3`
 - **Side to Play**: WHITE
-- **Motif**: The Reti Diagonal Maneuver
-- **Instruction**: White to move: Find the tactical solution demonstrating The Reti Diagonal Maneuver.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Classical Piece Development
+- **Instruction**: White to move: Develop the kingside knight toward the center in the Vienna/Four Knights.
+- **Solution Sequence**: `Nf3`
+- **Explanation**: Nf3 develops with tempo, contesting the e5 central pawn.
+- **Hints**: Follow the golden rule: Knights before bishops. | Develop the g1 knight to f3. | Play Nf3. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d60_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d60_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d60_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d60_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d60_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+#### Exercise 2 (day_60_ex_2)
+- **FEN**: `r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3`
+- **Side to Play**: BLACK
+- **Motif**: Italian Defense - Two Knights
+- **Instruction**: Black to move: Counter-attack White's e4 pawn in the Italian Game.
+- **Solution Sequence**: `Nf6`
+- **Explanation**: Nf6 develops Black's kingside knight and attacks e4 directly.
+- **Hints**: Challenge White's central pawn with active knight development. | Move your g8 knight to f6. | Play Nf6. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Richard Reti Endgame Studies (1921)
@@ -7412,60 +5396,24 @@ Jose Raul Capablanca vs Savielly Tartakower (1924)
 - Model Demonstration 1: Textbook execution of Rook Endgames: Lucena Bridge with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Rook Endgames: Lucena Bridge.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d61_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_61_ex_1)
+- **FEN**: `rnbqkb1r/pppp1ppp/5n2/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR w KQkq - 2 3`
 - **Side to Play**: WHITE
-- **Motif**: Rook Endgames: Lucena Bridge
-- **Instruction**: White to move: Find the tactical solution demonstrating Rook Endgames: Lucena Bridge.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Classical Piece Development
+- **Instruction**: White to move: Develop the kingside knight toward the center in the Vienna/Four Knights.
+- **Solution Sequence**: `Nf3`
+- **Explanation**: Nf3 develops with tempo, contesting the e5 central pawn.
+- **Hints**: Follow the golden rule: Knights before bishops. | Develop the g1 knight to f3. | Play Nf3. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d61_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d61_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d61_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d61_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d61_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+#### Exercise 2 (day_61_ex_2)
+- **FEN**: `r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3`
+- **Side to Play**: BLACK
+- **Motif**: Italian Defense - Two Knights
+- **Instruction**: Black to move: Counter-attack White's e4 pawn in the Italian Game.
+- **Solution Sequence**: `Nf6`
+- **Explanation**: Nf6 develops Black's kingside knight and attacks e4 directly.
+- **Hints**: Challenge White's central pawn with active knight development. | Move your g8 knight to f6. | Play Nf6. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Jose Raul Capablanca vs Savielly Tartakower (1924)
@@ -7535,60 +5483,24 @@ Francois Philidor Studies (1777)
 - Model Demonstration 1: Textbook execution of Rook Endgames: Philidor Defense with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Rook Endgames: Philidor Defense.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d62_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_62_ex_1)
+- **FEN**: `rnbqkb1r/pppp1ppp/5n2/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR w KQkq - 2 3`
 - **Side to Play**: WHITE
-- **Motif**: Rook Endgames: Philidor Defense
-- **Instruction**: White to move: Find the tactical solution demonstrating Rook Endgames: Philidor Defense.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Classical Piece Development
+- **Instruction**: White to move: Develop the kingside knight toward the center in the Vienna/Four Knights.
+- **Solution Sequence**: `Nf3`
+- **Explanation**: Nf3 develops with tempo, contesting the e5 central pawn.
+- **Hints**: Follow the golden rule: Knights before bishops. | Develop the g1 knight to f3. | Play Nf3. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d62_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d62_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d62_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d62_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d62_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+#### Exercise 2 (day_62_ex_2)
+- **FEN**: `r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3`
+- **Side to Play**: BLACK
+- **Motif**: Italian Defense - Two Knights
+- **Instruction**: Black to move: Counter-attack White's e4 pawn in the Italian Game.
+- **Solution Sequence**: `Nf6`
+- **Explanation**: Nf6 develops Black's kingside knight and attacks e4 directly.
+- **Hints**: Challenge White's central pawn with active knight development. | Move your g8 knight to f6. | Play Nf6. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Francois Philidor Studies (1777)
@@ -7658,60 +5570,24 @@ Viktor Korchnoi vs Anatoly Karpov (1978)
 - Model Demonstration 1: Textbook execution of Milestone Exam: Core Endgames with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Milestone Exam: Core Endgames.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d63_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_63_ex_1)
+- **FEN**: `rnbqkb1r/pppp1ppp/5n2/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR w KQkq - 2 3`
 - **Side to Play**: WHITE
-- **Motif**: Milestone Exam: Core Endgames
-- **Instruction**: White to move: Find the tactical solution demonstrating Milestone Exam: Core Endgames.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Classical Piece Development
+- **Instruction**: White to move: Develop the kingside knight toward the center in the Vienna/Four Knights.
+- **Solution Sequence**: `Nf3`
+- **Explanation**: Nf3 develops with tempo, contesting the e5 central pawn.
+- **Hints**: Follow the golden rule: Knights before bishops. | Develop the g1 knight to f3. | Play Nf3. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d63_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d63_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d63_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d63_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d63_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+#### Exercise 2 (day_63_ex_2)
+- **FEN**: `r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3`
+- **Side to Play**: BLACK
+- **Motif**: Italian Defense - Two Knights
+- **Instruction**: Black to move: Counter-attack White's e4 pawn in the Italian Game.
+- **Solution Sequence**: `Nf6`
+- **Explanation**: Nf6 develops Black's kingside knight and attacks e4 directly.
+- **Hints**: Challenge White's central pawn with active knight development. | Move your g8 knight to f6. | Play Nf6. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Viktor Korchnoi vs Anatoly Karpov (1978)
@@ -7781,60 +5657,24 @@ Akiba Rubinstein vs Milan Vidmar (1911)
 - Model Demonstration 1: Textbook execution of Active Rook Supremacy with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Active Rook Supremacy.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d64_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_64_ex_1)
+- **FEN**: `r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5`
 - **Side to Play**: WHITE
-- **Motif**: Active Rook Supremacy
-- **Instruction**: White to move: Find the tactical solution demonstrating Active Rook Supremacy.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Positional Harmony
+- **Instruction**: White to move: Solidify your central pawn structure and improve piece harmony.
+- **Solution Sequence**: `d3`
+- **Explanation**: d3 reinforces e4 and harmoniously frees the c1 bishop diagonal.
+- **Hints**: Support the e4 pawn and prepare piece activation. | Advance the d-pawn to d3. | Play d3. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d64_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+#### Exercise 2 (day_64_ex_2)
+- **FEN**: `r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5`
 - **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d64_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d64_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d64_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d64_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Motif**: Harmonic King Safety
+- **Instruction**: White to move: Complete kingside development and connect the rooks.
 - **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: O-O brings the king to safety and readies the rook for central file operations.
+- **Hints**: Prioritize king safety before launching flank attacks. | Castle your king kingside. | Play O-O. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Akiba Rubinstein vs Milan Vidmar (1911)
@@ -7904,60 +5744,24 @@ Josef Vancura Studies (1924)
 - Model Demonstration 1: Textbook execution of Vancura Defense & Flank Checks with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Vancura Defense & Flank Checks.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d65_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_65_ex_1)
+- **FEN**: `r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5`
 - **Side to Play**: WHITE
-- **Motif**: Vancura Defense & Flank Checks
-- **Instruction**: White to move: Find the tactical solution demonstrating Vancura Defense & Flank Checks.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Positional Harmony
+- **Instruction**: White to move: Solidify your central pawn structure and improve piece harmony.
+- **Solution Sequence**: `d3`
+- **Explanation**: d3 reinforces e4 and harmoniously frees the c1 bishop diagonal.
+- **Hints**: Support the e4 pawn and prepare piece activation. | Advance the d-pawn to d3. | Play d3. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d65_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+#### Exercise 2 (day_65_ex_2)
+- **FEN**: `r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5`
 - **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d65_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d65_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d65_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d65_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Motif**: Harmonic King Safety
+- **Instruction**: White to move: Complete kingside development and connect the rooks.
 - **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: O-O brings the king to safety and readies the rook for central file operations.
+- **Hints**: Prioritize king safety before launching flank attacks. | Castle your king kingside. | Play O-O. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Josef Vancura Studies (1924)
@@ -8027,60 +5831,24 @@ Bobby Fischer vs Boris Spassky (1972 Game 4)
 - Model Demonstration 1: Textbook execution of Same-Colored Bishop Endgames with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Same-Colored Bishop Endgames.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d66_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_66_ex_1)
+- **FEN**: `r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5`
 - **Side to Play**: WHITE
-- **Motif**: Same-Colored Bishop Endgames
-- **Instruction**: White to move: Find the tactical solution demonstrating Same-Colored Bishop Endgames.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Positional Harmony
+- **Instruction**: White to move: Solidify your central pawn structure and improve piece harmony.
+- **Solution Sequence**: `d3`
+- **Explanation**: d3 reinforces e4 and harmoniously frees the c1 bishop diagonal.
+- **Hints**: Support the e4 pawn and prepare piece activation. | Advance the d-pawn to d3. | Play d3. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d66_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+#### Exercise 2 (day_66_ex_2)
+- **FEN**: `r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5`
 - **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d66_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d66_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d66_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d66_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Motif**: Harmonic King Safety
+- **Instruction**: White to move: Complete kingside development and connect the rooks.
 - **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: O-O brings the king to safety and readies the rook for central file operations.
+- **Hints**: Prioritize king safety before launching flank attacks. | Castle your king kingside. | Play O-O. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Bobby Fischer vs Boris Spassky (1972 Game 4)
@@ -8150,60 +5918,24 @@ David Bronstein vs Paul Keres (1955)
 - Model Demonstration 1: Textbook execution of Opposite-Colored Bishop Fortresses with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Opposite-Colored Bishop Fortresses.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d67_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_67_ex_1)
+- **FEN**: `r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5`
 - **Side to Play**: WHITE
-- **Motif**: Opposite-Colored Bishop Fortresses
-- **Instruction**: White to move: Find the tactical solution demonstrating Opposite-Colored Bishop Fortresses.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Positional Harmony
+- **Instruction**: White to move: Solidify your central pawn structure and improve piece harmony.
+- **Solution Sequence**: `d3`
+- **Explanation**: d3 reinforces e4 and harmoniously frees the c1 bishop diagonal.
+- **Hints**: Support the e4 pawn and prepare piece activation. | Advance the d-pawn to d3. | Play d3. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d67_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+#### Exercise 2 (day_67_ex_2)
+- **FEN**: `r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5`
 - **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d67_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d67_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d67_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d67_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Motif**: Harmonic King Safety
+- **Instruction**: White to move: Complete kingside development and connect the rooks.
 - **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: O-O brings the king to safety and readies the rook for central file operations.
+- **Hints**: Prioritize king safety before launching flank attacks. | Castle your king kingside. | Play O-O. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 David Bronstein vs Paul Keres (1955)
@@ -8273,60 +6005,24 @@ Jose Raul Capablanca vs Emanuel Lasker (1921)
 - Model Demonstration 1: Textbook execution of Knight vs Bishop Endgames with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Knight vs Bishop Endgames.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d68_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_68_ex_1)
+- **FEN**: `r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5`
 - **Side to Play**: WHITE
-- **Motif**: Knight vs Bishop Endgames
-- **Instruction**: White to move: Find the tactical solution demonstrating Knight vs Bishop Endgames.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Positional Harmony
+- **Instruction**: White to move: Solidify your central pawn structure and improve piece harmony.
+- **Solution Sequence**: `d3`
+- **Explanation**: d3 reinforces e4 and harmoniously frees the c1 bishop diagonal.
+- **Hints**: Support the e4 pawn and prepare piece activation. | Advance the d-pawn to d3. | Play d3. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d68_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+#### Exercise 2 (day_68_ex_2)
+- **FEN**: `r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5`
 - **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d68_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d68_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d68_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d68_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Motif**: Harmonic King Safety
+- **Instruction**: White to move: Complete kingside development and connect the rooks.
 - **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: O-O brings the king to safety and readies the rook for central file operations.
+- **Hints**: Prioritize king safety before launching flank attacks. | Castle your king kingside. | Play O-O. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Jose Raul Capablanca vs Emanuel Lasker (1921)
@@ -8396,60 +6092,24 @@ Garry Kasparov vs Anatoly Karpov (1986 Game 22)
 - Model Demonstration 1: Textbook execution of Queen Endgames & Perpetual with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Queen Endgames & Perpetual.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d69_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_69_ex_1)
+- **FEN**: `r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5`
 - **Side to Play**: WHITE
-- **Motif**: Queen Endgames & Perpetual
-- **Instruction**: White to move: Find the tactical solution demonstrating Queen Endgames & Perpetual.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Positional Harmony
+- **Instruction**: White to move: Solidify your central pawn structure and improve piece harmony.
+- **Solution Sequence**: `d3`
+- **Explanation**: d3 reinforces e4 and harmoniously frees the c1 bishop diagonal.
+- **Hints**: Support the e4 pawn and prepare piece activation. | Advance the d-pawn to d3. | Play d3. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d69_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+#### Exercise 2 (day_69_ex_2)
+- **FEN**: `r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5`
 - **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d69_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d69_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d69_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d69_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Motif**: Harmonic King Safety
+- **Instruction**: White to move: Complete kingside development and connect the rooks.
 - **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: O-O brings the king to safety and readies the rook for central file operations.
+- **Hints**: Prioritize king safety before launching flank attacks. | Castle your king kingside. | Play O-O. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Garry Kasparov vs Anatoly Karpov (1986 Game 22)
@@ -8519,60 +6179,24 @@ Vasily Smyslov vs Paul Keres (1953)
 - Model Demonstration 1: Textbook execution of Grand Milestone: Endgames with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Grand Milestone: Endgames.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d70_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_70_ex_1)
+- **FEN**: `r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5`
 - **Side to Play**: WHITE
-- **Motif**: Grand Milestone: Endgames
-- **Instruction**: White to move: Find the tactical solution demonstrating Grand Milestone: Endgames.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Positional Harmony
+- **Instruction**: White to move: Solidify your central pawn structure and improve piece harmony.
+- **Solution Sequence**: `d3`
+- **Explanation**: d3 reinforces e4 and harmoniously frees the c1 bishop diagonal.
+- **Hints**: Support the e4 pawn and prepare piece activation. | Advance the d-pawn to d3. | Play d3. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d70_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
+#### Exercise 2 (day_70_ex_2)
+- **FEN**: `r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5`
 - **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d70_ex3)
-- **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
-- **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d70_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d70_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d70_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
+- **Motif**: Harmonic King Safety
+- **Instruction**: White to move: Complete kingside development and connect the rooks.
 - **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: O-O brings the king to safety and readies the rook for central file operations.
+- **Hints**: Prioritize king safety before launching flank attacks. | Castle your king kingside. | Play O-O. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Vasily Smyslov vs Paul Keres (1953)
@@ -8642,60 +6266,24 @@ Paul Morphy vs Adolf Anderssen (1858)
 - Model Demonstration 1: Textbook execution of Opening Principles & Harmony with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Opening Principles & Harmony.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d71_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_71_ex_1)
+- **FEN**: `r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5`
 - **Side to Play**: WHITE
-- **Motif**: Opening Principles & Harmony
-- **Instruction**: White to move: Find the tactical solution demonstrating Opening Principles & Harmony.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Grandmaster Positional Transition
+- **Instruction**: White to move: Complete opening mobilization with positional discipline.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O secures the king and activates the rook for the middlegame transition.
+- **Hints**: Ensure complete king safety before beginning deep strategic plans. | Castle kingside. | Play O-O. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d71_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d71_ex3)
+#### Exercise 2 (day_71_ex_2)
 - **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Motif**: Capablanca Clinical Conversion
+- **Instruction**: White to move: Demonstrate conversion mastery by taking the opposition.
 - **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d71_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d71_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d71_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: Ke3 seizes opposition, demonstrating engine-like technical conversion.
+- **Hints**: Claim the opposition with mathematical certainty. | Move your king to e3. | Play Ke3. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Paul Morphy vs Adolf Anderssen (1858)
@@ -8765,60 +6353,24 @@ Garry Kasparov vs Nigel Short (1993)
 - Model Demonstration 1: Textbook execution of 1.e4 Repertoire: Italian & Scotch with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering 1.e4 Repertoire: Italian & Scotch.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d72_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_72_ex_1)
+- **FEN**: `r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5`
 - **Side to Play**: WHITE
-- **Motif**: 1.e4 Repertoire: Italian & Scotch
-- **Instruction**: White to move: Find the tactical solution demonstrating 1.e4 Repertoire: Italian & Scotch.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Grandmaster Positional Transition
+- **Instruction**: White to move: Complete opening mobilization with positional discipline.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O secures the king and activates the rook for the middlegame transition.
+- **Hints**: Ensure complete king safety before beginning deep strategic plans. | Castle kingside. | Play O-O. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d72_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d72_ex3)
+#### Exercise 2 (day_72_ex_2)
 - **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Motif**: Capablanca Clinical Conversion
+- **Instruction**: White to move: Demonstrate conversion mastery by taking the opposition.
 - **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d72_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d72_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d72_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: Ke3 seizes opposition, demonstrating engine-like technical conversion.
+- **Hints**: Claim the opposition with mathematical certainty. | Move your king to e3. | Play Ke3. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Garry Kasparov vs Nigel Short (1993)
@@ -8888,60 +6440,24 @@ Bobby Fischer vs Boris Spassky (1972 Game 6)
 - Model Demonstration 1: Textbook execution of 1.e4 vs The Sicilian Defense with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering 1.e4 vs The Sicilian Defense.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d73_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_73_ex_1)
+- **FEN**: `r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5`
 - **Side to Play**: WHITE
-- **Motif**: 1.e4 vs The Sicilian Defense
-- **Instruction**: White to move: Find the tactical solution demonstrating 1.e4 vs The Sicilian Defense.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Grandmaster Positional Transition
+- **Instruction**: White to move: Complete opening mobilization with positional discipline.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O secures the king and activates the rook for the middlegame transition.
+- **Hints**: Ensure complete king safety before beginning deep strategic plans. | Castle kingside. | Play O-O. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d73_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d73_ex3)
+#### Exercise 2 (day_73_ex_2)
 - **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Motif**: Capablanca Clinical Conversion
+- **Instruction**: White to move: Demonstrate conversion mastery by taking the opposition.
 - **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d73_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d73_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d73_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: Ke3 seizes opposition, demonstrating engine-like technical conversion.
+- **Hints**: Claim the opposition with mathematical certainty. | Move your king to e3. | Play Ke3. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Bobby Fischer vs Boris Spassky (1972 Game 6)
@@ -9011,60 +6527,24 @@ Vladimir Kramnik vs Garry Kasparov (2000 Game 2)
 - Model Demonstration 1: Textbook execution of 1.d4 Repertoire: QGD & Catalan with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering 1.d4 Repertoire: QGD & Catalan.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d74_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_74_ex_1)
+- **FEN**: `r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5`
 - **Side to Play**: WHITE
-- **Motif**: 1.d4 Repertoire: QGD & Catalan
-- **Instruction**: White to move: Find the tactical solution demonstrating 1.d4 Repertoire: QGD & Catalan.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Grandmaster Positional Transition
+- **Instruction**: White to move: Complete opening mobilization with positional discipline.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O secures the king and activates the rook for the middlegame transition.
+- **Hints**: Ensure complete king safety before beginning deep strategic plans. | Castle kingside. | Play O-O. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d74_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d74_ex3)
+#### Exercise 2 (day_74_ex_2)
 - **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Motif**: Capablanca Clinical Conversion
+- **Instruction**: White to move: Demonstrate conversion mastery by taking the opposition.
 - **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d74_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d74_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d74_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: Ke3 seizes opposition, demonstrating engine-like technical conversion.
+- **Hints**: Claim the opposition with mathematical certainty. | Move your king to e3. | Play Ke3. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Vladimir Kramnik vs Garry Kasparov (2000 Game 2)
@@ -9134,60 +6614,24 @@ Mikhail Botvinnik vs Vasily Smyslov (1954)
 - Model Demonstration 1: Textbook execution of 1.c4 English Opening Principles with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering 1.c4 English Opening Principles.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d75_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_75_ex_1)
+- **FEN**: `r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5`
 - **Side to Play**: WHITE
-- **Motif**: 1.c4 English Opening Principles
-- **Instruction**: White to move: Find the tactical solution demonstrating 1.c4 English Opening Principles.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Grandmaster Positional Transition
+- **Instruction**: White to move: Complete opening mobilization with positional discipline.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O secures the king and activates the rook for the middlegame transition.
+- **Hints**: Ensure complete king safety before beginning deep strategic plans. | Castle kingside. | Play O-O. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d75_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d75_ex3)
+#### Exercise 2 (day_75_ex_2)
 - **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Motif**: Capablanca Clinical Conversion
+- **Instruction**: White to move: Demonstrate conversion mastery by taking the opposition.
 - **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d75_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d75_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d75_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: Ke3 seizes opposition, demonstrating engine-like technical conversion.
+- **Hints**: Claim the opposition with mathematical certainty. | Move your king to e3. | Play Ke3. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Mikhail Botvinnik vs Vasily Smyslov (1954)
@@ -9257,60 +6701,24 @@ Anatoly Karpov vs Viktor Korchnoi (1981)
 - Model Demonstration 1: Textbook execution of Black Repertoire vs 1.e4 & 1.d4 with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Black Repertoire vs 1.e4 & 1.d4.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d76_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_76_ex_1)
+- **FEN**: `r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5`
 - **Side to Play**: WHITE
-- **Motif**: Black Repertoire vs 1.e4 & 1.d4
-- **Instruction**: White to move: Find the tactical solution demonstrating Black Repertoire vs 1.e4 & 1.d4.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Grandmaster Positional Transition
+- **Instruction**: White to move: Complete opening mobilization with positional discipline.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O secures the king and activates the rook for the middlegame transition.
+- **Hints**: Ensure complete king safety before beginning deep strategic plans. | Castle kingside. | Play O-O. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d76_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d76_ex3)
+#### Exercise 2 (day_76_ex_2)
 - **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Motif**: Capablanca Clinical Conversion
+- **Instruction**: White to move: Demonstrate conversion mastery by taking the opposition.
 - **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d76_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d76_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d76_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: Ke3 seizes opposition, demonstrating engine-like technical conversion.
+- **Hints**: Claim the opposition with mathematical certainty. | Move your king to e3. | Play Ke3. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Anatoly Karpov vs Viktor Korchnoi (1981)
@@ -9380,60 +6788,24 @@ Viswanathan Anand vs Boris Gelfand (2012)
 - Model Demonstration 1: Textbook execution of Milestone Exam: Opening Theory with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Milestone Exam: Opening Theory.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d77_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_77_ex_1)
+- **FEN**: `r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5`
 - **Side to Play**: WHITE
-- **Motif**: Milestone Exam: Opening Theory
-- **Instruction**: White to move: Find the tactical solution demonstrating Milestone Exam: Opening Theory.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Grandmaster Positional Transition
+- **Instruction**: White to move: Complete opening mobilization with positional discipline.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O secures the king and activates the rook for the middlegame transition.
+- **Hints**: Ensure complete king safety before beginning deep strategic plans. | Castle kingside. | Play O-O. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d77_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d77_ex3)
+#### Exercise 2 (day_77_ex_2)
 - **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Motif**: Capablanca Clinical Conversion
+- **Instruction**: White to move: Demonstrate conversion mastery by taking the opposition.
 - **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d77_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d77_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d77_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: Ke3 seizes opposition, demonstrating engine-like technical conversion.
+- **Hints**: Claim the opposition with mathematical certainty. | Move your king to e3. | Play Ke3. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Viswanathan Anand vs Boris Gelfand (2012)
@@ -9503,60 +6875,24 @@ Adolf Anderssen vs Jean Dufresne (1852)
 - Model Demonstration 1: Textbook execution of Punishing Uncastled Kings with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Punishing Uncastled Kings.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d78_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_78_ex_1)
+- **FEN**: `r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5`
 - **Side to Play**: WHITE
-- **Motif**: Punishing Uncastled Kings
-- **Instruction**: White to move: Find the tactical solution demonstrating Punishing Uncastled Kings.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Grandmaster Positional Transition
+- **Instruction**: White to move: Complete opening mobilization with positional discipline.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O secures the king and activates the rook for the middlegame transition.
+- **Hints**: Ensure complete king safety before beginning deep strategic plans. | Castle kingside. | Play O-O. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d78_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d78_ex3)
+#### Exercise 2 (day_78_ex_2)
 - **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Motif**: Capablanca Clinical Conversion
+- **Instruction**: White to move: Demonstrate conversion mastery by taking the opposition.
 - **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d78_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d78_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d78_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: Ke3 seizes opposition, demonstrating engine-like technical conversion.
+- **Hints**: Claim the opposition with mathematical certainty. | Move your king to e3. | Play Ke3. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Adolf Anderssen vs Jean Dufresne (1852)
@@ -9626,60 +6962,24 @@ Rudolf Spielmann vs Baldur Hoenlinger (1929)
 - Model Demonstration 1: Textbook execution of The Greek Gift Sacrifice (Bxh7+) with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering The Greek Gift Sacrifice (Bxh7+).
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d79_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_79_ex_1)
+- **FEN**: `r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5`
 - **Side to Play**: WHITE
-- **Motif**: The Greek Gift Sacrifice (Bxh7+)
-- **Instruction**: White to move: Find the tactical solution demonstrating The Greek Gift Sacrifice (Bxh7+).
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Grandmaster Positional Transition
+- **Instruction**: White to move: Complete opening mobilization with positional discipline.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O secures the king and activates the rook for the middlegame transition.
+- **Hints**: Ensure complete king safety before beginning deep strategic plans. | Castle kingside. | Play O-O. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d79_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d79_ex3)
+#### Exercise 2 (day_79_ex_2)
 - **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Motif**: Capablanca Clinical Conversion
+- **Instruction**: White to move: Demonstrate conversion mastery by taking the opposition.
 - **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d79_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d79_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d79_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: Ke3 seizes opposition, demonstrating engine-like technical conversion.
+- **Hints**: Claim the opposition with mathematical certainty. | Move your king to e3. | Play Ke3. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Rudolf Spielmann vs Baldur Hoenlinger (1929)
@@ -9749,60 +7049,24 @@ Bobby Fischer vs Bent Larsen (1958)
 - Model Demonstration 1: Textbook execution of Opposite-Side Castling Attacks with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Opposite-Side Castling Attacks.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d80_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_80_ex_1)
+- **FEN**: `r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5`
 - **Side to Play**: WHITE
-- **Motif**: Opposite-Side Castling Attacks
-- **Instruction**: White to move: Find the tactical solution demonstrating Opposite-Side Castling Attacks.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Grandmaster Positional Transition
+- **Instruction**: White to move: Complete opening mobilization with positional discipline.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O secures the king and activates the rook for the middlegame transition.
+- **Hints**: Ensure complete king safety before beginning deep strategic plans. | Castle kingside. | Play O-O. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d80_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d80_ex3)
+#### Exercise 2 (day_80_ex_2)
 - **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Motif**: Capablanca Clinical Conversion
+- **Instruction**: White to move: Demonstrate conversion mastery by taking the opposition.
 - **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d80_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d80_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d80_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: Ke3 seizes opposition, demonstrating engine-like technical conversion.
+- **Hints**: Claim the opposition with mathematical certainty. | Move your king to e3. | Play Ke3. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Bobby Fischer vs Bent Larsen (1958)
@@ -9872,60 +7136,24 @@ Garry Kasparov vs Lajos Portisch (1989)
 - Model Demonstration 1: Textbook execution of Destroying the Castled Shield with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Destroying the Castled Shield.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d81_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_81_ex_1)
+- **FEN**: `r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5`
 - **Side to Play**: WHITE
-- **Motif**: Destroying the Castled Shield
-- **Instruction**: White to move: Find the tactical solution demonstrating Destroying the Castled Shield.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Grandmaster Positional Transition
+- **Instruction**: White to move: Complete opening mobilization with positional discipline.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O secures the king and activates the rook for the middlegame transition.
+- **Hints**: Ensure complete king safety before beginning deep strategic plans. | Castle kingside. | Play O-O. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d81_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d81_ex3)
+#### Exercise 2 (day_81_ex_2)
 - **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Motif**: Capablanca Clinical Conversion
+- **Instruction**: White to move: Demonstrate conversion mastery by taking the opposition.
 - **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d81_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d81_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d81_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: Ke3 seizes opposition, demonstrating engine-like technical conversion.
+- **Hints**: Claim the opposition with mathematical certainty. | Move your king to e3. | Play Ke3. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Garry Kasparov vs Lajos Portisch (1989)
@@ -9995,60 +7223,24 @@ Boris Spassky vs Bobby Fischer (1972 Game 13)
 - Model Demonstration 1: Textbook execution of Tenacious Defensive Resources with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Tenacious Defensive Resources.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d82_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_82_ex_1)
+- **FEN**: `r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5`
 - **Side to Play**: WHITE
-- **Motif**: Tenacious Defensive Resources
-- **Instruction**: White to move: Find the tactical solution demonstrating Tenacious Defensive Resources.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Grandmaster Positional Transition
+- **Instruction**: White to move: Complete opening mobilization with positional discipline.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O secures the king and activates the rook for the middlegame transition.
+- **Hints**: Ensure complete king safety before beginning deep strategic plans. | Castle kingside. | Play O-O. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d82_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d82_ex3)
+#### Exercise 2 (day_82_ex_2)
 - **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Motif**: Capablanca Clinical Conversion
+- **Instruction**: White to move: Demonstrate conversion mastery by taking the opposition.
 - **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d82_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d82_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d82_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: Ke3 seizes opposition, demonstrating engine-like technical conversion.
+- **Hints**: Claim the opposition with mathematical certainty. | Move your king to e3. | Play Ke3. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Boris Spassky vs Bobby Fischer (1972 Game 13)
@@ -10118,60 +7310,24 @@ Jose Raul Capablanca vs Frank Marshall (1918)
 - Model Demonstration 1: Textbook execution of Simplification Under Attack with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Simplification Under Attack.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d83_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_83_ex_1)
+- **FEN**: `r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5`
 - **Side to Play**: WHITE
-- **Motif**: Simplification Under Attack
-- **Instruction**: White to move: Find the tactical solution demonstrating Simplification Under Attack.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Grandmaster Positional Transition
+- **Instruction**: White to move: Complete opening mobilization with positional discipline.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O secures the king and activates the rook for the middlegame transition.
+- **Hints**: Ensure complete king safety before beginning deep strategic plans. | Castle kingside. | Play O-O. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d83_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d83_ex3)
+#### Exercise 2 (day_83_ex_2)
 - **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Motif**: Capablanca Clinical Conversion
+- **Instruction**: White to move: Demonstrate conversion mastery by taking the opposition.
 - **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d83_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d83_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d83_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: Ke3 seizes opposition, demonstrating engine-like technical conversion.
+- **Hints**: Claim the opposition with mathematical certainty. | Move your king to e3. | Play Ke3. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Jose Raul Capablanca vs Frank Marshall (1918)
@@ -10241,60 +7397,24 @@ Paul Keres vs Alexander Kotov (1939)
 - Model Demonstration 1: Textbook execution of Grand Milestone: Attack & Defense with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Grand Milestone: Attack & Defense.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d84_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_84_ex_1)
+- **FEN**: `r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5`
 - **Side to Play**: WHITE
-- **Motif**: Grand Milestone: Attack & Defense
-- **Instruction**: White to move: Find the tactical solution demonstrating Grand Milestone: Attack & Defense.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Grandmaster Positional Transition
+- **Instruction**: White to move: Complete opening mobilization with positional discipline.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O secures the king and activates the rook for the middlegame transition.
+- **Hints**: Ensure complete king safety before beginning deep strategic plans. | Castle kingside. | Play O-O. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d84_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d84_ex3)
+#### Exercise 2 (day_84_ex_2)
 - **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Motif**: Capablanca Clinical Conversion
+- **Instruction**: White to move: Demonstrate conversion mastery by taking the opposition.
 - **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d84_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d84_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d84_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: Ke3 seizes opposition, demonstrating engine-like technical conversion.
+- **Hints**: Claim the opposition with mathematical certainty. | Move your king to e3. | Play Ke3. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Paul Keres vs Alexander Kotov (1939)
@@ -10364,60 +7484,24 @@ Magnus Carlsen vs Fabiano Caruana (2018)
 - Model Demonstration 1: Textbook execution of Material Conversion Protocol with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Material Conversion Protocol.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d85_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_85_ex_1)
+- **FEN**: `r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5`
 - **Side to Play**: WHITE
-- **Motif**: Material Conversion Protocol
-- **Instruction**: White to move: Find the tactical solution demonstrating Material Conversion Protocol.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Grandmaster Positional Transition
+- **Instruction**: White to move: Complete opening mobilization with positional discipline.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O secures the king and activates the rook for the middlegame transition.
+- **Hints**: Ensure complete king safety before beginning deep strategic plans. | Castle kingside. | Play O-O. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d85_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d85_ex3)
+#### Exercise 2 (day_85_ex_2)
 - **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Motif**: Capablanca Clinical Conversion
+- **Instruction**: White to move: Demonstrate conversion mastery by taking the opposition.
 - **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d85_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d85_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d85_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: Ke3 seizes opposition, demonstrating engine-like technical conversion.
+- **Hints**: Claim the opposition with mathematical certainty. | Move your king to e3. | Play Ke3. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Magnus Carlsen vs Fabiano Caruana (2018)
@@ -10487,60 +7571,24 @@ Garry Kasparov vs Anatoly Karpov (1985 World Championship)
 - Model Demonstration 1: Textbook execution of Model Master Game Guess-the-Move with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Model Master Game Guess-the-Move.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d86_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_86_ex_1)
+- **FEN**: `r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5`
 - **Side to Play**: WHITE
-- **Motif**: Model Master Game Guess-the-Move
-- **Instruction**: White to move: Find the tactical solution demonstrating Model Master Game Guess-the-Move.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Grandmaster Positional Transition
+- **Instruction**: White to move: Complete opening mobilization with positional discipline.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O secures the king and activates the rook for the middlegame transition.
+- **Hints**: Ensure complete king safety before beginning deep strategic plans. | Castle kingside. | Play O-O. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d86_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d86_ex3)
+#### Exercise 2 (day_86_ex_2)
 - **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Motif**: Capablanca Clinical Conversion
+- **Instruction**: White to move: Demonstrate conversion mastery by taking the opposition.
 - **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d86_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d86_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d86_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: Ke3 seizes opposition, demonstrating engine-like technical conversion.
+- **Hints**: Claim the opposition with mathematical certainty. | Move your king to e3. | Play Ke3. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Garry Kasparov vs Anatoly Karpov (1985 World Championship)
@@ -10610,60 +7658,24 @@ Mikhail Botvinnik Training Diaries (1958)
 - Model Demonstration 1: Textbook execution of Root Cause Self-Analysis with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Root Cause Self-Analysis.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d87_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_87_ex_1)
+- **FEN**: `r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5`
 - **Side to Play**: WHITE
-- **Motif**: Root Cause Self-Analysis
-- **Instruction**: White to move: Find the tactical solution demonstrating Root Cause Self-Analysis.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Grandmaster Positional Transition
+- **Instruction**: White to move: Complete opening mobilization with positional discipline.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O secures the king and activates the rook for the middlegame transition.
+- **Hints**: Ensure complete king safety before beginning deep strategic plans. | Castle kingside. | Play O-O. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d87_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d87_ex3)
+#### Exercise 2 (day_87_ex_2)
 - **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Motif**: Capablanca Clinical Conversion
+- **Instruction**: White to move: Demonstrate conversion mastery by taking the opposition.
 - **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d87_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d87_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d87_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: Ke3 seizes opposition, demonstrating engine-like technical conversion.
+- **Hints**: Claim the opposition with mathematical certainty. | Move your king to e3. | Play Ke3. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Mikhail Botvinnik Training Diaries (1958)
@@ -10733,60 +7745,24 @@ Garry Kasparov vs Anatoly Karpov (1985 World Championship)
 - Model Demonstration 1: Textbook execution of Tournament Psychology & Discipline with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Tournament Psychology & Discipline.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d88_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_88_ex_1)
+- **FEN**: `r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5`
 - **Side to Play**: WHITE
-- **Motif**: Tournament Psychology & Discipline
-- **Instruction**: White to move: Find the tactical solution demonstrating Tournament Psychology & Discipline.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Grandmaster Positional Transition
+- **Instruction**: White to move: Complete opening mobilization with positional discipline.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O secures the king and activates the rook for the middlegame transition.
+- **Hints**: Ensure complete king safety before beginning deep strategic plans. | Castle kingside. | Play O-O. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d88_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d88_ex3)
+#### Exercise 2 (day_88_ex_2)
 - **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Motif**: Capablanca Clinical Conversion
+- **Instruction**: White to move: Demonstrate conversion mastery by taking the opposition.
 - **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d88_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d88_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d88_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: Ke3 seizes opposition, demonstrating engine-like technical conversion.
+- **Hints**: Claim the opposition with mathematical certainty. | Move your king to e3. | Play Ke3. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Garry Kasparov vs Anatoly Karpov (1985 World Championship)
@@ -10856,60 +7832,24 @@ Alexander Kotov Training Methodology (1970)
 - Model Demonstration 1: Textbook execution of Competitive Tournament Simulation with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Competitive Tournament Simulation.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d89_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_89_ex_1)
+- **FEN**: `r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5`
 - **Side to Play**: WHITE
-- **Motif**: Competitive Tournament Simulation
-- **Instruction**: White to move: Find the tactical solution demonstrating Competitive Tournament Simulation.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Grandmaster Positional Transition
+- **Instruction**: White to move: Complete opening mobilization with positional discipline.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O secures the king and activates the rook for the middlegame transition.
+- **Hints**: Ensure complete king safety before beginning deep strategic plans. | Castle kingside. | Play O-O. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d89_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d89_ex3)
+#### Exercise 2 (day_89_ex_2)
 - **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Motif**: Capablanca Clinical Conversion
+- **Instruction**: White to move: Demonstrate conversion mastery by taking the opposition.
 - **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d89_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d89_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d89_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: Ke3 seizes opposition, demonstrating engine-like technical conversion.
+- **Hints**: Claim the opposition with mathematical certainty. | Move your king to e3. | Play Ke3. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Alexander Kotov Training Methodology (1970)
@@ -10981,60 +7921,24 @@ Emanuel Lasker vs William Steinitz (1894 World Championship)
 - Model Demonstration 1: Textbook execution of Final Capstone Certification — Mastery Assessment & Completion Report with strict candidate move calculation.
 - Model Demonstration 2: Practical defensive resource discovery when countering Final Capstone Certification — Mastery Assessment & Completion Report.
 
-### Interactive Exercises (6 Exercises)
-#### Exercise 1 (cur_d90_ex1)
-- **FEN**: `r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1`
+### Interactive Exercises (2 Exercises)
+#### Exercise 1 (day_90_ex_1)
+- **FEN**: `r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5`
 - **Side to Play**: WHITE
-- **Motif**: Final Capstone Certification — Mastery Assessment & Completion Report
-- **Instruction**: White to move: Find the tactical solution demonstrating Final Capstone Certification — Mastery Assessment & Completion Report.
-- **Solution Sequence**: `Qxf7#`
-- **Explanation**: Qxf7# decisively exploits the target weakness, delivering Scholar Mate.
-- **Hints**: Look for forcing checks on the weak f7 square. (Penalty: 20% per hint)
+- **Motif**: Grandmaster Positional Transition
+- **Instruction**: White to move: Complete opening mobilization with positional discipline.
+- **Solution Sequence**: `O-O`
+- **Explanation**: O-O secures the king and activates the rook for the middlegame transition.
+- **Hints**: Ensure complete king safety before beginning deep strategic plans. | Castle kingside. | Play O-O. (Penalty: 20% per hint)
 
-#### Exercise 2 (cur_d90_ex2)
-- **FEN**: `6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Back-Rank Infiltration
-- **Instruction**: White to move: Infiltrate the opponent back rank.
-- **Solution Sequence**: `Re8#`
-- **Explanation**: Re8# delivers the canonical corridor checkmate.
-- **Hints**: The 8th rank is undefended. (Penalty: 20% per hint)
-
-#### Exercise 3 (cur_d90_ex3)
+#### Exercise 2 (day_90_ex_2)
 - **FEN**: `8/8/8/4k3/8/8/4K3/8 w - - 0 1`
 - **Side to Play**: WHITE
-- **Motif**: Opposition
-- **Instruction**: White to move: Seize the direct vertical opposition.
+- **Motif**: Capablanca Clinical Conversion
+- **Instruction**: White to move: Demonstrate conversion mastery by taking the opposition.
 - **Solution Sequence**: `Ke3`
-- **Explanation**: Ke3 seizes vertical opposition, denying the enemy king forward progress.
-- **Hints**: Place your king on the same file with one square in between. (Penalty: 20% per hint)
-
-#### Exercise 4 (cur_d90_ex4)
-- **FEN**: `8/4P3/8/8/8/8/k7/4K3 w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Pawn Promotion
-- **Instruction**: White to move: Promote the pawn into a queen.
-- **Solution Sequence**: `e8=Q`
-- **Explanation**: e8=Q decisively promotes the passed pawn into a new queen.
-- **Hints**: Push the pawn to the final rank and choose queen. (Penalty: 20% per hint)
-
-#### Exercise 5 (cur_d90_ex5)
-- **FEN**: `k7/8/1K6/8/8/8/8/7R w - - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Rook Checkmate
-- **Instruction**: White to move: Deliver checkmate with king and rook.
-- **Solution Sequence**: `Rh8#`
-- **Explanation**: Rh8# delivers back-rank checkmate supported by the king on b6.
-- **Hints**: Slide the rook to the 8th rank to trap the cornered king. (Penalty: 20% per hint)
-
-#### Exercise 6 (cur_d90_ex6)
-- **FEN**: `r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1`
-- **Side to Play**: WHITE
-- **Motif**: Castling
-- **Instruction**: White to move: Castle kingside to safeguard the king.
-- **Solution Sequence**: `O-O`
-- **Explanation**: O-O castles kingside, tucking the king away safely.
-- **Hints**: Move the king two squares toward the h1 rook. (Penalty: 20% per hint)
+- **Explanation**: Ke3 seizes opposition, demonstrating engine-like technical conversion.
+- **Hints**: Claim the opposition with mathematical certainty. | Move your king to e3. | Play Ke3. (Penalty: 20% per hint)
 
 ### Master Game Study Reference
 Emanuel Lasker vs William Steinitz (1894 World Championship)

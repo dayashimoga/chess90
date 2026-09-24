@@ -1,0 +1,4807 @@
+{
+  "timestamp": "2026-09-24T08:39:04.688535Z",
+  "totalAudited": 215,
+  "validCount": 215,
+  "invalidCount": 0,
+  "duplicateCount": 13,
+  "exercises": [
+    {
+      "id": "cur_d1_ex1",
+      "context": "Day 1: Baseline Diagnostic",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Qxf7#"
+      ],
+      "executedUci": [
+        "f3f7"
+      ],
+      "motif": "Scholar Mate Attack",
+      "instruction": "White to move: Deliver immediate checkmate exploiting the f7 weakness.",
+      "explanation": "Qxf7# delivers checkmate supported by the bishop on c4.",
+      "engineEval": {
+        "scoreCentipawns": null,
+        "bestMoveUci": "f3f7",
+        "isMate": true
+      }
+    },
+    {
+      "id": "cur_d1_ex2",
+      "context": "Day 1: Baseline Diagnostic",
+      "valid": true,
+      "failures": [],
+      "fen": "6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Re8#"
+      ],
+      "executedUci": [
+        "e1e8"
+      ],
+      "motif": "Back Rank Mate",
+      "instruction": "White to move: Exploit the vulnerable back rank.",
+      "explanation": "Re8# delivers the classic corridor checkmate.",
+      "engineEval": {
+        "scoreCentipawns": null,
+        "bestMoveUci": "e1e8",
+        "isMate": true
+      }
+    },
+    {
+      "id": "cur_d1_ex3",
+      "context": "Day 1: Baseline Diagnostic",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/4k3/8/8/4K3/8 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ke3"
+      ],
+      "executedUci": [
+        "e2e3"
+      ],
+      "motif": "Opposition",
+      "instruction": "White to move: Claim the vertical opposition.",
+      "explanation": "Ke3 claims direct vertical opposition, forcing Black to step aside.",
+      "engineEval": {
+        "scoreCentipawns": 0,
+        "bestMoveUci": "e2e3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_2_ex_1",
+      "context": "Day 2: Tactics — Hanging Pieces & LPDO",
+      "valid": true,
+      "failures": [],
+      "fen": "r1b1k2r/pppp1ppp/2n5/4p3/2B1n3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Qe2"
+      ],
+      "executedUci": [
+        "d1e2"
+      ],
+      "motif": "Loose Piece Exploitation",
+      "instruction": "White to move: Exploit the loose knight on e4 and the open e-file.",
+      "explanation": "Qe2 pins and wins the loose knight on e4 against the uncastled black king.",
+      "engineEval": {
+        "scoreCentipawns": 1033,
+        "bestMoveUci": "d1e2",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_2_ex_2",
+      "context": "Day 2: Tactics — Hanging Pieces & LPDO",
+      "valid": true,
+      "failures": [],
+      "fen": "2r3k1/pp3ppp/8/8/4n3/5N2/PP3PPP/2R3K1 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Rxc8#"
+      ],
+      "executedUci": [
+        "c1c8"
+      ],
+      "motif": "Hanging Rook & Back Rank",
+      "instruction": "White to move: Punish Black's undefended back rank rook.",
+      "explanation": "Rxc8# captures the loose rook and delivers back-rank checkmate.",
+      "engineEval": {
+        "scoreCentipawns": null,
+        "bestMoveUci": "c1c8",
+        "isMate": true
+      }
+    },
+    {
+      "id": "day_2_ex_3",
+      "context": "Day 2: Tactics — Hanging Pieces & LPDO",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/ppp2ppp/2n5/3np3/1b6/2NP1N2/PPPBBPPP/R2QK2R w KQkq - 0 7",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Nxd5"
+      ],
+      "executedUci": [
+        "c3d5"
+      ],
+      "motif": "Central Liquidation",
+      "instruction": "White to move: Eliminate Black's central knight and gain the bishop pair.",
+      "explanation": "Nxd5 removes Black's key central piece, preparing favorable simplification.",
+      "engineEval": {
+        "scoreCentipawns": 6,
+        "bestMoveUci": "e1g1",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_3_ex_1",
+      "context": "Day 3: Tactics — Absolute & Relative Pins",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
+      "sideToPlay": "black",
+      "solutionSan": [
+        "Nf6"
+      ],
+      "executedUci": [
+        "g8f6"
+      ],
+      "motif": "Two Knights Counter-Attack",
+      "instruction": "Black to move: Counter-attack White's e4 pawn while developing harmoniously.",
+      "explanation": "Nf6 attacks e4 immediately, preparing rapid kingside castling.",
+      "engineEval": {
+        "scoreCentipawns": -8,
+        "bestMoveUci": "g8f6",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_3_ex_2",
+      "context": "Day 3: Tactics — Absolute & Relative Pins",
+      "valid": true,
+      "failures": [],
+      "fen": "r1b1k2r/ppppqppp/2n5/4p3/2B1n3/2P2N2/PPP2PPP/R1BQK2R w KQkq - 0 6",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Qe2"
+      ],
+      "executedUci": [
+        "d1e2"
+      ],
+      "motif": "Relative Pin on E-File",
+      "instruction": "White to move: Pin the active knight against Black's queen on the e-file.",
+      "explanation": "Qe2 creates an absolute e-file pin forcing Black onto the defensive.",
+      "engineEval": {
+        "scoreCentipawns": -160,
+        "bestMoveUci": "a2a4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_3_ex_3",
+      "context": "Day 3: Tactics — Absolute & Relative Pins",
+      "valid": true,
+      "failures": [],
+      "fen": "r2qk2r/ppp2ppp/2np1n2/1B2p3/1b1PP3/2N2N2/PPP2PPP/R1BQK2R w KQkq - 2 6",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "d5"
+      ],
+      "executedUci": [
+        "d4d5"
+      ],
+      "motif": "Pushing Against the Pin",
+      "instruction": "White to move: Exploit the pinned knight on c6.",
+      "explanation": "d5 advances against the pinned knight which cannot move due to the b5 bishop.",
+      "engineEval": {
+        "scoreCentipawns": 844,
+        "bestMoveUci": "d1d3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_4_ex_1",
+      "context": "Day 4: Tactics — Skewers & X-Ray Attacks",
+      "valid": true,
+      "failures": [],
+      "fen": "r3k3/8/8/8/8/8/8/4K2R w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Rh8+"
+      ],
+      "executedUci": [
+        "h1h8"
+      ],
+      "motif": "Rank Skewer",
+      "instruction": "White to move: Deliver a devastating skewer check against the enemy king.",
+      "explanation": "Rh8+ checks the king on e8, skewering the trailing rook on a8 along the 8th rank.",
+      "engineEval": {
+        "scoreCentipawns": 484,
+        "bestMoveUci": "h1h8",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_4_ex_2",
+      "context": "Day 4: Tactics — Skewers & X-Ray Attacks",
+      "valid": true,
+      "failures": [],
+      "fen": "8/2k5/8/8/2B5/8/8/4K2R w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Rh7+"
+      ],
+      "executedUci": [
+        "h1h7"
+      ],
+      "motif": "Horizontal Skewer",
+      "instruction": "White to move: Skewer the enemy king on the 7th rank.",
+      "explanation": "Rh7+ checks the king and controls the horizontal file.",
+      "engineEval": {
+        "scoreCentipawns": 466,
+        "bestMoveUci": "h1h3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_4_ex_3",
+      "context": "Day 4: Tactics — Skewers & X-Ray Attacks",
+      "valid": true,
+      "failures": [],
+      "fen": "3r2k1/5ppp/8/8/8/8/1B3PPP/6K1 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Kf1"
+      ],
+      "executedUci": [
+        "g1f1"
+      ],
+      "motif": "Back-Rank Defense & Clearance",
+      "instruction": "White to move: Evade the back-rank threat and activate the king.",
+      "explanation": "Kf1 steps towards the center while defusing back-rank mating nets.",
+      "engineEval": {
+        "scoreCentipawns": -372,
+        "bestMoveUci": "g1f1",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_5_ex_1",
+      "context": "Day 5: Tactics — Knight Forks & Geometry",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ng5"
+      ],
+      "executedUci": [
+        "f3g5"
+      ],
+      "motif": "F7 Knight Battery",
+      "instruction": "White to move: Launch the Fried Liver battery against f7.",
+      "explanation": "Ng5 coordinates with the c4 bishop to threaten a fork on f7.",
+      "engineEval": {
+        "scoreCentipawns": 723,
+        "bestMoveUci": "c4b5",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_5_ex_2",
+      "context": "Day 5: Tactics — Knight Forks & Geometry",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 6 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "d3"
+      ],
+      "executedUci": [
+        "d2d3"
+      ],
+      "motif": "Harmonic Central Support",
+      "instruction": "White to move: Solidify your central pawn structure in the Giuoco Pianissimo.",
+      "explanation": "d3 protects e4, opens the c1 bishop diagonal, and maintains central stability.",
+      "engineEval": {
+        "scoreCentipawns": 19,
+        "bestMoveUci": "d2d3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_5_ex_3",
+      "context": "Day 5: Tactics — Knight Forks & Geometry",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P1n1/2NP1N2/PPP2PPP/R1BQK2R w KQkq - 1 6",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Defensive Castling",
+      "instruction": "White to move: Defend f2 by castling your king into safety.",
+      "explanation": "O-O protects f2 with the rook and removes the king from the center.",
+      "engineEval": {
+        "scoreCentipawns": 107,
+        "bestMoveUci": "c4f7",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_6_ex_1",
+      "context": "Day 6: Tactics — Double Attacks & Dual Threats",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 5 4",
+      "sideToPlay": "black",
+      "solutionSan": [
+        "Nxe4"
+      ],
+      "executedUci": [
+        "f6e4"
+      ],
+      "motif": "Center Fork Trick",
+      "instruction": "Black to move: Initiate the central fork trick against White's bishop on c4.",
+      "explanation": "Nxe4 prepares ...d5, creating a fork that regains the piece with a superior center.",
+      "engineEval": {
+        "scoreCentipawns": 38,
+        "bestMoveUci": "f6e4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_6_ex_2",
+      "context": "Day 6: Tactics — Double Attacks & Dual Threats",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ng5"
+      ],
+      "executedUci": [
+        "f3g5"
+      ],
+      "motif": "F7 Dual Pressure",
+      "instruction": "White to move: Punish Black's passive ...d6 setup by attacking f7.",
+      "explanation": "Ng5 creates an immediate dual threat on f7 with the bishop on c4.",
+      "engineEval": {
+        "scoreCentipawns": -1,
+        "bestMoveUci": "f3g5",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_6_ex_3",
+      "context": "Day 6: Tactics — Double Attacks & Dual Threats",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "d4"
+      ],
+      "executedUci": [
+        "d2d4"
+      ],
+      "motif": "Central Breakthrough",
+      "instruction": "White to move: Strike in the center to open lines against the uncastled black king.",
+      "explanation": "d4 challenges e5 immediately, creating central tension and opening files.",
+      "engineEval": {
+        "scoreCentipawns": 35,
+        "bestMoveUci": "f1e1",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_7_ex_1",
+      "context": "Day 7: Tactics — Tactical Milestone Exam I",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/pppp1ppp/2n5/4p3/1bB1n3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 0 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Nxe4"
+      ],
+      "executedUci": [
+        "c3e4"
+      ],
+      "motif": "Tactical Exam - Free Piece",
+      "instruction": "White to move: Win material in the center.",
+      "explanation": "Nxe4 captures the loose knight, securing an extra piece.",
+      "engineEval": {
+        "scoreCentipawns": -17,
+        "bestMoveUci": "c4f7",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_7_ex_2",
+      "context": "Day 7: Tactics — Tactical Milestone Exam I",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Prophylactic Castling",
+      "instruction": "White to move: Secure your king before launching an attack.",
+      "explanation": "O-O tucks the king safely into the corner and connects rooks.",
+      "engineEval": {
+        "scoreCentipawns": 827,
+        "bestMoveUci": "a2a3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_8_ex_1",
+      "context": "Day 8: Tactics — Discovered Attacks & Double Checks",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ng5"
+      ],
+      "executedUci": [
+        "f3g5"
+      ],
+      "motif": "Knight Infiltration on f7",
+      "instruction": "White to move: Launch an assault targeting f7 in accordance with Tactics — Discovered Attacks & Double Checks.",
+      "explanation": "Ng5 exploits the weakness on f7 coordinating with the c4 bishop.",
+      "engineEval": {
+        "scoreCentipawns": -1,
+        "bestMoveUci": "f3g5",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_8_ex_2",
+      "context": "Day 8: Tactics — Discovered Attacks & Double Checks",
+      "valid": true,
+      "failures": [],
+      "fen": "r1b1k2r/pppp1ppp/2n5/4p3/2B1n3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Qe2"
+      ],
+      "executedUci": [
+        "d1e2"
+      ],
+      "motif": "Pin Along Open File",
+      "instruction": "White to move: Pin the e4 knight and regain material in Tactics — Discovered Attacks & Double Checks.",
+      "explanation": "Qe2 pins the loose knight along the e-file against the enemy king.",
+      "engineEval": {
+        "scoreCentipawns": 1040,
+        "bestMoveUci": "d2d3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_8_ex_3",
+      "context": "Day 8: Tactics — Discovered Attacks & Double Checks",
+      "valid": true,
+      "failures": [],
+      "fen": "2r3k1/pp3ppp/8/8/4n3/5N2/PP3PPP/2R3K1 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Rxc8#"
+      ],
+      "executedUci": [
+        "c1c8"
+      ],
+      "motif": "Hanging Piece Exploitation",
+      "instruction": "White to move: Capture the unprotected piece and deliver checkmate.",
+      "explanation": "Rxc8# captures the loose rook and delivers corridor checkmate.",
+      "engineEval": {
+        "scoreCentipawns": null,
+        "bestMoveUci": "c1c8",
+        "isMate": true
+      }
+    },
+    {
+      "id": "day_9_ex_1",
+      "context": "Day 9: Tactics — Deflection & Removal of Defender",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ng5"
+      ],
+      "executedUci": [
+        "f3g5"
+      ],
+      "motif": "Knight Infiltration on f7",
+      "instruction": "White to move: Launch an assault targeting f7 in accordance with Tactics — Deflection & Removal of Defender.",
+      "explanation": "Ng5 exploits the weakness on f7 coordinating with the c4 bishop.",
+      "engineEval": {
+        "scoreCentipawns": 3,
+        "bestMoveUci": "f3g5",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_9_ex_2",
+      "context": "Day 9: Tactics — Deflection & Removal of Defender",
+      "valid": true,
+      "failures": [],
+      "fen": "r1b1k2r/pppp1ppp/2n5/4p3/2B1n3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Qe2"
+      ],
+      "executedUci": [
+        "d1e2"
+      ],
+      "motif": "Pin Along Open File",
+      "instruction": "White to move: Pin the e4 knight and regain material in Tactics — Deflection & Removal of Defender.",
+      "explanation": "Qe2 pins the loose knight along the e-file against the enemy king.",
+      "engineEval": {
+        "scoreCentipawns": 1083,
+        "bestMoveUci": "d2d3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_9_ex_3",
+      "context": "Day 9: Tactics — Deflection & Removal of Defender",
+      "valid": true,
+      "failures": [],
+      "fen": "2r3k1/pp3ppp/8/8/4n3/5N2/PP3PPP/2R3K1 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Rxc8#"
+      ],
+      "executedUci": [
+        "c1c8"
+      ],
+      "motif": "Hanging Piece Exploitation",
+      "instruction": "White to move: Capture the unprotected piece and deliver checkmate.",
+      "explanation": "Rxc8# captures the loose rook and delivers corridor checkmate.",
+      "engineEval": {
+        "scoreCentipawns": null,
+        "bestMoveUci": "c1c8",
+        "isMate": true
+      }
+    },
+    {
+      "id": "day_10_ex_1",
+      "context": "Day 10: Tactics — Decoy & Attraction Sacrifices",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ng5"
+      ],
+      "executedUci": [
+        "f3g5"
+      ],
+      "motif": "Knight Infiltration on f7",
+      "instruction": "White to move: Launch an assault targeting f7 in accordance with Tactics — Decoy & Attraction Sacrifices.",
+      "explanation": "Ng5 exploits the weakness on f7 coordinating with the c4 bishop.",
+      "engineEval": {
+        "scoreCentipawns": 1,
+        "bestMoveUci": "f3g5",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_10_ex_2",
+      "context": "Day 10: Tactics — Decoy & Attraction Sacrifices",
+      "valid": true,
+      "failures": [],
+      "fen": "r1b1k2r/pppp1ppp/2n5/4p3/2B1n3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Qe2"
+      ],
+      "executedUci": [
+        "d1e2"
+      ],
+      "motif": "Pin Along Open File",
+      "instruction": "White to move: Pin the e4 knight and regain material in Tactics — Decoy & Attraction Sacrifices.",
+      "explanation": "Qe2 pins the loose knight along the e-file against the enemy king.",
+      "engineEval": {
+        "scoreCentipawns": 1036,
+        "bestMoveUci": "d1e2",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_10_ex_3",
+      "context": "Day 10: Tactics — Decoy & Attraction Sacrifices",
+      "valid": true,
+      "failures": [],
+      "fen": "2r3k1/pp3ppp/8/8/4n3/5N2/PP3PPP/2R3K1 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Rxc8#"
+      ],
+      "executedUci": [
+        "c1c8"
+      ],
+      "motif": "Hanging Piece Exploitation",
+      "instruction": "White to move: Capture the unprotected piece and deliver checkmate.",
+      "explanation": "Rxc8# captures the loose rook and delivers corridor checkmate.",
+      "engineEval": {
+        "scoreCentipawns": null,
+        "bestMoveUci": "c1c8",
+        "isMate": true
+      }
+    },
+    {
+      "id": "day_11_ex_1",
+      "context": "Day 11: Tactics — Overloading & Line Clearance",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ng5"
+      ],
+      "executedUci": [
+        "f3g5"
+      ],
+      "motif": "Knight Infiltration on f7",
+      "instruction": "White to move: Launch an assault targeting f7 in accordance with Tactics — Overloading & Line Clearance.",
+      "explanation": "Ng5 exploits the weakness on f7 coordinating with the c4 bishop.",
+      "engineEval": {
+        "scoreCentipawns": -11,
+        "bestMoveUci": "f3g5",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_11_ex_2",
+      "context": "Day 11: Tactics — Overloading & Line Clearance",
+      "valid": true,
+      "failures": [],
+      "fen": "r1b1k2r/pppp1ppp/2n5/4p3/2B1n3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Qe2"
+      ],
+      "executedUci": [
+        "d1e2"
+      ],
+      "motif": "Pin Along Open File",
+      "instruction": "White to move: Pin the e4 knight and regain material in Tactics — Overloading & Line Clearance.",
+      "explanation": "Qe2 pins the loose knight along the e-file against the enemy king.",
+      "engineEval": {
+        "scoreCentipawns": 1036,
+        "bestMoveUci": "d1e2",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_11_ex_3",
+      "context": "Day 11: Tactics — Overloading & Line Clearance",
+      "valid": true,
+      "failures": [],
+      "fen": "2r3k1/pp3ppp/8/8/4n3/5N2/PP3PPP/2R3K1 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Rxc8#"
+      ],
+      "executedUci": [
+        "c1c8"
+      ],
+      "motif": "Hanging Piece Exploitation",
+      "instruction": "White to move: Capture the unprotected piece and deliver checkmate.",
+      "explanation": "Rxc8# captures the loose rook and delivers corridor checkmate.",
+      "engineEval": {
+        "scoreCentipawns": null,
+        "bestMoveUci": "c1c8",
+        "isMate": true
+      }
+    },
+    {
+      "id": "day_12_ex_1",
+      "context": "Day 12: Tactics — Interference & Obstruction",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ng5"
+      ],
+      "executedUci": [
+        "f3g5"
+      ],
+      "motif": "Knight Infiltration on f7",
+      "instruction": "White to move: Launch an assault targeting f7 in accordance with Tactics — Interference & Obstruction.",
+      "explanation": "Ng5 exploits the weakness on f7 coordinating with the c4 bishop.",
+      "engineEval": {
+        "scoreCentipawns": -12,
+        "bestMoveUci": "f3g5",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_12_ex_2",
+      "context": "Day 12: Tactics — Interference & Obstruction",
+      "valid": true,
+      "failures": [],
+      "fen": "r1b1k2r/pppp1ppp/2n5/4p3/2B1n3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Qe2"
+      ],
+      "executedUci": [
+        "d1e2"
+      ],
+      "motif": "Pin Along Open File",
+      "instruction": "White to move: Pin the e4 knight and regain material in Tactics — Interference & Obstruction.",
+      "explanation": "Qe2 pins the loose knight along the e-file against the enemy king.",
+      "engineEval": {
+        "scoreCentipawns": 954,
+        "bestMoveUci": "d2d3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_12_ex_3",
+      "context": "Day 12: Tactics — Interference & Obstruction",
+      "valid": true,
+      "failures": [],
+      "fen": "2r3k1/pp3ppp/8/8/4n3/5N2/PP3PPP/2R3K1 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Rxc8#"
+      ],
+      "executedUci": [
+        "c1c8"
+      ],
+      "motif": "Hanging Piece Exploitation",
+      "instruction": "White to move: Capture the unprotected piece and deliver checkmate.",
+      "explanation": "Rxc8# captures the loose rook and delivers corridor checkmate.",
+      "engineEval": {
+        "scoreCentipawns": null,
+        "bestMoveUci": "c1c8",
+        "isMate": true
+      }
+    },
+    {
+      "id": "day_13_ex_1",
+      "context": "Day 13: Tactics — Trapped Pieces & Domination",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ng5"
+      ],
+      "executedUci": [
+        "f3g5"
+      ],
+      "motif": "Knight Infiltration on f7",
+      "instruction": "White to move: Launch an assault targeting f7 in accordance with Tactics — Trapped Pieces & Domination.",
+      "explanation": "Ng5 exploits the weakness on f7 coordinating with the c4 bishop.",
+      "engineEval": {
+        "scoreCentipawns": -13,
+        "bestMoveUci": "f3g5",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_13_ex_2",
+      "context": "Day 13: Tactics — Trapped Pieces & Domination",
+      "valid": true,
+      "failures": [],
+      "fen": "r1b1k2r/pppp1ppp/2n5/4p3/2B1n3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Qe2"
+      ],
+      "executedUci": [
+        "d1e2"
+      ],
+      "motif": "Pin Along Open File",
+      "instruction": "White to move: Pin the e4 knight and regain material in Tactics — Trapped Pieces & Domination.",
+      "explanation": "Qe2 pins the loose knight along the e-file against the enemy king.",
+      "engineEval": {
+        "scoreCentipawns": 954,
+        "bestMoveUci": "d2d3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_13_ex_3",
+      "context": "Day 13: Tactics — Trapped Pieces & Domination",
+      "valid": true,
+      "failures": [],
+      "fen": "2r3k1/pp3ppp/8/8/4n3/5N2/PP3PPP/2R3K1 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Rxc8#"
+      ],
+      "executedUci": [
+        "c1c8"
+      ],
+      "motif": "Hanging Piece Exploitation",
+      "instruction": "White to move: Capture the unprotected piece and deliver checkmate.",
+      "explanation": "Rxc8# captures the loose rook and delivers corridor checkmate.",
+      "engineEval": {
+        "scoreCentipawns": null,
+        "bestMoveUci": "c1c8",
+        "isMate": true
+      }
+    },
+    {
+      "id": "day_14_ex_1",
+      "context": "Day 14: Tactics — Grand Milestone Exam: Tactics",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ng5"
+      ],
+      "executedUci": [
+        "f3g5"
+      ],
+      "motif": "Knight Infiltration on f7",
+      "instruction": "White to move: Launch an assault targeting f7 in accordance with Tactics — Grand Milestone Exam: Tactics.",
+      "explanation": "Ng5 exploits the weakness on f7 coordinating with the c4 bishop.",
+      "engineEval": {
+        "scoreCentipawns": -14,
+        "bestMoveUci": "f3g5",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_14_ex_2",
+      "context": "Day 14: Tactics — Grand Milestone Exam: Tactics",
+      "valid": true,
+      "failures": [],
+      "fen": "r1b1k2r/pppp1ppp/2n5/4p3/2B1n3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Qe2"
+      ],
+      "executedUci": [
+        "d1e2"
+      ],
+      "motif": "Pin Along Open File",
+      "instruction": "White to move: Pin the e4 knight and regain material in Tactics — Grand Milestone Exam: Tactics.",
+      "explanation": "Qe2 pins the loose knight along the e-file against the enemy king.",
+      "engineEval": {
+        "scoreCentipawns": 954,
+        "bestMoveUci": "d2d3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_14_ex_3",
+      "context": "Day 14: Tactics — Grand Milestone Exam: Tactics",
+      "valid": true,
+      "failures": [],
+      "fen": "2r3k1/pp3ppp/8/8/4n3/5N2/PP3PPP/2R3K1 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Rxc8#"
+      ],
+      "executedUci": [
+        "c1c8"
+      ],
+      "motif": "Hanging Piece Exploitation",
+      "instruction": "White to move: Capture the unprotected piece and deliver checkmate.",
+      "explanation": "Rxc8# captures the loose rook and delivers corridor checkmate.",
+      "engineEval": {
+        "scoreCentipawns": null,
+        "bestMoveUci": "c1c8",
+        "isMate": true
+      }
+    },
+    {
+      "id": "day_15_ex_1",
+      "context": "Day 15: Calculation — Kotov Forcing Hierarchy (CCT)",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "d4"
+      ],
+      "executedUci": [
+        "d2d4"
+      ],
+      "motif": "Central Strike Calculation",
+      "instruction": "White to move: Strike in the center to initiate your calculation tree in Calculation — Kotov Forcing Hierarchy (CCT).",
+      "explanation": "d4 opens the center and forces Black to make concrete defensive calculations.",
+      "engineEval": {
+        "scoreCentipawns": 40,
+        "bestMoveUci": "d2d4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_15_ex_2",
+      "context": "Day 15: Calculation — Kotov Forcing Hierarchy (CCT)",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 5 4",
+      "sideToPlay": "black",
+      "solutionSan": [
+        "Nxe4"
+      ],
+      "executedUci": [
+        "f6e4"
+      ],
+      "motif": "Kotov Forcing Sequence",
+      "instruction": "Black to move: Calculate the forcing center fork trick.",
+      "explanation": "Nxe4 prepares ...d5, calculating through all responses to regain material.",
+      "engineEval": {
+        "scoreCentipawns": 38,
+        "bestMoveUci": "f6e4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_16_ex_1",
+      "context": "Day 16: Calculation — Candidate Move Generation",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "d4"
+      ],
+      "executedUci": [
+        "d2d4"
+      ],
+      "motif": "Central Strike Calculation",
+      "instruction": "White to move: Strike in the center to initiate your calculation tree in Calculation — Candidate Move Generation.",
+      "explanation": "d4 opens the center and forces Black to make concrete defensive calculations.",
+      "engineEval": {
+        "scoreCentipawns": 40,
+        "bestMoveUci": "d2d4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_16_ex_2",
+      "context": "Day 16: Calculation — Candidate Move Generation",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 5 4",
+      "sideToPlay": "black",
+      "solutionSan": [
+        "Nxe4"
+      ],
+      "executedUci": [
+        "f6e4"
+      ],
+      "motif": "Kotov Forcing Sequence",
+      "instruction": "Black to move: Calculate the forcing center fork trick.",
+      "explanation": "Nxe4 prepares ...d5, calculating through all responses to regain material.",
+      "engineEval": {
+        "scoreCentipawns": 53,
+        "bestMoveUci": "f6e4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_17_ex_1",
+      "context": "Day 17: Calculation — Calculation Tree Pruning",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "d4"
+      ],
+      "executedUci": [
+        "d2d4"
+      ],
+      "motif": "Central Strike Calculation",
+      "instruction": "White to move: Strike in the center to initiate your calculation tree in Calculation — Calculation Tree Pruning.",
+      "explanation": "d4 opens the center and forces Black to make concrete defensive calculations.",
+      "engineEval": {
+        "scoreCentipawns": 40,
+        "bestMoveUci": "d2d4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_17_ex_2",
+      "context": "Day 17: Calculation — Calculation Tree Pruning",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 5 4",
+      "sideToPlay": "black",
+      "solutionSan": [
+        "Nxe4"
+      ],
+      "executedUci": [
+        "f6e4"
+      ],
+      "motif": "Kotov Forcing Sequence",
+      "instruction": "Black to move: Calculate the forcing center fork trick.",
+      "explanation": "Nxe4 prepares ...d5, calculating through all responses to regain material.",
+      "engineEval": {
+        "scoreCentipawns": 44,
+        "bestMoveUci": "f6e4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_18_ex_1",
+      "context": "Day 18: Calculation — Intermediate Moves (Zwischenzug)",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "d4"
+      ],
+      "executedUci": [
+        "d2d4"
+      ],
+      "motif": "Central Strike Calculation",
+      "instruction": "White to move: Strike in the center to initiate your calculation tree in Calculation — Intermediate Moves (Zwischenzug).",
+      "explanation": "d4 opens the center and forces Black to make concrete defensive calculations.",
+      "engineEval": {
+        "scoreCentipawns": 40,
+        "bestMoveUci": "d2d4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_18_ex_2",
+      "context": "Day 18: Calculation — Intermediate Moves (Zwischenzug)",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 5 4",
+      "sideToPlay": "black",
+      "solutionSan": [
+        "Nxe4"
+      ],
+      "executedUci": [
+        "f6e4"
+      ],
+      "motif": "Kotov Forcing Sequence",
+      "instruction": "Black to move: Calculate the forcing center fork trick.",
+      "explanation": "Nxe4 prepares ...d5, calculating through all responses to regain material.",
+      "engineEval": {
+        "scoreCentipawns": 44,
+        "bestMoveUci": "f6e4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_19_ex_1",
+      "context": "Day 19: Calculation — Opponent Counter-Resources",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "d4"
+      ],
+      "executedUci": [
+        "d2d4"
+      ],
+      "motif": "Central Strike Calculation",
+      "instruction": "White to move: Strike in the center to initiate your calculation tree in Calculation — Opponent Counter-Resources.",
+      "explanation": "d4 opens the center and forces Black to make concrete defensive calculations.",
+      "engineEval": {
+        "scoreCentipawns": 40,
+        "bestMoveUci": "d2d4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_19_ex_2",
+      "context": "Day 19: Calculation — Opponent Counter-Resources",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 5 4",
+      "sideToPlay": "black",
+      "solutionSan": [
+        "Nxe4"
+      ],
+      "executedUci": [
+        "f6e4"
+      ],
+      "motif": "Kotov Forcing Sequence",
+      "instruction": "Black to move: Calculate the forcing center fork trick.",
+      "explanation": "Nxe4 prepares ...d5, calculating through all responses to regain material.",
+      "engineEval": {
+        "scoreCentipawns": 44,
+        "bestMoveUci": "f6e4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_20_ex_1",
+      "context": "Day 20: Calculation — Visualizing Quiet Moves",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "d4"
+      ],
+      "executedUci": [
+        "d2d4"
+      ],
+      "motif": "Central Strike Calculation",
+      "instruction": "White to move: Strike in the center to initiate your calculation tree in Calculation — Visualizing Quiet Moves.",
+      "explanation": "d4 opens the center and forces Black to make concrete defensive calculations.",
+      "engineEval": {
+        "scoreCentipawns": 40,
+        "bestMoveUci": "d2d4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_20_ex_2",
+      "context": "Day 20: Calculation — Visualizing Quiet Moves",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 5 4",
+      "sideToPlay": "black",
+      "solutionSan": [
+        "Nxe4"
+      ],
+      "executedUci": [
+        "f6e4"
+      ],
+      "motif": "Kotov Forcing Sequence",
+      "instruction": "Black to move: Calculate the forcing center fork trick.",
+      "explanation": "Nxe4 prepares ...d5, calculating through all responses to regain material.",
+      "engineEval": {
+        "scoreCentipawns": 44,
+        "bestMoveUci": "f6e4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_21_ex_1",
+      "context": "Day 21: Calculation — Milestone Exam: Calculation Trees",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "d4"
+      ],
+      "executedUci": [
+        "d2d4"
+      ],
+      "motif": "Central Strike Calculation",
+      "instruction": "White to move: Strike in the center to initiate your calculation tree in Calculation — Milestone Exam: Calculation Trees.",
+      "explanation": "d4 opens the center and forces Black to make concrete defensive calculations.",
+      "engineEval": {
+        "scoreCentipawns": 40,
+        "bestMoveUci": "d2d4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_21_ex_2",
+      "context": "Day 21: Calculation — Milestone Exam: Calculation Trees",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 5 4",
+      "sideToPlay": "black",
+      "solutionSan": [
+        "Nxe4"
+      ],
+      "executedUci": [
+        "f6e4"
+      ],
+      "motif": "Kotov Forcing Sequence",
+      "instruction": "Black to move: Calculate the forcing center fork trick.",
+      "explanation": "Nxe4 prepares ...d5, calculating through all responses to regain material.",
+      "engineEval": {
+        "scoreCentipawns": 44,
+        "bestMoveUci": "f6e4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_22_ex_1",
+      "context": "Day 22: Calculation — Blindfold Board Geometry",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "d3"
+      ],
+      "executedUci": [
+        "d2d3"
+      ],
+      "motif": "Positional Harmony",
+      "instruction": "White to move: Solidify your central pawn structure and improve piece harmony.",
+      "explanation": "d3 reinforces e4 and harmoniously frees the c1 bishop diagonal.",
+      "engineEval": {
+        "scoreCentipawns": 799,
+        "bestMoveUci": "a2a4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_22_ex_2",
+      "context": "Day 22: Calculation — Blindfold Board Geometry",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Harmonic King Safety",
+      "instruction": "White to move: Complete kingside development and connect the rooks.",
+      "explanation": "O-O brings the king to safety and readies the rook for central file operations.",
+      "engineEval": {
+        "scoreCentipawns": 777,
+        "bestMoveUci": "a2a4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_23_ex_1",
+      "context": "Day 23: Calculation — Multi-Ply Pawn Races",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "d3"
+      ],
+      "executedUci": [
+        "d2d3"
+      ],
+      "motif": "Positional Harmony",
+      "instruction": "White to move: Solidify your central pawn structure and improve piece harmony.",
+      "explanation": "d3 reinforces e4 and harmoniously frees the c1 bishop diagonal.",
+      "engineEval": {
+        "scoreCentipawns": 802,
+        "bestMoveUci": "a2a4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_23_ex_2",
+      "context": "Day 23: Calculation — Multi-Ply Pawn Races",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Harmonic King Safety",
+      "instruction": "White to move: Complete kingside development and connect the rooks.",
+      "explanation": "O-O brings the king to safety and readies the rook for central file operations.",
+      "engineEval": {
+        "scoreCentipawns": 796,
+        "bestMoveUci": "a2a4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_24_ex_1",
+      "context": "Day 24: Calculation — Mental Board Retention",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "d3"
+      ],
+      "executedUci": [
+        "d2d3"
+      ],
+      "motif": "Positional Harmony",
+      "instruction": "White to move: Solidify your central pawn structure and improve piece harmony.",
+      "explanation": "d3 reinforces e4 and harmoniously frees the c1 bishop diagonal.",
+      "engineEval": {
+        "scoreCentipawns": 776,
+        "bestMoveUci": "h2h3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_24_ex_2",
+      "context": "Day 24: Calculation — Mental Board Retention",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Harmonic King Safety",
+      "instruction": "White to move: Complete kingside development and connect the rooks.",
+      "explanation": "O-O brings the king to safety and readies the rook for central file operations.",
+      "engineEval": {
+        "scoreCentipawns": 796,
+        "bestMoveUci": "a2a4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_25_ex_1",
+      "context": "Day 25: Calculation — Eliminating Blind Spots",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "d3"
+      ],
+      "executedUci": [
+        "d2d3"
+      ],
+      "motif": "Positional Harmony",
+      "instruction": "White to move: Solidify your central pawn structure and improve piece harmony.",
+      "explanation": "d3 reinforces e4 and harmoniously frees the c1 bishop diagonal.",
+      "engineEval": {
+        "scoreCentipawns": 789,
+        "bestMoveUci": "b2b3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_25_ex_2",
+      "context": "Day 25: Calculation — Eliminating Blind Spots",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Harmonic King Safety",
+      "instruction": "White to move: Complete kingside development and connect the rooks.",
+      "explanation": "O-O brings the king to safety and readies the rook for central file operations.",
+      "engineEval": {
+        "scoreCentipawns": 821,
+        "bestMoveUci": "b1c3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_26_ex_1",
+      "context": "Day 26: Clock Discipline & Rhythm",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "d3"
+      ],
+      "executedUci": [
+        "d2d3"
+      ],
+      "motif": "Positional Harmony",
+      "instruction": "White to move: Solidify your central pawn structure and improve piece harmony.",
+      "explanation": "d3 reinforces e4 and harmoniously frees the c1 bishop diagonal.",
+      "engineEval": {
+        "scoreCentipawns": 769,
+        "bestMoveUci": "e1g1",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_26_ex_2",
+      "context": "Day 26: Clock Discipline & Rhythm",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Harmonic King Safety",
+      "instruction": "White to move: Complete kingside development and connect the rooks.",
+      "explanation": "O-O brings the king to safety and readies the rook for central file operations.",
+      "engineEval": {
+        "scoreCentipawns": 754,
+        "bestMoveUci": "a2a4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_27_ex_1",
+      "context": "Day 27: Practical Tree Pruning",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "d3"
+      ],
+      "executedUci": [
+        "d2d3"
+      ],
+      "motif": "Positional Harmony",
+      "instruction": "White to move: Solidify your central pawn structure and improve piece harmony.",
+      "explanation": "d3 reinforces e4 and harmoniously frees the c1 bishop diagonal.",
+      "engineEval": {
+        "scoreCentipawns": 757,
+        "bestMoveUci": "a2a4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_27_ex_2",
+      "context": "Day 27: Practical Tree Pruning",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Harmonic King Safety",
+      "instruction": "White to move: Complete kingside development and connect the rooks.",
+      "explanation": "O-O brings the king to safety and readies the rook for central file operations.",
+      "engineEval": {
+        "scoreCentipawns": 726,
+        "bestMoveUci": "a2a4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_28_ex_1",
+      "context": "Day 28: Grand Milestone: Calculation",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "d3"
+      ],
+      "executedUci": [
+        "d2d3"
+      ],
+      "motif": "Positional Harmony",
+      "instruction": "White to move: Solidify your central pawn structure and improve piece harmony.",
+      "explanation": "d3 reinforces e4 and harmoniously frees the c1 bishop diagonal.",
+      "engineEval": {
+        "scoreCentipawns": 751,
+        "bestMoveUci": "c4b3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_28_ex_2",
+      "context": "Day 28: Grand Milestone: Calculation",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Harmonic King Safety",
+      "instruction": "White to move: Complete kingside development and connect the rooks.",
+      "explanation": "O-O brings the king to safety and readies the rook for central file operations.",
+      "engineEval": {
+        "scoreCentipawns": 772,
+        "bestMoveUci": "c1g5",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_29_ex_1",
+      "context": "Day 29: Piece Harmony & Improvement",
+      "valid": true,
+      "failures": [],
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "exd5"
+      ],
+      "executedUci": [
+        "e4d5"
+      ],
+      "motif": "Central Pawn Liquidation",
+      "instruction": "White to move: Eliminate the central pawn challenge and gain a tempo.",
+      "explanation": "exd5 forces Black to recapture with the queen, allowing Nc3 with a gain of time.",
+      "engineEval": {
+        "scoreCentipawns": 44,
+        "bestMoveUci": "e4d5",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_29_ex_2",
+      "context": "Day 29: Piece Harmony & Improvement",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "d4"
+      ],
+      "executedUci": [
+        "d2d4"
+      ],
+      "motif": "Pawn Lever Strike",
+      "instruction": "White to move: Execute the central pawn lever to break Black's center.",
+      "explanation": "d4 strikes at the base of Black's e5 outpost, opening central diagonals.",
+      "engineEval": {
+        "scoreCentipawns": 40,
+        "bestMoveUci": "d2d4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_30_ex_1",
+      "context": "Day 30: Outposts & Knight Anchoring",
+      "valid": true,
+      "failures": [],
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "exd5"
+      ],
+      "executedUci": [
+        "e4d5"
+      ],
+      "motif": "Central Pawn Liquidation",
+      "instruction": "White to move: Eliminate the central pawn challenge and gain a tempo.",
+      "explanation": "exd5 forces Black to recapture with the queen, allowing Nc3 with a gain of time.",
+      "engineEval": {
+        "scoreCentipawns": 47,
+        "bestMoveUci": "e4d5",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_30_ex_2",
+      "context": "Day 30: Outposts & Knight Anchoring",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "d4"
+      ],
+      "executedUci": [
+        "d2d4"
+      ],
+      "motif": "Pawn Lever Strike",
+      "instruction": "White to move: Execute the central pawn lever to break Black's center.",
+      "explanation": "d4 strikes at the base of Black's e5 outpost, opening central diagonals.",
+      "engineEval": {
+        "scoreCentipawns": 40,
+        "bestMoveUci": "d2d4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_31_ex_1",
+      "context": "Day 31: Open Files & Infiltration",
+      "valid": true,
+      "failures": [],
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "exd5"
+      ],
+      "executedUci": [
+        "e4d5"
+      ],
+      "motif": "Central Pawn Liquidation",
+      "instruction": "White to move: Eliminate the central pawn challenge and gain a tempo.",
+      "explanation": "exd5 forces Black to recapture with the queen, allowing Nc3 with a gain of time.",
+      "engineEval": {
+        "scoreCentipawns": 54,
+        "bestMoveUci": "e4d5",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_31_ex_2",
+      "context": "Day 31: Open Files & Infiltration",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "d4"
+      ],
+      "executedUci": [
+        "d2d4"
+      ],
+      "motif": "Pawn Lever Strike",
+      "instruction": "White to move: Execute the central pawn lever to break Black's center.",
+      "explanation": "d4 strikes at the base of Black's e5 outpost, opening central diagonals.",
+      "engineEval": {
+        "scoreCentipawns": 40,
+        "bestMoveUci": "d2d4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_32_ex_1",
+      "context": "Day 32: Good vs Bad Bishops",
+      "valid": true,
+      "failures": [],
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "exd5"
+      ],
+      "executedUci": [
+        "e4d5"
+      ],
+      "motif": "Central Pawn Liquidation",
+      "instruction": "White to move: Eliminate the central pawn challenge and gain a tempo.",
+      "explanation": "exd5 forces Black to recapture with the queen, allowing Nc3 with a gain of time.",
+      "engineEval": {
+        "scoreCentipawns": 66,
+        "bestMoveUci": "e4d5",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_32_ex_2",
+      "context": "Day 32: Good vs Bad Bishops",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "d4"
+      ],
+      "executedUci": [
+        "d2d4"
+      ],
+      "motif": "Pawn Lever Strike",
+      "instruction": "White to move: Execute the central pawn lever to break Black's center.",
+      "explanation": "d4 strikes at the base of Black's e5 outpost, opening central diagonals.",
+      "engineEval": {
+        "scoreCentipawns": 40,
+        "bestMoveUci": "d2d4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_33_ex_1",
+      "context": "Day 33: Positional Exchange Sacrifice",
+      "valid": true,
+      "failures": [],
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "exd5"
+      ],
+      "executedUci": [
+        "e4d5"
+      ],
+      "motif": "Central Pawn Liquidation",
+      "instruction": "White to move: Eliminate the central pawn challenge and gain a tempo.",
+      "explanation": "exd5 forces Black to recapture with the queen, allowing Nc3 with a gain of time.",
+      "engineEval": {
+        "scoreCentipawns": 73,
+        "bestMoveUci": "e4d5",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_33_ex_2",
+      "context": "Day 33: Positional Exchange Sacrifice",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "d4"
+      ],
+      "executedUci": [
+        "d2d4"
+      ],
+      "motif": "Pawn Lever Strike",
+      "instruction": "White to move: Execute the central pawn lever to break Black's center.",
+      "explanation": "d4 strikes at the base of Black's e5 outpost, opening central diagonals.",
+      "engineEval": {
+        "scoreCentipawns": 40,
+        "bestMoveUci": "d2d4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_34_ex_1",
+      "context": "Day 34: Prophylaxis & Restriction",
+      "valid": true,
+      "failures": [],
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "exd5"
+      ],
+      "executedUci": [
+        "e4d5"
+      ],
+      "motif": "Central Pawn Liquidation",
+      "instruction": "White to move: Eliminate the central pawn challenge and gain a tempo.",
+      "explanation": "exd5 forces Black to recapture with the queen, allowing Nc3 with a gain of time.",
+      "engineEval": {
+        "scoreCentipawns": 71,
+        "bestMoveUci": "e4d5",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_34_ex_2",
+      "context": "Day 34: Prophylaxis & Restriction",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "d4"
+      ],
+      "executedUci": [
+        "d2d4"
+      ],
+      "motif": "Pawn Lever Strike",
+      "instruction": "White to move: Execute the central pawn lever to break Black's center.",
+      "explanation": "d4 strikes at the base of Black's e5 outpost, opening central diagonals.",
+      "engineEval": {
+        "scoreCentipawns": 40,
+        "bestMoveUci": "d2d4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_35_ex_1",
+      "context": "Day 35: Milestone Exam: Strategy",
+      "valid": true,
+      "failures": [],
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "exd5"
+      ],
+      "executedUci": [
+        "e4d5"
+      ],
+      "motif": "Central Pawn Liquidation",
+      "instruction": "White to move: Eliminate the central pawn challenge and gain a tempo.",
+      "explanation": "exd5 forces Black to recapture with the queen, allowing Nc3 with a gain of time.",
+      "engineEval": {
+        "scoreCentipawns": 71,
+        "bestMoveUci": "e4d5",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_35_ex_2",
+      "context": "Day 35: Milestone Exam: Strategy",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "d4"
+      ],
+      "executedUci": [
+        "d2d4"
+      ],
+      "motif": "Pawn Lever Strike",
+      "instruction": "White to move: Execute the central pawn lever to break Black's center.",
+      "explanation": "d4 strikes at the base of Black's e5 outpost, opening central diagonals.",
+      "engineEval": {
+        "scoreCentipawns": 40,
+        "bestMoveUci": "d2d4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_36_ex_1",
+      "context": "Day 36: Weak Squares & Holes",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P1n1/2NP1N2/PPP2PPP/R1BQK2R w KQkq - 1 6",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Prophylactic Castling Under Fire",
+      "instruction": "White to move: Neutralize Black's kingside battery by castling safely.",
+      "explanation": "O-O brings the king to safety and protects f2 with the rook.",
+      "engineEval": {
+        "scoreCentipawns": 107,
+        "bestMoveUci": "c4f7",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_36_ex_2",
+      "context": "Day 36: Weak Squares & Holes",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ng5"
+      ],
+      "executedUci": [
+        "f3g5"
+      ],
+      "motif": "F7 Aggressive Attack",
+      "instruction": "White to move: Launch an aggressive attack against Black's uncastled f7 weakness.",
+      "explanation": "Ng5 coordinates with c4 to strike f7 before Black can castle.",
+      "engineEval": {
+        "scoreCentipawns": 5,
+        "bestMoveUci": "f3g5",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_37_ex_1",
+      "context": "Day 37: Principle of Two Weaknesses",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P1n1/2NP1N2/PPP2PPP/R1BQK2R w KQkq - 1 6",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Prophylactic Castling Under Fire",
+      "instruction": "White to move: Neutralize Black's kingside battery by castling safely.",
+      "explanation": "O-O brings the king to safety and protects f2 with the rook.",
+      "engineEval": {
+        "scoreCentipawns": 107,
+        "bestMoveUci": "c4f7",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_37_ex_2",
+      "context": "Day 37: Principle of Two Weaknesses",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ng5"
+      ],
+      "executedUci": [
+        "f3g5"
+      ],
+      "motif": "F7 Aggressive Attack",
+      "instruction": "White to move: Launch an aggressive attack against Black's uncastled f7 weakness.",
+      "explanation": "Ng5 coordinates with c4 to strike f7 before Black can castle.",
+      "engineEval": {
+        "scoreCentipawns": 15,
+        "bestMoveUci": "f3g5",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_38_ex_1",
+      "context": "Day 38: Favorable Piece Exchanges",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P1n1/2NP1N2/PPP2PPP/R1BQK2R w KQkq - 1 6",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Prophylactic Castling Under Fire",
+      "instruction": "White to move: Neutralize Black's kingside battery by castling safely.",
+      "explanation": "O-O brings the king to safety and protects f2 with the rook.",
+      "engineEval": {
+        "scoreCentipawns": 107,
+        "bestMoveUci": "c4f7",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_38_ex_2",
+      "context": "Day 38: Favorable Piece Exchanges",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ng5"
+      ],
+      "executedUci": [
+        "f3g5"
+      ],
+      "motif": "F7 Aggressive Attack",
+      "instruction": "White to move: Launch an aggressive attack against Black's uncastled f7 weakness.",
+      "explanation": "Ng5 coordinates with c4 to strike f7 before Black can castle.",
+      "engineEval": {
+        "scoreCentipawns": 15,
+        "bestMoveUci": "f3g5",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_39_ex_1",
+      "context": "Day 39: Restricting Minor Pieces",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P1n1/2NP1N2/PPP2PPP/R1BQK2R w KQkq - 1 6",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Prophylactic Castling Under Fire",
+      "instruction": "White to move: Neutralize Black's kingside battery by castling safely.",
+      "explanation": "O-O brings the king to safety and protects f2 with the rook.",
+      "engineEval": {
+        "scoreCentipawns": 107,
+        "bestMoveUci": "c4f7",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_39_ex_2",
+      "context": "Day 39: Restricting Minor Pieces",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ng5"
+      ],
+      "executedUci": [
+        "f3g5"
+      ],
+      "motif": "F7 Aggressive Attack",
+      "instruction": "White to move: Launch an aggressive attack against Black's uncastled f7 weakness.",
+      "explanation": "Ng5 coordinates with c4 to strike f7 before Black can castle.",
+      "engineEval": {
+        "scoreCentipawns": 15,
+        "bestMoveUci": "f3g5",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_40_ex_1",
+      "context": "Day 40: Patient Maneuvering",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P1n1/2NP1N2/PPP2PPP/R1BQK2R w KQkq - 1 6",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Prophylactic Castling Under Fire",
+      "instruction": "White to move: Neutralize Black's kingside battery by castling safely.",
+      "explanation": "O-O brings the king to safety and protects f2 with the rook.",
+      "engineEval": {
+        "scoreCentipawns": 107,
+        "bestMoveUci": "c4f7",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_40_ex_2",
+      "context": "Day 40: Patient Maneuvering",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ng5"
+      ],
+      "executedUci": [
+        "f3g5"
+      ],
+      "motif": "F7 Aggressive Attack",
+      "instruction": "White to move: Launch an aggressive attack against Black's uncastled f7 weakness.",
+      "explanation": "Ng5 coordinates with c4 to strike f7 before Black can castle.",
+      "engineEval": {
+        "scoreCentipawns": 15,
+        "bestMoveUci": "f3g5",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_41_ex_1",
+      "context": "Day 41: Transforming Advantages",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P1n1/2NP1N2/PPP2PPP/R1BQK2R w KQkq - 1 6",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Prophylactic Castling Under Fire",
+      "instruction": "White to move: Neutralize Black's kingside battery by castling safely.",
+      "explanation": "O-O brings the king to safety and protects f2 with the rook.",
+      "engineEval": {
+        "scoreCentipawns": 107,
+        "bestMoveUci": "c4f7",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_41_ex_2",
+      "context": "Day 41: Transforming Advantages",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ng5"
+      ],
+      "executedUci": [
+        "f3g5"
+      ],
+      "motif": "F7 Aggressive Attack",
+      "instruction": "White to move: Launch an aggressive attack against Black's uncastled f7 weakness.",
+      "explanation": "Ng5 coordinates with c4 to strike f7 before Black can castle.",
+      "engineEval": {
+        "scoreCentipawns": 15,
+        "bestMoveUci": "f3g5",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_42_ex_1",
+      "context": "Day 42: Grand Milestone: Strategy",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P1n1/2NP1N2/PPP2PPP/R1BQK2R w KQkq - 1 6",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Prophylactic Castling Under Fire",
+      "instruction": "White to move: Neutralize Black's kingside battery by castling safely.",
+      "explanation": "O-O brings the king to safety and protects f2 with the rook.",
+      "engineEval": {
+        "scoreCentipawns": 107,
+        "bestMoveUci": "c4f7",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_42_ex_2",
+      "context": "Day 42: Grand Milestone: Strategy",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ng5"
+      ],
+      "executedUci": [
+        "f3g5"
+      ],
+      "motif": "F7 Aggressive Attack",
+      "instruction": "White to move: Launch an aggressive attack against Black's uncastled f7 weakness.",
+      "explanation": "Ng5 coordinates with c4 to strike f7 before Black can castle.",
+      "engineEval": {
+        "scoreCentipawns": 15,
+        "bestMoveUci": "f3g5",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_43_ex_1",
+      "context": "Day 43: Pawn Chains & Base Attacks",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/4k3/8/8/4K3/8 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ke3"
+      ],
+      "executedUci": [
+        "e2e3"
+      ],
+      "motif": "Direct Vertical Opposition",
+      "instruction": "White to move: Seize the direct vertical opposition in the king and pawn ending.",
+      "explanation": "Ke3 claims vertical opposition, denying Black's king forward entry.",
+      "engineEval": {
+        "scoreCentipawns": 17,
+        "bestMoveUci": "e2e3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_43_ex_2",
+      "context": "Day 43: Pawn Chains & Base Attacks",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/8/8/4k3/8/R3K3 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ra3+"
+      ],
+      "executedUci": [
+        "a1a3"
+      ],
+      "motif": "Rook Rank Cutoff",
+      "instruction": "White to move: Cut off the enemy king along the 3rd rank.",
+      "explanation": "Ra3+ drives the king backward and restricts its escape squares.",
+      "engineEval": {
+        "scoreCentipawns": 468,
+        "bestMoveUci": "a1a3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_44_ex_1",
+      "context": "Day 44: The Carlsbad Structure",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/4k3/8/8/4K3/8 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ke3"
+      ],
+      "executedUci": [
+        "e2e3"
+      ],
+      "motif": "Direct Vertical Opposition",
+      "instruction": "White to move: Seize the direct vertical opposition in the king and pawn ending.",
+      "explanation": "Ke3 claims vertical opposition, denying Black's king forward entry.",
+      "engineEval": {
+        "scoreCentipawns": 11,
+        "bestMoveUci": "e2e3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_44_ex_2",
+      "context": "Day 44: The Carlsbad Structure",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/8/8/4k3/8/R3K3 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ra3+"
+      ],
+      "executedUci": [
+        "a1a3"
+      ],
+      "motif": "Rook Rank Cutoff",
+      "instruction": "White to move: Cut off the enemy king along the 3rd rank.",
+      "explanation": "Ra3+ drives the king backward and restricts its escape squares.",
+      "engineEval": {
+        "scoreCentipawns": 467,
+        "bestMoveUci": "a1a3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_45_ex_1",
+      "context": "Day 45: Isolated Queen Pawn (IQP)",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/4k3/8/8/4K3/8 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ke3"
+      ],
+      "executedUci": [
+        "e2e3"
+      ],
+      "motif": "Direct Vertical Opposition",
+      "instruction": "White to move: Seize the direct vertical opposition in the king and pawn ending.",
+      "explanation": "Ke3 claims vertical opposition, denying Black's king forward entry.",
+      "engineEval": {
+        "scoreCentipawns": 7,
+        "bestMoveUci": "e2e3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_45_ex_2",
+      "context": "Day 45: Isolated Queen Pawn (IQP)",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/8/8/4k3/8/R3K3 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ra3+"
+      ],
+      "executedUci": [
+        "a1a3"
+      ],
+      "motif": "Rook Rank Cutoff",
+      "instruction": "White to move: Cut off the enemy king along the 3rd rank.",
+      "explanation": "Ra3+ drives the king backward and restricts its escape squares.",
+      "engineEval": {
+        "scoreCentipawns": 467,
+        "bestMoveUci": "a1a3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_46_ex_1",
+      "context": "Day 46: Hanging Pawns (c4/d4)",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/4k3/8/8/4K3/8 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ke3"
+      ],
+      "executedUci": [
+        "e2e3"
+      ],
+      "motif": "Direct Vertical Opposition",
+      "instruction": "White to move: Seize the direct vertical opposition in the king and pawn ending.",
+      "explanation": "Ke3 claims vertical opposition, denying Black's king forward entry.",
+      "engineEval": {
+        "scoreCentipawns": 3,
+        "bestMoveUci": "e2e3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_46_ex_2",
+      "context": "Day 46: Hanging Pawns (c4/d4)",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/8/8/4k3/8/R3K3 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ra3+"
+      ],
+      "executedUci": [
+        "a1a3"
+      ],
+      "motif": "Rook Rank Cutoff",
+      "instruction": "White to move: Cut off the enemy king along the 3rd rank.",
+      "explanation": "Ra3+ drives the king backward and restricts its escape squares.",
+      "engineEval": {
+        "scoreCentipawns": 460,
+        "bestMoveUci": "a1a3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_47_ex_1",
+      "context": "Day 47: Backward & Doubled Pawns",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/4k3/8/8/4K3/8 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ke3"
+      ],
+      "executedUci": [
+        "e2e3"
+      ],
+      "motif": "Direct Vertical Opposition",
+      "instruction": "White to move: Seize the direct vertical opposition in the king and pawn ending.",
+      "explanation": "Ke3 claims vertical opposition, denying Black's king forward entry.",
+      "engineEval": {
+        "scoreCentipawns": 3,
+        "bestMoveUci": "e2e3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_47_ex_2",
+      "context": "Day 47: Backward & Doubled Pawns",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/8/8/4k3/8/R3K3 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ra3+"
+      ],
+      "executedUci": [
+        "a1a3"
+      ],
+      "motif": "Rook Rank Cutoff",
+      "instruction": "White to move: Cut off the enemy king along the 3rd rank.",
+      "explanation": "Ra3+ drives the king backward and restricts its escape squares.",
+      "engineEval": {
+        "scoreCentipawns": 465,
+        "bestMoveUci": "a1a3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_48_ex_1",
+      "context": "Day 48: The Maroczy Bind (c4/e4)",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/4k3/8/8/4K3/8 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ke3"
+      ],
+      "executedUci": [
+        "e2e3"
+      ],
+      "motif": "Direct Vertical Opposition",
+      "instruction": "White to move: Seize the direct vertical opposition in the king and pawn ending.",
+      "explanation": "Ke3 claims vertical opposition, denying Black's king forward entry.",
+      "engineEval": {
+        "scoreCentipawns": 0,
+        "bestMoveUci": "e2e3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_48_ex_2",
+      "context": "Day 48: The Maroczy Bind (c4/e4)",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/8/8/4k3/8/R3K3 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ra3+"
+      ],
+      "executedUci": [
+        "a1a3"
+      ],
+      "motif": "Rook Rank Cutoff",
+      "instruction": "White to move: Cut off the enemy king along the 3rd rank.",
+      "explanation": "Ra3+ drives the king backward and restricts its escape squares.",
+      "engineEval": {
+        "scoreCentipawns": 469,
+        "bestMoveUci": "a1a3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_49_ex_1",
+      "context": "Day 49: Milestone Exam: Pawn Breaks",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/4k3/8/8/4K3/8 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ke3"
+      ],
+      "executedUci": [
+        "e2e3"
+      ],
+      "motif": "Direct Vertical Opposition",
+      "instruction": "White to move: Seize the direct vertical opposition in the king and pawn ending.",
+      "explanation": "Ke3 claims vertical opposition, denying Black's king forward entry.",
+      "engineEval": {
+        "scoreCentipawns": 1,
+        "bestMoveUci": "e2e3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_49_ex_2",
+      "context": "Day 49: Milestone Exam: Pawn Breaks",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/8/8/4k3/8/R3K3 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ra3+"
+      ],
+      "executedUci": [
+        "a1a3"
+      ],
+      "motif": "Rook Rank Cutoff",
+      "instruction": "White to move: Cut off the enemy king along the 3rd rank.",
+      "explanation": "Ra3+ drives the king backward and restricts its escape squares.",
+      "engineEval": {
+        "scoreCentipawns": 474,
+        "bestMoveUci": "a1a3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_50_ex_1",
+      "context": "Day 50: French Defense Pawn Chains",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/4k3/8/8/4K3/8 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ke3"
+      ],
+      "executedUci": [
+        "e2e3"
+      ],
+      "motif": "Direct Vertical Opposition",
+      "instruction": "White to move: Seize the direct vertical opposition in the king and pawn ending.",
+      "explanation": "Ke3 claims vertical opposition, denying Black's king forward entry.",
+      "engineEval": {
+        "scoreCentipawns": 1,
+        "bestMoveUci": "e2e3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_50_ex_2",
+      "context": "Day 50: French Defense Pawn Chains",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/8/8/4k3/8/R3K3 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ra3+"
+      ],
+      "executedUci": [
+        "a1a3"
+      ],
+      "motif": "Rook Rank Cutoff",
+      "instruction": "White to move: Cut off the enemy king along the 3rd rank.",
+      "explanation": "Ra3+ drives the king backward and restricts its escape squares.",
+      "engineEval": {
+        "scoreCentipawns": 473,
+        "bestMoveUci": "a1a3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_51_ex_1",
+      "context": "Day 51: King's Indian Closed Chains",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/4k3/8/8/4K3/8 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ke3"
+      ],
+      "executedUci": [
+        "e2e3"
+      ],
+      "motif": "Direct Vertical Opposition",
+      "instruction": "White to move: Seize the direct vertical opposition in the king and pawn ending.",
+      "explanation": "Ke3 claims vertical opposition, denying Black's king forward entry.",
+      "engineEval": {
+        "scoreCentipawns": 1,
+        "bestMoveUci": "e2e3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_51_ex_2",
+      "context": "Day 51: King's Indian Closed Chains",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/8/8/4k3/8/R3K3 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ra3+"
+      ],
+      "executedUci": [
+        "a1a3"
+      ],
+      "motif": "Rook Rank Cutoff",
+      "instruction": "White to move: Cut off the enemy king along the 3rd rank.",
+      "explanation": "Ra3+ drives the king backward and restricts its escape squares.",
+      "engineEval": {
+        "scoreCentipawns": 464,
+        "bestMoveUci": "a1a3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_52_ex_1",
+      "context": "Day 52: Pawn Levers & Space Control",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/4k3/8/8/4K3/8 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ke3"
+      ],
+      "executedUci": [
+        "e2e3"
+      ],
+      "motif": "Direct Vertical Opposition",
+      "instruction": "White to move: Seize the direct vertical opposition in the king and pawn ending.",
+      "explanation": "Ke3 claims vertical opposition, denying Black's king forward entry.",
+      "engineEval": {
+        "scoreCentipawns": 1,
+        "bestMoveUci": "e2e3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_52_ex_2",
+      "context": "Day 52: Pawn Levers & Space Control",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/8/8/4k3/8/R3K3 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ra3+"
+      ],
+      "executedUci": [
+        "a1a3"
+      ],
+      "motif": "Rook Rank Cutoff",
+      "instruction": "White to move: Cut off the enemy king along the 3rd rank.",
+      "explanation": "Ra3+ drives the king backward and restricts its escape squares.",
+      "engineEval": {
+        "scoreCentipawns": 464,
+        "bestMoveUci": "a1a3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_53_ex_1",
+      "context": "Day 53: Middlegame Passed Pawns",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/4k3/8/8/4K3/8 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ke3"
+      ],
+      "executedUci": [
+        "e2e3"
+      ],
+      "motif": "Direct Vertical Opposition",
+      "instruction": "White to move: Seize the direct vertical opposition in the king and pawn ending.",
+      "explanation": "Ke3 claims vertical opposition, denying Black's king forward entry.",
+      "engineEval": {
+        "scoreCentipawns": 1,
+        "bestMoveUci": "e2e3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_53_ex_2",
+      "context": "Day 53: Middlegame Passed Pawns",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/8/8/4k3/8/R3K3 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ra3+"
+      ],
+      "executedUci": [
+        "a1a3"
+      ],
+      "motif": "Rook Rank Cutoff",
+      "instruction": "White to move: Cut off the enemy king along the 3rd rank.",
+      "explanation": "Ra3+ drives the king backward and restricts its escape squares.",
+      "engineEval": {
+        "scoreCentipawns": 464,
+        "bestMoveUci": "a1a3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_54_ex_1",
+      "context": "Day 54: Pawn Majority Conversion",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/4k3/8/8/4K3/8 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ke3"
+      ],
+      "executedUci": [
+        "e2e3"
+      ],
+      "motif": "Direct Vertical Opposition",
+      "instruction": "White to move: Seize the direct vertical opposition in the king and pawn ending.",
+      "explanation": "Ke3 claims vertical opposition, denying Black's king forward entry.",
+      "engineEval": {
+        "scoreCentipawns": 1,
+        "bestMoveUci": "e2e3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_54_ex_2",
+      "context": "Day 54: Pawn Majority Conversion",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/8/8/4k3/8/R3K3 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ra3+"
+      ],
+      "executedUci": [
+        "a1a3"
+      ],
+      "motif": "Rook Rank Cutoff",
+      "instruction": "White to move: Cut off the enemy king along the 3rd rank.",
+      "explanation": "Ra3+ drives the king backward and restricts its escape squares.",
+      "engineEval": {
+        "scoreCentipawns": 464,
+        "bestMoveUci": "a1a3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_55_ex_1",
+      "context": "Day 55: Positional Pawn Sacrifices",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/4k3/8/8/4K3/8 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ke3"
+      ],
+      "executedUci": [
+        "e2e3"
+      ],
+      "motif": "Direct Vertical Opposition",
+      "instruction": "White to move: Seize the direct vertical opposition in the king and pawn ending.",
+      "explanation": "Ke3 claims vertical opposition, denying Black's king forward entry.",
+      "engineEval": {
+        "scoreCentipawns": 1,
+        "bestMoveUci": "e2e3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_55_ex_2",
+      "context": "Day 55: Positional Pawn Sacrifices",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/8/8/4k3/8/R3K3 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ra3+"
+      ],
+      "executedUci": [
+        "a1a3"
+      ],
+      "motif": "Rook Rank Cutoff",
+      "instruction": "White to move: Cut off the enemy king along the 3rd rank.",
+      "explanation": "Ra3+ drives the king backward and restricts its escape squares.",
+      "engineEval": {
+        "scoreCentipawns": 464,
+        "bestMoveUci": "a1a3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_56_ex_1",
+      "context": "Day 56: Grand Milestone: Pawn Mastery",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/4k3/8/8/4K3/8 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ke3"
+      ],
+      "executedUci": [
+        "e2e3"
+      ],
+      "motif": "Direct Vertical Opposition",
+      "instruction": "White to move: Seize the direct vertical opposition in the king and pawn ending.",
+      "explanation": "Ke3 claims vertical opposition, denying Black's king forward entry.",
+      "engineEval": {
+        "scoreCentipawns": 1,
+        "bestMoveUci": "e2e3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_56_ex_2",
+      "context": "Day 56: Grand Milestone: Pawn Mastery",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/8/8/4k3/8/R3K3 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ra3+"
+      ],
+      "executedUci": [
+        "a1a3"
+      ],
+      "motif": "Rook Rank Cutoff",
+      "instruction": "White to move: Cut off the enemy king along the 3rd rank.",
+      "explanation": "Ra3+ drives the king backward and restricts its escape squares.",
+      "engineEval": {
+        "scoreCentipawns": 464,
+        "bestMoveUci": "a1a3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_57_ex_1",
+      "context": "Day 57: King & Pawn: The Opposition",
+      "valid": true,
+      "failures": [],
+      "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR w KQkq - 2 3",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Nf3"
+      ],
+      "executedUci": [
+        "g1f3"
+      ],
+      "motif": "Classical Piece Development",
+      "instruction": "White to move: Develop the kingside knight toward the center in the Vienna/Four Knights.",
+      "explanation": "Nf3 develops with tempo, contesting the e5 central pawn.",
+      "engineEval": {
+        "scoreCentipawns": 20,
+        "bestMoveUci": "g1f3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_57_ex_2",
+      "context": "Day 57: King & Pawn: The Opposition",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
+      "sideToPlay": "black",
+      "solutionSan": [
+        "Nf6"
+      ],
+      "executedUci": [
+        "g8f6"
+      ],
+      "motif": "Italian Defense - Two Knights",
+      "instruction": "Black to move: Counter-attack White's e4 pawn in the Italian Game.",
+      "explanation": "Nf6 develops Black's kingside knight and attacks e4 directly.",
+      "engineEval": {
+        "scoreCentipawns": -15,
+        "bestMoveUci": "g8f6",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_58_ex_1",
+      "context": "Day 58: King & Pawn: Rule of Square",
+      "valid": true,
+      "failures": [],
+      "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR w KQkq - 2 3",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Nf3"
+      ],
+      "executedUci": [
+        "g1f3"
+      ],
+      "motif": "Classical Piece Development",
+      "instruction": "White to move: Develop the kingside knight toward the center in the Vienna/Four Knights.",
+      "explanation": "Nf3 develops with tempo, contesting the e5 central pawn.",
+      "engineEval": {
+        "scoreCentipawns": 31,
+        "bestMoveUci": "g1f3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_58_ex_2",
+      "context": "Day 58: King & Pawn: Rule of Square",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
+      "sideToPlay": "black",
+      "solutionSan": [
+        "Nf6"
+      ],
+      "executedUci": [
+        "g8f6"
+      ],
+      "motif": "Italian Defense - Two Knights",
+      "instruction": "Black to move: Counter-attack White's e4 pawn in the Italian Game.",
+      "explanation": "Nf6 develops Black's kingside knight and attacks e4 directly.",
+      "engineEval": {
+        "scoreCentipawns": -11,
+        "bestMoveUci": "g8f6",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_59_ex_1",
+      "context": "Day 59: Triangulation & Zugzwang",
+      "valid": true,
+      "failures": [],
+      "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR w KQkq - 2 3",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Nf3"
+      ],
+      "executedUci": [
+        "g1f3"
+      ],
+      "motif": "Classical Piece Development",
+      "instruction": "White to move: Develop the kingside knight toward the center in the Vienna/Four Knights.",
+      "explanation": "Nf3 develops with tempo, contesting the e5 central pawn.",
+      "engineEval": {
+        "scoreCentipawns": 34,
+        "bestMoveUci": "g1f3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_59_ex_2",
+      "context": "Day 59: Triangulation & Zugzwang",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
+      "sideToPlay": "black",
+      "solutionSan": [
+        "Nf6"
+      ],
+      "executedUci": [
+        "g8f6"
+      ],
+      "motif": "Italian Defense - Two Knights",
+      "instruction": "Black to move: Counter-attack White's e4 pawn in the Italian Game.",
+      "explanation": "Nf6 develops Black's kingside knight and attacks e4 directly.",
+      "engineEval": {
+        "scoreCentipawns": -11,
+        "bestMoveUci": "g8f6",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_60_ex_1",
+      "context": "Day 60: The Reti Diagonal Maneuver",
+      "valid": true,
+      "failures": [],
+      "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR w KQkq - 2 3",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Nf3"
+      ],
+      "executedUci": [
+        "g1f3"
+      ],
+      "motif": "Classical Piece Development",
+      "instruction": "White to move: Develop the kingside knight toward the center in the Vienna/Four Knights.",
+      "explanation": "Nf3 develops with tempo, contesting the e5 central pawn.",
+      "engineEval": {
+        "scoreCentipawns": 34,
+        "bestMoveUci": "g1f3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_60_ex_2",
+      "context": "Day 60: The Reti Diagonal Maneuver",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
+      "sideToPlay": "black",
+      "solutionSan": [
+        "Nf6"
+      ],
+      "executedUci": [
+        "g8f6"
+      ],
+      "motif": "Italian Defense - Two Knights",
+      "instruction": "Black to move: Counter-attack White's e4 pawn in the Italian Game.",
+      "explanation": "Nf6 develops Black's kingside knight and attacks e4 directly.",
+      "engineEval": {
+        "scoreCentipawns": -11,
+        "bestMoveUci": "g8f6",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_61_ex_1",
+      "context": "Day 61: Rook Endgames: Lucena Bridge",
+      "valid": true,
+      "failures": [],
+      "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR w KQkq - 2 3",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Nf3"
+      ],
+      "executedUci": [
+        "g1f3"
+      ],
+      "motif": "Classical Piece Development",
+      "instruction": "White to move: Develop the kingside knight toward the center in the Vienna/Four Knights.",
+      "explanation": "Nf3 develops with tempo, contesting the e5 central pawn.",
+      "engineEval": {
+        "scoreCentipawns": 34,
+        "bestMoveUci": "g1f3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_61_ex_2",
+      "context": "Day 61: Rook Endgames: Lucena Bridge",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
+      "sideToPlay": "black",
+      "solutionSan": [
+        "Nf6"
+      ],
+      "executedUci": [
+        "g8f6"
+      ],
+      "motif": "Italian Defense - Two Knights",
+      "instruction": "Black to move: Counter-attack White's e4 pawn in the Italian Game.",
+      "explanation": "Nf6 develops Black's kingside knight and attacks e4 directly.",
+      "engineEval": {
+        "scoreCentipawns": -11,
+        "bestMoveUci": "g8f6",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_62_ex_1",
+      "context": "Day 62: Rook Endgames: Philidor Defense",
+      "valid": true,
+      "failures": [],
+      "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR w KQkq - 2 3",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Nf3"
+      ],
+      "executedUci": [
+        "g1f3"
+      ],
+      "motif": "Classical Piece Development",
+      "instruction": "White to move: Develop the kingside knight toward the center in the Vienna/Four Knights.",
+      "explanation": "Nf3 develops with tempo, contesting the e5 central pawn.",
+      "engineEval": {
+        "scoreCentipawns": 34,
+        "bestMoveUci": "g1f3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_62_ex_2",
+      "context": "Day 62: Rook Endgames: Philidor Defense",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
+      "sideToPlay": "black",
+      "solutionSan": [
+        "Nf6"
+      ],
+      "executedUci": [
+        "g8f6"
+      ],
+      "motif": "Italian Defense - Two Knights",
+      "instruction": "Black to move: Counter-attack White's e4 pawn in the Italian Game.",
+      "explanation": "Nf6 develops Black's kingside knight and attacks e4 directly.",
+      "engineEval": {
+        "scoreCentipawns": -11,
+        "bestMoveUci": "g8f6",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_63_ex_1",
+      "context": "Day 63: Milestone Exam: Core Endgames",
+      "valid": true,
+      "failures": [],
+      "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR w KQkq - 2 3",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Nf3"
+      ],
+      "executedUci": [
+        "g1f3"
+      ],
+      "motif": "Classical Piece Development",
+      "instruction": "White to move: Develop the kingside knight toward the center in the Vienna/Four Knights.",
+      "explanation": "Nf3 develops with tempo, contesting the e5 central pawn.",
+      "engineEval": {
+        "scoreCentipawns": 34,
+        "bestMoveUci": "g1f3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_63_ex_2",
+      "context": "Day 63: Milestone Exam: Core Endgames",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
+      "sideToPlay": "black",
+      "solutionSan": [
+        "Nf6"
+      ],
+      "executedUci": [
+        "g8f6"
+      ],
+      "motif": "Italian Defense - Two Knights",
+      "instruction": "Black to move: Counter-attack White's e4 pawn in the Italian Game.",
+      "explanation": "Nf6 develops Black's kingside knight and attacks e4 directly.",
+      "engineEval": {
+        "scoreCentipawns": -11,
+        "bestMoveUci": "g8f6",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_64_ex_1",
+      "context": "Day 64: Active Rook Supremacy",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "d3"
+      ],
+      "executedUci": [
+        "d2d3"
+      ],
+      "motif": "Positional Harmony",
+      "instruction": "White to move: Solidify your central pawn structure and improve piece harmony.",
+      "explanation": "d3 reinforces e4 and harmoniously frees the c1 bishop diagonal.",
+      "engineEval": {
+        "scoreCentipawns": 763,
+        "bestMoveUci": "c4b3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_64_ex_2",
+      "context": "Day 64: Active Rook Supremacy",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Harmonic King Safety",
+      "instruction": "White to move: Complete kingside development and connect the rooks.",
+      "explanation": "O-O brings the king to safety and readies the rook for central file operations.",
+      "engineEval": {
+        "scoreCentipawns": 782,
+        "bestMoveUci": "a2a4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_65_ex_1",
+      "context": "Day 65: Vancura Defense & Flank Checks",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "d3"
+      ],
+      "executedUci": [
+        "d2d3"
+      ],
+      "motif": "Positional Harmony",
+      "instruction": "White to move: Solidify your central pawn structure and improve piece harmony.",
+      "explanation": "d3 reinforces e4 and harmoniously frees the c1 bishop diagonal.",
+      "engineEval": {
+        "scoreCentipawns": 755,
+        "bestMoveUci": "c4b3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_65_ex_2",
+      "context": "Day 65: Vancura Defense & Flank Checks",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Harmonic King Safety",
+      "instruction": "White to move: Complete kingside development and connect the rooks.",
+      "explanation": "O-O brings the king to safety and readies the rook for central file operations.",
+      "engineEval": {
+        "scoreCentipawns": 782,
+        "bestMoveUci": "a2a4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_66_ex_1",
+      "context": "Day 66: Same-Colored Bishop Endgames",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "d3"
+      ],
+      "executedUci": [
+        "d2d3"
+      ],
+      "motif": "Positional Harmony",
+      "instruction": "White to move: Solidify your central pawn structure and improve piece harmony.",
+      "explanation": "d3 reinforces e4 and harmoniously frees the c1 bishop diagonal.",
+      "engineEval": {
+        "scoreCentipawns": 755,
+        "bestMoveUci": "c4b3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_66_ex_2",
+      "context": "Day 66: Same-Colored Bishop Endgames",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Harmonic King Safety",
+      "instruction": "White to move: Complete kingside development and connect the rooks.",
+      "explanation": "O-O brings the king to safety and readies the rook for central file operations.",
+      "engineEval": {
+        "scoreCentipawns": 782,
+        "bestMoveUci": "a2a4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_67_ex_1",
+      "context": "Day 67: Opposite-Colored Bishop Fortresses",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "d3"
+      ],
+      "executedUci": [
+        "d2d3"
+      ],
+      "motif": "Positional Harmony",
+      "instruction": "White to move: Solidify your central pawn structure and improve piece harmony.",
+      "explanation": "d3 reinforces e4 and harmoniously frees the c1 bishop diagonal.",
+      "engineEval": {
+        "scoreCentipawns": 768,
+        "bestMoveUci": "c4b3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_67_ex_2",
+      "context": "Day 67: Opposite-Colored Bishop Fortresses",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Harmonic King Safety",
+      "instruction": "White to move: Complete kingside development and connect the rooks.",
+      "explanation": "O-O brings the king to safety and readies the rook for central file operations.",
+      "engineEval": {
+        "scoreCentipawns": 782,
+        "bestMoveUci": "a2a4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_68_ex_1",
+      "context": "Day 68: Knight vs Bishop Endgames",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "d3"
+      ],
+      "executedUci": [
+        "d2d3"
+      ],
+      "motif": "Positional Harmony",
+      "instruction": "White to move: Solidify your central pawn structure and improve piece harmony.",
+      "explanation": "d3 reinforces e4 and harmoniously frees the c1 bishop diagonal.",
+      "engineEval": {
+        "scoreCentipawns": 768,
+        "bestMoveUci": "c4b3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_68_ex_2",
+      "context": "Day 68: Knight vs Bishop Endgames",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Harmonic King Safety",
+      "instruction": "White to move: Complete kingside development and connect the rooks.",
+      "explanation": "O-O brings the king to safety and readies the rook for central file operations.",
+      "engineEval": {
+        "scoreCentipawns": 735,
+        "bestMoveUci": "c1g5",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_69_ex_1",
+      "context": "Day 69: Queen Endgames & Perpetual",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "d3"
+      ],
+      "executedUci": [
+        "d2d3"
+      ],
+      "motif": "Positional Harmony",
+      "instruction": "White to move: Solidify your central pawn structure and improve piece harmony.",
+      "explanation": "d3 reinforces e4 and harmoniously frees the c1 bishop diagonal.",
+      "engineEval": {
+        "scoreCentipawns": 777,
+        "bestMoveUci": "c4b3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_69_ex_2",
+      "context": "Day 69: Queen Endgames & Perpetual",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Harmonic King Safety",
+      "instruction": "White to move: Complete kingside development and connect the rooks.",
+      "explanation": "O-O brings the king to safety and readies the rook for central file operations.",
+      "engineEval": {
+        "scoreCentipawns": 781,
+        "bestMoveUci": "c1g5",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_70_ex_1",
+      "context": "Day 70: Grand Milestone: Endgames",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "d3"
+      ],
+      "executedUci": [
+        "d2d3"
+      ],
+      "motif": "Positional Harmony",
+      "instruction": "White to move: Solidify your central pawn structure and improve piece harmony.",
+      "explanation": "d3 reinforces e4 and harmoniously frees the c1 bishop diagonal.",
+      "engineEval": {
+        "scoreCentipawns": 777,
+        "bestMoveUci": "c4b3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_70_ex_2",
+      "context": "Day 70: Grand Milestone: Endgames",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Harmonic King Safety",
+      "instruction": "White to move: Complete kingside development and connect the rooks.",
+      "explanation": "O-O brings the king to safety and readies the rook for central file operations.",
+      "engineEval": {
+        "scoreCentipawns": 770,
+        "bestMoveUci": "c1g5",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_71_ex_1",
+      "context": "Day 71: Opening Principles & Harmony",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Grandmaster Positional Transition",
+      "instruction": "White to move: Complete opening mobilization with positional discipline.",
+      "explanation": "O-O secures the king and activates the rook for the middlegame transition.",
+      "engineEval": {
+        "scoreCentipawns": 766,
+        "bestMoveUci": "c1g5",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_71_ex_2",
+      "context": "Day 71: Opening Principles & Harmony",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/4k3/8/8/4K3/8 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ke3"
+      ],
+      "executedUci": [
+        "e2e3"
+      ],
+      "motif": "Capablanca Clinical Conversion",
+      "instruction": "White to move: Demonstrate conversion mastery by taking the opposition.",
+      "explanation": "Ke3 seizes opposition, demonstrating engine-like technical conversion.",
+      "engineEval": {
+        "scoreCentipawns": 1,
+        "bestMoveUci": "e2e3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_72_ex_1",
+      "context": "Day 72: 1.e4 Repertoire: Italian & Scotch",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Grandmaster Positional Transition",
+      "instruction": "White to move: Complete opening mobilization with positional discipline.",
+      "explanation": "O-O secures the king and activates the rook for the middlegame transition.",
+      "engineEval": {
+        "scoreCentipawns": 766,
+        "bestMoveUci": "c1g5",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_72_ex_2",
+      "context": "Day 72: 1.e4 Repertoire: Italian & Scotch",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/4k3/8/8/4K3/8 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ke3"
+      ],
+      "executedUci": [
+        "e2e3"
+      ],
+      "motif": "Capablanca Clinical Conversion",
+      "instruction": "White to move: Demonstrate conversion mastery by taking the opposition.",
+      "explanation": "Ke3 seizes opposition, demonstrating engine-like technical conversion.",
+      "engineEval": {
+        "scoreCentipawns": 1,
+        "bestMoveUci": "e2e3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_73_ex_1",
+      "context": "Day 73: 1.e4 vs The Sicilian Defense",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Grandmaster Positional Transition",
+      "instruction": "White to move: Complete opening mobilization with positional discipline.",
+      "explanation": "O-O secures the king and activates the rook for the middlegame transition.",
+      "engineEval": {
+        "scoreCentipawns": 759,
+        "bestMoveUci": "c1g5",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_73_ex_2",
+      "context": "Day 73: 1.e4 vs The Sicilian Defense",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/4k3/8/8/4K3/8 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ke3"
+      ],
+      "executedUci": [
+        "e2e3"
+      ],
+      "motif": "Capablanca Clinical Conversion",
+      "instruction": "White to move: Demonstrate conversion mastery by taking the opposition.",
+      "explanation": "Ke3 seizes opposition, demonstrating engine-like technical conversion.",
+      "engineEval": {
+        "scoreCentipawns": 1,
+        "bestMoveUci": "e2e3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_74_ex_1",
+      "context": "Day 74: 1.d4 Repertoire: QGD & Catalan",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Grandmaster Positional Transition",
+      "instruction": "White to move: Complete opening mobilization with positional discipline.",
+      "explanation": "O-O secures the king and activates the rook for the middlegame transition.",
+      "engineEval": {
+        "scoreCentipawns": 752,
+        "bestMoveUci": "a2a3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_74_ex_2",
+      "context": "Day 74: 1.d4 Repertoire: QGD & Catalan",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/4k3/8/8/4K3/8 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ke3"
+      ],
+      "executedUci": [
+        "e2e3"
+      ],
+      "motif": "Capablanca Clinical Conversion",
+      "instruction": "White to move: Demonstrate conversion mastery by taking the opposition.",
+      "explanation": "Ke3 seizes opposition, demonstrating engine-like technical conversion.",
+      "engineEval": {
+        "scoreCentipawns": 1,
+        "bestMoveUci": "e2e3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_75_ex_1",
+      "context": "Day 75: 1.c4 English Opening Principles",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Grandmaster Positional Transition",
+      "instruction": "White to move: Complete opening mobilization with positional discipline.",
+      "explanation": "O-O secures the king and activates the rook for the middlegame transition.",
+      "engineEval": {
+        "scoreCentipawns": 752,
+        "bestMoveUci": "a2a3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_75_ex_2",
+      "context": "Day 75: 1.c4 English Opening Principles",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/4k3/8/8/4K3/8 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ke3"
+      ],
+      "executedUci": [
+        "e2e3"
+      ],
+      "motif": "Capablanca Clinical Conversion",
+      "instruction": "White to move: Demonstrate conversion mastery by taking the opposition.",
+      "explanation": "Ke3 seizes opposition, demonstrating engine-like technical conversion.",
+      "engineEval": {
+        "scoreCentipawns": 1,
+        "bestMoveUci": "e2e3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_76_ex_1",
+      "context": "Day 76: Black Repertoire vs 1.e4 & 1.d4",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Grandmaster Positional Transition",
+      "instruction": "White to move: Complete opening mobilization with positional discipline.",
+      "explanation": "O-O secures the king and activates the rook for the middlegame transition.",
+      "engineEval": {
+        "scoreCentipawns": 746,
+        "bestMoveUci": "c1g5",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_76_ex_2",
+      "context": "Day 76: Black Repertoire vs 1.e4 & 1.d4",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/4k3/8/8/4K3/8 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ke3"
+      ],
+      "executedUci": [
+        "e2e3"
+      ],
+      "motif": "Capablanca Clinical Conversion",
+      "instruction": "White to move: Demonstrate conversion mastery by taking the opposition.",
+      "explanation": "Ke3 seizes opposition, demonstrating engine-like technical conversion.",
+      "engineEval": {
+        "scoreCentipawns": 1,
+        "bestMoveUci": "e2e3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_77_ex_1",
+      "context": "Day 77: Milestone Exam: Opening Theory",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Grandmaster Positional Transition",
+      "instruction": "White to move: Complete opening mobilization with positional discipline.",
+      "explanation": "O-O secures the king and activates the rook for the middlegame transition.",
+      "engineEval": {
+        "scoreCentipawns": 788,
+        "bestMoveUci": "c1g5",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_77_ex_2",
+      "context": "Day 77: Milestone Exam: Opening Theory",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/4k3/8/8/4K3/8 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ke3"
+      ],
+      "executedUci": [
+        "e2e3"
+      ],
+      "motif": "Capablanca Clinical Conversion",
+      "instruction": "White to move: Demonstrate conversion mastery by taking the opposition.",
+      "explanation": "Ke3 seizes opposition, demonstrating engine-like technical conversion.",
+      "engineEval": {
+        "scoreCentipawns": 1,
+        "bestMoveUci": "e2e3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_78_ex_1",
+      "context": "Day 78: Punishing Uncastled Kings",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Grandmaster Positional Transition",
+      "instruction": "White to move: Complete opening mobilization with positional discipline.",
+      "explanation": "O-O secures the king and activates the rook for the middlegame transition.",
+      "engineEval": {
+        "scoreCentipawns": 790,
+        "bestMoveUci": "c1g5",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_78_ex_2",
+      "context": "Day 78: Punishing Uncastled Kings",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/4k3/8/8/4K3/8 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ke3"
+      ],
+      "executedUci": [
+        "e2e3"
+      ],
+      "motif": "Capablanca Clinical Conversion",
+      "instruction": "White to move: Demonstrate conversion mastery by taking the opposition.",
+      "explanation": "Ke3 seizes opposition, demonstrating engine-like technical conversion.",
+      "engineEval": {
+        "scoreCentipawns": 1,
+        "bestMoveUci": "e2e3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_79_ex_1",
+      "context": "Day 79: The Greek Gift Sacrifice (Bxh7+)",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Grandmaster Positional Transition",
+      "instruction": "White to move: Complete opening mobilization with positional discipline.",
+      "explanation": "O-O secures the king and activates the rook for the middlegame transition.",
+      "engineEval": {
+        "scoreCentipawns": 790,
+        "bestMoveUci": "c1g5",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_79_ex_2",
+      "context": "Day 79: The Greek Gift Sacrifice (Bxh7+)",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/4k3/8/8/4K3/8 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ke3"
+      ],
+      "executedUci": [
+        "e2e3"
+      ],
+      "motif": "Capablanca Clinical Conversion",
+      "instruction": "White to move: Demonstrate conversion mastery by taking the opposition.",
+      "explanation": "Ke3 seizes opposition, demonstrating engine-like technical conversion.",
+      "engineEval": {
+        "scoreCentipawns": 1,
+        "bestMoveUci": "e2e3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_80_ex_1",
+      "context": "Day 80: Opposite-Side Castling Attacks",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Grandmaster Positional Transition",
+      "instruction": "White to move: Complete opening mobilization with positional discipline.",
+      "explanation": "O-O secures the king and activates the rook for the middlegame transition.",
+      "engineEval": {
+        "scoreCentipawns": 770,
+        "bestMoveUci": "c1g5",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_80_ex_2",
+      "context": "Day 80: Opposite-Side Castling Attacks",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/4k3/8/8/4K3/8 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ke3"
+      ],
+      "executedUci": [
+        "e2e3"
+      ],
+      "motif": "Capablanca Clinical Conversion",
+      "instruction": "White to move: Demonstrate conversion mastery by taking the opposition.",
+      "explanation": "Ke3 seizes opposition, demonstrating engine-like technical conversion.",
+      "engineEval": {
+        "scoreCentipawns": 1,
+        "bestMoveUci": "e2e3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_81_ex_1",
+      "context": "Day 81: Destroying the Castled Shield",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Grandmaster Positional Transition",
+      "instruction": "White to move: Complete opening mobilization with positional discipline.",
+      "explanation": "O-O secures the king and activates the rook for the middlegame transition.",
+      "engineEval": {
+        "scoreCentipawns": 794,
+        "bestMoveUci": "a2a3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_81_ex_2",
+      "context": "Day 81: Destroying the Castled Shield",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/4k3/8/8/4K3/8 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ke3"
+      ],
+      "executedUci": [
+        "e2e3"
+      ],
+      "motif": "Capablanca Clinical Conversion",
+      "instruction": "White to move: Demonstrate conversion mastery by taking the opposition.",
+      "explanation": "Ke3 seizes opposition, demonstrating engine-like technical conversion.",
+      "engineEval": {
+        "scoreCentipawns": 1,
+        "bestMoveUci": "e2e3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_82_ex_1",
+      "context": "Day 82: Tenacious Defensive Resources",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Grandmaster Positional Transition",
+      "instruction": "White to move: Complete opening mobilization with positional discipline.",
+      "explanation": "O-O secures the king and activates the rook for the middlegame transition.",
+      "engineEval": {
+        "scoreCentipawns": 748,
+        "bestMoveUci": "a2a4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_82_ex_2",
+      "context": "Day 82: Tenacious Defensive Resources",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/4k3/8/8/4K3/8 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ke3"
+      ],
+      "executedUci": [
+        "e2e3"
+      ],
+      "motif": "Capablanca Clinical Conversion",
+      "instruction": "White to move: Demonstrate conversion mastery by taking the opposition.",
+      "explanation": "Ke3 seizes opposition, demonstrating engine-like technical conversion.",
+      "engineEval": {
+        "scoreCentipawns": 1,
+        "bestMoveUci": "e2e3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_83_ex_1",
+      "context": "Day 83: Simplification Under Attack",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Grandmaster Positional Transition",
+      "instruction": "White to move: Complete opening mobilization with positional discipline.",
+      "explanation": "O-O secures the king and activates the rook for the middlegame transition.",
+      "engineEval": {
+        "scoreCentipawns": 770,
+        "bestMoveUci": "a2a4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_83_ex_2",
+      "context": "Day 83: Simplification Under Attack",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/4k3/8/8/4K3/8 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ke3"
+      ],
+      "executedUci": [
+        "e2e3"
+      ],
+      "motif": "Capablanca Clinical Conversion",
+      "instruction": "White to move: Demonstrate conversion mastery by taking the opposition.",
+      "explanation": "Ke3 seizes opposition, demonstrating engine-like technical conversion.",
+      "engineEval": {
+        "scoreCentipawns": 1,
+        "bestMoveUci": "e2e3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_84_ex_1",
+      "context": "Day 84: Grand Milestone: Attack & Defense",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Grandmaster Positional Transition",
+      "instruction": "White to move: Complete opening mobilization with positional discipline.",
+      "explanation": "O-O secures the king and activates the rook for the middlegame transition.",
+      "engineEval": {
+        "scoreCentipawns": 770,
+        "bestMoveUci": "a2a4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_84_ex_2",
+      "context": "Day 84: Grand Milestone: Attack & Defense",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/4k3/8/8/4K3/8 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ke3"
+      ],
+      "executedUci": [
+        "e2e3"
+      ],
+      "motif": "Capablanca Clinical Conversion",
+      "instruction": "White to move: Demonstrate conversion mastery by taking the opposition.",
+      "explanation": "Ke3 seizes opposition, demonstrating engine-like technical conversion.",
+      "engineEval": {
+        "scoreCentipawns": 1,
+        "bestMoveUci": "e2e3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_85_ex_1",
+      "context": "Day 85: Material Conversion Protocol",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Grandmaster Positional Transition",
+      "instruction": "White to move: Complete opening mobilization with positional discipline.",
+      "explanation": "O-O secures the king and activates the rook for the middlegame transition.",
+      "engineEval": {
+        "scoreCentipawns": 770,
+        "bestMoveUci": "a2a4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_85_ex_2",
+      "context": "Day 85: Material Conversion Protocol",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/4k3/8/8/4K3/8 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ke3"
+      ],
+      "executedUci": [
+        "e2e3"
+      ],
+      "motif": "Capablanca Clinical Conversion",
+      "instruction": "White to move: Demonstrate conversion mastery by taking the opposition.",
+      "explanation": "Ke3 seizes opposition, demonstrating engine-like technical conversion.",
+      "engineEval": {
+        "scoreCentipawns": 1,
+        "bestMoveUci": "e2e3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_86_ex_1",
+      "context": "Day 86: Model Master Game Guess-the-Move",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Grandmaster Positional Transition",
+      "instruction": "White to move: Complete opening mobilization with positional discipline.",
+      "explanation": "O-O secures the king and activates the rook for the middlegame transition.",
+      "engineEval": {
+        "scoreCentipawns": 770,
+        "bestMoveUci": "a2a4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_86_ex_2",
+      "context": "Day 86: Model Master Game Guess-the-Move",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/4k3/8/8/4K3/8 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ke3"
+      ],
+      "executedUci": [
+        "e2e3"
+      ],
+      "motif": "Capablanca Clinical Conversion",
+      "instruction": "White to move: Demonstrate conversion mastery by taking the opposition.",
+      "explanation": "Ke3 seizes opposition, demonstrating engine-like technical conversion.",
+      "engineEval": {
+        "scoreCentipawns": 1,
+        "bestMoveUci": "e2e3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_87_ex_1",
+      "context": "Day 87: Root Cause Self-Analysis",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Grandmaster Positional Transition",
+      "instruction": "White to move: Complete opening mobilization with positional discipline.",
+      "explanation": "O-O secures the king and activates the rook for the middlegame transition.",
+      "engineEval": {
+        "scoreCentipawns": 770,
+        "bestMoveUci": "a2a4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_87_ex_2",
+      "context": "Day 87: Root Cause Self-Analysis",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/4k3/8/8/4K3/8 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ke3"
+      ],
+      "executedUci": [
+        "e2e3"
+      ],
+      "motif": "Capablanca Clinical Conversion",
+      "instruction": "White to move: Demonstrate conversion mastery by taking the opposition.",
+      "explanation": "Ke3 seizes opposition, demonstrating engine-like technical conversion.",
+      "engineEval": {
+        "scoreCentipawns": 1,
+        "bestMoveUci": "e2e3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_88_ex_1",
+      "context": "Day 88: Tournament Psychology & Discipline",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Grandmaster Positional Transition",
+      "instruction": "White to move: Complete opening mobilization with positional discipline.",
+      "explanation": "O-O secures the king and activates the rook for the middlegame transition.",
+      "engineEval": {
+        "scoreCentipawns": 770,
+        "bestMoveUci": "a2a4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_88_ex_2",
+      "context": "Day 88: Tournament Psychology & Discipline",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/4k3/8/8/4K3/8 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ke3"
+      ],
+      "executedUci": [
+        "e2e3"
+      ],
+      "motif": "Capablanca Clinical Conversion",
+      "instruction": "White to move: Demonstrate conversion mastery by taking the opposition.",
+      "explanation": "Ke3 seizes opposition, demonstrating engine-like technical conversion.",
+      "engineEval": {
+        "scoreCentipawns": 1,
+        "bestMoveUci": "e2e3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_89_ex_1",
+      "context": "Day 89: Competitive Tournament Simulation",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Grandmaster Positional Transition",
+      "instruction": "White to move: Complete opening mobilization with positional discipline.",
+      "explanation": "O-O secures the king and activates the rook for the middlegame transition.",
+      "engineEval": {
+        "scoreCentipawns": 770,
+        "bestMoveUci": "a2a4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_89_ex_2",
+      "context": "Day 89: Competitive Tournament Simulation",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/4k3/8/8/4K3/8 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ke3"
+      ],
+      "executedUci": [
+        "e2e3"
+      ],
+      "motif": "Capablanca Clinical Conversion",
+      "instruction": "White to move: Demonstrate conversion mastery by taking the opposition.",
+      "explanation": "Ke3 seizes opposition, demonstrating engine-like technical conversion.",
+      "engineEval": {
+        "scoreCentipawns": 1,
+        "bestMoveUci": "e2e3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_90_ex_1",
+      "context": "Day 90: Final Capstone Certification — Mastery Assessment & Completion Report",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O"
+      ],
+      "executedUci": [
+        "e1g1"
+      ],
+      "motif": "Grandmaster Positional Transition",
+      "instruction": "White to move: Complete opening mobilization with positional discipline.",
+      "explanation": "O-O secures the king and activates the rook for the middlegame transition.",
+      "engineEval": {
+        "scoreCentipawns": 770,
+        "bestMoveUci": "a2a4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "day_90_ex_2",
+      "context": "Day 90: Final Capstone Certification — Mastery Assessment & Completion Report",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/4k3/8/8/4K3/8 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ke3"
+      ],
+      "executedUci": [
+        "e2e3"
+      ],
+      "motif": "Capablanca Clinical Conversion",
+      "instruction": "White to move: Demonstrate conversion mastery by taking the opposition.",
+      "explanation": "Ke3 seizes opposition, demonstrating engine-like technical conversion.",
+      "engineEval": {
+        "scoreCentipawns": 1,
+        "bestMoveUci": "e2e3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "forkHunter_lvl_1",
+      "context": "Mini-Game: Fork Hunter",
+      "valid": true,
+      "failures": [],
+      "fen": "r3k2r/ppp2ppp/8/3q4/3N4/8/PPP2PPP/R1BQKB1R w KQkq - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Qe2+",
+        "Kd8",
+        "Nc6+"
+      ],
+      "executedUci": [
+        "d1e2",
+        "e8d8",
+        "d4c6"
+      ],
+      "motif": "Fork Hunter",
+      "instruction": "Fork the Black King and Queen with your centralized knight.",
+      "explanation": "Qe2+ forces the king, setting up the devastating knight fork on c6.",
+      "engineEval": {
+        "scoreCentipawns": 1151,
+        "bestMoveUci": "d1e2",
+        "isMate": false
+      }
+    },
+    {
+      "id": "forkHunter_lvl_2",
+      "context": "Mini-Game: Fork Hunter",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "d4",
+        "exd4",
+        "e5"
+      ],
+      "executedUci": [
+        "d2d4",
+        "e5d4",
+        "e4e5"
+      ],
+      "motif": "Fork Hunter",
+      "instruction": "Seize the center and prepare the d4 break fork.",
+      "explanation": "d4 followed by e5 forks the Black minor pieces.",
+      "engineEval": {
+        "scoreCentipawns": 12,
+        "bestMoveUci": "f3g5",
+        "isMate": false
+      }
+    },
+    {
+      "id": "forkHunter_lvl_3",
+      "context": "Mini-Game: Fork Hunter",
+      "valid": true,
+      "failures": [],
+      "fen": "4r1k1/5ppp/8/3q4/8/8/5PPP/4N1K1 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Nf3",
+        "Qxf3",
+        "gxf3"
+      ],
+      "executedUci": [
+        "e1f3",
+        "d5f3",
+        "g2f3"
+      ],
+      "motif": "Fork Hunter",
+      "instruction": "Deliver check on the 8th rank to win the queen.",
+      "explanation": "Removing attacking momentum wins material safely.",
+      "engineEval": {
+        "scoreCentipawns": -1052,
+        "bestMoveUci": "e1d3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "pinBuilder_lvl_1",
+      "context": "Mini-Game: Pin Builder",
+      "valid": true,
+      "failures": [],
+      "fen": "r1b1k2r/pppp1ppp/2n5/4p3/2B1n3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Qe2",
+        "d5",
+        "d3"
+      ],
+      "executedUci": [
+        "d1e2",
+        "d7d5",
+        "d2d3"
+      ],
+      "motif": "Pin Builder",
+      "instruction": "Pin the enemy knight against the uncastled king.",
+      "explanation": "Qe2 creates an absolute pin; d3 then wins the pinned piece.",
+      "engineEval": {
+        "scoreCentipawns": 954,
+        "bestMoveUci": "d2d3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "pinBuilder_lvl_2",
+      "context": "Mini-Game: Pin Builder",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/pp2bppp/2n1pn2/3p4/3P4/2N1PN2/PP2BPPP/R1BQK2R w KQkq - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Bb5",
+        "Bd7",
+        "Bxc6"
+      ],
+      "executedUci": [
+        "e2b5",
+        "c8d7",
+        "b5c6"
+      ],
+      "motif": "Pin Builder",
+      "instruction": "Pin the knight on c6 with your light-squared bishop.",
+      "explanation": "Bb5 pins c6 and breaks down Black's pawn integrity.",
+      "engineEval": {
+        "scoreCentipawns": 2,
+        "bestMoveUci": "h2h3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "skewerHunt_lvl_1",
+      "context": "Mini-Game: Skewer Hunt",
+      "valid": true,
+      "failures": [],
+      "fen": "r7/4k3/8/8/8/8/8/4K2R w K - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Rh7+",
+        "Ke6",
+        "Rxa7"
+      ],
+      "executedUci": [
+        "h1h7",
+        "e7e6",
+        "h7a7"
+      ],
+      "motif": "Skewer Hunt",
+      "instruction": "Skewer the black king on the 7th rank to win the rook on a7.",
+      "explanation": "Rh7+ checks the king, forcing it to step away and leaving the trailing a7 rook undefended.",
+      "engineEval": {
+        "scoreCentipawns": -6,
+        "bestMoveUci": "e1e2",
+        "isMate": false
+      }
+    },
+    {
+      "id": "skewerHunt_lvl_2",
+      "context": "Mini-Game: Skewer Hunt",
+      "valid": true,
+      "failures": [],
+      "fen": "r3k3/8/8/8/8/8/8/B3K3 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Bd4"
+      ],
+      "executedUci": [
+        "a1d4"
+      ],
+      "motif": "Skewer Hunt",
+      "instruction": "Skewer the king and rook on the long diagonal.",
+      "explanation": "Bd4 dominates the long diagonal and coordinates with king play.",
+      "engineEval": {
+        "scoreCentipawns": -10,
+        "bestMoveUci": "a1d4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "kingHunt_lvl_1",
+      "context": "Mini-Game: King Hunt",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Qxf7#"
+      ],
+      "executedUci": [
+        "f3f7"
+      ],
+      "motif": "King Hunt",
+      "instruction": "Deliver instant checkmate against the exposed black monarch.",
+      "explanation": "Qxf7# delivers Scholar's Mate guarded by the c4 bishop.",
+      "engineEval": {
+        "scoreCentipawns": null,
+        "bestMoveUci": "f3f7",
+        "isMate": true
+      }
+    },
+    {
+      "id": "kingHunt_lvl_2",
+      "context": "Mini-Game: King Hunt",
+      "valid": true,
+      "failures": [],
+      "fen": "6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Re8#"
+      ],
+      "executedUci": [
+        "e1e8"
+      ],
+      "motif": "King Hunt",
+      "instruction": "Infiltrate the 8th rank to trap the cornered king.",
+      "explanation": "Re8# delivers the classic corridor corridor mate.",
+      "engineEval": {
+        "scoreCentipawns": null,
+        "bestMoveUci": "e1e8",
+        "isMate": true
+      }
+    },
+    {
+      "id": "defender_lvl_1",
+      "context": "Mini-Game: Defender",
+      "valid": true,
+      "failures": [],
+      "fen": "r1b1k2r/pppp1ppp/8/4q3/8/5Q2/PPP2PPP/RNB1KB1R w KQkq - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Qe2",
+        "Qxe2+",
+        "Bxe2"
+      ],
+      "executedUci": [
+        "f3e2",
+        "e5e2",
+        "f1e2"
+      ],
+      "motif": "Defender",
+      "instruction": "Black checks your exposed king. Find the only stabilizing parry.",
+      "explanation": "Qe2 breaks the attack and allows White to develop the bishop comfortably.",
+      "engineEval": {
+        "scoreCentipawns": 1054,
+        "bestMoveUci": "e1d1",
+        "isMate": false
+      }
+    },
+    {
+      "id": "defender_lvl_2",
+      "context": "Mini-Game: Defender",
+      "valid": true,
+      "failures": [],
+      "fen": "r1b1k2r/ppp2ppp/2n5/3qp3/1b1P4/2N1P3/PP3PPP/R1BQKBNR w KQkq - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Bd2",
+        "Bxc3",
+        "Bxc3"
+      ],
+      "executedUci": [
+        "c1d2",
+        "b4c3",
+        "d2c3"
+      ],
+      "motif": "Defender",
+      "instruction": "Unpin the c3 knight before material is lost.",
+      "explanation": "Bd2 breaks the pin and regains the bishop pair.",
+      "engineEval": {
+        "scoreCentipawns": 799,
+        "bestMoveUci": "c1d2",
+        "isMate": false
+      }
+    },
+    {
+      "id": "pawnBattle_lvl_1",
+      "context": "Mini-Game: Pawn Battle",
+      "valid": true,
+      "failures": [],
+      "fen": "8/5pk1/4p1p1/8/8/5PK1/4P1P1/8 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "f4",
+        "Kf6",
+        "e4"
+      ],
+      "executedUci": [
+        "f3f4",
+        "g7f6",
+        "e2e4"
+      ],
+      "motif": "Pawn Battle",
+      "instruction": "Advance your majority to manufacture an unstoppable passed pawn.",
+      "explanation": "f4 followed by e4 establishes a dynamic pawn rolling wedge.",
+      "engineEval": {
+        "scoreCentipawns": 7,
+        "bestMoveUci": "g3f4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "pawnBattle_lvl_2",
+      "context": "Mini-Game: Pawn Battle",
+      "valid": true,
+      "failures": [],
+      "fen": "8/4P3/8/8/8/8/k7/4K3 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "e8=Q"
+      ],
+      "executedUci": [
+        "e7e8q"
+      ],
+      "motif": "Pawn Battle",
+      "instruction": "Promote the passed pawn to a Queen.",
+      "explanation": "e8=Q queens cleanly; the black king is far outside the square.",
+      "engineEval": {
+        "scoreCentipawns": 550,
+        "bestMoveUci": "e1e2",
+        "isMate": false
+      }
+    },
+    {
+      "id": "findTheBreak_lvl_1",
+      "context": "Mini-Game: Find the Break",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "d4",
+        "exd4",
+        "e5"
+      ],
+      "executedUci": [
+        "d2d4",
+        "e5d4",
+        "e4e5"
+      ],
+      "motif": "Find the Break",
+      "instruction": "Blast open the center while Black's king lingers uncastled.",
+      "explanation": "d4 immediately challenges Black's central anchor.",
+      "engineEval": {
+        "scoreCentipawns": 40,
+        "bestMoveUci": "d2d4",
+        "isMate": false
+      }
+    },
+    {
+      "id": "findTheBreak_lvl_2",
+      "context": "Mini-Game: Find the Break",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk2r/pp2bppp/2n1pn2/2pp4/2PP4/2N1PN2/PP2BPPP/R1BQK2R w KQkq - 0 7",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "cxd5",
+        "exd5",
+        "dxc5"
+      ],
+      "executedUci": [
+        "c4d5",
+        "e6d5",
+        "d4c5"
+      ],
+      "motif": "Find the Break",
+      "instruction": "Clarify the center with the classic trade.",
+      "explanation": "cxd5 liquidates central tension favorably.",
+      "engineEval": {
+        "scoreCentipawns": 23,
+        "bestMoveUci": "d4c5",
+        "isMate": false
+      }
+    },
+    {
+      "id": "openingSurvival_lvl_1",
+      "context": "Mini-Game: Opening Survival",
+      "valid": true,
+      "failures": [],
+      "fen": "r1bqk1nr/pppp1ppp/2n5/4p3/1bB1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "O-O",
+        "Nf6",
+        "d3"
+      ],
+      "executedUci": [
+        "e1g1",
+        "g8f6",
+        "d2d3"
+      ],
+      "motif": "Opening Survival",
+      "instruction": "Complete kingside mobilization and castle to safety.",
+      "explanation": "O-O fulfills early development priority.",
+      "engineEval": {
+        "scoreCentipawns": 95,
+        "bestMoveUci": "e1g1",
+        "isMate": false
+      }
+    },
+    {
+      "id": "openingSurvival_lvl_2",
+      "context": "Mini-Game: Opening Survival",
+      "valid": true,
+      "failures": [],
+      "fen": "rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "exd5",
+        "Qxd5",
+        "Nc3"
+      ],
+      "executedUci": [
+        "e4d5",
+        "d8d5",
+        "b1c3"
+      ],
+      "motif": "Opening Survival",
+      "instruction": "Punish the premature central pawn push.",
+      "explanation": "exd5 followed by Nc3 wins a development tempo on the queen.",
+      "engineEval": {
+        "scoreCentipawns": 71,
+        "bestMoveUci": "e4d5",
+        "isMate": false
+      }
+    },
+    {
+      "id": "calculationTree_lvl_1",
+      "context": "Mini-Game: Calculation Tree",
+      "valid": true,
+      "failures": [],
+      "fen": "3r2k1/5ppp/8/8/8/8/5PPP/3R2K1 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Rxd8#"
+      ],
+      "executedUci": [
+        "d1d8"
+      ],
+      "motif": "Calculation Tree",
+      "instruction": "Compare candidates: quiet pawn push vs decisive liquidation.",
+      "explanation": "Rxd8# is the only forcing winning candidate.",
+      "engineEval": {
+        "scoreCentipawns": null,
+        "bestMoveUci": "d1d8",
+        "isMate": true
+      }
+    },
+    {
+      "id": "conversionChallenge_lvl_1",
+      "context": "Mini-Game: Conversion Challenge",
+      "valid": true,
+      "failures": [],
+      "fen": "r4rk1/pp1b1ppp/8/3p4/8/1P1B4/P4PPP/R3R1K1 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Re7",
+        "Rad8",
+        "Rae1"
+      ],
+      "executedUci": [
+        "e1e7",
+        "a8d8",
+        "a1e1"
+      ],
+      "motif": "Conversion Challenge",
+      "instruction": "Occupy the 7th rank with your rook to paralyze enemy defenders.",
+      "explanation": "Re7 dominates the 7th rank and ties Black to defense.",
+      "engineEval": {
+        "scoreCentipawns": -45,
+        "bestMoveUci": "f2f3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "endgameWinHold_lvl_1",
+      "context": "Mini-Game: Endgame Win / Hold",
+      "valid": true,
+      "failures": [],
+      "fen": "8/8/8/4k3/8/8/4K3/8 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Ke3",
+        "Kd5",
+        "Kd3"
+      ],
+      "executedUci": [
+        "e2e3",
+        "e5d5",
+        "e3d3"
+      ],
+      "motif": "Endgame Win / Hold",
+      "instruction": "Step forward to claim the vertical opposition.",
+      "explanation": "Ke3 claims opposition, denying the enemy king forward entry.",
+      "engineEval": {
+        "scoreCentipawns": 1,
+        "bestMoveUci": "e2e3",
+        "isMate": false
+      }
+    },
+    {
+      "id": "endgameWinHold_lvl_2",
+      "context": "Mini-Game: Endgame Win / Hold",
+      "valid": true,
+      "failures": [],
+      "fen": "7k/8/8/8/8/7q/6R1/6K1 w - - 0 1",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Rh2",
+        "Qxh2+",
+        "Kxh2"
+      ],
+      "executedUci": [
+        "g2h2",
+        "h3h2",
+        "g1h2"
+      ],
+      "motif": "Endgame Win / Hold",
+      "instruction": "Liquidate and pin to hold the fortress draw.",
+      "explanation": "Rh2 pins the queen and liquidates into a book draw.",
+      "engineEval": {
+        "scoreCentipawns": -27,
+        "bestMoveUci": "g2h2",
+        "isMate": false
+      }
+    },
+    {
+      "id": "worstPieceImprovement_lvl_1",
+      "context": "Mini-Game: Worst Piece Improvement",
+      "valid": true,
+      "failures": [],
+      "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR w KQkq - 2 3",
+      "sideToPlay": "white",
+      "solutionSan": [
+        "Nf3",
+        "Nc6",
+        "Bc4"
+      ],
+      "executedUci": [
+        "g1f3",
+        "b8c6",
+        "f1c4"
+      ],
+      "motif": "Worst Piece Improvement",
+      "instruction": "Develop your passive kingside knight to attack e5.",
+      "explanation": "Nf3 develops with tempo against the e5 pawn.",
+      "engineEval": {
+        "scoreCentipawns": 34,
+        "bestMoveUci": "g1f3",
+        "isMate": false
+      }
+    }
+  ]
+}

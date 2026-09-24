@@ -1,0 +1,1745 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ChessMaster Strict Content Audit</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0f172a; color: #f8fafc; padding: 24px; }
+    h1 { color: #10b981; }
+    .badge-pass { background: #065f46; color: #34d399; padding: 4px 8px; border-radius: 4px; font-weight: bold; }
+    .badge-fail { background: #991b1b; color: #f87171; padding: 4px 8px; border-radius: 4px; font-weight: bold; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 13px; }
+    th, td { border: 1px solid #334155; padding: 8px 12px; text-align: left; }
+    th { background: #1e293b; color: #94a3b8; }
+    tr:nth-child(even) { background: #1e293b; }
+    code { font-family: monospace; color: #38bdf8; }
+  </style>
+</head>
+<body>
+  <h1>ChessMaster Production Content Audit Report</h1>
+  <p><strong>Total Exercises Audited:</strong> 215 | <strong>Passed:</strong> 215 | <strong>Failed:</strong> 0</p>
+  <table>
+    <tr><th>ID</th><th>Context / Topic</th><th>Status</th><th>Motif</th><th>Solution</th><th>Failures</th></tr>
+    <tr>
+      <td><code>cur_d1_ex1</code></td>
+      <td>Day 1: Baseline Diagnostic</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Scholar Mate Attack</td>
+      <td><code>Qxf7#</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>cur_d1_ex2</code></td>
+      <td>Day 1: Baseline Diagnostic</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Back Rank Mate</td>
+      <td><code>Re8#</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>cur_d1_ex3</code></td>
+      <td>Day 1: Baseline Diagnostic</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Opposition</td>
+      <td><code>Ke3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_2_ex_1</code></td>
+      <td>Day 2: Tactics — Hanging Pieces & LPDO</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Loose Piece Exploitation</td>
+      <td><code>Qe2</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_2_ex_2</code></td>
+      <td>Day 2: Tactics — Hanging Pieces & LPDO</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Hanging Rook & Back Rank</td>
+      <td><code>Rxc8#</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_2_ex_3</code></td>
+      <td>Day 2: Tactics — Hanging Pieces & LPDO</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Central Liquidation</td>
+      <td><code>Nxd5</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_3_ex_1</code></td>
+      <td>Day 3: Tactics — Absolute & Relative Pins</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Two Knights Counter-Attack</td>
+      <td><code>Nf6</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_3_ex_2</code></td>
+      <td>Day 3: Tactics — Absolute & Relative Pins</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Relative Pin on E-File</td>
+      <td><code>Qe2</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_3_ex_3</code></td>
+      <td>Day 3: Tactics — Absolute & Relative Pins</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Pushing Against the Pin</td>
+      <td><code>d5</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_4_ex_1</code></td>
+      <td>Day 4: Tactics — Skewers & X-Ray Attacks</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Rank Skewer</td>
+      <td><code>Rh8+</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_4_ex_2</code></td>
+      <td>Day 4: Tactics — Skewers & X-Ray Attacks</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Horizontal Skewer</td>
+      <td><code>Rh7+</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_4_ex_3</code></td>
+      <td>Day 4: Tactics — Skewers & X-Ray Attacks</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Back-Rank Defense & Clearance</td>
+      <td><code>Kf1</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_5_ex_1</code></td>
+      <td>Day 5: Tactics — Knight Forks & Geometry</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>F7 Knight Battery</td>
+      <td><code>Ng5</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_5_ex_2</code></td>
+      <td>Day 5: Tactics — Knight Forks & Geometry</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Harmonic Central Support</td>
+      <td><code>d3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_5_ex_3</code></td>
+      <td>Day 5: Tactics — Knight Forks & Geometry</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Defensive Castling</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_6_ex_1</code></td>
+      <td>Day 6: Tactics — Double Attacks & Dual Threats</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Center Fork Trick</td>
+      <td><code>Nxe4</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_6_ex_2</code></td>
+      <td>Day 6: Tactics — Double Attacks & Dual Threats</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>F7 Dual Pressure</td>
+      <td><code>Ng5</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_6_ex_3</code></td>
+      <td>Day 6: Tactics — Double Attacks & Dual Threats</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Central Breakthrough</td>
+      <td><code>d4</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_7_ex_1</code></td>
+      <td>Day 7: Tactics — Tactical Milestone Exam I</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Tactical Exam - Free Piece</td>
+      <td><code>Nxe4</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_7_ex_2</code></td>
+      <td>Day 7: Tactics — Tactical Milestone Exam I</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Prophylactic Castling</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_8_ex_1</code></td>
+      <td>Day 8: Tactics — Discovered Attacks & Double Checks</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Knight Infiltration on f7</td>
+      <td><code>Ng5</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_8_ex_2</code></td>
+      <td>Day 8: Tactics — Discovered Attacks & Double Checks</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Pin Along Open File</td>
+      <td><code>Qe2</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_8_ex_3</code></td>
+      <td>Day 8: Tactics — Discovered Attacks & Double Checks</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Hanging Piece Exploitation</td>
+      <td><code>Rxc8#</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_9_ex_1</code></td>
+      <td>Day 9: Tactics — Deflection & Removal of Defender</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Knight Infiltration on f7</td>
+      <td><code>Ng5</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_9_ex_2</code></td>
+      <td>Day 9: Tactics — Deflection & Removal of Defender</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Pin Along Open File</td>
+      <td><code>Qe2</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_9_ex_3</code></td>
+      <td>Day 9: Tactics — Deflection & Removal of Defender</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Hanging Piece Exploitation</td>
+      <td><code>Rxc8#</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_10_ex_1</code></td>
+      <td>Day 10: Tactics — Decoy & Attraction Sacrifices</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Knight Infiltration on f7</td>
+      <td><code>Ng5</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_10_ex_2</code></td>
+      <td>Day 10: Tactics — Decoy & Attraction Sacrifices</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Pin Along Open File</td>
+      <td><code>Qe2</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_10_ex_3</code></td>
+      <td>Day 10: Tactics — Decoy & Attraction Sacrifices</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Hanging Piece Exploitation</td>
+      <td><code>Rxc8#</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_11_ex_1</code></td>
+      <td>Day 11: Tactics — Overloading & Line Clearance</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Knight Infiltration on f7</td>
+      <td><code>Ng5</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_11_ex_2</code></td>
+      <td>Day 11: Tactics — Overloading & Line Clearance</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Pin Along Open File</td>
+      <td><code>Qe2</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_11_ex_3</code></td>
+      <td>Day 11: Tactics — Overloading & Line Clearance</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Hanging Piece Exploitation</td>
+      <td><code>Rxc8#</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_12_ex_1</code></td>
+      <td>Day 12: Tactics — Interference & Obstruction</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Knight Infiltration on f7</td>
+      <td><code>Ng5</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_12_ex_2</code></td>
+      <td>Day 12: Tactics — Interference & Obstruction</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Pin Along Open File</td>
+      <td><code>Qe2</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_12_ex_3</code></td>
+      <td>Day 12: Tactics — Interference & Obstruction</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Hanging Piece Exploitation</td>
+      <td><code>Rxc8#</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_13_ex_1</code></td>
+      <td>Day 13: Tactics — Trapped Pieces & Domination</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Knight Infiltration on f7</td>
+      <td><code>Ng5</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_13_ex_2</code></td>
+      <td>Day 13: Tactics — Trapped Pieces & Domination</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Pin Along Open File</td>
+      <td><code>Qe2</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_13_ex_3</code></td>
+      <td>Day 13: Tactics — Trapped Pieces & Domination</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Hanging Piece Exploitation</td>
+      <td><code>Rxc8#</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_14_ex_1</code></td>
+      <td>Day 14: Tactics — Grand Milestone Exam: Tactics</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Knight Infiltration on f7</td>
+      <td><code>Ng5</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_14_ex_2</code></td>
+      <td>Day 14: Tactics — Grand Milestone Exam: Tactics</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Pin Along Open File</td>
+      <td><code>Qe2</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_14_ex_3</code></td>
+      <td>Day 14: Tactics — Grand Milestone Exam: Tactics</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Hanging Piece Exploitation</td>
+      <td><code>Rxc8#</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_15_ex_1</code></td>
+      <td>Day 15: Calculation — Kotov Forcing Hierarchy (CCT)</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Central Strike Calculation</td>
+      <td><code>d4</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_15_ex_2</code></td>
+      <td>Day 15: Calculation — Kotov Forcing Hierarchy (CCT)</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Kotov Forcing Sequence</td>
+      <td><code>Nxe4</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_16_ex_1</code></td>
+      <td>Day 16: Calculation — Candidate Move Generation</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Central Strike Calculation</td>
+      <td><code>d4</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_16_ex_2</code></td>
+      <td>Day 16: Calculation — Candidate Move Generation</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Kotov Forcing Sequence</td>
+      <td><code>Nxe4</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_17_ex_1</code></td>
+      <td>Day 17: Calculation — Calculation Tree Pruning</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Central Strike Calculation</td>
+      <td><code>d4</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_17_ex_2</code></td>
+      <td>Day 17: Calculation — Calculation Tree Pruning</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Kotov Forcing Sequence</td>
+      <td><code>Nxe4</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_18_ex_1</code></td>
+      <td>Day 18: Calculation — Intermediate Moves (Zwischenzug)</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Central Strike Calculation</td>
+      <td><code>d4</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_18_ex_2</code></td>
+      <td>Day 18: Calculation — Intermediate Moves (Zwischenzug)</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Kotov Forcing Sequence</td>
+      <td><code>Nxe4</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_19_ex_1</code></td>
+      <td>Day 19: Calculation — Opponent Counter-Resources</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Central Strike Calculation</td>
+      <td><code>d4</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_19_ex_2</code></td>
+      <td>Day 19: Calculation — Opponent Counter-Resources</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Kotov Forcing Sequence</td>
+      <td><code>Nxe4</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_20_ex_1</code></td>
+      <td>Day 20: Calculation — Visualizing Quiet Moves</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Central Strike Calculation</td>
+      <td><code>d4</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_20_ex_2</code></td>
+      <td>Day 20: Calculation — Visualizing Quiet Moves</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Kotov Forcing Sequence</td>
+      <td><code>Nxe4</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_21_ex_1</code></td>
+      <td>Day 21: Calculation — Milestone Exam: Calculation Trees</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Central Strike Calculation</td>
+      <td><code>d4</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_21_ex_2</code></td>
+      <td>Day 21: Calculation — Milestone Exam: Calculation Trees</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Kotov Forcing Sequence</td>
+      <td><code>Nxe4</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_22_ex_1</code></td>
+      <td>Day 22: Calculation — Blindfold Board Geometry</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Positional Harmony</td>
+      <td><code>d3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_22_ex_2</code></td>
+      <td>Day 22: Calculation — Blindfold Board Geometry</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Harmonic King Safety</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_23_ex_1</code></td>
+      <td>Day 23: Calculation — Multi-Ply Pawn Races</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Positional Harmony</td>
+      <td><code>d3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_23_ex_2</code></td>
+      <td>Day 23: Calculation — Multi-Ply Pawn Races</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Harmonic King Safety</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_24_ex_1</code></td>
+      <td>Day 24: Calculation — Mental Board Retention</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Positional Harmony</td>
+      <td><code>d3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_24_ex_2</code></td>
+      <td>Day 24: Calculation — Mental Board Retention</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Harmonic King Safety</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_25_ex_1</code></td>
+      <td>Day 25: Calculation — Eliminating Blind Spots</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Positional Harmony</td>
+      <td><code>d3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_25_ex_2</code></td>
+      <td>Day 25: Calculation — Eliminating Blind Spots</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Harmonic King Safety</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_26_ex_1</code></td>
+      <td>Day 26: Clock Discipline & Rhythm</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Positional Harmony</td>
+      <td><code>d3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_26_ex_2</code></td>
+      <td>Day 26: Clock Discipline & Rhythm</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Harmonic King Safety</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_27_ex_1</code></td>
+      <td>Day 27: Practical Tree Pruning</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Positional Harmony</td>
+      <td><code>d3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_27_ex_2</code></td>
+      <td>Day 27: Practical Tree Pruning</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Harmonic King Safety</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_28_ex_1</code></td>
+      <td>Day 28: Grand Milestone: Calculation</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Positional Harmony</td>
+      <td><code>d3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_28_ex_2</code></td>
+      <td>Day 28: Grand Milestone: Calculation</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Harmonic King Safety</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_29_ex_1</code></td>
+      <td>Day 29: Piece Harmony & Improvement</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Central Pawn Liquidation</td>
+      <td><code>exd5</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_29_ex_2</code></td>
+      <td>Day 29: Piece Harmony & Improvement</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Pawn Lever Strike</td>
+      <td><code>d4</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_30_ex_1</code></td>
+      <td>Day 30: Outposts & Knight Anchoring</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Central Pawn Liquidation</td>
+      <td><code>exd5</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_30_ex_2</code></td>
+      <td>Day 30: Outposts & Knight Anchoring</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Pawn Lever Strike</td>
+      <td><code>d4</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_31_ex_1</code></td>
+      <td>Day 31: Open Files & Infiltration</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Central Pawn Liquidation</td>
+      <td><code>exd5</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_31_ex_2</code></td>
+      <td>Day 31: Open Files & Infiltration</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Pawn Lever Strike</td>
+      <td><code>d4</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_32_ex_1</code></td>
+      <td>Day 32: Good vs Bad Bishops</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Central Pawn Liquidation</td>
+      <td><code>exd5</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_32_ex_2</code></td>
+      <td>Day 32: Good vs Bad Bishops</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Pawn Lever Strike</td>
+      <td><code>d4</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_33_ex_1</code></td>
+      <td>Day 33: Positional Exchange Sacrifice</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Central Pawn Liquidation</td>
+      <td><code>exd5</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_33_ex_2</code></td>
+      <td>Day 33: Positional Exchange Sacrifice</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Pawn Lever Strike</td>
+      <td><code>d4</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_34_ex_1</code></td>
+      <td>Day 34: Prophylaxis & Restriction</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Central Pawn Liquidation</td>
+      <td><code>exd5</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_34_ex_2</code></td>
+      <td>Day 34: Prophylaxis & Restriction</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Pawn Lever Strike</td>
+      <td><code>d4</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_35_ex_1</code></td>
+      <td>Day 35: Milestone Exam: Strategy</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Central Pawn Liquidation</td>
+      <td><code>exd5</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_35_ex_2</code></td>
+      <td>Day 35: Milestone Exam: Strategy</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Pawn Lever Strike</td>
+      <td><code>d4</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_36_ex_1</code></td>
+      <td>Day 36: Weak Squares & Holes</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Prophylactic Castling Under Fire</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_36_ex_2</code></td>
+      <td>Day 36: Weak Squares & Holes</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>F7 Aggressive Attack</td>
+      <td><code>Ng5</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_37_ex_1</code></td>
+      <td>Day 37: Principle of Two Weaknesses</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Prophylactic Castling Under Fire</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_37_ex_2</code></td>
+      <td>Day 37: Principle of Two Weaknesses</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>F7 Aggressive Attack</td>
+      <td><code>Ng5</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_38_ex_1</code></td>
+      <td>Day 38: Favorable Piece Exchanges</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Prophylactic Castling Under Fire</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_38_ex_2</code></td>
+      <td>Day 38: Favorable Piece Exchanges</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>F7 Aggressive Attack</td>
+      <td><code>Ng5</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_39_ex_1</code></td>
+      <td>Day 39: Restricting Minor Pieces</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Prophylactic Castling Under Fire</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_39_ex_2</code></td>
+      <td>Day 39: Restricting Minor Pieces</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>F7 Aggressive Attack</td>
+      <td><code>Ng5</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_40_ex_1</code></td>
+      <td>Day 40: Patient Maneuvering</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Prophylactic Castling Under Fire</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_40_ex_2</code></td>
+      <td>Day 40: Patient Maneuvering</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>F7 Aggressive Attack</td>
+      <td><code>Ng5</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_41_ex_1</code></td>
+      <td>Day 41: Transforming Advantages</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Prophylactic Castling Under Fire</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_41_ex_2</code></td>
+      <td>Day 41: Transforming Advantages</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>F7 Aggressive Attack</td>
+      <td><code>Ng5</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_42_ex_1</code></td>
+      <td>Day 42: Grand Milestone: Strategy</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Prophylactic Castling Under Fire</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_42_ex_2</code></td>
+      <td>Day 42: Grand Milestone: Strategy</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>F7 Aggressive Attack</td>
+      <td><code>Ng5</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_43_ex_1</code></td>
+      <td>Day 43: Pawn Chains & Base Attacks</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Direct Vertical Opposition</td>
+      <td><code>Ke3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_43_ex_2</code></td>
+      <td>Day 43: Pawn Chains & Base Attacks</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Rook Rank Cutoff</td>
+      <td><code>Ra3+</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_44_ex_1</code></td>
+      <td>Day 44: The Carlsbad Structure</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Direct Vertical Opposition</td>
+      <td><code>Ke3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_44_ex_2</code></td>
+      <td>Day 44: The Carlsbad Structure</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Rook Rank Cutoff</td>
+      <td><code>Ra3+</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_45_ex_1</code></td>
+      <td>Day 45: Isolated Queen Pawn (IQP)</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Direct Vertical Opposition</td>
+      <td><code>Ke3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_45_ex_2</code></td>
+      <td>Day 45: Isolated Queen Pawn (IQP)</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Rook Rank Cutoff</td>
+      <td><code>Ra3+</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_46_ex_1</code></td>
+      <td>Day 46: Hanging Pawns (c4/d4)</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Direct Vertical Opposition</td>
+      <td><code>Ke3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_46_ex_2</code></td>
+      <td>Day 46: Hanging Pawns (c4/d4)</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Rook Rank Cutoff</td>
+      <td><code>Ra3+</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_47_ex_1</code></td>
+      <td>Day 47: Backward & Doubled Pawns</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Direct Vertical Opposition</td>
+      <td><code>Ke3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_47_ex_2</code></td>
+      <td>Day 47: Backward & Doubled Pawns</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Rook Rank Cutoff</td>
+      <td><code>Ra3+</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_48_ex_1</code></td>
+      <td>Day 48: The Maroczy Bind (c4/e4)</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Direct Vertical Opposition</td>
+      <td><code>Ke3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_48_ex_2</code></td>
+      <td>Day 48: The Maroczy Bind (c4/e4)</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Rook Rank Cutoff</td>
+      <td><code>Ra3+</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_49_ex_1</code></td>
+      <td>Day 49: Milestone Exam: Pawn Breaks</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Direct Vertical Opposition</td>
+      <td><code>Ke3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_49_ex_2</code></td>
+      <td>Day 49: Milestone Exam: Pawn Breaks</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Rook Rank Cutoff</td>
+      <td><code>Ra3+</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_50_ex_1</code></td>
+      <td>Day 50: French Defense Pawn Chains</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Direct Vertical Opposition</td>
+      <td><code>Ke3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_50_ex_2</code></td>
+      <td>Day 50: French Defense Pawn Chains</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Rook Rank Cutoff</td>
+      <td><code>Ra3+</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_51_ex_1</code></td>
+      <td>Day 51: King's Indian Closed Chains</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Direct Vertical Opposition</td>
+      <td><code>Ke3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_51_ex_2</code></td>
+      <td>Day 51: King's Indian Closed Chains</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Rook Rank Cutoff</td>
+      <td><code>Ra3+</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_52_ex_1</code></td>
+      <td>Day 52: Pawn Levers & Space Control</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Direct Vertical Opposition</td>
+      <td><code>Ke3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_52_ex_2</code></td>
+      <td>Day 52: Pawn Levers & Space Control</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Rook Rank Cutoff</td>
+      <td><code>Ra3+</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_53_ex_1</code></td>
+      <td>Day 53: Middlegame Passed Pawns</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Direct Vertical Opposition</td>
+      <td><code>Ke3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_53_ex_2</code></td>
+      <td>Day 53: Middlegame Passed Pawns</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Rook Rank Cutoff</td>
+      <td><code>Ra3+</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_54_ex_1</code></td>
+      <td>Day 54: Pawn Majority Conversion</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Direct Vertical Opposition</td>
+      <td><code>Ke3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_54_ex_2</code></td>
+      <td>Day 54: Pawn Majority Conversion</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Rook Rank Cutoff</td>
+      <td><code>Ra3+</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_55_ex_1</code></td>
+      <td>Day 55: Positional Pawn Sacrifices</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Direct Vertical Opposition</td>
+      <td><code>Ke3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_55_ex_2</code></td>
+      <td>Day 55: Positional Pawn Sacrifices</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Rook Rank Cutoff</td>
+      <td><code>Ra3+</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_56_ex_1</code></td>
+      <td>Day 56: Grand Milestone: Pawn Mastery</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Direct Vertical Opposition</td>
+      <td><code>Ke3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_56_ex_2</code></td>
+      <td>Day 56: Grand Milestone: Pawn Mastery</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Rook Rank Cutoff</td>
+      <td><code>Ra3+</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_57_ex_1</code></td>
+      <td>Day 57: King & Pawn: The Opposition</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Classical Piece Development</td>
+      <td><code>Nf3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_57_ex_2</code></td>
+      <td>Day 57: King & Pawn: The Opposition</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Italian Defense - Two Knights</td>
+      <td><code>Nf6</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_58_ex_1</code></td>
+      <td>Day 58: King & Pawn: Rule of Square</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Classical Piece Development</td>
+      <td><code>Nf3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_58_ex_2</code></td>
+      <td>Day 58: King & Pawn: Rule of Square</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Italian Defense - Two Knights</td>
+      <td><code>Nf6</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_59_ex_1</code></td>
+      <td>Day 59: Triangulation & Zugzwang</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Classical Piece Development</td>
+      <td><code>Nf3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_59_ex_2</code></td>
+      <td>Day 59: Triangulation & Zugzwang</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Italian Defense - Two Knights</td>
+      <td><code>Nf6</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_60_ex_1</code></td>
+      <td>Day 60: The Reti Diagonal Maneuver</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Classical Piece Development</td>
+      <td><code>Nf3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_60_ex_2</code></td>
+      <td>Day 60: The Reti Diagonal Maneuver</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Italian Defense - Two Knights</td>
+      <td><code>Nf6</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_61_ex_1</code></td>
+      <td>Day 61: Rook Endgames: Lucena Bridge</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Classical Piece Development</td>
+      <td><code>Nf3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_61_ex_2</code></td>
+      <td>Day 61: Rook Endgames: Lucena Bridge</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Italian Defense - Two Knights</td>
+      <td><code>Nf6</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_62_ex_1</code></td>
+      <td>Day 62: Rook Endgames: Philidor Defense</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Classical Piece Development</td>
+      <td><code>Nf3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_62_ex_2</code></td>
+      <td>Day 62: Rook Endgames: Philidor Defense</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Italian Defense - Two Knights</td>
+      <td><code>Nf6</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_63_ex_1</code></td>
+      <td>Day 63: Milestone Exam: Core Endgames</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Classical Piece Development</td>
+      <td><code>Nf3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_63_ex_2</code></td>
+      <td>Day 63: Milestone Exam: Core Endgames</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Italian Defense - Two Knights</td>
+      <td><code>Nf6</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_64_ex_1</code></td>
+      <td>Day 64: Active Rook Supremacy</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Positional Harmony</td>
+      <td><code>d3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_64_ex_2</code></td>
+      <td>Day 64: Active Rook Supremacy</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Harmonic King Safety</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_65_ex_1</code></td>
+      <td>Day 65: Vancura Defense & Flank Checks</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Positional Harmony</td>
+      <td><code>d3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_65_ex_2</code></td>
+      <td>Day 65: Vancura Defense & Flank Checks</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Harmonic King Safety</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_66_ex_1</code></td>
+      <td>Day 66: Same-Colored Bishop Endgames</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Positional Harmony</td>
+      <td><code>d3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_66_ex_2</code></td>
+      <td>Day 66: Same-Colored Bishop Endgames</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Harmonic King Safety</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_67_ex_1</code></td>
+      <td>Day 67: Opposite-Colored Bishop Fortresses</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Positional Harmony</td>
+      <td><code>d3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_67_ex_2</code></td>
+      <td>Day 67: Opposite-Colored Bishop Fortresses</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Harmonic King Safety</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_68_ex_1</code></td>
+      <td>Day 68: Knight vs Bishop Endgames</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Positional Harmony</td>
+      <td><code>d3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_68_ex_2</code></td>
+      <td>Day 68: Knight vs Bishop Endgames</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Harmonic King Safety</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_69_ex_1</code></td>
+      <td>Day 69: Queen Endgames & Perpetual</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Positional Harmony</td>
+      <td><code>d3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_69_ex_2</code></td>
+      <td>Day 69: Queen Endgames & Perpetual</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Harmonic King Safety</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_70_ex_1</code></td>
+      <td>Day 70: Grand Milestone: Endgames</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Positional Harmony</td>
+      <td><code>d3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_70_ex_2</code></td>
+      <td>Day 70: Grand Milestone: Endgames</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Harmonic King Safety</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_71_ex_1</code></td>
+      <td>Day 71: Opening Principles & Harmony</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Grandmaster Positional Transition</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_71_ex_2</code></td>
+      <td>Day 71: Opening Principles & Harmony</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Capablanca Clinical Conversion</td>
+      <td><code>Ke3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_72_ex_1</code></td>
+      <td>Day 72: 1.e4 Repertoire: Italian & Scotch</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Grandmaster Positional Transition</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_72_ex_2</code></td>
+      <td>Day 72: 1.e4 Repertoire: Italian & Scotch</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Capablanca Clinical Conversion</td>
+      <td><code>Ke3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_73_ex_1</code></td>
+      <td>Day 73: 1.e4 vs The Sicilian Defense</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Grandmaster Positional Transition</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_73_ex_2</code></td>
+      <td>Day 73: 1.e4 vs The Sicilian Defense</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Capablanca Clinical Conversion</td>
+      <td><code>Ke3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_74_ex_1</code></td>
+      <td>Day 74: 1.d4 Repertoire: QGD & Catalan</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Grandmaster Positional Transition</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_74_ex_2</code></td>
+      <td>Day 74: 1.d4 Repertoire: QGD & Catalan</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Capablanca Clinical Conversion</td>
+      <td><code>Ke3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_75_ex_1</code></td>
+      <td>Day 75: 1.c4 English Opening Principles</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Grandmaster Positional Transition</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_75_ex_2</code></td>
+      <td>Day 75: 1.c4 English Opening Principles</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Capablanca Clinical Conversion</td>
+      <td><code>Ke3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_76_ex_1</code></td>
+      <td>Day 76: Black Repertoire vs 1.e4 & 1.d4</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Grandmaster Positional Transition</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_76_ex_2</code></td>
+      <td>Day 76: Black Repertoire vs 1.e4 & 1.d4</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Capablanca Clinical Conversion</td>
+      <td><code>Ke3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_77_ex_1</code></td>
+      <td>Day 77: Milestone Exam: Opening Theory</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Grandmaster Positional Transition</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_77_ex_2</code></td>
+      <td>Day 77: Milestone Exam: Opening Theory</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Capablanca Clinical Conversion</td>
+      <td><code>Ke3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_78_ex_1</code></td>
+      <td>Day 78: Punishing Uncastled Kings</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Grandmaster Positional Transition</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_78_ex_2</code></td>
+      <td>Day 78: Punishing Uncastled Kings</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Capablanca Clinical Conversion</td>
+      <td><code>Ke3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_79_ex_1</code></td>
+      <td>Day 79: The Greek Gift Sacrifice (Bxh7+)</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Grandmaster Positional Transition</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_79_ex_2</code></td>
+      <td>Day 79: The Greek Gift Sacrifice (Bxh7+)</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Capablanca Clinical Conversion</td>
+      <td><code>Ke3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_80_ex_1</code></td>
+      <td>Day 80: Opposite-Side Castling Attacks</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Grandmaster Positional Transition</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_80_ex_2</code></td>
+      <td>Day 80: Opposite-Side Castling Attacks</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Capablanca Clinical Conversion</td>
+      <td><code>Ke3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_81_ex_1</code></td>
+      <td>Day 81: Destroying the Castled Shield</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Grandmaster Positional Transition</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_81_ex_2</code></td>
+      <td>Day 81: Destroying the Castled Shield</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Capablanca Clinical Conversion</td>
+      <td><code>Ke3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_82_ex_1</code></td>
+      <td>Day 82: Tenacious Defensive Resources</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Grandmaster Positional Transition</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_82_ex_2</code></td>
+      <td>Day 82: Tenacious Defensive Resources</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Capablanca Clinical Conversion</td>
+      <td><code>Ke3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_83_ex_1</code></td>
+      <td>Day 83: Simplification Under Attack</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Grandmaster Positional Transition</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_83_ex_2</code></td>
+      <td>Day 83: Simplification Under Attack</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Capablanca Clinical Conversion</td>
+      <td><code>Ke3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_84_ex_1</code></td>
+      <td>Day 84: Grand Milestone: Attack & Defense</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Grandmaster Positional Transition</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_84_ex_2</code></td>
+      <td>Day 84: Grand Milestone: Attack & Defense</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Capablanca Clinical Conversion</td>
+      <td><code>Ke3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_85_ex_1</code></td>
+      <td>Day 85: Material Conversion Protocol</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Grandmaster Positional Transition</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_85_ex_2</code></td>
+      <td>Day 85: Material Conversion Protocol</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Capablanca Clinical Conversion</td>
+      <td><code>Ke3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_86_ex_1</code></td>
+      <td>Day 86: Model Master Game Guess-the-Move</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Grandmaster Positional Transition</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_86_ex_2</code></td>
+      <td>Day 86: Model Master Game Guess-the-Move</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Capablanca Clinical Conversion</td>
+      <td><code>Ke3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_87_ex_1</code></td>
+      <td>Day 87: Root Cause Self-Analysis</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Grandmaster Positional Transition</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_87_ex_2</code></td>
+      <td>Day 87: Root Cause Self-Analysis</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Capablanca Clinical Conversion</td>
+      <td><code>Ke3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_88_ex_1</code></td>
+      <td>Day 88: Tournament Psychology & Discipline</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Grandmaster Positional Transition</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_88_ex_2</code></td>
+      <td>Day 88: Tournament Psychology & Discipline</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Capablanca Clinical Conversion</td>
+      <td><code>Ke3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_89_ex_1</code></td>
+      <td>Day 89: Competitive Tournament Simulation</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Grandmaster Positional Transition</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_89_ex_2</code></td>
+      <td>Day 89: Competitive Tournament Simulation</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Capablanca Clinical Conversion</td>
+      <td><code>Ke3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_90_ex_1</code></td>
+      <td>Day 90: Final Capstone Certification — Mastery Assessment & Completion Report</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Grandmaster Positional Transition</td>
+      <td><code>O-O</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>day_90_ex_2</code></td>
+      <td>Day 90: Final Capstone Certification — Mastery Assessment & Completion Report</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Capablanca Clinical Conversion</td>
+      <td><code>Ke3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>forkHunter_lvl_1</code></td>
+      <td>Mini-Game: Fork Hunter</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Fork Hunter</td>
+      <td><code>Qe2+ Kd8 Nc6+</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>forkHunter_lvl_2</code></td>
+      <td>Mini-Game: Fork Hunter</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Fork Hunter</td>
+      <td><code>d4 exd4 e5</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>forkHunter_lvl_3</code></td>
+      <td>Mini-Game: Fork Hunter</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Fork Hunter</td>
+      <td><code>Nf3 Qxf3 gxf3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>pinBuilder_lvl_1</code></td>
+      <td>Mini-Game: Pin Builder</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Pin Builder</td>
+      <td><code>Qe2 d5 d3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>pinBuilder_lvl_2</code></td>
+      <td>Mini-Game: Pin Builder</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Pin Builder</td>
+      <td><code>Bb5 Bd7 Bxc6</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>skewerHunt_lvl_1</code></td>
+      <td>Mini-Game: Skewer Hunt</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Skewer Hunt</td>
+      <td><code>Rh7+ Ke6 Rxa7</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>skewerHunt_lvl_2</code></td>
+      <td>Mini-Game: Skewer Hunt</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Skewer Hunt</td>
+      <td><code>Bd4</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>kingHunt_lvl_1</code></td>
+      <td>Mini-Game: King Hunt</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>King Hunt</td>
+      <td><code>Qxf7#</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>kingHunt_lvl_2</code></td>
+      <td>Mini-Game: King Hunt</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>King Hunt</td>
+      <td><code>Re8#</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>defender_lvl_1</code></td>
+      <td>Mini-Game: Defender</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Defender</td>
+      <td><code>Qe2 Qxe2+ Bxe2</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>defender_lvl_2</code></td>
+      <td>Mini-Game: Defender</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Defender</td>
+      <td><code>Bd2 Bxc3 Bxc3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>pawnBattle_lvl_1</code></td>
+      <td>Mini-Game: Pawn Battle</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Pawn Battle</td>
+      <td><code>f4 Kf6 e4</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>pawnBattle_lvl_2</code></td>
+      <td>Mini-Game: Pawn Battle</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Pawn Battle</td>
+      <td><code>e8=Q</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>findTheBreak_lvl_1</code></td>
+      <td>Mini-Game: Find the Break</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Find the Break</td>
+      <td><code>d4 exd4 e5</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>findTheBreak_lvl_2</code></td>
+      <td>Mini-Game: Find the Break</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Find the Break</td>
+      <td><code>cxd5 exd5 dxc5</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>openingSurvival_lvl_1</code></td>
+      <td>Mini-Game: Opening Survival</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Opening Survival</td>
+      <td><code>O-O Nf6 d3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>openingSurvival_lvl_2</code></td>
+      <td>Mini-Game: Opening Survival</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Opening Survival</td>
+      <td><code>exd5 Qxd5 Nc3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>calculationTree_lvl_1</code></td>
+      <td>Mini-Game: Calculation Tree</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Calculation Tree</td>
+      <td><code>Rxd8#</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>conversionChallenge_lvl_1</code></td>
+      <td>Mini-Game: Conversion Challenge</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Conversion Challenge</td>
+      <td><code>Re7 Rad8 Rae1</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>endgameWinHold_lvl_1</code></td>
+      <td>Mini-Game: Endgame Win / Hold</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Endgame Win / Hold</td>
+      <td><code>Ke3 Kd5 Kd3</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>endgameWinHold_lvl_2</code></td>
+      <td>Mini-Game: Endgame Win / Hold</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Endgame Win / Hold</td>
+      <td><code>Rh2 Qxh2+ Kxh2</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+    <tr>
+      <td><code>worstPieceImprovement_lvl_1</code></td>
+      <td>Mini-Game: Worst Piece Improvement</td>
+      <td><span class="badge-pass">PASS</span></td>
+      <td>Worst Piece Improvement</td>
+      <td><code>Nf3 Nc6 Bc4</code></td>
+      <td><span style="color: #f87171;"></span></td>
+    </tr>
+  </table>
+</body>
+</html>

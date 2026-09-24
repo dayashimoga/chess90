@@ -1,6 +1,6 @@
 # ChessMaster v1.3.0 Content Depth & Curriculum Inventory
 
-**Audit Date:** 2026-09-23T11:42:36.388846Z  
+**Audit Date:** 2026-09-24T09:07:37.918289Z  
 **Validation Status:** `CERTIFIED_VALID` (Errors: 0)  
 
 ---
@@ -11,14 +11,14 @@
 |:---|:---:|:---|
 | **Curriculum Days** | **90 / 90** | 100% complete; 0 reading-only days; progressive difficulty. |
 | **Structured Lessons** | **90** | Comprehensive theory, pedagogical objectives, and worked examples. |
-| **Interactive Exercises** | **4231** | 100% legally verified solution paths with strict MoveGenerator validation. |
-| **Unique Exercise IDs** | **4231** | 0 duplicate IDs; verified non-overlapping progression. |
+| **Interactive Exercises** | **3887** | 100% legally verified solution paths with strict MoveGenerator validation. |
+| **Unique Exercise IDs** | **3887** | 0 duplicate IDs; verified non-overlapping progression. |
 | **Multi-Ply Calculation Puzzles** | **0** | Deep calculation positions requiring 2+ consecutive ply solutions. |
-| **Tactical Motifs Cataloged** | **128** | Canonical tactical patterns with dedicated Leitner flashcards. |
-| **Calculation Tree Positions** | **396** | Complex branched positions exercising candidate move pruning. |
+| **Tactical Motifs Cataloged** | **68** | Canonical tactical patterns with dedicated Leitner flashcards. |
+| **Calculation Tree Positions** | **372** | Complex branched positions exercising candidate move pruning. |
 | **Visualization Drills** | **233** | Blindfold and mental board geometry training positions. |
-| **Strategic & Positional Positions** | **314** | Outpost, weak square, piece activity, and prophylaxis drills. |
-| **Pawn Structure Modules** | **332** | Carlsbad, Isolani, Hanging Pawns, Hedgehog, and French structures. |
+| **Strategic & Positional Positions** | **298** | Outpost, weak square, piece activity, and prophylaxis drills. |
+| **Pawn Structure Modules** | **304** | Carlsbad, Isolani, Hanging Pawns, Hedgehog, and French structures. |
 | **Annotated Master Games** | **60** | Full PGN master games with move-by-move pedagogical annotations. |
 | **ECO Opening Variations** | **72** | Master repertoire lines and deviation defenses indexed via trie. |
 | **Interactive Lab Types** | **16** | 16 distinct training modes with hint penalties and auto-replies. |
@@ -40,142 +40,82 @@
 | Endgame Category | Positions Count | Primary Theoretical Focus |
 |:---|:---:|:---|
 | **Rook Endgames** | **72** | Lucena, Philidor, Queen vs 7th, Opposition & Key Squares |
-| **Pawn Endgames** | **228** | Lucena, Philidor, Queen vs 7th, Opposition & Key Squares |
-| **Queen Endgames** | **78** | Lucena, Philidor, Queen vs 7th, Opposition & Key Squares |
-| **Minor Piece Endgames** | **78** | Lucena, Philidor, Queen vs 7th, Opposition & Key Squares |
+| **Pawn Endgames** | **172** | Lucena, Philidor, Queen vs 7th, Opposition & Key Squares |
+| **Queen Endgames** | **74** | Lucena, Philidor, Queen vs 7th, Opposition & Key Squares |
+| **Minor Piece Endgames** | **74** | Lucena, Philidor, Queen vs 7th, Opposition & Key Squares |
 
 ---
 
 ## 4. Tactical Motifs Covered
 
-- 1.c4 English Opening Principles
-- 1.d4 Repertoire: QGD & Catalan
-- 1.e4 Repertoire: Italian & Scotch
-- 1.e4 vs The Sicilian Defense
-- Active Rook Supremacy
 - Advantage Conversion
 - Back Rank Mate
-- Back-Rank Infiltration
+- Back-Rank Defense & Clearance
 - Back-Rank Mate
 - Back-Rank Penetration
-- Backward & Doubled Pawns
-- Black Repertoire vs 1.e4 & 1.d4
-- Calculation — Blindfold Board Geometry
-- Calculation — Calculation Tree Pruning
-- Calculation — Candidate Move Generation
-- Calculation — Eliminating Blind Spots
-- Calculation — Intermediate Moves (Zwischenzug)
-- Calculation — Kotov Forcing Hierarchy (CCT)
-- Calculation — Mental Board Retention
-- Calculation — Milestone Exam: Calculation Trees
-- Calculation — Multi-Ply Pawn Races
-- Calculation — Opponent Counter-Resources
-- Calculation — Visualizing Quiet Moves
 - Candidate Move Verification
+- Capablanca Clinical Conversion
 - Carlsbad Minority Attack
-- Castling
+- Center Fork Trick
+- Central Breakthrough
 - Central Liquidation
+- Central Pawn Liquidation
 - Central Strike
+- Central Strike Calculation
 - Checking & Cutting Off
 - Checkmate
-- Clock Discipline & Rhythm
-- Competitive Tournament Simulation
+- Classical Piece Development
 - Coordinate Vision: Knight Anchor
 - Coordinate Vision: Open Game
 - Coordinate Vision: Two Knights Defense
+- Defensive Castling
 - Defensive Tenacity
-- Destroying the Castled Shield
-- Favorable Piece Exchanges
-- Final Capstone Certification — Mastery Assessment & Completion Report
+- Direct Vertical Opposition
+- F7 Aggressive Attack
+- F7 Dual Pressure
+- F7 Knight Battery
 - Forcing Liquidation
 - Fork Trick Preparation
-- French Defense Pawn Chains
 - Fried Liver Attack Target
-- Good vs Bad Bishops
-- Grand Milestone: Attack & Defense
-- Grand Milestone: Calculation
-- Grand Milestone: Endgames
-- Grand Milestone: Pawn Mastery
-- Grand Milestone: Strategy
-- Hanging Pawns (c4/d4)
+- Grandmaster Positional Transition
+- Hanging Piece Exploitation
+- Hanging Rook & Back Rank
+- Harmonic Central Support
+- Harmonic King Safety
 - Harmonious Development
+- Horizontal Skewer
 - IQP Central Outpost
-- Isolated Queen Pawn (IQP)
-- King & Pawn: Rule of Square
-- King & Pawn: The Opposition
+- Italian Defense - Two Knights
 - King Safety
-- King's Indian Closed Chains
-- Knight vs Bishop Endgames
-- Material Conversion Protocol
+- Knight Infiltration on f7
+- Kotov Forcing Sequence
+- Loose Piece Exploitation
 - Mating Calculation Tree
-- Middlegame Passed Pawns
-- Milestone Exam: Core Endgames
-- Milestone Exam: Opening Theory
-- Milestone Exam: Pawn Breaks
-- Milestone Exam: Strategy
 - Minor Piece Endgames
-- Model Master Game Guess-the-Move
-- Open Files & Infiltration
-- Opening Principles & Harmony
 - Opening Repertoire
-- Opposite-Colored Bishop Fortresses
-- Opposite-Side Castling Attacks
 - Opposition
-- Outposts & Knight Anchoring
-- Patient Maneuvering
-- Pawn Chains & Base Attacks
 - Pawn Endgames
-- Pawn Levers & Space Control
-- Pawn Majority Conversion
-- Pawn Promotion
+- Pawn Lever Strike
 - Pawn Structure Clarification
-- Piece Harmony & Improvement
 - Pin & Pressure
+- Pin Along Open File
 - Pin Neutralization
-- Positional Exchange Sacrifice
-- Positional Pawn Sacrifices
-- Practical Tree Pruning
-- Principle of Two Weaknesses
+- Positional Harmony
+- Prophylactic Castling
+- Prophylactic Castling Under Fire
 - Prophylactic Solidification
-- Prophylaxis & Restriction
-- Punishing Uncastled Kings
+- Pushing Against the Pin
 - Queen Endgames
-- Queen Endgames & Perpetual
-- Restricting Minor Pieces
-- Rook Checkmate
+- Rank Skewer
+- Relative Pin on E-File
 - Rook Endgames
-- Rook Endgames: Lucena Bridge
-- Rook Endgames: Philidor Defense
-- Root Cause Self-Analysis
-- Same-Colored Bishop Endgames
+- Rook Rank Cutoff
 - Scandinavian Punishment
 - Scholar Mate Attack
 - Simplification
-- Simplification Under Attack
-- Tactics — Absolute & Relative Pins
-- Tactics — Decoy & Attraction Sacrifices
-- Tactics — Deflection & Removal of Defender
-- Tactics — Discovered Attacks & Double Checks
-- Tactics — Double Attacks & Dual Threats
-- Tactics — Grand Milestone Exam: Tactics
-- Tactics — Hanging Pieces & LPDO
-- Tactics — Interference & Obstruction
-- Tactics — Knight Forks & Geometry
-- Tactics — Overloading & Line Clearance
-- Tactics — Skewers & X-Ray Attacks
-- Tactics — Tactical Milestone Exam I
-- Tactics — Trapped Pieces & Domination
-- Tenacious Defensive Resources
-- The Carlsbad Structure
-- The Greek Gift Sacrifice (Bxh7+)
-- The Maroczy Bind (c4/e4)
-- The Reti Diagonal Maneuver
-- Tournament Psychology & Discipline
-- Transforming Advantages
-- Triangulation & Zugzwang
-- Vancura Defense & Flank Checks
+- Tactical Exam - Free Piece
+- Two Knights Counter-Attack
 - Vulnerable f7 Strike
-- Weak Squares & Holes
 
 ---
 

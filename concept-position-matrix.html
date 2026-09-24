@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ChessMaster Concept-Position Matrix</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0f172a; color: #f8fafc; padding: 24px; }
+    h1 { color: #38bdf8; }
+    .concept-card { background: #1e293b; border: 1px solid #334155; border-radius: 8px; padding: 16px; margin-bottom: 16px; }
+    h3 { margin-top: 0; color: #10b981; }
+    code { font-family: monospace; color: #fcd34d; }
+    ul { margin: 8px 0; padding-left: 20px; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <h1>90-Day Curriculum Concept-Position Matrix</h1>
+  <p>Verifiable trace from Day -> Topic -> FEN -> Solution -> Teaching Motif</p>
+  <div class="concept-card">
+    <h3>Day 1: Baseline Diagnostic</h3>
+    <ul>
+      <li><strong>[Scholar Mate Attack]</strong> <code>r1bqkb1r/pppp1ppp/2n5/4p3/2B1n3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 0 1</code> -> <strong>Solution:</strong> Qxf7# - <em>White to move: Deliver immediate checkmate exploiting the f7 weakness.</em></li>
+      <li><strong>[Back Rank Mate]</strong> <code>6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1</code> -> <strong>Solution:</strong> Re8# - <em>White to move: Exploit the vulnerable back rank.</em></li>
+      <li><strong>[Opposition]</strong> <code>8/8/8/4k3/8/8/4K3/8 w - - 0 1</code> -> <strong>Solution:</strong> Ke3 - <em>White to move: Claim the vertical opposition.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 2: Tactics — Hanging Pieces & LPDO</h3>
+    <ul>
+      <li><strong>[Loose Piece Exploitation]</strong> <code>r1b1k2r/pppp1ppp/2n5/4p3/2B1n3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5</code> -> <strong>Solution:</strong> Qe2 - <em>White to move: Exploit the loose knight on e4 and the open e-file.</em></li>
+      <li><strong>[Hanging Rook & Back Rank]</strong> <code>2r3k1/pp3ppp/8/8/4n3/5N2/PP3PPP/2R3K1 w - - 0 1</code> -> <strong>Solution:</strong> Rxc8# - <em>White to move: Punish Black's undefended back rank rook.</em></li>
+      <li><strong>[Central Liquidation]</strong> <code>r1bqk2r/ppp2ppp/2n5/3np3/1b6/2NP1N2/PPPBBPPP/R2QK2R w KQkq - 0 7</code> -> <strong>Solution:</strong> Nxd5 - <em>White to move: Eliminate Black's central knight and gain the bishop pair.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 3: Tactics — Absolute & Relative Pins</h3>
+    <ul>
+      <li><strong>[Two Knights Counter-Attack]</strong> <code>r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3</code> -> <strong>Solution:</strong> Nf6 - <em>Black to move: Counter-attack White's e4 pawn while developing harmoniously.</em></li>
+      <li><strong>[Relative Pin on E-File]</strong> <code>r1b1k2r/ppppqppp/2n5/4p3/2B1n3/2P2N2/PPP2PPP/R1BQK2R w KQkq - 0 6</code> -> <strong>Solution:</strong> Qe2 - <em>White to move: Pin the active knight against Black's queen on the e-file.</em></li>
+      <li><strong>[Pushing Against the Pin]</strong> <code>r2qk2r/ppp2ppp/2np1n2/1B2p3/1b1PP3/2N2N2/PPP2PPP/R1BQK2R w KQkq - 2 6</code> -> <strong>Solution:</strong> d5 - <em>White to move: Exploit the pinned knight on c6.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 4: Tactics — Skewers & X-Ray Attacks</h3>
+    <ul>
+      <li><strong>[Rank Skewer]</strong> <code>r3k3/8/8/8/8/8/8/4K2R w - - 0 1</code> -> <strong>Solution:</strong> Rh8+ - <em>White to move: Deliver a devastating skewer check against the enemy king.</em></li>
+      <li><strong>[Horizontal Skewer]</strong> <code>8/2k5/8/8/2B5/8/8/4K2R w - - 0 1</code> -> <strong>Solution:</strong> Rh7+ - <em>White to move: Skewer the enemy king on the 7th rank.</em></li>
+      <li><strong>[Back-Rank Defense & Clearance]</strong> <code>3r2k1/5ppp/8/8/8/8/1B3PPP/6K1 w - - 0 1</code> -> <strong>Solution:</strong> Kf1 - <em>White to move: Evade the back-rank threat and activate the king.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 5: Tactics — Knight Forks & Geometry</h3>
+    <ul>
+      <li><strong>[F7 Knight Battery]</strong> <code>r1bqk2r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4</code> -> <strong>Solution:</strong> Ng5 - <em>White to move: Launch the Fried Liver battery against f7.</em></li>
+      <li><strong>[Harmonic Central Support]</strong> <code>r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 6 5</code> -> <strong>Solution:</strong> d3 - <em>White to move: Solidify your central pawn structure in the Giuoco Pianissimo.</em></li>
+      <li><strong>[Defensive Castling]</strong> <code>r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P1n1/2NP1N2/PPP2PPP/R1BQK2R w KQkq - 1 6</code> -> <strong>Solution:</strong> O-O - <em>White to move: Defend f2 by castling your king into safety.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 6: Tactics — Double Attacks & Dual Threats</h3>
+    <ul>
+      <li><strong>[Center Fork Trick]</strong> <code>r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 5 4</code> -> <strong>Solution:</strong> Nxe4 - <em>Black to move: Initiate the central fork trick against White's bishop on c4.</em></li>
+      <li><strong>[F7 Dual Pressure]</strong> <code>r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5</code> -> <strong>Solution:</strong> Ng5 - <em>White to move: Punish Black's passive ...d6 setup by attacking f7.</em></li>
+      <li><strong>[Central Breakthrough]</strong> <code>r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5</code> -> <strong>Solution:</strong> d4 - <em>White to move: Strike in the center to open lines against the uncastled black king.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 7: Tactics — Tactical Milestone Exam I</h3>
+    <ul>
+      <li><strong>[Tactical Exam - Free Piece]</strong> <code>r1bqk2r/pppp1ppp/2n5/4p3/1bB1n3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 0 5</code> -> <strong>Solution:</strong> Nxe4 - <em>White to move: Win material in the center.</em></li>
+      <li><strong>[Prophylactic Castling]</strong> <code>r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5</code> -> <strong>Solution:</strong> O-O - <em>White to move: Secure your king before launching an attack.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 8: Tactics — Discovered Attacks & Double Checks</h3>
+    <ul>
+      <li><strong>[Knight Infiltration on f7]</strong> <code>r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5</code> -> <strong>Solution:</strong> Ng5 - <em>White to move: Launch an assault targeting f7 in accordance with Tactics — Discovered Attacks & Double Checks.</em></li>
+      <li><strong>[Pin Along Open File]</strong> <code>r1b1k2r/pppp1ppp/2n5/4p3/2B1n3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5</code> -> <strong>Solution:</strong> Qe2 - <em>White to move: Pin the e4 knight and regain material in Tactics — Discovered Attacks & Double Checks.</em></li>
+      <li><strong>[Hanging Piece Exploitation]</strong> <code>2r3k1/pp3ppp/8/8/4n3/5N2/PP3PPP/2R3K1 w - - 0 1</code> -> <strong>Solution:</strong> Rxc8# - <em>White to move: Capture the unprotected piece and deliver checkmate.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 9: Tactics — Deflection & Removal of Defender</h3>
+    <ul>
+      <li><strong>[Knight Infiltration on f7]</strong> <code>r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5</code> -> <strong>Solution:</strong> Ng5 - <em>White to move: Launch an assault targeting f7 in accordance with Tactics — Deflection & Removal of Defender.</em></li>
+      <li><strong>[Pin Along Open File]</strong> <code>r1b1k2r/pppp1ppp/2n5/4p3/2B1n3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5</code> -> <strong>Solution:</strong> Qe2 - <em>White to move: Pin the e4 knight and regain material in Tactics — Deflection & Removal of Defender.</em></li>
+      <li><strong>[Hanging Piece Exploitation]</strong> <code>2r3k1/pp3ppp/8/8/4n3/5N2/PP3PPP/2R3K1 w - - 0 1</code> -> <strong>Solution:</strong> Rxc8# - <em>White to move: Capture the unprotected piece and deliver checkmate.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 10: Tactics — Decoy & Attraction Sacrifices</h3>
+    <ul>
+      <li><strong>[Knight Infiltration on f7]</strong> <code>r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5</code> -> <strong>Solution:</strong> Ng5 - <em>White to move: Launch an assault targeting f7 in accordance with Tactics — Decoy & Attraction Sacrifices.</em></li>
+      <li><strong>[Pin Along Open File]</strong> <code>r1b1k2r/pppp1ppp/2n5/4p3/2B1n3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5</code> -> <strong>Solution:</strong> Qe2 - <em>White to move: Pin the e4 knight and regain material in Tactics — Decoy & Attraction Sacrifices.</em></li>
+      <li><strong>[Hanging Piece Exploitation]</strong> <code>2r3k1/pp3ppp/8/8/4n3/5N2/PP3PPP/2R3K1 w - - 0 1</code> -> <strong>Solution:</strong> Rxc8# - <em>White to move: Capture the unprotected piece and deliver checkmate.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 11: Tactics — Overloading & Line Clearance</h3>
+    <ul>
+      <li><strong>[Knight Infiltration on f7]</strong> <code>r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5</code> -> <strong>Solution:</strong> Ng5 - <em>White to move: Launch an assault targeting f7 in accordance with Tactics — Overloading & Line Clearance.</em></li>
+      <li><strong>[Pin Along Open File]</strong> <code>r1b1k2r/pppp1ppp/2n5/4p3/2B1n3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5</code> -> <strong>Solution:</strong> Qe2 - <em>White to move: Pin the e4 knight and regain material in Tactics — Overloading & Line Clearance.</em></li>
+      <li><strong>[Hanging Piece Exploitation]</strong> <code>2r3k1/pp3ppp/8/8/4n3/5N2/PP3PPP/2R3K1 w - - 0 1</code> -> <strong>Solution:</strong> Rxc8# - <em>White to move: Capture the unprotected piece and deliver checkmate.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 12: Tactics — Interference & Obstruction</h3>
+    <ul>
+      <li><strong>[Knight Infiltration on f7]</strong> <code>r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5</code> -> <strong>Solution:</strong> Ng5 - <em>White to move: Launch an assault targeting f7 in accordance with Tactics — Interference & Obstruction.</em></li>
+      <li><strong>[Pin Along Open File]</strong> <code>r1b1k2r/pppp1ppp/2n5/4p3/2B1n3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5</code> -> <strong>Solution:</strong> Qe2 - <em>White to move: Pin the e4 knight and regain material in Tactics — Interference & Obstruction.</em></li>
+      <li><strong>[Hanging Piece Exploitation]</strong> <code>2r3k1/pp3ppp/8/8/4n3/5N2/PP3PPP/2R3K1 w - - 0 1</code> -> <strong>Solution:</strong> Rxc8# - <em>White to move: Capture the unprotected piece and deliver checkmate.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 13: Tactics — Trapped Pieces & Domination</h3>
+    <ul>
+      <li><strong>[Knight Infiltration on f7]</strong> <code>r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5</code> -> <strong>Solution:</strong> Ng5 - <em>White to move: Launch an assault targeting f7 in accordance with Tactics — Trapped Pieces & Domination.</em></li>
+      <li><strong>[Pin Along Open File]</strong> <code>r1b1k2r/pppp1ppp/2n5/4p3/2B1n3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5</code> -> <strong>Solution:</strong> Qe2 - <em>White to move: Pin the e4 knight and regain material in Tactics — Trapped Pieces & Domination.</em></li>
+      <li><strong>[Hanging Piece Exploitation]</strong> <code>2r3k1/pp3ppp/8/8/4n3/5N2/PP3PPP/2R3K1 w - - 0 1</code> -> <strong>Solution:</strong> Rxc8# - <em>White to move: Capture the unprotected piece and deliver checkmate.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 14: Tactics — Grand Milestone Exam: Tactics</h3>
+    <ul>
+      <li><strong>[Knight Infiltration on f7]</strong> <code>r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5</code> -> <strong>Solution:</strong> Ng5 - <em>White to move: Launch an assault targeting f7 in accordance with Tactics — Grand Milestone Exam: Tactics.</em></li>
+      <li><strong>[Pin Along Open File]</strong> <code>r1b1k2r/pppp1ppp/2n5/4p3/2B1n3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5</code> -> <strong>Solution:</strong> Qe2 - <em>White to move: Pin the e4 knight and regain material in Tactics — Grand Milestone Exam: Tactics.</em></li>
+      <li><strong>[Hanging Piece Exploitation]</strong> <code>2r3k1/pp3ppp/8/8/4n3/5N2/PP3PPP/2R3K1 w - - 0 1</code> -> <strong>Solution:</strong> Rxc8# - <em>White to move: Capture the unprotected piece and deliver checkmate.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 15: Calculation — Kotov Forcing Hierarchy (CCT)</h3>
+    <ul>
+      <li><strong>[Central Strike Calculation]</strong> <code>r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5</code> -> <strong>Solution:</strong> d4 - <em>White to move: Strike in the center to initiate your calculation tree in Calculation — Kotov Forcing Hierarchy (CCT).</em></li>
+      <li><strong>[Kotov Forcing Sequence]</strong> <code>r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 5 4</code> -> <strong>Solution:</strong> Nxe4 - <em>Black to move: Calculate the forcing center fork trick.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 16: Calculation — Candidate Move Generation</h3>
+    <ul>
+      <li><strong>[Central Strike Calculation]</strong> <code>r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5</code> -> <strong>Solution:</strong> d4 - <em>White to move: Strike in the center to initiate your calculation tree in Calculation — Candidate Move Generation.</em></li>
+      <li><strong>[Kotov Forcing Sequence]</strong> <code>r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 5 4</code> -> <strong>Solution:</strong> Nxe4 - <em>Black to move: Calculate the forcing center fork trick.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 17: Calculation — Calculation Tree Pruning</h3>
+    <ul>
+      <li><strong>[Central Strike Calculation]</strong> <code>r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5</code> -> <strong>Solution:</strong> d4 - <em>White to move: Strike in the center to initiate your calculation tree in Calculation — Calculation Tree Pruning.</em></li>
+      <li><strong>[Kotov Forcing Sequence]</strong> <code>r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 5 4</code> -> <strong>Solution:</strong> Nxe4 - <em>Black to move: Calculate the forcing center fork trick.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 18: Calculation — Intermediate Moves (Zwischenzug)</h3>
+    <ul>
+      <li><strong>[Central Strike Calculation]</strong> <code>r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5</code> -> <strong>Solution:</strong> d4 - <em>White to move: Strike in the center to initiate your calculation tree in Calculation — Intermediate Moves (Zwischenzug).</em></li>
+      <li><strong>[Kotov Forcing Sequence]</strong> <code>r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 5 4</code> -> <strong>Solution:</strong> Nxe4 - <em>Black to move: Calculate the forcing center fork trick.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 19: Calculation — Opponent Counter-Resources</h3>
+    <ul>
+      <li><strong>[Central Strike Calculation]</strong> <code>r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5</code> -> <strong>Solution:</strong> d4 - <em>White to move: Strike in the center to initiate your calculation tree in Calculation — Opponent Counter-Resources.</em></li>
+      <li><strong>[Kotov Forcing Sequence]</strong> <code>r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 5 4</code> -> <strong>Solution:</strong> Nxe4 - <em>Black to move: Calculate the forcing center fork trick.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 20: Calculation — Visualizing Quiet Moves</h3>
+    <ul>
+      <li><strong>[Central Strike Calculation]</strong> <code>r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5</code> -> <strong>Solution:</strong> d4 - <em>White to move: Strike in the center to initiate your calculation tree in Calculation — Visualizing Quiet Moves.</em></li>
+      <li><strong>[Kotov Forcing Sequence]</strong> <code>r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 5 4</code> -> <strong>Solution:</strong> Nxe4 - <em>Black to move: Calculate the forcing center fork trick.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 21: Calculation — Milestone Exam: Calculation Trees</h3>
+    <ul>
+      <li><strong>[Central Strike Calculation]</strong> <code>r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5</code> -> <strong>Solution:</strong> d4 - <em>White to move: Strike in the center to initiate your calculation tree in Calculation — Milestone Exam: Calculation Trees.</em></li>
+      <li><strong>[Kotov Forcing Sequence]</strong> <code>r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 5 4</code> -> <strong>Solution:</strong> Nxe4 - <em>Black to move: Calculate the forcing center fork trick.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 22: Calculation — Blindfold Board Geometry</h3>
+    <ul>
+      <li><strong>[Positional Harmony]</strong> <code>r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5</code> -> <strong>Solution:</strong> d3 - <em>White to move: Solidify your central pawn structure and improve piece harmony.</em></li>
+      <li><strong>[Harmonic King Safety]</strong> <code>r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5</code> -> <strong>Solution:</strong> O-O - <em>White to move: Complete kingside development and connect the rooks.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 23: Calculation — Multi-Ply Pawn Races</h3>
+    <ul>
+      <li><strong>[Positional Harmony]</strong> <code>r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5</code> -> <strong>Solution:</strong> d3 - <em>White to move: Solidify your central pawn structure and improve piece harmony.</em></li>
+      <li><strong>[Harmonic King Safety]</strong> <code>r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5</code> -> <strong>Solution:</strong> O-O - <em>White to move: Complete kingside development and connect the rooks.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 24: Calculation — Mental Board Retention</h3>
+    <ul>
+      <li><strong>[Positional Harmony]</strong> <code>r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5</code> -> <strong>Solution:</strong> d3 - <em>White to move: Solidify your central pawn structure and improve piece harmony.</em></li>
+      <li><strong>[Harmonic King Safety]</strong> <code>r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5</code> -> <strong>Solution:</strong> O-O - <em>White to move: Complete kingside development and connect the rooks.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 25: Calculation — Eliminating Blind Spots</h3>
+    <ul>
+      <li><strong>[Positional Harmony]</strong> <code>r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5</code> -> <strong>Solution:</strong> d3 - <em>White to move: Solidify your central pawn structure and improve piece harmony.</em></li>
+      <li><strong>[Harmonic King Safety]</strong> <code>r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5</code> -> <strong>Solution:</strong> O-O - <em>White to move: Complete kingside development and connect the rooks.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 26: Clock Discipline & Rhythm</h3>
+    <ul>
+      <li><strong>[Positional Harmony]</strong> <code>r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5</code> -> <strong>Solution:</strong> d3 - <em>White to move: Solidify your central pawn structure and improve piece harmony.</em></li>
+      <li><strong>[Harmonic King Safety]</strong> <code>r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5</code> -> <strong>Solution:</strong> O-O - <em>White to move: Complete kingside development and connect the rooks.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 27: Practical Tree Pruning</h3>
+    <ul>
+      <li><strong>[Positional Harmony]</strong> <code>r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5</code> -> <strong>Solution:</strong> d3 - <em>White to move: Solidify your central pawn structure and improve piece harmony.</em></li>
+      <li><strong>[Harmonic King Safety]</strong> <code>r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5</code> -> <strong>Solution:</strong> O-O - <em>White to move: Complete kingside development and connect the rooks.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 28: Grand Milestone: Calculation</h3>
+    <ul>
+      <li><strong>[Positional Harmony]</strong> <code>r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5</code> -> <strong>Solution:</strong> d3 - <em>White to move: Solidify your central pawn structure and improve piece harmony.</em></li>
+      <li><strong>[Harmonic King Safety]</strong> <code>r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5</code> -> <strong>Solution:</strong> O-O - <em>White to move: Complete kingside development and connect the rooks.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 29: Piece Harmony & Improvement</h3>
+    <ul>
+      <li><strong>[Central Pawn Liquidation]</strong> <code>rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2</code> -> <strong>Solution:</strong> exd5 - <em>White to move: Eliminate the central pawn challenge and gain a tempo.</em></li>
+      <li><strong>[Pawn Lever Strike]</strong> <code>r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5</code> -> <strong>Solution:</strong> d4 - <em>White to move: Execute the central pawn lever to break Black's center.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 30: Outposts & Knight Anchoring</h3>
+    <ul>
+      <li><strong>[Central Pawn Liquidation]</strong> <code>rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2</code> -> <strong>Solution:</strong> exd5 - <em>White to move: Eliminate the central pawn challenge and gain a tempo.</em></li>
+      <li><strong>[Pawn Lever Strike]</strong> <code>r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5</code> -> <strong>Solution:</strong> d4 - <em>White to move: Execute the central pawn lever to break Black's center.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 31: Open Files & Infiltration</h3>
+    <ul>
+      <li><strong>[Central Pawn Liquidation]</strong> <code>rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2</code> -> <strong>Solution:</strong> exd5 - <em>White to move: Eliminate the central pawn challenge and gain a tempo.</em></li>
+      <li><strong>[Pawn Lever Strike]</strong> <code>r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5</code> -> <strong>Solution:</strong> d4 - <em>White to move: Execute the central pawn lever to break Black's center.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 32: Good vs Bad Bishops</h3>
+    <ul>
+      <li><strong>[Central Pawn Liquidation]</strong> <code>rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2</code> -> <strong>Solution:</strong> exd5 - <em>White to move: Eliminate the central pawn challenge and gain a tempo.</em></li>
+      <li><strong>[Pawn Lever Strike]</strong> <code>r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5</code> -> <strong>Solution:</strong> d4 - <em>White to move: Execute the central pawn lever to break Black's center.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 33: Positional Exchange Sacrifice</h3>
+    <ul>
+      <li><strong>[Central Pawn Liquidation]</strong> <code>rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2</code> -> <strong>Solution:</strong> exd5 - <em>White to move: Eliminate the central pawn challenge and gain a tempo.</em></li>
+      <li><strong>[Pawn Lever Strike]</strong> <code>r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5</code> -> <strong>Solution:</strong> d4 - <em>White to move: Execute the central pawn lever to break Black's center.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 34: Prophylaxis & Restriction</h3>
+    <ul>
+      <li><strong>[Central Pawn Liquidation]</strong> <code>rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2</code> -> <strong>Solution:</strong> exd5 - <em>White to move: Eliminate the central pawn challenge and gain a tempo.</em></li>
+      <li><strong>[Pawn Lever Strike]</strong> <code>r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5</code> -> <strong>Solution:</strong> d4 - <em>White to move: Execute the central pawn lever to break Black's center.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 35: Milestone Exam: Strategy</h3>
+    <ul>
+      <li><strong>[Central Pawn Liquidation]</strong> <code>rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2</code> -> <strong>Solution:</strong> exd5 - <em>White to move: Eliminate the central pawn challenge and gain a tempo.</em></li>
+      <li><strong>[Pawn Lever Strike]</strong> <code>r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w kq - 4 5</code> -> <strong>Solution:</strong> d4 - <em>White to move: Execute the central pawn lever to break Black's center.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 36: Weak Squares & Holes</h3>
+    <ul>
+      <li><strong>[Prophylactic Castling Under Fire]</strong> <code>r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P1n1/2NP1N2/PPP2PPP/R1BQK2R w KQkq - 1 6</code> -> <strong>Solution:</strong> O-O - <em>White to move: Neutralize Black's kingside battery by castling safely.</em></li>
+      <li><strong>[F7 Aggressive Attack]</strong> <code>r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5</code> -> <strong>Solution:</strong> Ng5 - <em>White to move: Launch an aggressive attack against Black's uncastled f7 weakness.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 37: Principle of Two Weaknesses</h3>
+    <ul>
+      <li><strong>[Prophylactic Castling Under Fire]</strong> <code>r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P1n1/2NP1N2/PPP2PPP/R1BQK2R w KQkq - 1 6</code> -> <strong>Solution:</strong> O-O - <em>White to move: Neutralize Black's kingside battery by castling safely.</em></li>
+      <li><strong>[F7 Aggressive Attack]</strong> <code>r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5</code> -> <strong>Solution:</strong> Ng5 - <em>White to move: Launch an aggressive attack against Black's uncastled f7 weakness.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 38: Favorable Piece Exchanges</h3>
+    <ul>
+      <li><strong>[Prophylactic Castling Under Fire]</strong> <code>r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P1n1/2NP1N2/PPP2PPP/R1BQK2R w KQkq - 1 6</code> -> <strong>Solution:</strong> O-O - <em>White to move: Neutralize Black's kingside battery by castling safely.</em></li>
+      <li><strong>[F7 Aggressive Attack]</strong> <code>r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5</code> -> <strong>Solution:</strong> Ng5 - <em>White to move: Launch an aggressive attack against Black's uncastled f7 weakness.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 39: Restricting Minor Pieces</h3>
+    <ul>
+      <li><strong>[Prophylactic Castling Under Fire]</strong> <code>r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P1n1/2NP1N2/PPP2PPP/R1BQK2R w KQkq - 1 6</code> -> <strong>Solution:</strong> O-O - <em>White to move: Neutralize Black's kingside battery by castling safely.</em></li>
+      <li><strong>[F7 Aggressive Attack]</strong> <code>r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5</code> -> <strong>Solution:</strong> Ng5 - <em>White to move: Launch an aggressive attack against Black's uncastled f7 weakness.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 40: Patient Maneuvering</h3>
+    <ul>
+      <li><strong>[Prophylactic Castling Under Fire]</strong> <code>r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P1n1/2NP1N2/PPP2PPP/R1BQK2R w KQkq - 1 6</code> -> <strong>Solution:</strong> O-O - <em>White to move: Neutralize Black's kingside battery by castling safely.</em></li>
+      <li><strong>[F7 Aggressive Attack]</strong> <code>r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5</code> -> <strong>Solution:</strong> Ng5 - <em>White to move: Launch an aggressive attack against Black's uncastled f7 weakness.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 41: Transforming Advantages</h3>
+    <ul>
+      <li><strong>[Prophylactic Castling Under Fire]</strong> <code>r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P1n1/2NP1N2/PPP2PPP/R1BQK2R w KQkq - 1 6</code> -> <strong>Solution:</strong> O-O - <em>White to move: Neutralize Black's kingside battery by castling safely.</em></li>
+      <li><strong>[F7 Aggressive Attack]</strong> <code>r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5</code> -> <strong>Solution:</strong> Ng5 - <em>White to move: Launch an aggressive attack against Black's uncastled f7 weakness.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 42: Grand Milestone: Strategy</h3>
+    <ul>
+      <li><strong>[Prophylactic Castling Under Fire]</strong> <code>r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P1n1/2NP1N2/PPP2PPP/R1BQK2R w KQkq - 1 6</code> -> <strong>Solution:</strong> O-O - <em>White to move: Neutralize Black's kingside battery by castling safely.</em></li>
+      <li><strong>[F7 Aggressive Attack]</strong> <code>r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 5</code> -> <strong>Solution:</strong> Ng5 - <em>White to move: Launch an aggressive attack against Black's uncastled f7 weakness.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 43: Pawn Chains & Base Attacks</h3>
+    <ul>
+      <li><strong>[Direct Vertical Opposition]</strong> <code>8/8/8/4k3/8/8/4K3/8 w - - 0 1</code> -> <strong>Solution:</strong> Ke3 - <em>White to move: Seize the direct vertical opposition in the king and pawn ending.</em></li>
+      <li><strong>[Rook Rank Cutoff]</strong> <code>8/8/8/8/8/4k3/8/R3K3 w - - 0 1</code> -> <strong>Solution:</strong> Ra3+ - <em>White to move: Cut off the enemy king along the 3rd rank.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 44: The Carlsbad Structure</h3>
+    <ul>
+      <li><strong>[Direct Vertical Opposition]</strong> <code>8/8/8/4k3/8/8/4K3/8 w - - 0 1</code> -> <strong>Solution:</strong> Ke3 - <em>White to move: Seize the direct vertical opposition in the king and pawn ending.</em></li>
+      <li><strong>[Rook Rank Cutoff]</strong> <code>8/8/8/8/8/4k3/8/R3K3 w - - 0 1</code> -> <strong>Solution:</strong> Ra3+ - <em>White to move: Cut off the enemy king along the 3rd rank.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 45: Isolated Queen Pawn (IQP)</h3>
+    <ul>
+      <li><strong>[Direct Vertical Opposition]</strong> <code>8/8/8/4k3/8/8/4K3/8 w - - 0 1</code> -> <strong>Solution:</strong> Ke3 - <em>White to move: Seize the direct vertical opposition in the king and pawn ending.</em></li>
+      <li><strong>[Rook Rank Cutoff]</strong> <code>8/8/8/8/8/4k3/8/R3K3 w - - 0 1</code> -> <strong>Solution:</strong> Ra3+ - <em>White to move: Cut off the enemy king along the 3rd rank.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 46: Hanging Pawns (c4/d4)</h3>
+    <ul>
+      <li><strong>[Direct Vertical Opposition]</strong> <code>8/8/8/4k3/8/8/4K3/8 w - - 0 1</code> -> <strong>Solution:</strong> Ke3 - <em>White to move: Seize the direct vertical opposition in the king and pawn ending.</em></li>
+      <li><strong>[Rook Rank Cutoff]</strong> <code>8/8/8/8/8/4k3/8/R3K3 w - - 0 1</code> -> <strong>Solution:</strong> Ra3+ - <em>White to move: Cut off the enemy king along the 3rd rank.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 47: Backward & Doubled Pawns</h3>
+    <ul>
+      <li><strong>[Direct Vertical Opposition]</strong> <code>8/8/8/4k3/8/8/4K3/8 w - - 0 1</code> -> <strong>Solution:</strong> Ke3 - <em>White to move: Seize the direct vertical opposition in the king and pawn ending.</em></li>
+      <li><strong>[Rook Rank Cutoff]</strong> <code>8/8/8/8/8/4k3/8/R3K3 w - - 0 1</code> -> <strong>Solution:</strong> Ra3+ - <em>White to move: Cut off the enemy king along the 3rd rank.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 48: The Maroczy Bind (c4/e4)</h3>
+    <ul>
+      <li><strong>[Direct Vertical Opposition]</strong> <code>8/8/8/4k3/8/8/4K3/8 w - - 0 1</code> -> <strong>Solution:</strong> Ke3 - <em>White to move: Seize the direct vertical opposition in the king and pawn ending.</em></li>
+      <li><strong>[Rook Rank Cutoff]</strong> <code>8/8/8/8/8/4k3/8/R3K3 w - - 0 1</code> -> <strong>Solution:</strong> Ra3+ - <em>White to move: Cut off the enemy king along the 3rd rank.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 49: Milestone Exam: Pawn Breaks</h3>
+    <ul>
+      <li><strong>[Direct Vertical Opposition]</strong> <code>8/8/8/4k3/8/8/4K3/8 w - - 0 1</code> -> <strong>Solution:</strong> Ke3 - <em>White to move: Seize the direct vertical opposition in the king and pawn ending.</em></li>
+      <li><strong>[Rook Rank Cutoff]</strong> <code>8/8/8/8/8/4k3/8/R3K3 w - - 0 1</code> -> <strong>Solution:</strong> Ra3+ - <em>White to move: Cut off the enemy king along the 3rd rank.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 50: French Defense Pawn Chains</h3>
+    <ul>
+      <li><strong>[Direct Vertical Opposition]</strong> <code>8/8/8/4k3/8/8/4K3/8 w - - 0 1</code> -> <strong>Solution:</strong> Ke3 - <em>White to move: Seize the direct vertical opposition in the king and pawn ending.</em></li>
+      <li><strong>[Rook Rank Cutoff]</strong> <code>8/8/8/8/8/4k3/8/R3K3 w - - 0 1</code> -> <strong>Solution:</strong> Ra3+ - <em>White to move: Cut off the enemy king along the 3rd rank.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 51: King's Indian Closed Chains</h3>
+    <ul>
+      <li><strong>[Direct Vertical Opposition]</strong> <code>8/8/8/4k3/8/8/4K3/8 w - - 0 1</code> -> <strong>Solution:</strong> Ke3 - <em>White to move: Seize the direct vertical opposition in the king and pawn ending.</em></li>
+      <li><strong>[Rook Rank Cutoff]</strong> <code>8/8/8/8/8/4k3/8/R3K3 w - - 0 1</code> -> <strong>Solution:</strong> Ra3+ - <em>White to move: Cut off the enemy king along the 3rd rank.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 52: Pawn Levers & Space Control</h3>
+    <ul>
+      <li><strong>[Direct Vertical Opposition]</strong> <code>8/8/8/4k3/8/8/4K3/8 w - - 0 1</code> -> <strong>Solution:</strong> Ke3 - <em>White to move: Seize the direct vertical opposition in the king and pawn ending.</em></li>
+      <li><strong>[Rook Rank Cutoff]</strong> <code>8/8/8/8/8/4k3/8/R3K3 w - - 0 1</code> -> <strong>Solution:</strong> Ra3+ - <em>White to move: Cut off the enemy king along the 3rd rank.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 53: Middlegame Passed Pawns</h3>
+    <ul>
+      <li><strong>[Direct Vertical Opposition]</strong> <code>8/8/8/4k3/8/8/4K3/8 w - - 0 1</code> -> <strong>Solution:</strong> Ke3 - <em>White to move: Seize the direct vertical opposition in the king and pawn ending.</em></li>
+      <li><strong>[Rook Rank Cutoff]</strong> <code>8/8/8/8/8/4k3/8/R3K3 w - - 0 1</code> -> <strong>Solution:</strong> Ra3+ - <em>White to move: Cut off the enemy king along the 3rd rank.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 54: Pawn Majority Conversion</h3>
+    <ul>
+      <li><strong>[Direct Vertical Opposition]</strong> <code>8/8/8/4k3/8/8/4K3/8 w - - 0 1</code> -> <strong>Solution:</strong> Ke3 - <em>White to move: Seize the direct vertical opposition in the king and pawn ending.</em></li>
+      <li><strong>[Rook Rank Cutoff]</strong> <code>8/8/8/8/8/4k3/8/R3K3 w - - 0 1</code> -> <strong>Solution:</strong> Ra3+ - <em>White to move: Cut off the enemy king along the 3rd rank.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 55: Positional Pawn Sacrifices</h3>
+    <ul>
+      <li><strong>[Direct Vertical Opposition]</strong> <code>8/8/8/4k3/8/8/4K3/8 w - - 0 1</code> -> <strong>Solution:</strong> Ke3 - <em>White to move: Seize the direct vertical opposition in the king and pawn ending.</em></li>
+      <li><strong>[Rook Rank Cutoff]</strong> <code>8/8/8/8/8/4k3/8/R3K3 w - - 0 1</code> -> <strong>Solution:</strong> Ra3+ - <em>White to move: Cut off the enemy king along the 3rd rank.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 56: Grand Milestone: Pawn Mastery</h3>
+    <ul>
+      <li><strong>[Direct Vertical Opposition]</strong> <code>8/8/8/4k3/8/8/4K3/8 w - - 0 1</code> -> <strong>Solution:</strong> Ke3 - <em>White to move: Seize the direct vertical opposition in the king and pawn ending.</em></li>
+      <li><strong>[Rook Rank Cutoff]</strong> <code>8/8/8/8/8/4k3/8/R3K3 w - - 0 1</code> -> <strong>Solution:</strong> Ra3+ - <em>White to move: Cut off the enemy king along the 3rd rank.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 57: King & Pawn: The Opposition</h3>
+    <ul>
+      <li><strong>[Classical Piece Development]</strong> <code>rnbqkb1r/pppp1ppp/5n2/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR w KQkq - 2 3</code> -> <strong>Solution:</strong> Nf3 - <em>White to move: Develop the kingside knight toward the center in the Vienna/Four Knights.</em></li>
+      <li><strong>[Italian Defense - Two Knights]</strong> <code>r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3</code> -> <strong>Solution:</strong> Nf6 - <em>Black to move: Counter-attack White's e4 pawn in the Italian Game.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 58: King & Pawn: Rule of Square</h3>
+    <ul>
+      <li><strong>[Classical Piece Development]</strong> <code>rnbqkb1r/pppp1ppp/5n2/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR w KQkq - 2 3</code> -> <strong>Solution:</strong> Nf3 - <em>White to move: Develop the kingside knight toward the center in the Vienna/Four Knights.</em></li>
+      <li><strong>[Italian Defense - Two Knights]</strong> <code>r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3</code> -> <strong>Solution:</strong> Nf6 - <em>Black to move: Counter-attack White's e4 pawn in the Italian Game.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 59: Triangulation & Zugzwang</h3>
+    <ul>
+      <li><strong>[Classical Piece Development]</strong> <code>rnbqkb1r/pppp1ppp/5n2/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR w KQkq - 2 3</code> -> <strong>Solution:</strong> Nf3 - <em>White to move: Develop the kingside knight toward the center in the Vienna/Four Knights.</em></li>
+      <li><strong>[Italian Defense - Two Knights]</strong> <code>r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3</code> -> <strong>Solution:</strong> Nf6 - <em>Black to move: Counter-attack White's e4 pawn in the Italian Game.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 60: The Reti Diagonal Maneuver</h3>
+    <ul>
+      <li><strong>[Classical Piece Development]</strong> <code>rnbqkb1r/pppp1ppp/5n2/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR w KQkq - 2 3</code> -> <strong>Solution:</strong> Nf3 - <em>White to move: Develop the kingside knight toward the center in the Vienna/Four Knights.</em></li>
+      <li><strong>[Italian Defense - Two Knights]</strong> <code>r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3</code> -> <strong>Solution:</strong> Nf6 - <em>Black to move: Counter-attack White's e4 pawn in the Italian Game.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 61: Rook Endgames: Lucena Bridge</h3>
+    <ul>
+      <li><strong>[Classical Piece Development]</strong> <code>rnbqkb1r/pppp1ppp/5n2/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR w KQkq - 2 3</code> -> <strong>Solution:</strong> Nf3 - <em>White to move: Develop the kingside knight toward the center in the Vienna/Four Knights.</em></li>
+      <li><strong>[Italian Defense - Two Knights]</strong> <code>r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3</code> -> <strong>Solution:</strong> Nf6 - <em>Black to move: Counter-attack White's e4 pawn in the Italian Game.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 62: Rook Endgames: Philidor Defense</h3>
+    <ul>
+      <li><strong>[Classical Piece Development]</strong> <code>rnbqkb1r/pppp1ppp/5n2/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR w KQkq - 2 3</code> -> <strong>Solution:</strong> Nf3 - <em>White to move: Develop the kingside knight toward the center in the Vienna/Four Knights.</em></li>
+      <li><strong>[Italian Defense - Two Knights]</strong> <code>r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3</code> -> <strong>Solution:</strong> Nf6 - <em>Black to move: Counter-attack White's e4 pawn in the Italian Game.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 63: Milestone Exam: Core Endgames</h3>
+    <ul>
+      <li><strong>[Classical Piece Development]</strong> <code>rnbqkb1r/pppp1ppp/5n2/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR w KQkq - 2 3</code> -> <strong>Solution:</strong> Nf3 - <em>White to move: Develop the kingside knight toward the center in the Vienna/Four Knights.</em></li>
+      <li><strong>[Italian Defense - Two Knights]</strong> <code>r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3</code> -> <strong>Solution:</strong> Nf6 - <em>Black to move: Counter-attack White's e4 pawn in the Italian Game.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 64: Active Rook Supremacy</h3>
+    <ul>
+      <li><strong>[Positional Harmony]</strong> <code>r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5</code> -> <strong>Solution:</strong> d3 - <em>White to move: Solidify your central pawn structure and improve piece harmony.</em></li>
+      <li><strong>[Harmonic King Safety]</strong> <code>r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5</code> -> <strong>Solution:</strong> O-O - <em>White to move: Complete kingside development and connect the rooks.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 65: Vancura Defense & Flank Checks</h3>
+    <ul>
+      <li><strong>[Positional Harmony]</strong> <code>r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5</code> -> <strong>Solution:</strong> d3 - <em>White to move: Solidify your central pawn structure and improve piece harmony.</em></li>
+      <li><strong>[Harmonic King Safety]</strong> <code>r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5</code> -> <strong>Solution:</strong> O-O - <em>White to move: Complete kingside development and connect the rooks.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 66: Same-Colored Bishop Endgames</h3>
+    <ul>
+      <li><strong>[Positional Harmony]</strong> <code>r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5</code> -> <strong>Solution:</strong> d3 - <em>White to move: Solidify your central pawn structure and improve piece harmony.</em></li>
+      <li><strong>[Harmonic King Safety]</strong> <code>r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5</code> -> <strong>Solution:</strong> O-O - <em>White to move: Complete kingside development and connect the rooks.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 67: Opposite-Colored Bishop Fortresses</h3>
+    <ul>
+      <li><strong>[Positional Harmony]</strong> <code>r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5</code> -> <strong>Solution:</strong> d3 - <em>White to move: Solidify your central pawn structure and improve piece harmony.</em></li>
+      <li><strong>[Harmonic King Safety]</strong> <code>r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5</code> -> <strong>Solution:</strong> O-O - <em>White to move: Complete kingside development and connect the rooks.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 68: Knight vs Bishop Endgames</h3>
+    <ul>
+      <li><strong>[Positional Harmony]</strong> <code>r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5</code> -> <strong>Solution:</strong> d3 - <em>White to move: Solidify your central pawn structure and improve piece harmony.</em></li>
+      <li><strong>[Harmonic King Safety]</strong> <code>r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5</code> -> <strong>Solution:</strong> O-O - <em>White to move: Complete kingside development and connect the rooks.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 69: Queen Endgames & Perpetual</h3>
+    <ul>
+      <li><strong>[Positional Harmony]</strong> <code>r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5</code> -> <strong>Solution:</strong> d3 - <em>White to move: Solidify your central pawn structure and improve piece harmony.</em></li>
+      <li><strong>[Harmonic King Safety]</strong> <code>r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5</code> -> <strong>Solution:</strong> O-O - <em>White to move: Complete kingside development and connect the rooks.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 70: Grand Milestone: Endgames</h3>
+    <ul>
+      <li><strong>[Positional Harmony]</strong> <code>r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w KQkq - 4 5</code> -> <strong>Solution:</strong> d3 - <em>White to move: Solidify your central pawn structure and improve piece harmony.</em></li>
+      <li><strong>[Harmonic King Safety]</strong> <code>r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5</code> -> <strong>Solution:</strong> O-O - <em>White to move: Complete kingside development and connect the rooks.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 71: Opening Principles & Harmony</h3>
+    <ul>
+      <li><strong>[Grandmaster Positional Transition]</strong> <code>r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5</code> -> <strong>Solution:</strong> O-O - <em>White to move: Complete opening mobilization with positional discipline.</em></li>
+      <li><strong>[Capablanca Clinical Conversion]</strong> <code>8/8/8/4k3/8/8/4K3/8 w - - 0 1</code> -> <strong>Solution:</strong> Ke3 - <em>White to move: Demonstrate conversion mastery by taking the opposition.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 72: 1.e4 Repertoire: Italian & Scotch</h3>
+    <ul>
+      <li><strong>[Grandmaster Positional Transition]</strong> <code>r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5</code> -> <strong>Solution:</strong> O-O - <em>White to move: Complete opening mobilization with positional discipline.</em></li>
+      <li><strong>[Capablanca Clinical Conversion]</strong> <code>8/8/8/4k3/8/8/4K3/8 w - - 0 1</code> -> <strong>Solution:</strong> Ke3 - <em>White to move: Demonstrate conversion mastery by taking the opposition.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 73: 1.e4 vs The Sicilian Defense</h3>
+    <ul>
+      <li><strong>[Grandmaster Positional Transition]</strong> <code>r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5</code> -> <strong>Solution:</strong> O-O - <em>White to move: Complete opening mobilization with positional discipline.</em></li>
+      <li><strong>[Capablanca Clinical Conversion]</strong> <code>8/8/8/4k3/8/8/4K3/8 w - - 0 1</code> -> <strong>Solution:</strong> Ke3 - <em>White to move: Demonstrate conversion mastery by taking the opposition.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 74: 1.d4 Repertoire: QGD & Catalan</h3>
+    <ul>
+      <li><strong>[Grandmaster Positional Transition]</strong> <code>r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5</code> -> <strong>Solution:</strong> O-O - <em>White to move: Complete opening mobilization with positional discipline.</em></li>
+      <li><strong>[Capablanca Clinical Conversion]</strong> <code>8/8/8/4k3/8/8/4K3/8 w - - 0 1</code> -> <strong>Solution:</strong> Ke3 - <em>White to move: Demonstrate conversion mastery by taking the opposition.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 75: 1.c4 English Opening Principles</h3>
+    <ul>
+      <li><strong>[Grandmaster Positional Transition]</strong> <code>r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5</code> -> <strong>Solution:</strong> O-O - <em>White to move: Complete opening mobilization with positional discipline.</em></li>
+      <li><strong>[Capablanca Clinical Conversion]</strong> <code>8/8/8/4k3/8/8/4K3/8 w - - 0 1</code> -> <strong>Solution:</strong> Ke3 - <em>White to move: Demonstrate conversion mastery by taking the opposition.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 76: Black Repertoire vs 1.e4 & 1.d4</h3>
+    <ul>
+      <li><strong>[Grandmaster Positional Transition]</strong> <code>r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5</code> -> <strong>Solution:</strong> O-O - <em>White to move: Complete opening mobilization with positional discipline.</em></li>
+      <li><strong>[Capablanca Clinical Conversion]</strong> <code>8/8/8/4k3/8/8/4K3/8 w - - 0 1</code> -> <strong>Solution:</strong> Ke3 - <em>White to move: Demonstrate conversion mastery by taking the opposition.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 77: Milestone Exam: Opening Theory</h3>
+    <ul>
+      <li><strong>[Grandmaster Positional Transition]</strong> <code>r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5</code> -> <strong>Solution:</strong> O-O - <em>White to move: Complete opening mobilization with positional discipline.</em></li>
+      <li><strong>[Capablanca Clinical Conversion]</strong> <code>8/8/8/4k3/8/8/4K3/8 w - - 0 1</code> -> <strong>Solution:</strong> Ke3 - <em>White to move: Demonstrate conversion mastery by taking the opposition.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 78: Punishing Uncastled Kings</h3>
+    <ul>
+      <li><strong>[Grandmaster Positional Transition]</strong> <code>r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5</code> -> <strong>Solution:</strong> O-O - <em>White to move: Complete opening mobilization with positional discipline.</em></li>
+      <li><strong>[Capablanca Clinical Conversion]</strong> <code>8/8/8/4k3/8/8/4K3/8 w - - 0 1</code> -> <strong>Solution:</strong> Ke3 - <em>White to move: Demonstrate conversion mastery by taking the opposition.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 79: The Greek Gift Sacrifice (Bxh7+)</h3>
+    <ul>
+      <li><strong>[Grandmaster Positional Transition]</strong> <code>r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5</code> -> <strong>Solution:</strong> O-O - <em>White to move: Complete opening mobilization with positional discipline.</em></li>
+      <li><strong>[Capablanca Clinical Conversion]</strong> <code>8/8/8/4k3/8/8/4K3/8 w - - 0 1</code> -> <strong>Solution:</strong> Ke3 - <em>White to move: Demonstrate conversion mastery by taking the opposition.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 80: Opposite-Side Castling Attacks</h3>
+    <ul>
+      <li><strong>[Grandmaster Positional Transition]</strong> <code>r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5</code> -> <strong>Solution:</strong> O-O - <em>White to move: Complete opening mobilization with positional discipline.</em></li>
+      <li><strong>[Capablanca Clinical Conversion]</strong> <code>8/8/8/4k3/8/8/4K3/8 w - - 0 1</code> -> <strong>Solution:</strong> Ke3 - <em>White to move: Demonstrate conversion mastery by taking the opposition.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 81: Destroying the Castled Shield</h3>
+    <ul>
+      <li><strong>[Grandmaster Positional Transition]</strong> <code>r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5</code> -> <strong>Solution:</strong> O-O - <em>White to move: Complete opening mobilization with positional discipline.</em></li>
+      <li><strong>[Capablanca Clinical Conversion]</strong> <code>8/8/8/4k3/8/8/4K3/8 w - - 0 1</code> -> <strong>Solution:</strong> Ke3 - <em>White to move: Demonstrate conversion mastery by taking the opposition.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 82: Tenacious Defensive Resources</h3>
+    <ul>
+      <li><strong>[Grandmaster Positional Transition]</strong> <code>r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5</code> -> <strong>Solution:</strong> O-O - <em>White to move: Complete opening mobilization with positional discipline.</em></li>
+      <li><strong>[Capablanca Clinical Conversion]</strong> <code>8/8/8/4k3/8/8/4K3/8 w - - 0 1</code> -> <strong>Solution:</strong> Ke3 - <em>White to move: Demonstrate conversion mastery by taking the opposition.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 83: Simplification Under Attack</h3>
+    <ul>
+      <li><strong>[Grandmaster Positional Transition]</strong> <code>r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5</code> -> <strong>Solution:</strong> O-O - <em>White to move: Complete opening mobilization with positional discipline.</em></li>
+      <li><strong>[Capablanca Clinical Conversion]</strong> <code>8/8/8/4k3/8/8/4K3/8 w - - 0 1</code> -> <strong>Solution:</strong> Ke3 - <em>White to move: Demonstrate conversion mastery by taking the opposition.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 84: Grand Milestone: Attack & Defense</h3>
+    <ul>
+      <li><strong>[Grandmaster Positional Transition]</strong> <code>r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5</code> -> <strong>Solution:</strong> O-O - <em>White to move: Complete opening mobilization with positional discipline.</em></li>
+      <li><strong>[Capablanca Clinical Conversion]</strong> <code>8/8/8/4k3/8/8/4K3/8 w - - 0 1</code> -> <strong>Solution:</strong> Ke3 - <em>White to move: Demonstrate conversion mastery by taking the opposition.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 85: Material Conversion Protocol</h3>
+    <ul>
+      <li><strong>[Grandmaster Positional Transition]</strong> <code>r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5</code> -> <strong>Solution:</strong> O-O - <em>White to move: Complete opening mobilization with positional discipline.</em></li>
+      <li><strong>[Capablanca Clinical Conversion]</strong> <code>8/8/8/4k3/8/8/4K3/8 w - - 0 1</code> -> <strong>Solution:</strong> Ke3 - <em>White to move: Demonstrate conversion mastery by taking the opposition.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 86: Model Master Game Guess-the-Move</h3>
+    <ul>
+      <li><strong>[Grandmaster Positional Transition]</strong> <code>r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5</code> -> <strong>Solution:</strong> O-O - <em>White to move: Complete opening mobilization with positional discipline.</em></li>
+      <li><strong>[Capablanca Clinical Conversion]</strong> <code>8/8/8/4k3/8/8/4K3/8 w - - 0 1</code> -> <strong>Solution:</strong> Ke3 - <em>White to move: Demonstrate conversion mastery by taking the opposition.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 87: Root Cause Self-Analysis</h3>
+    <ul>
+      <li><strong>[Grandmaster Positional Transition]</strong> <code>r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5</code> -> <strong>Solution:</strong> O-O - <em>White to move: Complete opening mobilization with positional discipline.</em></li>
+      <li><strong>[Capablanca Clinical Conversion]</strong> <code>8/8/8/4k3/8/8/4K3/8 w - - 0 1</code> -> <strong>Solution:</strong> Ke3 - <em>White to move: Demonstrate conversion mastery by taking the opposition.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 88: Tournament Psychology & Discipline</h3>
+    <ul>
+      <li><strong>[Grandmaster Positional Transition]</strong> <code>r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5</code> -> <strong>Solution:</strong> O-O - <em>White to move: Complete opening mobilization with positional discipline.</em></li>
+      <li><strong>[Capablanca Clinical Conversion]</strong> <code>8/8/8/4k3/8/8/4K3/8 w - - 0 1</code> -> <strong>Solution:</strong> Ke3 - <em>White to move: Demonstrate conversion mastery by taking the opposition.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 89: Competitive Tournament Simulation</h3>
+    <ul>
+      <li><strong>[Grandmaster Positional Transition]</strong> <code>r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5</code> -> <strong>Solution:</strong> O-O - <em>White to move: Complete opening mobilization with positional discipline.</em></li>
+      <li><strong>[Capablanca Clinical Conversion]</strong> <code>8/8/8/4k3/8/8/4K3/8 w - - 0 1</code> -> <strong>Solution:</strong> Ke3 - <em>White to move: Demonstrate conversion mastery by taking the opposition.</em></li>
+    </ul>
+  </div>
+  <div class="concept-card">
+    <h3>Day 90: Final Capstone Certification — Mastery Assessment & Completion Report</h3>
+    <ul>
+      <li><strong>[Grandmaster Positional Transition]</strong> <code>r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQ - 1 5</code> -> <strong>Solution:</strong> O-O - <em>White to move: Complete opening mobilization with positional discipline.</em></li>
+      <li><strong>[Capablanca Clinical Conversion]</strong> <code>8/8/8/4k3/8/8/4K3/8 w - - 0 1</code> -> <strong>Solution:</strong> Ke3 - <em>White to move: Demonstrate conversion mastery by taking the opposition.</em></li>
+    </ul>
+  </div>
+</body>
+</html>

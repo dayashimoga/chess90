@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ChessMaster Content Duplication Audit</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0f172a; color: #f8fafc; padding: 24px; }
+    h1 { color: #f59e0b; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 13px; }
+    th, td { border: 1px solid #334155; padding: 8px 12px; text-align: left; }
+    th { background: #1e293b; color: #94a3b8; }
+    code { font-family: monospace; color: #38bdf8; }
+  </style>
+</head>
+<body>
+  <h1>ChessMaster Content Duplication Report</h1>
+  <p>Accidental cross-concept position duplications detected: 13</p>
+  <table>
+    <tr><th>Normalized FEN</th><th>Occurrences Across Topics</th></tr>
+    <tr>
+      <td><code>8/8/8/4k3/8/8/4K3/8 w</code></td>
+      <td>Day 1: Baseline Diagnostic (cur_d1_ex3)<br>Day 43: Pawn Chains & Base Attacks (day_43_ex_1)<br>Day 44: The Carlsbad Structure (day_44_ex_1)<br>Day 45: Isolated Queen Pawn (IQP) (day_45_ex_1)<br>Day 46: Hanging Pawns (c4/d4) (day_46_ex_1)<br>Day 47: Backward & Doubled Pawns (day_47_ex_1)<br>Day 48: The Maroczy Bind (c4/e4) (day_48_ex_1)<br>Day 49: Milestone Exam: Pawn Breaks (day_49_ex_1)<br>Day 50: French Defense Pawn Chains (day_50_ex_1)<br>Day 51: King's Indian Closed Chains (day_51_ex_1)<br>Day 52: Pawn Levers & Space Control (day_52_ex_1)<br>Day 53: Middlegame Passed Pawns (day_53_ex_1)<br>Day 54: Pawn Majority Conversion (day_54_ex_1)<br>Day 55: Positional Pawn Sacrifices (day_55_ex_1)<br>Day 56: Grand Milestone: Pawn Mastery (day_56_ex_1)<br>Day 71: Opening Principles & Harmony (day_71_ex_2)<br>Day 72: 1.e4 Repertoire: Italian & Scotch (day_72_ex_2)<br>Day 73: 1.e4 vs The Sicilian Defense (day_73_ex_2)<br>Day 74: 1.d4 Repertoire: QGD & Catalan (day_74_ex_2)<br>Day 75: 1.c4 English Opening Principles (day_75_ex_2)<br>Day 76: Black Repertoire vs 1.e4 & 1.d4 (day_76_ex_2)<br>Day 77: Milestone Exam: Opening Theory (day_77_ex_2)<br>Day 78: Punishing Uncastled Kings (day_78_ex_2)<br>Day 79: The Greek Gift Sacrifice (Bxh7+) (day_79_ex_2)<br>Day 80: Opposite-Side Castling Attacks (day_80_ex_2)<br>Day 81: Destroying the Castled Shield (day_81_ex_2)<br>Day 82: Tenacious Defensive Resources (day_82_ex_2)<br>Day 83: Simplification Under Attack (day_83_ex_2)<br>Day 84: Grand Milestone: Attack & Defense (day_84_ex_2)<br>Day 85: Material Conversion Protocol (day_85_ex_2)<br>Day 86: Model Master Game Guess-the-Move (day_86_ex_2)<br>Day 87: Root Cause Self-Analysis (day_87_ex_2)<br>Day 88: Tournament Psychology & Discipline (day_88_ex_2)<br>Day 89: Competitive Tournament Simulation (day_89_ex_2)<br>Day 90: Final Capstone Certification — Mastery Assessment & Completion Report (day_90_ex_2)</td>
+    </tr>
+    <tr>
+      <td><code>r1b1k2r/pppp1ppp/2n5/4p3/2B1n3/5N2/PPPP1PPP/RNBQK2R w</code></td>
+      <td>Day 2: Tactics — Hanging Pieces & LPDO (day_2_ex_1)<br>Day 8: Tactics — Discovered Attacks & Double Checks (day_8_ex_2)<br>Day 9: Tactics — Deflection & Removal of Defender (day_9_ex_2)<br>Day 10: Tactics — Decoy & Attraction Sacrifices (day_10_ex_2)<br>Day 11: Tactics — Overloading & Line Clearance (day_11_ex_2)<br>Day 12: Tactics — Interference & Obstruction (day_12_ex_2)<br>Day 13: Tactics — Trapped Pieces & Domination (day_13_ex_2)<br>Day 14: Tactics — Grand Milestone Exam: Tactics (day_14_ex_2)</td>
+    </tr>
+    <tr>
+      <td><code>2r3k1/pp3ppp/8/8/4n3/5N2/PP3PPP/2R3K1 w</code></td>
+      <td>Day 2: Tactics — Hanging Pieces & LPDO (day_2_ex_2)<br>Day 8: Tactics — Discovered Attacks & Double Checks (day_8_ex_3)<br>Day 9: Tactics — Deflection & Removal of Defender (day_9_ex_3)<br>Day 10: Tactics — Decoy & Attraction Sacrifices (day_10_ex_3)<br>Day 11: Tactics — Overloading & Line Clearance (day_11_ex_3)<br>Day 12: Tactics — Interference & Obstruction (day_12_ex_3)<br>Day 13: Tactics — Trapped Pieces & Domination (day_13_ex_3)<br>Day 14: Tactics — Grand Milestone Exam: Tactics (day_14_ex_3)</td>
+    </tr>
+    <tr>
+      <td><code>r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b</code></td>
+      <td>Day 3: Tactics — Absolute & Relative Pins (day_3_ex_1)<br>Day 57: King & Pawn: The Opposition (day_57_ex_2)<br>Day 58: King & Pawn: Rule of Square (day_58_ex_2)<br>Day 59: Triangulation & Zugzwang (day_59_ex_2)<br>Day 60: The Reti Diagonal Maneuver (day_60_ex_2)<br>Day 61: Rook Endgames: Lucena Bridge (day_61_ex_2)<br>Day 62: Rook Endgames: Philidor Defense (day_62_ex_2)<br>Day 63: Milestone Exam: Core Endgames (day_63_ex_2)</td>
+    </tr>
+    <tr>
+      <td><code>r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P1n1/2NP1N2/PPP2PPP/R1BQK2R w</code></td>
+      <td>Day 5: Tactics — Knight Forks & Geometry (day_5_ex_3)<br>Day 36: Weak Squares & Holes (day_36_ex_1)<br>Day 37: Principle of Two Weaknesses (day_37_ex_1)<br>Day 38: Favorable Piece Exchanges (day_38_ex_1)<br>Day 39: Restricting Minor Pieces (day_39_ex_1)<br>Day 40: Patient Maneuvering (day_40_ex_1)<br>Day 41: Transforming Advantages (day_41_ex_1)<br>Day 42: Grand Milestone: Strategy (day_42_ex_1)</td>
+    </tr>
+    <tr>
+      <td><code>r1bqkb1r/pppp1ppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 b</code></td>
+      <td>Day 6: Tactics — Double Attacks & Dual Threats (day_6_ex_1)<br>Day 15: Calculation — Kotov Forcing Hierarchy (CCT) (day_15_ex_2)<br>Day 16: Calculation — Candidate Move Generation (day_16_ex_2)<br>Day 17: Calculation — Calculation Tree Pruning (day_17_ex_2)<br>Day 18: Calculation — Intermediate Moves (Zwischenzug) (day_18_ex_2)<br>Day 19: Calculation — Opponent Counter-Resources (day_19_ex_2)<br>Day 20: Calculation — Visualizing Quiet Moves (day_20_ex_2)<br>Day 21: Calculation — Milestone Exam: Calculation Trees (day_21_ex_2)</td>
+    </tr>
+    <tr>
+      <td><code>r1bqkb1r/ppp2ppp/2np1n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w</code></td>
+      <td>Day 6: Tactics — Double Attacks & Dual Threats (day_6_ex_2)<br>Day 8: Tactics — Discovered Attacks & Double Checks (day_8_ex_1)<br>Day 9: Tactics — Deflection & Removal of Defender (day_9_ex_1)<br>Day 10: Tactics — Decoy & Attraction Sacrifices (day_10_ex_1)<br>Day 11: Tactics — Overloading & Line Clearance (day_11_ex_1)<br>Day 12: Tactics — Interference & Obstruction (day_12_ex_1)<br>Day 13: Tactics — Trapped Pieces & Domination (day_13_ex_1)<br>Day 14: Tactics — Grand Milestone Exam: Tactics (day_14_ex_1)<br>Day 36: Weak Squares & Holes (day_36_ex_2)<br>Day 37: Principle of Two Weaknesses (day_37_ex_2)<br>Day 38: Favorable Piece Exchanges (day_38_ex_2)<br>Day 39: Restricting Minor Pieces (day_39_ex_2)<br>Day 40: Patient Maneuvering (day_40_ex_2)<br>Day 41: Transforming Advantages (day_41_ex_2)<br>Day 42: Grand Milestone: Strategy (day_42_ex_2)</td>
+    </tr>
+    <tr>
+      <td><code>r1bqk2r/ppppbppp/2n2n2/4p3/2B1P3/5N2/PPPP1PPP/RNBQ1RK1 w</code></td>
+      <td>Day 6: Tactics — Double Attacks & Dual Threats (day_6_ex_3)<br>Day 15: Calculation — Kotov Forcing Hierarchy (CCT) (day_15_ex_1)<br>Day 16: Calculation — Candidate Move Generation (day_16_ex_1)<br>Day 17: Calculation — Calculation Tree Pruning (day_17_ex_1)<br>Day 18: Calculation — Intermediate Moves (Zwischenzug) (day_18_ex_1)<br>Day 19: Calculation — Opponent Counter-Resources (day_19_ex_1)<br>Day 20: Calculation — Visualizing Quiet Moves (day_20_ex_1)<br>Day 21: Calculation — Milestone Exam: Calculation Trees (day_21_ex_1)<br>Day 29: Piece Harmony & Improvement (day_29_ex_2)<br>Day 30: Outposts & Knight Anchoring (day_30_ex_2)<br>Day 31: Open Files & Infiltration (day_31_ex_2)<br>Day 32: Good vs Bad Bishops (day_32_ex_2)<br>Day 33: Positional Exchange Sacrifice (day_33_ex_2)<br>Day 34: Prophylaxis & Restriction (day_34_ex_2)<br>Day 35: Milestone Exam: Strategy (day_35_ex_2)</td>
+    </tr>
+    <tr>
+      <td><code>r1bq1rk1/pppp1ppp/2n2n2/4p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w</code></td>
+      <td>Day 7: Tactics — Tactical Milestone Exam I (day_7_ex_2)<br>Day 22: Calculation — Blindfold Board Geometry (day_22_ex_2)<br>Day 23: Calculation — Multi-Ply Pawn Races (day_23_ex_2)<br>Day 24: Calculation — Mental Board Retention (day_24_ex_2)<br>Day 25: Calculation — Eliminating Blind Spots (day_25_ex_2)<br>Day 26: Clock Discipline & Rhythm (day_26_ex_2)<br>Day 27: Practical Tree Pruning (day_27_ex_2)<br>Day 28: Grand Milestone: Calculation (day_28_ex_2)<br>Day 64: Active Rook Supremacy (day_64_ex_2)<br>Day 65: Vancura Defense & Flank Checks (day_65_ex_2)<br>Day 66: Same-Colored Bishop Endgames (day_66_ex_2)<br>Day 67: Opposite-Colored Bishop Fortresses (day_67_ex_2)<br>Day 68: Knight vs Bishop Endgames (day_68_ex_2)<br>Day 69: Queen Endgames & Perpetual (day_69_ex_2)<br>Day 70: Grand Milestone: Endgames (day_70_ex_2)<br>Day 71: Opening Principles & Harmony (day_71_ex_1)<br>Day 72: 1.e4 Repertoire: Italian & Scotch (day_72_ex_1)<br>Day 73: 1.e4 vs The Sicilian Defense (day_73_ex_1)<br>Day 74: 1.d4 Repertoire: QGD & Catalan (day_74_ex_1)<br>Day 75: 1.c4 English Opening Principles (day_75_ex_1)<br>Day 76: Black Repertoire vs 1.e4 & 1.d4 (day_76_ex_1)<br>Day 77: Milestone Exam: Opening Theory (day_77_ex_1)<br>Day 78: Punishing Uncastled Kings (day_78_ex_1)<br>Day 79: The Greek Gift Sacrifice (Bxh7+) (day_79_ex_1)<br>Day 80: Opposite-Side Castling Attacks (day_80_ex_1)<br>Day 81: Destroying the Castled Shield (day_81_ex_1)<br>Day 82: Tenacious Defensive Resources (day_82_ex_1)<br>Day 83: Simplification Under Attack (day_83_ex_1)<br>Day 84: Grand Milestone: Attack & Defense (day_84_ex_1)<br>Day 85: Material Conversion Protocol (day_85_ex_1)<br>Day 86: Model Master Game Guess-the-Move (day_86_ex_1)<br>Day 87: Root Cause Self-Analysis (day_87_ex_1)<br>Day 88: Tournament Psychology & Discipline (day_88_ex_1)<br>Day 89: Competitive Tournament Simulation (day_89_ex_1)<br>Day 90: Final Capstone Certification — Mastery Assessment & Completion Report (day_90_ex_1)</td>
+    </tr>
+    <tr>
+      <td><code>r1bqk2r/pppp1ppp/2n5/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQK2R w</code></td>
+      <td>Day 22: Calculation — Blindfold Board Geometry (day_22_ex_1)<br>Day 23: Calculation — Multi-Ply Pawn Races (day_23_ex_1)<br>Day 24: Calculation — Mental Board Retention (day_24_ex_1)<br>Day 25: Calculation — Eliminating Blind Spots (day_25_ex_1)<br>Day 26: Clock Discipline & Rhythm (day_26_ex_1)<br>Day 27: Practical Tree Pruning (day_27_ex_1)<br>Day 28: Grand Milestone: Calculation (day_28_ex_1)<br>Day 64: Active Rook Supremacy (day_64_ex_1)<br>Day 65: Vancura Defense & Flank Checks (day_65_ex_1)<br>Day 66: Same-Colored Bishop Endgames (day_66_ex_1)<br>Day 67: Opposite-Colored Bishop Fortresses (day_67_ex_1)<br>Day 68: Knight vs Bishop Endgames (day_68_ex_1)<br>Day 69: Queen Endgames & Perpetual (day_69_ex_1)<br>Day 70: Grand Milestone: Endgames (day_70_ex_1)</td>
+    </tr>
+    <tr>
+      <td><code>rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w</code></td>
+      <td>Day 29: Piece Harmony & Improvement (day_29_ex_1)<br>Day 30: Outposts & Knight Anchoring (day_30_ex_1)<br>Day 31: Open Files & Infiltration (day_31_ex_1)<br>Day 32: Good vs Bad Bishops (day_32_ex_1)<br>Day 33: Positional Exchange Sacrifice (day_33_ex_1)<br>Day 34: Prophylaxis & Restriction (day_34_ex_1)<br>Day 35: Milestone Exam: Strategy (day_35_ex_1)</td>
+    </tr>
+    <tr>
+      <td><code>8/8/8/8/8/4k3/8/R3K3 w</code></td>
+      <td>Day 43: Pawn Chains & Base Attacks (day_43_ex_2)<br>Day 44: The Carlsbad Structure (day_44_ex_2)<br>Day 45: Isolated Queen Pawn (IQP) (day_45_ex_2)<br>Day 46: Hanging Pawns (c4/d4) (day_46_ex_2)<br>Day 47: Backward & Doubled Pawns (day_47_ex_2)<br>Day 48: The Maroczy Bind (c4/e4) (day_48_ex_2)<br>Day 49: Milestone Exam: Pawn Breaks (day_49_ex_2)<br>Day 50: French Defense Pawn Chains (day_50_ex_2)<br>Day 51: King's Indian Closed Chains (day_51_ex_2)<br>Day 52: Pawn Levers & Space Control (day_52_ex_2)<br>Day 53: Middlegame Passed Pawns (day_53_ex_2)<br>Day 54: Pawn Majority Conversion (day_54_ex_2)<br>Day 55: Positional Pawn Sacrifices (day_55_ex_2)<br>Day 56: Grand Milestone: Pawn Mastery (day_56_ex_2)</td>
+    </tr>
+    <tr>
+      <td><code>rnbqkb1r/pppp1ppp/5n2/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR w</code></td>
+      <td>Day 57: King & Pawn: The Opposition (day_57_ex_1)<br>Day 58: King & Pawn: Rule of Square (day_58_ex_1)<br>Day 59: Triangulation & Zugzwang (day_59_ex_1)<br>Day 60: The Reti Diagonal Maneuver (day_60_ex_1)<br>Day 61: Rook Endgames: Lucena Bridge (day_61_ex_1)<br>Day 62: Rook Endgames: Philidor Defense (day_62_ex_1)<br>Day 63: Milestone Exam: Core Endgames (day_63_ex_1)</td>
+    </tr>
+  </table>
+</body>
+</html>

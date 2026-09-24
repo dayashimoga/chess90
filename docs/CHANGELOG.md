@@ -285,6 +285,55 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   - Eliminated deprecated `cardTheme: CardTheme(...)` and `dialogTheme: DialogTheme(...)` assignments from `darkTheme` and `lightTheme` in `apps/chess_app/lib/src/theme/chess_theme.dart`.
   - Fixed Windows build failure caused by Flutter 3.27+ breaking change where `CardTheme`/`DialogTheme` became `InheritedTheme` widgets requiring `CardThemeData`/`DialogThemeData`. Cards and dialogs now cleanly utilize Material 3 `colorScheme.surface` and custom responsive containers with 100% cross-version compatibility across Flutter 3.24.x through 3.29+.
 
+---
+
+## [2.0.0] - 2026-09-24
+
+### Added
+- **Socratic BoardTeachingEngine & Cognitive Loop**:
+  - Implemented `BoardTeachingEngine` in `packages/chess_labs/lib/src/board_teaching_engine.dart` and `SocraticPedagogyEngine` in `packages/chess_labs/lib/src/socratic_pedagogy_engine.dart`.
+  - The chessboard acts as the primary instructor through the interactive pedagogical loop: `EXPLAIN → SHOW → INTERACT → PREDICT → TRY → FEEDBACK → RETRY → PRACTICE → APPLY → REVIEW → RETENTION`.
+  - Features real-time visual overlays: highlighted target squares, vector attack/defense rays, ghost pieces showing candidate moves, and candidate move comparison tables.
+  - Interactive refutation auto-playback: incorrect candidate moves illustrate the opponent's winning refutation, explain the root cause, and auto-rewind for guided retry.
+- **12 Real, Playable Chess Mini-Games**:
+  - Engineered 12 genuine playable mini-games with multi-level progression, move validation, dynamic hints, and win/loss states in `packages/chess_labs/lib/src/labs/playable_mini_games.dart`:
+    1. Fork Hunter
+    2. Pin Builder
+    3. Skewer Hunt
+    4. King Hunt
+    5. Defender
+    6. Pawn Battle
+    7. Find the Break
+    8. Opening Survival
+    9. Calculation Tree
+    10. Conversion Challenge
+    11. Endgame Win / Hold
+    12. Worst Piece Improvement
+  - Fully integrated into `LessonPlayerWidget` Stage 6 and `LabsScreen`.
+- **Strict Content Compiler & Zero Generic Fallbacks**:
+  - Built `tool/content_compiler.dart` and `tool/curriculum_positions_data.dart`.
+  - Purged generic 6-exercise Scholar's Mate fallback loops. Mapped distinct verified canonical chess positions to all 90 curriculum days (193 curriculum exercises + 3,694 bank exercises = 3,887 total unique exercises).
+  - Validates FIDE FEN syntax, king legality, active color, legal move chains, SAN/UCI correctness, check/mate truth, and Stockfish 19 engine verification.
+  - Generates `content-audit.json`, `content-audit.html`, `invalid-content.json` (0 errors), `duplicate-report.html`, and `concept-position-matrix.html`.
+- **ResponsiveChessWorkspace & Board Resize Fix**:
+  - Overhauled `apps/chess_app/lib/src/widgets/board/responsive_chess_workspace.dart`.
+  - Eliminated silent no-op stalls on `+`/`-` zoom by switching to linear fractional scaling with visible disablement at true min/max.
+  - Added discrete sizing modes: `[-]`, Slider, `[+]`, `[AUTO]`, `[FIT]`, `[MAX]`, and `[FULLSCREEN]`.
+  - Refactored `OpeningExplorerScreen` to adopt the unified workspace.
+- **1-Click Workflow Optimization & Seamless Continuity**:
+  - Added all 6 post-game actions to `PlayScreen`: `ANALYZE GAME`, `REVIEW MISTAKES`, `TRAIN MISTAKES` (1-click direct lab retraining), `CREATE VIDEO`, `REMATCH`, and `EXPORT PGN`.
+  - Model Games screen supports 1-click `Play from this Position` and `Export in Video Studio`.
+  - Persistent `GameSession` serves as single source of truth across all game workflows.
+- **Verified Video Studio Runtime Generation**:
+  - Proved end-to-end MP4 video generation with FFmpeg via `packages/chess_video/test/real_video_generation_e2e_test.dart`.
+  - Decoded frames and verified actual move animations, board geometry, dynamic eval bars, and audio muxing.
+
+### Fixed
+- Fixed Day 4 rank skewer FEN to canonical textbook position (`r3k3/8/8/8/8/8/8/4K2R w - - 0 1`), eliminating inactive king check illegality.
+- Fixed `skewerHunt_lvl_1` move sequence SAN parsing in playable mini-games.
+- Standardized `dartBin` resolution in `scripts/certify.ps1` to seamlessly handle Windows environments.
+
+
 
 
 

@@ -24,20 +24,25 @@ Write-Host "`n[2/6] Running 90-Day Content Validator..." -ForegroundColor Cyan
 Write-Host "`n[3/6] Running 90-Day Simulation Engine..." -ForegroundColor Cyan
 & (Join-Path $PSScriptRoot "simulation_validate.ps1")
 
+$dartBin = "dart"
+if (Test-Path "C:\flutter\bin\dart.bat") {
+    $dartBin = "C:\flutter\bin\dart.bat"
+}
+
 Write-Host "`n[4/6] Collecting Coverage & Enforcing Gates..." -ForegroundColor Cyan
 Push-Location (Join-Path $rootDir "tool")
-& dart pub get
-& dart run coverage_runner.dart
+& $dartBin pub get
+& $dartBin run coverage_runner.dart
 Pop-Location
 
 Write-Host "`n[5/6] Running Performance Truth Benchmarks..." -ForegroundColor Cyan
 Push-Location (Join-Path $rootDir "tool")
-& dart run performance_runner.dart
+& $dartBin run performance_runner.dart
 Pop-Location
 
 Write-Host "`n[6/6] Running Security & Secret Audits..." -ForegroundColor Cyan
 Push-Location (Join-Path $rootDir "tool")
-& dart run security_runner.dart
+& $dartBin run security_runner.dart
 Pop-Location
 
 Write-Host "`n======================================================" -ForegroundColor Green

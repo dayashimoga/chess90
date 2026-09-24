@@ -263,14 +263,34 @@ class _ModelGamesScreenState extends State<ModelGamesScreen> {
                 children: [
                   Container(
                     width: double.infinity,
+                    margin: const EdgeInsets.only(bottom: 8),
+                    child: ElevatedButton.icon(
+                      icon: const Icon(Icons.play_circle_filled, size: 16),
+                      label: const Text('Play from this Position', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12)),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: ChessTheme.primary,
+                        foregroundColor: Colors.black,
+                        padding: const EdgeInsets.symmetric(vertical: 10),
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                      ),
+                      onPressed: () {
+                        widget.onNavigate('play', args: {
+                          'fen': _board.toFen(),
+                          'pgn': _selectedGame!.pgn,
+                        });
+                      },
+                    ),
+                  ),
+                  Container(
+                    width: double.infinity,
                     margin: const EdgeInsets.only(bottom: 16),
                     child: ElevatedButton.icon(
-                      icon: const Icon(Icons.video_library),
-                      label: const Text('Export in Video Studio', style: TextStyle(fontWeight: FontWeight.bold)),
+                      icon: const Icon(Icons.video_library, size: 16),
+                      label: const Text('Export in Video Studio', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12)),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: ChessTheme.secondary,
                         foregroundColor: Colors.white,
-                        padding: const EdgeInsets.symmetric(vertical: 12),
+                        padding: const EdgeInsets.symmetric(vertical: 10),
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                       ),
                       onPressed: () {

@@ -1060,6 +1060,26 @@ class _PlayScreenState extends State<PlayScreen> {
                       },
                     ),
 
+                    // 2b. TRAIN MISTAKES (1-Click direct retraining)
+                    ElevatedButton.icon(
+                      icon: const Icon(Icons.model_training, size: 15),
+                      label: const Text('TRAIN MISTAKES'),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: ChessTheme.accentGold.withAlpha(30),
+                        foregroundColor: ChessTheme.accentGold,
+                        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+                        textStyle: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold),
+                      ),
+                      onPressed: () {
+                        widget.onNavigate('analysis', args: {
+                          'gameSession': _activeSession,
+                          'tab': 'mistakes',
+                          'autoTrain': true,
+                          'pgn': _buildPgn(),
+                        });
+                      },
+                    ),
+
                     // 3. CREATE VIDEO
                     ElevatedButton.icon(
                       icon: const Icon(Icons.movie_creation_outlined, size: 15),

@@ -1,9 +1,9 @@
 import 'package:chess_content/chess_content.dart';
 import 'package:chess_core/chess_core.dart';
 import 'package:flutter/material.dart';
-import '../theme/board_size_policy.dart';
 import '../theme/chess_theme.dart';
 import '../widgets/board/chess_board_widget.dart';
+import '../widgets/board/responsive_chess_workspace.dart';
 
 /// Opening Explorer and Repertoire workspace.
 class OpeningExplorerScreen extends StatefulWidget {
@@ -83,88 +83,25 @@ class _OpeningExplorerScreenState extends State<OpeningExplorerScreen> {
     }).toList();
 
     return Scaffold(
-      body: LayoutBuilder(
-        builder: (context, constraints) {
-          final isCompact = constraints.maxWidth < 900;
-          if (isCompact) {
-            return SingleChildScrollView(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                children: [
-                  _buildHeader(),
-                  const SizedBox(height: 16),
-                  Builder(builder: (ctx) {
-                    final boardSize = BoardSizePolicy.calculateBoardSize(
-                      constraints: constraints,
-                      mode: BoardSizeMode.compact,
-                    );
-                    return SizedBox(
-                      width: boardSize,
-                      height: boardSize,
-                      child: ChessBoardWidget(
-                        board: _board,
-                        onMovePlayed: _onMovePlayed,
-                        lastMoveFrom: _lastMoveFrom,
-                        lastMoveTo: _lastMoveTo,
-                      ),
-                    );
-                  }),
-                  const SizedBox(height: 16),
-                  _buildOpeningDetails(),
-                  const SizedBox(height: 16),
-                  _buildOpeningList(matchingOpenings, height: 300),
-                ],
-              ),
-            );
-          }
-
-          return Padding(
-            padding: const EdgeInsets.all(24.0),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                // Left: Chess Board & Controls
-                Expanded(
-                  flex: 5,
-                  child: Column(
-                    children: [
-                      _buildHeader(),
-                      const SizedBox(height: 16),
-                      Expanded(
-                        child: Center(
-                          child: ChessBoardWidget(
-                            board: _board,
-                            onMovePlayed: _onMovePlayed,
-                            lastMoveFrom: _lastMoveFrom,
-                            lastMoveTo: _lastMoveTo,
-                          ),
-                        ),
-                      ),
-                      const SizedBox(height: 12),
-                      _buildMoveHistoryBar(),
-                    ],
-                  ),
-                ),
-
-                const SizedBox(width: 24),
-
-                // Right: Opening Explorer & Theory
-                Expanded(
-                  flex: 4,
-                  child: Column(
-                    children: [
-                      _buildOpeningDetails(),
-                      const SizedBox(height: 16),
-                      Expanded(
-                        child: _buildOpeningList(matchingOpenings),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+      body: ResponsiveChessWorkspace(
+        header: _buildHeader(),
+        footer: _buildMoveHistoryBar(),
+        sidePanelTitle: 'Opening Explorer & Theory',
+        boardBuilder: (context, size) => ChessBoardWidget(
+          board: _board,
+          onMovePlayed: _onMovePlayed,
+          lastMoveFrom: _lastMoveFrom,
+          lastMoveTo: _lastMoveTo,
+        ),
+        sidePanel: Column(
+          children: [
+            _buildOpeningDetails(),
+            const SizedBox(height: 12),
+            Expanded(
+              child: _buildOpeningList(matchingOpenings),
             ),
-          );
-        },
+          ],
+        ),
       ),
     );
   }
@@ -251,8 +188,11 @@ class _OpeningExplorerScreenState extends State<OpeningExplorerScreen> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          Wrap(
+            alignment: WrapAlignment.spaceBetween,
+            crossAxisAlignment: WrapCrossAlignment.center,
+            spacing: 8,
+            runSpacing: 4,
             children: [
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
