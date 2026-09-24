@@ -49,6 +49,7 @@ class _ResponsiveChessWorkspaceState extends State<ResponsiveChessWorkspace> {
   late bool _isSidePanelCollapsed;
   WorkspaceSizeMode _sizeMode = WorkspaceSizeMode.auto;
   bool _isFullscreen = false;
+  double? _draggedSidePanelWidth;
 
   @override
   void initState() {
@@ -169,7 +170,7 @@ class _ResponsiveChessWorkspaceState extends State<ResponsiveChessWorkspace> {
               // Zoom slider (desktop & tablet)
               if (!isMobile)
                 SizedBox(
-                  width: 90,
+                  width: constraints.maxWidth < 900 ? 55 : 90,
                   height: 24,
                   child: SliderTheme(
                     data: SliderTheme.of(context).copyWith(
@@ -191,7 +192,7 @@ class _ResponsiveChessWorkspaceState extends State<ResponsiveChessWorkspace> {
               // Zoom in [+] with visible disable state (NO SILENT NO-OPS)
               IconButton(
                 icon: const Icon(Icons.add, size: 16),
-                tooltip: canZoomIn ? 'Increase Board Size' : 'Maximum Board Size Reached',
+                tooltip: canZoomIn ? 'Increase Board Size' : 'Maximum size',
                 padding: EdgeInsets.zero,
                 constraints: const BoxConstraints(minWidth: 26, minHeight: 26),
                 onPressed: canZoomIn ? _increaseScale : null,
@@ -345,21 +346,24 @@ class _ResponsiveChessWorkspaceState extends State<ResponsiveChessWorkspace> {
     final hasEvalBar = widget.evalBar != null;
     final evalSpace = hasEvalBar ? widget.evalBarWidth + 12.0 : 0.0;
 
-    // Calculate side panel width
-    final sidePanelWidth = _isSidePanelCollapsed || widget.sidePanel == null
+    // Calculate side panel width (with drag-resizable override support)
+    final baseSidePanelWidth = _draggedSidePanelWidth ??
+        (isTablet ? (constraints.maxWidth * 0.30).clamp(200.0, 260.0) : (constraints.maxWidth * 0.28).clamp(280.0, 420.0));
+    final sidePanelWidth = (_isSidePanelCollapsed || widget.sidePanel == null)
         ? 0.0
-        : (isTablet ? 300.0 : (constraints.maxWidth * 0.30).clamp(300.0, 440.0));
+        : baseSidePanelWidth;
 
     final availableBoardWidth = math.max(
       220.0,
-      constraints.maxWidth - sidePanelWidth - evalSpace - 36.0,
+      constraints.maxWidth - sidePanelWidth - evalSpace - (sidePanelWidth > 0 ? 38.0 : 24.0),
     );
 
-    // Header and footer heights
-    const controlsBarHeight = 34.0;
-    const verticalGutters = 20.0;
-    final headerHeight = widget.header != null ? 50.0 : 0.0;
-    final footerHeight = widget.footer != null ? 88.0 : 0.0;
+    // Dynamic essential chrome height calculation
+    const controlsBarHeight = 32.0;
+    const verticalGutters = 8.0;
+    final isMax = _sizeMode == WorkspaceSizeMode.max;
+    final headerHeight = widget.header != null ? (isMax ? 32.0 : 44.0) : 0.0;
+    final footerHeight = widget.footer != null ? (isMax ? 44.0 : 64.0) : 0.0;
     final availableBoardHeight = math.max(
       220.0,
       constraints.maxHeight - controlsBarHeight - verticalGutters - headerHeight - footerHeight,
@@ -369,7 +373,7 @@ class _ResponsiveChessWorkspaceState extends State<ResponsiveChessWorkspace> {
     const minBoardSize = 220.0;
 
     final boardFraction = switch (_sizeMode) {
-      WorkspaceSizeMode.auto => 0.88,
+      WorkspaceSizeMode.auto => 0.94,
       WorkspaceSizeMode.fit => 1.0,
       WorkspaceSizeMode.max => 1.0,
       WorkspaceSizeMode.custom => _scaleFraction,
@@ -396,7 +400,13 @@ class _ResponsiveChessWorkspaceState extends State<ResponsiveChessWorkspace> {
                         mainAxisSize: MainAxisSize.min,
                         children: widget.customTopActions,
                       ),
-                      sizingControlsBar,
+                      Flexible(
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          alignment: Alignment.centerRight,
+                          child: sizingControlsBar,
+                        ),
+                      ),
                     ],
                   ),
                 ),
@@ -416,7 +426,7 @@ class _ResponsiveChessWorkspaceState extends State<ResponsiveChessWorkspace> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         if (hasEvalBar) ...[
-                          SizedBox(
+                           SizedBox(
                             width: widget.evalBarWidth,
                             height: boardSize,
                             child: widget.evalBar!,
@@ -443,9 +453,35 @@ class _ResponsiveChessWorkspaceState extends State<ResponsiveChessWorkspace> {
             ),
           ),
 
-          // Side Panel (if present and not collapsed)
+          // Drag-resizable divider
           if (widget.sidePanel != null && !_isSidePanelCollapsed) ...[
-            const SizedBox(width: 12),
+            GestureDetector(
+              behavior: HitTestBehavior.translucent,
+              onHorizontalDragUpdate: (details) {
+                setState(() {
+                  final cur = _draggedSidePanelWidth ?? baseSidePanelWidth;
+                  final next = (cur - details.delta.dx).clamp(240.0, constraints.maxWidth * 0.45);
+                  _draggedSidePanelWidth = next;
+                });
+              },
+              child: MouseRegion(
+                cursor: SystemMouseCursors.resizeColumn,
+                child: SizedBox(
+                  width: 10,
+                  child: Center(
+                    child: Container(
+                      width: 3,
+                      height: 48,
+                      decoration: BoxDecoration(
+                        color: context.brd,
+                        borderRadius: BorderRadius.circular(2),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(width: 4),
             SizedBox(
               width: sidePanelWidth,
               child: Card(

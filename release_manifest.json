@@ -1,8 +1,8 @@
 {
   "platformName": "ChessMaster 90-Day GM Mastery Platform",
   "version": "1.4.0",
-  "commitSha": "f5ffcb4332ca7cfb429a68d2ba740e6d25dc35fe",
-  "buildTimestamp": "2026-09-23T11:44:07.750492",
+  "commitSha": "094047d7e20aed50c10df044cd91f2a77ada63ba",
+  "buildTimestamp": "2026-09-24T18:38:46.995798",
   "overallStatus": "PRODUCTION_CERTIFIED",
   "certifiedGates": [
     "Single Chess Rendering Engine (100% Vector Staunton in-app & MP4 rasterizer, 0 letter-circle placeholders)",
@@ -29,9 +29,9 @@
       "buildCommand": "flutter build web --release && zip -r ChessMaster-Web.zip .",
       "ciJob": "build-web",
       "e2eJob": "web-e2e",
-      "sizeBytes": 14196328,
-      "sizeMb": "13.54",
-      "sha256": "4968a2757aecf01eec0449e1437ea5abe594e872f1626a8a4323ac77cf8b8747",
+      "sizeBytes": 13668569,
+      "sizeMb": "13.04",
+      "sha256": "1ac8744075cc0d34eda2c821e1a99cdaa04a94c1595cc89f285217f1283392a4",
       "runtimeResult": "HTTP 200 OK, CanvasKit rendering, Offline PWA ServiceWorker functional",
       "evidence": "Headless Python HTTP server + curl smoke check passing",
       "status": "PROVEN"
@@ -59,7 +59,7 @@
       "e2eJob": "windows-smoke",
       "sizeBytes": 12216832,
       "sizeMb": "11.65",
-      "sha256": "78d82edd951c47771863b64bdb0dfb96f25590e49c190a2f67fd4caadf7c344e",
+      "sha256": "7cb02ab0e1079cd721063ba5ef111778daa93cc683eec2f4858dd9ff23816207",
       "runtimeResult": "Single-click zero-install execution to %LocalAppData%\\ChessMaster\\portable",
       "evidence": "Standalone executable launching ChessMaster.exe without manual archive extraction",
       "status": "PROVEN"

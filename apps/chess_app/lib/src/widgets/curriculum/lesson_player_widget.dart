@@ -1,3 +1,4 @@
+import 'dart:math' as math;
 import 'package:chess_core/chess_core.dart';
 import 'package:chess_curriculum/chess_curriculum.dart';
 import 'package:chess_labs/chess_labs.dart';
@@ -92,68 +93,131 @@ class _LessonPlayerWidgetState extends State<LessonPlayerWidget> {
     return MiniGameType.forkHunter;
   }
 
-  void _initBoards() {
-    final exercises = widget.day.exercises;
-    final defaultFen = exercises.isNotEmpty ? exercises.first.fen : FenParser.initialFen;
+  bool _isRewinding = false;
 
-    _guidedBoard = Board.fromFen(widget.day.visualBoardFen ?? defaultFen);
-    _independentBoard = Board.fromFen(defaultFen);
-    _retentionBoard = Board.fromFen(widget.day.visualBoardFen ?? defaultFen);
+  void _initBoards() {
+    final s = widget.day.scenario;
+    final exercises = widget.day.exercises;
+    final primaryFen = s?.fen ?? (exercises.isNotEmpty ? exercises.first.fen : widget.day.visualBoardFen ?? FenParser.initialFen);
+
+    _guidedBoard = Board.fromFen(primaryFen);
+    _independentBoard = Board.fromFen(
+      s != null && s.practicePositions.isNotEmpty
+          ? s.practicePositions.first.fen
+          : (exercises.length > 1 ? exercises[1].fen : primaryFen),
+    );
+    _retentionBoard = Board.fromFen(
+      s != null && s.retentionPositions.isNotEmpty
+          ? s.retentionPositions.first.fen
+          : (exercises.length > 2 ? exercises[2].fen : primaryFen),
+    );
+
+    debugPrint('[LESSON_TRACE] day=${widget.day.dayNumber} scenarioId=${s?.id ?? "day_${widget.day.dayNumber}"} fen=${_guidedBoard.toFen()}');
 
     _miniGameController = PlayableMiniGame.create(_resolveMiniGameType(widget.day));
     _miniGameController.onUpdate.listen((_) {
-      if (mounted) setState(() {});
+      if (mounted) {
+        if (_miniGameController.isGameOver || _miniGameController.roundsCompleted >= 1) {
+          _miniGameCompleted = true;
+        }
+        setState(() {});
+      }
     });
   }
 
   void _handleGuidedMove(Move move) {
+    if (_isRewinding) return;
+    final s = widget.day.scenario;
     final exercises = widget.day.exercises;
-    if (exercises.isEmpty) return;
+    final targetMoves = s?.expectedMoves ?? (exercises.isNotEmpty ? exercises.first.solutionSan : <String>[]);
+    if (targetMoves.isEmpty) return;
 
-    final targetEx = exercises.first;
     final san = MoveGenerator.moveToSan(_guidedBoard, move);
 
-    if (targetEx.solutionSan.contains(san)) {
+    if (targetMoves.contains(san)) {
       setState(() {
         _guidedBoard = _guidedBoard.clone()..makeMove(move);
-        _guidedFeedback = 'Correct! $san. ${targetEx.explanation}';
+        _guidedFeedback = 'Correct! $san. ${s?.explanation ?? (exercises.isNotEmpty ? exercises.first.explanation : "")}';
         _guidedCompleted = true;
       });
+      // Continuous Auto-advance: advance automatically after brief celebration
+      Future.delayed(const Duration(milliseconds: 1300), () {
+        if (mounted && _currentStage == 3) {
+          _nextStage();
+        }
+      });
     } else {
+      // Wrong move: freeze/rewind -> visually show WHY -> refutation -> retry
+      final refutation = s?.refutations[san] ?? s?.refutations['wrong'] ?? 'Move $san leaves key tactical vulnerabilities.';
       setState(() {
-        _guidedFeedback = 'Move $san was played. Try using a hint or find the forcing candidate move.';
+        _guidedFeedback = 'Refutation: $refutation (Rewinding to retry...)';
+        _isRewinding = true;
+      });
+      Future.delayed(const Duration(milliseconds: 1400), () {
+        if (mounted) {
+          setState(() {
+            final primaryFen = s?.fen ?? (exercises.isNotEmpty ? exercises.first.fen : widget.day.visualBoardFen ?? FenParser.initialFen);
+            _guidedBoard = Board.fromFen(primaryFen);
+            _isRewinding = false;
+            _guidedFeedback = 'Try finding the forcing candidate move: ${s?.hint1Concept ?? "Look for checks, captures and loose pieces"}';
+          });
+        }
       });
     }
   }
 
   void _handleIndependentMove(Move move) {
+    if (_isRewinding) return;
+    final s = widget.day.scenario;
     final exercises = widget.day.exercises;
-    if (exercises.isEmpty) return;
+    final targetMoves = (s != null && s.practicePositions.isNotEmpty)
+        ? s.practicePositions.first.expectedMoves
+        : (exercises.length > 1 ? exercises[1].solutionSan : (s?.expectedMoves ?? (exercises.isNotEmpty ? exercises.first.solutionSan : <String>[])));
 
-    final targetEx = exercises.first;
     final san = MoveGenerator.moveToSan(_independentBoard, move);
 
-    if (targetEx.solutionSan.contains(san)) {
+    if (targetMoves.contains(san)) {
       setState(() {
         _independentBoard = _independentBoard.clone()..makeMove(move);
-        _independentFeedback = 'Excellent! $san successfully executed.';
+        _independentFeedback = 'Excellent! $san successfully executed with precision.';
         _independentCompleted = true;
+      });
+      Future.delayed(const Duration(milliseconds: 1300), () {
+        if (mounted && _currentStage == 4) {
+          _nextStage();
+        }
       });
     } else {
       setState(() {
-        _independentFeedback = 'Incorrect move: $san. Recall the core candidate heuristic and try again.';
+        _independentFeedback = 'Move $san was refuted. Rewinding board...';
+        _isRewinding = true;
+      });
+      Future.delayed(const Duration(milliseconds: 1400), () {
+        if (mounted) {
+          setState(() {
+            final pFen = (s != null && s.practicePositions.isNotEmpty)
+                ? s.practicePositions.first.fen
+                : (exercises.length > 1 ? exercises[1].fen : (s?.fen ?? widget.day.visualBoardFen ?? FenParser.initialFen));
+            _independentBoard = Board.fromFen(pFen);
+            _isRewinding = false;
+            _independentFeedback = 'Recall the core rule: ${widget.day.patternRule ?? "Survey all candidate moves"} and try again.';
+          });
+        }
       });
     }
   }
 
   void _handleRetentionMove(Move move) {
+    if (_isRewinding) return;
+    final s = widget.day.scenario;
     final exercises = widget.day.exercises;
-    if (exercises.isEmpty) return;
+    final targetMoves = (s != null && s.retentionPositions.isNotEmpty)
+        ? s.retentionPositions.first.expectedMoves
+        : (exercises.length > 2 ? exercises[2].solutionSan : (s?.expectedMoves ?? (exercises.isNotEmpty ? exercises.first.solutionSan : <String>[])));
 
-    final targetEx = exercises.first;
     final san = MoveGenerator.moveToSan(_retentionBoard, move);
 
-    if (targetEx.solutionSan.contains(san)) {
+    if (targetMoves.contains(san)) {
       setState(() {
         _retentionBoard = _retentionBoard.clone()..makeMove(move);
         _retentionFeedback = 'Retention certified! $san is the master move.';
@@ -161,7 +225,20 @@ class _LessonPlayerWidgetState extends State<LessonPlayerWidget> {
       });
     } else {
       setState(() {
-        _retentionFeedback = 'Review the lesson motif before completing retention.';
+        _retentionFeedback = 'Refuted: $san. Rewinding...';
+        _isRewinding = true;
+      });
+      Future.delayed(const Duration(milliseconds: 1400), () {
+        if (mounted) {
+          setState(() {
+            final rFen = (s != null && s.retentionPositions.isNotEmpty)
+                ? s.retentionPositions.first.fen
+                : (exercises.length > 2 ? exercises[2].fen : (s?.fen ?? widget.day.visualBoardFen ?? FenParser.initialFen));
+            _retentionBoard = Board.fromFen(rFen);
+            _isRewinding = false;
+            _retentionFeedback = 'Focus on the critical key squares before executing.';
+          });
+        }
       });
     }
   }
@@ -186,15 +263,18 @@ class _LessonPlayerWidgetState extends State<LessonPlayerWidget> {
       backgroundColor: context.bg,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       insetPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-      child: Container(
-        width: 1040,
-        height: 780,
-        decoration: BoxDecoration(
-          color: context.bg,
-          borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: context.brd),
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(
+          maxWidth: 1080,
+          maxHeight: 820,
         ),
-        child: Column(
+        child: Container(
+          decoration: BoxDecoration(
+            color: context.bg,
+            borderRadius: BorderRadius.circular(16),
+            border: Border.all(color: context.brd),
+          ),
+          child: Column(
           children: [
             // Top Bar
             Container(
@@ -325,6 +405,7 @@ class _LessonPlayerWidgetState extends State<LessonPlayerWidget> {
             ),
           ],
         ),
+      ),
       ),
     );
   }
@@ -465,83 +546,93 @@ class _LessonPlayerWidgetState extends State<LessonPlayerWidget> {
   // Stage 2: SEE (Animated Board Visual Model)
   Widget _buildSeeStage() {
     final day = widget.day;
-    final visualFen = day.visualBoardFen ?? (day.exercises.isNotEmpty ? day.exercises.first.fen : FenParser.initialFen);
+    final s = day.scenario;
+    final visualFen = s?.fen ?? day.visualBoardFen ?? (day.exercises.isNotEmpty ? day.exercises.first.fen : FenParser.initialFen);
     final board = Board.fromFen(visualFen);
+    final markers = s?.conceptMarkers.map((m) => Square.fromName(m)).whereType<Square>().toList() ?? [];
 
-    return Row(
-      children: [
-        SizedBox(
-          width: 380,
-          height: 380,
-          child: ChessBoardWidget(
-            board: board,
-            isInteractive: false,
-          ),
-        ),
-        const SizedBox(width: 24),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text(
-                'VISUAL PATTERN RECOGNITION',
-                style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, letterSpacing: 1.0, color: ChessTheme.primaryLight),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final boardSize = math.min(constraints.maxHeight * 0.88, (constraints.maxWidth - 360.0).clamp(280.0, 580.0));
+        return Row(
+          children: [
+            SizedBox(
+              width: boardSize,
+              height: boardSize,
+              child: ChessBoardWidget(
+                board: board,
+                isInteractive: false,
+                highlightedSquares: markers,
               ),
-              const SizedBox(height: 12),
-              Container(
-                padding: const EdgeInsets.all(14),
-                decoration: BoxDecoration(
-                  color: context.surf,
-                  borderRadius: BorderRadius.circular(10),
-                  border: Border.all(color: context.brd),
-                ),
+            ),
+            const SizedBox(width: 24),
+            Expanded(
+              child: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      'Core Rule / Heuristic:',
-                      style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: context.txtMut),
+                    const Text(
+                      'VISUAL PATTERN RECOGNITION',
+                      style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, letterSpacing: 1.0, color: ChessTheme.primaryLight),
                     ),
-                    const SizedBox(height: 6),
+                    const SizedBox(height: 12),
+                    Container(
+                      padding: const EdgeInsets.all(14),
+                      decoration: BoxDecoration(
+                        color: context.surf,
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: context.brd),
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Core Rule / Heuristic:',
+                            style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: context.txtMut),
+                          ),
+                          const SizedBox(height: 6),
+                          Text(
+                            s?.hint1Concept ?? day.patternRule ?? 'Notice the piece alignment and coordination across critical squares.',
+                            style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: context.txt),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 14),
+                    if (s?.source != null && s!.source.isNotEmpty)
+                      Container(
+                        padding: const EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          color: Colors.amber.withAlpha(20),
+                          borderRadius: BorderRadius.circular(8),
+                          border: Border.all(color: Colors.amber.withAlpha(70)),
+                        ),
+                        child: Row(
+                          children: [
+                            const Icon(Icons.history_edu, color: Colors.amber, size: 20),
+                            const SizedBox(width: 10),
+                            Expanded(
+                              child: Text(
+                                'Master Model: ${s.source}',
+                                style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: context.txt),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    const SizedBox(height: 16),
                     Text(
-                      day.patternRule ?? 'Notice the piece alignment and coordination across critical squares.',
-                      style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600, color: context.txt),
+                      'Study the active geometry on the board before testing your candidate move intuition.',
+                      style: TextStyle(fontSize: 12, fontStyle: FontStyle.italic, color: context.txtMut),
                     ),
                   ],
                 ),
               ),
-              const SizedBox(height: 14),
-              if (day.modelGameClip != null)
-                Container(
-                  padding: const EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                    color: Colors.amber.withAlpha(20),
-                    borderRadius: BorderRadius.circular(8),
-                    border: Border.all(color: Colors.amber.withAlpha(70)),
-                  ),
-                  child: Row(
-                    children: [
-                      const Icon(Icons.history_edu, color: Colors.amber, size: 20),
-                      const SizedBox(width: 10),
-                      Expanded(
-                        child: Text(
-                          'Model Game: ${day.modelGameClip}',
-                          style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: context.txt),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              const SizedBox(height: 16),
-              Text(
-                'Take 15 seconds to visualize this geometry in your mind before moving to the rule breakdown.',
-                style: TextStyle(fontSize: 12, fontStyle: FontStyle.italic, color: context.txtMut),
-              ),
-            ],
-          ),
-        ),
-      ],
+            ),
+          ],
+        );
+      },
     );
   }
 
@@ -558,7 +649,7 @@ class _LessonPlayerWidgetState extends State<LessonPlayerWidget> {
             style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, letterSpacing: 0.8, color: Colors.redAccent),
           ),
           const SizedBox(height: 10),
-          for (final cm in (day.commonMistakesList.isEmpty ? const ['Rushing calculation', 'Overlooking counterplay'] : day.commonMistakesList))
+          for (final cm in (day.commonMistakesList.isEmpty ? const ['Rushing calculation without surveying opponent resources', 'Overlooking candidate moves'] : day.commonMistakesList))
             Container(
               margin: const EdgeInsets.only(bottom: 8),
               padding: const EdgeInsets.all(12),
@@ -669,167 +760,187 @@ class _LessonPlayerWidgetState extends State<LessonPlayerWidget> {
 
   // Stage 4: GUIDED PRACTICE (Free Step-by-Step Hints)
   Widget _buildGuidedStage() {
+    final s = widget.day.scenario;
     final exercises = widget.day.exercises;
     final ex = exercises.isNotEmpty ? exercises.first : null;
+    final instruction = s?.learningObjective ?? ex?.instruction ?? 'Find the model move on the board.';
 
-    return Row(
-      children: [
-        SizedBox(
-          width: 380,
-          height: 380,
-          child: ChessBoardWidget(
-            board: _guidedBoard,
-            isInteractive: !_guidedCompleted,
-            onMovePlayed: _handleGuidedMove,
-          ),
-        ),
-        const SizedBox(width: 20),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text(
-                'GUIDED BOARD PRACTICE (UNLIMITED HINTS)',
-                style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, letterSpacing: 0.8, color: Colors.teal),
-              ),
-              const SizedBox(height: 10),
-              Text(
-                ex?.instruction ?? 'Find the model move on the board.',
-                style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: context.txt),
-              ),
-              const SizedBox(height: 16),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final boardSize = math.min(constraints.maxHeight * 0.88, (constraints.maxWidth - 360.0).clamp(280.0, 580.0));
 
-              // Hint Cascade Buttons
-              Wrap(
-                spacing: 8,
-                runSpacing: 8,
-                children: [
-                  OutlinedButton.icon(
-                    onPressed: () {
-                      setState(() => _guidedHintLevel = 1);
-                    },
-                    icon: const Icon(Icons.help_outline, size: 14),
-                    label: const Text('Hint 1: Concept'),
+        return Row(
+          children: [
+            SizedBox(
+              width: boardSize,
+              height: boardSize,
+              child: ChessBoardWidget(
+                board: _guidedBoard,
+                isInteractive: !_guidedCompleted && !_isRewinding,
+                onMovePlayed: _handleGuidedMove,
+              ),
+            ),
+            const SizedBox(width: 20),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'GUIDED BOARD PRACTICE (UNLIMITED HINTS)',
+                      style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, letterSpacing: 0.8, color: Colors.teal),
+                    ),
+                  const SizedBox(height: 10),
+                  Text(
+                    instruction,
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: context.txt),
                   ),
-                  OutlinedButton.icon(
-                    onPressed: () {
-                      setState(() => _guidedHintLevel = 2);
-                    },
-                    icon: const Icon(Icons.lightbulb_outline, size: 14),
-                    label: const Text('Hint 2: Piece'),
+                  const SizedBox(height: 16),
+
+                  // Hint Cascade Buttons
+                  Wrap(
+                    spacing: 8,
+                    runSpacing: 8,
+                    children: [
+                      OutlinedButton.icon(
+                        onPressed: () {
+                          setState(() => _guidedHintLevel = 1);
+                        },
+                        icon: const Icon(Icons.help_outline, size: 14),
+                        label: const Text('Hint 1: Concept'),
+                      ),
+                      OutlinedButton.icon(
+                        onPressed: () {
+                          setState(() => _guidedHintLevel = 2);
+                        },
+                        icon: const Icon(Icons.lightbulb_outline, size: 14),
+                        label: const Text('Hint 2: Target'),
+                      ),
+                      OutlinedButton.icon(
+                        onPressed: () {
+                          setState(() => _guidedHintLevel = 3);
+                        },
+                        icon: const Icon(Icons.visibility, size: 14),
+                        label: const Text('Hint 3: Show Move'),
+                      ),
+                    ],
                   ),
-                  OutlinedButton.icon(
-                    onPressed: () {
-                      setState(() => _guidedHintLevel = 3);
-                    },
-                    icon: const Icon(Icons.visibility, size: 14),
-                    label: const Text('Hint 3: Show Move'),
-                  ),
+                  const SizedBox(height: 12),
+
+                  // Hint Text Display
+                  if (_guidedHintLevel >= 1)
+                    Container(
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: Colors.amber.withAlpha(20),
+                        borderRadius: BorderRadius.circular(8),
+                        border: Border.all(color: Colors.amber.withAlpha(60)),
+                      ),
+                      child: Text(
+                        _guidedHintLevel == 1
+                            ? (s?.hint1Concept ?? (ex != null && ex.hints.isNotEmpty ? ex.hints[0] : 'Survey the position'))
+                            : (_guidedHintLevel == 2
+                                ? (s?.hint2PieceOrSquare ?? (ex != null && ex.hints.length > 1 ? ex.hints[1] : 'Target the critical square'))
+                                : 'Solution move: ${s?.expectedMoves.firstOrNull ?? ex?.solutionSan.firstOrNull}'),
+                        style: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: Colors.amber),
+                      ),
+                    ),
+                  const SizedBox(height: 16),
+                  if (_guidedFeedback != null)
+                    Container(
+                      padding: const EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        color: _guidedCompleted ? Colors.green.withAlpha(25) : Colors.orange.withAlpha(25),
+                        borderRadius: BorderRadius.circular(8),
+                        border: Border.all(color: _guidedCompleted ? Colors.green : Colors.orange),
+                      ),
+                      child: Text(
+                        _guidedFeedback!,
+                        style: TextStyle(
+                          fontSize: 13,
+                          fontWeight: FontWeight.bold,
+                          color: _guidedCompleted ? Colors.green : Colors.orange,
+                        ),
+                      ),
+                    ),
                 ],
               ),
-              const SizedBox(height: 12),
-
-              // Hint Text Display
-              if (_guidedHintLevel >= 1 && ex != null)
-                Container(
-                  padding: const EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    color: Colors.amber.withAlpha(20),
-                    borderRadius: BorderRadius.circular(8),
-                    border: Border.all(color: Colors.amber.withAlpha(60)),
-                  ),
-                  child: Text(
-                    _guidedHintLevel == 1
-                        ? (ex.hints.isNotEmpty ? ex.hints[0] : ex.concept)
-                        : (_guidedHintLevel == 2
-                            ? 'Focus on the ${ex.targetPiece}. ${ex.hints.length > 1 ? ex.hints[1] : ""}'
-                            : 'Solution move is: ${ex.solutionSan.firstOrNull}'),
-                    style: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold, color: Colors.amber),
-                  ),
-                ),
-
-              const Spacer(),
-              if (_guidedFeedback != null)
-                Container(
-                  padding: const EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                    color: _guidedCompleted ? Colors.green.withAlpha(25) : Colors.orange.withAlpha(25),
-                    borderRadius: BorderRadius.circular(8),
-                    border: Border.all(color: _guidedCompleted ? Colors.green : Colors.orange),
-                  ),
-                  child: Text(
-                    _guidedFeedback!,
-                    style: TextStyle(
-                      fontSize: 13,
-                      fontWeight: FontWeight.bold,
-                      color: _guidedCompleted ? Colors.green : Colors.orange,
-                    ),
-                  ),
-                ),
-            ],
+            ),
           ),
-        ),
-      ],
+        ],
+      );
+      },
     );
   }
 
   // Stage 5: INDEPENDENT PRACTICE (Verified Solution, No Assistance)
   Widget _buildPracticeStage() {
+    final s = widget.day.scenario;
     final exercises = widget.day.exercises;
-    final ex = exercises.isNotEmpty ? exercises.first : null;
+    final practicePos = (s != null && s.practicePositions.isNotEmpty) ? s.practicePositions.first : null;
+    final ex = exercises.length > 1 ? exercises[1] : (exercises.isNotEmpty ? exercises.first : null);
+    final instruction = practicePos?.instruction ?? ex?.instruction ?? 'Find the winning continuation on your own.';
 
-    return Row(
-      children: [
-        SizedBox(
-          width: 380,
-          height: 380,
-          child: ChessBoardWidget(
-            board: _independentBoard,
-            isInteractive: !_independentCompleted,
-            onMovePlayed: _handleIndependentMove,
-          ),
-        ),
-        const SizedBox(width: 20),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text(
-                'INDEPENDENT PRACTICE',
-                style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, letterSpacing: 0.8, color: Colors.purpleAccent),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final boardSize = math.min(constraints.maxHeight * 0.88, (constraints.maxWidth - 360.0).clamp(280.0, 580.0));
+
+        return Row(
+          children: [
+            SizedBox(
+              width: boardSize,
+              height: boardSize,
+              child: ChessBoardWidget(
+                board: _independentBoard,
+                isInteractive: !_independentCompleted && !_isRewinding,
+                onMovePlayed: _handleIndependentMove,
               ),
-              const SizedBox(height: 10),
-              Text(
-                ex?.instruction ?? 'Find the winning continuation on your own.',
-                style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: context.txt),
-              ),
-              const SizedBox(height: 12),
-              Text(
-                'Think through CCT: Checks, Captures, Threats. Verify your candidate move before touching the board.',
-                style: TextStyle(fontSize: 12, color: context.txtMut),
-              ),
-              const Spacer(),
-              if (_independentFeedback != null)
-                Container(
-                  padding: const EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                    color: _independentCompleted ? Colors.green.withAlpha(25) : Colors.red.withAlpha(25),
-                    borderRadius: BorderRadius.circular(8),
-                    border: Border.all(color: _independentCompleted ? Colors.green : Colors.red),
-                  ),
-                  child: Text(
-                    _independentFeedback!,
-                    style: TextStyle(
-                      fontSize: 13,
-                      fontWeight: FontWeight.bold,
-                      color: _independentCompleted ? Colors.green : Colors.red,
+            ),
+            const SizedBox(width: 20),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'INDEPENDENT PRACTICE',
+                      style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, letterSpacing: 0.8, color: Colors.purpleAccent),
                     ),
-                  ),
+                    const SizedBox(height: 10),
+                    Text(
+                      instruction,
+                      style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: context.txt),
+                    ),
+                    const SizedBox(height: 12),
+                    Text(
+                      'Think through CCT: Checks, Captures, Threats. Verify your candidate move before touching the board.',
+                      style: TextStyle(fontSize: 12, color: context.txtMut),
+                    ),
+                    const SizedBox(height: 16),
+                    if (_independentFeedback != null)
+                      Container(
+                        padding: const EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          color: _independentCompleted ? Colors.green.withAlpha(25) : Colors.red.withAlpha(25),
+                          borderRadius: BorderRadius.circular(8),
+                          border: Border.all(color: _independentCompleted ? Colors.green : Colors.red),
+                        ),
+                        child: Text(
+                          _independentFeedback!,
+                          style: TextStyle(
+                            fontSize: 13,
+                            fontWeight: FontWeight.bold,
+                            color: _independentCompleted ? Colors.green : Colors.red,
+                          ),
+                        ),
+                      ),
+                  ],
                 ),
-            ],
-          ),
-        ),
-      ],
+              ),
+            ),
+          ],
+        );
+      },
     );
   }
 
@@ -837,127 +948,133 @@ class _LessonPlayerWidgetState extends State<LessonPlayerWidget> {
   Widget _buildMiniGameStage() {
     final lvl = _miniGameController.currentLevel;
 
-    return Row(
-      children: [
-        SizedBox(
-          width: 380,
-          height: 380,
-          child: ChessBoardWidget(
-            board: _miniGameController.currentBoard,
-            isInteractive: !_miniGameController.isLevelCompleted && !_miniGameController.isGameOver,
-            onMovePlayed: (move) {
-              final ok = _miniGameController.playMove(move);
-              if (_miniGameController.roundsCompleted >= 1 || _miniGameController.isGameOver) {
-                setState(() => _miniGameCompleted = true);
-              }
-            },
-          ),
-        ),
-        const SizedBox(width: 20),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final boardSize = math.min(constraints.maxHeight * 0.88, (constraints.maxWidth - 360.0).clamp(280.0, 580.0));
+
+        return Row(
+          children: [
+            SizedBox(
+              width: boardSize,
+              height: boardSize,
+              child: ChessBoardWidget(
+                board: _miniGameController.currentBoard,
+                isInteractive: !_miniGameController.isLevelCompleted && !_miniGameController.isGameOver,
+                onMovePlayed: (move) {
+                  _miniGameController.playMove(move);
+                  if (_miniGameController.roundsCompleted >= 1 || _miniGameController.isGameOver) {
+                    setState(() => _miniGameCompleted = true);
+                  }
+                },
+              ),
+            ),
+            const SizedBox(width: 20),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Icon(Icons.sports_esports, color: ChessTheme.primaryLight, size: 20),
-                  const SizedBox(width: 8),
-                  Text(
-                    'PLAYABLE MINI-GAME: ${_miniGameController.type.title.toUpperCase()}',
-                    style: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold, letterSpacing: 0.8, color: ChessTheme.primaryLight),
+                  Row(
+                    children: [
+                      const Icon(Icons.sports_esports, color: ChessTheme.primaryLight, size: 20),
+                      const SizedBox(width: 8),
+                      Text(
+                        'PLAYABLE MINI-GAME: ${_miniGameController.type.title.toUpperCase()}',
+                        style: const TextStyle(fontSize: 13, fontWeight: FontWeight.bold, letterSpacing: 0.8, color: ChessTheme.primaryLight),
+                      ),
+                    ],
                   ),
-                ],
-              ),
-              const SizedBox(height: 8),
-              Text(
-                lvl.title,
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: context.txt),
-              ),
-              const SizedBox(height: 6),
-              Text(
-                lvl.objective,
-                style: TextStyle(fontSize: 13, color: context.txtSec),
-              ),
-              const SizedBox(height: 12),
-              Row(
-                children: [
+                  const SizedBox(height: 8),
+                  Text(
+                    lvl.title,
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: context.txt),
+                  ),
+                  const SizedBox(height: 6),
+                  Text(
+                    lvl.objective,
+                    style: TextStyle(fontSize: 13, color: context.txtSec),
+                  ),
+                  const SizedBox(height: 12),
+                  Row(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                        decoration: BoxDecoration(
+                          color: ChessTheme.primary.withAlpha(30),
+                          borderRadius: BorderRadius.circular(6),
+                          border: Border.all(color: ChessTheme.primaryLight),
+                        ),
+                        child: Text(
+                          'Level ${_miniGameController.currentLevelIndex + 1} / ${_miniGameController.totalLevels}',
+                          style: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: ChessTheme.primaryLight),
+                        ),
+                      ),
+                      const SizedBox(width: 10),
+                      if (_miniGameCompleted)
+                        const Row(
+                          children: [
+                            Icon(Icons.check_circle, color: Colors.green, size: 18),
+                            SizedBox(width: 4),
+                            Text('Goal Achieved', style: TextStyle(color: Colors.green, fontSize: 12, fontWeight: FontWeight.bold)),
+                          ],
+                        ),
+                    ],
+                  ),
+                  const SizedBox(height: 14),
+                  Wrap(
+                    spacing: 8,
+                    children: [
+                      OutlinedButton.icon(
+                        onPressed: () {
+                          _miniGameController.requestHint();
+                        },
+                        icon: const Icon(Icons.help_outline, size: 14),
+                        label: const Text('Hint'),
+                      ),
+                      OutlinedButton.icon(
+                        onPressed: () {
+                          setState(() {
+                            _miniGameController.resetCurrentLevel();
+                          });
+                        },
+                        icon: const Icon(Icons.refresh, size: 14),
+                        label: const Text('Reset'),
+                      ),
+                      if (_miniGameController.isLevelCompleted && !_miniGameController.isGameOver)
+                        FilledButton.icon(
+                          onPressed: () {
+                            setState(() {
+                              _miniGameController.nextLevel();
+                            });
+                          },
+                          icon: const Icon(Icons.arrow_forward, size: 14),
+                          label: const Text('Next Level'),
+                          style: FilledButton.styleFrom(backgroundColor: Colors.green),
+                        ),
+                    ],
+                  ),
+                  const Spacer(),
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                    padding: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
-                      color: ChessTheme.primary.withAlpha(30),
-                      borderRadius: BorderRadius.circular(6),
-                      border: Border.all(color: ChessTheme.primaryLight),
+                      color: _miniGameCompleted ? Colors.green.withAlpha(25) : context.surf,
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(color: _miniGameCompleted ? Colors.green : context.brd),
                     ),
                     child: Text(
-                      'Level ${_miniGameController.currentLevelIndex + 1} / ${_miniGameController.totalLevels}',
-                      style: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: ChessTheme.primaryLight),
+                      _miniGameController.feedbackMessage,
+                      style: TextStyle(
+                        fontSize: 13,
+                        fontWeight: FontWeight.bold,
+                        color: _miniGameCompleted ? Colors.green : context.txt,
+                      ),
                     ),
                   ),
-                  const SizedBox(width: 10),
-                  if (_miniGameCompleted)
-                    const Row(
-                      children: [
-                        Icon(Icons.check_circle, color: Colors.green, size: 18),
-                        SizedBox(width: 4),
-                        Text('Goal Achieved', style: TextStyle(color: Colors.green, fontSize: 12, fontWeight: FontWeight.bold)),
-                      ],
-                    ),
                 ],
               ),
-              const SizedBox(height: 14),
-              Wrap(
-                spacing: 8,
-                children: [
-                  OutlinedButton.icon(
-                    onPressed: () {
-                      _miniGameController.requestHint();
-                    },
-                    icon: const Icon(Icons.help_outline, size: 14),
-                    label: const Text('Hint'),
-                  ),
-                  OutlinedButton.icon(
-                    onPressed: () {
-                      setState(() {
-                        _miniGameController.resetCurrentLevel();
-                      });
-                    },
-                    icon: const Icon(Icons.refresh, size: 14),
-                    label: const Text('Reset'),
-                  ),
-                  if (_miniGameController.isLevelCompleted && !_miniGameController.isGameOver)
-                    FilledButton.icon(
-                      onPressed: () {
-                        setState(() {
-                          _miniGameController.nextLevel();
-                        });
-                      },
-                      icon: const Icon(Icons.arrow_forward, size: 14),
-                      label: const Text('Next Level'),
-                      style: FilledButton.styleFrom(backgroundColor: Colors.green),
-                    ),
-                ],
-              ),
-              const Spacer(),
-              Container(
-                padding: const EdgeInsets.all(12),
-                decoration: BoxDecoration(
-                  color: _miniGameCompleted ? Colors.green.withAlpha(25) : context.surf,
-                  borderRadius: BorderRadius.circular(8),
-                  border: Border.all(color: _miniGameCompleted ? Colors.green : context.brd),
-                ),
-                child: Text(
-                  _miniGameController.feedbackMessage,
-                  style: TextStyle(
-                    fontSize: 13,
-                    fontWeight: FontWeight.bold,
-                    color: _miniGameCompleted ? Colors.green : context.txt,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        ),
-      ],
+            ),
+          ],
+        );
+      },
     );
   }
 
@@ -1019,61 +1136,72 @@ class _LessonPlayerWidgetState extends State<LessonPlayerWidget> {
 
   // Stage 8: RETENTION TEST (Final 1-Move Verification)
   Widget _buildRetentionStage() {
+    final s = widget.day.scenario;
     final exercises = widget.day.exercises;
-    final ex = exercises.isNotEmpty ? exercises.first : null;
+    final retentionPos = (s != null && s.retentionPositions.isNotEmpty) ? s.retentionPositions.first : null;
+    final ex = exercises.length > 2 ? exercises[2] : (exercises.isNotEmpty ? exercises.first : null);
+    final instruction = retentionPos?.instruction ?? ex?.instruction ?? 'Deliver the decisive tactical continuation.';
 
-    return Row(
-      children: [
-        SizedBox(
-          width: 380,
-          height: 380,
-          child: ChessBoardWidget(
-            board: _retentionBoard,
-            isInteractive: !_retentionCompleted,
-            onMovePlayed: _handleRetentionMove,
-          ),
-        ),
-        const SizedBox(width: 20),
-        Expanded(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Text(
-                'RETENTION CERTIFICATION TEST',
-                style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, letterSpacing: 0.8, color: Colors.green),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final boardSize = math.min(constraints.maxHeight * 0.88, (constraints.maxWidth - 360.0).clamp(280.0, 580.0));
+
+        return Row(
+          children: [
+            SizedBox(
+              width: boardSize,
+              height: boardSize,
+              child: ChessBoardWidget(
+                board: _retentionBoard,
+                isInteractive: !_retentionCompleted && !_isRewinding,
+                onMovePlayed: _handleRetentionMove,
               ),
-              const SizedBox(height: 10),
-              Text(
-                'Execute the master move from memory to certify Day ${widget.day.dayNumber}.',
-                style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: context.txt),
-              ),
-              const SizedBox(height: 12),
-              Text(
-                ex?.instruction ?? 'Deliver the decisive tactical continuation.',
-                style: TextStyle(fontSize: 13, color: context.txtMut),
-              ),
-              const Spacer(),
-              if (_retentionFeedback != null)
-                Container(
-                  padding: const EdgeInsets.all(12),
-                  decoration: BoxDecoration(
-                    color: _retentionCompleted ? Colors.green.withAlpha(25) : Colors.orange.withAlpha(25),
-                    borderRadius: BorderRadius.circular(8),
-                    border: Border.all(color: _retentionCompleted ? Colors.green : Colors.orange),
-                  ),
-                  child: Text(
-                    _retentionFeedback!,
-                    style: TextStyle(
-                      fontSize: 13,
-                      fontWeight: FontWeight.bold,
-                      color: _retentionCompleted ? Colors.green : Colors.orange,
+            ),
+            const SizedBox(width: 20),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'RETENTION CERTIFICATION TEST',
+                      style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold, letterSpacing: 0.8, color: Colors.green),
                     ),
-                  ),
+                    const SizedBox(height: 10),
+                    Text(
+                      'Execute the master move from memory to certify Day ${widget.day.dayNumber}.',
+                      style: TextStyle(fontSize: 15, fontWeight: FontWeight.w600, color: context.txt),
+                    ),
+                    const SizedBox(height: 12),
+                    Text(
+                      instruction,
+                      style: TextStyle(fontSize: 13, color: context.txtMut),
+                    ),
+                    const SizedBox(height: 16),
+                    if (_retentionFeedback != null)
+                      Container(
+                        padding: const EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          color: _retentionCompleted ? Colors.green.withAlpha(25) : Colors.orange.withAlpha(25),
+                          borderRadius: BorderRadius.circular(8),
+                          border: Border.all(color: _retentionCompleted ? Colors.green : Colors.orange),
+                        ),
+                        child: Text(
+                          _retentionFeedback!,
+                          style: TextStyle(
+                            fontSize: 13,
+                            fontWeight: FontWeight.bold,
+                            color: _retentionCompleted ? Colors.green : Colors.orange,
+                          ),
+                        ),
+                      ),
+                  ],
                 ),
-            ],
-          ),
-        ),
-      ],
+              ),
+            ),
+          ],
+        );
+      },
     );
   }
 }

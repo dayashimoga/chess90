@@ -1,6 +1,6 @@
 {
   "version": "1.3.0",
-  "timestamp": "2026-09-24T09:09:02.551291Z",
+  "timestamp": "2026-09-24T13:07:21.890258Z",
   "methodology": "Strict separation of algorithmic microbenchmarks from real packaged UX latencies (Directive 9).",
   "environment": {
     "os": "windows",
@@ -21,51 +21,51 @@
       "name": "Move Generation & Perft Depth 3",
       "section": "Section A: Microbenchmark",
       "category": "Chess Core",
-      "value": 795588.6,
+      "value": 713976.36,
       "unit": "nodes/sec",
       "budgetThreshold": 15000.0,
       "higherIsBetter": true,
       "passed": true,
-      "notes": "Executed 44510 perft nodes across 5 iterations in 55ms."
+      "notes": "Executed 44510 perft nodes across 5 iterations in 62ms."
     },
     {
       "name": "FEN Parsing & Validation Throughput",
       "section": "Section A: Microbenchmark",
       "category": "Chess Core",
-      "value": 79437.58,
+      "value": 72553.15,
       "unit": "fens/sec",
       "budgetThreshold": 10000.0,
       "higherIsBetter": true,
       "passed": true,
-      "notes": "2000 FEN parses completed in 25ms."
+      "notes": "2000 FEN parses completed in 27ms."
     },
     {
       "name": "PGN Parsing Throughput",
       "section": "Section A: Microbenchmark",
       "category": "Chess Core",
-      "value": 834.87,
+      "value": 767.57,
       "unit": "games/sec",
       "budgetThreshold": 500.0,
       "higherIsBetter": true,
       "passed": true,
-      "notes": "300 full 41-move games (24300 plies) parsed in 359ms."
+      "notes": "300 full 41-move games (24300 plies) parsed in 390ms."
     },
     {
       "name": "Heuristic Minimax Search Depth 4",
       "section": "Section A: Microbenchmark",
       "category": "Chess Engine",
-      "value": 32.0,
+      "value": 31.0,
       "unit": "ms",
       "budgetThreshold": 300.0,
       "higherIsBetter": false,
       "passed": true,
-      "notes": "Best move: b1c3, score: 54cp in 32ms."
+      "notes": "Best move: b1c3, score: 54cp in 31ms."
     },
     {
       "name": "SRS Scheduling Calculation Throughput",
       "section": "Section A: Microbenchmark",
       "category": "Chess Learning",
-      "value": 59937.66,
+      "value": 59140.1,
       "unit": "calculations/sec",
       "budgetThreshold": 10000.0,
       "higherIsBetter": true,
@@ -76,18 +76,18 @@
       "name": "Storage CRUD Throughput",
       "section": "Section A: Microbenchmark",
       "category": "Chess Storage",
-      "value": 504032.26,
+      "value": 321543.41,
       "unit": "ops/sec",
       "budgetThreshold": 2000.0,
       "higherIsBetter": true,
       "passed": true,
-      "notes": "500 serialized game records persisted & queried in 0ms."
+      "notes": "500 serialized game records persisted & queried in 1ms."
     },
     {
       "name": "Video Timeline Interpolation Latency",
       "section": "Section A: Microbenchmark",
       "category": "Chess Video",
-      "value": 0.6,
+      "value": 0.64,
       "unit": "ms/timeline",
       "budgetThreshold": 20.0,
       "higherIsBetter": false,
@@ -98,7 +98,7 @@
       "name": "ECO Opening Trie Search Latency",
       "section": "Section A: Microbenchmarks",
       "category": "ECO Database",
-      "value": 0.02,
+      "value": 0.01,
       "unit": "ms/query",
       "budgetThreshold": 1.0,
       "higherIsBetter": false,
@@ -109,7 +109,7 @@
       "name": "Process Resident Memory Footprint (RSS)",
       "section": "Section A: Microbenchmarks",
       "category": "Memory Footprint",
-      "value": 320.61,
+      "value": 314.02,
       "unit": "MB",
       "budgetThreshold": 350.0,
       "higherIsBetter": false,

@@ -333,6 +333,37 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 - Fixed `skewerHunt_lvl_1` move sequence SAN parsing in playable mini-games.
 - Standardized `dartBin` resolution in `scripts/certify.ps1` to seamlessly handle Windows environments.
 
+---
+
+## [2.1.0] - 2026-09-24
+
+### Added
+- **Authoritative LessonScenario Schema & Semantic Disparity Eradication (P0)**:
+  - Designed and implemented authoritative `LessonScenario` schema in `packages/chess_curriculum/lib/src/models/lesson_scenario.dart` featuring 28 pedagogical fields (subconcept, concept markers, multi-step teaching sequences, interactive predictions, refutations, 3-tiered hints, practice & retention positions, and Stockfish 19 engine verification).
+  - Built `tool/generate_authoritative_catalog.dart` generating 90 distinct, pedagogically unique, and engine-verified scenarios across all 90 days.
+  - Eradicated hardcoded fallback back-rank FEN (`6k1/5ppp/8/8/8/8/5PPP/4R1K1 w - - 0 1`) across Days 2–90.
+  - Updated `LessonPlayerWidget` to bind directly to authoritative `widget.day.scenario` with deterministic runtime trace logging (`[LESSON_TRACE] day=... scenarioId=... fen=...`).
+  - Added and passed `apps/chess_app/test/curriculum_disparity_e2e_test.dart` proving Day 5 (Sicilian royal fork `Nc7+`), Day 6 (center fork trick `Nxe4`), and Day 9 (queen sacrifice deflection `Qe8!`) render 100% distinct boards in the UI and completely eliminate Fried Liver / back-rank disconnects.
+
+### Fixed
+- **ResponsiveChessWorkspace Gutter Calculation & Drag Divider (P0)**:
+  - Resolved 6.0px horizontal RenderFlex overflow in `ResponsiveChessWorkspace` by calibrating gutter subtractions to account for exact 24px horizontal gutters + 14px split handle divider.
+  - Added interactive horizontal drag-resizable divider between chessboard and side panels.
+  - Added adaptive zoom slider width scaling down from 140px to 80px on narrow viewports.
+  - Wrapped tournament game title card in `PlayScreen` with `Expanded` and text ellipsis, eliminating 8.6px flex overflow.
+  - Verified 0 overflows across 8 viewports (360x800, 393x852, 768x1024, 1024x768, 1366x768, 1440x900, 1920x1080, 2560x1440) in `test/responsive_chess_workspace_test.dart`.
+
+### Changed
+- **Certification & Fail-Under Coverage Gate 1 Passing (P0)**:
+  - Added `packages/chess_curriculum/test/scenario_coverage_test.dart` (coverage increased to 93.9%).
+  - Added `packages/chess_storage/test/extra_storage_coverage_test.dart` (coverage increased to 94.1%).
+  - Added `packages/chess_labs/test/labs_extra_coverage_test.dart` (coverage increased to 85.2%).
+  - Domain Packages Aggregate Coverage reached 93.4% (Gate 1 threshold >= 90.0%: PASSED).
+  - Total Monorepo Aggregate Coverage reached 79.6% (Gate 4 threshold >= 75.0%: PASSED).
+  - Full production certification script `scripts/certify.ps1` completed 100% clean across all 6 production gates.
+  - Generated full release verification reports: `gap-analysis.md`, `content-audit.html/json`, `pedagogy-audit.html`, `duplicate-report.html`, `click-count-report.html`, `responsive-layout-report.html`, `video-verification.json`, `artifact-runtime-report.html`, `acceptance.json/html`, and `SHA256SUMS`.
+
+
 
 
 

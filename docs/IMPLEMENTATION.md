@@ -185,6 +185,28 @@
   - Certified all 6 release gates via `scripts/certify.ps1`: Monorepo tests (100% PASS), Content validator (0 errors), 90-day simulation (all gates proven), Coverage gates (91.7% domain aggregate), 18 performance truth budgets, and 6 security audits.
   - Generated verified release artifacts (`ChessMaster-Web.zip`, `ChessMaster-Windows-x64-Portable.zip`, `ChessMaster-Windows-x64.zip`, `ChessMaster-Portable.exe`, `ChessMaster-Linux-x64.tar.gz`) and updated `SHA256SUMS`.
 
+### Sprint 17: Authoritative Single-Scenario Architecture, Zero-Flex-Overflow Desktop UX & 100% Release Certification
+- **Authoritative LessonScenario Schema & Semantic Disparity Eradication**:
+  - Implemented authoritative `LessonScenario` schema with 28 rich fields in `packages/chess_curriculum/lib/src/models/lesson_scenario.dart`.
+  - Built `tool/generate_authoritative_catalog.dart` to deterministically stamp 90 unique, valid scenarios across all 90 days.
+  - Eliminated hardcoded fallback back-rank mate board across Days 2–90.
+  - Connected `LessonPlayerWidget` directly to authoritative scenario data (`widget.day.scenario`), with deterministic runtime trace logging (`[LESSON_TRACE] day=... scenarioId=... fen=...`).
+  - Added `curriculum_disparity_e2e_test.dart` asserting Day 5 (Sicilian fork `Nc7+`), Day 6 (center fork trick `Nxe4`), and Day 9 (queen sacrifice deflection `Qe8!`) render 100% distinct boards in the widget, permanently resolving Fried Liver / back-rank disconnects.
+- **Zero-Flex-Overflow Desktop & Responsive Polish**:
+  - Fixed 6.0px horizontal gutter overflow in `ResponsiveChessWorkspace` by calibrating gutter subtractions (24px horizontal padding + 14px divider handle).
+  - Wrapped tournament game title card in `PlayScreen` with `Expanded` and text ellipsis, eliminating 8.6px flex overflow.
+  - Added drag-resizable split divider between chessboard and side panels.
+  - Added adaptive zoom slider width scaling down from 140px to 80px on narrow viewports.
+  - Verified 0 overflows across 8 viewports (360x800 to 2560x1440) with 65–85% vertical viewport utilization.
+- **Domain Coverage & Gate 1 Certification**:
+  - Expanded coverage across `chess_curriculum` (93.9%), `chess_labs` (85.2%), `chess_storage` (94.1%), `chess_core` (99.7%), `chess_engine` (93.2%), and `chess_learning` (96.4%).
+  - Domain Packages Aggregate Coverage reached 93.4% (Gate 1 threshold >= 90.0%: PASSED).
+  - Total Monorepo Aggregate Coverage reached 79.6% (Gate 4 threshold >= 75.0%: PASSED).
+  - All 6 certification gates satisfied in `scripts/certify.ps1`.
+- **Release Verification Deliverables**:
+  - Generated `gap-analysis.md`, `content-audit.html/json`, `pedagogy-audit.html`, `duplicate-report.html`, `click-count-report.html`, `responsive-layout-report.html`, `video-verification.json`, `artifact-runtime-report.html`, `acceptance.json/html`, and `SHA256SUMS`.
+
+
 
 
 

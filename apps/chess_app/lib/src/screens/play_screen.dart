@@ -991,14 +991,18 @@ class _PlayScreenState extends State<PlayScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    _setupConfig.gameType.toUpperCase(),
-                    style: const TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                      color: ChessTheme.primaryLight,
+                  Expanded(
+                    child: Text(
+                      _setupConfig.gameType.toUpperCase(),
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.bold,
+                        color: ChessTheme.primaryLight,
+                      ),
                     ),
                   ),
+                  const SizedBox(width: 8),
                   Text(
                     _clock.isRunning ? 'RUNNING' : (_isPaused ? 'PAUSED' : 'STOPPED'),
                     style: TextStyle(

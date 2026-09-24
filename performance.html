@@ -14,7 +14,7 @@ th { background: #0f172a; color: #94a3b8; font-weight: 600; text-transform: uppe
 .notice { background: #0f172a; border-left: 4px solid #38bdf8; padding: 12px; margin-bottom: 16px; font-size: 13px; color: #cbd5e1; }
 </style></head><body><div class="container">
 <h1>ChessMaster Performance Truth Report</h1>
-<div class="subtitle">Generated: 2026-09-24T09:09:02.556528Z | Dart 3.12.2 | 14 CPUs</div>
+<div class="subtitle">Generated: 2026-09-24T13:07:21.899069Z | Dart 3.12.2 | 14 CPUs</div>
 <div class="notice">
   <strong>Directive 9 Performance Truth Mandate:</strong> This report strictly separates algorithmic microbenchmarks (measured in headless Dart VM) from real packaged UX and framework latencies (measured via Flutter engine integration traces and OS process spawning). Synthetic claims of 0.00ms frame time or sub-millisecond cold start are eliminated.
 </div>
@@ -26,15 +26,15 @@ th { background: #0f172a; color: #94a3b8; font-weight: 600; text-transform: uppe
   <h3>Section A: Algorithmic & Subsystem Microbenchmarks (Headless Dart VM)</h3>
   <table>
     <tr><th>Benchmark</th><th>Measured Value</th><th>Budget Threshold</th><th>Status</th><th>Notes</th></tr>
-<tr><td><strong>Move Generation & Perft Depth 3</strong></td><td>795588.6032960354 nodes/sec</td><td>&ge; 15000.0 nodes/sec</td><td><span class="badge-pass">PASS</span></td><td style="color:#94a3b8;font-size:12px;">Executed 44510 perft nodes across 5 iterations in 55ms.</td></tr>
-<tr><td><strong>FEN Parsing & Validation Throughput</strong></td><td>79437.58192000636 fens/sec</td><td>&ge; 10000.0 fens/sec</td><td><span class="badge-pass">PASS</span></td><td style="color:#94a3b8;font-size:12px;">2000 FEN parses completed in 25ms.</td></tr>
-<tr><td><strong>PGN Parsing Throughput</strong></td><td>834.8685638590965 games/sec</td><td>&ge; 500.0 games/sec</td><td><span class="badge-pass">PASS</span></td><td style="color:#94a3b8;font-size:12px;">300 full 41-move games (24300 plies) parsed in 359ms.</td></tr>
-<tr><td><strong>Heuristic Minimax Search Depth 4</strong></td><td>32.0 ms</td><td>&le; 300.0 ms</td><td><span class="badge-pass">PASS</span></td><td style="color:#94a3b8;font-size:12px;">Best move: b1c3, score: 54cp in 32ms.</td></tr>
-<tr><td><strong>SRS Scheduling Calculation Throughput</strong></td><td>59937.66482857827 calculations/sec</td><td>&ge; 10000.0 calculations/sec</td><td><span class="badge-pass">PASS</span></td><td style="color:#94a3b8;font-size:12px;">1000 Leitner scheduling updates completed in 16ms.</td></tr>
-<tr><td><strong>Storage CRUD Throughput</strong></td><td>504032.2580645161 ops/sec</td><td>&ge; 2000.0 ops/sec</td><td><span class="badge-pass">PASS</span></td><td style="color:#94a3b8;font-size:12px;">500 serialized game records persisted & queried in 0ms.</td></tr>
-<tr><td><strong>Video Timeline Interpolation Latency</strong></td><td>0.6 ms/timeline</td><td>&le; 20.0 ms/timeline</td><td><span class="badge-pass">PASS</span></td><td style="color:#94a3b8;font-size:12px;">Frame sequence calculation & smooth move coordinate interpolation.</td></tr>
-<tr><td><strong>ECO Opening Trie Search Latency</strong></td><td>0.015170999999999999 ms/query</td><td>&le; 1.0 ms/query</td><td><span class="badge-pass">PASS</span></td><td style="color:#94a3b8;font-size:12px;">Exact match prefix lookup across 13 annotated ECO families.</td></tr>
-<tr><td><strong>Process Resident Memory Footprint (RSS)</strong></td><td>320.61328125 MB</td><td>&le; 350.0 MB</td><td><span class="badge-pass">PASS</span></td><td style="color:#94a3b8;font-size:12px;">Memory allocated to all loaded boards, Leitner items, and cached FENs.</td></tr>
+<tr><td><strong>Move Generation & Perft Depth 3</strong></td><td>713976.3558492806 nodes/sec</td><td>&ge; 15000.0 nodes/sec</td><td><span class="badge-pass">PASS</span></td><td style="color:#94a3b8;font-size:12px;">Executed 44510 perft nodes across 5 iterations in 62ms.</td></tr>
+<tr><td><strong>FEN Parsing & Validation Throughput</strong></td><td>72553.14517884351 fens/sec</td><td>&ge; 10000.0 fens/sec</td><td><span class="badge-pass">PASS</span></td><td style="color:#94a3b8;font-size:12px;">2000 FEN parses completed in 27ms.</td></tr>
+<tr><td><strong>PGN Parsing Throughput</strong></td><td>767.5657420058027 games/sec</td><td>&ge; 500.0 games/sec</td><td><span class="badge-pass">PASS</span></td><td style="color:#94a3b8;font-size:12px;">300 full 41-move games (24300 plies) parsed in 390ms.</td></tr>
+<tr><td><strong>Heuristic Minimax Search Depth 4</strong></td><td>31.0 ms</td><td>&le; 300.0 ms</td><td><span class="badge-pass">PASS</span></td><td style="color:#94a3b8;font-size:12px;">Best move: b1c3, score: 54cp in 31ms.</td></tr>
+<tr><td><strong>SRS Scheduling Calculation Throughput</strong></td><td>59140.10290377905 calculations/sec</td><td>&ge; 10000.0 calculations/sec</td><td><span class="badge-pass">PASS</span></td><td style="color:#94a3b8;font-size:12px;">1000 Leitner scheduling updates completed in 16ms.</td></tr>
+<tr><td><strong>Storage CRUD Throughput</strong></td><td>321543.40836012864 ops/sec</td><td>&ge; 2000.0 ops/sec</td><td><span class="badge-pass">PASS</span></td><td style="color:#94a3b8;font-size:12px;">500 serialized game records persisted & queried in 1ms.</td></tr>
+<tr><td><strong>Video Timeline Interpolation Latency</strong></td><td>0.64 ms/timeline</td><td>&le; 20.0 ms/timeline</td><td><span class="badge-pass">PASS</span></td><td style="color:#94a3b8;font-size:12px;">Frame sequence calculation & smooth move coordinate interpolation.</td></tr>
+<tr><td><strong>ECO Opening Trie Search Latency</strong></td><td>0.0142285 ms/query</td><td>&le; 1.0 ms/query</td><td><span class="badge-pass">PASS</span></td><td style="color:#94a3b8;font-size:12px;">Exact match prefix lookup across 13 annotated ECO families.</td></tr>
+<tr><td><strong>Process Resident Memory Footprint (RSS)</strong></td><td>314.015625 MB</td><td>&le; 350.0 MB</td><td><span class="badge-pass">PASS</span></td><td style="color:#94a3b8;font-size:12px;">Memory allocated to all loaded boards, Leitner items, and cached FENs.</td></tr>
   </table>
 
   <h3 style="margin-top:32px;">Section B: Real Packaged UX & Framework Latencies (Flutter Engine & OS Profiling)</h3>

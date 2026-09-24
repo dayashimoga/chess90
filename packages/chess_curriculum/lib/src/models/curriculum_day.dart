@@ -1,5 +1,6 @@
 import 'package:chess_learning/chess_learning.dart';
 import 'curriculum_exercise.dart';
+import 'lesson_scenario.dart';
 
 /// The 13 weekly phases of the authentic 90-day mastery spiral.
 enum CurriculumPhase {
@@ -73,6 +74,7 @@ class CurriculumDay {
   final List<String> animatedDemoMoves;
   final String? miniGameType;
   final String? modelGameClip;
+  final LessonScenario? scenario;
 
   String get shortExplanation => definition ?? (theoryMarkdown.isNotEmpty ? theoryMarkdown.split('\n\n').first : topic);
   List<String> get commonMistakesList => commonMistakes;
@@ -86,6 +88,7 @@ class CurriculumDay {
     required this.learningObjectives,
     required this.theoryMarkdown,
     required this.exercises,
+    this.scenario,
     this.isWeeklyExam = false,
     this.examPassThreshold = 0.85,
     required this.primarySkillAxis,
@@ -160,6 +163,7 @@ class CurriculumDay {
         'animatedDemoMoves': animatedDemoMoves,
         'miniGameType': miniGameType,
         'modelGameClip': modelGameClip,
+        'scenario': scenario?.toJson(),
       };
 
   factory CurriculumDay.fromJson(Map<String, dynamic> json) {
@@ -180,6 +184,9 @@ class CurriculumDay {
       exercises: (json['exercises'] as List<dynamic>)
           .map((e) => CurriculumExercise.fromJson(e as Map<String, dynamic>))
           .toList(),
+      scenario: json['scenario'] != null
+          ? LessonScenario.fromJson(json['scenario'] as Map<String, dynamic>)
+          : null,
       isWeeklyExam: isExam,
       examPassThreshold: (json['examPassThreshold'] as num?)?.toDouble() ?? 0.85,
       primarySkillAxis: SkillAxis.values.firstWhere((a) => a.name == json['primarySkillAxis']),
